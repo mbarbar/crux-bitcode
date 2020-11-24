@@ -12,3 +12,8 @@ RUN prt-get depinst llvm
 # Install GLLVM. No need for a port; this is a throwaway container.
 RUN prt-get depinst go
 RUN go get github.com/SRI-CSL/gllvm/cmd/...
+ENV PATH="${GOPATH}/bin:${PATH}"
+
+# Actually use GLLVM.
+ENV CC=gclang
+ENV CXX=gclang++
