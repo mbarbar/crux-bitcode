@@ -6,6 +6,9 @@ COPY ports /usr/ports
 # Tell prt-get about contrib.
 RUN echo prtdir /usr/ports/contrib/ >> /etc/prt-get.conf
 
+# Install core packages again.
+RUN prt-get depinst `ls /usr/ports/core/`
+
 # Build LLVM that we'll use to build other software with GLLVM.
 RUN prt-get depinst llvm
 
