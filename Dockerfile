@@ -1,7 +1,7 @@
 FROM crux:3.4
 
 # Copy our ports snapshot over.
-COPY ports /usr
+COPY ports /usr/ports
 
 # Tell prt-get about contrib.
 RUN echo prtdir /usr/ports/contrib/ >> /etc/prt-get.conf
