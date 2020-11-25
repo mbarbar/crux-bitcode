@@ -1,10 +1,10 @@
 FROM crux:3.4
 
-# Enable contrib ports.
-RUN mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync
+# Copy our ports snapshot over.
+COPY ports /usr
 
-# Grab ports.
-RUN ports -u
+# Tell prt-get about contrib.
+RUN echo prtdir /usr/ports/contrib/ >> /etc/prt-get.conf
 
 # Build LLVM that we'll use to build other software with GLLVM.
 RUN prt-get depinst llvm
@@ -17,3 +17,6 @@ ENV PATH="${GOPATH}/bin:${PATH}"
 # Actually use GLLVM.
 ENV CC=gclang
 ENV CXX=gclang++
+
+# Change config for packages built for bitcode.
+COPY pkgmk.conf /etc/
