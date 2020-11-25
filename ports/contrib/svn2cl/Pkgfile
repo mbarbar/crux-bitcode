@@ -1,0 +1,18 @@
+# Description: Script and XSL stylesheet to convert svn logs to ChangeLog.
+# URL:         https://arthurdejong.org/svn2cl/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  subversion libxslt
+
+name=svn2cl
+version=0.14
+release=1
+source=(https://arthurdejong.org/$name/$name-$version.tar.gz
+        $name)
+
+build() {
+	install -d $PKG/usr/{bin,share/{$name,man/man1}}
+	install -m 0644 $name-$version/$name.1 $PKG/usr/share/man/man1
+	install -m 0644 $name-$version/*.{xsl,css} $PKG/usr/share/$name
+	install -m 0755 $name-$version/$name.sh $PKG/usr/share/$name
+	install -m 0755 $SRC/$name $PKG/usr/bin
+}

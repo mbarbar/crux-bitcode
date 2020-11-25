@@ -1,0 +1,25 @@
+# Description: Python unit testing library
+# URL:         https://launchpad.net/subunit
+# Maintainer:  Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:  python3 check cppunit
+
+name=subunit
+version=1.4.0
+release=1
+source=(https://launchpad.net/subunit/trunk/$version/+download/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	PYTHON=/usr/bin/python3 \
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	# Avoid conflict with p5-subunit and py-subunit
+	rm -r $PKG/usr/lib/perl* $PKG/usr/lib/python*
+
+	# The binaries are actually python and perl scripts
+	rm -r $PKG/usr/bin
+}

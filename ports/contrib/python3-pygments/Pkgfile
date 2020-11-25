@@ -1,0 +1,19 @@
+# Description: Python syntax highlighter
+# URL: https://pygments.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-setuptools
+
+name=python3-pygments
+version=2.7.2
+release=2
+source=(https://files.pythonhosted.org/packages/source/P/Pygments/Pygments-$version.tar.gz)
+
+build() {
+	cd Pygments-$version
+
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG
+
+	# why setuptools why?
+	find $PKG/usr/lib/python3.7/site-packages -type f -exec chmod o-w '{}' \+
+}

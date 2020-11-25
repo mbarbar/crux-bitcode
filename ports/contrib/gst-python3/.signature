@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zQbDUgoPGprRT2ARY/YHq1LT9Fwewzm3p26weIbzuhO7wmyXTE7nwlCuhLS2CAQGWrEbOv6yC9vh2HV6ZJuRws=
+SHA256 (Pkgfile) = 0938c57d0cbea2855f8fc0355887321d0e9ab265dc423bd4d813c27557451e93
+SHA256 (.footprint) = 8df514045868dce2b030e550651717080d3441b7511cc58875bac82445e0befa
+SHA256 (gst-python-1.18.1.tar.xz) = 42b289422f7ab32757670848cf2245c5a8a8b08a665a9cab65ded8d69364f6f6

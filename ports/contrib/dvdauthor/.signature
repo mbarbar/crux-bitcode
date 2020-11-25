@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF393TCDZIn0XpAorihXEhzdRA3coO6KjcWhiOhny8PdXwp/Ad1Qgn0OGscCymKLU+SovmXl4NjhtPmrW2Ttf91gs=
+SHA256 (Pkgfile) = bd37af7cedd0d1decf45b90b287670d8ba1fac3aab99b1b76a86e77f813220c5
+SHA256 (.footprint) = e9e3f40d8b3e9d3ae67a18a14249472672d4365795ec06d5d54f49ba5126b567
+SHA256 (dvdauthor-0.7.2.tar.gz) = 3020a92de9f78eb36f48b6f22d5a001c47107826634a785a62dfcd080f612eb7
+SHA256 (dvdauthor-freetype_pkgconfig.patch) = b9999b749f9253ac8330c7088d3eb4a49e7e22c05bc11a8c7984e342772a7af7
+SHA256 (dvdauthor-0.7.2-imagemagick7.patch) = 4af828142564ef8fc73f92be3f0300866df8f4437baf99d87027c4c8cbba8d41

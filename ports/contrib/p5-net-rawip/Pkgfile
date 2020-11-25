@@ -1,0 +1,29 @@
+# Description:  Manipulate raw IP packets with interface to libpcap
+# URL:          https://metacpan.org/pod/Net::RawIP
+# Maintainer:   Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:   libpcap
+
+name=p5-net-rawip
+version=0.25
+release=1
+source=(https://cpan.metacpan.org/authors/id/S/SA/SAPER/Net-RawIP-$version.tar.gz)
+
+build() {
+	cd Net-RawIP-$version
+
+	perl Makefile.PL
+
+	# remove default -pipe flag
+	sed -i -e '/CCFLAGS = /s/ -pipe / /' Makefile
+
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	find $PKG -depth -type d -empty -delete
+}

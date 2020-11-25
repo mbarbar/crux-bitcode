@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39NYBiMiRV54eoshp5A33j3+u6jAJPEAS2fAtCPZ7G9drzdDmz9kKNYX3pD1cSQcce9QlqXLqRAUbijPzq4BVAE=
+SHA256 (Pkgfile) = c34a2b57534d3ee3289a88bf3bd8bf0a29f4ee6637027bcd45cb1e9f38beb3c2
+SHA256 (.footprint) = 0b57eaa88ebd97a754877af989e3f9679ef4d96e6e9efcce07be599023b425c8
+SHA256 (iotop-0.6.tar.bz2) = 3adea2a24eda49bbbaeb4e6ed2042355b441dbd7161e883067a02bfc8dcef75b
+SHA256 (0001-Make-setp.py-compatible-with-python3.patch) = 1f1eb0cfde45911de9429771d90c9a282f5fed23455a9678a8e44e205f4103a3

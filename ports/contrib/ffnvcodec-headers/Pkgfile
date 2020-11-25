@@ -1,0 +1,27 @@
+# Description: FFmpeg version of headers required to interface with Nvidias codec APIs.
+# URL: https://git.videolan.org/?p=ffmpeg/nv-codec-headers.git
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: git
+
+name=ffnvcodec-headers
+version=11.0.10.0
+sversion=7a81595786463d1c7efcb03aa85def69fc2cad41
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+	if cd $name; then
+		git pull --rebase git://git.videolan.org/git/ffmpeg/nv-codec-headers.git master
+		git checkout $sversion
+	else
+		git clone git://git.videolan.org/git/ffmpeg/nv-codec-headers.git $name
+		cd $name
+		git checkout $sversion
+	fi
+	cp -r $PKGMK_SOURCE_DIR/$name $SRC
+
+	cd $SRC/$name
+	make PREFIX='/usr'
+	make PREFIX='/usr' DESTDIR="$PKG" install
+}

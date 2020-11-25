@@ -1,0 +1,20 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/stdlogctl
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/liblogging/
+-rw-r--r--	root/root	usr/include/liblogging/stdlog.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/liblogging-stdlog.a
+-rwxr-xr-x	root/root	usr/lib/liblogging-stdlog.la
+lrwxrwxrwx	root/root	usr/lib/liblogging-stdlog.so -> liblogging-stdlog.so.0.1.0
+lrwxrwxrwx	root/root	usr/lib/liblogging-stdlog.so.0 -> liblogging-stdlog.so.0.1.0
+-rwxr-xr-x	root/root	usr/lib/liblogging-stdlog.so.0.1.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/liblogging-stdlog.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/stdlogctl.1.gz
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/stdlog.3.gz

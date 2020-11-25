@@ -1,0 +1,22 @@
+# Description: Compute and apply signature-based file differences
+# URL:         https://github.com/librsync/librsync
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  librsync
+
+name=rdiff
+version=2.3.1
+release=1
+source=(https://github.com/librsync/librsync/archive/v$version/librsync-v$version.tar.gz)
+
+build() {
+    cmake -S librsync-$version -B build \
+        -D CMAKE_BUILD_TYPE=Release \
+        -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D CMAKE_INSTALL_LIBDIR=lib \
+
+    cmake --build build
+
+    install -D -m 755 build/rdiff $PKG/usr/bin/rdiff
+    install -D -m 644 librsync-$version/doc/rdiff.1 $PKG/usr/share/man/man1/rdiff.1
+}

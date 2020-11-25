@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/dAoVUJT+ILZfj7jEQUXepzzZmbkFkmEN516oI6oUM6yB9+QDWgS96uI9PnuewIsW+1DMSaYvjtppanTA5z2kAw=
+SHA256 (Pkgfile) = 0102668a5a0e6e93850ece190dff42821d83c35988f530bd89c2be8c5e8e9b6b
+SHA256 (.footprint) = 34f63cda354c7a0f1ac55d24516b692430aaafe6ed57ecbb9b35ace29699fac1
+SHA256 (pure-ftpd-1.0.49.tar.bz2) = 8a727dfef810f275fba3eb6099760d4f8a0bdeae2c1197d0d5bfeb8c1b2f61b6
+SHA256 (pure-ftpd.rc) = 3d6bb818cc8a314c64373072807b1f33afa2e6bd53e7ce82884d85c2ce22627e
+SHA256 (pure-ftpd.pam) = 02a3df52f4def696786cc89a6fe492fd8f1bb2e0c34833abf5659b91c929255b

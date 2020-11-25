@@ -1,0 +1,18 @@
+# Description: Create DateTime parser classes and objects
+# URL: https://metacpan.org/pod/DateTime::Format::Builder
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-class-factory-util p5-datetime p5-datetime-format-strptime p5-params-validate
+
+name=p5-datetime-format-builder
+version=0.83
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-$version.tar.gz)
+
+build() {
+  cd DateTime-Format-Builder-$version
+  export PERL_MM_USE_DEFAULT=1
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

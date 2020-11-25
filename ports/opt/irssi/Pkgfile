@@ -1,0 +1,28 @@
+# Description: Terminal based IRC client for UNIX systems
+# URL:         http://www.irssi.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib
+
+name=irssi
+version=1.2.2
+release=1
+source=(https://github.com/irssi-import/irssi/releases/download/$version/$name-$version.tar.xz)
+
+build () {
+    cd $name-$version
+
+    ./configure \
+      --prefix=/usr \
+      --with-proxy \
+      --with-perl-lib=site
+
+    make
+    make DESTDIR=$PKG install
+
+    find $PKG \
+      -name .packlist -or \
+      -name perllocal.pod -or \
+      -name '*.bs' -or \
+      -name autosplit.ix | xargs rm
+    rm -rf $PKG/usr/{include,share/doc}
+}

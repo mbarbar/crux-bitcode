@@ -1,0 +1,22 @@
+# Description: Operating system and container binary deployment and upgrades
+# URL: https://ostree.readthedocs.org/en/latest/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: avahi fuse gpgme keyutils libsoup
+
+name=ostree
+version=2020.8
+release=1
+source=(https://github.com/ostreedev/ostree/releases/download/v$version/libostree-$version.tar.xz)
+
+build() {
+  cd lib$name-$version
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/lib/$name \
+    --with-openssl \
+    --with-builtin-grub2-mkconfig \
+    --enable-experimental-api \
+    --disable-static
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/ostree/trusted.gpg.d/
+}

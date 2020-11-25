@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/bBxB1/+nPXfkQrJXWqILoYqqB1fCKyWMqxGb1MR9H/X8w9etuY4xL1vRcScqfzZo2O5Bqy2OBdj750AMALzhwc=
+SHA256 (Pkgfile) = d4769f1616587cf6a7ddbb9b74dba580d2a9c69ce0a815546f0f5aa000bfb12f
+SHA256 (.footprint) = 2d6f2ec7fe8d4be0c9d3abe9c6a6110e99b16fa8a78049e53c1baf4b4c76d6eb
+SHA256 (libcroco-0.6.13.tar.xz) = 767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4

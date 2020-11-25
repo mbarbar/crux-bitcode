@@ -1,0 +1,17 @@
+# Description: Asynchronous C DNS library.
+# URL: https://c-ares.haxx.se/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=c-ares
+version=1.16.1
+release=1
+source=(https://c-ares.haxx.se/download/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

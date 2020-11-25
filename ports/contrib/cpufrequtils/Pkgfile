@@ -1,0 +1,15 @@
+# Description:	Clock scaling userspace tools
+# URL:		https://mirrors.edge.kernel.org/pub/linux/utils/kernel/cpufreq/cpufreq-info.html
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	sysfsutils
+
+name=cpufrequtils
+version=008
+release=1
+source=(https://www.kernel.org/pub/linux/utils/kernel/cpufreq/$name-$version.tar.xz)
+
+build() {
+        cd $name-$version
+        make NLS=false V=true
+        make NLS=false V=true mandir=/usr/share/man DESTDIR=$PKG install
+}

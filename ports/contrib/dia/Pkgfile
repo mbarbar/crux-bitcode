@@ -1,0 +1,44 @@
+# Description: GTK+ Diagramming Creation Software.
+# URL: http://live.gnome.org/Dia/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Younes Hafri, ycrux at club dash internet dot fr
+# Depends on: docbook-xsl gtk libart_lgpl python xorg-libxdamage
+
+name=dia
+version=0.97.3
+release=2
+source=(ftp://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz
+	# https://gitweb.gentoo.org/repo/gentoo.git/tree/app-office/dia/files
+	dia-0.97.2-underlinking.patch dia-0.97.3-freetype_pkgconfig.patch
+	dia-0.97.0-gnome-doc.patch)
+
+build() {
+	cd $name-$version
+	# https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/dia
+	for file in `find -type f -name '*.py'`; do
+		sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' "$file"
+	done
+	sed -i 's#python2\.1#python2 python2.1#' configure
+	export PYTHON=/usr/bin/python2
+
+	patch -Np1 -i $SRC/dia-0.97.2-underlinking.patch
+	patch -Np1 -i $SRC/dia-0.97.3-freetype_pkgconfig.patch
+	patch -Np1 -i $SRC/dia-0.97.0-gnome-doc.patch
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--with-cairo \
+		--with-python \
+		--without-hardbooks \
+		--disable-gnome \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install
+	/usr/bin/python -mcompileall $PKG
+
+	rm -r \
+		$PKG/usr/share/locale \
+		$PKG/usr/share/doc \
+		$PKG/usr/share/man
+}

@@ -1,0 +1,44 @@
+post-install
+---
+Enabling Intel microcode updates
+
+Microcode must be loaded by the bootloader.
+These updates must be enabled by adding /boot/early-ucode.cpio as the *FIRST* initrd in the bootloader config file.
+This is in addition to the normal initrd file, if you are using one.
+
+GRUB2
+---
+- Automatic method
+
+grub-mkconfig will automatically detect the microcode update and configure GRUB appropriately.
+After installing the intel-ucode package, regenerate the GRUB config to activate loading the microcode update by running:
+
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+- Manual method
+
+Alternatively, manually add /boot/early-ucode.cpio to grub.cfg, so
+it looks similar to below:
+
+echo    'Loading Linux 4.15.3 ...'
+linux   /boot/vmlinuz-4.15.3 root=/dev/sdb1 ro rootfstype=ext4 rootfstype=ext4 quiet
+echo    'Loading intel microcode ...'
+initrd  /boot/early-ucode.cpio $OTHER_INITRD
+
+You'll have to do it for every kernel you have,
+so the use of the automagic method is reccomended.
+
+SYSLINUX
+---
+
+For syslinux, you will need to manually edit the configuration file /boot/syslinux/syslinux.cfg.
+Following the APPEND line insert the initrd line. It will look something like this. Please take into consideration that it must be the first initrd in the bootloader configure file. Separate them with with a comma and no spaces.
+
+LABEL CRUX
+        LINUX ../vmlinuz
+        APPEND root=/dev/sda2 rw 
+        INITRD ../boot/early-ucode.cpio
+
+OTHER BOOTLOADERS
+---
+Patches to add them to the README welcome :)

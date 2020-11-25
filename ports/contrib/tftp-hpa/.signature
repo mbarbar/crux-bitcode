@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF352LLBZCou3Wnw0lvBYD8ZXBPo5QA9vGdOewPzDnxduADJRlmFZhC5php4DLLb6AC2PVc5sxLGr1B4Oo9jzPlQI=
+SHA256 (Pkgfile) = 2cf41a3cc398d135b98aa037eefb2df97f8a399456b7b994c78ea09fc8a00a85
+SHA256 (.footprint) = 43cbffa51e0c132c7b66c6fe4ed7b2d7c3a46d67c71258446e93911b2bcd979c
+SHA256 (tftp-hpa-5.2.tar.xz) = afee361df96a2f88344e191f6a25480fd714e1d28d176c3f10cc43fa206b718b

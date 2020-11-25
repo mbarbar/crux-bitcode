@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/python3.7/
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/__pycache__/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/__pycache__/texttable.cpython-37.pyc
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/texttable-1.6.2-py3.7.egg-info/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/texttable-1.6.2-py3.7.egg-info/PKG-INFO
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/texttable-1.6.2-py3.7.egg-info/SOURCES.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/texttable-1.6.2-py3.7.egg-info/dependency_links.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/texttable-1.6.2-py3.7.egg-info/top_level.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/texttable.py

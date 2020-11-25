@@ -1,0 +1,19 @@
+# Description: a general-purpose command-line fuzzy finder
+# URL: https://github.com/junegunn/fzf/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: go
+
+name=fzf
+version=0.24.3
+release=1
+source=(https://github.com/junegunn/fzf/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  go build -o fzf .
+  install -dm755 $PKG/usr/bin
+  install -m755 fzf bin/fzf-tmux $PKG/usr/bin/
+
+  install -dm755 $PKG/usr/share/fzf
+  install -m644 shell/*.bash shell/*.zsh $PKG/usr/share/fzf
+}

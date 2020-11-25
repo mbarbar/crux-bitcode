@@ -1,0 +1,17 @@
+# Description: Unicode library from the courier project
+# URL:         http://www.courier-mta.org/unicode/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=courier-unicode
+version=2.1
+release=1
+source=(http://download.sourceforge.net/project/courier/$name/$version/$name-$version.tar.bz2)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr
+    
+    make
+    make DESTDIR=$PKG install
+}

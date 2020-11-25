@@ -1,0 +1,14 @@
+POST-INSTALL:
+
+Rules are no longer included with SpamAssassin "out of the box".  You will
+need to immediately run "sa-update", or download the additional rules .tgz
+package and run "sa-update --install" with it, to get a ruleset.
+
+Be careful to run sa-update before calling /etc/rc.d/spamassassin. Otherwise
+you may receive this error:
+
+child process [1101] exited or timed out without signaling production of a PID
+file: exit 255 at /usr/bin/spamd line 2588.
+
+in this case remove the /tmp/spamd-*-init directories, run sa-update and only
+after that start spamassassin. 

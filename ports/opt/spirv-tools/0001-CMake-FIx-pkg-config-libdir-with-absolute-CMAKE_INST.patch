@@ -1,0 +1,73 @@
+From de0b782723ccb25ce879a7b95c25c2a5e4c80eb8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?R=C3=A9mi=20Verschelde?= <rverschelde@gmail.com>
+Date: Mon, 12 Oct 2020 12:25:03 +0200
+Subject: [PATCH] CMake: FIx pkg-config libdir with absolute
+ CMAKE_INSTALL_LIBDIR
+
+We lose the use of `${prefix}` for `libdir` and `includedir`, but at least the
+paths should be valid.
+
+Fixes #3905.
+---
+ CMakeLists.txt                 | 8 ++++----
+ cmake/SPIRV-Tools-shared.pc.in | 4 ++--
+ cmake/SPIRV-Tools.pc.in        | 4 ++--
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 30dde20a..f4327e91 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -313,8 +313,8 @@ add_custom_target(spirv-tools-pkg-config ALL
+                       -DTEMPLATE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/cmake/SPIRV-Tools.pc.in
+                       -DOUT_FILE=${CMAKE_CURRENT_BINARY_DIR}/SPIRV-Tools.pc
+                       -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+-                      -DCMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}
+-                      -DCMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}
++                      -DCMAKE_INSTALL_FULL_LIBDIR=${CMAKE_INSTALL_FULL_LIBDIR}
++                      -DCMAKE_INSTALL_FULL_INCLUDEDIR=${CMAKE_INSTALL_FULL_INCLUDEDIR}
+                       -DSPIRV_LIBRARIES=${SPIRV_LIBRARIES}
+                       -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/write_pkg_config.cmake
+         DEPENDS "CHANGES" "cmake/SPIRV-Tools.pc.in" "cmake/write_pkg_config.cmake")
+@@ -324,8 +324,8 @@ add_custom_target(spirv-tools-shared-pkg-config ALL
+                       -DTEMPLATE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/cmake/SPIRV-Tools-shared.pc.in
+                       -DOUT_FILE=${CMAKE_CURRENT_BINARY_DIR}/SPIRV-Tools-shared.pc
+                       -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+-                      -DCMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}
+-                      -DCMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}
++                      -DCMAKE_INSTALL_FULL_LIBDIR=${CMAKE_INSTALL_FULL_LIBDIR}
++                      -DCMAKE_INSTALL_FULL_INCLUDEDIR=${CMAKE_INSTALL_FULL_INCLUDEDIR}
+                       -DSPIRV_SHARED_LIBRARIES=${SPIRV_SHARED_LIBRARIES}
+                       -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/write_pkg_config.cmake
+         DEPENDS "CHANGES" "cmake/SPIRV-Tools-shared.pc.in" "cmake/write_pkg_config.cmake")
+diff --git a/cmake/SPIRV-Tools-shared.pc.in b/cmake/SPIRV-Tools-shared.pc.in
+index 0dcaa276..c9ee4314 100644
+--- a/cmake/SPIRV-Tools-shared.pc.in
++++ b/cmake/SPIRV-Tools-shared.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+-libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
+-includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
+ 
+ Name: SPIRV-Tools
+ Description: Tools for SPIR-V
+diff --git a/cmake/SPIRV-Tools.pc.in b/cmake/SPIRV-Tools.pc.in
+index 2984dc57..e4eba4f2 100644
+--- a/cmake/SPIRV-Tools.pc.in
++++ b/cmake/SPIRV-Tools.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+-libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
+-includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
+ 
+ Name: SPIRV-Tools
+ Description: Tools for SPIR-V
+-- 
+2.28.0
+

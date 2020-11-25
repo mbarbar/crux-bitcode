@@ -1,0 +1,10 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/aspell-0.60/
+-rw-r--r--	root/root	usr/lib/aspell-0.60/castellano.alias
+-rw-r--r--	root/root	usr/lib/aspell-0.60/es.dat
+-rw-r--r--	root/root	usr/lib/aspell-0.60/es.multi
+-rw-r--r--	root/root	usr/lib/aspell-0.60/es.rws
+-rw-r--r--	root/root	usr/lib/aspell-0.60/es_affix.dat
+-rw-r--r--	root/root	usr/lib/aspell-0.60/espanol.alias
+-rw-r--r--	root/root	usr/lib/aspell-0.60/spanish.alias

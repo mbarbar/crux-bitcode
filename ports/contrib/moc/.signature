@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yfuJSSwjfVG12AXVR5YLTiNZJL3WmDkSM0JKKP+SRLGse52u2LH/Z1PJV5Frubtpb2e5VXUYzKyxmogB4WVqgo=
+SHA256 (Pkgfile) = 82e2ac5a37579e1496f40d1751990bbe60aa31c6ee291b0ee12c0b140be65d2e
+SHA256 (.footprint) = f23b8f049e77b4cb7f95144116ae3c29c790199e1459ff3017dabae044f1b0b2
+SHA256 (moc-2.5.2.tar.bz2) = f3a68115602a4788b7cfa9bbe9397a9d5e24c68cb61a57695d1c2c3ecf49db08
+SHA256 (moc-ffmpeg4.patch) = f1a12d7d2e8269974487a2ffb011e87d9a6c5c06e2a47d1312d5965c98f050ea
+SHA256 (moc-https.patch) = d5ace9820974912e4f3d9361ad5d03d1d655348f17c9710dff527020101e98fa

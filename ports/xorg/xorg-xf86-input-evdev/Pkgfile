@@ -1,0 +1,19 @@
+# Description: xorg driver xf86-input-evdev
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: mtdev xorg-libevdev xorg-server
+
+name=xorg-xf86-input-evdev
+version=2.10.6
+release=1
+source=(https://www.x.org/releases/individual/driver/xf86-input-evdev-$version.tar.bz2)
+
+build() {
+	cd xf86-input-evdev-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+}

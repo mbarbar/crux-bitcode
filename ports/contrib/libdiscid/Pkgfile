@@ -1,0 +1,16 @@
+# Description: A library for creating MusicBrainz DiscIDs
+# URL: https://musicbrainz.org/doc/libdiscid
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libdiscid
+version=0.6.2
+release=1
+source=(http://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

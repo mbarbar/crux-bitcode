@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31bmq+uv/KRlDzU3r0LhlFRVtSCxFA1uA/97aLDcWyJI1f0YN7TtForOeEeWLHm7GbltQ2D0xtaSmMBdWTKCRAo=
+SHA256 (Pkgfile) = 5e2d2c5bc42e83fe9e1cbd57d57c256af2cbfb7514a65f43bfcc4dc745043b4c
+SHA256 (.footprint) = 938ea26fabb13f73f371952330192fd5cba2a5fd413e2378cfbf011043e968dd
+SHA256 (xbanish-1.7.tar.gz) = 64477d1429bcc76d481863b4736af2bb1870472cc48539fe0322563d981d43d5

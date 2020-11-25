@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# check for root privileges needed for gl-select
+if [ ! $(id -u) -eq 0 ]; then
+	echo "root privileges needed to run this pre-install script!"
+	exit 1
+fi
+
+# is gl-select available?
+if [ -x /usr/bin/gl-select ]; then
+	printf '%b' "\033[33;1mNOTE: With the introduction of GLVND, gl-select is no
+longer needed. This pre-install script will reset gl-select
+to its default xorg setting if needed. It is recommended that
+gl-select be uninstalled after installing libglvnd and
+upgrading mesa3d.\033[0m\n"
+	# is nvidia currently selected?
+	if /usr/bin/gl-select status | grep -q 'nvidia.*is selected'; then
+		/usr/bin/gl-select use xorg
+	fi
+fi

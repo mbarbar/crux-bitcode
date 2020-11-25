@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30DK8ZGDG63VEzTMTekdXluWMbtAP1iF3EJTCiP9k+l5vI984bZAUzxJTAQ2Cn4QocsEAEzZnsz7bvcLJFmsUgU=
+SHA256 (Pkgfile) = d081d6e5dc5521ecfdc1db896035a34a1a50e42d7fd3f0d46417593ae4261881
+SHA256 (.footprint) = 1c05c33543dbd608ded37d5de0beaf73773b1d5269f5e9a477caea041b96cd04
+SHA256 (libdaemon-0.14.tar.gz) = fd23eb5f6f986dcc7e708307355ba3289abe03cc381fc47a80bca4a50aa6b834

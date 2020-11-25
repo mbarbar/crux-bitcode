@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38rVTB/pYYls2bXPVlZqeZw60rmVfQQriyq2Hy+1CBqRaX/rW8YQBKsMm4PONBXKGwSTgsVffJJnBnEj4jUZNwE=
+SHA256 (Pkgfile) = 49754493ac6976dad9a51b8ad5b8741cc020dde9e33722a8a2ff8782da117706
+SHA256 (.footprint) = 18638528d0985a3b6b72e40551357bd1b8088d898e0b028d9d9c0a35a6e46268
+SHA256 (numactl-2.0.14.tar.gz) = 826bd148c1b6231e1284e42a4db510207747484b112aee25ed6b1078756bcff6

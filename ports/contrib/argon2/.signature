@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33kzJlf3sVpJNOiLn6Yq3ztqSEQMkHIwfAddxEU9dFUQbcGZm1JQTOu4mjp0aDmWzEbp2TGBqGfUdtxbNomL+Qw=
+SHA256 (Pkgfile) = 7b1e2bd18f8429220a2c39619e84519a49ebfc99dc3f1432313fac2ace61ad94
+SHA256 (.footprint) = fa0e9945f509a47a211faa09e583f59ff1704a95950522357e9428791d75b100
+SHA256 (phc-winner-argon2-20190702.tar.gz) = daf972a89577f8772602bf2eb38b6a3dd3d922bf5724d45e7f9589b5e830442c

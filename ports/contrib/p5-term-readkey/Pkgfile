@@ -1,0 +1,27 @@
+# Description: Perl Terminal Readkey Library.
+# URL: https://metacpan.org/release/TermReadKey
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-term-readkey
+version=2.38
+release=1
+source=(https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-$version.tar.gz)
+
+build() {
+   cd TermReadKey-$version
+
+   perl Makefile.PL
+   make OPTIMIZE="$CFLAGS"
+   make DESTDIR=$PKG install
+
+   # Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -o \
+		-name '*.bs' -o \
+		-name 'autosplit.ix' -o \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -delete
+}
+

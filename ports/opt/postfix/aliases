@@ -1,0 +1,35 @@
+######################################################################
+# Run "newaliases" after updating this file.
+######################################################################
+
+######################################################################
+# Basic system aliases 
+######################################################################
+MAILER-DAEMON:  postmaster
+postmaster:     root
+hostmaster:     root
+
+######################################################################
+# General redirections for pseudo accounts and common names
+######################################################################
+abuse:          postmaster
+bin:            root
+daemon:         root
+decode:         root
+games:          root
+mail:           root
+named:          root
+nobody:         root
+system:         root
+uucp:           root
+ftp:            root
+postfix:        root
+manager:        root
+dumper:         root
+operator:       root
+webmaster:      root
+
+######################################################################
+# Person who should get root's mail.
+######################################################################
+#root:          user@hostname

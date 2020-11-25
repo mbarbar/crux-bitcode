@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xZJtnJhd0NixFyBnsEXIwoTk1ACIfz0iDLCG1a5tYXTJh8HzXVexb5BI7eWhq9N+RX4wRmqA1vptKZOLnTytQk=
+SHA256 (Pkgfile) = 26be238ad51e7f488743fdfae0815ed518aefdac971187976a1ef4bca0f4eea4
+SHA256 (.footprint) = 086c376679aed7158c59cdb8e8b112fa739e991e41d2378c878fe22beb076eda
+SHA256 (quesoglc-0.7.2.tar.bz2) = 54fef2ee685172df344d06ff4699a441143b87abed0d514524adc4f89ba4c931

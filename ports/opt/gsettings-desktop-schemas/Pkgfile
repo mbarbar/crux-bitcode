@@ -1,0 +1,19 @@
+# Description: Shared GSettings schemas for the desktop
+# URL: http://live.gnome.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gobject-introspection intltool
+
+name=gsettings-desktop-schemas
+version=3.38.0
+release=1
+source=(https://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson build --prefix /usr
+	ninja -C build -j ${JOBS:-1}
+	DESTDIR="$PKG" ninja -C build install
+
+	rm -r $PKG/usr/share/locale
+}

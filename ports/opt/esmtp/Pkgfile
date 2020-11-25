@@ -1,0 +1,19 @@
+# Description: A small relay-only MTA based on libesmtp
+# URL: http://esmtp.sourceforge.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: libesmtp
+
+name=esmtp
+version=1.2
+release=1
+source=(http://download.sourceforge.net/$name/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	CPPFLAGS=`libesmtp-config --cflags` \
+		./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

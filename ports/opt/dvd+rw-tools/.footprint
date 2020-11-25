@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dvd+rw-booktype
+-rwxr-xr-x	root/root	usr/bin/dvd+rw-format
+-rwxr-xr-x	root/root	usr/bin/dvd+rw-mediainfo
+-rwxr-xr-x	root/root	usr/bin/dvd-ram-control
+-rwxr-xr-x	root/root	usr/bin/growisofs
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/growisofs.1.gz

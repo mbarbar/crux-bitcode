@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xEvtOszVw078H5uHGE00rYxddUdYgAKTzupQd+1eWB6N/AzG5xhsnz5VtnVfSjqoxvWvFLaitO+U2s0V3dl0Ao=
+SHA256 (Pkgfile) = baf421e7be7941bd2ed675215942e7ad82c486e85b2b4cbfd7d6192c010e25e6
+SHA256 (.footprint) = c417bd35c9a09fbce1b33022b90bd864b325f9cfeeb44e0208cff3d1cf881c9a
+SHA256 (libwww-perl-6.49.tar.gz) = c3e4d0deae254c8b8fdc13e14b7b4b893594c947c43f4b5401e06322c96360a6

@@ -1,0 +1,15 @@
+# Description: Python library to use the pseudo-tty of a docker container
+# URL: https://pypi.org/project/dockerpty/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-six
+
+name=python3-dockerpty
+version=0.4.1
+release=1
+source=(https://files.pythonhosted.org/packages/8d/ee/e9ecce4c32204a6738e0a5d5883d3413794d7498fe8b06f44becc028d3ba/dockerpty-$version.tar.gz)
+
+build() {
+	cd dockerpty-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

@@ -1,0 +1,26 @@
+# Description: Masquerade directory to use distcc with clang.
+# URL: http://gcc.gnu.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: clang distcc
+
+name=clang-distcc-bindings
+version=10
+release=1
+source=()
+
+build() {
+	install -d $PKG/usr/lib/distcc
+
+	local clang0="$(clang++ -v 2>&1 | grep version | sed 's/.*version \([0-9]*\).[0-9]*.[0-9]* .*/\1/g')"
+	local clang1="$(clang++ -v 2>&1 | grep version | sed 's/.*version \([0-9]*.[0-9]*\).[0-9]* .*/\1/g')"
+
+	if [ -z $clang0 ]; then
+		echo 'Failed to find clang version'
+		exit 1
+	fi
+
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/clang
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/clang-$clang0
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/clang-$clang1
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/clang++
+}

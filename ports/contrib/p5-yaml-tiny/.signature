@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30oYQUi7uEYi0fooYJa9xDku4bufzyQN/jqmac+QHbKVydJXkMErcuF7ignF0bqujsCiy32Q+1oO/ci5cwEaFgs=
+SHA256 (Pkgfile) = b023f0bd389982bd4025ef071f3870045e80f80f29bc9e1ff17bdb3cb2cd137e
+SHA256 (.footprint) = d82007dcf7950a7b5f69db62c3513452961db9c80af502e0a98236806d3a3a8b
+SHA256 (YAML-Tiny-1.73.tar.gz) = bc315fa12e8f1e3ee5e2f430d90b708a5dc7e47c867dba8dce3a6b8fbe257744

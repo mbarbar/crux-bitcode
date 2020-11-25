@@ -1,0 +1,25 @@
+# Description: Text-based web browser.
+# URL: https://lynx.invisible-island.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: ncurses openssl zlib
+
+name=lynx
+version=2.8.9
+_relver=${version}rel.1
+release=1
+source=(https://invisible-mirror.net/archives/lynx/tarballs/${name}${_relver}.tar.bz2)
+
+build() {
+	cd ${name}${_relver}
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--enable-color-style \
+		--enable-ipv6 \
+		--with-ssl=/usr/lib \
+		--with-zlib
+
+	make
+	make DESTDIR=$PKG install
+}

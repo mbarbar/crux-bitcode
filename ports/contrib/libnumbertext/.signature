@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+OfJZ5DIk/ozsuIP7gu5TWFa02eFwTkkP4RohC5BP2OwxOD715t87HEBOBOUh6PLxc7GJinOXANTkJ5l+A/gA0=
+SHA256 (Pkgfile) = 51cd1529cd43a0a5f037f544ce39ab16c957c7979e9c77d85e0d020d9d28b0f4
+SHA256 (.footprint) = 049b7b7304b56745ad59961534d8fd0d584f2e9d79f9399eeae761ef42644697
+SHA256 (libnumbertext-1.0.6.tar.gz) = d03860c98ec01bc52a2a65f04b1fc4c7e7823c76d54dec800ca32ab2196023bc
+SHA256 (libnumbertext-updateautotools.patch) = 4c1be70cbb6c7b5e2f9d3842ad83ea95971d99663768e5df2ac74956fc4555bd

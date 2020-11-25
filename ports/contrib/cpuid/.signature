@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33QUkciwgSlYUv/O0ik8fOo0HhAHLITkAwxSufIwNCR3TiHUor25gRAYUicQ6ue2JZklEHBZ/O0RZ7nKSDVWGQs=
+SHA256 (Pkgfile) = 0051dc9f9fe4f3e2831d08783d2fb21de26e39957f5974fd7c7abfeca971b56d
+SHA256 (.footprint) = f8be86678ea9776a11a0b018e1fe392746f26769391e1841ca0e1610d2622cf6
+SHA256 (cpuid-20201006.src.tar.gz) = 13c53f16408341d11ed489b352f218ec4dbb5bedb796a9d059e924770a9c56a6

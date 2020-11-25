@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/apsKfUryAJG/Og1BAoMf9yjhV/Jo2Q57m/ZbGC1iWo3dRM+xInJcUK9LMvrTVfKQsFZdTsQkLPJFwkus/QtDgQ=
+SHA256 (Pkgfile) = 5ca8a9cee5a40323ad1c4888adc01e8ec4798750d0509c9e08eb22382c56007a
+SHA256 (.footprint) = 40d992c0864d2ce67aaecefb528202f7553352b3114c78b786140c4ddab5acf7
+SHA256 (pinentry-1.1.0.tar.bz2) = 68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570

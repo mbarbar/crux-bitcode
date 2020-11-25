@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x6MQkR+p+D7qsk2K00q6kazQzgReugSu1+X+yqvzWnOe5ub86y8Jdwo1lbXYuAaTv+lK3IRTausl/Ckbhf65Qk=
+SHA256 (Pkgfile) = 90309e5ba6ea2584c535d8dd45af2958a3d5536a26af301e750d0398674bb803
+SHA256 (.footprint) = d3335d028ed596f2f5989ebd78e3346c3af69f3bfffeb61136ad9fc86d7c336e
+SHA256 (libmatroska-1.6.2.tar.xz) = bc4479aa8422ab07643df6a1fa5a19e4bed4badfd41ca77e081628620d1e1990

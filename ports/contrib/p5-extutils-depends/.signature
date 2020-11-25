@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF304Z59DpuSc9m7OiYOHBuIrPFPIycTd8Y0ArajTA5E1XOiueBagXiqvPekcH9KyMMCEKnLBChS+JRFW4DroSiAM=
+SHA256 (Pkgfile) = 19228b0395258ec8af95fa1c6d66f4a5aae5ad973822f6ba78a01f24ec0d01ce
+SHA256 (.footprint) = 6bb265d36d5ae15726b8d03ee6c4afb5af8580308498ae036f5f3704f073636f
+SHA256 (ExtUtils-Depends-0.8000.tar.gz) = 780ff72128c04c2a22e6801187aa9c58cab298407f6e9d062706af1c250bbe98

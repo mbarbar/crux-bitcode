@@ -1,0 +1,22 @@
+# Description: A tool for transfering files with URL syntax
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# URL:         https://curl.haxx.se
+# Depends on:  openssl, zlib
+
+name=curl
+version=7.73.0
+release=1
+source=(https://curl.haxx.se/download/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+                --enable-ipv6 \
+                --without-libidn \
+                --without-cyassl \
+                --enable-threaded-resolver \
+                --with-ca-bundle=/etc/ssl/cert.pem
+    make
+    make DESTDIR=$PKG install
+    make -C docs/libcurl DESTDIR=$PKG install
+}

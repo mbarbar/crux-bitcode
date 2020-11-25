@@ -1,0 +1,35 @@
+# Description: a fork of Mutt with added features
+# URL: https://neomutt.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libidn2
+# Optional: cyrus-sasl gpgme krb5 lua notmuch
+
+name=neomutt
+version=20201120
+release=1
+source=(https://github.com/neomutt/neomutt/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  [[ -e /usr/lib/pkgconfig/gpgme.pc ]] && PKGMK_NEOMUTT+=' --gpgme'
+  [[ -e /usr/lib/pkgconfig/lua.pc ]] && PKGMK_NEOMUTT+=' --enable-lua'
+  [[ -e /usr/lib/pkgconfig/gssrpc.pc ]] && PKGMK_NEOMUTT+=' --gss'
+  [[ -e /usr/lib/pkgconfig/libsasl2.pc ]] && PKGMK_NEOMUTT+=' --sasl'
+  [[ -e /usr/lib/libnotmuch.so ]] && PKGMK_NEOMUTT+=' --notmuch'
+
+  ./configure $PKGMK_NEOMUTT \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --gdbm \
+    --idn2=1 \
+    --with-idn2=/usr \
+    --ssl \
+    --with-ui=ncurses \
+    --idn=0 \
+    --doc=0
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/
+}

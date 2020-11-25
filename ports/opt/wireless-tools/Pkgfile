@@ -1,0 +1,26 @@
+# Description: Tools to configure and manipulate wlan devices
+# URL:         https://hewlettpackard.github.io/wireless-tools/Tools.html
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:
+
+name=wireless-tools
+version=30.pre9
+release=1
+source=(https://hewlettpackard.github.io/$name/${name/-/_}.$version.tar.gz)
+
+build() {
+	cd ${name/-/_}.${version%.*}
+
+	# fix compiler flags, build shared library, don't run ldconfig
+	sed -i Makefile \
+		-e "s|CFLAGS=|CFLAGS=$CFLAGS |" \
+		-e "/^BUILD_STATIC/d" \
+		-e "/ldconfig/d"
+
+	make
+	make install \
+		PREFIX=$PKG/usr \
+		INSTALL_MAN=$PKG/usr/share/man
+
+	rm -r $PKG/usr/share/man/{cs,fr}*/
+}

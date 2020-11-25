@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/Mail -> mailx
+lrwxrwxrwx	root/root	usr/bin/mail -> mailx
+-rwxr-xr-x	root/root	usr/bin/mailx
+drwxr-xr-x	root/root	usr/etc/
+-rw-r--r--	root/root	usr/etc/mailx.rc
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/mailx/
+-rwsr-xr-x	root/root	usr/lib/mailx/mailx-dotlock
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+lrwxrwxrwx	root/root	usr/share/man/man1/mail.1.gz -> mailx.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/mailx.1.gz

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37id8iEr+ATw977cvHVu6EcFJMhN+QLR5/OYzlxIoma837YJC+Tty8suUfZ2gDIYA/2rujPo2mM3wm43fp3rIAw=
+SHA256 (Pkgfile) = 04f90411681062dfea71bcf54a33c537b77ac0a4d1a36c7f541c1f1ac8d25c90
+SHA256 (.footprint) = c69e15985585b85d173ee2352afd6fed82894a703ae591f93b0d18880b6c8f70
+SHA256 (gst-plugins-ugly-1.18.1.tar.xz) = 18cd6cb829eb9611ca63cbcbf46aca0f0de1dd28b2df18caa2834326a75ff725

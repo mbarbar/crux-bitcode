@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/socket_wrapper/
+-rw-r--r--	root/root	usr/lib/cmake/socket_wrapper/socket_wrapper-config-version.cmake
+-rw-r--r--	root/root	usr/lib/cmake/socket_wrapper/socket_wrapper-config.cmake
+lrwxrwxrwx	root/root	usr/lib/libsocket_wrapper.so -> libsocket_wrapper.so.0
+lrwxrwxrwx	root/root	usr/lib/libsocket_wrapper.so.0 -> libsocket_wrapper.so.0.1.15
+-rwxr-xr-x	root/root	usr/lib/libsocket_wrapper.so.0.1.15
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/socket_wrapper.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/socket_wrapper.1.gz

@@ -1,0 +1,21 @@
+# Description: Framework and distribution system for reusable PHP components
+# URL:         https://pear.php.net/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  php
+
+name=pear
+version=1.10.12
+release=2
+source=(https://php.net/distributions/php-7.4.10.tar.xz)
+
+build() {
+    cd php-7.4.10/pear
+
+    export PHP_PEAR_SYSCONF_DIR=/etc/php
+    export INSTALL_ROOT=$PKG
+
+    php -n install-pear-nozlib.phar
+
+    rm -r $PKG/.{filemap,lock,depdb*,channels,registry}
+    rm -r $PKG/usr/lib/php/pear/{docs,tests}
+}

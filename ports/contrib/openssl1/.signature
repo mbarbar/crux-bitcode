@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yvdblUdcDXtLpb5GT4Ox/E9g3H3AyxIwOGtwOe3/Kf/YUSpysc5FnMEuR/vtK6Ds7nxU+gfKHnR1aP3CDiygAU=
+SHA256 (Pkgfile) = 5d152a7005d2e32e2010b983feaa5c7fbdceda4ef52d9fb098db57b228a0986e
+SHA256 (.footprint) = c63cc146b8919ee4188ab37ea7dfcd6303ea2fb9cc2817de41ea168c05590e6e
+SHA256 (openssl-1.0.2u.tar.gz) = ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16
+SHA256 (no-rpath.patch) = 754d6107a306311e15a1db6a1cc031b81691c8b9865e8809ac60ca6f184c957c
+SHA256 (openssl-1.0-versioned-symbols.patch) = 353a84e4c92e36c379ebd9216b8f8fb9c271396583561eb84ac8c825979acaa6

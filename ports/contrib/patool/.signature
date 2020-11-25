@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x2hCxAnS0+vE5PTTfUfEzm4PBHeViBW5fOyBRKttqsMwzS5Rv6qHJV6M+SrV1cSrmpv2vao5wly9sw4B+rSQAw=
+SHA256 (Pkgfile) = 92ce1c59d445ad2e2eeff300865cbaabe820750a7aa65e40451fd5794f909dd9
+SHA256 (.footprint) = e3bc7d4e1882587a663745f20f773c0a4ea7a2f18a4afb57590dcb989c759b8d
+SHA256 (patool-1.12.tar.gz) = 582fd4b87c263325958c1550400504799018c88bc3444f249bba304ae1747f1f

@@ -1,0 +1,28 @@
+# Description: Official Minecraft Launcher.
+# URL: https://www.minecraft.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gconf openjdk8
+
+name=minecraft-launcher
+version=2.1.17785
+release=1
+source=(https://launcher.mojang.com/download/linux/x86_64/minecraft-launcher_$version.tar.gz
+	https://launcher.mojang.com/download/minecraft-launcher.svg
+	minecraft-launcher.desktop)
+
+build() {
+	install -d $PKG/opt
+	install -d $PKG/usr
+	install -d $PKG/usr/bin
+
+	install -Dm644 $SRC/minecraft-launcher.svg \
+		$PKG/usr/share/icons/hicolor/symbolic/apps/minecraft-launcher.svg
+
+	install -Dm644 $SRC/minecraft-launcher.desktop \
+		$PKG/usr/share/applications/minecraft-launcher.desktop
+
+	cp -Rv $SRC/minecraft-launcher $PKG/opt/minecraft-launcher
+	rm -rf $PKG/opt/minecraft-launcher/{include,lib}
+
+	ln -s /opt/minecraft-launcher/minecraft-launcher $PKG/usr/bin/minecraft-launcher
+}

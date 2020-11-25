@@ -1,0 +1,23 @@
+# Description: make large letters out of ordinary text
+# URL:         http://www.figlet.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=figlet
+version=2.2.5
+release=3
+source=(ftp://ftp.figlet.org/pub/figlet/program/unix/$name-$version.tar.gz)
+
+build () {
+  cd $name-$version
+  sed -i -e 's|DEFAULTFONTDIR.*|DEFAULTFONTDIR = "/usr/share/figlet/"|' Makefile
+  gcc -DDEFAULTFONTDIR=\"/usr/share/figlet\" \
+      -DDEFAULTFONTFILE=\"standard\" \
+      figlet.c zipio.c crc.c inflate.c -o figlet
+  gcc -o chkfont chkfont.c
+  install -D -m 755 figlet $PKG/usr/bin/figlet
+  install -D -m 755 chkfont $PKG/usr/bin/chkfont
+  install -D -m 755 figlet.6 $PKG/usr/share/man/man6/figlet.6
+  install -d -m 755 $PKG/usr/share/figlet
+  cp -a fonts/* $PKG/usr/share/figlet
+}

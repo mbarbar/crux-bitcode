@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y1GDne3Qh4rZ0z3wtImhEI0tlxOZg56jHOnO++W81IpM0YVCaCfVcMhLL9hzNSK9q3xW0Qakjx8suxiNmRb0QQ=
+SHA256 (Pkgfile) = c825614dd757d64dc027a8094ed62d0f60afa0acc43ffa2be867bc2038a47af7
+SHA256 (.footprint) = e0c3d8111cb8ca80e1187c09d29fec2f28c3e523b30f3a9264a88c28de6173af
+SHA256 (libssh-0.9.5.tar.xz) = acffef2da98e761fc1fd9c4fddde0f3af60ab44c4f5af05cd1b2d60a3fa08718

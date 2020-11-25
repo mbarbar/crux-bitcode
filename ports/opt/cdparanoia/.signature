@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XLHDInw6bgCHZvqa5F6YaEzs8VS5HmmU3z66IrSsNPeGNtXWz6JfRy4NSLo+ILfYE9Ez8fDYO4UkazcBLmDqAI=
+SHA256 (Pkgfile) = faef0c2f1cb99e5fa7e7ae5b61f038e23b9adcbc613ee84792f6693d5a28c34b
+SHA256 (.footprint) = e100802f21eb9875ebf2dbe0a3cef857b3661bf4dc5ba878fd5a85642a0ba7a9
+SHA256 (cdparanoia-III-10.2.src.tgz) = 005db45ef4ee017f5c32ec124f913a0546e77014266c6a1c50df902a55fe64df
+SHA256 (cdparanoia-10.2-gcc43.patch) = d055d86056809dee6e861af77d766fb0f17084bb19e44d9d99be8a0c11892a18

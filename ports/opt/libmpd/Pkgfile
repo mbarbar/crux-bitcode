@@ -1,0 +1,26 @@
+# Description: Callback based interface to MPD
+# URL: https://sarine.nl/libmpd
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Depends on: glib
+
+name=libmpd
+version=11.8.17
+release=2
+source=(http://download.sarine.nl/Programs/gmpc/${version%.*}/$name-$version.tar.gz
+	0001-fix-return-value.patch
+	0002-include-config.h.patch
+	0003-fix-comparison.patch)
+
+build() {
+  cd $name-$version
+
+  patch -p1 -i $SRC/0001-fix-return-value.patch
+  patch -p1 -i $SRC/0002-include-config.h.patch
+  patch -p1 -i $SRC/0003-fix-comparison.patch
+
+  ./configure --prefix=/usr \
+              --disable-static
+
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,18 @@
+# Description: Very small and pretty fast gdk/Imlib2 image viewer
+# URL:         http://spiegl.de/qiv/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  imlib2 gtk lcms2 libexif
+
+name=qiv
+version=2.3.2
+release=1
+source=(https://spiegl.de/qiv/download/$name-$version.tgz)
+
+build () {
+	cd $name-$version
+	sed -i -e 's,)/man/,)/share/man/,' \
+		-e '/qiv -f/,+4d' Makefile
+
+	make
+	make COMPRESS_PROG="/bin/true" PREFIX=$PKG/usr install
+}

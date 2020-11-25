@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XgHwqWjxVYe22/qjOxJUa+yGONRAaTwn0w71MBIbyyZWq8l2ksgQKOvMSpmua5aiaOv6jtnVN9N7+GGY+d+YAI=
+SHA256 (Pkgfile) = 6bc0aca44cfd27cadb9c6299acbdb2f5d48002dbf79dacc1690990a1143e1bd3
+SHA256 (.footprint) = 38e19020fd3cf0be9dc6da17b4e8a9d44c44ca22ded298b6e1b8e804b674d55d
+SHA256 (openntpd-6.2p3.tar.gz) = 7b02691524197e01ba6b1b4b7595b33956e657ba6d5c4cf2fc20ea3f4914c13a
+SHA256 (ntpd) = ef91ef0b6ac7fe78968ef9de1426fb2c886521e9a311517809af505f2367f0fb
+SHA256 (openntpd-paths.patch) = 3b813c96f0cb29834e14ee2e692cef97b46c0be55b57c029ef326e6de1a007d2

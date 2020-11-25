@@ -1,0 +1,15 @@
+# Description: Python interface to the OpenSSL library.
+# URL: http://pypi.python.org/pypi/pyOpenSSL
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-cryptography
+
+name=python3-pyopenssl
+version=19.1.0
+release=1
+source=(https://files.pythonhosted.org/packages/source/p/pyOpenSSL/pyOpenSSL-$version.tar.gz)
+
+build() {
+	cd pyOpenSSL-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --root=$PKG --optimize=1
+}

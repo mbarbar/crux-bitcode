@@ -1,0 +1,31 @@
+# Description:	LDAP NSS module
+# URL:		https://arthurdejong.org/nss-pam-ldapd/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	openldap krb5
+
+name=nss_ldap
+version=266
+release=1
+_commit=154730b5a2b58a4212e419b498476fcb5a60de7b
+source=(https://github.com/PADL/nss_ldap/archive/$_commit.tar.gz
+  nss_ldap-249-sasl-compile.patch)
+
+build() {
+  cd $name-$_commit
+
+  patch -p0 -i $SRC/nss_ldap-249-sasl-compile.patch
+
+  sed -i -e 's|CVSVERSIONDIR=\$(top_srcdir) vers_string|CVSVERSIONDIR=\$(top_srcdir) ./vers_string|g' Makefile.am Makefile.in
+
+  export PERL5LIB="$PWD"
+  ./configure \
+    --prefix=/usr \
+    --libdir=/lib \
+    --sysconfdir=/etc \
+    --mandir=/usr/share/man \
+    --with-ldap-lib=openldap \
+    --with-ldap-conf-file=/etc/nss_ldap.conf
+  make
+  mkdir -p $PKG/lib
+  make DESTDIR=$PKG install
+}

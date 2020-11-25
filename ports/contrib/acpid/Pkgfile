@@ -1,0 +1,20 @@
+# Description: Advanced Configuration and Power Interface event management daemon with netlink suppport
+# URL: https://sourceforge.net/projects/acpid2/
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot guru
+
+name=acpid
+version=2.0.32
+release=1
+source=(http://downloads.sourceforge.net/sourceforge/acpid2/$name-$version.tar.xz \
+	acpid.rc default default.sh)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	install -D -m 755 $SRC/acpid.rc   $PKG/etc/rc.d/acpid
+	install -D -m 755 $SRC/default.sh $PKG/etc/acpi/default.sh
+	install -D -m 644 $SRC/default    $PKG/etc/acpi/events/default
+	rm -r $PKG/usr/share/doc
+}

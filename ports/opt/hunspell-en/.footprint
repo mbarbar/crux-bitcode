@@ -1,0 +1,47 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/hunspell/
+lrwxrwxrwx	root/root	usr/share/hunspell/en_AG.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_AG.dic -> en_GB.dic
+-rw-r--r--	root/root	usr/share/hunspell/en_AU.aff
+-rw-r--r--	root/root	usr/share/hunspell/en_AU.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_BS.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_BS.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_BW.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_BW.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_BZ.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_BZ.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_CA.aff -> en_AU.aff
+-rw-r--r--	root/root	usr/share/hunspell/en_CA.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_DK.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_DK.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_GB.aff -> en_AU.aff
+-rw-r--r--	root/root	usr/share/hunspell/en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_GH.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_GH.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_HK.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_HK.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_IE.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_IE.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_IN.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_IN.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_JM.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_JM.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_NA.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_NA.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_NG.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_NG.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_NZ.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_NZ.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_PH.aff -> en_US.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_PH.dic -> en_US.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_SG.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_SG.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_TT.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_TT.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_US.aff -> en_AU.aff
+-rw-r--r--	root/root	usr/share/hunspell/en_US.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_ZA.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_ZA.dic -> en_GB.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/en_ZW.aff -> en_GB.aff
+lrwxrwxrwx	root/root	usr/share/hunspell/en_ZW.dic -> en_GB.dic

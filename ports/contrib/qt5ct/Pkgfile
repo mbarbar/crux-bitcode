@@ -1,0 +1,22 @@
+# Description: Qt5 Configuration Utility
+# URL:         https://sourceforge.net/projects/qt5ct/
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  libpcre2 qt5 zstd
+
+name=qt5ct
+version=1.1
+release=1
+source=(https://downloads.sourceforge.net/project/$name/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	qmake-qt5
+	make qmake_all
+
+	# remove default -pipe flag
+	sed -i 's/ -pipe / /' src/*/Makefile
+
+	make
+	make INSTALL_ROOT=$PKG install
+}

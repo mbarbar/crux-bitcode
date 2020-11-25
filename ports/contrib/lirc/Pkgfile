@@ -1,0 +1,35 @@
+# Description:  Linux Infrared Remote Control
+# URL:  https://www.lirc.org/
+# Maintainer: Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on: alsa-lib libxslt libusb-compat python3-setuptools xorg-libx11
+
+name=lirc
+version=0.10.1
+release=1
+source=(https://download.sourceforge.net/$name/$name-$version.tar.bz2
+  lircd.rc lirc.patch)
+
+build() {
+  cd lirc-$version
+
+  patch -p1 -i $SRC/lirc.patch
+  autoreconf -fi
+  automake -ac
+
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --mandir=/usr/share/man \
+    --localstatedir=/var
+  make
+  make DESTDIR=$PKG install
+
+  # bogus symlink
+  rm -f $PKG/usr/bin/lirc-setup $PKG/usr/share/man/man1/lirc-setup.1
+
+  # init script
+  install -D -m 755 $SRC/lircd.rc $PKG/etc/rc.d/lircd
+
+  # remove cruft
+  rm -fr $PKG/configs $PKG/usr/share/doc $PKG/var $PKG/etc/lirc/lircd.conf.d/README.conf.d $PKG/usr/lib/lirc/plugins/*.la $PKG/lib/systemd $PKG/lib $PKG/usr/share/lirc/python-pkg/README.rst
+}

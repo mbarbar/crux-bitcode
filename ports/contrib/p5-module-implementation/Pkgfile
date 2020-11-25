@@ -1,0 +1,24 @@
+# Description: Loads one of several alternate underlying implementations for a module
+# URL: https://metacpan.org/pod/Module::Implementation
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-try-tiny p5-module-runtime
+
+name=p5-module-implementation
+version=0.09
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Module-Implementation-$version.tar.gz)
+
+build() {
+  cd Module-Implementation-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps" \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='"$PKG"'" \
+    PERL_MB_OPT="--installdirs vendor --destdir '"$PKG"'" \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

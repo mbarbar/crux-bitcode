@@ -1,0 +1,35 @@
+# Description: tools used to create/alter ogg/vorbis files
+# URL: https://www.xiph.org/vorbis/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: curl libao libvorbis
+
+name=vorbis-tools
+version=1.4.0
+release=3
+source=(https://downloads.xiph.org/releases/vorbis/$name-$version.tar.gz
+    vcut-fix-segfault.diff
+    vorbis-tools-r19117-CVE-2014-9640.patch
+    vorbis-tools-oggenc-CVE-2014-9639.patch
+    vorbis-tools-CVE-2015-6749.patch)
+
+build() {
+    cd $name-$version
+
+    patch -p1 -i $SRC/vcut-fix-segfault.diff
+    patch -p1 -i $SRC/$name-r19117-CVE-2014-9640.patch
+    patch -p1 -i $SRC/$name-oggenc-CVE-2014-9639.patch
+    patch -p1 -i $SRC/$name-CVE-2015-6749.patch
+
+    export LDFLAGS="-lm $LDFLAGS"
+
+    ./configure --prefix=/usr \
+        --disable-nls \
+        --enable-vcut
+
+    make
+    make DESTDIR=$PKG install
+
+    mkdir $PKG/usr/etc
+    mv $PKG/usr/share/doc/$name-$version/ogg123rc-example $PKG/usr/etc
+    rm -rf $PKG/usr/share/doc
+}

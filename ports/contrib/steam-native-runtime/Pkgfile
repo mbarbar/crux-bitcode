@@ -1,0 +1,34 @@
+# Description: Meta package to run steam-native
+# URL: https://steampowered.com
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: brotli-32 cups-32 libcaca-32 libcanberra-32 libnewt-32 libnl-32 libnm-32 libpsl-32 libsdl2-32 libudev0-shim-32 libva-32 openssl1-32 rtmpdump-32 steam vulkan-loader-32 xorg-libxscrnsaver-32
+# Optional: apulse-32 libappindicator-sharp-32 pulseaudio-32
+
+name=steam-native-runtime
+version=1.0.0.62
+release=1
+source=(steam-native.sh)
+
+build() {
+  cp /usr/share/applications/steam.desktop steam-native.desktop
+  sed -r 's|(Name=Steam) \(Runtime\)|\1 (Native)|' -i steam-native.desktop
+  sed -r 's|(/usr/bin/steam)-runtime|\1-native|' -i steam-native.desktop
+
+  install -Dm 644 steam-native.desktop -t $PKG/usr/share/applications
+  install -Dm 755 steam-native.sh $PKG/usr/bin/steam-native
+
+  install -d $PKG/usr/lib/steam
+  ln -s /usr/lib/libcurl.so.3 $PKG/usr/lib/steam/libcurl.so.3
+  ln -s /usr/lib/libcurl.so.4.2.0 $PKG/usr/lib/steam/libcurl.so.4
+  ln -s /usr/lib/libcurl.so.4.2.0 $PKG/usr/lib/steam/libcurl.so.4.2.0
+
+  install -d $PKG/usr/lib32/steam
+  ln -s /usr/lib32/libcurl.so.3 $PKG/usr/lib32/steam/libcurl.so.3
+  ln -s /usr/lib32/libcurl.so.4.2.0 $PKG/usr/lib32/steam/libcurl.so.4
+  ln -s /usr/lib32/libcurl.so.4.2.0 $PKG/usr/lib32/steam/libcurl.so.4.2.0
+
+  # Apparently libpcre.so.3 is just a Debian-specific version of libpcre.so.1
+  # https://sources.debian.org/src/pcre3/2:8.39-12/debian/README.Debian/
+  ln -s /usr/lib/libpcre.so $PKG/usr/lib/steam/libpcre.so.3
+  ln -s /usr/lib32/libpcre.so $PKG/usr/lib32/steam/libpcre.so.3
+}

@@ -1,0 +1,20 @@
+# Description: Downhill racing game starring Tux.
+# URL: https://sourceforge.net/projects/extremetuxracer/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glu csfml
+
+name=extremetuxracer
+version=0.8.0
+release=1
+source=(https://downloads.sourceforge.net/project/$name/releases/$version/etr-$version.tar.xz)
+
+build() {
+	cd etr-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+}

@@ -1,0 +1,18 @@
+# Description: A keyboard-driven, vim-like browser based on PyQt5
+# URL: https://www.qutebrowser.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: asciidoc python3-attrs python3-jinja python3-pygments python3-pypeg2 python3-pyqtwebengine python3-yaml
+
+name=qutebrowser
+version=1.14.0
+release=1
+source=(https://github.com/qutebrowser/qutebrowser/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  make -f misc/Makefile all
+  make -f misc/Makefile DESTDIR=$PKG PREFIX=/usr install
+  find $PKG \
+    -iname "*README*" \
+    -delete
+}

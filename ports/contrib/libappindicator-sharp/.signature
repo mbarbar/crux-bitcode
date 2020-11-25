@@ -1,0 +1,14 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF395RNbELy9M+tVNkIucfZ+vyRsSh/togrMU5HfJpqgz/XefcYSRqLSRDwhJHO9MweJpRD+lZ4iufNEVnIV9c+AQ=
+SHA256 (Pkgfile) = e5f2b07d8f4e205e99b17c287377db6af94adb05b28e37efa7675190b0c9dc99
+SHA256 (.footprint) = c3580fbe52ae04c90acdef867701f434fac2924397cc7b32a03cf457bc996ddf
+SHA256 (libappindicator-16.10.tar.gz) = f33e0e06096fa8f8ca560ffcd84b8eb64830fa7308b30964c77bd5f45d0c497e
+SHA256 (0001-Glib.Timeout-fix.patch) = bc7e3d5db0b9b324dc072f807519547fdc2c96514eb17aa07a71117a787d9b80
+SHA256 (0002-Fix-mono-nunit-pkgconfig-name.patch) = d60af265af61cf429158267b391c377adb8ee8a24f0cef72c3f10f202cec6c6f
+SHA256 (0003-Fix-Mono-assemblies-directory.patch) = d923cab3e2704758ce4d41c356e2822234f291f202fce6c3db12daec46f1e8ac
+SHA256 (badfunction.patch) = f4959649db01aada1fe303e2a3de1eac0b303955d69129f84a492771d600c808
+SHA256 (conditional-py-bindings.patch) = 40dc073f3825ff53ae16e3e37411bde2b70a9d9b89f8e8c85885e779b32d7260
+SHA256 (disable-mono.patch) = 3ec51b8923a65d8d71374977206239dd511a1775a60e3d72ca9f2b3b8f136ab8
+SHA256 (gtk3.patch) = 39fc14496fa491c933f224c6a977a23343d0daeebd93911f3538c29f1bf69407
+SHA256 (improved-plasma-support.patch) = c199e075fef864eb9a24845986f5486ee3a4cc30f9209b417eaa005cf5dc98a4
+SHA256 (vala-inherit.patch) = 77635b7b5bc0686577a191e0ac78dcfba79f5e5695b6b72cae7c412e59bc736d

@@ -1,0 +1,25 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libglade-compat/
+drwxr-xr-x	root/root	usr/include/libglade-compat/libglade-2.0/
+drwxr-xr-x	root/root	usr/include/libglade-compat/libglade-2.0/glade/
+-rw-r--r--	root/root	usr/include/libglade-compat/libglade-2.0/glade/glade-build.h
+-rw-r--r--	root/root	usr/include/libglade-compat/libglade-2.0/glade/glade-init.h
+-rw-r--r--	root/root	usr/include/libglade-compat/libglade-2.0/glade/glade-parser.h
+-rw-r--r--	root/root	usr/include/libglade-compat/libglade-2.0/glade/glade-xml.h
+-rw-r--r--	root/root	usr/include/libglade-compat/libglade-2.0/glade/glade.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/libglade-compat/
+-rw-r--r--	root/root	usr/lib/libglade-compat/libglade-2.0.a
+-rwxr-xr-x	root/root	usr/lib/libglade-compat/libglade-2.0.la
+lrwxrwxrwx	root/root	usr/lib/libglade-compat/libglade-2.0.so -> libglade-2.0.so.0.0.7
+lrwxrwxrwx	root/root	usr/lib/libglade-compat/libglade-2.0.so.0 -> libglade-2.0.so.0.0.7
+-rwxr-xr-x	root/root	usr/lib/libglade-compat/libglade-2.0.so.0.0.7
+drwxr-xr-x	root/root	usr/lib/libglade-compat/pkgconfig/
+-rw-r--r--	root/root	usr/lib/libglade-compat/pkgconfig/libglade-2.0.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/xml/
+drwxr-xr-x	root/root	usr/share/xml/dtd/
+drwxr-xr-x	root/root	usr/share/xml/dtd/libglade/
+drwxr-xr-x	root/root	usr/share/xml/dtd/libglade/2.0/

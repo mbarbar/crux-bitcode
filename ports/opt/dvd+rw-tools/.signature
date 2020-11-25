@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/aYJ+ttiTnV5iChR/CWd1mMFXIOGm8BxhX8LaRzVtSAfmXAg73N/Tr8X5ZPFyalnpPD73QbNQcHvnZLwJ9R69Qk=
+SHA256 (Pkgfile) = ed925ab99d69c20c7babd17de69c5ab5257f16f1799e88748c58bb040f66723b
+SHA256 (.footprint) = d552bf5274355c323808431fecb4187d9c013584a75ea5af5468e5588098de88
+SHA256 (dvd+rw-tools-7.1.tar.gz) = f8d60f822e914128bcbc5f64fbe3ed131cbff9045dca7e12c5b77b26edde72ca
+SHA256 (dvd+rw-tools.patch) = 2e533e7b2c98c56e8bbcca61caf99b6c783d806ef7d6f069282e069ec4c58249
+SHA256 (dvd+rw-tools-gcc43.patch) = eec216afbd55c62401cee285bfe5585e48d235a2e871005636d0cc7c517dc40a
+SHA256 (crux-3.5.patch) = 7f3af786917888a9521be051e8afdcdc380eff675fc8c9cc000e292385feea9b

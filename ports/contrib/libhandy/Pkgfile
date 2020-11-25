@@ -1,0 +1,22 @@
+# Description: Building blocks for modern adaptive GNOME apps
+# URL: https://gitlab.gnome.org/GNOME/libhandy/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gtk3 vala
+
+name=libhandy
+version=1.0.2
+release=1
+source=(https://gitlab.gnome.org/GNOME/libhandy/-/archive/$version/$name-$version.tar.bz2)
+
+build() {
+  meson setup $name-$version build \
+    --prefix=/usr \
+    --buildtype=plain \
+    -D b_ndebug=true \
+    -D gtk_doc=false \
+    -D examples=false \
+    -D tests=false
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+  rm -r $PKG/usr/share/locale
+}

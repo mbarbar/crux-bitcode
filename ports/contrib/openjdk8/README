@@ -1,0 +1,41 @@
+NOTES:
+=====
+
+* I have switched from generating the java cacerts to depending on p11-kit and
+  make-ca. If you run into build failure at configure due to missing the java
+  cacerts file, the likely issue is that `make-ca` needs to be run before
+  building openjdk8. It will be done automatically when installing p11-kit, if:
+    1) you have 'runscripts yes' in your prt-get.conf, or
+    2) supply prt-get with '--install-scripts' commandline argument.
+
+* These are the links to the unversioned files:
+
+http://icedtea.wildebeest.org/download/drops/icedtea8/$icedtea_version/{corba,hotspot,jaxp,jaxws,langtools,nashorn,openjdk}.tar.xz
+
+  The mirrorred and versioned files are merely renamed to prevent signature mismatches and files
+  not being downloaded due to older, unversioned files stopping the correct file from being retrieved.
+
+* The manual pages are outside of the normal MANPATH. At this point in time,
+  I see no easy way to move them without conflicting with the opt/jdk port.
+
+* These packages exist in my j_v repo (might be nice to have as dependencies):
+
+  pcsc-lite, lksctp-tools
+
+  (I need to determine if there is any actual benefit from depending on them).
+
+
+TODO:
+====
+
+* Concider generic java packages that allow to have different java env installed
+  and be able to switch between them via script:
+
+  'java-choose openjdk8'
+
+  or
+
+  'java-choose jdk'
+
+* Do testing beyond just running java programs like eclipse and minecraft.
+  To this end, I now have a jtreg port.

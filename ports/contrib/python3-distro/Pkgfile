@@ -1,0 +1,15 @@
+# Description: Distro - an OS platform information API
+# URL: https://pypi.org/project/distro/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-setuptools
+
+name=python3-distro
+version=1.5.0
+release=1
+source=(https://files.pythonhosted.org/packages/a6/a4/75064c334d8ae433445a20816b788700db1651f21bdb0af33db2aab142fe/distro-$version.tar.gz)
+
+build() {
+	cd distro-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32xo5miMISM7qsmdETGiKjoiJdEuiT/xwrZf5YbgSUUzrRZxhSVj1pgxLor7fxwByZpB0Uct7muzu/kmd1lPXgc=
+SHA256 (Pkgfile) = 9ddd90b967702852b75092162665621585d886053dde6edaf079fbfbcef39428
+SHA256 (.footprint) = 07d18d00172586cac8ba536dece7e9cd8a820711724db5f5d1008efada5d5058
+SHA256 (libfaketime-v0.9.8.tar.gz) = 06288237cd5890eca148489e5b904ed852ed0ffa8424bfb479342f4daa8442a3

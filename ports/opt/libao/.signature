@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/SHSN3DgS6Dhh9sytZxJw2DqeFG4xZukXY0EOsXskxmFq5o3tLSNXJOpLC+Sh88R0z/TBC18zsoDdi0CsGNWiwc=
+SHA256 (Pkgfile) = c205f0f49e4a2c418a61bcad40b0220e94de8719d62ddf867abb4203975bf8aa
+SHA256 (.footprint) = e850baa1a93d5c5867a5f4e98689e31620dbe088b10bc03f4e29c805169fd6ac
+SHA256 (libao-1.2.2.tar.gz) = df8a6d0e238feeccb26a783e778716fb41a801536fe7b6fce068e313c0e2bf4d

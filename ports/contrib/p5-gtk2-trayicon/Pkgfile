@@ -1,0 +1,32 @@
+# Description: Perl interface to the EggTrayIcon library
+# URL:         https://metacpan.org/pod/Gtk2::TrayIcon
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  p5-gtk2 p5-module-install
+
+name=p5-gtk2-trayicon
+version=0.06
+release=1
+source=(https://cpan.metacpan.org/authors/id/B/BO/BORUP/Gtk2-TrayIcon-$version.tar.gz)
+
+build () {
+	cd Gtk2-TrayIcon-$version
+
+	perl Makefile.PL
+
+	# remove default -pipe flag
+	sed -i -e '/CCFLAGS = /s/ -pipe / /' Makefile
+
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+
+	# remove perlcrap
+	find $PKG \
+		   -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name autosplit.ix   \
+		-o -name .packlist      \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

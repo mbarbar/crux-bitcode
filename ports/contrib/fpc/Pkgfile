@@ -1,0 +1,47 @@
+# Description: Free Pascal compiler.
+# URL: https://www.freepascal.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=fpc
+version=3.2.0
+release=1
+source=(
+	https://sourceforge.net/projects/freepascal/files/Source/$version/fpcbuild-$version.tar.gz
+	https://sourceforge.net/projects/freepascal/files/Source/$version/fpc-$version.source.tar.gz
+	https://sourceforge.net/projects/freepascal/files/Linux/$version/$name-$version-x86_64-linux.tar
+)
+
+build() {
+	JOBS='-j1'
+
+	tar -xf fpc-$version-x86_64-linux/binary.x86_64-linux.tar
+	tar -xzf base.x86_64-linux.tar.gz
+	tar -xzf utils-fpcm.x86_64-linux.tar.gz
+
+	# use precompiled fpc to build fpc if it's not installed on the host already
+	[ ! -e /usr/bin/fpc ] && PATH="$SRC/bin:$PATH"
+
+	cd fpcbuild-$version/fpcsrc/
+
+	make $JOBS PP=$SRC/lib/fpc/$version/ppcx64 build
+
+	cp $SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64 \
+		$SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64.new
+
+	make $JOBS PP=$SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64.new build
+	rm $SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64.new
+
+	make $JOBS PP=$SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64 rtl_clean
+	make $JOBS PP=$SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64 rtl packages_all utils
+
+	set -- PP=$SRC/fpcbuild-$version/fpcsrc/compiler/ppcx64 \
+		INSTALL_PREFIX=$PKG/usr \
+		INSTALL_DOCDIR=$PKG/usr/share/doc/fpcbuild \
+		INSTALL_MANDIR=$PKG/usr/share/man \
+		INSTALL_SOURCEDIR=$PKG/usr/lib/fpc/fpcbuild-$version/source
+
+	make $JOBS "$@" compiler_install rtl_install packages_install utils_install
+	ln -sf /usr/lib/fpc/$version/ppcx64 $PKG/usr/bin/ppcx64
+
+	rm -r $PKG/usr/share/doc
+}

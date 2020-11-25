@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34NCs5KafT/0DmoQ2l8lJDcre4j+TLo4aVXi5j+NbDF4p4R7zhNvHZNOxmHaP9Maxi4ONJXWxJDAyOTdLYUMkwQ=
+SHA256 (Pkgfile) = ba0e37542d3f6fd1d1ab9cd8e2338a0802614e11becdb4bcb1bbb4207e029f4d
+SHA256 (.footprint) = e0d107d89794a4c6e62ca192bd975bd9fd7463aaf6e0b751ba4412fe2550f38a
+SHA256 (texlive-20200406-texmf.tar.xz) = 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
+SHA256 (texlive-20200406-source.tar.xz) = e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
+SHA256 (texi2html-5.0.tar.bz2) = e8a98b0ee20c495a6ab894398a065ef580272dbd5a15b1b19e8bd1bc89d9f9fa
+SHA256 (tabu.sty.diff) = 4811154a91a26752e28ad8e90f198139ab54d724824cff948710295faf37004a

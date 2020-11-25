@@ -1,0 +1,39 @@
+diff -up spamprobe-1.4d/src/database/WordArray.h.64bit spamprobe-1.4d/src/database/WordArray.h
+--- spamprobe-1.4d/src/database/WordArray.h.64bit	2006-11-16 23:24:48.000000000 -0800
++++ spamprobe-1.4d/src/database/WordArray.h	2012-08-13 12:45:31.000000000 -0700
+@@ -31,6 +31,8 @@
+ #ifndef _WordArray_h
+ #define _WordArray_h
+ 
++#include <stdint.h>
++
+ class WordData;
+ 
+ class WordArray
+@@ -47,7 +49,7 @@ public:
+     FLAGS_SIZE = 2,
+   };
+ 
+-  typedef unsigned long key_t;
++  typedef uint32_t key_t;
+ 
+   void reset(char *buffer,
+              int num_words);
+diff -up spamprobe-1.4d/src/includes/hash.h.64bit spamprobe-1.4d/src/includes/hash.h
+--- spamprobe-1.4d/src/includes/hash.h.64bit	2006-11-16 23:14:30.000000000 -0800
++++ spamprobe-1.4d/src/includes/hash.h	2012-08-13 12:45:31.000000000 -0700
+@@ -10,11 +10,13 @@
+ #ifndef _jenkinshash_h
+ #define _jenkinshash_h
+ 
++#include <stdint.h>
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+ 
+-typedef  unsigned long  int  ub4;   /* unsigned 4-byte quantities */
++typedef             uint32_t ub4;   /* unsigned 4-byte quantities */
+ typedef  unsigned       char ub1;   /* unsigned 1-byte quantities */
+ 
+ #define hashsize(n) ((ub4)1<<(n))

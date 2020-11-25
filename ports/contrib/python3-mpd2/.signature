@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33B4SVPOcyJr9dIxRnxUu3gVqAn4dajXERhHb3OKMZZtrgnhx6+O1HPmn99YomKTUfYcoOy2T+gIC0rZrcTnGgY=
+SHA256 (Pkgfile) = fe00d87c91b467e1b8a4745dfe72be4329f3760232aa5bca851b6ee5ae7ea06b
+SHA256 (.footprint) = fc1fb486897e525c7145367aa6605e1994af86bcd7f9f82d7412f1edf2362875
+SHA256 (python3-mpd2-2.0.0.tar.gz) = 90be5057eab4d64abecc5f8bf2f8fc559d1e2d9e46054e82d2915552e1c16233

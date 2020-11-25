@@ -1,0 +1,21 @@
+# Description: SVG rendering library with cairo backend
+# URL: https://wiki.gnome.org/LibRsvg
+# Maintainer: UNMAINTAINED
+# Depends on: gtk3 libcroco
+
+name=librsvg-compat
+version=2.40.20
+release=1
+source=(https://download.gnome.org/sources/librsvg/${version%.*}/librsvg-$version.tar.xz)
+
+build() {
+  cd librsvg-$version
+
+  ./configure --prefix=/usr \
+              --disable-static \
+              --disable-gtk-doc
+
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/gtk-doc
+}

@@ -1,0 +1,20 @@
+# Description: very small data compression library
+# URL: http://software.schmorp.de/pkg/liblzf.html
+# Maintainer: Tim Biermann, tbier at posteo dot de
+
+name=liblzf
+version=3.6
+release=1
+source=(http://dist.schmorp.de/$name/$name-$version.tar.gz
+  liblzf-3.6-autoconf-20140314.patch)
+
+build() {
+  cd $name-$version
+  patch -Np1 -i $SRC/liblzf-3.6-autoconf-20140314.patch
+  chmod +x bootstrap.sh
+  ./bootstrap.sh
+  ./configure --prefix=/usr \
+    --disable-static
+  make
+  make DESTDIR=$PKG install
+}

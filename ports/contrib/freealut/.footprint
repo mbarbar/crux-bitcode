@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/freealut-config
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/AL/
+-rw-r--r--	root/root	usr/include/AL/alut.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libalut.la
+lrwxrwxrwx	root/root	usr/lib/libalut.so -> libalut.so.0.1.0
+lrwxrwxrwx	root/root	usr/lib/libalut.so.0 -> libalut.so.0.1.0
+-rwxr-xr-x	root/root	usr/lib/libalut.so.0.1.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/freealut.pc

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+bE299nykqJal8kmwfo6mvyG2nVKk6Fz90s7P7UYyYykYZ7e7U8cNDLt4JOUU45NZ56HdqLRmLoc6vcY8RuwQQ=
+SHA256 (Pkgfile) = 0bd8f0dcf2cc7e84fd37391ecff061d76afc13ab954964bf76912bf2ecc47c53
+SHA256 (.footprint) = 9b49fef40d2077b1fca3b7170dc42be5005e2494b171562805934fe526bbadc3
+SHA256 (gtkmm-2.24.5.tar.xz) = 0680a53b7bf90b4e4bf444d1d89e6df41c777e0bacc96e9c09fc4dd2f5fe6b72

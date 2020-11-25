@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/VyLNnYsJWKQbrITeghXc1KYotv+HiZTdrer+fqk3Rv2UtFzaQ02r2HBQ5Qfevv88rHpEeRmJEvgZPjBv2Utjgc=
+SHA256 (Pkgfile) = 505fd2187350228584dce82663fe822472f787983da34bce149a5a4c19e1c65c
+SHA256 (.footprint) = eacd5d385edce34a0d6ec83d0c1c71c5bf64713d6542a09867cebd24762bdc1d
+SHA256 (libmng-2.0.3.tar.xz) = 4a462fdd48d4bc82c1d7a21106c8a18b62f8cc0042454323058e6da0dbb57dd3

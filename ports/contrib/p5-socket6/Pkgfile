@@ -1,0 +1,25 @@
+# Description: A getaddrinfo/getnameinfo support module
+# URL: https://metacpan.org/release/Socket6
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-socket6
+version=0.29
+release=1
+source=(http://search.cpan.org/CPAN/authors/id/U/UM/UMEMOTO/Socket6-$version.tar.gz)
+
+build() {
+	cd Socket6-$version
+	perl Makefile.PL INSTALLDIRS=vendor
+	make
+	make DESTDIR=$PKG install
+
+	# Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -or \
+		-name '*.bs' -or \
+		-name 'autosplit.ix' -or \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -exec rm -rf {} \;
+}

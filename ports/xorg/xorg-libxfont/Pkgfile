@@ -1,0 +1,18 @@
+# Description: xorg lib libXfont
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: bzip2 freetype xorg-libfontenc xorg-xtrans
+
+name=xorg-libxfont
+version=1.5.4
+release=1
+source=(https://www.x.org/releases/individual/lib/libXfont-$version.tar.bz2)
+
+build() {
+	cd libXfont-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

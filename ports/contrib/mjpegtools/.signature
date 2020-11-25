@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3ytaqwMZgCSM7OP+k4+J7yBR60Ao01lHB9uhmphjLPp6yKAhMLSdOTQejX3OHROZqpN8asoJ1pL5t9uqPYlM1Qk=
+SHA256 (Pkgfile) = a9004854079736e1b9a7a4dab7ef1beac3b49045283a783fd8d07d968a8cc9ce
+SHA256 (.footprint) = 6b3f114e333031b46afc2ec0b831ec2a5283707d0a18b4554e052ccc5eb626ab
+SHA256 (mjpegtools-2.1.0.tar.gz) = 864f143d7686377f8ab94d91283c696ebd906bf256b2eacc7e9fb4dddcedc407

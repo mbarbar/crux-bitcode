@@ -1,0 +1,22 @@
+# Description: Perl extension for simple generation of unique IDs
+# URL: https://metacpan.org/pod/Data::Uniqid
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-data-uniqid
+version=0.12
+release=1
+source=(https://cpan.metacpan.org/authors/id/M/MW/MWX/Data-Uniqid-$version.tar.gz)
+
+build() {
+  cd Data-Uniqid-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

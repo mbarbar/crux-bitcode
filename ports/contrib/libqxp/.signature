@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30Rcbl6MyiLLYDF5Wpxlo46ceLgrlOOW6JmmQ77e5dR5IEWTekrnnMa6OiEWrVRw9CdaDqOEjjzBvLInh/0lOQo=
+SHA256 (Pkgfile) = d928e6d2f4e74ba942228e2db2672a7f9a09896dbb7633cc8f298bcbd75e62d1
+SHA256 (.footprint) = 7d4afec9ac0f4d1cbcbc333485cf173f915c5ee53bec70407e153443b2913c08
+SHA256 (libqxp-0.0.2.tar.xz) = e137b6b110120a52c98edd02ebdc4095ee08d0d5295a94316a981750095a945c

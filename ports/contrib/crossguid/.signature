@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33VXHFanBVo1WxCpOTHNVllrtvCfoallDXKg2Ezqj2a7KwFM2YjkI9XzuzR/ncVnwgo9Cx3fTHxEN57437f45Qc=
+SHA256 (Pkgfile) = 028ebbc6b406c096d3df24b37c76f6ff21cfafd067374574929b55e6417c1116
+SHA256 (.footprint) = 8493818938895a7ffffb802ef89e8cc887d14324775495d043c4c0aafab78bd4
+SHA256 (crossguid-0.2.2.tar.gz) = 48321928473c682b0cdc7e17bbd3390f79f4b98ab22fef3b81a852dda81fd195

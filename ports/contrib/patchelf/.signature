@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31UD/deBVlXgSUYQPPC5k4FItcwDqGVVqE7/jjhYevRsC9OByvaSTgHPySN2dZ0Y0ZirC5pt/kC+MYKsf7I8PQc=
+SHA256 (Pkgfile) = f3d274d1c0a4fe9b2b0af446ddf5527d9e9719240f098898c68b6fddeec1e8a9
+SHA256 (.footprint) = 7d5293986368adaab29dd15ee291b553402a652597dd29111a35ca3ffa5471f6
+SHA256 (patchelf-0.12.tar.gz) = 3dca33fb862213b3541350e1da262249959595903f559eae0fbc68966e9c3f56

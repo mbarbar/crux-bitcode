@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38q4jRgJdQvtf4ZZas9U4ybwIgiyaWgkhASmY6H87r+Pag6lO90zrRbYkd0kQtjEijBZtbsNpsWZA+AHzxUYxwo=
+SHA256 (Pkgfile) = a11bf16d3b5dcacca196e9d8d7f6dd9210bcbdbdf499fb3021587b3e203cc296
+SHA256 (.footprint) = 8b8bebe1e51e7e8d82a57e60b95e4fd85c806ecbcbb15ad1774730025ba0e931
+SHA256 (firefox-83.0.source.tar.xz) = d69e84e8b8449f828683d274c24e03095858362bfed21b08bdd7fe715eea5398
+SHA256 (firefox.desktop) = 8ba3439f3dfc5cab883641969c93d8d15f8f20d7188d9568346b2edad52d6f91
+SHA256 (0001-Use-remoting-name-for-GDK-application-names.patch) = 3bb7463471fb43b2163a705a79a13a3003d70fff4bbe44f467807ca056de9a75

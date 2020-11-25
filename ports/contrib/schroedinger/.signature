@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/f9qa2UzIXh7Cpgpj2T9s9MAkD793tn6g3FsrSfRCiM0uXBQsiSPluiCFGGm0DsRrLs0uOn54+H0reebXRcLAI=
+SHA256 (Pkgfile) = 3a2c0cc88b0d54a97e2734471d4bdc271cc477f2ef0be82d3ffd91459c2a45e4
+SHA256 (.footprint) = 097034a260ba775339e12bb21422266f86bd2c8294784ed0269d0bc3d6c60f44
+SHA256 (schroedinger-1.0.11.tar.gz) = 1e572a0735b92aca5746c4528f9bebd35aa0ccf8619b22fa2756137a8cc9f912

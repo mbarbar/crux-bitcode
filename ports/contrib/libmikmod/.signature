@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30CrRYwDHze80fVOXBuvqNXq18SekewzOy36cTd3vH1APEBpDk+27VcCwTdP/YjQxU3xYiE3DwdxkJZFYqvYuwU=
+SHA256 (Pkgfile) = 531a512efcad8b734c6fcf7838a2ad4c34b8b6f610a9ae5fd087599be90502a2
+SHA256 (.footprint) = 75e9fc93a29c4e853792bae5e926a97e4dc0f0f984ff4e00348fc0bcbef9dacc
+SHA256 (libmikmod-3.3.11.1.tar.gz) = ad9d64dfc8f83684876419ea7cd4ff4a41d8bcd8c23ef37ecb3a200a16b46d19

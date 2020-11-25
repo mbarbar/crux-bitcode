@@ -1,0 +1,11 @@
+#
+# /etc/pam.d/sshd - openssh service module configuration
+#
+
+auth        include common-auth
+
+account     include common-account
+
+password    include common-password
+
+session     include common-session

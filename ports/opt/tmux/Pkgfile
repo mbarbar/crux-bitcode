@@ -1,0 +1,16 @@
+# Description: Terminal multiplexer like screen
+# URL:         http://tmux.github.io/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  ncurses libevent
+
+name=tmux
+version=3.1c
+release=1
+source=(https://github.com/tmux/tmux/releases/download/${version%-*}/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

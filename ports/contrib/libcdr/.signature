@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37iHX5w6f5eY8mnVlS1/NunJDeeYB+TkygosvxvwOE2YmV35jrTlDd4d6KCrys6N3wHRtNHyZffH+R36kJvWHQ8=
+SHA256 (Pkgfile) = aa71076f842a0ac69c06416ee0a3b57a4c569449d1d2688b29c605010443f20b
+SHA256 (.footprint) = 7e43c2b2d7455d5fb28c7d445017ec62cfb52d7249f302898490c6679c6ebb21
+SHA256 (libcdr-0.1.6.tar.xz) = 01cd00b04a030977e544433c2d127c997205332cd9b8e35ec0ee17110da7f861
+SHA256 (libcdr-0.1.6-icu-68.patch) = 4c67e11090333c2d46403bb285f020fbca1c6f0b998d9e8b447dfe0b1206e3e7

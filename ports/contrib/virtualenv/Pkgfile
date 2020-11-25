@@ -1,0 +1,19 @@
+# Description: Virtual Python Environment builder
+# URL:         https://www.virtualenv.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  python3-setuptools python3-appdirs python3-importlib_metadata python3-six python3-filelock python3-distlib
+
+name=virtualenv
+version=20.1.0
+release=1
+source=(https://pypi.io/packages/source/v/virtualenv/virtualenv-${version}.tar.gz)
+
+build() {
+  cd $name-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

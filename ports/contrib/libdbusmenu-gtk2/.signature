@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36/kFsz5iYNbLkEUm8bZTwoSArS5nduIEO1YPMfmjsz/oQEnYZoGjYGUQp06dIW5fyYS0CSWLzU7kUIwdXTjpg4=
+SHA256 (Pkgfile) = 6b9dc66cefd3c8a440c86f128f96223672d59113bee7a2aec6d2ac484841be38
+SHA256 (.footprint) = 5bec7509fcf384613bbe208ce5d8551fb2d980836cc383af18e08c5ca58ef981
+SHA256 (libdbusmenu_18.10.20180917~bzr490+repack1.orig.tar.xz) = f670bc86ea5ae1488b2405f371ceb870ce353127578f9b0aed2862cbbc42053b
+SHA256 (0001_no-deprecated-gnome-common-macros.patch) = a65626ad3dd26a81037332d881736587929c7f8935cd34d2fc3e7f4a988d5a72

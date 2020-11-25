@@ -1,0 +1,36 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dnet-config
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/dnet.h
+drwxr-xr-x	root/root	usr/include/dnet/
+-rw-r--r--	root/root	usr/include/dnet/addr.h
+-rw-r--r--	root/root	usr/include/dnet/arp.h
+-rw-r--r--	root/root	usr/include/dnet/blob.h
+-rw-r--r--	root/root	usr/include/dnet/eth.h
+-rw-r--r--	root/root	usr/include/dnet/fw.h
+-rw-r--r--	root/root	usr/include/dnet/icmp.h
+-rw-r--r--	root/root	usr/include/dnet/intf.h
+-rw-r--r--	root/root	usr/include/dnet/ip.h
+-rw-r--r--	root/root	usr/include/dnet/ip6.h
+-rw-r--r--	root/root	usr/include/dnet/os.h
+-rw-r--r--	root/root	usr/include/dnet/rand.h
+-rw-r--r--	root/root	usr/include/dnet/route.h
+-rw-r--r--	root/root	usr/include/dnet/sctp.h
+-rw-r--r--	root/root	usr/include/dnet/tcp.h
+-rw-r--r--	root/root	usr/include/dnet/tun.h
+-rw-r--r--	root/root	usr/include/dnet/udp.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libdnet.a
+-rwxr-xr-x	root/root	usr/lib/libdnet.la
+lrwxrwxrwx	root/root	usr/lib/libdnet.so -> libdnet.so.1.0.1
+lrwxrwxrwx	root/root	usr/lib/libdnet.so.1 -> libdnet.so.1.0.1
+-rwxr-xr-x	root/root	usr/lib/libdnet.so.1.0.1
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/dnet
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/dnet.3.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/dnet.8.gz

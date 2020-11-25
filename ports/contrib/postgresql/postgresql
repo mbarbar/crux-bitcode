@@ -1,0 +1,16 @@
+#
+# /etc/rc.d/postgresql: start, stop or restart PostgreSQL server postmaster
+#
+
+PG_DATA=/var/pgsql/data
+
+case "$1" in
+    start|stop|status|restart|reload)
+        sudo -u postgres pg_ctl -D "$PG_DATA" -l /var/log/postgresql "$1"
+        ;;
+    *)
+        echo "usage: $0 start|stop|restart|reload|status"
+        ;;
+esac
+
+# End of file

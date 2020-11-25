@@ -1,0 +1,18 @@
+# Description: Software system for writing extensible parsers
+# URL:         https://github.com/ocaml/camlp4
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  ocamlbuild
+
+name=camlp
+version=4.10+1
+release=1
+source=(https://github.com/ocaml/camlp4/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd camlp4-${version%%+*}-1
+
+  ./configure
+
+  make
+  make install DESTDIR=$PKG
+}

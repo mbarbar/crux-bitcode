@@ -1,0 +1,71 @@
+diff -u -r asterisk-espeak-0.4.orig/app_espeak.c asterisk-espeak-0.4/app_espeak.c
+--- asterisk-espeak-0.4.orig/app_espeak.c	2011-07-19 16:37:51.109554567 +0900
++++ asterisk-espeak-0.4/app_espeak.c	2011-07-19 17:10:38.136024568 +0900
+@@ -46,12 +46,16 @@
+ #endif
+ 
+ #include <stdio.h>
+-#include <asterisk/lock.h>
++
++#include <asterisk.h>
+ #include <asterisk/file.h>
+ #include <asterisk/logger.h>
+ #include <asterisk/channel.h>
+ #include <asterisk/pbx.h>
+ #include <asterisk/module.h>
++#include <asterisk/lock.h>
++#include <asterisk/app.h>
++#include <asterisk/config.h>
+ #include <asterisk/translate.h>
+ #include <asterisk/utils.h>
+ #include <asterisk/md5.h>
+@@ -160,11 +164,16 @@
+ #endif
+ 
+     /* Config file stuff */
++#if ASTERISK_VERSION == 8
++    struct ast_flags config_flags = { 0 };
++    cfg = ast_config_load(ESPEAK_CONFIG, config_flags);
++#else
+ #if ASTERISK_VERSION >= 2
+     cfg = ast_config_load(ESPEAK_CONFIG);
+ #else
+     cfg = ast_load(ESPEAK_CONFIG);
+ #endif
++#endif
+ 
+     if (!cfg) 
+     {
+@@ -521,7 +530,23 @@
+     return res;
+ }
+ 
+-#if ASTERISK_VERSION == 4
++#if ASTERISK_VERSION == 8
++int unload_module(void)
++{
++    int res;
++    res = ast_unregister_application(app);
++    ast_module_user_hangup_all();
++    return res; 
++}
++
++static int load_module(void)
++{
++    return ast_register_application(app, espeak_exec, synopsis, descrip);
++}
++
++AST_MODULE_INFO_STANDARD(ASTERISK_GPL_KEY,  "eSpeak TTS Interface");
++
++#elif ASTERISK_VERSION == 4
+ static int unload_module(void)
+ {
+     int res;
+@@ -550,7 +575,6 @@
+     return ast_register_application(app, espeak_exec, synopsis, descrip);
+ }
+ 
+-
+ char *description(void)
+ {
+     return tdesc;

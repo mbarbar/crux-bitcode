@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3znn0PYOyngNGRXLUTCJ+P61ErYhbvwwrhKeXr0Qaad6GgnttW+X1trf1V/zAF5kSfCjzWH96i5Q2gxxTorXPgk=
+SHA256 (Pkgfile) = 47053441f05c4e51a9df37972dd8094635c71a56e20e2c4fe4a3ec4ae4eb3281
+SHA256 (.footprint) = a2ddf29495578c0ca94f3bfb2edb7e9bcff29a59e26a488e6a0894096214920e
+SHA256 (redis-py-3.5.3.tar.gz) = 0e3ef04af57d17207c2f13a49641a63b98e0040a10756a8247e833468b5a8206

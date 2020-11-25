@@ -1,0 +1,15 @@
+# Description: Provides useful functions found on BSD systems
+# URL:         https://libbsd.freedesktop.org/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=libbsd
+version=0.10.0
+release=1
+source=(https://libbsd.freedesktop.org/releases/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make install DESTDIR=$PKG
+}

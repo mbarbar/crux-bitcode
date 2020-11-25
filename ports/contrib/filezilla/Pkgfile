@@ -1,0 +1,30 @@
+# Description: ftp client
+# URL: https://filezilla-project.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libfilezilla libnotify libwebp pugixml wxgtk3 xdg-utils
+
+name=filezilla
+version=3.51.0
+release=1
+source=(https://download.filezilla-project.org/client/FileZilla_${version}_src.tar.bz2
+  missing-list-include.patch)
+
+build() {
+  cd $name-$version
+  export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
+  patch -Np0 -i $SRC/missing-list-include.patch
+  autoreconf -vfi
+  ./configure \
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --with-pugixml=system \
+    --with-wx-config=/usr/bin/wx-config-gtk3 \
+    --disable-manualupdatecheck \
+    --disable-autoupdatecheck \
+    --disable-locales \
+    --disable-static \
+    --disable-dependency-tracking
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/locale
+}

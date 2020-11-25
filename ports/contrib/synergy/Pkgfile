@@ -1,0 +1,25 @@
+# Description: Share mouse and keyboard between multiple computers
+# URL:         http://synergy-foss.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  avahi cmake qt5 xorg-libxcb xorg-libxdmcp xorg-libxrender xorg-libxtst
+
+name=synergy
+version=1.12.0
+release=1
+source=(https://github.com/symless/synergy-core/archive/v${version}-stable/$name-$version.tar.gz
+  https://github.com/google/googletest/archive/2fe3bd994b3189899d93f1d5a881e725e046fdc2/googletest-2fe3bd9.zip)
+
+build() {
+  # -D BUILD_TESTS=OFF has no freaking effect :|
+  mv googletest-*/* $name-core-$version-stable/ext/googletest
+  cmake -S $name-core-$version-stable -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D BUILD_TESTS=OFF \
+    -D GIT_SUBMODULE=OFF \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

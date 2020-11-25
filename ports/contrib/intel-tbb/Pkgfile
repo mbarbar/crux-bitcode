@@ -1,0 +1,19 @@
+# Description: High level abstract threading library
+# URL: https://www.threadingbuildingblocks.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=intel-tbb
+version=2020.3
+release=1
+source=(https://github.com/01org/tbb/archive/v${version::4}.${version:5:7}/$name-$version.tar.gz)
+#source=(https://github.com/intel/tbb/archive/v2020.0.tar.gz)
+
+build() {
+  cd oneTBB-$version
+  make
+  install -d $PKG/usr/lib
+  install -m755 build/linux_*/*.so* $PKG/usr/lib
+  install -d $PKG/usr/include
+  cp -a include/tbb $PKG/usr/include
+}

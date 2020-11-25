@@ -1,0 +1,15 @@
+# Description: An implementation of JSON Schema validation for Python
+# URL: https://pypi.org/project/jsonschema/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-attrs python3-pyrsistent python3-importlib_metadata
+
+name=python3-jsonschema
+version=3.2.0
+release=1
+source=(https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-$version.tar.gz)
+
+build() {
+	cd jsonschema-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

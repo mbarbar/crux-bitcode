@@ -1,0 +1,21 @@
+# Description:	Asterisk text to speech module
+# URL:		http://asterisk-espeak.sf.net/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	asterisk espeak libsndfile libsamplerate
+
+name=asterisk-espeak
+version=0.4
+release=2
+source=(http://prdownloads.sf.net/$name/$name-$version.tar.gz build.patch)
+
+build() {
+	cd $name-$version
+	patch -p1 -i $SRC/build.patch
+	export CFLAGS="$CFLAGS -DASTERISK_VERSION=8"
+	make
+
+	install -D -m 755 app_espeak.so /dev/shm/work/asterisk-espeak/pkg/usr/lib/asterisk/modules/app_espeak.so
+	install -D -m 644 espeak.conf /dev/shm/work/asterisk-espeak/pkg/etc/asterisk/espeak.conf
+	chown -R root:asterisk $PKG/etc/asterisk
+	chmod -R u+rwX,g-w,o= $PKG/etc/asterisk
+}

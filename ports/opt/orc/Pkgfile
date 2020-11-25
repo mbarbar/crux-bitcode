@@ -1,0 +1,17 @@
+# Description: The Oil Runtime Compiler.
+# URL: https://gstreamer.freedesktop.org/projects/orc.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends On: meson ninja
+
+name=orc
+version=0.4.32
+release=1
+source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson build --prefix=/usr -D gtk_doc=disabled
+	ninja -C build -j ${JOBS:-1}
+	DESTDIR=$PKG ninja -C build install
+}

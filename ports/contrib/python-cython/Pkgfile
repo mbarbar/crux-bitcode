@@ -1,0 +1,18 @@
+# Description: C extensions for Python.
+# URL: http://www.cython.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python-setuptools
+
+name=python-cython
+version=0.29.21
+release=1
+source=(https://files.pythonhosted.org/packages/source/C/Cython/Cython-$version.tar.gz)
+
+build() {
+	cd Cython-$version
+
+	/usr/bin/python setup.py build
+
+	/usr/bin/python setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+}

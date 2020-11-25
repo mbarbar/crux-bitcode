@@ -1,0 +1,26 @@
+# Description: BitTorrent client with gtk user interface
+# URL:         https://transmissionbt.com/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  gtk3 libevent librsvg
+
+name=transmission-gtk
+version=3.00
+release=1
+source=(https://github.com/transmission/transmission-releases/raw/master/transmission-$version.tar.xz)
+
+build() {
+    cd transmission-$version
+
+    export LINGUAS=" "
+
+    ./configure --prefix=/usr \
+                --with-gtk \
+                --disable-cli \
+                --disable-daemon
+    make
+    make DESTDIR=$PKG install
+
+    sed -ri '/\[.+\]=/d' $PKG/usr/share/applications/transmission-gtk.desktop
+    rm $PKG/usr/{bin,share/man/man1}/transmission-{create,edit,show,remote}*
+    rm -r $PKG/usr/share/transmission
+}

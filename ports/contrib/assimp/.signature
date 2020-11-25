@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33lTfyH/otlb7xHT4cdDQ+E3JUve1s++glO2sL0ieeZ+RPlckXeJMUE12kwe+EldB+CL7cmKulTLADYtJcakXQE=
+SHA256 (Pkgfile) = 4aaa5efe1d7cd198c115f64faac427450c44491e0dfa3e2c98bd40dc3cdcebc5
+SHA256 (.footprint) = 006eb35ba7faf1ce46e788bb5a0bbad23c946882605be017713b918aff8d875b
+SHA256 (assimp-5.0.1.tar.gz) = 11310ec1f2ad2cd46b95ba88faca8f7aaa1efe9aa12605c55e3de2b977b3dbfc

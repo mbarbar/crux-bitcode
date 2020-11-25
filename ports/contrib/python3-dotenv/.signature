@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39lqvUYq/7n4p1rRMhbdOIba/4dNH+4AH1iN0vCuQw76GReaHKtu3uaVtYjpkUoDVXeDyLV0VBsQgRW7LykyZQg=
+SHA256 (Pkgfile) = b7cffe47fc8271747ff2c1312a0a064ad412ddddbcedf37355f1ec6fadf65d8e
+SHA256 (.footprint) = 125cad967305f79db13cd619d4cce1059339339d8019287dbef579b52f5fd180
+SHA256 (python-dotenv-0.15.0.tar.gz) = 587825ed60b1711daea4832cf37524dfd404325b7db5e25ebe88c495c9f807a0

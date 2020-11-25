@@ -1,0 +1,9 @@
+README for iwd
+
+REQUIREMENTS
+   iwd uses Linux Kernel's crypto subsystem for all 
+   cryptographic operations. Therefore several kernel
+   options are needed to run iwd.
+   See https://iwd.wiki.kernel.org/gettingstarted for
+   additional informations.
+

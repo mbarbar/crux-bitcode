@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndLiXG/Mse5mSkOO2Qzva0uXLVaAem+/I1MX/GcGGnjNs2okLKyzG3wB5Yffqou//IE6o6W/IQ9jld2nVIqqATQQ=
+SHA256 (Pkgfile) = 5e27a4794eae50de0b5ed40522481ba0889d31016808f081cc50b16aee5a0b83
+SHA256 (.footprint) = d159a275a4868001332954580ab4f70976c97a80334b157023935b36722e50cd
+SHA256 (xorg-server-1.20.9.tar.bz2) = e219f2e0dfe455467939149d7cd2ee53b79b512cc1d2094ae4f5c9ed9ccd3571

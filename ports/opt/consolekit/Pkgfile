@@ -1,0 +1,39 @@
+# Description: Framework for defining and tracking users, login sessions, and seats
+# URL:         http://www.freedesktop.org/wiki/Software/ConsoleKit
+# Maintainer:  Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on: dbus gobject-introspection linux-pam util-linux xorg-libx11
+# Optional:    polkit
+
+name=consolekit
+version=1.2.1
+release=2
+source=(https://github.com/ConsoleKit2/ConsoleKit2/releases/download/$version/ConsoleKit2-$version.tar.bz2
+	system-session pam-foreground-compat.ck
+	warning-to-debug.patch)
+
+build() {
+	cd ConsoleKit2-$version
+
+	patch -p1 -i $SRC/warning-to-debug.patch
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--libexecdir=/usr/lib/ConsoleKit \
+		--with-xinitrc-dir=/etc/X11/xinit/xinitrc.d \
+		--enable-udev-acl \
+		--enable-pam-module \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install
+
+	# http://www.linuxfromscratch.org/blfs/view/stable/postlfs/consolekit.html
+	install -D -m 0644 $SRC/system-session $PKG/etc/pam.d/system-session
+	install -m 0755 $SRC/pam-foreground-compat.ck $PKG/etc/ConsoleKit/run-session.d/
+	mv $PKG/etc/X11/xinit/xinitrc.d/90-consolekit{,.sh}
+
+	rm -r $PKG/usr/share/gtk-doc
+	rm -r $PKG/etc/logrotate.d
+}

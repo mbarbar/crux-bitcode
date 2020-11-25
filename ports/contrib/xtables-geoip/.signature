@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37h6y7IaScSXSuwAZ7pFc6oGaEd0RatQrD3gmJqe1LtX/QIGEWWVbsa42xuxAl0h0bK0RWx6oI+iVz96jMOFvQM=
+SHA256 (Pkgfile) = 5511a0bbe25b35415fc6d4e8e37240290b1c3ca128230c691ec15348b36c7536
+SHA256 (.footprint) = aa01884fc461e1d2ac420e47449fde3f7abecb3b2ed82e93ad8a39295ea997ac
+SHA256 (GeoIPCountryCSV-20130604.zip) = 65b0308424a11af100177ff5273d1affe07bb9ce1dff93004ac3597de5942c6b
+SHA256 (GeoIPv6-20130607.csv.gz) = 728ab7c29efcd87b31d43c7ee2ca503c79cf053e0ea43ffaf27bdb25db059584

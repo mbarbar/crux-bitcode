@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x6uYE+tYM190+svkxo4hN2I6QIwYDNWfhu0few56TVhHpka6K7OUE2FDmw2LD1IdzV5Sh8LeO/ihQM+eExm2wc=
+SHA256 (Pkgfile) = 10f0898821619de52f97b223022388baea77664a9ff4a8a125d00c1c6b1e171b
+SHA256 (.footprint) = ad0ee37d616ac6cdc37c8781ffd29e63d63268372e6130eca5b9bb107b79d1b7
+SHA256 (arpwatch-3.1.tar.gz) = ee1d15d9a07952c0c017908b9dbfd5ac988fed0058c3cc4fa6c13e0be36f3a9f

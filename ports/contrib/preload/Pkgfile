@@ -1,0 +1,40 @@
+# Description: Adaptive readahead daemon.
+# URL: https://sourceforge.net/projects/preload/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Mark Rosenstand, mark at borkware dot net
+# Depends on: glib help2man
+
+name=preload
+version=0.6.4
+release=3
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+	rc.preload
+	$name-0.6.3-memcached-default.patch
+	$name-0.6.3-statedir-fix.patch
+	$name-0.6.3-check-help2man.patch)
+
+build() {
+	cd $name-$version
+	patch -p 1 -i $SRC/$name-0.6.3-memcached-default.patch
+	patch -p 1 -i $SRC/$name-0.6.3-statedir-fix.patch
+	patch -p 1 -i $SRC/$name-0.6.3-check-help2man.patch
+	autoreconf -i
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var
+
+	make -j 1
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/etc/{rc.d,logrotate.d,sysconfig}
+	rm -r $PKG/usr/share/doc
+
+	# preload.state is installed 0644 but changed to 0600 on first run,
+	# so we change the mode in the package to avoid rejmerge.
+	chmod 0600 $PKG/var/cache/preload/preload.state
+
+	# install services rc script
+	install -m 0755 -D $SRC/rc.preload $PKG/etc/rc.d/preload
+}

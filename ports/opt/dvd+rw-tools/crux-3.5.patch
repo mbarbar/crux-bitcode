@@ -1,0 +1,36 @@
+diff -rupN dvd+rw-tools-7.1-orig/growisofs.c dvd+rw-tools-7.1/growisofs.c
+--- dvd+rw-tools-7.1-orig/growisofs.c	2008-03-04 10:15:03.000000000 +0100
++++ dvd+rw-tools-7.1/growisofs.c	2019-06-19 23:25:00.642683888 +0200
+@@ -444,6 +444,10 @@
+ #include <assert.h>
+ #include "mp.h"
+ 
++#if defined(__GNU_LIBRARY__)
++# include <sys/sysmacros.h>
++#endif
++
+ #if defined(__unix) || defined(__unix__)
+ # include <unistd.h>
+ # include <sys/time.h>
+diff -rupN dvd+rw-tools-7.1-orig/transport.hxx dvd+rw-tools-7.1/transport.hxx
+--- dvd+rw-tools-7.1-orig/transport.hxx	2008-03-01 11:34:43.000000000 +0100
++++ dvd+rw-tools-7.1/transport.hxx	2019-06-19 23:25:00.642683888 +0200
+@@ -52,6 +52,10 @@ inline long getmsecs()
+ #define ENV_LOCALE	".OCP"
+ #endif
+ 
++#if defined(__GNU_LIBRARY__)
++# include <sys/sysmacros.h>
++#endif
++
+ #include "asctable.h"
+ 
+ #define CREAM_ON_ERRNO_NAKED(s)				\
+@@ -145,6 +149,7 @@ extern "C" char *plusminus_locale()
+ #include <sys/wait.h>
+ #include <sys/utsname.h>
+ #include <scsi/sg.h>
++#include <climits>
+ #if !defined(SG_FLAG_LUN_INHIBIT)
+ # if defined(SG_FLAG_UNUSED_LUN_INHIBIT)
+ #  define SG_FLAG_LUN_INHIBIT SG_FLAG_UNUSED_LUN_INHIBIT

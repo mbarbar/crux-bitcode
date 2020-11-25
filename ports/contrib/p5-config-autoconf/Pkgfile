@@ -1,0 +1,19 @@
+# Description: A module to implement some of AutoConf macros in pure perl.
+# URL: https://metacpan.org/release/Config-AutoConf
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-capture-tiny
+
+name=p5-config-autoconf
+version=0.319
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RE/REHSACK/Config-AutoConf-$version.tar.gz)
+
+build() {
+  cd Config-AutoConf-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

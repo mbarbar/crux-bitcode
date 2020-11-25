@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30kjB0UBNoexRy/08BoLBMz1nmzTuPEyHlan5woBBorutAiKaZWCHzSMZFQmlrB4SkacgO+2HTlOAb51aqYl4gM=
+SHA256 (Pkgfile) = 55544c04105acfa2568c32c5e7688899c8d48692d315cf2a080df59f0fef2e81
+SHA256 (.footprint) = c8c7263117c3c93e287793c5d2701427d6a0d985f9b19e4c59f4db751cf2435a
+SHA256 (thc-hydra-v9.1.tar.gz) = ce08a5148c0ae5ff4b0a4af2f7f15c5946bc939a57eae1bbb6dda19f34410273

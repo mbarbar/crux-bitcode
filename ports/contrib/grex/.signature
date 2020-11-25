@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wgmD8itjwIgd239d0ToAThRub8ooskKC1H6jxdnZHZX4iBM5ZZF5VHgnznfgV3un4LII4gwOFX+ZFR9oN5rCwU=
+SHA256 (Pkgfile) = a097f2f89843845277ccac10216c3d326728fc414c0c4e97b7a7d7a47a659b1c
+SHA256 (.footprint) = 892b73ceb503cb594a871e66248fecb170addd6d0cac4dd12f1e17fbac9c9990
+SHA256 (grex-1.1.0.tar.gz) = 52a9d5ddc15c7fb227c87147d991bfabe2aae1fbef8169893a9111dcd3aa641f

@@ -1,0 +1,97 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/fftw-wisdom
+-rwxr-xr-x	root/root	usr/bin/fftw-wisdom-to-conf
+-rwxr-xr-x	root/root	usr/bin/fftwf-wisdom
+-rwxr-xr-x	root/root	usr/bin/fftwl-wisdom
+-rwxr-xr-x	root/root	usr/bin/fftwq-wisdom
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/fftw3.f
+-rw-r--r--	root/root	usr/include/fftw3.f03
+-rw-r--r--	root/root	usr/include/fftw3.h
+-rw-r--r--	root/root	usr/include/fftw3l.f03
+-rw-r--r--	root/root	usr/include/fftw3q.f03
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/fftw3/
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3Config.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3ConfigVersion.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3fConfig.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3fConfigVersion.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3lConfig.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3lConfigVersion.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3qConfig.cmake
+-rw-r--r--	root/root	usr/lib/cmake/fftw3/FFTW3qConfigVersion.cmake
+-rw-r--r--	root/root	usr/lib/libfftw3.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3.so -> libfftw3.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3.so.3 -> libfftw3.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3_omp.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3_omp.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3_omp.so -> libfftw3_omp.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3_omp.so.3 -> libfftw3_omp.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3_omp.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3_threads.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3_threads.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3_threads.so -> libfftw3_threads.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3_threads.so.3 -> libfftw3_threads.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3_threads.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3f.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3f.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3f.so -> libfftw3f.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3f.so.3 -> libfftw3f.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3f.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3f_omp.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3f_omp.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3f_omp.so -> libfftw3f_omp.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3f_omp.so.3 -> libfftw3f_omp.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3f_omp.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3f_threads.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3f_threads.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3f_threads.so -> libfftw3f_threads.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3f_threads.so.3 -> libfftw3f_threads.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3f_threads.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3l.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3l.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3l.so -> libfftw3l.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3l.so.3 -> libfftw3l.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3l.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3l_omp.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3l_omp.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3l_omp.so -> libfftw3l_omp.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3l_omp.so.3 -> libfftw3l_omp.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3l_omp.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3l_threads.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3l_threads.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3l_threads.so -> libfftw3l_threads.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3l_threads.so.3 -> libfftw3l_threads.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3l_threads.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3q.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3q.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3q.so -> libfftw3q.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3q.so.3 -> libfftw3q.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3q.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3q_omp.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3q_omp.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3q_omp.so -> libfftw3q_omp.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3q_omp.so.3 -> libfftw3q_omp.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3q_omp.so.3.5.8
+-rw-r--r--	root/root	usr/lib/libfftw3q_threads.a
+-rwxr-xr-x	root/root	usr/lib/libfftw3q_threads.la
+lrwxrwxrwx	root/root	usr/lib/libfftw3q_threads.so -> libfftw3q_threads.so.3.5.8
+lrwxrwxrwx	root/root	usr/lib/libfftw3q_threads.so.3 -> libfftw3q_threads.so.3.5.8
+-rwxr-xr-x	root/root	usr/lib/libfftw3q_threads.so.3.5.8
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/fftw3.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/fftw3f.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/fftw3l.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/fftw3q.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/fftw-wisdom-to-conf.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/fftw-wisdom.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/fftwf-wisdom.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/fftwl-wisdom.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/fftwq-wisdom.1.gz

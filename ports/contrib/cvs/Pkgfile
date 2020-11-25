@@ -1,0 +1,22 @@
+# Description: Concurrent Versions System
+# URL:         https://www.nongnu.org/cvs/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=cvs
+version=1.11.23
+release=4
+source=(https://ftp.gnu.org/gnu/non-gnu/cvs/source/stable/$version/$name-$version.tar.bz2 \
+        CVE-2010-3846.diff getline-x86_64.diff)
+
+build() {
+    cd $name-$version
+    patch -N src/rcs.c $SRC/CVE-2010-3846.diff
+    patch -Np1 < $SRC/getline-x86_64.diff
+    ./configure --prefix=/usr --disable-server
+    make
+    make DESTDIR=$PKG install
+    make -C man DESTDIR=$PKG install-man
+    rm -r $PKG/usr/share/{cvs,info}
+    rm -r $PKG/usr/share/man/man8
+    rm  $PKG/usr/bin/{cvsbug,rcs2log}
+}

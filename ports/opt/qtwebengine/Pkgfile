@@ -1,0 +1,36 @@
+# Description: Provides support for web applications using the Chromium browser project.
+# URL: https://www.qt.io/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: nss qt5 xorg-libxscrnsaver xorg-libxtst libvpx python
+
+name=qtwebengine
+version=5.15.2
+release=1
+source=(https://download.qt.io/official_releases/qt/${version::4}/$version/submodules/$name-everywhere-src-$version.tar.xz)
+
+build() {
+	cd $name-everywhere-src-$version
+
+	# Ninja, by default, sets the number of jobs to the number of availalble threads
+	test -n "$JOBS" && export NINJAFLAGS+=" -j $JOBS"
+
+	prt-get isinst ccache && export \
+		QMAKE_CC='ccache gcc' \
+		QMAKE_LINK_C='ccache gcc' \
+		QMAKE_LINK_C_SHLIB='ccache gcc' \
+		QMAKE_CXX='ccache g++' \
+		QMAKE_LINK='ccache g++' \
+		QMAKE_LINK_SHLIB='ccache g++' \
+		PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
+
+	install -d build
+	cd build
+
+	qmake .. -- -proprietary-codecs
+	make
+	make INSTALL_ROOT=$PKG install
+
+	find "$PKG/usr/lib" -type f -name '*.prl' \
+		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+}

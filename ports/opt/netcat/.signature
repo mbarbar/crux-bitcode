@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UhdyV3UXhDlp8S7X2oJi8v2BFprKS1131p2mDRU63zrE5uoAD+1tRwLydjZD1kHA2VGsTBNUN1WrrKUMWXT7Qo=
+SHA256 (Pkgfile) = 90bdf260ae833249c33a5c964c378180b183c3c09630b406714c52fa8a016f6f
+SHA256 (.footprint) = 516e1457d995fe8de5c444576996b12f1adba09e132b40929e47b285b9b65859
+SHA256 (netcat-0.7.1.tar.bz2) = b55af0bbdf5acc02d1eb6ab18da2acd77a400bafd074489003f3df09676332bb

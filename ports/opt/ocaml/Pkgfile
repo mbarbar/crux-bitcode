@@ -1,0 +1,23 @@
+# Description: Objective CAML Compiler
+# URL:         http://caml.inria.fr/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  binutils
+
+name=ocaml
+version=4.11.1
+release=1
+source=(http://caml.inria.fr/pub/distrib/$name-${version%.*}/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    ./configure \
+        --prefix=/usr \
+        --mandir=/usr/share/man \
+        --disable-force-safe-string
+
+    make world.opt
+    make DESTDIR=$PKG install
+
+    chmod -R g-w $PKG
+}

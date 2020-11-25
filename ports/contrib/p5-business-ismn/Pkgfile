@@ -1,0 +1,23 @@
+# Description: Perl package to work with International Standard Music Numbers
+# URL: https://metacpan.org/release/Business-ISMN
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-tie-cycle
+
+name=p5-business-ismn
+version=1.201
+release=1
+source=(https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISMN-$version.tar.gz)
+
+build() {
+  cd Business-ISMN-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

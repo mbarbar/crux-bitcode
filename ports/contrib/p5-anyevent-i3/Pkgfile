@@ -1,0 +1,17 @@
+# Description: Communicate with the i3 window manager
+# URL: https://metacpan.org/pod/AnyEvent::I3
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-anyevent p5-json-xs
+
+name=p5-anyevent-i3
+version=0.17
+release=1
+source=(https://cpan.metacpan.org/authors/id/M/MS/MSTPLBG/AnyEvent-I3-$version.tar.gz)
+
+build() {
+  cd AnyEvent-I3-$version
+  PERL_USE_UNSAFE_INC=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

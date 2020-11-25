@@ -1,0 +1,26 @@
+$Id: README 1276 2006-10-03 00:37:19Z romster $
+
+REQUIREMENTS:
+
+	Kernel with the following support:
+	* CPU information support
+	* Model-specific register support
+
+	Processor type and features  --->
+		< > /dev/cpu/*/cpuid - CPU information support
+		< > /dev/cpu/*/msr - Model-specific register support
+
+PRECAUTION:
+
+PRE-INSTALL:
+
+POST-INSTALL
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+James Mills <prologic@shortcircuit.net.au>
+

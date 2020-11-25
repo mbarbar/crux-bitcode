@@ -1,0 +1,27 @@
+# Description: LLDB is a next generation, high-performance debugger
+# URL: https://lldb.llvm.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: clang python3-six swig
+
+name=lldb
+version=10.0.1
+release=1
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/lldb-$version.src.tar.xz)
+
+build() {
+  cmake -S $name-$version.src -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D PYTHON_EXECUTABLE=/usr/bin/python3 \
+    -D LLVM_LINK_LLVM_DYLIB=ON \
+    -D LLDB_USE_SYSTEM_SIX=1 \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+
+  python3 -m compileall -d $name-$version.src $PKG
+  python3 -O -m compileall -d $name-$version.src $PKG
+  python3 -OO -m compileall -d $name-$version.src $PKG
+}

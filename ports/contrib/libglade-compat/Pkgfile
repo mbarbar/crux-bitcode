@@ -1,0 +1,39 @@
+# Description: library to load glade interface files in a program at runtime
+# URL: http://glade.gnome.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libglade pango-compat
+
+name=libglade-compat
+version=2.6.4
+release=1
+source=(http://download.gnome.org/sources/libglade/2.6/libglade-$version.tar.bz2
+	libglade-2.0.1-nowarning.patch)
+
+build() {
+	cd libglade-$version
+
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+
+	sed -i -e "s|/etc/xml/catalog|$PKG/etc/xml/dtd/libglade/2.0/catalog|" \
+		-e 's|$(datadir)/xml/libglade|$(datadir)/xml/dtd/libglade/2.0|' Makefile.in
+
+	patch -p1 -i $SRC/libglade-2.0.1-nowarning.patch
+
+	PKG_CONFIG_PATH+="/usr/lib/pango-compat/pkgconfig" \
+	./configure \
+		--prefix=/usr \
+		--includedir='/usr/include/libglade-compat' \
+		--libdir='/usr/lib/libglade-compat' \
+		--disable-debug \
+		--disable-gtk-doc
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/gtk-doc
+
+	rm \
+		$PKG/usr/bin/libglade-convert \
+		$PKG/usr/share/xml/dtd/libglade/2.0/glade-2.0.dtd
+}

@@ -1,0 +1,15 @@
+# Description: A decorator for caching properties in classes
+# URL: https://pypi.org/project/cached-property/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-setuptools
+
+name=python3-cached-property
+version=1.5.1
+release=1
+source=(https://files.pythonhosted.org/packages/57/8e/0698e10350a57d46b3bcfe8eff1d4181642fd1724073336079cb13c5cf7f/cached-property-$version.tar.gz)
+
+build() {
+	cd cached-property-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

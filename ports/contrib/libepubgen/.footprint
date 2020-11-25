@@ -1,0 +1,18 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libepubgen-0.1/
+drwxr-xr-x	root/root	usr/include/libepubgen-0.1/libepubgen/
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/EPUBDrawingGenerator.h
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/EPUBPackage.h
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/EPUBPresentationGenerator.h
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/EPUBTextGenerator.h
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/libepubgen-api.h
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/libepubgen-decls.h
+-rw-r--r--	root/root	usr/include/libepubgen-0.1/libepubgen/libepubgen.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libepubgen-0.1.la
+lrwxrwxrwx	root/root	usr/lib/libepubgen-0.1.so -> libepubgen-0.1.so.1.0.1
+lrwxrwxrwx	root/root	usr/lib/libepubgen-0.1.so.1 -> libepubgen-0.1.so.1.0.1
+-rwxr-xr-x	root/root	usr/lib/libepubgen-0.1.so.1.0.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libepubgen-0.1.pc

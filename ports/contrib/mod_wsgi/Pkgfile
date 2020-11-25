@@ -1,0 +1,18 @@
+# Description: Python WSGI adapter module for Apache.
+# URL: https://www.modwsgi.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: apache python
+
+name=mod_wsgi
+version=4.7.1
+release=1
+source=(https://github.com/GrahamDumpleton/$name/archive/$version.tar.gz)
+
+build() {
+	cd mod_wsgi-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	chmod a-x $PKG/usr/lib/apache/mod_wsgi.so
+}
+

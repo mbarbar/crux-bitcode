@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/b34rZ3DKruxI6jWY+IbB2i64fI1DFrkZFyd17GyJ1F2lc+ckNksPf9Txn3cSB5JCbKpIZr0uAvLDb2OhPn8Lgw=
+SHA256 (Pkgfile) = 8e4e7723c1d74a55ec36bfa4a95bb8135a193e05bb29e8c7ae29c997d15fcb4e
+SHA256 (.footprint) = 93cf5977c90516eef5062dd28570397a3e24ed2326fb93a547054700e016f783
+SHA256 (libexif-0.6.22.tar.xz) = 5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56

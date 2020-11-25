@@ -1,0 +1,21 @@
+PRE-INSTALL
+- Need to create a group and user for ups monitoring. (user,group:nut)
+- Add support for USB at kernel:
+
+########################################################
+Device Drivers  ---> 
+  USB support  ---> 
+    [*] Support for Host-side USB 
+    [?] EHCI HCD (USB 2.0) support 
+    [?] OHCI HCD support 
+    [?] UHCI HCD (most Intel and VIA) support 
+    [*] USB Human Interface Device (full HID) support 
+      [*]   /dev/hiddev raw HID device support 
+########################################################
+
+POST-INSTALL
+- Remember to change perms in config files:
+chown root:nut upsd.conf upsd.users
+chmod 0640 upsd.conf upsd.users
+
+- Remember to use man to setup nut.

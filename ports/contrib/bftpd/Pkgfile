@@ -1,0 +1,34 @@
+# Description: Small, easy-to-configure FTP server.
+# URL: http://bftpd.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=bftpd
+version=5.6
+release=1
+source=(https://downloads.sourceforge.net/project/$name/$name/$name-$version/$name-$version.tar.gz
+	ftpd)
+
+build() {
+	cd $name
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--localstatedir=/var \
+		--enable-libz
+
+	make
+	install -d $PKG/usr/sbin $PKG/etc $PKG/etc/rc.d
+	make DESTDIR=$PKG install
+
+	# bftpd version 3.7 moved these directories and --sysconfdir
+	# --localstatedir does not work currently
+	mv $PKG/usr/etc/bftpd.conf $PKG/etc/
+	mv $PKG/usr/var $PKG/var/
+	rmdir $PKG/usr/etc
+
+	install -D -m 0755 $SRC/ftpd $PKG/etc/rc.d/ftpd
+	chmod 0600 $PKG/etc/bftpd.conf
+	ln -sf bftpd $PKG/usr/sbin/in.ftpd
+}

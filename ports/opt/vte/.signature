@@ -1,0 +1,9 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/dRap28ffr3R/fxTDQliUq0Q+Mq8S202AYWHiEjayAHCLBEapf5bd7ripf7xMxLE023kD/pTR5CuwvTHnW4jPQw=
+SHA256 (Pkgfile) = 63195ea3f7c988557ffe0369bd12451c7cee69640e88ec27e76db1c36ac28722
+SHA256 (.footprint) = 16dd1fa9f2926caa8c3b8639d82c00bf2e21625aea3f1d0930a000cf9e6012aa
+SHA256 (vte-0.28.2.tar.xz) = 86cf0b81aa023fa93ed415653d51c96767f20b2d7334c893caba71e42654b0ae
+SHA256 (vte-0.30.1-alt-meta.patch) = 31a46fee8fe59bd1d6df54bc502b608fe80da57bf3786e2dc6e9856a4e793ed6
+SHA256 (vte-0.28.2-interix.patch) = 0c3bd451d2a48dd38b375fc7d72b675bbfcbcda66f6fbcdd20eeee315727d518
+SHA256 (vte-0.28.2-limit-arguments.patch) = 164af2b6756329f1ceb0cac77b5e6bc47d486e1bb0b4e5d3a6fc284e4e7f0ae9
+SHA256 (vte-0.28.2-repaint-after-change-scroll-region.patch) = 95ff6eb5d17e7c209aa4751dfd150a1baa97d8b5d1b31658d7645751eb38cad6

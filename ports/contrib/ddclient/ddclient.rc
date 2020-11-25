@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+#
+# /etc/rc.d/ddclient Start or stop dynamic DNS service
+#
+
+export COLUMNS=9999
+
+case "$1" in
+	start)
+		/usr/sbin/ddclient -syslog
+	;;
+	stop)
+		killall -q ddclient
+	;;
+	restart)
+		$0 stop
+		$0 start
+	;;
+  *)
+		echo "Usage: ddclient start|stop|restart"
+		exit 1
+	;;
+esac
+
+exit 0
+
+#End of file

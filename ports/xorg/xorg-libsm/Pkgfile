@@ -1,0 +1,21 @@
+# Description: X Session Management client library
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: util-linux xorg-libice
+
+name=xorg-libsm
+version=1.2.3
+release=1
+source=(https://www.x.org/releases/individual/lib/libSM-$version.tar.bz2)
+
+build() {
+	cd libSM-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/share/doc/libSM/{SMlib,xsmp}.xml
+	find $PKG/usr/share -type d -delete
+}

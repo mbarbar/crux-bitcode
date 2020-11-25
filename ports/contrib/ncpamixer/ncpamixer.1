@@ -1,0 +1,76 @@
+.TH ncurses PulseAudio Mixer
+.PP
+An ncurses mixer for PulseAudio inspired by pavucontrol.
+
+.SS Config
+.PP
+Your configuration gets created on first run. If  \fB\fC$XDG\_CONFIG\_HOME\fR is defined then it will be created at \fB\fC$XDG\_CONFIG\_HOME/ncpamixer.conf\fR otherwise \fB\fC$HOME/.ncpamixer.conf\fR
+
+.SS Custom colors? Why not!
+.PP
+ncpamixer supports 256 colors. You can change them in ncpamixer.conf
+
+.SS Custom bindings? Sure!
+.PP
+You find them in ncpamixer.conf
+
+.SS Default bindings
+.TS
+allbox;
+l l l 
+l l l .
+\fB\fCEvent\fR	\fB\fCDefault\fR	\fB\fC \fR
+switch	tab	T{
+Cycle trought sinks, outputs, profile and ports
+T}
+select	enter	Select option in dropdowns
+quit	escape	Quit
+quit	q	Quit
+dropdown	c	T{
+Open dropdown for selecting sinks, outputs, profile and ports
+T}
+mute	m	Mute selected item
+set\_default	d	Set default sink/source
+volume\_up	l	T{
+Increase volume on selected item
+T}
+volume\_down	h	T{
+Decrease volume on selected item
+T}
+volume\_up	arrow right	T{
+Increase volume on selected item
+T}
+volume\_down	arrow left	T{
+Decrease volume on selected item
+T}
+move\_up	k	Move up
+move\_down	j	Move down
+move\_up	arrow up	Move up
+move\_down	arrow down	Move down
+page\_up	page up	Previous page in dropdown
+page\_down	page down	Next page in dropdown
+tab\_next	L	Next tab
+tab\_prev	H	Previous tab
+tab\_playback	F1	Jump to playback tab
+tab\_recording	F2	Jump to recording tab
+tab\_output	F3	Jump to output tab
+tab\_input	F4	Jump to input tab
+tab\_config	F5	Jump to configuration tab
+move\_last	G	Move to last item
+move\_first	g	Move to first item
+set\_volume\_0	0	Set volume to 0%
+set\_volume\_10	1	Set volume to 10%
+set\_volume\_20	2	Set volume to 20%
+set\_volume\_30	3	Set volume to 30%
+set\_volume\_40	4	Set volume to 40%
+set\_volume\_50	5	Set volume to 50%
+set\_volume\_60	6	Set volume to 60%
+set\_volume\_70	7	Set volume to 70%
+set\_volume\_80	8	Set volume to 80%
+set\_volume\_90	9	Set volume to 90%
+set\_volume\_100	Unbound	Set volume to 100%
+.TE
+
+.SS License
+.PP
+MIT

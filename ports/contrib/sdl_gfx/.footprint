@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/SDL/
+-rw-r--r--	root/root	usr/include/SDL/SDL_framerate.h
+-rw-r--r--	root/root	usr/include/SDL/SDL_gfxBlitFunc.h
+-rw-r--r--	root/root	usr/include/SDL/SDL_gfxPrimitives.h
+-rw-r--r--	root/root	usr/include/SDL/SDL_gfxPrimitives_font.h
+-rw-r--r--	root/root	usr/include/SDL/SDL_imageFilter.h
+-rw-r--r--	root/root	usr/include/SDL/SDL_rotozoom.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libSDL_gfx.a
+-rwxr-xr-x	root/root	usr/lib/libSDL_gfx.la
+lrwxrwxrwx	root/root	usr/lib/libSDL_gfx.so -> libSDL_gfx.so.16.9.1
+lrwxrwxrwx	root/root	usr/lib/libSDL_gfx.so.16 -> libSDL_gfx.so.16.9.1
+-rwxr-xr-x	root/root	usr/lib/libSDL_gfx.so.16.9.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/SDL_gfx.pc

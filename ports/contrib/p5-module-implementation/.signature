@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/kF7ZJh3/ZOaM/8Uu0rqbLWdsleJr7LYV/UdYtEhqf6EoeWaFOFAt8tyJ3oxUmNyeHgsh47nTo6WsOXVvSReA0=
+SHA256 (Pkgfile) = 5ab057c8ad39a1fce5154ac90bc46b895d23cf10eb4b083f61a6db281536a221
+SHA256 (.footprint) = e51f9fa14dc352f66eb41a1db76589d440074325958eebabeab52aee6a137240
+SHA256 (Module-Implementation-0.09.tar.gz) = c15f1a12f0c2130c9efff3c2e1afe5887b08ccd033bd132186d1e7d5087fd66d

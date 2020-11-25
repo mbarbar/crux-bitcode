@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xzZYSiGqkS+jzCY0bz+WjZ/4/pFxYaE+fNLecm3nOVTwpszkADQ+p8KJ28mYr4rUQ5BEHu0Frk1+YVnW/2v6AE=
+SHA256 (Pkgfile) = 88a12659ca200e99d5cc9e5c7b60d9f244447cf6434497e893a030ed85bdd328
+SHA256 (.footprint) = 5bf094461f745cf3a657f31eff66efaac32a41845594450bb3969c3ac585dcc9
+SHA256 (glpk-4.65.tar.gz) = 4281e29b628864dfe48d393a7bedd781e5b475387c20d8b0158f329994721a10
+SHA256 (glpk-remove-warnings.patch) = d1d9d944072f1955c5dbc075259443b48c45275f4dde3f11ba45b59474f9ac07

@@ -1,0 +1,28 @@
+# Description: Share or use block devices with the NBD-protocol
+# URL:         http://nbd.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib
+
+name=nbd
+version=3.20
+release=1
+source=(nbd-server allow \
+        http://downloads.sourceforge.net/project/nbd/nbd/$version/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+
+  sed -i 's|CFLAGS+=" |CFLAGS="$CFLAGS |g' configure
+  sed -i 's|LIBS+=" |LIBS="$LIBS |g' configure
+
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc
+
+  make
+  make DESTDIR=$PKG install
+
+  install -d $PKG/etc/nbd-server
+  install -D -m 600 $SRC/allow $PKG/etc/nbd-server/allow
+  install -D -m 755 $SRC/nbd-server $PKG/etc/rc.d/nbd-server
+
+}

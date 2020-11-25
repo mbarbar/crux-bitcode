@@ -1,0 +1,25 @@
+From be6fd8fb033cdcdba91cc3f4e452964229493675 Mon Sep 17 00:00:00 2001
+From: Alexandr Savca <alexandrsavca89@gmail.com>
+Date: Thu, 24 Sep 2020 11:19:50 +0300
+Subject: [PATCH] fix repo.json path
+
+---
+ wordlistctl.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/wordlistctl.py b/wordlistctl.py
+index 92e0738..f986ee9 100755
+--- a/wordlistctl.py
++++ b/wordlistctl.py
+@@ -64,7 +64,7 @@ def banner() -> None:
+ 
+ def load_repo() -> None:
+     global REPOSITORY
+-    repofile: str = f"{os.path.dirname(os.path.realpath(__file__))}/repo.json"
++    repofile: str = "/usr/share/wordlistctl/repo.json"
+     try:
+         if not os.path.isfile(repofile):
+             raise FileNotFoundError("repository file not found")
+-- 
+2.28.0
+

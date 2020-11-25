@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+GcxktirlYGu1QfY+QDevlANsNB28pLyg+C9Q+e5hJqjNRSDlH1RNXZhzXccFUjUgIoJ8xTZPl15ovnHSxQzQU=
+SHA256 (Pkgfile) = 76803454b5f894c1d72922ec1dc269c069137580e8496237983cad16027a39ad
+SHA256 (.footprint) = b2db3f23aa67f4ffc861b2f888dca0b1aa8f52b0169b82abc20c444782c281aa
+SHA256 (linuxconsoletools-1.7.0.tar.bz2) = 95d112f06393806116341d593bda002c8bc44119c1538407623268fed90d8c34

@@ -1,0 +1,24 @@
+# Description: Lightweight panel/taskbar.
+# URL: https://gitlab.com/o9000/tint2
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: imlib2 librsvg startup-notification xorg-libxcomposite xorg-libxdamage xorg-libxinerama xorg-libxrandr
+
+name=tint2
+version=16.7
+release=1
+source=(https://gitlab.com/o9000/$name/-/archive/v$version/$name-v$version.tar.bz2)
+
+build() {
+	cmake -S $name-v$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-D ENABLE_TINT2CONF=OFF \
+		-Wno-dev
+
+	cmake --build build -j ${JOBS:-1}
+	DESTDIR=$PKG cmake --install build
+
+	rm -r $PKG/{etc,usr/share/doc}
+}

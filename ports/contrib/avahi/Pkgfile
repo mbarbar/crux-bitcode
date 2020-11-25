@@ -1,0 +1,28 @@
+# Description: A system which facilitates service discovery on a local network via the mDNS/DNS-SD protocol suite
+# URL: http://www.avahi.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: dbus gobject-introspection intltool libdaemon libevent
+
+name=avahi
+version=0.8
+release=1
+source=(http://avahi.org/download/$name-$version.tar.gz \
+  avahi-daemon.rc reverse-move-to-run.patch)
+
+build() {
+  cd $name-$version
+  patch -Np1 -i ../reverse-move-to-run.patch
+  NOCONFIGURE=1 ./autogen.sh
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --with-distro=none \
+    --disable-{gtk,gtk3,qt3,qt4,qt5,python} \
+    --disable-{pygobject,python-dbus,mono,mono-doc,nls} \
+    --enable-compat-libdns_sd
+  make
+  make DESTDIR=$PKG install
+
+  ln -s avahi-compat-libdns_sd/dns_sd.h $PKG/usr/include/dns_sd.h
+  install -D -m 0755 $SRC/avahi-daemon.rc $PKG/etc/rc.d/avahi-daemon
+}

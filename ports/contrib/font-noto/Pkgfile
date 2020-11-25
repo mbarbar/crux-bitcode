@@ -1,0 +1,18 @@
+# Description: Noto fonts
+# URL: https://www.google.com/get/noto/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=font-noto
+version=1.0
+release=1
+source=(https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.zip
+  https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-hinted.zip
+  https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip)
+
+build() {
+  install -d $PKG/usr/share/fonts/Noto
+  for i in *.ttf;
+    do install -m644 $i $PKG/usr/share/fonts/Noto;
+  done
+}

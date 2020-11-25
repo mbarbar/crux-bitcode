@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/42zhTz8g4LzllyaKJrJJ9QKy0RsYzsokreO0zrQwiDKd4YN4BXOxQNXuYjPcWthKJilNRsAhTTCU1U9uha2w0=
+SHA256 (Pkgfile) = 3434611c22404016b719c3bbf6231f2da391d826ccefe924abf27b74cc4dbf82
+SHA256 (.footprint) = 4e82f8d6177708e3c14e9d8edc180be1b07cf28ddad89881f65e03ab761742a2
+SHA256 (twisted-19.10.0.tar.gz) = 4339536f148b53aee71759f4dc3b619cbf69a602e97b42082c24afe54869b963

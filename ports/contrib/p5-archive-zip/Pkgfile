@@ -1,0 +1,21 @@
+# Description: Provide a perl interface to ZIP archive files
+# URL: https://metacpan.org/release/Archive-Zip
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-archive-zip
+_realname=Archive-Zip
+_author=PHRED
+version=1.68
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	perl Makefile.PL INSTALLDIRS=vendor
+	make
+	make DESTDIR="$PKG" install
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

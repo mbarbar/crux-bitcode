@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF354zgq4Ux9UdvI4YGfOkfO28NG4+ENVzXeBr4LZklDqVif/uThPdT+26QwgIbu1AzYhX/09b6LhetZo9NBHTIQw=
+SHA256 (Pkgfile) = 7b8e1e8a4306ffe6833f26441d837049f383c3309498021ec718e6f2674fb141
+SHA256 (.footprint) = 7440253c3fd2b9481f105ccb7585cab877c98be6b285c733695bdd6b51cbd459
+SHA256 (bbswitch-0.8.tar.gz) = 76cabd3f734fb4fe6ebfe3ec9814138d0d6f47d47238521ecbd6a986b60d1477

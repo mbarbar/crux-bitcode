@@ -1,0 +1,5 @@
+PRECAUTION
+
+syslog-ng currently is configured to use /etc/syslog-ng.conf as its default
+configuration file. Change as you like in /etc/rc.d/syslog-ng.
+

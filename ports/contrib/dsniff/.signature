@@ -1,0 +1,13 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37fQFpaPHxw7MiZrfDWM08N543vWsSJFBazju+FxL5qYHxV1Z4MRfa3Zo4vtE0oJMbSlg16/mUAifn+uo9YIYg4=
+SHA256 (Pkgfile) = 82dff69764b0aae661d109ac0e7ee3239de7d26b88788036938e26e0d1de5ff7
+SHA256 (.footprint) = 4454386cb70edee48b829d683ac4e583baeddba361b5f893e4f36a461b1243ed
+SHA256 (dsniff-2.4b1.tar.gz) = a9803a7a02ddfe5fb9704ce86f0ffc48453c321e88db85810db411ba0841152a
+SHA256 (dsniff_2.4b1+debian-29.debian.tar.xz) = 3f2263452facf9f0a402497b34c7a2573da0700005bb3c7940df9c5e099b5835
+SHA256 (2.3-makefile.patch) = bc1d92546b3de8ff6958eee40dc086cf489c6f2b4623998e155c1586d083fee3
+SHA256 (dsniff-2.4_beta1-debian-r1.patch) = b3690529ad3b282cb49161fed9a3ebc60600fccbab3a3c99a5a7abd74ab53eb3
+SHA256 (dsniff-httppostfix.patch) = 320dab87c7c7f9ce86acf8830041da39aa367ba4149fa4eeffac93041d459293
+SHA256 (dsniff-rpc.patch) = 21b37ba4c386aa576d6829c298bdd62df6fa227e44164d9e96675e66b93bb134
+SHA256 (dsniff-macof-size-calculation.patch) = d8f5cc5d14a614410a84a8eaba5a4212ee03466c4fe2fd4a634f5d7c3f688ec7
+SHA256 (dsniff-rpc.patch) = 21b37ba4c386aa576d6829c298bdd62df6fa227e44164d9e96675e66b93bb134
+SHA256 (dsniff-macof-size-calculation.patch) = d8f5cc5d14a614410a84a8eaba5a4212ee03466c4fe2fd4a634f5d7c3f688ec7

@@ -1,0 +1,20 @@
+# Description: Recursive copy of nested objects
+# URL: https://metacpan.org/pod/Clone
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-clone
+version=0.45
+release=1
+source=(https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-$version.tar.gz)
+
+build() {
+  cd Clone-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

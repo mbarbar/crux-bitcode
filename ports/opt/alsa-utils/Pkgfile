@@ -1,0 +1,24 @@
+# Description: ALSA utils
+# URL: http://www.alsa-project.org/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: gettext, alsa-lib, dialog
+
+name=alsa-utils
+version=1.2.4
+release=1
+source=(ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2 \
+    rc.alsa)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+        --disable-bat \
+        --disable-nls \
+        --disable-xmlto
+
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share/man/{fr,man7}
+
+    install -D -m 0755 $SRC/rc.alsa $PKG/etc/rc.d/alsa
+}

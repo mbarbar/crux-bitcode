@@ -1,0 +1,123 @@
+#compdef prt-get prt-cache
+
+local curcontext="$curcontext" expl ret=1 subcmd
+
+_list_notinstalled() {
+  local liste expl pkgs
+  local -a disp
+
+  installed=($(prt-cache listinst))
+  pkgs=($(prt-cache list))
+  pkgs=(${pkgs:#${(j:|:)~${installed:q}}})
+
+  _wanted packages expl 'packages' \
+  compadd "$@" "$disp[@]" - "${(@)pkgs%%:*}"
+
+}
+
+_list() {
+  local liste expl pkgs installed
+  local -a disp
+
+  pkgs=($(prt-cache list))
+
+  _wanted packages expl 'packages' \
+  compadd "$@" "$disp[@]" - "${(@)pkgs%%:*}"
+
+}
+
+_listinstalled() {
+  local liste expl pkgs installed
+  local -a disp
+
+  pkgs=($(prt-cache listinst))
+
+  _wanted packages expl 'packages' \
+  compadd "$@" "$disp[@]" - "${(@)pkgs%%:*}"
+
+}
+
+_listlocked() {
+  local liste expl pkgs installed
+  local -a disp
+
+  pkgs=($(prt-cache listlocked))
+
+  _wanted packages expl 'packages' \
+  compadd "$@" "$disp[@]" - "${(@)pkgs%%:*}"
+
+}
+
+_listupdates() {
+  local liste expl pkgs installed
+  local -a disp
+
+  pkgs=($(prt-cache quickdiff))
+
+  _wanted packages expl 'packages' \
+  compadd "$@" "$disp[@]" - "${(@)pkgs%%:*}"
+
+}
+
+
+if (( CURRENT == 2 )); then
+  _describe 'prt-get command' '(
+    install:install\ package
+    depinst:install\ package\ including\ its\ dependencies
+    grpinst:install\ given\ packages\ but\ stop\ if\ installation\ of\ a\ package\ fails
+    update:update\ package
+    remove:remove\ package
+    sysup:update\ all\ installed\ packages\ which\ are\ outdated
+    lock:do\ not\ take\ into\ account\ these\ packages\ in\ sysup\ operation
+    unlock:remove\ lock\ from\ package
+    listlocked:list\ all\ locked\ packages
+    diff:show\ differences\ between\ installed\ packages\ and\ ports\ in\ the\ ports\ tree
+    quickdiff:print\ a\ simple\ list\ of\ packages\ whose\ versions\ differ\ from\ those\ in\ the\ ports\ tree
+    search:search\ ports\ tree\ for\ packages\ matching
+    dsearch:search\ ports\ tree\ for\ package\ name\ or\ description
+    fsearch:search\ for\ files\ in\ packages\ footprint
+    info:display\ information\ about\ a\ port
+    path:print\ path\ of\ a\ port
+    readme:print\ a\ ports\ readme
+    depends:print\ a\ recursive\ list\ of\ ports\ that\ are\ required\ by\ the\ given\ ports
+    quickdep:print\ a\ simple\ list\ of\ recursive\ dependencies\ of\ the\ given\ ports
+    dependent:print\ a\ list\ of\ ports\ depending\ on\ the\ given\ port
+    deptree:print\ a\ tree\ of\ dependencies\ of\ the\ given\ package
+    dup:list\ ports\ that\ can\ be\ found\ in\ multiple\ port\ directories
+    list:list\ ports\ available\ in\ the\ ports\ tree
+    printf:print\ formated\ port\ list
+    listinst:list\ installed\ ports
+    listorphans:list\ installed\ ports\ which\ have\ no\ no\ dependent\ packages
+    isinst:check\ wether\ a\ given\ package\ is\ installed
+    current:print\ version\ of\ an\ installed\ package
+    ls:print\ the\ the\ files\ of\ a\ package\ directory
+    cat:print\ the\ content\ of\ a\ file\ in\ a\ ports\ directory
+    edit:edit\ a\ packages\ file
+    help:show\ available\ options
+    dumpconfig:dump\ the\ current\ configuration
+    cache:create\ the\ cache\ file\ for\ prt-cache
+    version:show\ the\ current\ version\ of\ prt-get
+  )' && ret=0
+
+else
+  shift words
+  (( CURRENT-- ))
+  subcmd="$words[1]"
+  curcontext="${curcontext%:*}-${subcmd}:"
+  
+  if (( CURRENT == 2 )); then
+    case $subcmd in
+      remove|lock|current) _listinstalled && ret=0 ;;
+      path|depends|dependent|deptree|isinst|ls|cat|edit) _list && ret=0 ;;
+      unlock) _listlocked && ret=0 ;;
+      install|grpinst|depinst) _list_notinstalled  && ret=0 ;;
+      info|readme|search) _list && ret=0 ;;
+      update) _listupdates && ret=0 ;;
+      *) _message 'unknown subcommand: $subcmd' ;;
+    esac
+  fi
+fi
+
+
+
+return ret

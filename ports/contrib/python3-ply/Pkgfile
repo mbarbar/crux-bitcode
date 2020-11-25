@@ -1,0 +1,24 @@
+# Description: Lex and yacc parsing tools for Python
+# URL: https://github.com/dabeaz/ply
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-ply
+version=3.11
+release=1
+source=(https://github.com/dabeaz/ply/archive/$version/ply-$version.tar.gz)
+
+build() {
+  cd ply-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --prefix=/usr \
+    --root=$PKG \
+    --skip-build \
+    --optimize=1
+
+  find $PKG/usr/lib/python*/site-packages/ \
+    -maxdepth 1 \
+    -type f \
+    -name "${name#*-}-$version-py*.egg-info" \
+    -delete
+}

@@ -1,0 +1,22 @@
+# Description: Gnome Partition Editor.
+# URL: http://gparted.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtkmm3 parted
+
+name=gparted
+version=1.1.0
+release=1
+source=(https://downloads.sourceforge.net/project/$name/$name/$name-$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-dependency-tracking \
+		--disable-doc
+
+	make
+	make DESTDIR=$PKG install
+}

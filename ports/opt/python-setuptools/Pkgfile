@@ -1,0 +1,21 @@
+# Description: Easily download, build, install, upgrade, and uninstall Python packages.
+# URL: https://pypi.python.org/pypi/setuptools
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python
+
+name=python-setuptools
+version=45.1.0
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:7:1}/${name#*-}/${name#*-}-$version.zip)
+
+build() {
+	cd ${name#*-}-$version
+
+	export SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES=0
+
+	/usr/bin/python bootstrap.py
+	/usr/bin/python setup.py build
+
+	/usr/bin/python setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+}

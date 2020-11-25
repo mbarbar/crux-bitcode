@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/ncmpc/
+-rw-r--r--	root/root	etc/ncmpc/config
+-rw-r--r--	root/root	etc/ncmpc/keys
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ncmpc

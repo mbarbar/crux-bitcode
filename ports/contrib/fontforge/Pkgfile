@@ -1,0 +1,35 @@
+# Description: Outline and bitmap font editor.
+# URL: https://fontforge.github.io/
+# Maintainer: Danny Rawlins, monster dot romster at gmail dot com
+# Depends on: giflib gtk3 libspiro libuninameslist libwebp potrace woff2
+
+name=fontforge
+version=20201107
+release=1
+source=(https://github.com/$name/$name/releases/download/$version/$name-$version.tar.xz)
+
+build() {
+if [ -e '/usr/lib/ccache' ]; then
+	PKGMK_FONTFORGE+=' -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache'
+	PATH=$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')
+fi
+
+	cmake -S $name-$version -B build -G Ninja $PKGMK_FONTFORGE \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-D ENABLE_MAINTAINER_TOOLS=TRUE \
+		-D ENABLE_FONTFORGE_EXTRAS=TRUE \
+		-D UNIX=TRUE \
+		-D ENABLE_DOCS=FALSE \
+		-Wno-dev
+
+	sed -i 's|-R/usr/lib||g' build/build.ninja
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	rm -r $PKG/usr/share/locale
+}

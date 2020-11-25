@@ -1,0 +1,29 @@
+# Description: An open source implementation of iCalendar protocols and protocol data units
+# URL: https://github.com/libical/libical
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake glib libxml2
+
+name=libical
+version=3.0.8
+release=1
+source=(https://github.com/libical/libical/archive/v$version/$name-$version.tar.gz
+  # https://github.com/libical/libical/commit/a3308a23912bba2db654a8c456165c31888cc897
+  # i removed the ReleaseNotes.txt as it failed to apply on the tagged ball
+  icu-68.1.patch)
+
+build() {
+  [ $(pkginfo -i | awk '/^icu / {split($2,a,"."); print a[1]}') -ge 68 ] && \
+    patch -p1 -d $name-$version -i $SRC/icu-68.1.patch
+  cmake -S $name-$version -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D SHARED_ONLY=true \
+    -D ENABLE_GTK_DOC=false \
+    -D ICAL_BUILD_DOCS=false \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

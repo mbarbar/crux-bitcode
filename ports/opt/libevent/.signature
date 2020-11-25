@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XArRuMl6kiUFYNnsRCJ1a/dB7e9AHpEnqOVR1Zn9QPSwfqq3+o20/eChmtEldHXR30qBgowxdf68CgAGFZJXg8=
+SHA256 (Pkgfile) = c58108a220af8c057334b5f0c210f796941a2039e3f798d43a8f2ebc622a99a0
+SHA256 (.footprint) = c6f5d8d339569dc89ea42118cc54cf3db947ff6625a780211541f300ed4e116e
+SHA256 (libevent-2.1.12-stable.tar.gz) = 92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb

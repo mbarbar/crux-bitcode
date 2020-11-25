@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30o7XspA21p1l5WYOrjvGvqsN4LCIjJJ74kxAxDZHkwKv0IhILnbuDEs6zVOIYhzWzk3Y3THuOd4x/KQWZ+0yA0=
+SHA256 (Pkgfile) = 52656ce973115dfa8e0a217a07bcfa8314fbe9695f33c8869faa546dd6c98791
+SHA256 (.footprint) = f5be7afed0e78c5b8ba51539ad32ae52f4ab6a2b12748d724ba1d0165b5d940a
+SHA256 (distro-1.5.0.tar.gz) = 0e58756ae38fbd8fc3020d54badb8eae17c5b9dcbed388b17bb55b8a5928df92

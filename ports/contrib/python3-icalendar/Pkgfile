@@ -1,0 +1,19 @@
+# Description: icalendar parser library for Python
+# URL: https://github.com/collective/icalendar
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-dateutil python3-pytz
+
+name=python3-icalendar
+version=4.0.7
+release=1
+source=(https://files.pythonhosted.org/packages/source/i/icalendar/icalendar-$version.tar.gz)
+
+build() {
+  cd icalendar-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --prefix=/usr \
+    --optimize=1 \
+    --skip-build \
+    --root=$PKG
+}

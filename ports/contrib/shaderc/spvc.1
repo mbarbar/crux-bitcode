@@ -1,0 +1,94 @@
+'\" t
+.\"     Title: spvc
+.\"    Author: [see the "AUTHOR(S)" section]
+.\" Generator: Asciidoctor 2.0.10
+.\"      Date: 2020-10-24
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "`SPVC`" "1" "2020-10-24" "\ \&" "\ \&"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.ss \n[.ss] 0
+.nh
+.ad l
+.de URL
+\fI\\$2\fP <\\$1>\\$3
+..
+.als MTO URL
+.if \n[.g] \{\
+.  mso www.tmac
+.  am URL
+.    ad l
+.  .
+.  am MTO
+.    ad l
+.  .
+.  LINKSTYLE blue R < >
+.\}
+.SH "NAME"
+`spvc` \- A validating SPIR\-V to GLSL/HLSL/MSL compiler with Clang\-compatible options.
+.SH "SYNOPSIS"
+.sp
+.if n .RS 4
+.nf
+spvc [\-\-help]
+
+spvc [\-\-version]
+     [\-\-validate=<target env>]
+     [\-o outfile]
+     shader...
+.fi
+.if n .RE
+.SH "DESCRIPTION"
+.sp
+\f(CRspvc\fP is a wrapper around SPIRV\-Cross.
+A SPIR\-V module must pass validation before it is given to SPIRV\-Cross for translation.
+.SS "Input file languages"
+.sp
+Spvc accepts SPIR\-V binary files as input.
+.SS "Output file naming"
+.sp
+If a name is specified via \f(CR\-o\fP, the output file will be given that name.
+Otherwise the output file name is the same as the input file name except
+with a \f(CR.glsl,\fP \f(CR.hlsl\fP or \f(CR.msl\fP extension, as appropriate.
+.SH "COMMAND LINE OPTIONS"
+.SS "Overall Options"
+.SS "\f(CR\-\-help\fP"
+.sp
+\f(CR\-\-help\fP tells the spvc compiler to display all available options and exit.
+.SS "\f(CR\-\-version\fP"
+.sp
+\f(CR\-\-version\fP displays version information.
+.SS "\f(CR\-\-validate=<source env>\fP"
+.sp
+\f(CR\-\-validate\fP validates the input with the given environment, which is one of:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+vulkan1.0
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+vulkan1.1
+.RE
+.sp
+The default is \f(CRvulkan1.0\fP.
+.SS "\f(CR\-o\fP"
+.sp
+\f(CR\-o\fP lets you specify the output file\(cqs name. It cannot be used when there are
+multiple files generated. A filename of \f(CR\-\fP represents standard output.

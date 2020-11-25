@@ -1,0 +1,17 @@
+# Description: Userland tools for the Flash-Friendly File System (F2FS)
+# URL: https://f2fs.wiki.kernel.org/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=f2fs-tools
+version=1.14.0
+release=1
+source=(https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-tools.git/snapshot/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	autoreconf -fi
+	./configure --prefix=/usr \
+		--sbindir=/sbin
+	make
+	make DESTDIR=$PKG install
+}

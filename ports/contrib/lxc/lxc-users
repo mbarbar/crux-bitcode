@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# /etc/rc.d/lxc-users: start/stop LXC user containers
+#
+
+if test ! -f /etc/lxc/lxc-usernet
+then
+    echo 'LXC not configured for user containers.'
+    exit 1
+fi
+
+[ -f /etc/default/lxc ] && . /etc/default/lxc
+
+case $1 in
+    start)
+        [ "$LXC_AUTO" = true ] || exit 0
+        [ ! -f /var/lock/lxc-users ] || exit 0
+        [ -n "$BOOTGROUPS" ] && BOOTGROUPS="-g $BOOTGROUPS"
+        touch /var/lock/lxc-users
+        for user in $(awk '!/^#/{if($1!~"@"){print$1}}' /etc/lxc/lxc-usernet)
+        do
+            sudo -u $user -i -- lxc-autostart $OPTIONS $BOOTGROUPS
+        done
+        rm -f /var/lock/lxc-users
+        ;;
+    stop)
+        [ -n "$SHUTDOWNDELAY" ] && SHUTDOWNDELAY="-t SHUTDOWNDELAY"
+        for user in $(awk '!/^#/{if($1!~"@"){print$1}}' /etc/lxc/lxc-usernet)
+        do
+            sudo -u $user -i -- lxc-autostart $STOPOPTS $SHUTDOWNDELAY
+        done
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 [start|stop|restart]"
+        ;;
+esac
+
+# End of file

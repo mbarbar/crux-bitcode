@@ -1,0 +1,22 @@
+# Description: Regex base tail written in Rust.
+# URL: https://github.com/StoneDot/regtail
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: rust
+
+name=regtail
+version=0.1.0
+release=1
+source=(https://github.com/StoneDot/regtail/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  prt-get isinst sccache && export RUSTC_WRAPPER=/usr/bin/sccache
+  mkdir "$PKGMK_SOURCE_DIR/rust" || true
+  export CARGO_HOME="$PKGMK_SOURCE_DIR/rust"
+
+  cargo update
+  cargo fetch
+  cargo build --release --locked
+  install -Dt $PKG/usr/bin target/release/regtail
+}

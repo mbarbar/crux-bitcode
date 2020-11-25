@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/aY8QqFmFmfb0ywj26rb3DZaX1JLpxZ6Ie+WfO/yh1qjoycTG9Q65irOE5JvAXSFS7ROp89KPmLlxaMDLci9oQw=
+SHA256 (Pkgfile) = 00476550766d21e1398ef4e2fa4c8f39cec8c433b80f324d86074f9007d94746
+SHA256 (.footprint) = fc826b09ef35bbd0e77b49333ddd6b25dc453415eb52ed3fa8a4047593d42398
+SHA256 (polkit-0.117.tar.gz) = e106fe8206638a0524d251f0f96e15eed6e34a3a6d2fd07cc1b6337fdcef7b7c
+SHA256 (polkit-1) = a7638983d4f629c992dc108a956f8c3bea18404d88efd711a3b877a3dca925ed

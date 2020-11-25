@@ -1,0 +1,24 @@
+# Description: Reusable library for GPU-accelerated video/image rendering primitives
+# URL: https://github.com/haasn/libplacebo
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: lcms2 meson shaderc vulkan-loader python3-mako
+# Optional: libepoxy
+
+name=libplacebo
+version=2.72.2
+release=1
+source=(https://code.videolan.org/videolan/libplacebo/-/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	meson setup build $name-v$version \
+		--prefix=/usr \
+		--buildtype=plain \
+		-D b_ndebug=true \
+		-D vulkan=enabled \
+		-D glslang=enabled \
+		-D shaderc=enabled \
+		-D lcms=enabled
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

@@ -1,0 +1,21 @@
+# Description: Remote filesystem in userspace using SSH
+# URL:         https://github.com/libfuse/sshfs 
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  fuse3 glib
+
+name=sshfs-fuse
+version=3.7.1
+release=1
+source=(https://github.com/libfuse/sshfs/releases/download/sshfs-$version/sshfs-$version.tar.xz
+        sshfs.1)
+
+build() {
+    meson setup build sshfs-$version \
+        --prefix=/usr \
+        --buildtype=release
+
+    meson compile -C build -j ${JOBS:-1}
+    DESTDIR=$PKG meson install -C build
+
+    install -D -m 0644 $SRC/sshfs.1 $PKG/usr/share/man/man1/sshfs.1
+}

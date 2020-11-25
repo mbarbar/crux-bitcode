@@ -1,0 +1,22 @@
+# Description: Perl module to manage IP addresses and subnet
+# URL:         https://metacpan.org/release/NetAddr-IP
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=p5-netaddr-ip
+version=4.079
+release=2
+source=(https://search.cpan.org/CPAN/authors/id/M/MI/MIKER/NetAddr-IP-$version.tar.gz)
+
+build() {
+  cd NetAddr-IP-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make OPTIMIZE="$CFLAGS"
+  make install DESTDIR=$PKG
+  # Remove perlcrap
+  find $PKG \
+    -name .packlist -or \
+    -name '*.bs' -or \
+    -name perllocal.pod | xargs rm
+  # Remove empty directories
+  find $PKG -depth -empty -exec rm -rf {} \;
+}

@@ -1,0 +1,21 @@
+# Description: filezilla common library
+# URL: https://filezilla-project.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: clang gnutls libidn2
+
+name=libfilezilla
+version=0.25.0
+release=1
+source=(https://download.filezilla-project.org/$name/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
+  autoreconf -vfi
+  ./configure \
+    --prefix=/usr \
+    --disable-static
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/locale
+}

@@ -1,0 +1,29 @@
+# Description: KeePass Cross-Platform Community Edition
+# URL: https://keepassxc.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: argon2 libgcrypt libsodium qrencode qt5 yubikey-personalization
+# Optional: quazip5
+
+name=keepassxc
+version=2.6.2
+release=1
+source=(https://github.com/keepassxreboot/keepassxc/releases/download/$version/$name-$version-src.tar.xz)
+
+build() {
+  [[ -e /usr/lib/ccache ]] && PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
+  [[ -e /usr/lib/ccache ]] && PKGMK_KEEPASSXC+=' -D WITH_CCACHE=ON'
+  cmake -S $name-$version -B build -G Ninja $PKGMK_KEEPASSXC \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D WITH_XC_ALL=ON \
+    -D WITH_XC_DOCS=OFF \
+    -D WITH_TESTS=OFF \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+
+  rm -r $PKG/usr/share/keepassxc/translations
+}

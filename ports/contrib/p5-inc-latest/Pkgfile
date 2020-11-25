@@ -1,0 +1,17 @@
+# Description: Build, test, and install Perl modules
+# URL: https://github.com/dagolden/inc-latest
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-cpan-meta
+
+name=p5-inc-latest
+version=0.500
+release=1
+source=(http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/inc-latest-$version.tar.gz)
+
+build() {
+  cd inc-latest-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

@@ -1,0 +1,19 @@
+# Description: A clean, fixed width bitmap font, designed for long (8 and more hours per day) work with computers
+# URL: http://terminus-font.sourceforge.net/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3
+
+name=console-font-terminus
+version=4.48
+release=1
+source=(http://downloads.sourceforge.net/terminus-font/terminus-font-$version.tar.gz)
+
+build () {
+    cd terminus-font-$version
+    chmod +x configure
+    ./configure --prefix=/usr \
+        --psfdir=/usr/share/kbd/consolefonts
+    make psf
+    make DESTDIR=$PKG install-psf
+    rm $PKG/usr/share/kbd/consolefonts/ter-[^v]*
+}

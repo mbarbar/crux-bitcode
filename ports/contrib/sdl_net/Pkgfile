@@ -1,0 +1,18 @@
+# Description: A cross-platform networking library for SDL.
+# URL: http://www.libsdl.org/projects/SDL_net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Simone Rota, sip at crux dot nu
+# Depends on: libsdl
+
+name=sdl_net
+version=1.2.8
+release=1
+source=(https://www.libsdl.org/projects/SDL_net/release/SDL_net-$version.tar.gz)
+
+build() {
+	cd SDL_net-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
+

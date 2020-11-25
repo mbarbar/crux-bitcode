@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32YMYiXQz0esHu69Tx+huDBYcGCZu7dQREznZT/NLkj1Qxjyo/n3Mc8JeC0NDeQG3F2vbS5AkW89e74IJ//fNgA=
+SHA256 (Pkgfile) = 0ed143926577d418e24f9df5e01fd7d7a64f7891ca9e5b86164b4415adae2794
+SHA256 (.footprint) = a3243c2569bc065130d403814200fb53bc392ffa8e227f634df119eb14d356b2
+SHA256 (sip-4.19.24.tar.gz) = edcd3790bb01938191eef0f6117de0bf56d1136626c0ddb678f3a558d62e41e5

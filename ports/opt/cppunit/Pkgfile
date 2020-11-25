@@ -1,0 +1,20 @@
+# Description:	C++ unit testing library
+# URL:		https://www.freedesktop.org/wiki/Software/cppunit/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+
+name=cppunit
+version=1.15.1
+release=1
+source=(https://dev-www.libreoffice.org/src/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-doxygen
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/doc
+}

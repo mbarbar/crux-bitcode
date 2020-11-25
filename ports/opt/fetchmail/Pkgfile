@@ -1,0 +1,21 @@
+# Description: A remote-mail retrieval utility
+# URL:         https://www.fetchmail.info
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  openssl
+
+name=fetchmail
+version=6.4.13
+release=1
+source=(https://downloads.sourceforge.net/project/$name/branch_${version%.*}/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    # don't build python stuff
+    sed -i '22,24s/^/#/' Makefile.am
+    autoreconf -vi
+
+    ./configure --prefix=/usr --disable-nls
+    make
+    make DESTDIR=$PKG install
+}

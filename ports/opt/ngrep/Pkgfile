@@ -1,0 +1,16 @@
+# Description: Network grep utility
+# URL:         https://github.com/jpr5/ngrep
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  libpcap
+
+name=ngrep
+version=1.47
+release=1
+source=(https://github.com/jpr5/ngrep/archive/V${version//./_}/$name-$version.tar.gz)
+
+build () {
+    cd $name-${version//./_}
+    ./configure --prefix=/usr --enable-ipv6
+    make
+    make DESTDIR=$PKG install
+}

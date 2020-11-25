@@ -1,0 +1,19 @@
+# Description: A Python library for parsing and creating TOML
+# URL: https://github.com/uiri/toml
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-toml
+version=0.10.2
+release=1
+#source=(https://github.com/uiri/toml/archive/$version/$name-$version.tar.gz)
+source=(https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-$version.tar.gz)
+
+build() {
+  cd toml-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

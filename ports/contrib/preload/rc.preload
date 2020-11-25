@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# /etc/rc.d/preload: start/stop tor daemon
+#
+
+# User settings here
+DAEMON=preload
+
+RETVAL=0
+
+case $1 in
+start)
+	echo -n "Starting $DAEMON..."
+	/usr/sbin/$DAEMON > /dev/null & RETVAL=$?
+	if [ $RETVAL = 0 ]; then
+		echo " done."
+	fi
+	;;
+stop)
+	echo -n "Shutting down $DAEMON..."
+	killall -s SIGKILL -q /usr/sbin/$DAEMON
+	RETVAL=$?
+	echo " done."
+	;;
+restart)
+	$0 stop
+	sleep 1
+	$0 start
+	RETVAL=$?
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	exit 1
+	;;
+esac
+
+exit $RETVAL
+
+# End of file

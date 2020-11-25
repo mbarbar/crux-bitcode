@@ -1,0 +1,40 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/base16 -> basez
+lrwxrwxrwx	root/root	usr/bin/base32hex -> basez
+lrwxrwxrwx	root/root	usr/bin/base32plain -> basez
+lrwxrwxrwx	root/root	usr/bin/base64mime -> basez
+lrwxrwxrwx	root/root	usr/bin/base64pem -> basez
+lrwxrwxrwx	root/root	usr/bin/base64plain -> basez
+lrwxrwxrwx	root/root	usr/bin/base64url -> basez
+-rwxr-xr-x	root/root	usr/bin/basez
+lrwxrwxrwx	root/root	usr/bin/hex -> basez
+lrwxrwxrwx	root/root	usr/bin/unhex -> basez
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/bash-completion/
+drwxr-xr-x	root/root	usr/share/bash-completion/completions/
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base16 -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base32 -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base32hex -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base32plain -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base64 -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base64mime -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base64pem -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base64plain -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/base64url -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/basez -> basez-completion
+-rw-r--r--	root/root	usr/share/bash-completion/completions/basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/hex -> basez-completion
+lrwxrwxrwx	root/root	usr/share/bash-completion/completions/unhex -> basez-completion
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+lrwxrwxrwx	root/root	usr/share/man/man1/base16.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/base32hex.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/base32plain.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/base64mime.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/base64pem.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/base64plain.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/base64url.1.gz -> basez.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hex.1.gz -> basez.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/unhex.1.gz -> basez.1.gz

@@ -1,0 +1,19 @@
+# Description: UAX #14 Unicode Line Breaking Algorithm
+# URL: https://metacpan.org/release/Unicode-LineBreak
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-mime-charset
+
+name=p5-unicode-linebreak
+version=2019.001
+release=1
+source=(https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/Unicode-LineBreak-$version.tar.gz)
+
+build() {
+  cd Unicode-LineBreak-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

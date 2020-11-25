@@ -1,0 +1,17 @@
+# Description: Implements some sane defaults for Perl programs
+# URL: https://metacpan.org/pod/common::sense
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-common-sense
+version=3.75
+release=1
+source=(https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/common-sense-$version.tar.gz)
+
+build() {
+  cd common-sense-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

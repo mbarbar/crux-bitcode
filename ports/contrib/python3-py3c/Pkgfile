@@ -1,0 +1,25 @@
+# Description: Library to ease porting C extensions to Python 3
+# URL:         https://py3c.readthedocs.org/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  python3-setuptools
+
+name=python3-py3c
+version=1.2
+release=1
+source=(https://github.com/encukou/${name#*-}/archive/v$version/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+
+	sed -i 's,install: py3c.pc,install:,' Makefile
+
+	/usr/bin/python3 setup.py build
+	make prefix=/usr py3c.pc
+	make prefix=$PKG/usr install
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+
+	#rm -r $PKG/usr/include/python*
+
+	# fix permissions
+	chmod -R go-w $PKG/*
+}

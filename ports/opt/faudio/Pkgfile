@@ -1,0 +1,21 @@
+# Description: XAudio2 reimplementation
+# URL: https://github.com/FNA-XNA/FAudio/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libsdl2 gst-libav
+
+name=faudio
+version=20.11
+release=1
+source=(https://github.com/FNA-XNA/FAudio/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cmake -S FAudio-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-D GSTREAMER=ON
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

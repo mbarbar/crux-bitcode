@@ -1,0 +1,19 @@
+--- Makefile.orig	2020-05-28 16:04:48.412888331 +0000
++++ Makefile	2020-05-28 16:06:02.901701194 +0000
+@@ -33,13 +33,13 @@
+ OBJFILES   = $(patsubst %,$(SRCDIR)/%,$(SFILES))
+ INCFILES   = $(patsubst %,$(SRCDIR)/%,$(IFILES))
+ 
+-CFLAGS_GEN = -Wall -funsigned-char -g -ggdb -I/usr/local/include/ \
+-             -I/opt/local/include/ $(CFLAGS) -DVERSION=\"$(VERSION)\"
++CFLAGS_GEN = -Wall -funsigned-char -g -ggdb -I/usr/include/openssl-1.0 \
++             -I/usr/include/ $(CFLAGS) -DVERSION=\"$(VERSION)\"
+ CFLAGS_DBG = -DLOG_STDERR=1 -DDEBUG_ALLOCATOR=1 \
+              $(CFLAGS_GEN)
+ CFLAGS_OPT =  -O3 -Wno-format $(CFLAGS_GEN)
+ 
+-LDFLAGS   += -L/usr/local/lib/ -L/opt/local/lib
++LDFLAGS   += -L/usr/lib/openssl-1.0 -L/usr/lib
+ LIBS      += -lcrypto -lssl -lidn -lz -lpcre
+ 
+ all: $(PROGNAME)

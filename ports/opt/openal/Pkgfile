@@ -1,0 +1,22 @@
+# Description: Cross-platform 3D audio.
+# URL: https://github.com/kcat/openal-soft
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: alsa-lib cmake
+
+name=openal
+version=1.20.1
+release=1
+source=(https://github.com/kcat/openal-soft/archive/openal-soft-$version.tar.gz)
+
+build() {
+	cd openal-soft-openal-soft-$version/build
+
+	cmake ../ \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DALSOFT_EXAMPLES=OFF \
+		-DCMAKE_BUILD_TYPE=Release #-DCMAKE_VERBOSE_MAKEFILE:BOOL="on"
+
+	make
+	make DESTDIR=$PKG install
+}

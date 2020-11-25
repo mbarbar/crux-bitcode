@@ -1,0 +1,19 @@
+# $Id:
+
+REQUIREMENTS:
+
+PRECAUTION:
+
+PRE-INSTALL:
+
+POST-INSTALL:
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+If you want this to look closer to the movie, consider to install the fonts in the package.
+
+To get the program to look all most like the movie, use: cmatrix -lba

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/VzwfaBdrJPilzeiC68QlioMgcFJppvJ+AX0bwt0lqIIE9txFX9S7nkMQ2Vt0AK1HHqPAe1Xd+CsbyugEJETsAo=
+SHA256 (Pkgfile) = 81e704afe02b8e90fe2693e91dadab524e42667b23cf1569e6e1d96b45cfba65
+SHA256 (.footprint) = 87cf4ec24be16054cd41ce09d92bf33e0d4c5a5b152171e49d840ba76264c9cd
+SHA256 (onig-6.9.6.tar.gz) = bd0faeb887f748193282848d01ec2dad8943b5dfcb8dc03ed52dcc963549e819

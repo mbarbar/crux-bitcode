@@ -1,0 +1,20 @@
+# Description: media manager for movies, tv shows, concerts and music
+# URL: https://www.kvibes.de/mediaelch/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: quazip5 libmediainfo
+
+name=mediaelch
+version=2.6.6
+release=3
+source=(https://github.com/Komet/MediaElch/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd MediaElch-$version
+  sed 's|quazip/quazip/|QuaZip-Qt5-1.1/quazip/|g' -i src/*/*.cpp src/*/*.h
+  sed 's|lquazip5|lquazip1-qt5|g' -i MediaElch.pro
+  mkdir build
+  cd build
+  qmake ..
+  make SUBLIBS="-lquazip1-qt5"
+  make INSTALL_ROOT=$PKG install
+}

@@ -1,0 +1,10 @@
+NOTES
+
+Once you install the dependencies for obs-studio, you need to recompile ffmpeg
+to pick up on "fdk-aac x264" then forcecompile osb-studio to gain ffmpeg's new
+features.
+
+If you have a GTX or RTX graphics card and are using "nvidia" install
+"ffnvcodec-headers" and recompile ffmpeg for hardware nvenc video encoding.
+
+Included is an example asound.conf.example file for capturing audio.

@@ -1,0 +1,16 @@
+# Description: A YAML parser and emitter library.
+# URL: https://pyyaml.org/wiki/LibYAML
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libyaml
+version=0.2.5
+release=1
+source=(https://pyyaml.org/download/$name/yaml-$version.tar.gz)
+
+build() {
+	cd yaml-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

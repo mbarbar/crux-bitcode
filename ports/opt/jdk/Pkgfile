@@ -1,0 +1,35 @@
+# Description: Java 8 Software Development Kit (amazon-corretto)
+# URL:         https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/what-is-corretto-8.html
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  util-linux gtk alsa-lib
+
+name=jdk
+version=8.275.01.1
+release=1
+source=(https://corretto.aws/downloads/resources/$version/amazon-corretto-$version-linux-x64.tar.gz)
+
+build(){
+    cd amazon-corretto-$version-linux-x64
+
+    # cleanup
+    rm {.,jre}/{ASSEMBLY_EXCEPTION,LICENSE,THIRD_PARTY_README}
+    chmod -R o-w,g-w .
+
+    # install
+    install -d $PKG/usr/{bin,lib/jdk,share/man}
+    mv man $PKG/usr/share/
+    mv *   $PKG/usr/lib/jdk/
+
+    # symlinks
+    ln -s jdk $PKG/usr/lib/java
+    ln -s ../lib/jdk/bin/java    $PKG/usr/bin/java
+    ln -s ../lib/jdk/bin/javac   $PKG/usr/bin/javac
+    ln -s ../lib/jdk/bin/javah   $PKG/usr/bin/javah
+    ln -s ../lib/jdk/bin/javap   $PKG/usr/bin/javap
+    ln -s ../lib/jdk/bin/jar     $PKG/usr/bin/jar
+    ln -s ../lib/jdk/bin/keytool $PKG/usr/bin/keytool
+
+    # revdep
+    install -d $PKG/etc/revdep.d
+    printf '%s\n%s\n%s\n' /usr/lib/jdk/{lib/amd64,jre/lib/amd64{,/server}} > $PKG/etc/revdep.d/jdk
+}

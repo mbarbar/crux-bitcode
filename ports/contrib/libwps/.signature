@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39i3O8iPsClCGMaehPQJFl6IaESgfjNwL6EITumeBU++l+ZQ9BO0R5WwS+dAW9Ra5Qc/TcDfmdlg5LZWwDr7ZgY=
+SHA256 (Pkgfile) = 58704279c9ff3807316ecfc1cc5b19d69503440fa85afbeb3a9a90f5627d266d
+SHA256 (.footprint) = e3e0eb23a8520155bc30009c1078f4f996cb8a635bfc30ef52eba39bde9fe249
+SHA256 (libwps-0.4.12.tar.xz) = e21afb52a06d03b774c5a8c72679687ab64891b91ce0c3bdf2d3e97231534edb

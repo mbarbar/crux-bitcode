@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YKvdqWTC9exMMGE9S6vk/EPquKkvgZfEzr0sUJK9sGcgVOfu3o3U6WFH2oA6qs9B7QfxAKJvSW6BNMXEuySyAE=
+SHA256 (Pkgfile) = 3c9ae7fdb360ebf35fd1cf98a92a9766aafd8f173e0a9d07dea95860802aadb5
+SHA256 (.footprint) = 4884c0c44dfed508d803150bb7610fb58ece0366547b8ee4ed1ff86323a4334f
+SHA256 (b27e039c68dd9eb959bb9249fcb2c9a54841474b.zip) = a45d8c4347c830759489f73faad8b5c330bd4e0d9cb8b1e8bf65f22682078e7d
+SHA256 (0001-Revert-CMake-Enable-building-with-BUILD_SHARED_LIBS-.patch) = 6622948faf7e558d1741d2a6099f6ad39d2ccf6613973b3991be1e8f56ef9c29
+SHA256 (spirv-tools-soversion.patch) = b7f2f1d46f11fb25ac24036b20f5745f01f04b6d8c08259c280cef411fe41892
+SHA256 (0001-CMake-FIx-pkg-config-libdir-with-absolute-CMAKE_INST.patch) = 0e354a9947a807c900349dca61bd92f4f11a33d828a62dde129a55709c0f9c00

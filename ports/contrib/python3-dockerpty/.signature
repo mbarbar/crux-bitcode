@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37vdKjq3Hoje4c6nFp3hAMNjU89qq/4qqBiyqdz5I6cwULyY8Q8leYmR9PoO3q4hzRk9eOYakETxVxm2T5H/GAE=
+SHA256 (Pkgfile) = 8c5b6b76cb614ac1e2371910fce05b600e4ef6d3cddcb451f2990f11ff91e9ab
+SHA256 (.footprint) = 6131d57c8ab820707c8ca26860bf19b4529d5d4d47543c572cb7801d4e20ac38
+SHA256 (dockerpty-0.4.1.tar.gz) = 69a9d69d573a0daa31bcd1c0774eeed5c15c295fe719c61aca550ed1393156ce

@@ -1,0 +1,38 @@
+# Description: PDF viewer
+# URL:         https://www.xpdfreader.com
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  qt5
+# Optional:    cups paper
+
+name=xpdf
+version=4.02
+release=1
+source=(https://xpdfreader-dl.s3.amazonaws.com/xpdf-${version}.tar.gz
+    xpdf-automagic.patch
+    xpdf-visibility.patch
+    xpdf-shared-libs.patch)
+
+build() {
+    cd $name-$version
+
+    CXXFLAGS+=' -Wno-deprecated -Wno-deprecated-declarations'
+
+    patch -p1 -i $SRC/xpdf-automagic.patch
+    patch -p1 -i $SRC/xpdf-visibility.patch
+    patch -p1 -i $SRC/xpdf-shared-libs.patch
+
+    mkdir build
+    cd build
+
+    cmake -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_INSTALL_PREFIX=/usr \
+          -DA4_PAPER=ON  \
+          -DXPDFWIDGET_PRINTING="$(prt-get isinst cups >/dev/null && echo ON || echo OFF)" \
+          -DWITH_LIBPAPER=$(prt-get isinst paper >/dev/null && echo ON || echo OFF) .. 
+
+    cd xpdf-qt
+
+    make
+    make install DESTDIR=$PKG
+
+}

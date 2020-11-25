@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndCIe3Ywors6oAdE87kpThK41GU6VSXGVDlP+4yiqPOcNK9WQDUyZI0Scx7GolC0koJtvEsFF5wWIRAt661CYwwI=
+SHA256 (Pkgfile) = 24f933f4126775eb4351f2ee665272059bd8e072cec0728ea13f8e29c07dd2a9
+SHA256 (.footprint) = dc140cda3b16fb7a5b446a303695090542a6625ecd69cc23fe2bf16ff2b6153a
+SHA256 (libXfont2-2.0.4.tar.bz2) = 6d151b3368e5035efede4b6264c0fdc6662c1c99dbc2de425e3480cababc69e6

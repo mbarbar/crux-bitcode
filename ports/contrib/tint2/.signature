@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xmX75L5oK1l//vs7RD87BqhpmZ5RCvLWa7wT1s5e38d0HJ4a1dn139N2y7l1vXAiyTAuh+j5Zm5edNP/wwyZgQ=
+SHA256 (Pkgfile) = 74120bf204e8296fe5c043f4ce9197a8d9d548d1157f578924e5b174c3029aca
+SHA256 (.footprint) = 24951f1f63bfdbe1e703a115da02f77fa2607eb482698b80eb6e52400b58bdfd
+SHA256 (tint2-v16.7.tar.bz2) = ae2512355614014465f6aff36c98e2ed448998c44533157e4bace21c6c979f65

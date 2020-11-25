@@ -1,0 +1,27 @@
+# Description: Perl comma-separated values manipulation routines.
+# URL: https://metacpan.org/release/Text-CSV_XS
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-text-csv-xs
+version=1.44
+release=1
+source=(https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/Text-CSV_XS-$version.tgz)
+
+build() {
+	cd Text-CSV_XS-$version
+
+	perl Makefile.PL
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+
+	# Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -o \
+		-name '*.bs' -o \
+		-name 'autosplit.ix' -o \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -delete
+}
+

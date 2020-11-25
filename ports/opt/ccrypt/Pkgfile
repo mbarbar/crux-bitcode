@@ -1,0 +1,15 @@
+# Description: Utility for encrypting and decrypting files and streams
+# URL:         http://ccrypt.sourceforge.net/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=ccrypt
+version=1.11
+release=1
+source=(http://ccrypt.sourceforge.net/download/$version/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr --disable-nls
+    make
+    make DESTDIR=$PKG install
+}

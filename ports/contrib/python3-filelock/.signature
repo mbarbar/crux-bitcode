@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32wdghjSE6F2dmDZ1Ev1fEqEuPmF1zHHWfgxFpJmpCg7Bpj2tm3xXAXB+r7nFtrWlJc07f/Pt6tWRmi0aaOd/gs=
+SHA256 (Pkgfile) = f06f2a8067ac068bdd2cc1daae4f27fca87e357c6870de37f9abdc2d017eeea6
+SHA256 (.footprint) = 15c284086551a960b30bb1f002c8bc59991fe95b47fbd79d80a00ad18624b95c
+SHA256 (python3-filelock-3.0.12.tar.gz) = eafca6feda88295a054ccb3276adcc8d326318b116fa5e124522dd51dd62fd56

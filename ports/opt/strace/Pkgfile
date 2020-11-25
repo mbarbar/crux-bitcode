@@ -1,0 +1,16 @@
+# Description: System call tracing utility (like trace, truss, etc)
+# URL:         https://strace.io
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  elfutils
+
+name=strace
+version=5.9
+release=1
+source=(https://github.com/strace/strace/releases/download/v$version/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

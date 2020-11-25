@@ -1,0 +1,19 @@
+# Description: Transliteration of text between writing systems
+# URL: https://metacpan.org/release/Lingua-Translit
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-lingua-translit
+version=0.28
+release=1
+source=(https://cpan.metacpan.org/authors/id/A/AL/ALINKE/Lingua-Translit-$version.tar.gz)
+
+build() {
+  cd Lingua-Translit-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

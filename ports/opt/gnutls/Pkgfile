@@ -1,0 +1,26 @@
+# Description: A library that provides a secure layer over a reliable transport layer
+# URL: https://gnutls.org
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libidn nettle p11-kit
+
+name=gnutls
+version=3.6.15
+release=1
+source=(https://www.gnupg.org/ftp/gcrypt/$name/v${version:0:3}/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--with-default-trust-store-pkcs11="pkcs11:" \
+		--with-included-unistring \
+		--disable-guile \
+		--without-tpm
+
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/{doc,info,locale}
+}

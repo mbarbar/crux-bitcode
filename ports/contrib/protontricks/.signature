@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF318npPy+pw0/FmhusgsLq8XEIi6rVyfXC7WrFi1E/vNOb3onK6ekBWKs3Q3tvH1yvq7S+EOprfgym3xZTSbZIwI=
+SHA256 (Pkgfile) = b013444dc11a9891bd73cdd56105353023609d9ea2d4a54fa857e85c3b58af70
+SHA256 (.footprint) = 0e9975c31d1f02fa5624d1ff45d128487379d6cb4ced89b9621d991bf81240f4
+SHA256 (protontricks-1.4.2.tar.gz) = e7f006784a4f494806d3df1aea58a590b6c23672f4f9b3d837190a1db8fedf25

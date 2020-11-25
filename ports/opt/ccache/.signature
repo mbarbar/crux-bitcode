@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ZSMXP930c16Bi4lf9IRcZa3Ay102Uor1lgzfl9SwyMPGg6qphBb+xFhVkP6l77qDwKQR7f2RD402fQpOFVPmQE=
+SHA256 (Pkgfile) = 3c9ab352d9a46db5cd181aa2090a778b30db2ad8149d00df13200cc3f6ae74e0
+SHA256 (.footprint) = aa85bfc686cf873efffd292c55eae8016e161bd8074d4f3490539f6089eead23
+SHA256 (ccache-4.1.tar.xz) = 5fdc804056632d722a1182e15386696f0ea6c59cb4ab4d65a54f0b269ae86f99
+SHA256 (ccache.1) = 2cb76cfa39554615bcae5ff47ffbdba9c1f04b1cf42cda3484dca59655c8951b

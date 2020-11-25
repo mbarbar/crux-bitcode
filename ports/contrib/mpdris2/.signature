@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33e6WNPUnvKqrpyX4tHOJqG8IKsxanzVm84ngbEx5K8C3b56SVY4DP2GFGhibUAi+jlE+XeWls8N6a+VF6eWSg4=
+SHA256 (Pkgfile) = c8ee2e13b7d9ad001b38236db4c6cf4848eff2857971c31a25ac0136b147deb0
+SHA256 (.footprint) = b3e674935c82fb20147614e47df5c78d125dd411597a661673bee97a50261b0b
+SHA256 (mpdris2-0.8.tar.gz) = b6b15c1fdddf16a6d74485ad09f56ed353a317e149c37475c00a279186da4391

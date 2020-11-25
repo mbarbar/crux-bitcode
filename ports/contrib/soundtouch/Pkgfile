@@ -1,0 +1,23 @@
+# Description: Audio processing library for changing tempo, pitch and playback rates.
+# URL: https://www.surina.net/soundtouch/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=soundtouch
+version=2.1.2
+release=1
+source=(https://gitlab.com/$name/$name/-/archive/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./bootstrap
+
+	./configure \
+		--prefix=/usr \
+		--enable-shared=yes
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+}

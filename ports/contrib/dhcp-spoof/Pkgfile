@@ -1,0 +1,17 @@
+# Description: DHCP spoofing attack tool
+# URL:         https://github.com/emanuele-f/dhcp-spoof
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  libpcap
+
+name=dhcp-spoof
+version=0.1.a207d4c
+_commit=a207d4c6d71db1e3f051deab9b1306defe3e987a
+release=1
+source=(https://github.com//emanuele-f/$name/archive/$_commit/$name-$_commit.zip)
+
+build() {
+	cd $name-$_commit
+
+	gcc $CFLAGS -Wall -Wextra -o dhcp-spoof	-lpcap dhcp_spoof.c
+	install -Dm755 dhcp-spoof -t $PKG/usr/sbin
+}

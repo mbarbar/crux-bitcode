@@ -1,0 +1,21 @@
+# Description: A free, fast, featureful and portable implementation of the Forth 2012 language.
+# URL: https://gforth.org/
+# Maintainer: Jan-Michael Franz, jmf at mesecons dot net
+# Depends on:
+
+name=gforth
+version=0.7.3
+release=2
+source=(https://ftp.gnu.org/gnu/gforth/$name-$version.tar.gz)
+
+build () {
+  cd $name-$version
+
+  ./configure --prefix=/usr
+  make -j1
+  make DESTDIR=$PKG install
+  rm -R $PKG/usr/share/info/
+  rm $PKG/usr/share/gforth/$version/asm/README
+  rm $PKG/usr/share/gforth/$version/compat/README
+  rm $PKG/usr/share/gforth/$version/ec/README
+}

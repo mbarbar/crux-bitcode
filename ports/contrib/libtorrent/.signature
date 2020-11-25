@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38qrR+bksqKZdJyE38wwfA1lbZdF16NF/Cwu8eW0ACw7TbD7ZoQJXEOS2qgUuk/8FohS7luOBylj40NbUNqXGAw=
+SHA256 (Pkgfile) = 64862f717de4c7f1eea94b69f4c84c71c81bcf5cb1371a7f9f779d94b8c7c892
+SHA256 (.footprint) = 03d720eaa7e893a3d3feaa092e11a4d8694c49554ba3b473c5b2a349ee950d53
+SHA256 (libtorrent-0.13.8.tar.gz) = ed115a28f4ae8cfcd33b94a597c076ca74fd549867a26e4fac9505c27288e983

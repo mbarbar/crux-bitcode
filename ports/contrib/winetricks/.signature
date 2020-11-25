@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39QAP/kw/KXGmdainJ0q4/LYbPiYTzdUe9FYDZiuwLGxw3el+t2/l6i9BLUAJi8TE/8tnYlrlUVGEqmguwKhNgU=
+SHA256 (Pkgfile) = dc9355d914bc5db13635fa5b4afddba33b89dd19a0c6d453fcd15b14827e15ef
+SHA256 (.footprint) = 7712050aee0c98d5393961f09eee81b2e800b418224537ba88d1d2dbcd6f8cbc
+SHA256 (winetricks-20200412.tar.gz) = 4b0aa4f11dbc30d10a8edd2bb83fcc34f9b143ab58ccce7b99cd54ebff7ec260

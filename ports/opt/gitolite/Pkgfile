@@ -1,0 +1,19 @@
+# Description: setup git hosting on a central server
+# URL:         https://gitolite.com
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  git
+
+name=gitolite
+version=3.6.12
+release=1
+source=(https://github.com/sitaramc/gitolite/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	install -d $PKG/home
+	install -d -o git $PKG/home/git/bin
+	./install -to $PKG/home/git/bin
+
+	chown -R git:git $PKG/home/git
+}

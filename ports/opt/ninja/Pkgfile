@@ -1,0 +1,16 @@
+# Description: Small build system with a focus on speed
+# URL: https://ninja-build.org/
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot guru
+# Depends on: python3
+
+name=ninja
+version=1.10.1
+release=1
+source=(https://github.com/$name-build/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	/usr/bin/python3 configure.py --bootstrap
+	install -D -m 0755 $name $PKG/usr/bin/$name
+}

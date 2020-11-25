@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+OT6Ygi+pZe7iXYmLbXHJZTGMIHvIijg5Pnk/ISiUGhPMLLMqrjbtBFLNwtxD0mZ2A9TxvE6NpObsrb8bm08wQ=
+SHA256 (Pkgfile) = c81587919b270b2c683e06b4a47cc773d189fd81bdf3072d6dac2917ed63f468
+SHA256 (.footprint) = 0413b4de186bf1409990bf7ea58686258083af8fa67e69f62f3c152aebc29bea
+SHA256 (ImageMagick-6.9.11-42.tar.xz) = d53afabf1a16795c44b6d3063ab685664cbb0a4284bc775efcfdd53ddfe676f2
+SHA256 (IM6-GS-policy.patch) = f20c09860da65a4259ec9627ceeca7d993949b7460fa199c5ffd874633814cf6

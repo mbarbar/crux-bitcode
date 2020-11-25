@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31VtcRZ7zHIgMse1nJBZFtGfbgn0dUatoMogniiOjZI7bYiLUzmuwPmxm/LX3CRqFSaHDM2aoPiuASmCJRhw5AE=
+SHA256 (Pkgfile) = 1dd522c2d13914b0f698c5ed4edfbe10772b605d26b77e4cd57e4140b261aa08
+SHA256 (.footprint) = db02e51b4a452de827fc78c8b53a6a13c8afdd09c228fedc5cccc432952cd141
+SHA256 (nethogs-v0.8.6.tar.gz) = 317c1d5235d4be677e494e931c41d063a783ac0ac51e35e345e621d261c2e5a0

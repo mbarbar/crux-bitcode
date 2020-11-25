@@ -1,0 +1,16 @@
+# Description: set up and maintain persistent TUN/TAP network interfaces
+# URL:         http://tunctl.sourceforge.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=tunctl
+version=1.5
+release=1
+source=(http://download.sourceforge.net/${name}/${name}-${version}.tar.gz)
+
+build() {
+	cd $name-$version
+  make tunctl
+  install -d $PKG/usr/sbin
+  install tunctl $PKG/usr/sbin
+}

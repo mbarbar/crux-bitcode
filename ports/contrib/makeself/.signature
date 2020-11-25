@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wQm90NMzjGhGppzycq0/lFobIQjMij7sD+fchdb4b56yLQJ8bMxDOTAmJ7YYQjaH/W5v8Qjavs8mBJEtYxgKAw=
+SHA256 (Pkgfile) = f30784c2f0de10f20ab166d41d6bd582b4cec37004cf6b022b87372dcaf3ad73
+SHA256 (.footprint) = 168e1793cd912b795c4951672f8a4f0868c54aa3eeb477dc64ad2edea7fc08f5
+SHA256 (makeself-2.4.2.run) = 7155c9a4e9e3e3dfd53a65dfd21949b4aa35e8dc5fb2a48a0211a0696e3b0dee

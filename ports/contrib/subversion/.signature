@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/F8knf5KT9LoUO+PzSXLpel1nOiyC0aji4L1YiTc/lp5+a8Z6ryMtOZTaSwUt522fyFEcNMd1jAdq23zsuJzAE=
+SHA256 (Pkgfile) = 547023af0f0a226b0464c415e8e0fee43da5f5e64d7a57b81df6cc4a44ebaa77
+SHA256 (.footprint) = 6c9630e8576a940353039eb3e0429c7ceeb47a4cdde88dc51135be8b223971b6
+SHA256 (subversion-1.14.0.tar.bz2) = 6ba8e218f9f97a83a799e58a3c6da1221d034b18d9d8cbbcb6ec52ab11722102

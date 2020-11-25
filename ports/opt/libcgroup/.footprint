@@ -1,0 +1,65 @@
+drwxr-xr-x	root/root	lib/
+drwxr-xr-x	root/root	lib/security/
+-rw-r--r--	root/root	lib/security/pam_cgroup.a
+-rwxr-xr-x	root/root	lib/security/pam_cgroup.la
+lrwxrwxrwx	root/root	lib/security/pam_cgroup.so -> pam_cgroup.so.0.0.0
+lrwxrwxrwx	root/root	lib/security/pam_cgroup.so.0 -> pam_cgroup.so.0.0.0
+-rwxr-xr-x	root/root	lib/security/pam_cgroup.so.0.0.0
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cgclassify
+-rwxr-xr-x	root/root	usr/bin/cgcreate
+-rwxr-xr-x	root/root	usr/bin/cgdelete
+-rwsr-xr-x	root/root	usr/bin/cgexec
+-rwxr-xr-x	root/root	usr/bin/cgget
+-rwxr-xr-x	root/root	usr/bin/cgset
+-rwxr-xr-x	root/root	usr/bin/cgsnapshot
+-rwxr-xr-x	root/root	usr/bin/lscgroup
+-rwxr-xr-x	root/root	usr/bin/lssubsys
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/libcgroup.h
+drwxr-xr-x	root/root	usr/include/libcgroup/
+-rw-r--r--	root/root	usr/include/libcgroup/config.h
+-rw-r--r--	root/root	usr/include/libcgroup/error.h
+-rw-r--r--	root/root	usr/include/libcgroup/groups.h
+-rw-r--r--	root/root	usr/include/libcgroup/init.h
+-rw-r--r--	root/root	usr/include/libcgroup/iterators.h
+-rw-r--r--	root/root	usr/include/libcgroup/log.h
+-rw-r--r--	root/root	usr/include/libcgroup/tasks.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libcgroup.a
+-rwxr-xr-x	root/root	usr/lib/libcgroup.la
+lrwxrwxrwx	root/root	usr/lib/libcgroup.so -> libcgroup.so.1.0.42
+lrwxrwxrwx	root/root	usr/lib/libcgroup.so.1 -> libcgroup.so.1.0.42
+-rwxr-xr-x	root/root	usr/lib/libcgroup.so.1.0.42
+-rw-r--r--	root/root	usr/lib/libcgroupfortesting.a
+-rwxr-xr-x	root/root	usr/lib/libcgroupfortesting.la
+lrwxrwxrwx	root/root	usr/lib/libcgroupfortesting.so -> libcgroupfortesting.so.1.0.42
+lrwxrwxrwx	root/root	usr/lib/libcgroupfortesting.so.1 -> libcgroupfortesting.so.1.0.42
+-rwxr-xr-x	root/root	usr/lib/libcgroupfortesting.so.1.0.42
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libcgroup.pc
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/cgclear
+-rwxr-xr-x	root/root	usr/sbin/cgconfigparser
+-rwxr-xr-x	root/root	usr/sbin/cgrulesengd
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/cgclassify.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgclear.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgcreate.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgdelete.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgexec.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgget.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgset.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cgsnapshot.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/lscgroup.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/lssubsys.1.gz
+drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/cgconfig.conf.5.gz
+-rw-r--r--	root/root	usr/share/man/man5/cgred.conf.5.gz
+-rw-r--r--	root/root	usr/share/man/man5/cgrules.conf.5.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/cgconfigparser.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/cgrulesengd.8.gz

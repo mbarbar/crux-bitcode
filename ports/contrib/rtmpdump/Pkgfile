@@ -1,0 +1,43 @@
+# Description: A tool to download rtmp streams.
+# URL: http://rtmpdump.mplayerhq.hu/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: zlib gnutls
+
+name=rtmpdump
+version=2.4
+release=3
+source=(http://crux.ster.zone/downloads/$name/$name-$version-c5f04a58.tar.xz)
+
+build() {
+	cd $name
+
+	sed \
+		-e 's/^CRYPTO=OPENSSL/#CRYPTO=OPENSSL/' \
+		-e 's/#CRYPTO=GNUTLS/CRYPTO=GNUTLS/' \
+		-i Makefile -i librtmp/Makefile
+
+	sed \
+		-e 's|OPT=|&-fPIC |' \
+		-e 's|OPT|OPTS|' \
+		-e 's|CFLAGS=.*|& $(OPT)|' \
+		-i librtmp/Makefile
+
+
+	install -d $PKG/usr/lib
+
+	[ "$CC" ] || CC=gcc
+
+	make \
+		CC="$CC" \
+		$MAKEFLAGS \
+		OPT="$CFLAGS" \
+		XLDFLAGS="$LDFLAGS" \
+		SYS=posix
+
+	make \
+		prefix=/usr \
+		sbindir=/usr/bin \
+		mandir=/usr/share/man \
+		DESTDIR=$PKG \
+		install
+}

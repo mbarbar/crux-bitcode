@@ -1,0 +1,27 @@
+# Description: A tool to tidy down your HTML code to a clean style
+# URL: http://www.html-tidy.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libxslt cmake
+
+name=tidy
+version=5.7.28
+commit=d1b906991a7587688d384b648c55731f9be52506
+release=1
+source=(https://github.com/htacg/tidy-html5/archive/$commit.tar.gz#/$name-$commit.tar.gz)
+
+build() {
+	[[ -e /usr/bin/ninja ]] && PKGMK_TIDY+=' -G Ninja'
+	cmake -S tidy-html5-$commit -B build $PKGMK_TIDY \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	# Compatibility symlinks until everything is ported
+	ln -s tidybuffio.h $PKG/usr/include/buffio.h
+	ln -s tidyplatform.h $PKG/usr/include/platform.h
+}

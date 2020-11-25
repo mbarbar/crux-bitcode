@@ -1,0 +1,22 @@
+REQUIREMENTS:
+
+PRECAUTION:
+
+PRE-INSTALL:
+
+POST-INSTALL:
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+	Exit xscreensaver and run rss-glx_install for each user that wants \
+	these aditional screensavers. Don't forget to restart xscreensaver after!
+
+	Example commands:
+		pkill xscreensaver
+		/usr/sbin/rss-glx_install
+		xscreensaver -no-splash &
+

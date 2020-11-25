@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30YtMrhvAKyYTBWbbo24I9kC4pfNTl5ZOlZB4/pelNoe5G3ue9hiykQUrN6m2roEWA5YKPWvPNZk9kaRpcMXjQg=
+SHA256 (Pkgfile) = 556077dc2eaf60b1dee873175e4717505f93eab43bacacae9767b77985949b3f
+SHA256 (.footprint) = 6e781923e1019c625b749fb72d5872e0f249858a137784790383bcdaa90a2643
+SHA256 (virtualenv-clone-0.5.4.tar.gz) = 665e48dd54c84b98b71a657acb49104c54e7652bce9c1c4f6c6976ed4c827a29

@@ -1,0 +1,29 @@
+# Description: DHCP server, client and relay agent.
+# URL:         https://www.isc.org/downloads/dhcp
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Mark Rosenstand, mark at borkware dot net
+
+name=dhcp
+version=4.4.2
+release=1
+source=(http://ftp.isc.org/isc/$name/$version/$name-$version.tar.gz dhcpd \
+        dhclient default-config.diff)
+
+build() {
+  cd dhcp-$version
+  patch -p1 -i $SRC/default-config.diff
+
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc
+
+  make -j1
+  make DESTDIR=$PKG install
+  install -D ../dhcpd $PKG/etc/rc.d/dhcpd
+  install -D ../dhclient $PKG/etc/rc.d/dhclient
+  install -d -m 0755 $PKG/var/state/dhcp
+  install -d -m 0755 $PKG/var/db
+  touch $PKG/var/state/dhcp/dhcpd.leases
+  install -D -m 755 $SRC/dhcp-$version/client/scripts/linux $PKG/sbin/dhclient-script
+  mv $PKG/etc/dhclient.conf.example $PKG/etc/dhclient.conf
+  mv $PKG/etc/dhcpd.conf.example $PKG/etc/dhcpd.conf
+}

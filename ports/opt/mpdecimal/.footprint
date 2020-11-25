@@ -1,0 +1,8 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/mpdecimal.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libmpdec.a
+lrwxrwxrwx	root/root	usr/lib/libmpdec.so -> libmpdec.so.2.4.2
+lrwxrwxrwx	root/root	usr/lib/libmpdec.so.2 -> libmpdec.so.2.4.2
+-rwxr-xr-x	root/root	usr/lib/libmpdec.so.2.4.2

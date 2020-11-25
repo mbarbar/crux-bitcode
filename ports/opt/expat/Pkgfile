@@ -1,0 +1,20 @@
+# Description: A fast, non-validating, stream-oriented XML parsing library
+# URL:         https://libexpat.github.io/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=expat
+version=2.2.10
+release=1
+source=(http://download.sourceforge.net/$name/$name-$version.tar.lz)
+
+build() { 
+    cd $name-$version
+
+    ./configure --prefix=/usr
+
+    make
+    make DESTDIR=$PKG install
+    install -D -m 0644 doc/xmlwf.1 $PKG/usr/share/man/man1/xmlwf.1
+
+    rm -r $PKG/usr/share/doc
+}

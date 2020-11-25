@@ -1,0 +1,23 @@
+Binary files portdbc-1.1-orig/portdbc and portdbc-1.1/portdbc differ
+diff -rupN portdbc-1.1-orig/portdbc.c portdbc-1.1/portdbc.c
+--- portdbc-1.1-orig/portdbc.c	2011-07-13 18:04:19.000000000 +0200
++++ portdbc-1.1/portdbc.c	2017-07-09 17:41:44.244318646 +0200
+@@ -44,6 +44,9 @@ int printHttpFile(char *url)
+     /* send all data to this function  */
+     curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, writeCallback);
+ 
++    /* 302 http -> https  */
++    curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
++
+     /* get it! */
+     curl_easy_perform(curl_handle);
+ 
+@@ -254,7 +257,7 @@ int main(int argc, char** argv)
+   xmlNode *r_node = NULL;
+ 
+   char *url = NULL;
+-  char *portdb_url = "http://crux.nu/portdb/";
++  char *portdb_url = "https://crux.nu/portdb/";
+   char *tmpfile = "/tmp/.portdbc.xml";
+ 
+   // use HOME directory when available

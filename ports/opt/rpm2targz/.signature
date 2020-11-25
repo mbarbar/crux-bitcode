@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Vu7q5v4k7kzHWHm++fyJOvytlXLFhGAVQH0T5pbFmUK/aqgeOtL/0dsb+lgqURF8inqvYDKJo6vzCOkMSIG1Q8=
+SHA256 (Pkgfile) = 55e670a06ac30bb884750af29d16e5707f8fb5a72c21fdb31f0ef521f8892bfc
+SHA256 (.footprint) = eaa1a50e3cf8bdb3db86d94b3909344415f705875a5766a22dc2964edb7522df
+SHA256 (rpm2targz) = 66ab10d39755e06f49154c988b16ebfde7ffd47112dadb054a2fd7c19eebb320
+SHA256 (rpmoffset.c) = 1c816adb0478c4bcfc1f1f2408e504e83bc5461696bc10d374b57df341ca995b

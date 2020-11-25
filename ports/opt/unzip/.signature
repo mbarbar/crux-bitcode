@@ -1,0 +1,14 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/U+lQa2p9GXkrS4tGusd6mGpljiq6h1SgJx6cZGoMPeGuSh/54lf/bI3nws9raM+XYq6ajd4aBywlFRjnkpwrAg=
+SHA256 (Pkgfile) = cd04f724cda5bc9cd4860bb3b297d0fc4cb7e21f33f5b8255d78f2c0ac1d2d65
+SHA256 (.footprint) = a1d2c71a5371982b87a8a14082aa2236258f84e0d602ec39247e0d63bf46ffdd
+SHA256 (unzip60.tar.gz) = 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
+SHA256 (unzip-6.0-overflow.patch) = dcd41e0be383c485427fc5461a1aeb8a6207e7fcacf0d254f18700599845a9da
+SHA256 (unzip-6.0-attribs-overflow.patch) = 74bc961e8013a4058687a3730590a709b7889203beb74a4a8369ba0301bef0e2
+SHA256 (unzip-6.0-heap-overflow-infloop.patch) = b072c5a6d252425dbbda54a3d94285e4fb9aca122a0b9f8aa8f0f12ae505e64f
+SHA256 (unzip-6.0-cve-2014-8139.patch) = 337131428f491b7030f96ee5b8ef3d8f5963730d1619b2754c624f4616d79adb
+SHA256 (unzip-6.0-cve-2014-8140.patch) = 64f64985270e026c01d2c19c6b66c218cf5bcfc7cf3d4a44e601fad41975ec73
+SHA256 (unzip-6.0-cve-2014-8141.patch) = b7a14c33db93d1e5b4fc6ce113b4b99ff7a81ed56f46c87e001f22ec085e0273
+SHA256 (0001-Fix-CVE-2016-9844-rhbz-1404283.patch) = 1980d37c82591f9ad473052408b0a61d0c50cce8db795b9980e6a74b2270c339
+SHA256 (unzip-6.0-cve-2018-1000035-heap-based-overflow.patch) = aced0f27191a67f9b8b3fdc5995938a64fd87cea64a0bbba2106e06137ef91c2
+SHA256 (unzip-6.0-alt-iconv-utf8-print.patch) = b990d8d8d8e02777999484a132170666ea736a865f9ad81da651dc63725475ff

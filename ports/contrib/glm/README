@@ -1,0 +1,8 @@
+Upstream decided to remove the cmake scripts for whatever reason.. you can
+have a look at the discussion here:
+https://github.com/g-truc/glm/issues/947
+And check on the status for a new one here:
+https://github.com/g-truc/glm/issues/961
+
+This port uses the method the Arch Linux maintainer for glm decided to go.
+Big thanks to Sven-Hendrik Haase from my side (see the first link for more details).

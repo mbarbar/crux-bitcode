@@ -1,0 +1,27 @@
+# Description: Perl bindings for GTK2
+# URL:         https://metacpan.org/pod/Gtk2
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  gtk p5-pango xorg-libxdamage
+
+name=p5-gtk2
+version=1.24993
+release=1
+source=(http://www.cpan.org/modules/by-module/Gtk2/Gtk2-$version.tar.gz)
+
+build() {
+	cd Gtk2-$version
+
+	perl Makefile.PL \
+		--without-gdkimlib \
+		--without-gnome \
+		--without-applets \
+		--without-gnomeprint \
+		--without-glade
+
+	make OPTIMIZE="$CFLAGS"
+	make install DESTDIR=$PKG
+
+	find $PKG -name perllocal.pod -o -name "*.bs" -o -name .packlist | xargs rm
+	find $PKG -empty | xargs rmdir -p ||:
+	find $PKG -type f -a -perm -u-w | xargs chmod u+w
+}

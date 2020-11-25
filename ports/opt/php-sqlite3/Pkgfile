@@ -1,0 +1,25 @@
+# Description: SQLite3 module for PHP
+# URL:         https://www.php.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  sqlite3
+
+name=php-sqlite3
+version=7.4.12
+release=1
+source=(https://php.net/distributions/php-$version.tar.xz)
+
+build () {
+    cd php-$version
+
+    ./configure --disable-all \
+                --enable-pdo=shared \
+                --with-sqlite3=shared,/usr \
+                --with-pdo-sqlite=shared,/usr
+
+    make build-modules
+
+    install -d $PKG/{etc/php/conf.d,usr/lib/php/extensions}
+    install -m 755 modules/*sqlite*.so $PKG/usr/lib/php/extensions
+    
+    printf 'extension=%s\n' {pdo_sqlite,sqlite3}.so > $PKG/etc/php/conf.d/sqlite3.ini
+}

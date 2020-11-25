@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37I+ida9PDA2sIIWuOmAeK9PNeYGaBjRtu/SesZa2c7wpQqDLaCaAaa07ohLUqGodAIYNznbyT8Rhqeyq0Nm5wM=
+SHA256 (Pkgfile) = 670426652125d703cccfce3abaa5ecbbd49860a97cae52a8d26f5db1beca19d6
+SHA256 (.footprint) = 4298d3de2c4e4f22b06d88214e36192e4be7e9ae34cf922793b4401aa9a3db21
+SHA256 (cairomm-1.16.0.tar.xz) = 7e881492c5f9f546688c31160deb742c166fc4c68b6b8eb9920c00a0f0f144f9

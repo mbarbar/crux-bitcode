@@ -1,0 +1,18 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/steam-native
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/steam/
+lrwxrwxrwx	root/root	usr/lib/steam/libcurl.so.3 -> /usr/lib/libcurl.so.3
+lrwxrwxrwx	root/root	usr/lib/steam/libcurl.so.4 -> /usr/lib/libcurl.so.4.2.0
+lrwxrwxrwx	root/root	usr/lib/steam/libcurl.so.4.2.0 -> /usr/lib/libcurl.so.4.2.0
+lrwxrwxrwx	root/root	usr/lib/steam/libpcre.so.3 -> /usr/lib/libpcre.so
+drwxr-xr-x	root/root	usr/lib32/
+drwxr-xr-x	root/root	usr/lib32/steam/
+lrwxrwxrwx	root/root	usr/lib32/steam/libcurl.so.3 -> /usr/lib32/libcurl.so.3
+lrwxrwxrwx	root/root	usr/lib32/steam/libcurl.so.4 -> /usr/lib32/libcurl.so.4.2.0
+lrwxrwxrwx	root/root	usr/lib32/steam/libcurl.so.4.2.0 -> /usr/lib32/libcurl.so.4.2.0
+lrwxrwxrwx	root/root	usr/lib32/steam/libpcre.so.3 -> /usr/lib32/libpcre.so
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/applications/
+-rw-r--r--	root/root	usr/share/applications/steam-native.desktop

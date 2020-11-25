@@ -1,0 +1,24 @@
+# Description: Library that provides a high-level interface to RDF data
+# URL: http://librdf.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: rasqal unixodbc sqlite3
+# Optional: mysql postgresql
+
+name=redland
+version=1.0.17
+release=1
+source=(http://download.librdf.org/source/$name-$version.tar.gz rpath.diff)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --enable-release \
+    --with-raptor=system \
+    --with-rasqal=system \
+    --with-sqlite=3 \
+    --with-bdb=no
+  patch -Np0 -i $SRC/rpath.diff
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/gtk-doc
+}

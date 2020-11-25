@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xY9CIXGpRL/Vr4ForF2EIsjLtt4tKCTIh7weidv599hmyukCtLJZPzQKJvskTdtoOthzcGF+PKXBwdwsN+hIAU=
+SHA256 (Pkgfile) = 8b6dee86c5ab1b478ab7cc2baa3cfd21fb6216c054bc2b5eff038917271996b6
+SHA256 (.footprint) = 1b8353e150051bed2ddce7dabebc7909a97fae9b8fac62e91f0af3af22d72cfa
+SHA256 (Pygments-2.7.2.tar.gz) = 381985fcc551eb9d37c52088a32914e00517e57f4a21609f48141ba08e193fa0

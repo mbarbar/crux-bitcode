@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zzbnlkkHyZb1aSXbR0zazuakQNEVTO4JOCC9vjuzauqAn76Hsp82AMqKkyyItm4K5oR1Ha2pGxkIs99EWJ1/w0=
+SHA256 (Pkgfile) = f65e57e3b1df964b1a455a550cd252d14da2c846da4f481da6f5a3b6338c9767
+SHA256 (.footprint) = ee613c17160229defea0d615a32d162e3af47786c70d6bb18599f8ef5824ef9d
+SHA256 (thin-provisioning-tools-v0.9.0.tar.gz) = a2508d9933ed8a3f6c8d302280d838d416668a1d914a83c4bd0fb01eaf0676e8

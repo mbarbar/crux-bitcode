@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34QioeDNFQLwhKAbqv8duUe7mw+LE7lxG/3l9wslM4BBnVNetoySSvJ6Iavwx3vvuxvFGKP27BfOv4H290mKCQE=
+SHA256 (Pkgfile) = 66f2d3e2180e9866552ce25b712fa774184d0e38445617117d8056494cc895cc
+SHA256 (.footprint) = d17fbcd4efd58f95fa79560a96ec64dbbe01e47357edea3749b83357ad0d5c34
+SHA256 (raptor2-2.0.15.tar.gz) = ada7f0ba54787b33485d090d3d2680533520cd4426d2f7fb4782dd4a6a1480ed

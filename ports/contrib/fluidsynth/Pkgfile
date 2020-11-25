@@ -1,0 +1,23 @@
+# Description: A real-time software synthesizer.
+# URL: http://www.fluidsynth.org/
+# Maintainer: Jan-Michael Franz, jmf at mesecons dot net
+# Packager: Olle Gustafsson, ogg at linux dot se
+# Depends on: cmake glib
+# Nice to have: jack-audio-connection-kit
+
+name=fluidsynth
+version=2.1.5
+release=1
+source=(https://github.com/FluidSynth/fluidsynth/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cmake -S$name-$version -Bbuild -GNinja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D LIB_SUFFIX= \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

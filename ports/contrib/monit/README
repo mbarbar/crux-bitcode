@@ -1,0 +1,13 @@
+README for monit
+
+POST-INSTALL
+
+  Edit monitrc control file as you need (/usr/etc/monitrc)
+  
+  Also, monit can run and be controlled from init.
+  If monit should crash, init will re-spawn a new monit process.
+  To setup monit to run from init, you can use the 'set init' statement
+  in monitrc and then edit your /etc/inittab as:
+  
+  # Run monit in standard run-levels
+  mo:2345:respawn:/usr/bin/monit -Ic /usr/etc/monitrc

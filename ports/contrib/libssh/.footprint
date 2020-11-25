@@ -1,0 +1,22 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libssh/
+-rw-r--r--	root/root	usr/include/libssh/callbacks.h
+-rw-r--r--	root/root	usr/include/libssh/legacy.h
+-rw-r--r--	root/root	usr/include/libssh/libssh.h
+-rw-r--r--	root/root	usr/include/libssh/libssh_version.h
+-rw-r--r--	root/root	usr/include/libssh/libsshpp.hpp
+-rw-r--r--	root/root	usr/include/libssh/server.h
+-rw-r--r--	root/root	usr/include/libssh/sftp.h
+-rw-r--r--	root/root	usr/include/libssh/ssh2.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/libssh/
+-rw-r--r--	root/root	usr/lib/cmake/libssh/libssh-config-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/libssh/libssh-config-version.cmake
+-rw-r--r--	root/root	usr/lib/cmake/libssh/libssh-config.cmake
+lrwxrwxrwx	root/root	usr/lib/libssh.so -> libssh.so.4
+lrwxrwxrwx	root/root	usr/lib/libssh.so.4 -> libssh.so.4.8.6
+-rwxr-xr-x	root/root	usr/lib/libssh.so.4.8.6
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libssh.pc

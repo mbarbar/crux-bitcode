@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32Ucw5LBur0R1Zlh2S7siwjuQxTxXFxX7fdhkZ2AIoxwqNtmPhp3T3VCyJU/ybimAahi0D+Syj3sdfgKy1lO6ws=
+SHA256 (Pkgfile) = 7219ccc596c34d56c3bf34b4325a145d5b14d43051360b4aa8f2dd3d04b792e7
+SHA256 (.footprint) = f78b559ce9fb7ea778ce79f074ac70bcfac5adf7a3262e66b3d313d438d06bda
+SHA256 (gnome-keyring-3.36.0.tar.gz) = 4ef54f69aeaa51c50fee7f538beefe4e1e9a3e20eb7c84419d17d3915b13e025

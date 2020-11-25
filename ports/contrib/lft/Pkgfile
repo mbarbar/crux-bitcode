@@ -1,0 +1,18 @@
+# Description: Layer Four Traceroute
+# URL:         http://pwhois.org/lft/
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  libpcap
+
+name=lft
+version=3.91
+release=1
+source=(http://pwhois.org/get/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

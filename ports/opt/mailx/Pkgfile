@@ -1,0 +1,28 @@
+# Description: Replacement for Berkeley Mail and System V mailx command
+# URL:         http://www.sdaoden.eu/code.html
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  openssl ncurses
+
+name=mailx
+version=14.9.19
+release=1
+source=(https://www.sdaoden.eu/downloads/s-nail-$version.tar.xz)
+
+build() {
+    cd s-nail-$version
+
+    make config \
+         VAL_SID= \
+         VAL_MAILX=mailx \
+         VAL_PREFIX=/usr \
+         VAL_LIBEXECDIR=/usr/lib/mailx \
+         OPT_AUTOCC=no
+
+    make DESTDIR=$PKG install
+
+    chmod -R u+w $PKG
+
+    ln -s mailx   $PKG/usr/bin/Mail
+    ln -s mailx   $PKG/usr/bin/mail
+    ln -s mailx.1 $PKG/usr/share/man/man1/mail.1
+}

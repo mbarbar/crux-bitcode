@@ -1,0 +1,23 @@
+# Description: Utility for maintaining remote web sites via FTP or WebDAV
+# URL:         http://www.manyfish.co.uk/sitecopy/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  neon
+
+name=sitecopy
+version=0.16.6
+release=5
+source=(http://crux.s3.amazonaws.com/dist/$name-$version.tar.gz
+        $name-$version.patch)
+
+build () {
+    cd $name-$version
+    patch -p1 -i $SRC/$name-$version.patch
+    autoconf
+    ./configure --prefix=/usr \
+                --with-neon=/usr \
+                --disable-nls \
+                --disable-debug
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/{doc,share/man/fr}
+}

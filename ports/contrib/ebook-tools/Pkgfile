@@ -1,0 +1,23 @@
+# Description:	Ebook tools
+# URL:		http://ebook-tools.sourceforge.net/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	libzip libxml2
+
+name=ebook-tools
+version=0.2.2
+release=1
+source=(http://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_EBOOKTOOLS+=' -G Ninja'
+	cmake -S $name-$version -B build $PKGMK_EBOOKTOOLS \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-Wno-dev
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	rm $PKG/usr/bin/lit2epub
+}

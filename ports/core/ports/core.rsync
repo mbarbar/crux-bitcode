@@ -1,0 +1,3 @@
+host=crux.nu
+collection=ports/crux-3.5/core/
+destination=/usr/ports/core

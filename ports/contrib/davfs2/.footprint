@@ -1,0 +1,23 @@
+drwxr-xr-x	root/root	sbin/
+lrwxrwxrwx	root/root	sbin/mount.davfs -> /usr/sbin/mount.davfs
+lrwxrwxrwx	root/root	sbin/umount.davfs -> /usr/sbin/umount.davfs
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/etc/
+drwxr-xr-x	root/root	usr/etc/davfs2/
+drwxr-xr-x	root/root	usr/etc/davfs2/certs/
+drwx------	root/root	usr/etc/davfs2/certs/private/
+-rw-r--r--	root/root	usr/etc/davfs2/davfs2.conf
+-rw-------	root/root	usr/etc/davfs2/secrets
+drwxr-xr-x	root/root	usr/sbin/
+-rwsr-xr-x	root/root	usr/sbin/mount.davfs
+-rwxr-xr-x	root/root	usr/sbin/umount.davfs
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/davfs2/
+-rw-r--r--	root/root	usr/share/davfs2/davfs2.conf
+-rw-r--r--	root/root	usr/share/davfs2/secrets
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/davfs2.conf.5.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/mount.davfs.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/umount.davfs.8.gz

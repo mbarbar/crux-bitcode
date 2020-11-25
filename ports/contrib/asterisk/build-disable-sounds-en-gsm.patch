@@ -1,0 +1,11 @@
+--- asterisk-13.13.1/menuselect-tree.orig	2017-01-30 11:04:27.059563497 +0900
++++ asterisk-13.13.1/menuselect-tree	2017-01-30 11:09:27.578391532 +0900
+@@ -2046,7 +2046,7 @@
+ 		</member>
+ 		<member name="CORE-SOUNDS-EN-GSM" displayname="English, GSM format" >
+ 			<support_level>core</support_level>
+-			<defaultenabled>yes</defaultenabled>
++			<defaultenabled>no</defaultenabled>
+ 		</member>
+ 		<member name="CORE-SOUNDS-EN-G729" displayname="English, G.729 format">
+ 			<support_level>core</support_level>

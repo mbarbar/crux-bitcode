@@ -1,0 +1,11 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x5kyE5FxhFRmVQ2rTevqGVdrh/0VKpswzTQe8GJcqN6GW8uHgUddldk6HNhy5RXDLMRpasB7vL5detqjdPpkgI=
+SHA256 (Pkgfile) = 35be5a676166dbca201e8386c8082178e1ba5853c66bcf677cfef5fe5b2a091b
+SHA256 (.footprint) = 641ca436b78556e30ba420a8c14e3b56bd42f60b0af346f6c310c6857e58ba23
+SHA256 (transcode-1.1.7.tar.bz2) = 1e4e72d8e0dd62a80b8dd90699f5ca64c9b0cb37a5c9325c184166a9654f0a92
+SHA256 (subtitleripper-0.3-4.tgz) = 8af6c2ebe55361900871c731ea1098b1a03efa723cd29ee1d471435bd21f3ac4
+SHA256 (subtitleripper-0.3.4-linkingorder.patch) = fe79f5aa9626cd39346f805d2514e3253ed0e5c239741a01c30e715b1b57fd54
+SHA256 (subtitleripper-0.3.4-respect-ldflags.patch) = 3e31fa7baac3c1ca929e2601d08a7e2cc68baf18791d2daedc7cea3132029944
+SHA256 (transcode-ffmpeg3.patch) = 728ec3101039d98116275e36ea5cf0434a23a0bb82aca830ea9612fb9d16b062
+SHA256 (transcode-ffmpeg4.patch) = 2cc680666f705685a9fdc54b5a377e7728765bde6ed83c43b835634e27767721
+SHA256 (transcode-imagemagick7.patch) = 4ede15540ea6932954ac332c12dde130bf48e7e4773d1e04d3c3f23038c6ac51

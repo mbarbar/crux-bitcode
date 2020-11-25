@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39WMqCc0JWOpLQitYSOrWWUjv7X7X+uLt+iIrS8ZgPxf0kCU2ryPuneIn9NhL4QncUQ08X/qxIA0SPklm8McKAA=
+SHA256 (Pkgfile) = 980d95536726d30e84b577b7c534b664fc2e054f6d618b660ea4dc11be4bc638
+SHA256 (.footprint) = af7c7963b375fdbe0d5b50b2f6966ee845b7f27ac56e5192ed63276d41c6b3b5
+SHA256 (libmpdclient-2.19.tar.xz) = 158aad4c2278ab08e76a3f2b0166c99b39fae00ee17231bd225c5a36e977a189

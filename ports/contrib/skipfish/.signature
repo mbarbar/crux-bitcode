@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF385X4XY44L3wZ77kGbqqrLVN8EkdK65lJnzOo5XoGiSomAN3U0ucVMi6HqJ/GWEkIbzNTwTtLLa0j0OofQc6ogo=
+SHA256 (Pkgfile) = 09cfedcbcde799283842c7e3c57c7413dfe7ff561c2621560e66f5248f15bf97
+SHA256 (.footprint) = df675d7d0e900e9960b5d5c6db3f3d30ab6822c93077f64e5c29b93f286b7338
+SHA256 (skipfish-2.10b.tgz) = 1a4fbc9d013f1f9b970946ea7228d943266127b7f4100c994ad26c82c5352a9e
+SHA256 (skipfish.patch) = 096e9f7095a499605c8bf29bb9737397e9d5a168ec47888004dc8c2e7ceb0b62
+SHA256 (skipfish-openssl-1.0.patch) = ac606b9b3f64dedca2560cca5b36d76cf93c5d6f82212866e6748794d6feb55c

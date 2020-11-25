@@ -1,0 +1,28 @@
+# Description: Assemble/disassemble network packets at the protocol level
+# URL:         https://metacpan.org/pod/NetPacket
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  p5-module-build
+
+name=p5-netpacket
+version=1.7.2
+release=1
+source=(https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-$version.tar.gz)
+
+build() {
+	cd NetPacket-$version
+
+	perl Makefile.PL
+
+	make
+	make DESTDIR=$PKG install
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

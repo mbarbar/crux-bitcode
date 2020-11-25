@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32xatSsHp1sFtnfO6YlE91MSgrafNpBR2CuMY6vfmRKnwrF31Xeac+I7weiCiTiBKfzPXxgvnw4B2KEj7zFjMAE=
+SHA256 (Pkgfile) = a174f8b2acb80e6772d12c0de1ccb79875e1d93939a26cc30ca5096776939c8a
+SHA256 (.footprint) = a12a3cd23e0ffa9ef413dd7d8d801472c0b67d9f53dae0d996713ea0eaca8686
+SHA256 (yajl-2.1.0.tar.gz) = 3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a

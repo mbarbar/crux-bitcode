@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/proxychains4
+drwxr-xr-x	root/root	usr/etc/
+-rw-r--r--	root/root	usr/etc/proxychains.conf
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libproxychains4.so

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32F3sc4P9j3pMUACxU5WzyoGoHRLPvzCd4VuvDXaK3FodDkuA6JccNLQkWzkcXSmsFTBWzpUBton8AvMtpnqmAc=
+SHA256 (Pkgfile) = bfff97e2c6966f68eaac9496e0f097a1f89598c7f8bb2822b4917f0460637933
+SHA256 (.footprint) = 1155ac116f2576b10f0d7537987ea942ac3362406ee9268520787954ea11c293
+SHA256 (menu-cache-1.1.0.tar.xz) = ed02eb459dcb398f69b9fa5bf4dd813020405afc84331115469cdf7be9273ec7

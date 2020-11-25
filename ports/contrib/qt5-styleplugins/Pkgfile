@@ -1,0 +1,31 @@
+# Description: Additional style plugins for Qt5
+# URL:         https://github.com/qt/qtstyleplugins
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  gtk libpcre2 qt5 zstd
+
+name=qt5-styleplugins
+_commit=335dbece103e2cbf6c7cf819ab6672c2956b17b3
+version=5.0.0-335dbec
+release=1
+source=(https://github.com/qt/qtstyleplugins/archive/$_commit/$name-$_commit.tar.gz
+	qt5.15.patch)
+
+build() {
+	cd qtstyleplugins-$_commit
+
+	patch -p1 < $SRC/qt5.15.patch
+
+	qmake-qt5 \
+		PREFIX="/usr"                      \
+		QMAKE_CFLAGS_RELEASE="$CFLAGS"     \
+		QMAKE_CXXFLAGS_RELEASE="$CXXFLAGS" \
+		LIBS+="-lQt5DBus"
+
+	make qmake_all
+
+	# remove default '-pipe -O2' flag
+	find . -name Makefile -exec sed -i 's/ -pipe -O2 / /g' {} \;
+
+	make
+	make INSTALL_ROOT=$PKG install
+}

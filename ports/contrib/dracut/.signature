@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33iy1v7VFRcHR7JM8a8YC4cSPvQwN3FhjHanZ5gV2O0cQBAhJH4o6U4kWe0BedKp4JCIHa7O/EzW1pfwaeFlCg4=
+SHA256 (Pkgfile) = aaac68b27c78ab5ef7f4ba819e709c5e558448f65a02462e70bd33933ff1b41a
+SHA256 (.footprint) = ba26bce67c40b0c5d758c259760632110674484564ffd7826fcfa94423119145
+SHA256 (dracut-050.tar.xz) = 0d6c9451b15314ca96e358a40bacd40f1fb0333ae01c386ed84c3b4b49e1cd27

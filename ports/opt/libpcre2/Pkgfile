@@ -1,0 +1,24 @@
+# Description: Perl Compatible Regular Expressions
+# URL:         http://www.pcre.org
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:
+
+name=libpcre2
+version=10.35
+release=2
+source=(https://ftp.pcre.org/pub/pcre/pcre2-$version.tar.bz2)
+
+build() {
+    cd pcre2-$version
+
+    ./configure \
+        --prefix=/usr \
+        --enable-jit \
+        --enable-pcre2-16 \
+        --enable-pcre2-32
+
+    make
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/share/doc
+}

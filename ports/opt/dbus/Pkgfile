@@ -1,0 +1,31 @@
+# Description: A message bus system
+# URL: https://freedesktop.org/wiki/Software/dbus
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on: expat
+
+name=dbus
+version=1.12.20
+release=1
+source=(https://dbus.freedesktop.org/releases/dbus/$name-$version.tar.gz \
+        rc.dbus 30-dbus.launch)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+		--with-dbus-daemondir=/usr/sbin \
+		--localstatedir=/var \
+		--sysconfdir=/etc \
+		--libexecdir=/usr/lib/dbus \
+		--with-dbus-user=messagebus \
+		--with-init-scripts=none \
+		--with-system-pid-file=/var/run/$name/$name.pid
+
+	make
+	make DESTDIR=$PKG install
+	install -D -m 0755 $SRC/rc.dbus $PKG/etc/rc.d/dbus
+	install -D -m 0755 $SRC/30-dbus.launch \
+		$PKG/etc/X11/xinit/xinitrc.d/30-dbus.launch.sh
+	rm -r $PKG/usr/share/doc
+	rm -rf $PKG/usr/lib/cmake
+	rm -rf $PKG/usr/share/xml
+}

@@ -1,0 +1,14 @@
+# Description: Pipe commands to a pastebin site.
+# URL: http://wgetpaste.zlin.dk/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=wgetpaste
+version=2.30
+release=1
+source=(https://github.com/zlin/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	install -Dm755 wgetpaste $PKG/usr/bin/wgetpaste
+	[ ! -e '/usr/bin/zsh' ] || install -Dm644 _wgetpaste $PKG/usr/share/zsh/site-functions/_wgetpaste
+}

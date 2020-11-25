@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/1T2U0ftX0QbW9SNxWJNenPtE9HC2XZdQzaoW++5XpJfuFsm3ZIe34PJfMTGgMPCaMWhOGyNC9nD+4ad+nXhgo=
+SHA256 (Pkgfile) = 68e01f3e0208f610ad969358ed3bc522f79d3647e4171a9c5ba7fa1be84edd0f
+SHA256 (.footprint) = b17091d18deb31553b750bf82aa007d7ac34d05463f826ad31dbe9bfc4417c52
+SHA256 (libnetfilter_cttimeout-1.0.0.tar.bz2) = aeab12754f557cba3ce2950a2029963d817490df7edb49880008b34d7ff8feba

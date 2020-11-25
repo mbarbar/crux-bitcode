@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YiV+t5scUyWVJP1PtZXZE8XXeE51FODneFEyIgdOMPPRA0O60xTFrV+Lz1iY+6aombz15JqRvIosbZ907U0IQA=
+SHA256 (Pkgfile) = fcb69eea2a6d39436c1b7adec7ced3b78a8d74b2c2ca97c49e8309c646eadae3
+SHA256 (.footprint) = 80bb16e953952b92b1661f91809a4402a77703ed1beda63d606a8333b5eaa5de
+SHA256 (hplip-3.20.9.tar.gz) = 36251189aa9cc349f6a3eacbb7ac3c4fd26fc9f087c9f75cee051010c85d2ddf

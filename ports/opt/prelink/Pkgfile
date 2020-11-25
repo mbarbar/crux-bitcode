@@ -1,0 +1,24 @@
+# Description: Modifies ELFs to avoid runtime symbol resolutions resulting in faster load times.
+# URL: http://people.redhat.com/jakub/prelink/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: elfutils
+
+name=prelink
+version=20130503
+release=1
+source=(http://people.redhat.com/jakub/prelink/$name-$version.tar.bz2
+	prelink.conf)
+
+build() {
+	cd $name
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--sysconfdir=/etc \
+		--disable-debug
+
+	make
+	make DESTDIR=$PKG install
+	install -D $SRC/prelink.conf $PKG/etc/prelink.conf
+}

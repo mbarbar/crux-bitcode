@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/dri/
+lrwxrwxrwx	root/root	usr/lib/dri/nvidia_drv_video.so -> vdpau_drv_video.so
+lrwxrwxrwx	root/root	usr/lib/dri/s3g_drv_video.so -> vdpau_drv_video.so
+-rwxr-xr-x	root/root	usr/lib/dri/vdpau_drv_video.la
+-rwxr-xr-x	root/root	usr/lib/dri/vdpau_drv_video.so

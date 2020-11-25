@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+zZaGsypiZjVGkLvFeKZQ9gDDK+Erkh6Tvr7jNWwi6BaggOe+KJNsdXj5Hslv1m4IkUUp91MtTsnJ5WrSooZQk=
+SHA256 (Pkgfile) = 6632435521697576b1a5ed7da7fbc9f10f98af68430c54bc0ca4b285ed6954fe
+SHA256 (.footprint) = 1400e81bd782be6fcb092c5931837006d4b489279f5176b98c3d2eaa3a47e5f5
+SHA256 (flatbuffers-1.12.0.tar.gz) = 62f2223fb9181d1d6338451375628975775f7522185266cd5296571ac152bc45

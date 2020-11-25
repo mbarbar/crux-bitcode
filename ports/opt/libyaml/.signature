@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/dxkO8e9ePR9wjessyKUx46/xSPly21+y++6QDJ+ubVLVl8owoIsfyH/bCj7CPfJcBKiDgiTInQx7ngqlixFDww=
+SHA256 (Pkgfile) = 8ce247234bbcee93ae3be296f56945d98404b95ec09ffb6c43fb1cb6204084ef
+SHA256 (.footprint) = 133c876dede81b5e9556af5134b16d0585b31f514be1241a45dd42481fdee52b
+SHA256 (yaml-0.2.5.tar.gz) = c642ae9b75fee120b2d96c712538bd2cf283228d2337df2cf2988e3c02678ef4

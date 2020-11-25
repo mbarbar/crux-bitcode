@@ -1,0 +1,22 @@
+# Description: Passive OS fingerprinting tool
+# URL: https://lcamtuf.coredump.cx/p0f.shtml
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager: Mattias Hedenskog mattias at hedenskog dot se
+# Depends on: libpcap
+
+name=p0f
+version=3.09b
+release=1
+source=(http://lcamtuf.coredump.cx/p0f3/releases/p0f-$version.tgz)
+
+build() {
+    cd $name-$version
+    sed -i 's|p0f.fp|/etc/p0f.fp|1' config.h
+    make
+    install -d $PKG/usr/sbin $PKG/etc
+    install -m 755 p0f $PKG/usr/sbin
+    install -m 644 p0f.fp $PKG/etc
+    cd tools
+    make
+    for i in *.c;do install $(basename "$i" .c) $PKG/usr/sbin;done
+}

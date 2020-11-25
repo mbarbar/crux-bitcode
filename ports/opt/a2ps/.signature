@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/f7zUDYX38Z1laVbweDNd58XskrmCxfo1fZ07LvQFoIwgWpBhWIj/7oXE/mskY5MsfOVu7QbEImQM6gdP0hI5w4=
+SHA256 (Pkgfile) = a2ebf25428928524d7179cdfae96880f60a55742fc274299be0fbd4c5bd0dffc
+SHA256 (.footprint) = 39d0588420f5678d5bc1629a1336e6955fb6953c6a39ea7c14e4d2c55a7297d3
+SHA256 (a2ps-4.14.tar.gz) = f3ae8d3d4564a41b6e2a21f237d2f2b104f48108591e8b83497500182a3ab3a4

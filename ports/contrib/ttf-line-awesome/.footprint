@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/fonts/
+drwxr-xr-x	root/root	usr/share/fonts/TTF/
+-rw-r--r--	root/root	usr/share/fonts/TTF/la-brands-400.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/la-regular-400.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/la-solid-900.ttf

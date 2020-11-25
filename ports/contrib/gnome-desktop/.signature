@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32mrP7rT/Aq/X3w7RJ0dHmCsWz/FwcFUlppfI9bJbCQp2Ri5lEQz8h5SzVdZ2z8gCil+e27VrLfs69nDbJTpqgU=
+SHA256 (Pkgfile) = 147eed1977d913cfb94f54bc803b15ad300abc001f8b6ca64375addd77d14050
+SHA256 (.footprint) = ea878f4ca887e26d26ae1c8ea6a40d815be8f02333c6f319be0f17eb967b5648
+SHA256 (gnome-desktop-3.38.1.tar.xz) = 17903513fed60814e967512dd892751cb6a1d2716136232884bc65bd53cc3be0

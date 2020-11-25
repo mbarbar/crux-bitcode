@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37SV6wczSVk7AGmuYKDRBW7HlwcaM6f3rameNqzIFdee/mW9da735sJnzV+93SoEaKlCTUqPCdYSF2FFtu+8QAo=
+SHA256 (Pkgfile) = cfe5d889ab728e8cc77672ef242414fbd1d9d77ad9f96295976ca3ec5bfea58d
+SHA256 (.footprint) = 0357f62dbf79b6cd620b0c362a35ab0dc69de10a072c13b18b96469ebc3fa950
+SHA256 (NetworkManager-1.18.0.tar.xz) = c6e8df25e5a3c7309bc17664be8971689314884cdd08afdd6b0847d29d2a8ba6

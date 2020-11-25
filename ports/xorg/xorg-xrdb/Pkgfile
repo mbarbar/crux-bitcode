@@ -1,0 +1,18 @@
+# Description: x server resource database utility
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxmu
+
+name=xorg-xrdb
+version=1.2.0
+release=1
+source=(https://www.x.org/releases/individual/app/xrdb-$version.tar.bz2)
+
+build() {
+	cd xrdb-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

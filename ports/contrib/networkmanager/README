@@ -1,0 +1,23 @@
+README for networkmanager
+
+NOTE
+
+The only strict dependencies to build NetworkManager are: intltool, dbus-glib, libnl, nss and libndp
+
+REQUIREMENTS
+
+POST-INSTALL
+
+1. Disable any previous network scripts in /etc/rc.conf (except for loopback)
+
+2. Add networkmanager *after* dbus in /etc/rc.conf
+
+3. Optional:
+   Create your system-wide network configuration files in:
+   /etc/NetworkManager/system-connections
+   The syntax is described here:
+   https://projects.gnome.org/NetworkManager/developers/api/09/ref-settings.html
+   and here:
+   https://developer.gnome.org/NetworkManager/unstable/ref-settings.html
+
+   Or use one of the many frontends.

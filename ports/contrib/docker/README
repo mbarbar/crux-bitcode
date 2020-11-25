@@ -1,0 +1,11 @@
+
+README for docker
+
+    To use docker as a non-root user, add the user to the 'docker'
+    group.
+
+
+    Docker requires quite a few kernel options to be enabled. To
+    see a list and check your kernel for compatibility, run
+    /usr/share/docker/check-config.sh.
+

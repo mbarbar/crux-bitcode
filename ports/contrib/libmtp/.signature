@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wbGbAaF3qKOqYsdCAzraFVixHnOdXEkdvWpcxCNEAakM40urPd2tUJOH2ezEew3ErGXMmBVxOHoy7EL0FPSeAo=
+SHA256 (Pkgfile) = 0ea34a424de1d2bb228b9fb05ea900018e71e67539e66f55184d325627c7219c
+SHA256 (.footprint) = 2838683e34ae88745d4ea9a2b604db614645982b63aeaaff8e7aa68a81165b04
+SHA256 (libmtp-1.1.18.tar.gz) = 7280fe50c044c818a06667f45eabca884deab3193caa8682e0b581e847a281f0

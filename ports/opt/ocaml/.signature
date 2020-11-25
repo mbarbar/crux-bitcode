@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/TYbQ/wKDf6xiQMxnSBVQYRJkSg+9OLMyMZwm/NvDZf3cB+uF7URYzf5XbHngjNZKu3F3be4M3sMxjbRVqKDYAk=
+SHA256 (Pkgfile) = 353bc46fd102b9defd9939a9dcb7715b6e1b20a5006785bd4bfecfde136ed081
+SHA256 (.footprint) = 0c05863f4c3dc30e67fda8200d4c1742dfccf2250d565986f629153f4d99b9b6
+SHA256 (ocaml-4.11.1.tar.xz) = ea4a9187035019f219a50458b7c09ab74239272e5b6ea3ab2a0c840b5810854c

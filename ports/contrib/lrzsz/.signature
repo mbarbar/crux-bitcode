@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yLhLPWMkQVqH98kk2QzfKdC6SWXHHOHfnVDqD6upt7ozk1ycm0OSek4XkbTiJMjvTx6H2fMzbeojp2IsltJHw4=
+SHA256 (Pkgfile) = 0e5271d18874e41d3b1c1ca3ffe1eff455ed6fc8fa008baa24e924fda09dbe0e
+SHA256 (.footprint) = 09bf764593c7c33a18c822e891a1dba29663ed2ec9687589c4b7beef103bab5b
+SHA256 (lrzsz-0.12.20.tar.gz) = c28b36b14bddb014d9e9c97c52459852f97bd405f89113f30bee45ed92728ff1

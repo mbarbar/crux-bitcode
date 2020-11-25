@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/VolZ4Q2ICjGAlbS19iCzMEWyNlDQ9yz7Qi0k5nmxm9leOT+JLTtXgPRJ7uQEx5dzhK3QEWlSyBZLRnX69ZtzAE=
+SHA256 (Pkgfile) = 315458d62f9d811659d1020d594b203fa87316fdd2b5f13d5a17dff72570b231
+SHA256 (.footprint) = 4a57f118bc98c03a14643c715ab813dcabedb8f719a0faedaeac2d1e165c650c
+SHA256 (p11-kit-0.23.21.tar.xz) = f1baa493f05ca0d867f06bcb54cbb5cdb28c756db07207b6e18de18a87b10627

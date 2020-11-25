@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36BOUZGVq/ZREMpUws+DGZa8RyN4I3DgvJQJwcotJY7OCmPjV/dQvl2YU6RgpMbTYiDI8mg1L39++3OTbWwWgw8=
+SHA256 (Pkgfile) = b4b7be66d7ff2d91c2257265c76cefd66ab7aaeb2bddc68bc9d6db6629eaef20
+SHA256 (.footprint) = e4da2ef20c91becc9458692dcb62589feb4e6da8e4a5724133d1e5d0456fa602
+SHA256 (acpid-2.0.32.tar.xz) = f2d2d30b3edc3234bd82f6f7186699a6aa3c85c8d20bc4e30e9b3c68a1ed157e
+SHA256 (acpid.rc) = 17ad7f6f021a01f9d45578a776988f557511761467b2494dcba181ed48dd703b
+SHA256 (default) = 1263501c5d3abe1c0d4ce43b584d7129a6d454d312f3485d3a7b64d2839605b0
+SHA256 (default.sh) = 79caae4c0d52582f1b2094f5eadbff0fd0e86ed29935911ccd379ab130690dd9

@@ -1,0 +1,15 @@
+# Description: initiator and target implementation of iscsi
+# URL:		     https://github.com/open-iscsi/open-iscsi
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  open-isns
+
+name=open-iscsi
+version=2.1.2
+release=1
+source=(https://github.com/open-iscsi/open-iscsi/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  make OPTFLAGS=" -DNO_SYSTEMD"
+  make DESTDIR=$PKG install LIB_DIR="/usr/lib"
+}

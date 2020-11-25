@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libnetfilter_cttimeout/
+-rw-r--r--	root/root	usr/include/libnetfilter_cttimeout/libnetfilter_cttimeout.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_cttimeout.la
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_cttimeout.so -> libnetfilter_cttimeout.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_cttimeout.so.1 -> libnetfilter_cttimeout.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_cttimeout.so.1.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libnetfilter_cttimeout.pc

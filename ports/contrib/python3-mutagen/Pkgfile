@@ -1,0 +1,18 @@
+# Description: An audio metadata tag reader and writer (python library)
+# URL: https://github.com/quodlibet/mutagen
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-mutagen
+version=1.45.1
+release=1
+source=(https://github.com/quodlibet/mutagen/archive/release-$version/$name-$version.tar.gz)
+
+build() {
+  cd mutagen-release-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

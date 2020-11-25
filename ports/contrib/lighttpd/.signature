@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31VlBUNVHB7JCBi8p7DklPIoPIbH5rUBMRyzy9rnYjS0sNBUXyh0yTjRBCvFpPsrniRN1e4dmVBBHbXAo5xVagM=
+SHA256 (Pkgfile) = 1fc3aaf9195f35999428030c7ebfff675b59d7e7425e0010397ea68a9f932570
+SHA256 (.footprint) = 3d56145290def6cb7e09b9ac04becd065c8361d0e92d06b871e5bbbb6cd5859f
+SHA256 (lighttpd-1.4.55.tar.xz) = 6a0b50e9c9d5cc3d9e48592315c25a2d645858f863e1ccd120507a30ce21e927
+SHA256 (lighttpd.conf) = fd994cfccc2a67b625acc57373c45195f14cd02fda60b4e2af014ba5f4d560ca
+SHA256 (lighttpd.rc) = ba07175f8b59b60a1391680be2636f7fab10d749ebf4e56a4f78d8b2422c5b07

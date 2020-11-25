@@ -1,0 +1,38 @@
+# Description: library to load glade interface files in a program at runtime
+# URL: http://glade.gnome.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtk xorg-libxdamage python
+
+name=libglade
+version=2.6.4
+release=3
+source=(http://download.gnome.org/sources/$name/2.6/$name-$version.tar.bz2
+	libglade-2.0.1-nowarning.patch)
+
+build() {
+	install -d -m 0755 $PKG/etc/xml/dtd/$name/2.0
+	xmlcatalog --noout --create $PKG/etc/xml/dtd/$name/2.0/catalog
+
+	cd $name-$version
+
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+
+	sed -i -e "s|/etc/xml/catalog|$PKG/etc/xml/dtd/$name/2.0/catalog|" \
+		-e 's|$(datadir)/xml/libglade|$(datadir)/xml/dtd/libglade/2.0|' Makefile.in
+
+	patch -p1 -i $SRC/libglade-2.0.1-nowarning.patch
+
+	./configure \
+		--prefix=/usr \
+		--disable-debug \
+		--disable-gtk-doc
+
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+	make
+	make DESTDIR=$PKG install
+	install -m755 libglade-convert $PKG/usr/bin/
+
+	rm -rf $PKG/usr/share/gtk-doc
+}

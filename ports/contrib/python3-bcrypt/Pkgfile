@@ -1,0 +1,15 @@
+# Description: Modern password hashing for your software and your servers
+# URL: https://pypi.org/project/bcrypt/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-six python3-cffi
+
+name=python3-bcrypt
+version=3.1.7
+release=1
+source=(https://files.pythonhosted.org/packages/fa/aa/025a3ab62469b5167bc397837c9ffc486c42a97ef12ceaa6699d8f5a5416/bcrypt-$version.tar.gz)
+
+build() {
+	cd bcrypt-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

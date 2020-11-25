@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "`getent group ngircd`" ]; then
+	/usr/sbin/groupadd --system ngircd
+fi
+
+if [ -z "`getent passwd ngircd`" ]; then
+	/usr/sbin/useradd -r -g ngircd -d /var/empty -s /bin/false -c "ngircd server" ngircd
+	/usr/bin/passwd -l ngircd
+fi

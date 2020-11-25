@@ -1,0 +1,22 @@
+# Description: bitorrent console client
+# URL:         https://rakshasa.github.io/rtorrent
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libtorrent
+
+name=rtorrent
+version=0.9.8
+release=1
+source=(http://rtorrent.net/downloads/rtorrent-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  # remove cppunit dependency
+  sed -i '/AM_PATH_CPPUNIT(.*)/d' configure.ac
+  ./autogen.sh
+
+  ./configure --prefix=/usr --enable-debug=no
+  make
+  make install DESTDIR=$PKG
+  #install -m 644 -D doc/old/rtorrent.1 $PKG/usr/share/man/man1/rtorrent.1
+}

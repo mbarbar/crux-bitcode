@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Y0S3CoNhaomz7pCkLzrGD1RTvUvCN64azwGYjIJV4HHLiDp13KFt3rVCshNJDeUOaZUl0iGa13n7UycRUjOpgM=
+SHA256 (Pkgfile) = 304ffae6ffc5d0b3b3cc288981eb103e53cf23c108b92116fadd42e334c1c936
+SHA256 (.footprint) = 2e55b0bf5299364dae405c2d9ac83de73234b414f675f0a8b433a2f78d9cde39
+SHA256 (gc-8.0.4.tar.gz) = 436a0ddc67b1ac0b0405b61a9675bca9e075c8156f4debd1d06f3a56c7cd289d
+SHA256 (libatomic_ops-7.6.10.tar.gz) = 587edf60817f56daf1e1ab38a4b3c729b8e846ff67b4f62a6157183708f099af

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ZKl79Ip1BQQ9bULCQYnkIM12Zi8CUGD7ICHNYjNrtXtQIdMbCyVCsus38va8ycrdrWghAnuFzM8V4IV6jk7Fw0=
+SHA256 (Pkgfile) = 4fde81c4149f4a20031c90492ce48cd1ca60764add9f3c0e58a01e9ea6d5028a
+SHA256 (.footprint) = fd6ac493cfd02489032b9ffa4134ae6da3ada380bf3f5ab85166d4b2484cd73d
+SHA256 (openbox-3.6.1.tar.gz) = 8b4ac0760018c77c0044fab06a4f0c510ba87eae934d9983b10878483bde7ef7

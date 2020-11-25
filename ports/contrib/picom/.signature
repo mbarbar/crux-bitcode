@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yBcDx+Lym0BBCi+MaK4+PCEfbTPZkrrT3W2O8lpPtexMgHc+7buXFfih0cDNvBGZWVox+MkZs5pEUd5sUbAhgk=
+SHA256 (Pkgfile) = d0d292792d520a6ad8627196c2d816023640fefca912949e55384412895d3dab
+SHA256 (.footprint) = 9e8224213e85b3fd34cb7b657bfceb453e97c05758d1a08ffdcf2ca9e5b58bfa
+SHA256 (picom-v8.2.tar.gz) = 9d0c2533985e9670ff175e717a42b5bf1a2a00ccde5cac1e1009f5d6ee7912ec
+SHA256 (picom.conf) = ee6902929889b6cdef435d84f80f26eb1c39bef87c7a73e9bf0aa125f60eb2bc
+SHA256 (picom-trans.1) = 4751825e8946a4fe0d7d5ab975922d800f14d1fe794760d61ef79d19be29a42d
+SHA256 (picom.1) = 1606e43253b5c0bc7253f2b7dc1aa2e6702353e519336f225170303fe18e776e

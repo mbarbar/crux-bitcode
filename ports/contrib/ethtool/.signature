@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wBZGeMB97PBzzGIGkoiGl9/IwK6Ky27Y+GrltXfxavfJjd7Tyt+L3MiAHvpC/MFtvlkhamuQRPzukMxrUZXmQ0=
+SHA256 (Pkgfile) = de1c7c22a4a3c2bf72d8aa73fa7c0467d42095b3462d9ba6866b2bf274353628
+SHA256 (.footprint) = b7010c8a6c9ee77045a1147452d549575d32e5da433152cca5594db5894f25f4
+SHA256 (ethtool-5.9.tar.xz) = 512932010af87bc3e09773c89baea44bca96c1da1151bbcf109fa0e055a88a6f

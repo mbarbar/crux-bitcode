@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Add your users to the arp-scan group and allow them to capture network data
+# as non-root users.
+#
+
+# ugly hack to test for support for capabilities
+if ! setfattr -n user.xattr_test /usr/bin/arp-scan 2> /dev/null; then
+  echo capabilities not supported on this system
+  echo capturing with arp-scan will require root privileges
+  exit 0
+fi
+
+setfattr -x user.xattr_test /usr/bin/arp-scan
+
+getent group arp-scan >/dev/null || groupadd -r arp-scan
+
+chgrp arp-scan /usr/bin/arp-scan
+
+chmod 754 /usr/bin/arp-scan
+
+/sbin/setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/bin/arp-scan
+
+# End of file

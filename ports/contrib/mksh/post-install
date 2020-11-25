@@ -1,0 +1,5 @@
+#!/bin/sh
+if ! grep mksh /etc/shells > /dev/null 2>&1; then
+    echo "Adding mksh to /etc/shells ..."
+    echo "/bin/mksh" >> /etc/shells
+fi

@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/xdm: start/stop xdm
+#
+
+case $1 in
+start)
+	/usr/bin/xdm
+	;;
+stop)
+	killall -q /usr/bin/xdm
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	;;
+esac
+
+# End of file

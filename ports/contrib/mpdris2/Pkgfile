@@ -1,0 +1,21 @@
+# Description: MPRIS V2.1 support for mpd
+# URL: https://github.com/eonpatapon/mpDris2
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: dbus-python3 python3-gobject python3-mpd2 libnotify python3-mutagen
+
+name=mpdris2
+version=0.8
+release=1
+source=(https://github.com/eonpatapon/mpDris2/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd mpDris2-$version
+  NOCONFIGURE=1 ./autogen.sh
+  PYTHON=/usr/bin/python3 ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --disable-nls
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/{share/doc,lib}
+}

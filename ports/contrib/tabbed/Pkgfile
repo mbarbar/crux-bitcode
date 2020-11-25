@@ -1,0 +1,20 @@
+# Description: Simple generic tabbed fronted to xembed aware applications
+# URL:         https://tools.suckless.org/tabbed/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-libx11
+
+name=tabbed
+version=0.6
+release=2
+source=(http://dl.suckless.org/tools/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	if [ -f $PKGMK_ROOT/config.h ]; then
+		cp $PKGMK_ROOT/config.h .
+	fi
+
+	make CC=gcc
+	make DESTDIR=$PKG PREFIX=/usr install
+}

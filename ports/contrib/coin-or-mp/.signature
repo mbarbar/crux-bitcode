@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3702twmUKVkfDG/Kw0cCG9YrvkzTFfkeHsRMyJH/dk/j5VZkUc2jkF4rHh4+WbaHgwqoAd3Qb1ILzn52405YhQ4=
+SHA256 (Pkgfile) = d4d6494d8fde3ab7d48ec9926a73c2af87cace8a7c6622551667bc777355adfd
+SHA256 (.footprint) = e02597100d1f451c7b32752cd15a4527c688df69b753265c086c2f55348832bb
+SHA256 (CoinMP-1.8.4.tgz) = 3459fb0ccbdd39342744684338984ac4cc153fb0434f4cae8cf74bd67490a38d

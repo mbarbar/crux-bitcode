@@ -1,0 +1,19 @@
+# Description: An object representing a stack trace
+# URL: https://metacpan.org/release/Devel-StackTrace
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-devel-stacktrace
+version=2.04
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Devel-StackTrace-$version.tar.gz)
+
+build() {
+  cd Devel-StackTrace-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

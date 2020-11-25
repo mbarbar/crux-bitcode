@@ -1,0 +1,16 @@
+# Description: python bindings for the redis KV store
+# URL:         https://github.com/andymccurdy/redis-py
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  python-setuptools
+
+name=redis-py
+version=3.5.3
+release=1
+source=(https://github.com/andymccurdy/redis-py/archive/$version/$name-$version.tar.gz)
+
+build() {
+
+	cd $name-$version
+  /usr/bin/python setup.py install --prefix=/usr --root=$PKG
+
+}

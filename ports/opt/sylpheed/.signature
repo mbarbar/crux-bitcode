@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/bMPF5xLTU6DYW4Y+x2oK6McZluEH+qW6HnDXdLuoL/AZbod6Usq3zWlOMcBusunbisVJTLaIaJSbX0IqKIH0wo=
+SHA256 (Pkgfile) = 753625fbcf72cb78c44a961e6c7f9fd81761a92c661ce7d47740e1120b4aa924
+SHA256 (.footprint) = 84bb6c474dfc59b15db032cb57e4925186f2912127cb208a718de89adbc7126c
+SHA256 (sylpheed-3.7.0.tar.xz) = 0d6bc5eb46f5d0a463757c62bc80b00d219b294b3c3662840e4540f6db2e3e49

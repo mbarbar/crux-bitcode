@@ -1,0 +1,18 @@
+# Description: C library for encoding data in a QR Code symbol
+# URL: https://fukuchi.org/works/qrencode
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Packager: Torsten Henschel, thenschel at henschelsoft dot de
+# Depends: libpng
+
+name=qrencode
+version=4.1.1
+release=1
+source=(https://fukuchi.org/works/$name/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  ./configure \
+    --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

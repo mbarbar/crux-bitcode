@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/HQf/9I/NfKGsUG+9Ieisri81MdbZasVBKLkyi4dlxe+VMLPj/Yb4eSqe7I/9CEyzKJNcNP5E0t2/LzQ6ZY+Qs=
+SHA256 (Pkgfile) = 2877b6697a51036618f5c1c7d59a1bae7b951365635b9c85fa1430dbfb6b42a2
+SHA256 (.footprint) = aa9a5c50ec20618e02369ba1811a3ade9cb8150181e9d538b82850d9bcb331d5
+SHA256 (libvdpau-va-gl-0.4.2.tar.gz) = 7d9121540658eb0244859e63da171ca3869e784afbeaf202f44471275c784af4

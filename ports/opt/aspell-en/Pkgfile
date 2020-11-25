@@ -1,0 +1,16 @@
+# Description: English dictionary for aspell
+# URL:         http://aspell.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  aspell
+
+name=aspell-en
+version=2019.10.06-0
+release=1
+source=(https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-$version.tar.bz2)
+
+build () {
+    cd aspell6-en-$version
+    ./configure
+    make
+    make DESTDIR=$PKG install
+}

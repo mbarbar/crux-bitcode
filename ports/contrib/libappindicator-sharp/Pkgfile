@@ -1,0 +1,41 @@
+# Description: Allow applications to extend a menu via Ayatana indicators in Unity, KDE or Systray
+# URL: https://launchpad.net/libappindicator
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: mono gtk-sharp libappindicator-gtk2
+
+name=libappindicator-sharp
+version=16.10
+release=2
+source=(http://unrealize.co.uk/source/libappindicator-16.10.tar.gz
+0001-Glib.Timeout-fix.patch 0002-Fix-mono-nunit-pkgconfig-name.patch 0003-Fix-Mono-assemblies-directory.patch badfunction.patch conditional-py-bindings.patch disable-mono.patch gtk3.patch improved-plasma-support.patch vala-inherit.patch)
+
+build() {
+  cd libappindicator-$version
+  # The next 3 patches shamelessly pinched from Arch
+  patch -p1 -i $SRC/0001-Glib.Timeout-fix.patch
+  patch -p1 -i $SRC/0002-Fix-mono-nunit-pkgconfig-name.patch
+  patch -p1 -i $SRC/0003-Fix-Mono-assemblies-directory.patch
+
+  # This one is also from Arch(ish), but had to be recreated best it could
+  patch -p1 -i $SRC/improved-plasma-support.patch
+
+  # Patch pinched from Gentoo
+  patch -p1 -i $SRC/conditional-py-bindings.patch
+
+  # Removed a function which had no declaration
+  patch -p1 -i $SRC/badfunction.patch
+
+  sed -i -e 's/ -Werror//' src/Makefile.am
+  NOCONFIGURE=1 ./autogen.sh
+  export CSC='/usr/bin/mcs'
+  CXXFLAGS="$CXXFLAGS -std=c++11" \
+  ./configure --prefix=/usr \
+    --localstatedir=/var \
+    --disable-{gtk-doc-html,python,mono-test,static,tests} \
+    --with-gtk=2
+  sed -e 's/DIST_SUBDIRS = vala python mono/DIST_SUBDIRS = vala mono/g' \
+    -e 's/am__append_1 = python//g' \
+    -i bindings/Makefile
+  make
+  make DESTDIR=$PKG -j1 -C bindings/mono install
+}

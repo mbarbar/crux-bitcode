@@ -1,0 +1,36 @@
+# Description: Fast CPU emulator and virtualizer for the x86 platform
+# URL:         https://www.qemu.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libusb linux-pam util-linux glib libsdl2 xorg-libpixman libxkbcommon
+ 
+name=qemu
+version=5.1.0
+release=1
+source=(https://download.qemu.org/$name-$version.tar.xz
+	$name-man-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--cc="${CC:=gcc}" \
+		--host-cc="${CC:=gcc}" \
+		--sysconfdir=/etc \
+		--disable-docs \
+		--libexecdir=/usr/lib/qemu \
+		--disable-gtk \
+		--localstatedir=/var \
+		--python=/usr/bin/python3 \
+		--target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu
+
+	make
+	make DESTDIR=$PKG install
+
+	cp -r $SRC/man $PKG/usr/share
+
+	install -d $PKG/etc/udev/rules.d/
+	echo 'KERNEL=="kvm", NAME="kvm", OWNER="root", GROUP="kvm", MODE="0660"' > \
+		$PKG/etc/udev/rules.d/60-kvm.rules
+
+}

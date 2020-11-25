@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+xucEExmIaoAk4G0EMGTqPR7HmJnvNW+gHKUTsEDrb2Qa0OLwV2LaUih6SkPL8akIdLqhk+UW5v7Y35Q1QCPww=
+SHA256 (Pkgfile) = 3fa24cee7dc9860d5559d5d904e63e15a5e1c540cea9ffbbe1295897afd1d4b9
+SHA256 (.footprint) = fd71344d21596112d145270e9e9b3b1faca22b242ea7ccd4e89be2d33de477d2
+SHA256 (Automat-20.2.0.tar.gz) = 7979803c74610e11ef0c0d68a2942b152df52da55336e0c9d58daf1831cbdf33

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF304EgVxlXN9QrIoFOHdU9Amug+/dbdj+9j7nUvbRjl1AsyMf+xCZJTlI/rYSuiQtUqmv8wwNqHWysO1T3WD/tw0=
+SHA256 (Pkgfile) = f8bd2a30fa6687ebc1e433259b51c1954d420a3599432ac5990829ebffcda670
+SHA256 (.footprint) = 6e31041044921189f104964ae45fc290bc969e7e670b546267a1f32fab5c982a
+SHA256 (atanks-6.5.tar.gz) = 32182b2752a77ff362c378fc04b7c51fc15345caa4c8deaad59cc850dad2322e

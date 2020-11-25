@@ -1,0 +1,32 @@
+# Description: web application security scanner
+# URL:         https://github.com/spinkham/skipfish
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libpcre openssl1 zlib libidn
+
+name=skipfish
+version=2.10b
+release=1
+source=(https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/$name/$name-$version.tgz
+  skipfish.patch skipfish-openssl-1.0.patch)
+
+build() {
+  cd $name-$version
+
+  patch -Np0 -i $SRC/skipfish.patch
+  patch -Np0 -i $SRC/skipfish-openssl-1.0.patch
+  sed -i -e 's|"assets"|"/usr/share/skipfish/assets"|g' src/config.h
+  sed -i -e 's|"signatures/|"/usr/share/skipfish/signatures/|g' src/config.h
+  sed -i -e 's|include signatures/|include /usr/share/skipfish/signatures/|g' signatures/signatures.conf
+
+  CFLAGS+=" -I/usr/include/openssl-1.0"
+  LDFLAGS+=" -I/usr/lib/openssl-1.0"
+  make
+  rm assets/COPYING
+
+  for i in assets dictionaries signatures; do
+    install -m 755 -d $PKG/usr/share/skipfish/"$i"
+    install -m 644 "$i"/* $PKG/usr/share/skipfish/"$i"
+  done
+
+  install -m 755 -D skipfish $PKG/usr/bin/skipfish
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33b/Z/1p1qoy/tNp4Wb2VBTbv4IZAeAwFHH6Cl+d5E57KvOJNLJ8Q3yFbgiXY7o9Hj7nFo5XQE8mzOYlQ9+fSAw=
+SHA256 (Pkgfile) = 8bb9f6012034cfaf6d0bbd5aadc9dee3419941b11c9c7b7fb8270f0ec2a257bf
+SHA256 (.footprint) = 46e38c743630719fc5db8383d793d119a83726afb7568114366b2b9c2d3ed80b
+SHA256 (i3status-rust-0.14.2-01.tar.gz) = 66a11cbcfa515c761701788edd573d408391c024086219d8b6641333129a6f87

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3ySRorGKBzwtNo0QXisbXooz4YzgBKCiSDTsDN0HB2v/p46GBdK+h9RmDlngshkPsiMQVEGyI1lrPrG0M2p1bwo=
+SHA256 (Pkgfile) = 0e20cd811096bafbd4a7760bea2049a7432db07dc925e38a4f48c2735a9dab09
+SHA256 (.footprint) = 9b9394aca9355ea2225ce8c150bc72c888300facf4b10c337ab3270024e1ddd7
+SHA256 (mythes-1.2.4.tar.gz) = 1e81f395d8c851c3e4e75b568e20fa2fa549354e75ab397f9de4b0e0790a305f

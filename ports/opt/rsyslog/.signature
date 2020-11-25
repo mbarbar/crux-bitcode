@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/aNmQ01NrSEl8ZguwKkEB1MuhCSIiOzH4m3fUGPXNkFLKHEU0J+pDLwX3dskMsrGNoRFRqVFCF19SmQ2Wh+4aAE=
+SHA256 (Pkgfile) = 19ab21ddf9cdda845a28df3a9024235fa20d0bb081a727d6259be2d90c8ae79e
+SHA256 (.footprint) = 2c2ccf7d49397243b0e18693bdeffa6442a1afc9050cadd41e348c09a7cc5cde
+SHA256 (rsyslog-8.2008.0.tar.gz) = 09d2b6c8bc2f016598aed2bb719e03f822bb01d720c61e4d6e725e00dca1b650
+SHA256 (rsyslog.conf) = 4d671bb3b183e7acbacb9d7b92447cfe1e446ed85b44eff76a8d1c70fe5f08c2
+SHA256 (rsyslogd.rc) = d28d8c3fc8076b10156f9b60c7e4af5909c312beddcd67c62f8b6153594065c0

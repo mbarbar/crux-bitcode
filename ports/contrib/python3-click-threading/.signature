@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF328AGGYqP+rAkf+nGek3tijWtUxwmJ/gWf4in2GmHObNc/2aShj+uGH/KQBIlZqYyXLS+AQFa7lKaCTW0jt88w0=
+SHA256 (Pkgfile) = 2705800f7e0b5a79f18a99888618f5aeb4641683ef05300b6f8fbb854c8a3e71
+SHA256 (.footprint) = f97bf943a2c6131b133e50e27ca4c982cf70b8ec3374d06efcc51ca91ee66407
+SHA256 (click-threading-0.4.4.tar.gz) = a938ef1e1b13c554f579eb3ba2e8123cb667196a3c1488bb02b2056e4249fe71

@@ -1,0 +1,23 @@
+# Description: High productivity build system.
+# URL: https://mesonbuild.com/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-setuptools
+
+name=meson
+version=0.56.0
+release=1
+source=(https://github.com/mesonbuild/meson/releases/download/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	/usr/bin/python3 setup.py build
+
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1 --skip-build
+
+	install -d $PKG/usr/share/vim/vimfiles
+	cp -rt $PKG/usr/share/vim/vimfiles data/syntax-highlighting/vim/*/
+	install -Dt $PKG/usr/share/bash-completion/completions -m644 data/shell-completions/bash/*
+	install -Dt $PKG/usr/share/zsh/site-functions -m644 data/shell-completions/zsh/*
+}

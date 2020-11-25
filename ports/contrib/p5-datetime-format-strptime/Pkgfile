@@ -1,0 +1,17 @@
+# Description: Parse and Format DateTimes using Strptime
+# URL: https://metacpan.org/pod/DateTime::Format::Strptime
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-datetime p5-datetime-locale p5-datetime-timezone p5-package-deprecationmanager p5-params-validate
+
+name=p5-datetime-format-strptime
+version=1.77
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-$version.tar.gz)
+
+build() {
+  cd DateTime-Format-Strptime-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

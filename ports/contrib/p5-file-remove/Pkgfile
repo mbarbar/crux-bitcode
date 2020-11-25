@@ -1,0 +1,27 @@
+# Description: Remove files and directories
+# URL:         https://metacpan.org/pod/File::Remove
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=p5-file-remove
+version=1.60
+release=1
+source=(https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-$version.tar.gz)
+
+build() {
+	cd File-Remove-$version
+
+	perl Makefile.PL
+
+	make
+	make install DESTDIR=$PKG
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

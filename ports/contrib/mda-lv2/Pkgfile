@@ -1,0 +1,17 @@
+# Description: MDA VST plugins to LV2
+# URL: https://git.drobilla.net/cgit.cgi/mda.lv2.git/about/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: lv2 python3
+
+name=mda-lv2
+version=1.2.4
+release=2
+source=(https://download.drobilla.net/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  sed -e 's/python/python3/g' -i waf
+  ./waf configure --prefix=/usr
+  ./waf
+  ./waf install --destdir="$PKG/"
+}

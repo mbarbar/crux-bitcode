@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38KlECBFN/s44psL1EWloeK0rvPOoXbHOHCaTslnPGimNEu0oxFHmytDDqHWxcgYqaoqECWoDEIOKKmZbtg+WQw=
+SHA256 (Pkgfile) = d8a6ba3107501d86d1174d91316e30cad57200373c15203578ef5b6de5a62643
+SHA256 (.footprint) = db515b1901c5b0bf1b4706c2adf51d8cefaa3f19e777f5dc483698caf96776f1
+SHA256 (List-MoreUtils-0.430.tar.gz) = 63b1f7842cd42d9b538d1e34e0330de5ff1559e4c2737342506418276f646527

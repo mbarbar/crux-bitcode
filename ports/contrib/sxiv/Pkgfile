@@ -1,0 +1,20 @@
+# Description: simple/suckless image-viewer
+# URL:         https://github.com/muennich/sxiv
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  giflib imlib2 libexif xorg-libxft
+
+name=sxiv
+version=26
+release=1
+source=(https://github.com/muennich/$name/archive/v$version/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	if [ -f $PKGMK_ROOT/config.h ]; then
+		cp $SRC/config.h .
+	fi
+
+	make CC=gcc CFLAGS="$CFLAGS"
+	make DESTDIR=$PKG PREFIX=/usr install
+}

@@ -1,0 +1,82 @@
+From 5868365b3a8636a468c4d12b20a221f5b7602de9 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?R=C3=A9mi=20Verschelde?= <rverschelde@gmail.com>
+Date: Mon, 12 Oct 2020 11:21:05 +0200
+Subject: [PATCH 2/2] CMake: Use VERSION/SOVERSION for all shared libs
+
+---
+ SPIRV/CMakeLists.txt      | 14 ++++++++++----
+ StandAlone/CMakeLists.txt |  7 +++++--
+ hlsl/CMakeLists.txt       |  7 +++++--
+ 3 files changed, 20 insertions(+), 8 deletions(-)
+
+diff --git a/SPIRV/CMakeLists.txt b/SPIRV/CMakeLists.txt
+index d699dadd..55d77c45 100644
+--- a/SPIRV/CMakeLists.txt
++++ b/SPIRV/CMakeLists.txt
+@@ -69,8 +69,11 @@ set(SPVREMAP_HEADERS
+     doc.h)
+ 
+ add_library(SPIRV ${LIB_TYPE} ${SOURCES} ${HEADERS})
+-set_property(TARGET SPIRV PROPERTY FOLDER glslang)
+-set_property(TARGET SPIRV PROPERTY POSITION_INDEPENDENT_CODE ON)
++set_target_properties(SPIRV PROPERTIES
++    FOLDER glslang
++    POSITION_INDEPENDENT_CODE ON
++    VERSION   "${GLSLANG_VERSION}"
++    SOVERSION "${GLSLANG_VERSION_MAJOR}")
+ target_include_directories(SPIRV PUBLIC
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
+     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+@@ -79,8 +82,11 @@ glslang_add_build_info_dependency(SPIRV)
+ 
+ if (ENABLE_SPVREMAPPER)
+     add_library(SPVRemapper ${LIB_TYPE} ${SPVREMAP_SOURCES} ${SPVREMAP_HEADERS})
+-    set_property(TARGET SPVRemapper PROPERTY FOLDER glslang)
+-    set_property(TARGET SPVRemapper PROPERTY POSITION_INDEPENDENT_CODE ON)
++    set_target_properties(SPVRemapper PROPERTIES
++        FOLDER glslang
++        POSITION_INDEPENDENT_CODE ON
++        VERSION   "${GLSLANG_VERSION}"
++        SOVERSION "${GLSLANG_VERSION_MAJOR}")
+ endif()
+ 
+ if(WIN32 AND BUILD_SHARED_LIBS)
+diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
+index a2009165..6ff5e65b 100644
+--- a/StandAlone/CMakeLists.txt
++++ b/StandAlone/CMakeLists.txt
+@@ -34,8 +34,11 @@
+ add_library(glslang-default-resource-limits STATIC
+             ${CMAKE_CURRENT_SOURCE_DIR}/ResourceLimits.cpp
+             ${CMAKE_CURRENT_SOURCE_DIR}/resource_limits_c.cpp)
+-set_property(TARGET glslang-default-resource-limits PROPERTY FOLDER glslang)
+-set_property(TARGET glslang-default-resource-limits PROPERTY POSITION_INDEPENDENT_CODE ON)
++set_target_properties(glslang-default-resource-limits PROPERTIES
++    FOLDER glslang
++    POSITION_INDEPENDENT_CODE ON
++    VERSION   "${GLSLANG_VERSION}"
++    SOVERSION "${GLSLANG_VERSION_MAJOR}")
+ 
+ target_include_directories(glslang-default-resource-limits
+                            PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+diff --git a/hlsl/CMakeLists.txt b/hlsl/CMakeLists.txt
+index 62faa195..a5472e7e 100644
+--- a/hlsl/CMakeLists.txt
++++ b/hlsl/CMakeLists.txt
+@@ -38,8 +38,11 @@
+ # projects that referenced this target.
+ 
+ add_library(HLSL ${LIB_TYPE} "stub.cpp")
+-set_property(TARGET HLSL PROPERTY FOLDER hlsl)
+-set_property(TARGET HLSL PROPERTY POSITION_INDEPENDENT_CODE ON)
++set_target_properties(HLSL PROPERTIES
++    FOLDER hlsl
++    POSITION_INDEPENDENT_CODE ON
++    VERSION   "${GLSLANG_VERSION}"
++    SOVERSION "${GLSLANG_VERSION_MAJOR}")
+ 
+ if(WIN32 AND BUILD_SHARED_LIBS)
+     set_target_properties(HLSL PROPERTIES PREFIX "")
+-- 
+2.28.0
+

@@ -1,0 +1,27 @@
+# Description: The Pek Window Manager.
+# URL: https://github.com/pekdon/pekwm
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: imlib2 xorg-libxft xorg-libxpm xorg-libxrandr
+
+name=pekwm
+version=0.1.17
+release=2
+source=(https://github.com/pekdon/pekwm/archive/release-0.1.17.tar.gz)
+
+build() {
+	cd $name-release-$version
+
+	#./autogen.sh
+	aclocal
+	autoheader
+	autoconf
+	automake -a
+
+	./configure \
+		--prefix=/usr \
+		--enable-xft \
+		--disable-xinerama
+
+	make
+	make DESTDIR=$PKG install
+}

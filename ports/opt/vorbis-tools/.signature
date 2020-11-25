@@ -1,0 +1,9 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/fctDU6cqrA5OOjynYNaBGbGJSC8dSIFJMBHXe/tw/2xRMNMXgA9nkjadOS4NffW9CJ00Oh8X6DXh6IAxSXp4A0=
+SHA256 (Pkgfile) = a1114f093cfda0f00d5ef3fdc2455c019cb9a1e3534b38e0851edda828146f28
+SHA256 (.footprint) = 315026915e0068fddb8839e73fe619734907a9417070695e75e6ed5ce14abaa1
+SHA256 (vorbis-tools-1.4.0.tar.gz) = a389395baa43f8e5a796c99daf62397e435a7e73531c9f44d9084055a05d22bc
+SHA256 (vcut-fix-segfault.diff) = 56aa4f490d78cc8f5f263f8335c6536f393b2732db20a765e069874283d02d42
+SHA256 (vorbis-tools-r19117-CVE-2014-9640.patch) = f66c21cd6895765cc5357a15f469ee679bb243d24c6e7c9e7d553e2f7a7010a9
+SHA256 (vorbis-tools-oggenc-CVE-2014-9639.patch) = 6c12a84fa4e39b19e8e3334f7cfb504a65d4c31171a1db99eec0de3c5bc9c0f1
+SHA256 (vorbis-tools-CVE-2015-6749.patch) = 52f1d083c16b9caa2bc7bd5315210bac810dd6a0565e4c270650177a4c815fa7

@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/distcc/
+lrwxrwxrwx	root/root	usr/lib/distcc/f77 -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/f90 -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/f95 -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/gfortran -> ../../bin/distcc

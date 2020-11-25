@@ -1,0 +1,23 @@
+From 60bd97ceeb1f7924df2b347b5ac18fa5949898cc Mon Sep 17 00:00:00 2001
+From: Dominique Leuenberger <dimstar@opensuse.org>
+Date: Thu, 28 Jan 2016 00:26:34 +0100
+Subject: [PATCH] Move to /run
+
+on modern, systemd based systems, the default directory is /run, no longer /var/run
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 607d3343..6c353c35 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -957,7 +957,7 @@ AC_DEFINE_UNQUOTED(AVAHI_AUTOIPD_GROUP,"$AVAHI_AUTOIPD_GROUP", [Group for runnin
+ #
+ # Avahi runtime dir
+ #
++avahi_runtime_dir="${localstatedir}/run"
+-avahi_runtime_dir="/run"
+ avahi_socket="${avahi_runtime_dir}/avahi-daemon/socket"
+ AC_SUBST(avahi_runtime_dir)
+ AC_SUBST(avahi_socket)

@@ -1,0 +1,16 @@
+# Description: A front-end to ssh-agent.
+# URL:         https://www.funtoo.org/Keychain
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Stoyan Zhekov zhware at hotpop dot com
+# Depends on:
+
+name=keychain
+version=2.8.5
+release=1
+source=(https://github.com/funtoo/keychain/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	install -D -m755 keychain $PKG/usr/bin/keychain
+	install -D -m644 keychain.1 $PKG/usr/share/man/man1/keychain.1
+}

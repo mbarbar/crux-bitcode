@@ -1,0 +1,19 @@
+# Description: man page translator
+# URL: https://sourceforge.net/projects/polyglotman/
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+
+name=polyglotman
+version=3.2
+release=2
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/rman-$version.tar.gz)
+
+build() {
+	cd rman-$version
+
+	make
+
+	install -d $PKG/usr/bin
+	install -d $PKG/usr/share/man/man1
+
+	make BINDIR=$PKG/usr/bin MANDIR=$PKG/usr/share/man/man1 install
+}

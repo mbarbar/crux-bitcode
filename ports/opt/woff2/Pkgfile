@@ -1,0 +1,20 @@
+# Description: Web Open Font Format 2 reference implementation
+# URL: https://github.com/google/woff2
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: brotli
+
+name=woff2
+version=1.0.2
+release=2
+source=(https://github.com/google/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	sed -i 's/NOT BUILD_SHARED_LIBS/TRUE/' $name-$version/CMakeLists.txt
+
+	cmake -S$name-$version -Bbuild -GNinja \
+		-DCMAKE_INSTALL_PREFIX="/usr" \
+		-DCMAKE_INSTALL_LIBDIR="/usr/lib"
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

@@ -1,0 +1,22 @@
+# Description: Collection of LADSPA/LV2/VST/JACK audio plugins for high-quality processing
+# URL: https://github.com/zamaudio/zam-plugins
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: git jack ladspa libglvnd liblo lv2 zita-convolver
+
+name=zam-plugins
+version=3.13
+release=1
+source=(https://github.com/zamaudio/zam-plugins/archive/$version/$name-$version.tar.gz
+  https://github.com/DISTRHO/DPF/archive/08669d1bc30c6e971fde800eade4ca40104ba8b2/dpf-08669d1.tar.gz
+  zita-convolver4.patch system-zita-convolver.patch)
+
+  dpf_git=https://github.com/DISTRHO/DPF.git
+  zam_git=https://github.com/zamaudio/zam-plugins.git
+
+build() {
+  cd $name-$version
+  export HAVE_ZITA_CONVOLVER=true
+  cp -r $SRC/DPF-08669d1bc30c6e971fde800eade4ca40104ba8b2/* dpf/
+  make
+  make DESTDIR=$PKG PREFIX='/usr/' install
+}

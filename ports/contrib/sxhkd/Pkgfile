@@ -1,0 +1,19 @@
+# Description: Simple X hotkey daemon
+# URL:         https://github.com/baskerville/sxhkd
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-xcb-util xorg-xcb-util-keysyms
+
+name=sxhkd
+version=0.6.2
+release=1
+source=(https://github.com/baskerville/$name/archive/$version/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/doc
+	find $PKG -perm -g+w | xargs chmod g-w
+}

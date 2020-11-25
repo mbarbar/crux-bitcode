@@ -1,0 +1,29 @@
+# Description:  Framework for layer 2 attacks
+# URL:          https://github.com/tomac/yersinia
+# Maintainer:   Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:   gtk libdnet xorg-libxdamage
+
+name=yersinia
+version=0.8.2-15d41ff
+_commit=15d41ffd722eb3510c6b51d878bc52f88fa8b6a8
+release=1
+source=(https://github.com/tomac/$name/archive/$_commit/$name-$_commit.tar.gz
+	0001-gtk-interface.c-respect-system-font.patch)
+
+build() {
+	cd $name-$_commit
+
+	# remove default debug/optimization flags
+	sed -i -e "/CFLAGS=\"/s/-O3 -Wall -g /$CFLAGS -Wall /g" configure.ac
+
+	# font-fix
+	patch -p1 < $SRC/0001-gtk-interface.c-respect-system-font.patch
+
+	./autogen.sh \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-admin # Disable the remote admin interface
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,26 @@
+# Description: Uptime record tracking daemon.
+# URL: https://github.com/rpodgorny/uptimed
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Mark Rosenstand, mark at borkware dot net
+# Depends on:
+
+name=uptimed
+version=0.4.3
+release=1
+source=(https://github.com/rpodgorny/uptimed/archive/v$version/$name-$version.tar.gz
+	uptimed.rc)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc
+
+	make
+	make DESTDIR=$PKG install
+
+	mv $PKG/etc/uptimed.conf-dist $PKG/etc/uptimed.conf
+	install -m 0755 -D $SRC/uptimed.rc $PKG/etc/rc.d/uptimed
+}

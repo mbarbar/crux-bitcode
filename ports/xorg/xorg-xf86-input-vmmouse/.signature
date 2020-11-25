@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndG1OJHzDl92iGyfvSyDRcBcde3xoPbyVujYejTR0VMJrUJAdV3Bq5r0iXQYnqLBeyafhqOEHR+M9lM+/5wkVvg0=
+SHA256 (Pkgfile) = 17e32c5a1472bd39daa1d791558645bcf0f2b665d9b21f747105d19523ab6032
+SHA256 (.footprint) = e08eb58ddd7f607661f13e69630d87ed92a5ce39f9eb05bee8ecf88de0a24dd9
+SHA256 (xf86-input-vmmouse-13.1.0.tar.bz2) = 0af558957ac1be1b2863712c2475de8f4d7f14921fd01ded2e2fde4921b19319

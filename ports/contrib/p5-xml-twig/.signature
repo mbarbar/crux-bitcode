@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xFxQQmAFiBexnuYDPjKtdiXlZc320+AMq4ZFie3Viw49QAeyqN99O0r0JxXvVhhauDEGAr0PGfsG8Y8ZaqHGAs=
+SHA256 (Pkgfile) = d02f51c0ba30cf0d779ed31243a0bc78ea5a48a026d48561ed347d4973155e11
+SHA256 (.footprint) = a253edd1da4c4bf781c324dae126bf49b4010d81d2022f171108f267e31b73e2
+SHA256 (XML-Twig-3.52.tar.gz) = fef75826c24f2b877d0a0d2645212fc4fb9756ed4d2711614ac15c497e8680ad

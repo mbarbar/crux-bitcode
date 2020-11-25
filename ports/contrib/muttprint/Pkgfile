@@ -1,0 +1,42 @@
+# Description: Utility to print mails
+# URL:         http://muttprint.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  p5-text-iconv p5-file-which p5-timedate psutils dialog imagemagick texlive
+
+name=muttprint
+version=0.73
+release=1
+source=(http://download.sourceforge.net/${name}/${name}-${version}.tar.gz
+  muttprint_0.73-4.diff regex.patch two_edge.patch)
+
+build() {
+  cd $name-$version
+
+  patch -Np1 -i $SRC/muttprint_0.73-4.diff
+  patch -Np1 -i $SRC/regex.patch
+  patch -Np1 -i $SRC/two_edge.patch
+
+  # fixes default configs, taken from arch
+  find . -type f -name 'sample*' -exec sed -i 's/-P$PRINTER/-p$PRINTER/' {} \;
+  cd pics/ && \
+    convert -flop BabyTuX.eps BabyTuX.eps
+    for i in BabyTuX_color.eps BabyTuX.eps Debian_color.eps Debian.eps \
+      Gentoo.eps Gentoo_color.eps ; do \
+      convert $i $(basename $i .eps).png; \
+    done && \
+    convert penguin.eps penguin.jpg
+  cd ..
+
+  aclocal
+   automake --add-missing --copy
+   autoconf
+   ./configure --prefix=/usr
+   make PREFIX=/usr
+   make PREFIX=/usr DESTDIR=$PKG install
+
+  install -m 0644 sample-muttprintrc-en $PKG/usr/share/muttprint/muttprintrc
+  install -m 0644 pics/*.eps $PKG/usr/share/muttprint/
+  rm -rf $PKG/usr/share/muttprint/{Debian*,Gentoo*,translations}
+  rm -rf $PKG/usr/share/doc
+  rm -rf $PKG/usr/share/man/{de,es,it}
+}

@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31/tRgm/NTB7cCTlbl77n9YH5IWZTP9RbQ4H09lOWuUebkHmrOnEOkhizkOP4aRc2A5v/gS3dqJw5UAlnZXqhgQ=
+SHA256 (Pkgfile) = 076e73f5fc6debdbe639c845fcff6adf0d406dd45a152dcf3f3cd07af6434f87
+SHA256 (.footprint) = 82975cabd95fbfe40b36392519f644b9ea93be9e9be0a8feedfeed5a4e274c6d
+SHA256 (MultiMC5-0.6.11.tar.gz) = 7cad736f1fe3f2887aeaa7a7f3927930e16ed815c98e4cf3a7378a99c426a775
+SHA256 (multimc-3.tar.gz) = ffa60368b1c196859691b637c740f4c60597b2ac47217995082ae8b2a3a9ac18
+SHA256 (multimc-0.6.1.tar.gz) = 36c816e6b1ef8ece52c57dfa9bfda3a23808d0c6c3288b25d8bcf49c7cdb5b07
+SHA256 (quazip-fix-build-with-qt-511.patch) = 83906ae48e7861d149a93cd6ce7c083f52c67dd36589e84668881c8e8de1f868

@@ -1,0 +1,62 @@
+# Description: Complete solution to record, convert and stream audio and video.
+# URL: http://ffmpeg.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: bzip2 xz yasm zlib
+# Optional: alsa-lib fdk-aac gnutls lame libass libsdl2 libtheora libva libvdpau libvorbis libvpx libwebp opus x264 x265
+
+name=ffmpeg3
+version=3.4.2
+release=1
+source=(https://ffmpeg.org/releases/ffmpeg-$version.tar.bz2
+	CVE-2018-6621.patch)
+
+build() {
+	cd ffmpeg-$version
+
+	#https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6621
+	patch -p1 -i $SRC/CVE-2018-6621.patch
+
+[ -e '/usr/lib/pkgconfig/libwebp.pc' ] && PKGMK_FFMPEG+=' --enable-libwebp'
+[ -e '/usr/lib/pkgconfig/vdpau.pc' ] && PKGMK_FFMPEG+=' --enable-vdpau'
+[ -e '/usr/lib/pkgconfig/freetype2.pc' ] && PKGMK_FFMPEG+=' --enable-libfreetype'
+[ -e '/usr/lib/pkgconfig/x264.pc' ] && PKGMK_FFMPEG+=' --enable-libx264'
+[ -e '/usr/lib/pkgconfig/x265.pc' ] && PKGMK_FFMPEG+=' --enable-libx265'
+[ -e '/usr/lib/pkgconfig/libass.pc' ] && PKGMK_FFMPEG+=' --enable-libass'
+[ -e '/usr/include/lame/lame.h' ] && PKGMK_FFMPEG+=' --enable-libmp3lame'
+[ -e '/usr/lib/pkgconfig/opus.pc' ] && PKGMK_FFMPEG+=' --enable-libopus'
+[ -e '/usr/lib/pkgconfig/vpx.pc' ] && PKGMK_FFMPEG+=' --enable-libvpx'
+[ -e '/usr/lib/pkgconfig/vorbis.pc' ] && PKGMK_FFMPEG+=' --enable-libvorbis'
+[ -e '/usr/lib/pkgconfig/theora.pc' ] && PKGMK_FFMPEG+=' --enable-libtheora'
+[ -e '/usr/lib/pkgconfig/fdk-aac.pc' ] && PKGMK_FFMPEG+=' --enable-libfdk-aac --enable-nonfree'
+
+	if [ -e '/usr/lib/pkgconfig/gnutls.pc' ]; then
+		PKGMK_FFMPEG+=' --enable-gnutls'
+	else
+		PKGMK_FFMPEG+=' --enable-openssl --enable-nonfree'
+	fi
+
+	./configure ${PKGMK_FFMPEG} \
+		--prefix=/usr \
+		--incdir='/usr/include/ffmpeg3' \
+		--libdir='/usr/lib/ffmpeg3' \
+		--shlibdir='/usr/lib/ffmpeg3' \
+		--disable-debug \
+		--disable-doc \
+		--enable-gpl \
+		--enable-version3 \
+		--enable-shared \
+		--enable-pic \
+		--enable-avfilter \
+		--enable-avresample \
+		--enable-postproc \
+		--enable-pthreads \
+		--enable-swresample
+
+	make
+	make DESTDIR=$PKG install
+	install -d $PKG/etc/ld.so.conf.d
+	echo -e '/usr/lib/\n/usr/lib/ffmpeg3/' > \
+		$PKG/etc/ld.so.conf.d/ffmpeg3.conf
+
+	rm -r $PKG/usr/{bin,share/ffmpeg}
+}

@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39eh8RDqEJ+8TT5DbW17SVrkihVzkPzcw4ZU+ytz+VncmkPchRMGj2cw4kjNzau0ArwYhj/+u5kYDxJMy5AQqgQ=
+SHA256 (Pkgfile) = b9f84ebbba4f6fb0c756dc18baa97a214f260d3e86d4a1e32e66d941e13d6302
+SHA256 (.footprint) = 4975c8f87d55e610b6ad0d08a4cf81a55bfc186bf9b22bc4bfa65faf3d23588c
+SHA256 (wordlistctl-0.9.0.tar.gz) = 75803087826ec57ff6120e3d7870dcb85375d59f62696ebab3b0e63eef24956f
+SHA256 (0001-remove-unnecessary-termcolor-dependency.patch) = 647eccfc4ac68d13a6683b00abdc9339eba33b39f79925095db7441351060432
+SHA256 (0001-fix-repo.json-path.patch) = 3c5879bb189f8e9e285b12cbbecc8f765abc96940ae1e727760816151c34f476

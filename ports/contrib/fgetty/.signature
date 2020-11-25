@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zP9crD3jJ3V0E3W5fnxpgT8lQsGpN161ZCnSrO/SFY2DuZvQIhTja1+4Tl2uETKbJY4gcnHFNeIGKrosIjZCgg=
+SHA256 (Pkgfile) = f2cb9a61740e77a12b82d760ba5f5cbca15d65f13a7fd8710e6ddfb670c31c4d
+SHA256 (.footprint) = e94175d530219379d1bfb6c9474460e20941dff53aaf84cfcacba912eef908a5
+SHA256 (fgetty-0.7.tar.bz2) = 1a5307e758d30bca2b4f16eb1158778a50fc949907f09e9571ddce8acc0bbac8

@@ -1,0 +1,54 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dltest
+-rwxr-xr-x	root/root	usr/bin/isql
+-rwxr-xr-x	root/root	usr/bin/iusql
+-rwxr-xr-x	root/root	usr/bin/odbc_config
+-rwxr-xr-x	root/root	usr/bin/odbcinst
+-rwxr-xr-x	root/root	usr/bin/slencheck
+drwxr-xr-x	root/root	usr/etc/
+drwxr-xr-x	root/root	usr/etc/ODBCDataSources/
+-rw-r--r--	root/root	usr/etc/odbc.ini (EMPTY)
+-rw-r--r--	root/root	usr/etc/odbcinst.ini (EMPTY)
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/autotest.h
+-rw-r--r--	root/root	usr/include/odbcinst.h
+-rw-r--r--	root/root	usr/include/odbcinstext.h
+-rw-r--r--	root/root	usr/include/sql.h
+-rw-r--r--	root/root	usr/include/sqlext.h
+-rw-r--r--	root/root	usr/include/sqlspi.h
+-rw-r--r--	root/root	usr/include/sqltypes.h
+-rw-r--r--	root/root	usr/include/sqlucode.h
+-rw-r--r--	root/root	usr/include/unixodbc_conf.h
+-rw-r--r--	root/root	usr/include/uodbc_extras.h
+-rw-r--r--	root/root	usr/include/uodbc_stats.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libodbc.la
+lrwxrwxrwx	root/root	usr/lib/libodbc.so -> libodbc.so.2.0.0
+lrwxrwxrwx	root/root	usr/lib/libodbc.so.2 -> libodbc.so.2.0.0
+-rwxr-xr-x	root/root	usr/lib/libodbc.so.2.0.0
+-rwxr-xr-x	root/root	usr/lib/libodbccr.la
+lrwxrwxrwx	root/root	usr/lib/libodbccr.so -> libodbccr.so.2.0.0
+lrwxrwxrwx	root/root	usr/lib/libodbccr.so.2 -> libodbccr.so.2.0.0
+-rwxr-xr-x	root/root	usr/lib/libodbccr.so.2.0.0
+-rwxr-xr-x	root/root	usr/lib/libodbcinst.la
+lrwxrwxrwx	root/root	usr/lib/libodbcinst.so -> libodbcinst.so.2.0.0
+lrwxrwxrwx	root/root	usr/lib/libodbcinst.so.2 -> libodbcinst.so.2.0.0
+-rwxr-xr-x	root/root	usr/lib/libodbcinst.so.2.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/odbc.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/odbccr.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/odbcinst.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dltest.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/isql.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/iusql.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/odbc_config.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/odbcinst.1.gz
+drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/odbc.ini.5.gz
+-rw-r--r--	root/root	usr/share/man/man5/odbcinst.ini.5.gz
+drwxr-xr-x	root/root	usr/share/man/man7/
+-rw-r--r--	root/root	usr/share/man/man7/unixODBC.7.gz

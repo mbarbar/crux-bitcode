@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xcQ7GWQ/WXzs5E9ijh/sh9C4GHFZHEszUJD6JS8E6nYJWgciQ6XEPULk5CmkUXgZUX2RW17wvaRgH+LAjR2tgw=
+SHA256 (Pkgfile) = 08a20dad25d21a29a446b72fbb7e65b1edb23747d5694b30b981869c390fd778
+SHA256 (.footprint) = 345c06ea7ab2e90fe32c0a85a09dab8dc14485da0967bae3951c1052e3629b4c
+SHA256 (thunderbird-68.11.0.source.tar.xz) = 0d2f403c7aca55ab130b7262ff8afc0254e5c0471db01f1631976df68a6af5f2
+SHA256 (thunderbird.desktop) = c6bc6a66f16951c4f7560d019dad48968169aef6587cef4e98380a300078299a

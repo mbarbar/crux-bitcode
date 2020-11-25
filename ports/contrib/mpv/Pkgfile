@@ -1,0 +1,33 @@
+# Description: General Purpose video player based on MPlayer and mplayer2
+# URL: https://mpv.io/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: ffmpeg libass libplacebo util-linux xorg-libxscrnsaver
+# Optional: docutils youtube-dl libquvi libdvdnav libbluray libcdio-paranoia libvdpau rubberband
+
+name=mpv
+version=0.33.0
+release=1
+source=(https://github.com/$name-player/$name/archive/v$version/$name-v$version.tar.gz
+	https://waf.io/waf-2.0.9
+	mpv.1)
+
+build() {
+	cd $name-$version
+
+	install -m0755 $SRC/waf-2.0.9 waf
+
+	[[ -e '/usr/lib/pkgconfig/libcdio_cdda.pc' ]] && PKGMK_MPV+=' --enable-cdda'
+	[[ -e '/usr/lib/pkgconfig/dvdnav.pc' ]] && PKGMK_MPV+=' --enable-dvdnav'
+
+	/usr/bin/python3 waf configure ${PKGMK_MPV} \
+		--prefix=/usr \
+		--enable-libarchive \
+		--enable-libmpv-shared \
+		-j ${JOBS-1}
+
+	/usr/bin/python3 waf build
+	/usr/bin/python3 waf install --destdir=$PKG
+	rm -r $PKG/usr/share/doc
+
+	[ -e '/usr/bin/rst2man.py' ] || install -D -m 0644 -t $PKG/usr/share/man/man1 $SRC/mpv.1
+}

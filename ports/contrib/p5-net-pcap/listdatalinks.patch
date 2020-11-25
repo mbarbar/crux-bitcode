@@ -1,0 +1,14 @@
+diff -up src/Net-Pcap-0.18/Pcap.pm.orig src/Net-Pcap-0.18/Pcap.pm
+--- src/Net-Pcap-0.18/Pcap.pm.orig	2016-05-15 07:24:03.000000000 -0600
++++ src/Net-Pcap-0.18/Pcap.pm	2018-02-20 21:56:00.000000000 -0700
+@@ -714,6 +714,10 @@ Close the savefile associated with the d
+ 
+ =over
+ 
++=item B<pcap_list_datalinks($pcap)>
++
++Returns a list of link layer types supported by the given pcap descriptor.
++
+ 
+ =item B<pcap_datalink($pcap)>
+ 

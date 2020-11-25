@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37tEb9ntZ3eMoDZVMSvacn56SLwOVUT08HdqJEJO8NQCZKClSFqKRRpJCe1oXm8XYWoORoqwOQAmpuSbFdtXZw8=
+SHA256 (Pkgfile) = 408a70d65dd2789e1b255f3f9edd4a27fa2a6549d405fe4c150633379edc26d5
+SHA256 (.footprint) = 837e243acc3e7801c26598300b51c40bc3b7c20d9a1ca885e0fe7736bb5673c6
+SHA256 (remind-03.03.03.tar.gz) = 10f946fd5b5cd83e4ba435ca493d3ebff235a5808aef1f871010942e95ea8e02

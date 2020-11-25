@@ -1,0 +1,51 @@
+#! /bin/sh
+#
+# /etc/rc.d/named: start/stop/restart/reload the bind name service
+#
+
+NAMED_CONF=/etc/named.conf
+RNDC_CONF=/etc/rndc.conf
+RNDC_KEY=/etc/rndc.key
+NAMED_USER=named
+
+case $1 in
+start)
+	if [ ! -s $RNDC_CONF ]; then
+		echo "Creating $RNDC_CONF and $RNDC_KEY .."
+		/usr/sbin/rndc-confgen > $RNDC_CONF
+		head -5 $RNDC_CONF | grep -v "^#" > $RNDC_KEY
+	fi
+
+	# DON'T RUN BIND AS ROOT NOR NOBODY !
+	/usr/sbin/named -c $NAMED_CONF -u $NAMED_USER &
+	;;
+stop)
+	TEST=`pidof /usr/sbin/named`
+	if [ "$TEST" = "" ] ; then
+		echo "Bind is not running!"
+	else
+		kill -TERM $TEST
+	fi
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+reload)
+	TEST=`pidof /usr/sbin/named`
+	if [ "$TEST" = "" ] ; then
+		$0 start
+	else
+		echo "Reloading bind.."
+		kill -HUP $TEST
+	fi
+	;;
+*)
+	echo "Usage: $0 [start|stop|restart|reload]"
+	exit 1
+	;;
+esac
+
+#
+# End of file
+#

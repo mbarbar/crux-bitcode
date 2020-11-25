@@ -1,0 +1,18 @@
+# Description: Wayland is intended as a simpler replacement for X
+# URL: https://wayland.freedesktop.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: expat libffi libxml2 meson ninja
+
+name=wayland
+version=1.18.0
+release=1
+source=(https://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+
+build() {
+  meson setup $name-$version build \
+    --prefix=/usr \
+    --buildtype=plain \
+    -Ddocumentation=false
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+}

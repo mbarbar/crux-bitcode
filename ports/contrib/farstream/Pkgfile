@@ -1,0 +1,30 @@
+# Description: Audio/video communications framework.
+# URL: http://www.freedesktop.org/wiki/Software/Farstream
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gst-plugins-base libnice
+# Optional: gst-plugins-bad gst-plugins-good
+
+name=farstream
+version=0.2.9
+release=1
+source=(https://freedesktop.org/software/$name/releases/$name/$name-$version.tar.gz
+	farstream-make-4.3.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/farstream-make-4.3.patch
+	./autogen.sh --disable-gtk-doc
+
+	./configure \
+		--prefix=/usr \
+		--with-package-name='CRUX Linux farstream package' \
+		--with-package-origin='http://crux.nu' \
+		--disable-gtk-doc
+
+	make
+	make DESTDIR=$PKG install
+
+	# gtk-doc is still generated!
+	rm -r $PKG/usr/share/gtk-doc
+}

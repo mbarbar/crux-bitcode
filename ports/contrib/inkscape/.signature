@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32M1QmW9BoEaZpR2kUC9L+/ZYjZ3pVytMrMx2G9UPXunknr2w6x0paDiiHLYJhamMLwxTjT/pM6G0XJF05xsWAk=
+SHA256 (Pkgfile) = c09430de85329326408b77c3f90e7eb962d1f76200905d301cfc666fe0c1a06a
+SHA256 (.footprint) = 207a968d87902372405b30a1e2bfaf21396f6ba21d14628eb77d7435936981ce
+SHA256 (inkscape-1.0.1.tar.xz) = cf9295edf46a633caf3aac0562364a24aef7cd6294601365aca38aeead2d57c2
+SHA256 (poppler-20.09.0.tar.xz) = 4ed6eb5ddc4c37f2435c9d78ff9c7c4036455aea3507d1ce8400070aab745363
+SHA256 (inkscape.patch) = 0cb8b48ace0fb6756c931312591b5ad7681bd95e0a6eb40ad2639daca6d3603c

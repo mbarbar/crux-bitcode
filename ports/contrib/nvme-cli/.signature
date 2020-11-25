@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3w56/dEilKKLfOMIb+5WCti8jzg/3g6nP9qMpchrn1v4D23dAIQuv7yXa+Zcd3lLltJiCoyvHqjhim6P+nfIcQ0=
+SHA256 (Pkgfile) = c21187af3ff4041230222e73c5340fe49749d32ab73fa1517606670e3b7eca60
+SHA256 (.footprint) = 4b500dcbd739864bca152f05a3acf344464883494eeebe20a6cc541337808703
+SHA256 (nvme-cli-1.13.tar.gz) = 03f4875f3e68d326b0280e16df2f027ca6b086cfa148c34e8569df61319b4b85

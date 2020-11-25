@@ -1,0 +1,34 @@
+# Description: Vulkan validation layers
+# URL: https://www.khronos.org/vulkan/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glslang vulkan-loader
+
+name=vulkan-validation-layers
+version=1.2.154.0
+release=1
+source=(https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/sdk-$version/Vulkan-ValidationLayers-sdk-$version.tar.gz
+	validation-layers-soversion.patch)
+
+build() {
+	patch -d Vulkan-ValidationLayers-sdk-$version -p1 -i $SRC/validation-layers-soversion.patch
+
+	cmake -SVulkan-ValidationLayers-sdk-$version -Bbuild -GNinja \
+		-DCMAKE_INSTALL_PREFIX='/usr' \
+		-DCMAKE_INSTALL_LIBDIR='lib' \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_SKIP_RPATH=ON \
+		-DBUILD_TESTS=OFF \
+		-DGLSLANG_INSTALL_DIR='/usr' \
+		-DBUILD_LAYER_SUPPORT_FILES=ON \
+		-DVKLAYERS_SOVERSION='1' \
+		-DVKLAYERS_VERSION="$version" \
+		-DSPIRV_HEADERS_INSTALL_DIR='/usr/include/spirv/' \
+		-DCMAKE_INSTALL_INCLUDEDIR='/usr/include/vulkan/' \
+		-DBUILD_WSI_XCB_SUPPORT=ON \
+		-DBUILD_WSI_XLIB_SUPPORT=ON \
+		-DBUILD_WSI_WAYLAND_SUPPORT="$(prt-get isinst wayland &> /dev/null && echo ON || echo OFF)" \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

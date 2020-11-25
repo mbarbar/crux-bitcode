@@ -1,0 +1,23 @@
+# Description: Time-stretching and pitch-shifting audio library and utility.
+# URL: https://www.breakfastquay.com/rubberband/
+# Maintainer:  Danny Rawlins, crux at romster dot me
+# Depends on: fftw libsamplerate openjdk8 ladspa vamp-plugin-sdk
+
+name=rubberband
+version=1.9
+release=1
+source=(https://github.com/breakfastquay/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	autoreconf -vfi
+
+	./configure --prefix=/usr
+	make
+
+	export JAVA_HOME=/usr/lib/java/openjdk8
+	make jni
+
+	make DESTDIR=$PKG install
+}

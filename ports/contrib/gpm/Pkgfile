@@ -1,0 +1,36 @@
+# Description: Console mouse server.
+# URL: https://www.nico.schottelius.org/software/gpm/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=gpm
+version=1.20.7
+release=1
+source=(https://nico.schottelius.org/software/gpm/archives/gpm-$version.tar.bz2
+	gpm-1.20.7-glibc_2.26-1.patch
+	gpm.rc)
+
+build() {
+	cd gpm-$version
+
+	sed -e 's:<gpm.h>:"headers/gpm.h":' \
+		-i src/prog/{display-buttons,display-coords,get-versions}.c
+
+	patch -p 1 -i $SRC/gpm-1.20.7-glibc_2.26-1.patch
+
+	./autogen.sh
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc
+
+	touch doc/gpm.info
+
+	make
+	make ROOT=$PKG install
+
+	ln -s libgpm.so.2.1.0 $PKG/usr/lib/libgpm.so
+	install -m 0644 conf/gpm-root.conf $PKG//etc
+	install -m 0755 -D $SRC/gpm.rc $PKG/etc/rc.d/gpm
+
+	rm -r $PKG/usr/share/info
+}

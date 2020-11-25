@@ -1,0 +1,12 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32yfEd/oy7UKsoyWXO3crUbiFr46iT9CSPMcgPaqgRlmt/O2GBvnuLK4kSuiqfFjtDx0v5geJ0riXDuj7ELW6QQ=
+SHA256 (Pkgfile) = b663810a5eeb0a1ae1699e27b29e7490fbb46e8db8a38f0b317073c9b12ffe87
+SHA256 (.footprint) = b5dda6f9fd58b39b7da8508471581b3b29193dcf703514ee24ce6f804ba5d676
+SHA256 (lightdm-1.30.0.tar.xz) = a118779650a3a5b20f05d53c4f9e377b484fbc1810a6b0914a60840d9a581f95
+SHA256 (Xsession) = d30321a1b490500483b8ed7825fcff2c24a7c760ac627789ff517693888ec3c5
+SHA256 (lightdm-default-config.patch) = 6f6f1005956702a489530a62f14f2ae54fd25a672e95689e3e0be68ebb7a3b91
+SHA256 (lightdm.rules) = a89566307e1c81c24f037d854cbd472d2f94f8a4b759877a01563a332319f7d6
+SHA256 (lightdm.service) = 50846712939d6aad19d47dcb07851c9c62169c6ba82d2f7550f026b09f6153ee
+SHA256 (lightdm.pam) = 4f76dc1a5be8b3396c6784a2dfb057f0d9da81b412fc746099849e055be4b9fa
+SHA256 (lightdm-autologin.pam) = 97a29f13a9d5347d8fc73caae9d9049da89648d59f4b39b4e9d761027f4b5e94
+SHA256 (lightdm-greeter.pam) = 4284df8abdd1e1764cbab3f07ddd2258303f12e69bd392b3246b51a01dcf2e1e

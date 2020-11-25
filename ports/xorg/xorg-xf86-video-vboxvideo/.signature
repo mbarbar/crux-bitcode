@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndO63Ho/uA3+0JYQ9uMnK3KZDcnw+DGLiOdxG+m30AHf0uVjgvFz1wozSHaaBX1dYnKvUsEx5K7FeOpQgm2ljFQU=
+SHA256 (Pkgfile) = 3f27890eadff1a35761d9d1b0c054a4cb2062d1bb0eaec034d2e9d3ca9bec3e0
+SHA256 (.footprint) = b139b681ded7f118fe3f7d49887de4ed69ae45af44fb59bdbf88e3f54b79d98c
+SHA256 (xf86-video-vboxvideo-1.0.0.tar.bz2) = 7fb6a3bfbcbe95438617f55a2f7ace4c0edec8ea8b7007777f389438b40cbfa4

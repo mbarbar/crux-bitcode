@@ -1,0 +1,30 @@
+# Description: Console audio player.
+# URL: http://moc.daper.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: curl libid3tag libmad libsndfile popt
+# Optional: ffmpeg
+
+name=moc
+version=2.5.2
+release=3
+source=(http://ftp.daper.net/pub/soft/moc/stable/$name-$version.tar.bz2
+	moc-ffmpeg4.patch
+	moc-https.patch)
+
+
+build() {
+	cd $name-$version
+
+	patch -p0 -i $SRC/moc-ffmpeg4.patch
+	patch -p0 -i $SRC/moc-https.patch
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-debug
+
+	make
+	make DESTDIR=$PKG install
+	install -D -m 0644 -t $PKG/usr/share/moc/ config.example keymap.example 
+	rm -rf $PKG/usr/share/doc
+}

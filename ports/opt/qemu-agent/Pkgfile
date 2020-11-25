@@ -1,0 +1,33 @@
+# Description: Guest agent for qemu virtual guests
+# URL:         http://www.qemu-project.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libsdl glib xorg-libpixman
+ 
+name=qemu-agent
+version=4.2.0
+release=2
+source=(http://wiki.qemu-project.org/download/qemu-$version.tar.bz2 qemu-agent)
+
+build() {
+  cd qemu-$version
+  ./configure --prefix=/usr \
+      --cc="${CC:=gcc}" \
+      --host-cc="${CC:=gcc}" \
+      --sysconfdir=/etc \
+      --disable-docs \
+      --libexecdir=/usr/lib/qemu \
+      --disable-gtk \
+      --python=/usr/bin/python3 \
+      --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu \
+      --enable-guest-agent
+
+  # fix include issues with nspr
+  make ${MAKEFLAGS:=} qemu-ga
+
+  install -D -m 755 qemu-ga $PKG/usr/bin/qemu-ga
+  install -d -m 755 $PKG/etc/qemu
+  install scripts/qemu-guest-agent/fsfreeze-hook $PKG/etc/qemu
+  cp -a scripts/qemu-guest-agent/fsfreeze-hook.d $PKG/etc/qemu
+  install -D -m 755 $SRC/qemu-agent $PKG/etc/rc.d/qemu-agent
+  install -d -m 755 $PKG/var/run/qemu-ga
+}

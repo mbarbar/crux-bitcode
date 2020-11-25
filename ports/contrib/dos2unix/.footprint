@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dos2unix
+lrwxrwxrwx	root/root	usr/bin/mac2unix -> dos2unix
+-rwxr-xr-x	root/root	usr/bin/unix2dos
+lrwxrwxrwx	root/root	usr/bin/unix2mac -> unix2dos
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dos2unix.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/mac2unix.1.gz -> dos2unix.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/unix2dos.1.gz -> dos2unix.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/unix2mac.1.gz -> dos2unix.1.gz

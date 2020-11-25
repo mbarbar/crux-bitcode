@@ -1,0 +1,20 @@
+# Description: Library for ICE and STUN.
+# URL: http://nice.freedesktop.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gstreamer
+
+name=libnice
+version=0.1.18
+release=1
+source=(https://nice.freedesktop.org/releases/$name-$version.tar.gz)
+
+build() {
+	meson setup $name-$version build \
+		--prefix=/usr \
+		--buildtype=plain \
+		-D b_ndebug=true \
+		-D gtk_doc=disabled
+
+	meson compile -C build
+	DESTDIR=$PKG meson install -C build
+}

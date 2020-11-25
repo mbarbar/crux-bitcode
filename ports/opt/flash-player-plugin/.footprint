@@ -1,0 +1,5 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/mozilla/
+drwxr-xr-x	root/root	usr/lib/mozilla/plugins/
+-rwxr-xr-x	root/root	usr/lib/mozilla/plugins/libflashplayer.so

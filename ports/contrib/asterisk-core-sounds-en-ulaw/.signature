@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33vqdMwLRcGF6Oacv8RfN/nOnXOLJCDgwfa2XZi7X1yR3TjukPAYHbQHSW1VinwdIASWDTp+V1Izp2k0/luMxww=
+SHA256 (Pkgfile) = 767c446660b9fbd846521dae407b06493c966882fe2668e05b538622e2b766f5
+SHA256 (.footprint) = 032d69871c856a7f0df9ec0c65004a6b28108df5b1f0ea1e41b1fa23ee5867f5
+SHA256 (asterisk-core-sounds-en-ulaw-1.6.1.tar.gz) = 83ec602fb1f2cb06a5194a95f855b84bae35d49d5bdb6fbd9274d5d1a5d16b0e

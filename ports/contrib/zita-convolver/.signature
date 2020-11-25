@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF335k+YLb0MuW63r/3N1DP1d4fgDduiw6F00MG8xzjMaV+tOB733W7zhODzTXTq1W7RWHHH257N6QjHSvPGTWUw8=
+SHA256 (Pkgfile) = b132e059d6acaa70f2c8157028d062319d87a333bb2589ef9e897e518096a208
+SHA256 (.footprint) = aec910d8b7742003d0330fdf6b99e67bcd38e8f302382cff7ba0661f863ef006
+SHA256 (zita-convolver-4.0.3.tar.bz2) = 9aa11484fb30b4e6ef00c8a3281eebcfad9221e3937b1beb5fe21b748d89325f

@@ -1,0 +1,15 @@
+# Description: A package designed to expose cryptographic recipes and primitives to Python developers.
+# URL: http://pypi.python.org/pypi/cryptography
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-asn1crypto python3-cffi python3-idna python3-six
+
+name=python3-cryptography
+version=3.2.1
+release=1
+source=(https://pypi.io/packages/source/c/cryptography/cryptography-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build
+}

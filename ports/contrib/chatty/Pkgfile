@@ -1,0 +1,29 @@
+# Description: A Twitch chat client for everyone who wants to try something new and different from the webchat, but doesn't want the complexity of an IRC client or miss out on the Twitch specific features.
+# URL: http://chatty.github.io/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: openjdk8
+
+name=chatty
+version=0.13.1
+release=1
+source=(https://github.com/chatty/chatty/releases/download/v$version/Chatty_$version.zip
+	chatty.desktop)
+
+build() {
+	install -d $PKG/usr/{bin,lib/$name}
+	cp -a . $PKG/usr/lib/$name
+
+cat <<- EOF > $PKG/usr/bin/$name
+	#!/bin/sh
+	java -jar /usr/lib/$name/Chatty.jar "\$@"
+EOF
+
+	chmod 0775 $PKG/usr/bin/$name
+
+	install -Dm644 $name.desktop \
+		$PKG/usr/share/applications/$name.desktop
+
+	rm -f $PKG/usr/lib/chatty/chatty.desktop
+
+	rm $PKG/usr/lib/chatty/{LICENSE,readme.txt}
+}

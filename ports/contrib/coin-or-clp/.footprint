@@ -1,0 +1,75 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/clp
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/coin/
+-rw-r--r--	root/root	usr/include/coin/CbcOrClpParam.cpp
+-rw-r--r--	root/root	usr/include/coin/CbcOrClpParam.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpCholeskyBase.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpCholeskyDense.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpCholeskyPardiso.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpCholeskyUfl.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpConfig.h
+-rw-r--r--	root/root	usr/include/coin/ClpConstraint.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpConstraintLinear.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpConstraintQuadratic.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpDualRowDantzig.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpDualRowPivot.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpDualRowSteepest.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpDummyMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpDynamicExampleMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpDynamicMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpEventHandler.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpFactorization.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpGubDynamicMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpGubMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpInterior.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpLinearObjective.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpMatrixBase.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpMessage.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpModel.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpNetworkMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpNode.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpNonLinearCost.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpObjective.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPEDualRowDantzig.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPEDualRowSteepest.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPEPrimalColumnDantzig.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPEPrimalColumnSteepest.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPESimplex.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPackedMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpParameters.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPdcoBase.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPlusMinusOneMatrix.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPresolve.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPrimalColumnDantzig.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPrimalColumnPivot.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpPrimalColumnSteepest.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpQuadraticObjective.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpSimplex.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpSimplexDual.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpSimplexNonlinear.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpSimplexOther.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpSimplexPrimal.hpp
+-rw-r--r--	root/root	usr/include/coin/ClpSolve.hpp
+-rw-r--r--	root/root	usr/include/coin/Clp_C_Interface.h
+-rw-r--r--	root/root	usr/include/coin/Idiot.hpp
+-rw-r--r--	root/root	usr/include/coin/OsiClpSolverInterface.hpp
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libClp.la
+lrwxrwxrwx	root/root	usr/lib/libClp.so -> libClp.so.1.14.6
+lrwxrwxrwx	root/root	usr/lib/libClp.so.1 -> libClp.so.1.14.6
+-rwxr-xr-x	root/root	usr/lib/libClp.so.1.14.6
+-rwxr-xr-x	root/root	usr/lib/libClpSolver.la
+lrwxrwxrwx	root/root	usr/lib/libClpSolver.so -> libClpSolver.so.1.14.6
+lrwxrwxrwx	root/root	usr/lib/libClpSolver.so.1 -> libClpSolver.so.1.14.6
+-rwxr-xr-x	root/root	usr/lib/libClpSolver.so.1.14.6
+-rwxr-xr-x	root/root	usr/lib/libOsiClp.la
+lrwxrwxrwx	root/root	usr/lib/libOsiClp.so -> libOsiClp.so.1.14.6
+lrwxrwxrwx	root/root	usr/lib/libOsiClp.so.1 -> libOsiClp.so.1.14.6
+-rwxr-xr-x	root/root	usr/lib/libOsiClp.so.1.14.6
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/clp.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/osi-clp.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/coin/

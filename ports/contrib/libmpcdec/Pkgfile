@@ -1,0 +1,22 @@
+# Description: Encoder, Decoder and replaygain for Musepack audio streams.
+# URL: http://www.musepack.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Jukka Heino, vector at pp dot nic dot fi
+# Depends on: nasm
+
+name=libmpcdec
+version=1.2.6
+release=1
+source=(http://files.musepack.net/source/libmpcdec-$version.tar.bz2)
+
+build() {
+	cd libmpcdec-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-static
+
+	make
+	make DESTDIR=$PKG install
+}
+

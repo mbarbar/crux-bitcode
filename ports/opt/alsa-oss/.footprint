@@ -1,0 +1,22 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/aoss
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/oss-redir.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libalsatoss.a
+-rwxr-xr-x	root/root	usr/lib/libalsatoss.la
+lrwxrwxrwx	root/root	usr/lib/libalsatoss.so -> libalsatoss.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libalsatoss.so.0 -> libalsatoss.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libalsatoss.so.0.0.0
+-rw-r--r--	root/root	usr/lib/libaoss.a
+-rwxr-xr-x	root/root	usr/lib/libaoss.la
+lrwxrwxrwx	root/root	usr/lib/libaoss.so -> libaoss.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libaoss.so.0 -> libaoss.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libaoss.so.0.0.0
+-rw-r--r--	root/root	usr/lib/libossredir.a
+-rwxr-xr-x	root/root	usr/lib/libossredir.la
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/aoss.1.gz

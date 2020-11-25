@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3z8ccIRJRVgRwp6go//QfHqUh+iJiqQJ56eHiL8SMUjhIaooEsAkYrpbcdxWVZXfYWlUuRaB0LPrDy8KHcDwagk=
+SHA256 (Pkgfile) = 9983ce0c0b16f03abfb9c5fbe1dfcb14db08bacc05369ad488206605ab23d71e
+SHA256 (.footprint) = 7eb1a5c11f2b68c307976bc8bb4f40809ff6c84e6cc4019c8bddcd9e1450fd5f
+SHA256 (Cairo-1.107.tar.gz) = 5e1de126ddf93bd5b13f13a52f50d7f7af1157265b7f10e53d585ee1827be169

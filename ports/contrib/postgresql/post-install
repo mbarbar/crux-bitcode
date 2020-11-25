@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+USER=postgres
+HOME=/var/pgsql/data
+GROUP=postgres
+ID=42
+
+getent group ${GROUP} >/dev/null || groupadd -r ${GROUP}
+getent passwd ${USER} >/dev/null || useradd -u $ID -d ${HOME} -g ${GROUP} -s /bin/false ${USER}
+
+test -d ${HOME} && exit 0
+
+install -d -o ${USER} -g ${GROUP} ${HOME}
+su -s /bin/sh -c "pg_ctl -D ${HOME} initdb" ${USER}
+

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zARPMTUIqphGeHCLOt4FcXXMsQzpZ5kVp2jke6tlSyFHucIqNGhL0w2JGYTZtXwxmAd9WNSCmC0V73TAmcFXgM=
+SHA256 (Pkgfile) = 9f6e2a9a4cb248fbe2ab808565bdb57bebfd3dbb4fca39db2676c0d19884c03f
+SHA256 (.footprint) = 872061b4f28d49b768636bd2be29606934c7554baaafbc851b0a43fb62c8c093
+SHA256 (sutils-0.2.tar.gz) = da8cccace32094430be572cf59d85256023edf9107b12c926c7beb29586c56a3

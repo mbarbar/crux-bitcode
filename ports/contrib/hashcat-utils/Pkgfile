@@ -1,0 +1,18 @@
+# Description: Small utilities that are useful in advanced password cracking
+# URL:         https://hashcat.net/
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=hashcat-utils
+version=1.9
+release=1
+source=(https://github.com/hashcat/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version/src
+
+	# remove hardcoded optimization flags
+	sed -i -e '/CFLAGS +=/s/-pipe -O2//' Makefile
+
+	make
+	install -Dm755 *.bin -t $PKG/usr/bin/
+}

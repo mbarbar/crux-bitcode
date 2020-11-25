@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37h22282D1UXU3xLaQOAQTs9YXiWO4xCnHFTSLJP8PUTLyiofu/7ksDFgzMKCefo1Wf2wBt3/deb+uI8Q8eLBQs=
+SHA256 (Pkgfile) = d3493bf32f222b780c5e6aee9caa3c63bad632f4901321d0a77700299abe7c4d
+SHA256 (.footprint) = d5fb2558de4fc61bf0edafab11669dc0dd17e37633ce07565bb3e6a3cc168e71
+SHA256 (spice-gtk-0.38.tar.xz) = 5ae974731baf2b41316d4f0b3ae0c2e47f00bff91a5a617e189cd3dedcd96d8e

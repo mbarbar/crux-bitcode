@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/tommath.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libtommath.a
+-rw-r--r--	root/root	usr/lib/libtommath.la
+lrwxrwxrwx	root/root	usr/lib/libtommath.so -> libtommath.so.1.2.0
+lrwxrwxrwx	root/root	usr/lib/libtommath.so.1 -> libtommath.so.1.2.0
+-rw-r--r--	root/root	usr/lib/libtommath.so.1.2.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libtommath.pc

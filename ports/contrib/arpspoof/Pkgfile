@@ -1,0 +1,29 @@
+# Description: Poison hosts via arp-requests as well as arp-replies
+# URL:         https://github.com/byt3bl33d3r/arpspoof
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  scapy
+
+name=arpspoof
+version=0.1.0.8359467
+_commit=83594671338218dd80d6328485179cf62f943c9d
+release=1
+source=(https://github.com/byt3bl33d3r/$name/archive/$_commit/$name-$_commit.zip
+	0001-arpspoof.py-show-help-without-root-privileges.patch
+	$name.sh)
+
+build() {
+	cd $name-$_commit
+
+	patch -p1 < $SRC/0001-arpspoof.py-show-help-without-root-privileges.patch
+	sed -i "s|Usage: %prog|Usage: $name|" $name/$name.py
+
+	python3 setup.py build
+	python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1 --skip-build
+
+	# remove junk
+	rm -r $PKG/usr/lib/python*/site-packages/$name-*.egg-info
+
+	# install wrapper
+	install -Dm755 $SRC/$name.sh $PKG/usr/bin/$name
+}

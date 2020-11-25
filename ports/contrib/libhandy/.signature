@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/K5U1lt1PQvKQzf/GM08DJxSTXUB1vmylMD7eJSHaZaXUVbpFYy9aw5rVf2hn61vzy4rZF7BN1gvcUfw4AqHAU=
+SHA256 (Pkgfile) = 167a922edf0d108e2f32a6ed1eeb77a6ec82585e885494aed8ce5345bc3ff5c6
+SHA256 (.footprint) = 903f7c0f2d384d0fd7a8278bfe97a43504adf6d7613bf2271fe5d4e2465ecd29
+SHA256 (libhandy-1.0.2.tar.bz2) = 5b1ceebf80a82bb56804370d88481b8a4affe5d33f13a7fd06905135cceaaf88

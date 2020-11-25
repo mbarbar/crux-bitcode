@@ -1,0 +1,39 @@
+# Description: A ncurses based file manager with vi like keybindings
+# URL:         https://vifm.info
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Packager:    Alexandr Savca, alexandr dot savca89 at gmail dot com
+# Depends on:  ncurses
+
+name=vifm
+version=0.11
+release=1
+source=(https://github.com/$name/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+        cd $name-$version
+
+        ./configure \
+            --prefix=/usr   \
+            --disable-nls
+
+        make
+        make DESTDIR=$PKG install
+
+        # bash completion
+        if ! pkginfo -i | grep '^bash-completion '; then
+            rm -rf $PKG/usr/share/bash-completion
+        fi
+
+        # zsh completion
+        if ! pkginfo -i | grep '^zsh '; then
+            rm -rf $PKG/usr/share/zsh
+        fi
+
+        # remove docs & osx-specific
+        rm -rf $PKG/usr/share/vifm/vim-doc
+        rm -rf $PKG/usr/share/vifm/vim/doc
+        rm -rf $PKG/usr/share/vifm/vifm-help.txt
+        rm -rf $PKG/usr/share/vifm/vifmrc-osx
+        rm -rf $PKG/usr/share/vifm/vifm-media-osx
+        rm -rf $PKG/usr/share/doc
+}

@@ -1,0 +1,37 @@
+This is a fork of denyhosts, it'll run the same with a few small changes. I
+expect more code cleanup and a total shift to iptables in future.
+
+REQUIREMENTS:
+
+PRECAUTION:
+
+PRE-INSTALL:
+
+POST-INSTALL:
+
+Edit /etc/denyhosts/denyhosts.conf as needed.
+
+Edit /etc/inetd.conf, I added:
+
+#<service_name> <sock_type> <proto> <flags> <user> <server_path> <args>
+sshd		stream	tcp	nowait	root	/usr/sbin/sshd in.sshd
+
+Add inetd and denyhosts to services array on /etc/rc.conf, after net and before sshd is loaded (and any other services used by denyhost and inetd (not sure if this is necessary but i believe its good to allow protection before the services start).
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+To protect sshd.
+
+Edit /etc/hosts.allow and comment out everything, everything will have access by default.
+
+Edit /etc/hosts.deny and comment out the "ALL: ALL: DENY" part, also the "#End of file" bit will be useless as denyhosts appends to the file.
+
+(note the config in inetd.conf doesn't seem to be right or needed? see
+messages upon boot up, any corrections email me :) )
+
+Danny Rawlins, <contact at romster dot me
+

@@ -1,0 +1,65 @@
+# Description: C subroutine library for computing discrete Fourier transform.
+# URL: http://www.fftw.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gcc-fortran
+
+name=fftw
+version=3.3.8
+release=1
+source=(http://www.fftw.org/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	local config="
+F77=gfortran
+--prefix=/usr
+--enable-threads
+--with-gnu-ld
+--enable-shared
+--enable-openmp"
+
+	# use upstream default CFLAGS while keeping our -march/-mtune
+	CFLAGS+=" -O3 -fomit-frame-pointer -malign-double -fstrict-aliasing -ffast-math"
+
+	# compiling single precision library
+	./configure \
+		$config \
+		--enable-single \
+		--enable-sse \
+		--enable-avx
+
+	make
+	make DESTDIR=$PKG install
+	make clean
+
+	# compiling double precision library
+	./configure \
+		$config \
+		--enable-sse2 \
+		--enable-avx
+
+	make
+	make DESTDIR=$PKG install
+	make clean
+
+       # compiling long double precision library
+	./configure \
+		$config \
+		--enable-long-double
+
+	make
+	make DESTDIR=$PKG install
+	make clean
+
+	# compiling quad precision library
+	./configure \
+		$config \
+		--enable-quad-precision
+
+	make
+	make DESTDIR=$PKG install
+
+	# clean up
+	rm -r $PKG/usr/share/info
+}

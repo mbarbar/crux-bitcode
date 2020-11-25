@@ -1,0 +1,15 @@
+# Description: A featureful, correct URL for Python.
+# URL: https://pypi.python.org/pypi/hyperlink
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python-setuptools
+
+name=python-hyperlink
+version=20.0.1
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:7:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+	/usr/bin/python setup.py build
+	/usr/bin/python setup.py install --prefix=/usr --root=$PKG --optimize=1
+}

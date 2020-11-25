@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# /etc/rc.d/gitd: start/stop the git daemon
+#
+
+REPOS=/var/lib/git
+USR=git
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/lib/git-core/git-daemon
+PID=/var/run/gitd.pid
+OPTS="--export-all --base-path=$REPOS $REPOS"
+
+case $1 in
+start)
+        $SSD --start -c $USR -b -m --pidfile $PID --exec $PROG -- $OPTS
+        ;;
+stop)
+        $SSD --stop --retry 10 --pidfile $PID --remove-pidfile
+        ;;
+restart)
+        $0 stop
+        $0 start
+        ;;
+status)
+        $SSD --status --pidfile $PID
+        case $? in
+        0) echo "$PROG is running with pid $(cat $PID)" ;;
+        1) echo "$PROG is not running but the pid file $PID exists" ;;
+        3) echo "$PROG is not running" ;;
+        4) echo "Unable to determine the program status" ;;
+        esac
+        ;;
+*)
+        echo "usage: $0 [start|stop|restart|status]"
+        ;;
+esac
+
+# End of file

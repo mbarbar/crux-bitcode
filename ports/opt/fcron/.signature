@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/TT3yEnUf5vWF1aeR4ISrXCynodaCbRwmQMYhufDvbScpxHcVaKQbzeNGfoFboPa40lPe0/WH3ddDOhQTcXmOw4=
+SHA256 (Pkgfile) = 40dd9fd59365c0e8f8b4083600a1c010268b38fe96eeac42404dbf621fde7465
+SHA256 (.footprint) = 0f191355e32541379e76ffe91f2221bcd7cbf014affa5f9236aa3b3fd30088ed
+SHA256 (fcron-3.3.0.src.tar.gz) = 9aead33a0926e2eec123698c502114c6d67b483fe1ec232969fae6809b0bab60
+SHA256 (fcron) = f57aeeedd1b0ddcc92fd24ad105b45646555ae648ee6d9fedec8c4eafdc6487a
+SHA256 (systab.orig) = 768de3cddf3dee50a80a154282a9efa9195dfd60fdb0ba2a0ac4401ac7a9eb69

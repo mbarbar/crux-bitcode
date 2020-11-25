@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF326Kx94vh+hCfQ/BiETeXs+B2rq9SaUAsQoYY7OwfK5G6NakEt0zhR1Rx4P76oV6+GkjEKX+fan612JETJbmgwI=
+SHA256 (Pkgfile) = 295f7405e5c8a8819bcc45086efe4b2c066f6d4c73e788003d317a0df36c5fe0
+SHA256 (.footprint) = 9f9058652e9bc83c2e3e7861fc79bcde4f09e2b70e37048bde8e74862c53d8f8
+SHA256 (libiscsi-1.19.0.tar.gz) = c7848ac722c8361d5064654bc6e926c2be61ef11dd3875020a63931836d806df

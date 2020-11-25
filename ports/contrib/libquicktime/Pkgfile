@@ -1,0 +1,37 @@
+# Description: A library based on quicktime4linux with extensions.
+# URL: http://libquicktime.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: faac faad2 ffmpeg gtk lame libdv libvorbis schroedinger util-linux x264 xorg-libxaw
+
+name=libquicktime
+version=1.2.4
+release=4
+source=(https://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+	CVE-2016-2399.patch
+	libquicktime-1.2.4-ffmpeg2.patch
+	libquicktime-1.2.4-ffmpeg29.patch
+	libquicktime-1.2.4-ffmpeg4.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p 1 -i $SRC/CVE-2016-2399.patch
+	patch -p 1 -i $SRC/libquicktime-1.2.4-ffmpeg2.patch
+	patch -p 1 -i $SRC/libquicktime-1.2.4-ffmpeg29.patch
+	patch -p 1 -i $SRC/libquicktime-1.2.4-ffmpeg4.patch
+	for FILE in lqt_ffmpeg.c video.c audio.c ; do
+		sed -i -e "s:CODEC_ID_:AV_&:g" "plugins/ffmpeg/${FILE}"
+	done
+
+	./configure \
+		--prefix=/usr \
+		--enable-gpl \
+		--disable-nls \
+		--with-libdv \
+		--with-ffmpeg \
+		--with-x264 \
+		--without-doxygen
+
+	make
+	make DESTDIR=$PKG install
+}

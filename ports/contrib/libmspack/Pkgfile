@@ -1,0 +1,15 @@
+# Description: A portable library for some loosely related Microsoft compression formats
+# URL: https://www.cabextract.org.uk/libmspack/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=libmspack
+version=0.10.1alpha
+release=1
+source=(http://www.cabextract.org.uk/libmspack/libmspack-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

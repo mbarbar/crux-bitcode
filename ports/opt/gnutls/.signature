@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/RXEu3X1hF+I3Nrt0aAiFNFN+S/4w6kaIQER6C20VnjpkAH4/mr7OHB6AjjwfTN1EIYc3Zmz9y3lXluM3QXmOg4=
+SHA256 (Pkgfile) = cf5d67aaf4d2c498c80529c519f4c9d667dc1085766023ed765a0fdeaade1215
+SHA256 (.footprint) = 222b6c0eaea38e79a0639efeaf30ed344ea610094bf9c6a784ae62ec0f6da6f5
+SHA256 (gnutls-3.6.15.tar.xz) = 0ea8c3283de8d8335d7ae338ef27c53a916f15f382753b174c18b45ffd481558

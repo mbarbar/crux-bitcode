@@ -1,0 +1,58 @@
+# Description: A collection of tools, libraries and tests for shader compilation.
+# URL: https://github.com/google/shaderc
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glslang
+# Optional: asciidoctor
+
+name=shaderc
+version=2020.3
+release=1
+source=(https://github.com/google/$name/archive/v$version/$name-v$version.tar.gz
+	glslc.1 spvc.1 glslc-asciidoc.patch spvc-asciidoc.patch
+	0001-Drop-third-party-code-in-CMakeLists.txt.patch
+	shaderc-2020.3-system-glslang.patch
+	0001-Fix-SPIRV-includes-location.patch)
+
+build() {
+	patch -d $name-$version/glslc -p0 -i $SRC/glslc-asciidoc.patch
+	patch -d $name-$version/spvc -p0 -i $SRC/spvc-asciidoc.patch
+
+	patch -p1 -d $name-$version -i $SRC/0001-Drop-third-party-code-in-CMakeLists.txt.patch
+	patch -p1 -d $name-$version -i $SRC/0001-Fix-SPIRV-includes-location.patch
+	patch -p1 -d $name-$version -i $SRC/shaderc-2020.3-system-glslang.patch
+
+	# de-vendor libs and disable git versioning
+	sed '/examples/d;/third_party/d' -i $name-$version/CMakeLists.txt
+	sed '/build-version/d' -i $name-$version/glslc/CMakeLists.txt
+	cat <<- EOF > $name-$version/glslc/src/build-version.inc
+"${version}\\n"
+"$(prt-get info spirv-tools | awk '/^Version:/ {print $2}')\\n"
+"$(prt-get info glslang | awk '/^Version:/ {print $2}')\\n"
+EOF
+
+	cmake -S $name-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-D SHADERC_SKIP_TESTS=ON \
+		-Wno-dev
+
+	cmake --build build -j ${JOBS:-1}
+
+	DESTDIR=$PKG cmake --install build
+
+	if [ -e '/usr/bin/asciidoctor' ]; then
+		cd ../glslc
+		asciidoctor -b manpage README.asciidoc -o glslc.1
+		install -D -m 0644 -t $PKG/usr/share/man/man1 glslc.1
+
+		cd ../spvc
+		asciidoctor -b manpage README.asciidoc -o spvc.1
+		install -D -m 0644 -t $PKG/usr/share/man/man1 spvc.1
+	else
+		install -D -m 0644 -t $PKG/usr/share/man/man1 $SRC/glslc.1
+		install -D -m 0644 -t $PKG/usr/share/man/man1 $SRC/spvc.1
+	fi
+}

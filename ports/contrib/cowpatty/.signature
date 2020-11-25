@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xHx2ge7ADLejU8cLnvCgfuUw8s1ReW8vrSI85FcJRE1/VEiK4vdTKJSzads9uQn+9Sa+sxv8rE4VJ2WTqllhQA=
+SHA256 (Pkgfile) = f01c03de43deceaa1486cc4758fc930269e76a44a5187611e856e3eb705096b4
+SHA256 (.footprint) = 9d8bc9a10100a2bf09d547afe4f17b186cc73bc729c7c0fd9214a9a2a4a8ad0e
+SHA256 (cowpatty-4.8.tar.gz) = 8aae67f4823edb76dff036808137888d2479477ec1e52aa86d6cecd26d58aa23
+SHA256 (fix_parallel_build.patch) = 9cfa7c1448166b5c82f6ed000a3632d53224a39cb44208de15ad28debc5fbc6d

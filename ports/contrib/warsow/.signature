@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF332B4osnoFqKKV0CGX++S8iruXVudWXuiy4zIMkBED3sh3pvP0c6HeIZnUL7l/jAI8nEJla1jz2VGNyDiNLtmww=
+SHA256 (Pkgfile) = 32c3f4b5133e1fae1239b2cfb3a7d660dc53112b04e160e10b6b098498ae2b2a
+SHA256 (.footprint) = 5c8a04f0e8f3ed2262eab3b394a3a5b0e2b439aaff0939f7b665bafaca2ce9a8
+SHA256 (warsow_0.42_unified.zip) = 69e8d33dd73b92b8205a4de3feee2baf6ce27d155ed977aa4acd23c1fa9aa776
+SHA256 (warsow_0.42_sdk.zip) = 6c3c4cf161472646501c53672792e123787e5fef9f3dac60e70f1235525e9278
+SHA256 (warsow.sh) = 7448884ab6d6686efd2a54f5f3c9f98eeaca189977bb983a5824a39d9a3bbdd6

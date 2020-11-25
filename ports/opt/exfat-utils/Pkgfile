@@ -1,0 +1,17 @@
+# Description: FUSE module and Utilities for the exFAT filesystem
+# URL:         https://github.com/relan/exfat
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  fuse
+
+name=exfat-utils
+version=1.3.0
+release=1
+source=(https://github.com/relan/exfat/archive/v${version}/exfat-$version.tar.gz)
+
+build() {
+    cd exfat-$version
+    autoreconf -i
+    ./configure --prefix=/usr --sbindir=/sbin
+    make
+    make DESTDIR=$PKG install
+}

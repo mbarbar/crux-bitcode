@@ -1,0 +1,2 @@
+^lib32/ld-.*\.so$
+^lib32/libpthread-.*\.so$

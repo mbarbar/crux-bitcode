@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30QTDuuU6Tp/MK5WQWl2HOUZeorFXBysv1ltH70pjRhj44+CnHAae2yqTxSVpnNFgwExDdDLB09xuPvxGlYVwAc=
+SHA256 (Pkgfile) = 1e0ca7d2ecae7675a418698d61f0730e461cc7f90d15c9899431f9015eee6af5
+SHA256 (.footprint) = f606befbab4e832279d344d512fb0afac9d74e16c8be8b4399da330a78d8e9f7
+SHA256 (NetAddr-IP-4.079.tar.gz) = ec5a82dfb7028bcd28bb3d569f95d87dd4166cc19867f2184ed3a59f6d6ca0e7

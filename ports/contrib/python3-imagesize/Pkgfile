@@ -1,0 +1,20 @@
+# Description: Getting image size from png/jpeg/jpeg2000/gif file.
+# URL:         https://github.com/shibukawa/imagesize_py/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  python3-setuptools
+
+name=python3-imagesize
+version=1.2.0
+release=1
+source=(#https://github.com/shibukawa/imagesize_py/archive/$version/${name#*-}-$version.tar.gz
+	https://files.pythonhosted.org/packages/source/i/imagesize/${name#*-}-$version.tar.gz)
+
+build() {
+	#cd ${name#*-}_py-$version
+	cd ${name#*-}-$version
+
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+
+	chmod -R go-w,a+r,u+w $PKG
+}

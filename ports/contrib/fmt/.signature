@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF302ToHWJwYywASlXN80CtgBSpi1LXNl83OEn/SxOzDU2yv5VFSPouVDg72hIEWLcT1aB1unzrP0Yw4Nmtz3esAo=
+SHA256 (Pkgfile) = 3119eacf919d0aeaf5bcb750c91711eb45caeaa19bc65c376f4ed8600df11909
+SHA256 (.footprint) = 4b890f044167a1c6f8594cf4019b1cf0eb9b8fd3eb6b7779f0e88c18b757a456
+SHA256 (fmt-7.1.2.tar.gz) = 4119a1c34dff91631e1d0a3707428f764f1ea22fe3cd5e70af5b4ccd5513831c

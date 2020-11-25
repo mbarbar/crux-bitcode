@@ -1,0 +1,18 @@
+# Description: Handles managing your python package versions in scm metadata.
+# URL: https://github.com/pypa/setuptools_scm
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-setuptools-scm
+version=4.1.2
+release=1
+source=(https://pypi.io/packages/source/s/setuptools_scm/setuptools_scm-$version.tar.gz)
+
+build() {
+  cd setuptools_scm-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py egg_info
+
+  /usr/bin/python3 setup.py install --root=$PKG \
+    --skip-build
+}

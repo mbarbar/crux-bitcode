@@ -1,0 +1,21 @@
+# Description: Variable ties made easier: much, much, much easier...
+# URL: https://metacpan.org/release/Tie-Simple
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-tie-simple
+_realname=Tie-Simple
+_author=HANENKAMP
+version=1.04
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+	make DESTDIR="$PKG" install
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

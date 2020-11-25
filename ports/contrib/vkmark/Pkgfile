@@ -1,0 +1,19 @@
+# Description: vkmark is an extensible Vulkan benchmarking suite with targeted, configurable scenes
+# URL: https://github.com/vkmark/vkmark
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: assimp glm meson vulkan-loader
+
+name=vkmark
+version=20200521
+release=1
+_commit=e8c0720f3251e50aa8e777f44e3c2406dceb919c
+source=(https://github.com/vkmark/vkmark/archive/$_commit/$name-$version.tar.gz)
+
+build() {
+  meson setup $name-$_commit build \
+    --prefix=/usr \
+    --buildtype=plain \
+    -Db_ndebug=true
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+}

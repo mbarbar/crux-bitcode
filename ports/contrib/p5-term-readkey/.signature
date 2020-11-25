@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF321zO2zuBou6pqvbAY8tpf6gonKbmWYPuEpGTFvhcwnj8iuZiCyPwbIFHBLJMpMuxDCi7l12VMUCD6BHtd0MSgg=
+SHA256 (Pkgfile) = 6e9457d27b53dcdd397c7a9de788766500af218dbcec2be4c54355d97de86e2a
+SHA256 (.footprint) = 49087f18133adb371acfe4b409240dac2ff4f49400abe6f3420786377fed61b5
+SHA256 (TermReadKey-2.38.tar.gz) = 5a645878dc570ac33661581fbb090ff24ebce17d43ea53fd22e105a856a47290

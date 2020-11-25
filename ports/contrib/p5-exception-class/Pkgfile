@@ -1,0 +1,19 @@
+# Description: A module that allows you to declare real exception classes in Perl
+# URL: https://metacpan.org/release/Exception-Class
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-class-data-inheritable p5-devel-stacktrace
+
+name=p5-exception-class
+version=1.44
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Exception-Class-$version.tar.gz)
+
+build() {
+  cd Exception-Class-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

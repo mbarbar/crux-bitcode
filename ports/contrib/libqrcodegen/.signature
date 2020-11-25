@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34oVLmMVhEGJ0hJ18rmI19LMSfWFk6Orr0FPau7uQi2mjzvD/hbVj91vxxo9Av3wOc3AfmW8k9KZdYECAAuGdAA=
+SHA256 (Pkgfile) = b2995392daba6cac52b258030e717b28e72a0490b041d12419432d63172d6e6c
+SHA256 (.footprint) = 49cab9bb05830f1b5c591af844fdfd1056365aacfcee52bf65e5f24355c9a9ca
+SHA256 (libqrcodegen-1.6.0.tar.gz) = 8acee5a77325e075b910747ad4b1fdb1491b7e22d0b8f1b5a6ea15ea08ba33a8
+SHA256 (qr-code-generator-build-fixes.patch) = 6ee12ffc7b0669f172eb79a37e4b394fd14877761b62bbaa7fa1011f9dd93e30

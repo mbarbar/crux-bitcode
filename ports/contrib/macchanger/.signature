@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37gO6n5InRUr4E887HZBVNxvxUrEsFOC+ctKPWH2d8sywfyff99uZJkA2A9lg55Psq6LjWX/gdYEOV3eF+HK5QQ=
+SHA256 (Pkgfile) = eef9c8d0912e5124b1371f8456d5e510c47f1b3f611939c50254616915f0bd23
+SHA256 (.footprint) = f21f745c9b7b902500438b68aee91de7417d88484bee43d4ae67d510da122e40
+SHA256 (macchanger-1.7.0.tar.gz) = 1d75c07a626321e07b48a5fe2dbefbdb98c3038bb8230923ba8d32bda5726e4f
+SHA256 (macchanger.rc) = d4e4bcaae734c1950299a1497748489f235e5d4c8990b69bd1cb3da99bf45b46

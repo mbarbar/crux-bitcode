@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31dcrsWbQTvFO2pkLW0ZGjGI78HRNc5OLSjxWWAwh9/RXO9Q3sSKxiOvV3umB5ZXRF0bLIbRHyEpPwIbMeHPLAo=
+SHA256 (Pkgfile) = 2f5d11b83f0c28d83a536f0e1c706904d8e2f3f1485b8cc88682d05e680864ff
+SHA256 (.footprint) = f03f6a494cc702efd1ad2fb861a6195ff777ebaeafddb5c1adce384261f6c548
+SHA256 (warzone2100-3.2.1.tar.xz) = 0f66b76c50c598abcc895134bd49aab5dd46dcf8135645f2505e93077402a6d9
+SHA256 (warzone2100.appdata.xml) = d6fd6bf40bd72d57a2872b3e439bed04f4cd78e0a7b2993de580ed765b80cfc4

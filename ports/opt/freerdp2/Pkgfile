@@ -1,0 +1,25 @@
+# Description: Remote desktop protocol implementation.
+# URL: https://www.freerdp.com/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: cmake glib xorg-libxcursor xorg-libxinerama xorg-libxkbfile xorg-libxrandr xorg-libxv
+# Optional: ffmpeg gst-plugins-base alsa-lib cups directfb neon pulseaudio xmlto
+
+name=freerdp2
+version=2.2.0
+release=1
+source=(https://pub.freerdp.com/releases/freerdp-$version.tar.gz)
+
+build() {
+	cmake -S freerdp-$version -B build \
+		-D CMAKE_BUILD_TYPE=RELEASE \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_SKIP_RPATH=ON \
+		-D WITH_SERVER=OFF \
+		-D WITH_CLIENT=ON \
+		-D WITH_LIBSYSTEMD=OFF \
+		-D WITH_WAYLAND=OFF
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

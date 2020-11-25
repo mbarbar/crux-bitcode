@@ -1,0 +1,18 @@
+# Description: Property displayer for X
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxmu
+
+name=xorg-xprop
+version=1.2.5
+release=1
+source=(https://www.x.org/releases/individual/app/xprop-$version.tar.bz2)
+
+build() {
+	cd xprop-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

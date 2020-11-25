@@ -1,0 +1,17 @@
+# Description: GUI disk space viewer.
+# URL: http://xdiskusage.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: fltk
+
+name=xdiskusage
+version=1.52
+release=1
+source=(http://xdiskusage.sourceforge.net/$name-$version.tgz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	install -D -m 0755 -o root -g root -s xdiskusage $PKG/usr/bin/xdiskusage
+	install -D -m 0644 -o root -g root xdiskusage.1 $PKG/usr/share/man/man1/xdiskusage.1
+}

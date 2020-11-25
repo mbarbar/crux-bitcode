@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+1YhN6W4jwQLfQwYTMJXW0vrJdniTe/ZFhYMD4b6brcuqKqZWdn/l2geB2KaXc6xghb51pZsqAzZjpiLim6PAc=
+SHA256 (Pkgfile) = 2b5418aaf40da3a5c6fd1b50766c8ba730ddf9114e51c32bde9b70f5f3da6cab
+SHA256 (.footprint) = 04d55e8cd2075776fc096fdead490d5eaa43a93c0dd979a161c08e40c7776663
+SHA256 (cpan2crux-1.4.pl) = e71d5ebf48562b17b93f8b27c9a8c3db7b596215c4983cf62743e7eb5e0e8a23

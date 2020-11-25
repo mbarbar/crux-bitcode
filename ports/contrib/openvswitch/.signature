@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF355hR+uEPNkamY5GtJ2zOWwRLcUz7fIA/ChK1CKoPzqYnBf81P7g+3JIFTTjNAriSVO1qMJnbQ21etxc+9LJygY=
+SHA256 (Pkgfile) = b7d94c315bd6214d9f2a5cd2ae3762bb54aeb32c06692f2ee3b16fc0dda94feb
+SHA256 (.footprint) = 0ab024c9b7014cea8f9187a8ea4e51e821aaf87507d311c52629ce6ce3e7ecec
+SHA256 (openvswitch-2.14.0.tar.gz) = 4171e52a8c0ffe160c1daa6687219d902a2a6969b296d223d8dac980ab99a260
+SHA256 (ovsd) = 90db323a867d936c9f533c0f912fadc6f1708a8e37eefb1022ce6354adf391eb

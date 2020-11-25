@@ -1,0 +1,23 @@
+# Description: mro::* interface compatibility for Perls < 5.9.5
+# URL: https://metacpan.org/pod/MRO::Compat
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-mro-compat
+version=0.13
+release=1
+source=(https://cpan.metacpan.org/authors/id/H/HA/HAARG/MRO-Compat-$version.tar.gz)
+
+build() {
+  cd MRO-Compat-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+    PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='"$PKG"'" \
+    PERL_MB_OPT="--installdirs vendor --destdir '"$PKG"'" \
+    PERL_USE_UNSAFE_INC=1 \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

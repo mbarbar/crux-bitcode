@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/VyFWqnBBLrDQ2ciBEu/AkEDGVTAg6e8niLJaNNq9mCm6uoyNW2YXiTBSSD5rZfDPv1XTlncyl+q1q1Mrh/gnQA=
+SHA256 (Pkgfile) = 90357f2b070ca777dfe3e093a0f24632ac1dbc220cb8103f4f222d702a5857f6
+SHA256 (.footprint) = cbfd8d18344843a726620830bcc88c3452e87807e895eb35e0fc73136fce1ac3
+SHA256 (libgpg-error-1.39.tar.bz2) = 4a836edcae592094ef1c5a4834908f44986ab2b82e0824a0344b49df8cdb298f

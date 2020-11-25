@@ -1,0 +1,17 @@
+diff -pruN cowpatty-4.8/Makefile cowpatty-4.8.new/Makefile
+--- cowpatty-4.8/Makefile	2018-07-03 22:49:02.000000000 +0300
++++ cowpatty-4.8.new/Makefile	2020-10-03 18:49:58.182167312 +0300
+@@ -20,11 +20,10 @@ CC			= clang
+ 
+ all: $(PROGOBJ) $(PROG)
+ 
+-cowpatty: common.h md5.c md5.h sha1.h cowpatty.c cowpatty.h sha1.c \
+-            sha1.h utils.c utils.h
++cowpatty: cowpatty.c cowpatty.h common.h md5 sha1 utils
+ 	$(CC) $(CFLAGS) cowpatty.c -o cowpatty utils.o md5.o sha1.o $(LDLIBS)
+ 
+-genpmk: genpmk.c cowpatty.h utils.h sha1.h common.h
++genpmk: genpmk.c cowpatty.h common.h utils sha1
+ 	$(CC) $(CFLAGS) genpmk.c -o genpmk utils.o sha1.o $(LDLIBS)
+ 
+ utils: utils.c utils.h

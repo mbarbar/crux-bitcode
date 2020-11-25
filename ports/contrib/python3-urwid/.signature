@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35RfTiktwb82qrRxbH1Fj6zrKCMmhqFOR1gaqGquuufDh190evdnsq+TStMv8KJK4AJDcDCQbGhGwWLxcsHZbgQ=
+SHA256 (Pkgfile) = d5ed05ed17bb7139503c7f072fa596f3f845a777b2302f025d64f1fd509c449d
+SHA256 (.footprint) = a6429095783a2465c159bc0db7abfce3fa9e6c5c52a8591c3c9d409d7d6bffec
+SHA256 (urwid-2.1.2.tar.gz) = 366970cabce4a7f70fb4af1d16ac8be23dbcf38f995a20029a4bf32fffe7607d

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF339MtT/FKxyWY/XbsUj4nbguIsB8p5jpsAeg4M/pWymRoaz5tWIfR/O66q5zYRTqgGtYRxtgeWUz/HpPelLrfAw=
+SHA256 (Pkgfile) = 0d6d9b307a8f0479f5d87cea91bd3fd10a8f8ada51164955ab21cc9028669b23
+SHA256 (.footprint) = c92f41f735df172facbbdbec192ddd40ce457a60866d33025422ce08a79e8fdc
+SHA256 (libebur128-1.2.4.tar.gz) = 2ee41a3a5ae3891601ae975d5ec2642b997d276ef647cf5c5b363b6127f7add8

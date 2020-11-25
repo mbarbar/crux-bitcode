@@ -1,0 +1,16 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/aacs_info
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libaacs/
+-rw-r--r--	root/root	usr/include/libaacs/aacs-version.h
+-rw-r--r--	root/root	usr/include/libaacs/aacs.h
+-rw-r--r--	root/root	usr/include/libaacs/filesystem.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libaacs.a
+-rwxr-xr-x	root/root	usr/lib/libaacs.la
+lrwxrwxrwx	root/root	usr/lib/libaacs.so -> libaacs.so.0.7.1
+lrwxrwxrwx	root/root	usr/lib/libaacs.so.0 -> libaacs.so.0.7.1
+-rwxr-xr-x	root/root	usr/lib/libaacs.so.0.7.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libaacs.pc

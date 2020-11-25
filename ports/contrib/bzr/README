@@ -1,0 +1,9 @@
+
+README for bzr
+
+
+NOTES:
+
+  Installing python-celementtree and python-elementtree which is dependency
+  of celementtree speeds up certain operations in bzr and is highly
+  recommended for larger trees. It's perfectly optional, though.

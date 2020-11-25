@@ -1,0 +1,17 @@
+# Description: Library for importing WordPerfect (tm) documents
+# URL: http://libwpd.sourceforge.net/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: librevenge
+
+name=libwpd
+version=0.10.3
+release=1
+source=(https://downloads.sourceforge.net/project/libwpd/libwpd/$name-$version/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --without-docs
+  make
+  make DESTDIR=$PKG install
+}

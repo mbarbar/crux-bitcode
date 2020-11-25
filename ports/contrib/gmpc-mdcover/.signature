@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wi+Gt5Cln0Ynua8+eHw1SUFFQKEKiFAR1J9sLaEJTnTfqEmj1m4N+9RkikFyH2Xaccz2kyrN+rixKp7rwyr3Qw=
+SHA256 (Pkgfile) = 4f8e6c2972192aab2815621fd73cfa03767b247d84e9a979a52e9adde5029d22
+SHA256 (.footprint) = 4963be40e8a7da93aa69a3306c23d820f44dfb1984cbee2498a719aca9bc2c01
+SHA256 (gmpc-mdcover-0.20.0.tar.gz) = e0f50943e46ff83614d9d18e08aa2b4e592b71df090763e0827dee8106170d82

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zDmAw/idPogt+vWTSPgKG9rhjXoBrWAu3Q0vPFGM4WQGr7fQEHUHj1MlEYbfU2IIDHnzDW8AWgT80jaK1bZxAU=
+SHA256 (Pkgfile) = cbd66c6a4f94534e58f64111d043b365dfa8f73a54e639af875a433a91e8eea5
+SHA256 (.footprint) = e7efe3a5e4b82b10c6d598a26845e9ba95a6928c44173870693bc285d1d1d01c
+SHA256 (eglexternalplatform-1.1.tar.gz) = 72725c4c9dd06b4d44bceb8794e1e78f75ed8702be23201282f8f937252a6b32

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+S9pb3nReZLAwdBmRaM2oHk8ITxaapc9/FALbaHaDec45NQ80wcD7uWYQ6hyUlgBBvCnTfA7R2PBhviSY9oJgY=
+SHA256 (Pkgfile) = 6cf774f85aba80fc12c13cedb5680817631c9d386d25a571472dd5145214af41
+SHA256 (.footprint) = 5356e17d100942ccf8f90393ddf85ef5d88e7a7bc6bdeb2eaae3d2328bfcd439
+SHA256 (xclip-0.13.tar.gz) = ca5b8804e3c910a66423a882d79bf3c9450b875ac8528791fb60ec9de667f758

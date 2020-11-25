@@ -1,0 +1,24 @@
+# Description: LSB version query program
+# URL: https://www.linuxbase.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: bash
+
+name=lsb-release
+version=1.4
+release=3
+source=(https://downloads.sourceforge.net/lsb/$name-$version.tar.gz
+lsb_release_description.patch)
+
+build() {
+  cd $name-$version
+  patch -Np0 < "$SRC/lsb_release_description.patch"
+  make
+  install -dm755 "$PKG/etc"
+  echo "LSB_VERSION=$version" >> "$PKG/etc/lsb-release"
+  echo "DISTRIB_ID=CRUX" >> "$PKG/etc/lsb-release"
+  echo "DISTRIB_RELEASE=$(crux | awk '{ print $2 " " $3 }')" >> "$PKG/etc/lsb-release"
+  echo "DISTRIB_DESCRIPTION=CRUX" >> "$PKG/etc/lsb-release"
+
+  install -Dm 644 lsb_release.1.gz "$PKG/usr/share/man/man1/lsb_release.1.gz"
+  install -Dm 755 lsb_release "$PKG/usr/bin/lsb_release"
+}

@@ -1,0 +1,21 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/tcat -> toast
+-rwxr-xr-x	root/root	usr/bin/toast
+lrwxrwxrwx	root/root	usr/bin/untoast -> toast
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/gsm/
+-r--r--r--	root/root	usr/include/gsm/gsm.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libgsm.so -> libgsm.so.1.0.13
+lrwxrwxrwx	root/root	usr/lib/libgsm.so.1 -> libgsm.so.1.0.13
+-rwxr-xr-x	root/root	usr/lib/libgsm.so.1.0.13
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-r--r--r--	root/root	usr/share/man/man1/toast.1.gz
+drwxr-xr-x	root/root	usr/share/man/man3/
+-r--r--r--	root/root	usr/share/man/man3/gsm.3.gz
+-r--r--r--	root/root	usr/share/man/man3/gsm_explode.3.gz
+-r--r--r--	root/root	usr/share/man/man3/gsm_option.3.gz
+-r--r--r--	root/root	usr/share/man/man3/gsm_print.3.gz

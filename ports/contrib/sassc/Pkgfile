@@ -1,0 +1,17 @@
+# Description: libsass command line driver
+# URL: https://sass-lang.com/libsass
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: libsass
+
+name=sassc
+version=3.6.1
+release=1
+source=(https://github.com/sass/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	autoreconf -fi
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

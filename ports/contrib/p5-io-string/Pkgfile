@@ -1,0 +1,17 @@
+# Description: IO::File interface for in-core strings
+# URL: https://metacpan.org/pod/IO::String
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-io-string
+version=1.08
+release=1
+source=(https://www.cpan.org/authors/id/G/GA/GAAS/IO-String-$version.tar.gz)
+
+build() {
+  cd IO-String-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

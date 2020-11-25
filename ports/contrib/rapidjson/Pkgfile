@@ -1,0 +1,26 @@
+# Description: A fast JSON parser/generator for C++ with both SAX/DOM style API
+# URL: https://github.com/miloyip/rapidjson
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake
+
+name=rapidjson
+version=1.1.0
+release=2
+source=(https://github.com/Tencent/rapidjson/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_RAPIDJSON+=' -G Ninja'
+  [[ -e /usr/lib/ccache ]] && PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
+  cmake -S $name-$version -B build $PKGMK_RAPIDJSON \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D RAPIDJSON_BUILD_DOC=OFF \
+    -D RAPIDJSON_BUILD_EXAMPLES=OFF \
+    -D RAPIDJSON_BUILD_TESTS=OFF \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+  rm -r $PKG/usr/share/doc
+}

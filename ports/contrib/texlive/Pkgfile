@@ -1,0 +1,159 @@
+# Description: TeX distribution for UNIX compatible systems, including luatex and xindy support
+# URL: https://www.tug.org/tetex/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: clisp ghostscript graphite2 harfbuzz-icu libgd libmpfr libpaper poppler xorg-libxaw xorg-libxi zziplib
+
+name=texlive
+version=20200406
+release=1
+source=(ftp://tug.org/historic/systems/texlive/${version:0:4}/$name-$version-texmf.tar.xz
+  ftp://tug.org/historic/systems/texlive/${version:0:4}/$name-$version-source.tar.xz
+  https://download.savannah.gnu.org/releases/texi2html/texi2html-5.0.tar.bz2
+  tabu.sty.diff)
+
+unpack_source() {
+  for file in ${source[@]}; do
+    case ${file##*/} in
+      $name-$version-source.tar.xz)
+        bsdtar -p -o -C $SRC -xf $(get_filename $file) ;;
+      $name-$version-texmf.tar.xz)
+        mkdir -p $PKG/usr/share
+        bsdtar -p -o -C $PKG/usr/share -xf $(get_filename $file) --strip-components 1 ;;
+      texi2html-5.0.tar.bz2)
+        bsdtar -p -o -C $SRC -xf $(get_filename $file) ;;
+      *)
+        cp $(get_filename $file) $SRC ;;
+    esac
+  done
+}
+
+build() {
+  # remove broken symlinks
+  find $SRC -type l -xtype l -exec rm '{}' \+
+  find $PKG -type l -xtype l -exec rm '{}' \+
+
+  # make ConTeXt work, and remove unused settings
+  sed -i \
+    -e 's|selfautoparent:|/usr/share/|g' \
+    -e 's|\(TEXMFLOCAL[ ]*=[ ]*\)[^,]*|\1"/usr/share/texmf-local"|' \
+    -e '/selfautodir/d' \
+    -e '/texmflocal/d' \
+    $PKG/usr/share/texmf-dist/web2c/texmfcnf.lua
+
+  cd $name-$version-source
+
+  chmod -R a-s $SRC
+
+  find $SRC \
+    \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+    -exec chmod 755 {} \; -o \
+    \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+    -exec chmod 644 {} \;
+
+  # Fix some paths
+  sed -i 's/SELFAUTOPARENT/TEXMFROOT/' texk/tex4htk/t4ht.c
+  sed -i 's|TEXMFROOT = .*|TEXMFROOT = $SELFAUTODIR/share|g' texk/kpathsea/texmf.cnf
+  sed -i 's|TEXMFLOCAL = .*|TEXMFLOCAL = $TEXMFROOT/texmf-local|g' texk/kpathsea/texmf.cnf
+
+  export TEXMFCNF=""
+  export KPATHSEA_WARNING=0
+
+  # prevent compiling Xdvi with libXp
+  sed -i 's|-lXp ||' texk/xdvik/configure
+
+  mkdir build
+  cd build
+  ../configure \
+    --prefix=/usr \
+    --with-banner-add=" $(crux)" \
+    --with-clisp-runtime=system \
+    --enable-{dvipdfm-x,gc=system,libtool-hack,luatex,pdftex,pdftex-syncex,shared,makeindexk,tex,texlive,tex-synctex,web2c,xindy} \
+    --with-system-{cairo,freetype2,gd,graphite2,gmp,harfbuzz,icu,libpaper,libpng,mpfr,ncurses,pixman,poppler,potrace,t1lib,zlib,zziplib} \
+    --with-x \
+    --with-xdvi-x-toolkit=xaw \
+    --disable-{all-pkgs,aleph,native-texlive-build,xetex,xindy-docs,xindy-rules}
+
+  make
+  make DESTDIR=$PKG install
+
+  cd ..
+
+  #fmtutil depends on these
+  perl_sitelib=$(perl -V:sitelib | sed -e "s|sitelib=[']\(.*\)['].*$|\1|")
+  install -d $PKG/$perl_sitelib/TeXLive
+  install texk/tests/TeXLive/TL{Config,Utils}.pm $PKG/$perl_sitelib/TeXLive
+
+  # configure fmtutil
+  sed \
+    -e 's/^aleph/#! aleph/g' \
+    -e 's/^lamed/#! lamed/g' \
+    -e 's/^amstex/#! amstex/g' \
+    -e 's/^cont-en xetex/#! cont-en xetex/g' \
+    -e 's/^pdfcs/#! pdfcs/g' \
+    -e 's/^luacs/#! luacs/g' \
+    -e 's/^pdfcs/#! pdfcs/g' \
+    -e 's/^csplain/#! csplain/g' \
+    -e 's/^eplain/#! eplain/g' \
+    -e 's/^pdfjadetex/#! pdfjadetex/g' \
+    -e 's/^jadetex/#! jadetex/g' \
+    -e 's/^pdfmex/#! pdfmex/g' \
+    -e 's/^utf8mex/#! utf8mex/g' \
+    -e 's/^mex/#! mex/g' \
+    -e 's/^mllatex/#! mllatex/g' \
+    -e 's/^mltex/#! mltex/g' \
+    -e 's/^mptopdf/#! mptopdf/g' \
+    -e 's/^platex/#! platex/g' \
+    -e 's/^eptex/#! eptex/g' \
+    -e 's/^ptex/#! ptex/g' \
+    -e 's/^texsis/#! texsis/g' \
+    -e 's/^euptex/#! euptex/g' \
+    -e 's/^uplatex/#! uplatex/g' \
+    -e 's/^uptex/#! uptex/g' \
+    -e 's/^xelatex/#! xelatex/g' \
+    -e 's/^xetex/#! xetex/g' \
+    -e 's/^cslatex/#! cslatex/g' \
+    -e 's/^lollipop/#! lollipop/g' \
+    -i $PKG/usr/share/texmf-dist/web2c/fmtutil.cnf
+    #-e 's/^pdftex/#! pdftex/g' \
+    #-e 's/^pdflatex/#! pdflatex/g' \
+    #-e 's/^luajittex/#! luajittex/g' \
+    #-e 's/^mf/#! mf/g' \
+
+  # Create symlinks
+  # this uses above configuration to create links like $PKG/usr/bin/lualatex for example
+  # without, the engines just won't work like we want
+  PATH="$PKG/usr/bin:$PATH" LD_LIBRARY_PATH+="$PKG/usr/lib:$LD_LIBRARY_PATH" \
+    texlinks -f $PKG/usr/share/texmf-dist/web2c/fmtutil.cnf $PKG/usr/bin
+
+  #cd $SRC/$name-$version-texmf
+
+  # Fix some paths
+  sed \
+    -e 's|TEXMFROOT = .*|TEXMFROOT = $SELFAUTODIR/share|g' \
+    -e 's|TEXMFLOCAL = .*|TEXMFLOCAL = $TEXMFROOT/texmf-local|g' \
+    -e 's|^OSFONTDIR.*|OSFONTDIR = ~/.fonts:/usr/share/fonts|' \
+    -i $PKG/usr/share/texmf-dist/web2c/texmf.cnf
+
+  cd $SRC/texi2html-*
+  ./configure --prefix=/usr
+  make
+  make install DESTDIR=$PKG
+
+  # final clean up
+  rm -r $PKG/usr/share/{info,locale,texmf-dist/doc}
+  rm -r $PKG/usr/bin/{tlmgr,man}
+  rm -r $PKG/usr/share/texmf-dist/scripts/texlive/tlmgr{,gui}.pl
+  find $PKG/usr/share/texmf-dist \
+    -regex '.*/\(COPYING\|README\|AUTHORS\|INSTALL\|ChangeLog\|NEWS\|TODO\|fonts_README.md\|BUGS\).*' \
+    -exec rm '{}' \+
+  find $PKG/usr/share/texi2html \
+    -regex '.*/\(README\|COPYING\).*' \
+    -exec rm '{}' \+
+  # strip .la files
+  rm -f $PKG/usr/lib/*.la
+  # patch tabu.sty from https://github.com/tabu-fixed/tabu to fix
+  # breakage when compiling doxygen
+  ( cd $PKG/usr/share/texmf-dist/tex/latex/tabu
+  cat $SRC/tabu.sty.diff | patch -p1 --verbose || exit 1
+  )
+}

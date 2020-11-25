@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/h+k8WblGKZokrbZ67hTouB7279671SC2kXzK5vfRlHp/oR1hXE89I0CS+dQ6P/XPJ/8o7Jp5TQDuYKT0Kd6QU=
+SHA256 (Pkgfile) = 98fb92609587dc80f3025ffd5e6006afbd4710c2a26249f3cadeae180e6d54b4
+SHA256 (.footprint) = eff03bca1ff57684d32d78530ebea13d070264e40149f3f6e705fc251b9e1c02
+SHA256 (namespace-autoclean-0.29.tar.gz) = 45ebd8e64a54a86f88d8e01ae55212967c8aa8fed57e814085def7608ac65804

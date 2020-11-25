@@ -1,0 +1,16 @@
+# Description: Program to fetch mail and deliver it in various ways
+# URL:         https://github.com/nicm/fdm
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  tdb openssl
+
+name=fdm
+version=2.0
+release=1
+source=(https://github.com/nicm/fdm/releases/download/$version/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

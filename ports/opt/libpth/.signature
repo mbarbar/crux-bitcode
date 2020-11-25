@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Vpoc2mw5wUhh9sDVdK9aHwB6lY3u/0J0Ec87hOgYBo23YXt7GX64+39X3nwxL2cs9y7jHLOkSpRTs09VKwBpQM=
+SHA256 (Pkgfile) = 00eebaa1a5a05a18b29b5f6af9bae9e8893b81294773da8fe0007f69e3f7f85f
+SHA256 (.footprint) = ec503610251916a8845b9502120fcc68d94658b8a4da4d3bce0ef5906fc51600
+SHA256 (pth-2.0.7.tar.gz) = 72353660c5a2caafd601b20e12e75d865fd88f6cf1a088b306a3963f0bc77232

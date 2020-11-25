@@ -1,0 +1,18 @@
+# Description: A menu driven communications program
+# URL:         https://salsa.debian.org/minicom-team/minicom
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Packager:    sten, nick dot steeves at shaw dot ca
+
+name=minicom
+version=2.7.1
+release=1
+source=(http://http.debian.net/debian/pool/main/m/$name/${name}_$version.orig.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr --disable-nls
+
+  make
+  make DESTDIR=$PKG install
+}

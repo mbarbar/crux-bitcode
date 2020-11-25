@@ -1,0 +1,30 @@
+# Description: Small IRC proxy.
+# URL: http://miau.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Mark Rosenstand, mark at borkware dot net
+
+name=miau
+version=0.6.6
+release=2
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure \
+		--prefix=/usr \
+		--enable-dccbounce \
+		--enable-mkpasswd \
+		--enable-uptime \
+		--enable-chanlog \
+		--enable-privlog \
+		--enable-onconnect \
+		--enable-empty-awaymsg \
+		--disable-ascii-art \
+		--disable-qlogstamp \
+		--enable-pingstat \
+		--enable-dumpstatus
+	make
+	make DESTDIR=$PKG install
+	mv $PKG/usr/share/doc/miau $PKG/usr/share
+	rm -r $PKG/usr/share/{doc,info}
+}

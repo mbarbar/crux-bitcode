@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yCsgQaKa6Kilo1SEgd27zxTEVVzK4gjKVJmK9Z+2U182vkFPBPB7DpEnXWz2tj8q1vh4UF04S+eAtUGT+9jjgA=
+SHA256 (Pkgfile) = f8cbdfd699c06ccbd77e5df493cc4f14b3b28bf863310a0425201a6d1ca516e3
+SHA256 (.footprint) = a7b83b27c4602958830e09e12c8d31d05ac21fc59ce666962180536f6bf2fdb6
+SHA256 (nsjail-3.0.tar.gz) = cfa66d3ed136b2e221752287b95e544915e8a6760aa866f023b604d14a374919
+SHA256 (kafel-8e69b8e.tar.gz) = 4a6c9a1a70ed99bbed767adc106081b017a3090307ea88cc7e329b82daa1373b

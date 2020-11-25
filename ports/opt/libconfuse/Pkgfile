@@ -1,0 +1,22 @@
+# Description: C-library for parsing configuration files.
+# URL: https://github.com/martinh/libconfuse
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libconfuse
+version=3.3
+release=1
+source=(https://github.com/martinh/$name/releases/download/v$version/${name#lib}-$version.tar.xz)
+
+build() {
+	cd ${name#lib}-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+	rmdir $PKG/usr/share
+}

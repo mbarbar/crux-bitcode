@@ -1,0 +1,17 @@
+# Description: A complete, easy to use date and time object
+# URL: https://metacpan.org/pod/DateTime
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-datetime-locale p5-datetime-timezone p5-eval-closure p5-math-round p5-namespace-autoclean p5-params-validate p5-params-validationcompiler p5-specio p5-module-build
+
+name=p5-datetime
+version=1.53
+release=1
+source=(https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-$version.tar.gz)
+
+build() {
+  cd DateTime-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

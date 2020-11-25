@@ -1,0 +1,25 @@
+# Description: library that handles input devices for display servers
+# URL:         https://www.freedesktop.org/wiki/Software/libinput/
+# Maintainer:  CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on:  eudev meson mtdev ninja xorg-libevdev
+
+name=libinput
+version=1.16.3
+release=1
+source=(https://www.freedesktop.org/software/$name/$name-$version.tar.xz)
+
+build() {
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--buildtype=plain \
+		-D debug-gui=false \
+		-D documentation=false \
+		-D tests=false \
+		-D libwacom=false \
+		-D udev-dir=/lib/udev \
+		-D zshcompletiondir=no
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

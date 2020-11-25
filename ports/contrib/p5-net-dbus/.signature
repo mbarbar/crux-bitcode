@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wXuRZTf9ZEzHljoKjmi3Jj633hBeeQWaMEnv6YT5/7msLPD+1Kz7eaTT7TroLlDTyH1U9DxUQUbr//zW4OGKAs=
+SHA256 (Pkgfile) = a268a567f3906807be7296295979f369eea04d5dc9c3342f253289cb6003114f
+SHA256 (.footprint) = c69b86b232d44721e032b6e42a4d458dc6952490257413be51aeaf6fde714fda
+SHA256 (Net-DBus-1.2.0.tar.gz) = e7a1ac9ef4a1235b3fdbd5888f86c347182306467bd79abc9b0756a64b441cbc

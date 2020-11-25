@@ -1,0 +1,23 @@
+# Description: CGI library for C.
+# URL: http://libcgi.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Ivan Lyangouzov, tzong at crux dot spb dot ru
+
+name=libcgi
+version=1.0
+release=2
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	export CFLAGS="$CFLAGS -fPIC"
+	install -d $PKG/usr/lib $PKG/usr/include
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls
+
+	make
+	make prefix=$PKG/usr install
+}

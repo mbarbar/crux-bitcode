@@ -1,0 +1,18 @@
+# Description: Python DomainKeys Identified Mail email signing and verification
+# URL: https://launchpad.net/dkimpy
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-authres python3-dnspython
+
+name=python3-dkim
+version=1.0.5
+release=1
+source=(https://files.pythonhosted.org/packages/source/d/dkimpy/dkimpy-$version.tar.gz)
+
+build() {
+  cd dkimpy-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --root=$PKG \
+    --optimize=1 \
+    --skip-build
+}

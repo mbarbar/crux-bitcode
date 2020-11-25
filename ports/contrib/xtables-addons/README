@@ -1,0 +1,7 @@
+20120107
+
+echo build_ipset6=m >>mconfig
+
+If you really need ipset in xtables-addons that supports kernel = 3.2.x
+
+Or prt-get depinst ipset if your using a kernel <= 3.1.x

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34Z+m5gBgVkjR3f7ebciPzX/EBKZJ8XPEJAqpJmc5Da1OL5jOm0pTcGpSdPVU9hYEP6mj91QFvcyYDLSzboptwk=
+SHA256 (Pkgfile) = 80d9c90232961f942549e16eb9b46b37e7da98240ed5d671b9fb554905950a83
+SHA256 (.footprint) = 377f116ca51c4e87666a3dbb639b7af485d875b3b76ead9a434a06e780f2c942
+SHA256 (primus-0.2.tar.gz) = beccce83d6e493ecb45589fd02d7b0b0e5b406b136f4ad62d20d4cbac9d54fec
+SHA256 (primusrun.patch) = 721ef91344853b33a84587a9b93523123e5568bfc285aaa703852d19e01b1e4a

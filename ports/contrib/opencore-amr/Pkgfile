@@ -1,0 +1,19 @@
+# Description: An implementation of Adaptive Multi Rate Narrowband and Wideband speech codec.
+# URL: http://opencore-amr.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=opencore-amr
+version=0.1.5
+release=1
+source=(https://downloads.sourceforge.net/project/$name/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-dependency-tracking
+
+	make
+	make DESTDIR=$PKG install
+}

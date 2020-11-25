@@ -1,0 +1,18 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ykclient
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/ykclient.h
+-rw-r--r--	root/root	usr/include/ykclient_errors.h
+-rw-r--r--	root/root	usr/include/ykclient_server_response.h
+-rw-r--r--	root/root	usr/include/ykclient_version.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libykclient.a
+-rwxr-xr-x	root/root	usr/lib/libykclient.la
+lrwxrwxrwx	root/root	usr/lib/libykclient.so -> libykclient.so.3.6.0
+lrwxrwxrwx	root/root	usr/lib/libykclient.so.3 -> libykclient.so.3.6.0
+-rwxr-xr-x	root/root	usr/lib/libykclient.so.3.6.0
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/ykclient.1.gz

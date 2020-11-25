@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38pwNpw+OcgBKKq0g4lUuLLtbZA0HB3G/Emv9mgMDrtdSpmePGL1MFViOc/TDcfRc4MhCpUs5Yccstb/0KtNggo=
+SHA256 (Pkgfile) = 6b53f9e67ac5625162962ca5d635360863189e5545c9c15ffe53ad15203a50a1
+SHA256 (.footprint) = 0bb69df360507dac124e60cac2b20699ac7ecd05f335bbfbf2c88961f7ca2cab
+SHA256 (pulseeffects-4.8.2.tar.gz) = 6a287957b91530023b9b72ca1d57507a8dcd6363e48ce34dd225fb6bab7d27ec

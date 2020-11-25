@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+aNqejmHnwG1jJbtQ9/Qzy8e0Vy8iUlKsvVqVctCLEn5a9iF62noTRmVnEC9seytdzcbkzBsLKt1PNGeoDlww4=
+SHA256 (Pkgfile) = 0002f36b25aae60dab64c2091eb9e698dddbc9c2d3bf8c2220a30ac9d479687c
+SHA256 (.footprint) = 8444a9ecce066e6d9c8000bded64a1774fa1b8eef7e471551cc9a286f8b5bb04
+SHA256 (libdvdnav-6.1.0.tar.bz2) = f697b15ea9f75e9f36bdf6ec3726308169f154e2b1e99865d0bbe823720cee5b

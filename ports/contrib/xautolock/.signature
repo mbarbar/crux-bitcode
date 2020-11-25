@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+bWG+V+VhCiQK64tTTXw7w7iZOhN7kELWvS8c7lve00hPA9qzbVbhPWfWzLUh4nm5k77Y5Y9txQKwmj3rLEKAE=
+SHA256 (Pkgfile) = 828caab586c4d6877c3fbac0196d92673b03a76d210629d8e2748454ea49f682
+SHA256 (.footprint) = 12194ba767e40694fd99db43971954b2bfdf2378896668ec6e924d82415b7ee8
+SHA256 (xautolock-2.2.tgz) = 11f0275175634e6db756e96f5713ec91b8b1c41f8663df54e8a5d27dc71c4da2
+SHA256 (union-wait.patch) = 440a9a93f19eb7ecbfcfc14c38bb6eea57e369a6be6bd5830b6b184d83d7f3d4

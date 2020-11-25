@@ -1,0 +1,26 @@
+# Description: Perl XML writer.
+# URL: https://metacpan.org/release/XML-Writer
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-xml-writer
+version=0.900
+release=1
+source=(http://www.cpan.org/modules/by-module/XML/XML-Writer-$version.tar.gz)
+
+build() {
+	cd XML-Writer-$version
+
+	perl Makefile.PL
+	make OPTIMIZE="$CFLAGS"
+	make install DESTDIR=$PKG
+
+	# Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -o \
+		-name '*.bs' -o \
+		-name 'autosplit.ix' -o \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -delete
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31BR0Fyc3d0Abn1gNMBE5NQJ+QhHSCuad+cTNb+8J79X1sDczjLoGXR7P1jpwZWO3pE8jPmMkryJ7iTAICvBMgY=
+SHA256 (Pkgfile) = 66f22138fe82cd8636c42135c5f38dd63c4bc4d8e4bee3668afa01dbb792fa69
+SHA256 (.footprint) = 0e61555d2a09dde40592598439a5cff7abcb36a09463db1700c00e4a69bc8a31
+SHA256 (doxygen-1.8.20.src.tar.gz) = e0db6979286fd7ccd3a99af9f97397f2bae50532e4ecb312aa18862f8401ddec

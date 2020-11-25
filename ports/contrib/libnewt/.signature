@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36GC4oQvbCSPb1lj4yqcoIFR7gZEL9FoEd0OAF19bsZJxeIVfJQ+5PLNaGrcdDG+H3uhNPQYZFWp+Ut5Ewj4vwk=
+SHA256 (Pkgfile) = c13fda1df4ec02dd9dc9b04cc234545b71608b31b57f8a321d8509c490753520
+SHA256 (.footprint) = f153acd27a8ec7af7463db8a09261941a6e922152edd32d1650284a1e6904ba5
+SHA256 (newt-0.52.21.tar.gz) = 265eb46b55d7eaeb887fca7a1d51fe115658882dfe148164b6c49fccac5abb31

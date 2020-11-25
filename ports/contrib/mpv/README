@@ -1,0 +1,9 @@
+NOTES
+
+For optical audio/dvd/blu-ray playback you need to install
+"libcdio-paranoia libdvdnav libbluray", respectively.
+
+For nvidia hardware decoding x.264 support you need to install
+"ffnvcodec-headers", then either force rebuild ffmpeg or compile ffmpeg.
+
+To use Vulkan API add "--vo=gpu --gpu-api=vulkan" to mpv.

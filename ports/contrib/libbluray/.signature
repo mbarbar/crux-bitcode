@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33mjI94p3aABTLwKUaNBmq5M8fovzW4RnlyQaHP9IkS8nrCewW3oCVpKk/B/6C7qD+M2FVoYuTZSWZKIuJVMPgs=
+SHA256 (Pkgfile) = 6e159d6668a72041bfd6cf362a1b1c687abdc8287d9e225e58d618ce7a206ed5
+SHA256 (.footprint) = 79e52df384324058c6ffea5c98aee2c4592167d45e33b555cf316f64edcb3f2a
+SHA256 (libbluray-1.2.1.tar.bz2) = 5223e83f7988ea2cc860b5cadcaf9cf971087b0c80ca7b60cc17c8300cae36ec

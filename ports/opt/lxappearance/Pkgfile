@@ -1,0 +1,22 @@
+# Description: Enables change of themes, icons, and fonts used by applications easily. 
+# URL: https://wiki.lxde.org/en/LXAppearance
+# Maintainer: Fredrik Rinnestam, fredrik at rinnestam dot se
+# Depends on: gtk
+
+name=lxappearance
+version=0.6.3
+release=1
+source=(http://downloads.sourceforge.net/sourceforge/lxde/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	export LINGUAS=" "
+
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install
+}

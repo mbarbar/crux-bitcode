@@ -1,0 +1,20 @@
+# Description: A suite of tools for manipulating the metadata of the dm-thin device-mapper target.
+# URL: https://github.com/jthornber/thin-provisioning-tools
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: boost expat libaio
+
+name=thin-provisioning-tools
+version=0.9.0
+release=1
+source=(https://github.com/jthornber/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	autoconf
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

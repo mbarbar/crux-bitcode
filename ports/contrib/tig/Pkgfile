@@ -1,0 +1,18 @@
+# Description: text-mode interface for git
+# URL:         https://github.com/jonas/tig
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  git
+
+name=tig
+version=2.5.1
+release=1
+source=(https://github.com/jonas/tig/releases/download/$name-$version/$name-$version.tar.gz) 
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr --sysconfdir=/etc
+
+  make
+  make DESTDIR=$PKG install install-doc-man
+}

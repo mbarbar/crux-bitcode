@@ -1,0 +1,18 @@
+# Description: A program to display messages from the command line, a file or standard input in a window.
+# URL: http://xorg.freedesktop.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: xorg-libxaw
+
+name=xmessage
+version=1.0.5
+release=1
+source=(https://xorg.freedesktop.org/releases/individual/app/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

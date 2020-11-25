@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39V6MwEQYei6kawLcbClyDm66Fo6prr+15cIy2PSBt3oGl9GVVmrVXr6tG5cWoSiKQEU1Xc+OGL2vS0DQXEc6QE=
+SHA256 (Pkgfile) = 510a14acadeeca69ceb2959bbc0547742d6482c13803183930b0cd6ab310c889
+SHA256 (.footprint) = ba64fb66115c3a25bc15e4bdefdb4af4fcdaeb3a28cd6ffcd5e08171c23feb09
+SHA256 (toolbelt-0.9.1.tar.gz) = c8e68e537e87ae088e3a0eb6d80ed5b7cf5d6df503d0e843e0a5e47283db487b

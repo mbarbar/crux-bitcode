@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndG2Xtp0OBazGbdoO56llXsn5vViIhYk1I/phvRHXsuq2HR4amI73YkhF6abcbGtJAaCey6zUCipA2ynp/jVcPwQ=
+SHA256 (Pkgfile) = bddbe218633eca927be765e6e4edc9a1ab55a854d9c1225c47ce95309cd4e391
+SHA256 (.footprint) = b8b69adec156d76d7d45c428a033d2a0304b9c3e2d6d01ea2ba669f345690b1a
+SHA256 (xf86-video-tga-1.2.2.tar.bz2) = 2023818000200eb50a59476e36d59b07a361b110e73b1d9cc526beb669306131
+SHA256 (mibstore.patch) = 59105a8395c42460d6ed90a6f7fe0ab1cefab58e61a7f6fda353d55d546bbcd6

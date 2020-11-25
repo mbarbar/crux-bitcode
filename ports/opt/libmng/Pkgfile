@@ -1,0 +1,16 @@
+# Description:  libmng - Mutliple Image Network Graphics 
+# URL:          http://www.libmng.com
+# Maintainer:   Fredrik Rinnestam, fredrik at obra dot se
+# Depends on:   lcms2
+
+name=libmng
+version=2.0.3
+release=2
+source=(http://downloads.sourceforge.net/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

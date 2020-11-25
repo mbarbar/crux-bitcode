@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x0LL61gZKxjx7fKhpGS5SHZppGQoqKCqkYbQEwKvujBfNl+QBtUqKPJjtZ6U8FSmsNTNP8Cy/qBYqG72aeRyQ0=
+SHA256 (Pkgfile) = 4f88036a99ed0d6aff15d91daa4241f4c5ee95d645f436d3315e69a34e225561
+SHA256 (.footprint) = f853fd1c3565ab50a6eefaa7d7ad0493e466ef12a3f87900648593dcba38d795
+SHA256 (libgusb-0.3.5.tar.gz) = 188c7964422417d39b02a5c645e136b1389c80e38e7abfa911fc196b9c748f45

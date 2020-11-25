@@ -1,0 +1,15 @@
+
+REQUIREMENTS
+
+   Remove any other VNC software (like x11vnc).
+
+   You need these dependencies to build this port (tightvnc):
+	- xorg-gccmakedep
+	- xorg-imake
+
+PRE-INSTALL
+
+POST-INSTALL
+
+MISCELLANEOUS
+

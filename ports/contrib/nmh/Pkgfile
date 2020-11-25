@@ -1,0 +1,22 @@
+# Description: nmh (new MH) is a powerful electronic mail handling system
+# URL:         http://www.nongnu.org/nmh/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:
+# Optional:    gnutls cyrus-sasl
+
+name=nmh
+version=1.7.1
+release=1
+source=(http://download.savannah.nongnu.org/releases/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--sysconfdir=/usr/etc \
+		--libdir=/usr/bin
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/doc
+}

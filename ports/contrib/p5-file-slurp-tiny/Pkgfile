@@ -1,0 +1,17 @@
+# Description: A simple, sane and efficient file slurper
+# URL: https://metacpan.org/pod/File::Slurp::Tiny
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-file-slurp-tiny
+version=0.004
+release=1
+source=(https://cpan.metacpan.org/authors/id/L/LE/LEONT/File-Slurp-Tiny-$version.tar.gz)
+
+build() {
+  cd File-Slurp-Tiny-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

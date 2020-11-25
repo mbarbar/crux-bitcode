@@ -1,0 +1,10 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-r-xr-xr-x	root/root	usr/bin/arpsnmp
+-r-xr-xr-x	root/root	usr/bin/arpwatch
+drwxr-xr-x	root/root	usr/sbin/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-r--r--r--	root/root	usr/share/man/man8/arpsnmp.8.gz
+-r--r--r--	root/root	usr/share/man/man8/arpwatch.8.gz

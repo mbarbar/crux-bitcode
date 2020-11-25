@@ -1,0 +1,27 @@
+# Description:  Dynamically create Perl language bindings
+# URL:          https://metacpan.org/pod/Glib::Object::Introspection
+# Maintainer:   John Vogel, jvogel4 at stny dot rr dot com
+# Packager:     Alexandr Savca, alexandr dot savca89 at gmail dot com
+# Depends on:   gobject-introspection p5-glib
+
+name=p5-glib-object-introspection
+version=0.049
+release=1
+source=(https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-$version.tar.gz)
+
+build() {
+        cd Glib-Object-Introspection-$version
+        perl Makefile.PL
+
+        make OPTIMIZE="$CFLAGS"
+        make install DESTDIR=$PKG
+
+        find $PKG -name perllocal.pod   \
+                -o -name "*.bs"         \
+                -o -name .packlist      \
+                -o -name autosplit.ix   \
+        | xargs rm -f
+
+        find $PKG -depth -type d -empty -delete
+        find $PKG -type f -a -perm -u-w | xargs chmod u+w
+}

@@ -1,0 +1,22 @@
+# Description: kodi inputstream addon for several manifest types
+# URL: https://github.com/peak3d/inputstream.adaptive
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: kodi
+
+name=kodi-addon-inputstream-adaptive
+version=2.4.6
+_codename=Leia
+release=2
+source=(https://github.com/peak3d/inputstream.adaptive/archive/$version-$_codename/$name-$version.tar.gz)
+
+build() {
+  cmake -S inputstream.adaptive-$version-$_codename -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D BUILD_SHARED_LIBS=1 \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

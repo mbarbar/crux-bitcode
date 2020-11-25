@@ -1,0 +1,30 @@
+# Description: Perl Digest::SHA1
+# URL:         https://metacpan.org/pod/Digest::SHA1
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  perl
+
+name=p5-digest-sha1
+version=2.13
+release=3
+source=(https://www.cpan.org/modules/by-module/Digest/Digest-SHA1-$version.tar.gz)
+
+build() {
+	cd Digest-SHA1-$version
+
+	perl Makefile.PL
+	make OPTIMIZE="$CFLAGS"
+
+	make install DESTDIR=$PKG
+
+	# Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -or \
+		-name '*.bs' -or \
+		-name 'autosplit.ix' -or \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -exec rm -rf {} \;
+	# Fix perms
+	find $PKG -type f -a ! -perm -u+w -exec chmod u+w {} \;
+}

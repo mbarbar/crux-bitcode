@@ -1,0 +1,21 @@
+# Description: The Linux manpages collection
+# URL:         https://man7.org/linux/man-pages/index.html
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=man-pages
+version=5.09
+release=1
+source=(http://www.kernel.org/pub/linux/docs/$name/$name-$version.tar.xz \
+        http://www.kernel.org/pub/linux/docs/$name/$name-posix/$name-posix-2013-a.tar.xz)
+
+build() {
+    cd $name-$version
+    rm man5/passwd.5
+    make DESTDIR=$PKG install
+
+    cd $SRC/$name-posix-2013-a
+    make gz
+    make DESTDIR=$PKG install
+
+    touch $PKG/usr/share/man/whatis
+}

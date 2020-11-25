@@ -1,0 +1,26 @@
+# Description: Midori is a lightweight web browser.
+# URL: https://www.midori-browser.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: aria2 desktop-file-utils gcr gst-libav gst-plugins-good json-glib libnotify libpeas webkitgtk xorg-libxscrnsaver
+
+name=midori
+version=9.0
+release=1
+source=(https://github.com/midori-browser/core/releases/download/v$version/$name-v$version.tar.gz)
+
+build() {
+	cmake -S $name-v$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -fPIC -w -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -fPIC -w -DNDEBUG" \
+		-D HALF_BRO_INCOM_WEBKIT2=ON \
+		-D USE_ZEITGEIST=OFF \
+		-Wno-dev
+
+	cmake --build build -j ${JOBS-1}
+	DESTDIR=$PKG cmake --install build
+
+	rm -r $PKG/usr/share/{doc,locale}
+}

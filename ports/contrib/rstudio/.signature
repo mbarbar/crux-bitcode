@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39ATqjc5gsa22KTN80dBqYzqhl7k1ea4o/eB4n2BuAvX4jnB4M0ZxaTm0WL5+P+n5bQMnCz9SXxAJZKINWMMoQI=
+SHA256 (Pkgfile) = 849edb91004b067eb1ae3cb7056d656503829beb9e28551504d6cfd94027d192
+SHA256 (.footprint) = eeda69eeafe78523234a582d79d8157e75cd64a66ea3040797a1520015c04845
+SHA256 (rstudio-1.3.1093.tar.gz) = af8dc5e71ee934043856938af2e2065d1f1efef08aba37962ed03f6ccb8201bb
+SHA256 (rstudio-1.2.5042-boost-1.73.0.patch) = 5d282059731b64579c0f8c8eeb280b4c4efe810ce829ad7332385b0a92e1215e
+SHA256 (rstudio-1.3.1056-boost-1.74.0.patch) = e952b6f55b0ffa7eab7ba6fca8126dd8202f37b84687d97bbd1d9d324a099065

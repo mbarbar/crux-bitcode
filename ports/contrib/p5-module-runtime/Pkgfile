@@ -1,0 +1,20 @@
+# Description: runtime module handling
+# URL: https://metacpan.org/pod/Module::Runtime
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-module-build
+
+name=p5-module-runtime
+version=0.016
+release=1
+source=(https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Module-Runtime-$version.tar.gz)
+
+build() {
+  cd Module-Runtime-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

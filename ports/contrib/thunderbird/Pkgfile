@@ -1,0 +1,71 @@
+# Description: Email client from the Mozilla project
+# URL: https://www.thunderbird.net/en-US/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: alsa-lib autoconf-2.13 cbindgen clang gtk gtk3 libidl lld nss unzip xorg-libxt yasm zip nodejs libnotify
+# Optional: sccache
+
+name=thunderbird
+version=68.11.0
+release=1
+source=(http://ftp.mozilla.org/pub/thunderbird/releases/$version/source/$name-$version.source.tar.xz
+	$name.desktop)
+ 
+build() {
+	cd $name-$version
+
+	if [ -e '/usr/bin/ccache' ]; then
+		export OS_CCACHE_COMPILERCHECK="$(/usr/bin/clang -dumpversion | sed -z 's/\n/ /g'; crux | cut -d' ' -f3)"
+		export CCACHE_COMPILERCHECK="string:$OS_CCACHE_COMPILERCHECK"
+		PATH=$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')
+	fi
+
+	prt-get isinst sccache && export RUSTC_WRAPPER=/usr/bin/sccache
+	mkdir "$PKGMK_SOURCE_DIR/rust" || true
+	export CARGO_HOME="$PKGMK_SOURCE_DIR/rust"
+
+cat <<- EOF > .mozconfig
+	ac_add_options --enable-application=comm/mail
+	ac_add_options --prefix=/usr
+	ac_add_options --enable-default-toolkit=cairo-gtk3
+	ac_add_options --enable-linker=lld
+	ac_add_options --with-system-jpeg
+	ac_add_options --with-system-zlib
+	ac_add_options --with-system-png
+	ac_add_options --with-system-nspr
+	ac_add_options --with-system-nss
+	ac_add_options --enable-system-ffi
+	ac_add_options --enable-system-pixman
+	ac_add_options --enable-alsa
+	ac_add_options --enable-optimize
+	ac_add_options --enable-release
+	ac_add_options --enable-rust-simd
+	ac_add_options --enable-official-branding
+	ac_add_options --with-distribution-id=nu.crux
+	ac_add_options --disable-tests
+	ac_add_options --disable-dbus
+	ac_add_options --disable-debug
+	ac_add_options --disable-updater
+	ac_add_options --disable-crashreporter
+	ac_add_options --disable-necko-wifi
+	ac_add_options --disable-pulseaudio
+	ac_add_options --disable-gconf
+	ac_add_options --enable-calendar
+EOF
+
+	[[ -e '/usr/bin/ccache' ]] && echo 'ac_add_options --enable-ccache' >> .mozconfig
+
+	export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
+	export MOZ_MAKE_FLAGS="-j ${JOBS-1}"
+	export MOZBUILD_STATE_PATH="$PKGMK_SOURCE_DIR/.mozbuild"
+	export MOZ_NOSPAM=1
+
+	./mach build
+	DESTDIR=$PKG ./mach install
+
+	install -d $PKG/usr/share/pixmaps
+	ln -s /usr/lib/thunderbird/chrome/icons/default/default48.png $PKG/usr/share/pixmaps/thunderbird_default48.png
+	install -D -m 0644 $SRC/$name.desktop $PKG/usr/share/applications/$name.desktop
+
+	find $PKG -iname '*README*' -delete
+	#rm -r $PKG/usr/{include,lib/thunderbird-devel,share/idl}
+}

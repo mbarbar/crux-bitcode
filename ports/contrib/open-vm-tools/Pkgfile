@@ -1,0 +1,28 @@
+# Description: A set of services and modules that enable several features in VMware products for better management of, and seamless user interactions with, guests
+# URL: https://github.com/vmware/open-vm-tools
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: libmspack libdnet glib
+
+name=open-vm-tools
+version=11.2.0-16938113
+release=1
+source=(https://github.com/vmware/$name/releases/download/stable-${version%-*}/$name-$version.tar.gz \
+	vmtoolsd)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+		--without-icu \
+		--without-x \
+		--without-xerces
+	make
+	make DESTDIR=$PKG install
+
+	install -o root -g root -m 0755 -D $SRC/vmtoolsd \
+		$PKG/etc/rc.d/vmtoolsd
+
+	# fix mount.vmhgfs symlink
+	ln -sf /usr/sbin/mount.vmhgfs $PKG/sbin/mount.vmhgfs
+
+	sed -i -e '/pam_unix_/d' $PKG/etc/pam.d/vmtoolsd
+}

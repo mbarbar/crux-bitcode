@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36WgIe3bD87jkhxD5S9YxsVSrj3Nf2vb2d0hMqMkgnqzN6QRaNmGv3x21KQlovQch6ckwsWUbeYj8FXXF+JzWQE=
+SHA256 (Pkgfile) = ac35ba62b0e99f0684acec39a6d23b007b88e64726a7d1198c50593b7e73f0e5
+SHA256 (.footprint) = 9c6f837011be0e8f758bef4c97f5f763f988c015caf6c3a00de2bd6bb66b0ea9
+SHA256 (jack-audio-connection-kit-0.125.0.tar.gz) = 3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444

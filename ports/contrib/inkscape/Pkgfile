@@ -1,0 +1,67 @@
+# Description: An open source SVG editor.
+# URL: https://www.inkscape.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: boehm-gc boost double-conversion gsl gtkmm3 libsoup libxslt poppler-glib popt potrace gdl
+
+name=inkscape
+version=1.0.1
+release=1
+source=(https://media.inkscape.org/dl/resources/file/$name-$version.tar.xz
+	https://poppler.freedesktop.org/poppler-20.09.0.tar.xz
+	inkscape.patch)
+
+poppler() {
+	cmake -S poppler-20.09.0 -B build-poppler -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-D ENABLE_UNSTABLE_API_ABI_HEADERS=ON \
+		-D ENABLE_UTILS=ON \
+		-D ENABLE_SPLASH=ON \
+		-D ENABLE_CPP=ON \
+		-D ENABLE_GLIB=ON \
+		-D ENABLE_QT5=OFF \
+		-D ENABLE_ZLIB=ON \
+		-D ENABLE_CMS=lcms2 \
+		-D ENABLE_LIBOPENJPEG=none \
+		-D WITH_NSS3=OFF \
+		-Wno-dev
+
+	cmake --build build-poppler
+	DESTDIR=$SRC/poppler cmake --install build-poppler
+	install -D -t $PKG/usr/lib $SRC/poppler/usr/lib/libpoppler.so.102
+
+	export CXXFLAGS+=" -I$SRC/poppler/usr/include -I$SRC/poppler/usr/include/poppler"
+	export PKG_CONFIG_PATH="$SRC/poppler/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
+}
+
+build() {
+	[ ! -e '/usr/lib/libpoppler.so.102' ] && poppler
+
+	patch -d $name-${version}_2020-09-07_3bc2e813f5 -p1 -i $SRC/inkscape.patch
+
+	export PKG_CONFIG_PATH="/usr/lib/imagemagick6/pkgconfig:$PKG_CONFIG_PATH"
+
+	cmake -S $name-${version}_2020-09-07_3bc2e813f5 -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-Wno-dev
+
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	rm -r 	$PKG/usr/share/man/?? \
+		$PKG/usr/share/locale \
+		$PKG/usr/share/inkscape/doc
+
+	rm	$PKG/usr/share/inkscape/extensions/README.md \
+		$PKG/usr/share/inkscape/extensions/inkex/deprecated-simple/README.rst \
+
+	find $PKG/usr/share/inkscape -name README -exec rm -f {} +
+	/usr/bin/python3 -mcompileall $PKG
+}

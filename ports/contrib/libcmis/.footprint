@@ -1,0 +1,56 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cmis-client
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libcmis-0.5/
+drwxr-xr-x	root/root	usr/include/libcmis-0.5/libcmis/
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/allowable-actions.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/document.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/exception.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/folder.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/libcmis-api.h
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/libcmis.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/oauth2-data.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/object-type.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/object.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/property-type.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/property.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/rendition.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/repository.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/session-factory.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/session.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/xml-utils.hxx
+-rw-r--r--	root/root	usr/include/libcmis-0.5/libcmis/xmlserializable.hxx
+drwxr-xr-x	root/root	usr/include/libcmis-c-0.5/
+drwxr-xr-x	root/root	usr/include/libcmis-c-0.5/libcmis-c/
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/allowable-actions.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/document.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/error.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/folder.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/libcmis-c-api.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/libcmis-c.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/oauth2-data.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/object-type.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/object.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/property-type.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/property.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/rendition.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/repository.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/session-factory.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/session.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/types.h
+-rw-r--r--	root/root	usr/include/libcmis-c-0.5/libcmis-c/vectors.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libcmis-0.5.a
+-rwxr-xr-x	root/root	usr/lib/libcmis-0.5.la
+lrwxrwxrwx	root/root	usr/lib/libcmis-0.5.so -> libcmis-0.5.so.5.0.0
+lrwxrwxrwx	root/root	usr/lib/libcmis-0.5.so.5 -> libcmis-0.5.so.5.0.0
+-rwxr-xr-x	root/root	usr/lib/libcmis-0.5.so.5.0.0
+-rw-r--r--	root/root	usr/lib/libcmis-c-0.5.a
+-rwxr-xr-x	root/root	usr/lib/libcmis-c-0.5.la
+lrwxrwxrwx	root/root	usr/lib/libcmis-c-0.5.so -> libcmis-c-0.5.so.5.0.0
+lrwxrwxrwx	root/root	usr/lib/libcmis-c-0.5.so.5 -> libcmis-c-0.5.so.5.0.0
+-rwxr-xr-x	root/root	usr/lib/libcmis-c-0.5.so.5.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libcmis-0.5.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libcmis-c-0.5.pc

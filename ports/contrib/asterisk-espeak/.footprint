@@ -1,0 +1,8 @@
+drwxr-xr-x	root/root	etc/
+drwxr-x---	root/asterisk	etc/asterisk/
+-rw-r-----	root/asterisk	etc/asterisk/espeak.conf
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/asterisk/
+drwxr-xr-x	root/root	usr/lib/asterisk/modules/
+-rwxr-xr-x	root/root	usr/lib/asterisk/modules/app_espeak.so

@@ -1,0 +1,22 @@
+# Description: Low-overhead client-side GPU offloading
+# URL: https://github.com/amonakov/primus
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: mesa3d
+
+name=primus
+version=0.2
+release=1
+source=(https://github.com/amonakov/$name/archive/v$version/$name-$version.tar.gz \
+	primusrun.patch)
+
+build() {
+	cd $name-$version
+	patch -p1 -i $SRC/primusrun.patch
+	make
+
+	install -D -m 0755 lib/libGL.so.1 $PKG/usr/lib/primus/libGL.so.1
+	install -D -m 0644 primus.bash-completion $PKG/usr/share/bash-completion/completions/primusrun
+	sed -i -e 's,^PRIMUS_libGL=.*,PRIMUS_libGL=/usr/\\$LIB/primus,' primusrun
+	install -D -m 0755 primusrun $PKG/usr/bin/primusrun
+	install -D -m 0644 primusrun.1 $PKG/usr/share/man/man1/primusrun.1
+}

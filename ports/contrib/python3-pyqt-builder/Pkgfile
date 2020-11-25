@@ -1,0 +1,16 @@
+# Description: PyQt-builder is the PEP 517 compliant build system for PyQt
+# URL: https://pypi.org/project/PyQt-builder/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-pyqt-builder
+version=1.5.0
+release=1
+source=(https://pypi.io/packages/source/P/PyQt-builder/PyQt-builder-$version.tar.gz)
+
+build() {
+  cd PyQt-builder-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG \
+    --skip-build
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36nRPQ+LX4g1G+FaBLzmMykg8/2zsVg1glC0Uwx6pMXynpI1hi9aBBDxg98q03lTbUKqs4ZJBF/KFy6DuRfk8QU=
+SHA256 (Pkgfile) = 84022c57079b360df0d7004777929c2081e2a094ae2c9bd0bf0ad0b899f5328b
+SHA256 (.footprint) = 78c67490df141e88bd1976893de5f4714b8d4ca44ca5e31fa820e18e3e6d2f40
+SHA256 (websocket_client-0.57.0.tar.gz) = d735b91d6d1692a6a181f2a8c9e0238e5f6373356f561bb9dc4c7af36f452010

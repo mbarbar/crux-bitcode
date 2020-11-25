@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36HUWpPDBnhe363licCoxzA3dP1MIBoib/1juXIfZ7tHnSMZXHmmx2zJVQ1glTapGAAuhKWX67eUWSA+K+6bwQg=
+SHA256 (Pkgfile) = 2382d5c91944a88d576abeb4b9f630cb8417b044a519ef6f0014894c7888dcb7
+SHA256 (.footprint) = 2dac0e15743cd8147a8edabea8326f163c0728182e0eed6632ffd411bb2f648a
+SHA256 (xtables-addons-3.11.tar.xz) = c1b3c796f37bf282fc11fe1894f8d2fe5f29f8e960415d2af9103eda0f56a548

@@ -1,0 +1,25 @@
+# Description: Building, finding and using SDL binaries
+# URL: https://metacpan.org/release/Alien-SDL
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libsdl p5-file-sharedir p5-capture-tiny p5-file-which p5-text-patch p5-archive-extract p5-archive-zip p5-module-build
+
+name=p5-alien-sdl
+_realname=Alien-SDL
+_author=FROGGS
+version=1.446
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	# Workaround bug with --with-sdl-config
+	sed -i '/^GetOptions/d' Build.PL
+
+	perl Build.PL --with-sdl-config
+	perl Build
+	perl Build install installdirs=vendor destdir="$PKG"
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

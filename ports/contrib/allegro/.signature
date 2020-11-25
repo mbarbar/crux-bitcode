@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zzZJXPv/k9Jmi80meAMbeEUcbSgxqpPzwUlJNHpCNrDqPz/nYewbnP6Pu+cv9plO132DXhbNRaOI2BCPCNWUQE=
+SHA256 (Pkgfile) = f9015b267f3b82836e6cd580107dd719adc1d33a197df1496394173a7c918408
+SHA256 (.footprint) = 658515197e7430432c258e5832614e37b7e2f71996edb3a00759fb688e669b99
+SHA256 (allegro-5.2.6.0.tar.gz) = 5de8189ec051e1865f359654f86ec68e2a12a94edd00ad06d1106caa5ff27763

@@ -1,0 +1,24 @@
+# Description: An efficient cross platform serialization library for C++, with support for Java, C# and Go
+# URL: https://google.github.io/flatbuffers/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake python3-setuptools
+
+name=flatbuffers
+version=1.12.0
+release=1
+source=(https://github.com/google/flatbuffers/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_FLATBUFFERS+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_FLATBUFFERS \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D FLATBUFFERS_BUILD_FLATLIB=OFF \
+    -D FLATBUFFERS_BUILD_SHAREDLIB=ON \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

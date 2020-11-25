@@ -1,0 +1,18 @@
+# Description: Russian dictionary for aspell
+# URL:         http://aspell.net
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  aspell
+
+name=aspell-ru
+version=0.99f7-1
+release=1
+source=(http://mirrors.sunsite.dk/gnu/aspell/dict/ru/aspell6-ru-$version.tar.bz2)
+
+build () {
+	cd aspell6-ru-$version
+
+	./configure
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xsvNV42VEEtAmMdZbjdC+TAHZoHSxSe3HexmfsOSrLkwe4NYnfs5G+Klsyg1nIjRC3GOlNDkFSnwi6IR8mgMQY=
+SHA256 (Pkgfile) = 991cf0331ab27cb0bfaf3f68679a122e237caf8b6fcd718c0b5da0cfc1252b73
+SHA256 (.footprint) = 95d339d627135ace3d68c2389ce4b4a83cf0856ac1ef787f485af04be2387202
+SHA256 (hwloc-2.3.0.tar.gz) = 155480620c98b43ddf9ca66a6c318b363ca24acb5ff0683af9d25d9324f59836

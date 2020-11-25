@@ -1,0 +1,20 @@
+# Description: VDPAU driver for OpenGL/VAAPI
+# URL: https://github.com/i-rinat/libvdpau-va-gl
+# Maintainer: Thomas Penteker, tek at serverop dot de
+# Depends on: cmake libglvnd libva
+
+name=libvdpau-va-gl
+version=0.4.2
+release=1
+source=(https://github.com/i-rinat/libvdpau-va-gl/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cmake -S $name-$version -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

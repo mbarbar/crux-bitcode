@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xtoqEAibJn/MRMYcc3+Tq9rZB6UXe2Z1xFYJfwK45eIEn6L6Xj1pZ93jD9Iw2qhs3t7miWV1b7Alfe6fIh5IAc=
+SHA256 (Pkgfile) = 40727189b7e365e09dae0e1fca2e45018aec590490e4c38b929b0517146f3922
+SHA256 (.footprint) = 52a726aa97e76b02af2d122fa0d7c32c08293a888d6f4793a9fc1c3bac2e2e74
+SHA256 (IO-Socket-INET6-2.72.tar.gz) = 85e020fa179284125fc1d08e60a9022af3ec1271077fe14b133c1785cdbf1ebb

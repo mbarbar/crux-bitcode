@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33ubmUj11o0uuCqfGXz1aJj2VzOZV7zFBglFYHZkQzTQFZW4hK4chdfRj07icV5sWdzdfKrlLB/krrDFcAOHJgk=
+SHA256 (Pkgfile) = 9cad9c713ceb2cd7cf4216c80555b75302b5702f8511c0708825d84f95262f67
+SHA256 (.footprint) = af8cc2c3ce091edbed067045d47566c6a3310c61264969b79e10c41258865660
+SHA256 (libmad-0.15.1b.tar.gz) = bbfac3ed6bfbc2823d3775ebb931087371e142bb0e9bb1bee51a76a6e0078690
+SHA256 (mad.pc) = 886b970cdca9ca29f63862d81d340c25699f69d351ff806e425de9b664cf2a30

@@ -1,0 +1,23 @@
+# Description: Python 3 bindings for QtWebEngine
+# URL: https://www.riverbankcomputing.com/software/pyqtwebengine/intro
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-pyqt5 qtwebengine
+
+name=python3-pyqtwebengine
+version=5.15.1
+release=1
+source=(https://pypi.python.org/packages/source/P/PyQtWebEngine/PyQtWebEngine-$version.tar.gz)
+
+build() {
+  cd PyQtWebEngine-$version
+  export PATH="/usr/lib/qt5/bin/:${PATH}"
+  sip-build \
+    --no-make \
+    --api-dir /usr/share/qt/qsci/api/python/
+  cd build
+  make
+  make INSTALL_ROOT=$PKG install -j1
+  find $PKG \
+    -iname "*INSTALLER*" \
+    -delete
+}

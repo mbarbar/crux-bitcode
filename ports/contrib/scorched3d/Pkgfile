@@ -1,0 +1,45 @@
+# Description: A 3D recreation of the classic DOS game Scorched Earth.
+# URL: http://www.scorched3d.co.uk/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: dos2unix fftw freealut glew sdl_mixer sdl_net wxgtk3
+
+name=scorched3d
+version=44
+release=1
+source=(https://sourceforge.net/projects/scorched3d/files/scorched3d/Version%2044/Scorched3D-$version-src.tar.gz
+	# https://gitweb.gentoo.org/repo/gentoo.git/tree/games-strategy/scorched3d/files
+	scorched3d-44-fix-c++14.patch scorched3d-44-fixups.patch scorched3d-44-freetype.patch
+	scorched3d-44-gcc43.patch scorched3d-44-jpeg9.patch scorched3d-44-odbc.patch scorched3d-44-win32.patch
+	scorched3d-44-wxgtk.patch)
+
+build() {
+	cd scorched
+	patch -Np1 -i $SRC/scorched3d-44-fixups.patch
+	patch -Np1 -i $SRC/scorched3d-44-gcc43.patch
+	patch -Np1 -i $SRC/scorched3d-44-odbc.patch
+	patch -Np1 -i $SRC/scorched3d-44-win32.patch
+	patch -Np1 -i $SRC/scorched3d-44-freetype.patch
+	patch -Np1 -i $SRC/scorched3d-44-jpeg9.patch
+	patch -Np1 -i $SRC/scorched3d-44-fix-c++14.patch
+	#patch -Np1 -i $SRC/scorched3d-44-wxgtk.patch
+
+#	dos2unix \
+#		src/launcher/wxdialogs/SettingsDialog.cpp \
+#		src/launcher/wxdialogs/DisplayDialog.cpp \
+#		src/launcher/wxdialogs/Display.cpp \
+#		src/launcher/wxdialogs/KeyDialog.cpp
+
+#	autoreconf -fvi --no-recursive
+
+CONFIG_SHELL=/bin/bash \
+	./configure \
+		--prefix=/usr \
+		--datadir=/usr/share/scorched3d \
+		--with-wx-config=/usr/bin/wx-config-gtk3 \
+		--without-pgsql \
+		--disable-dependency-tracking
+  SHELL=/bin/bash \
+	make
+	make DESTDIR=$PKG install
+	rm -r $PKG/usr/share/scorched3d/documentation
+}

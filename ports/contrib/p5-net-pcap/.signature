@@ -1,0 +1,10 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xo2yBv576NX/LGVzvhbCBw1N6C8QgBYLhr1AKd2LdTOEoq7sEKlVGhwFFQoOGEpIBgrvyI7hsVauYXX4d+GQQA=
+SHA256 (Pkgfile) = f9ed391106a01c7e0b11ffef4e653001c0b99a318e77838e5b60816444fd5703
+SHA256 (.footprint) = d6bf3b19e32bb0862cdafaa33a0f288c33ac8d49852061be241daa84bad550c3
+SHA256 (Net-Pcap-0.18.tar.gz) = cb9bd44948c23544bb9d4e28261dbd0dbb3e7564709487a7855576e0d9b68307
+SHA256 (makefile.patch) = c9a63eca539435e3ab973fec6a9d6033e204fedb942510b082ae0cb233e786cd
+SHA256 (listdatalinks.patch) = cb5f042b146ecf7636347f13a3989b34d0d0802680e1e5617f1603e592dbbe5b
+SHA256 (pcapapi.patch) = f9425ba8e992d7cbe8f7f0e3920f10345eb7acee3f2e49a83155acde355af88d
+SHA256 (pcapapi2.patch) = 300f4c474f0f3d07c865f683f1e41b995bdb5d16d578464b19955be0fef1a031
+SHA256 (newapi.patch) = f222e81c8b542552131ffc677f53d1dd071f3f41cccc21b96eba0de56617e23a

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36gEkWmYfdUisFZ/gllECSJ1RWCj2gOMR0LetMT5TfGRhhUOc28dE4YqVYGvWkCJsLg1DyefVNulACGI582zwww=
+SHA256 (Pkgfile) = 6604152b5abb903b4f86f28210f98ab68d583248485edf2309903f503ff7ff19
+SHA256 (.footprint) = 08cbb3e9a9aab6e3f803e9f68a40b293cb401c45b43a005b143ffca294311c0d
+SHA256 (Module-ScanDeps-1.29.tar.gz) = eeb0ce91353a2f6267a64af17b20d8de8f7acff62e95b608dea2480300b8884e

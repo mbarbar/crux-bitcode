@@ -1,0 +1,23 @@
+# Description: XLib in pure Python
+# URL: https://github.com/python-xlib/python-xlib
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-importlib_metadata
+
+name=python3-xlib
+version=0.29
+release=1
+source=(https://github.com/python-xlib/python-xlib/releases/download/$version/python-xlib-$version.tar.bz2)
+
+build() {
+  cd python-xlib-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG \
+    --optimize=1 \
+    --skip-build
+  find $PKG \(\
+    -iname '*pkg-info*' -o \
+    -iname '*sources*' -o \
+    -iname '*dependency_links*' -o \
+    -iname '*top_level*' -o \
+    -iname '*requires*' \) -exec rm -fr '{}' \+
+}

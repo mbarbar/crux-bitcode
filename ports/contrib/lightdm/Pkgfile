@@ -1,0 +1,62 @@
+# Description: Lightweight Desktop Manager prefered by Mate Desktop
+# URL: https://freedesktop.org/wiki/Software/LightDM/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: intltool itstool libgcrypt libxklavier linux-pam util-linux xorg-libxi xorg-libxkbfile
+
+name=lightdm
+version=1.30.0
+release=4
+source=(
+https://github.com/CanonicalLtd/lightdm/releases/download/$version/$name-$version.tar.xz
+  Xsession lightdm-default-config.patch lightdm.rules lightdm.service
+  lightdm.pam lightdm-autologin.pam lightdm-greeter.pam)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$name \
+    --enable-liblightdm-qt5=no \
+    --with-greeter-user=lightdm \
+    --with-greeter-session=lightdm-mini-greeter \
+    --disable-static \
+    --disable-nls \
+    --disable-gtk-doc \
+    --disable-tests
+  make
+  make DESTDIR=$PKG install
+
+  rm -rf $PKG/usr/etc/init
+
+  # install Xsession wrapper to use with lightdm
+  install -m 755 $SRC/Xsession $PKG/etc/lightdm/Xsession
+  install -dm 755 $PKG/var/cache/lightdm
+  install -dm 770 $PKG/var/lib/lightdm{,-data}
+  install -dm 711 $PKG/var/log/lightdm
+  chmod +t $PKG/var/{cache/lightdm,lib/lightdm{,-data}}
+  chown 620:620 -R $PKG/var/lib/lightdm{,-data}
+  chgrp 620 $PKG/var/log/lightdm
+
+  # adjust users.conf to accept userid<500
+  sed -i 's/500/100/g' $PKG/etc/lightdm/users.conf
+
+  # install PolKit rules
+  install -dm 750 -g root $PKG/usr/share/polkit-1/rules.d
+  install -m 644 $SRC/lightdm.rules $PKG/usr/share/polkit-1/rules.d/lightdm.rules
+
+  # install rc.d service
+  install -dm 755 $PKG/etc/rc.d
+  install -m 755 ../lightdm.service $PKG/etc/rc.d/lightdm
+
+  # remove junk
+  rm -fr $PKG/usr/share/{locale,gtk-doc,help}
+  rm -fr $PKG/etc/{init,apparmor.d,pam.d}
+
+  # install PAM configurations
+  install -d $PKG/etc/pam.d
+  install -m644 $SRC/lightdm.pam $PKG/etc/pam.d/lightdm
+  install -m644 $SRC/lightdm-autologin.pam $PKG/etc/pam.d/lightdm-autologin
+  install -m644 $SRC/lightdm-greeter.pam $PKG/etc/pam.d/lightdm-greeter
+}

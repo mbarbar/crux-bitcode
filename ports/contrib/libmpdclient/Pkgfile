@@ -1,0 +1,17 @@
+# Description: Library for the Command line MPD client
+# URL:         http://www.musicpd.org/libs/libmpdclient
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  meson ninja
+
+name=libmpdclient
+version=2.19
+release=1
+source=(https://www.musicpd.org/download/libmpdclient/2/libmpdclient-$version.tar.xz)
+
+build() {
+  cd $name-$version
+
+  meson build --prefix /usr -Ddocumentation=false
+  DESTDIR=$PKG ninja -C build -j ${JOBS:-1} install
+  rm -r $PKG/usr/share/doc
+}

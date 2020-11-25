@@ -1,0 +1,50 @@
+diff -ur dhcp-4.0.0.orig/client/dhclient.conf.example dhcp-4.0.0/client/dhclient.conf.example
+--- dhcp-4.0.0.orig/client/dhclient.conf.example	1997-06-03 00:50:44.000000000 +0200
++++ dhcp-4.0.0/client/dhclient.conf.example	2008-02-23 23:49:14.538607761 +0100
+@@ -1,3 +1,7 @@
++#
++# /etc/dhclient.conf: DHCP client configuration file, see dhclient.conf(5)
++#
++
+ send host-name = pick-first-value(gethostname(), "ISC-dhclient");
+ send dhcp-client-identifier 1:0:a0:24:ab:fb:9c;
+ send dhcp-lease-time 3600;
+@@ -11,7 +15,7 @@
+ reboot 10;
+ select-timeout 5;
+ initial-interval 2;
+-script "/etc/dhclient-script";
++script "/sbin/dhclient-script";
+ media "-link0 -link1 -link2", "link0 link1";
+ reject 192.33.137.209;
+ 
+@@ -34,3 +38,5 @@
+   rebind 2 2000/1/12 00:00:01;
+   expire 2 2000/1/12 00:00:01;
+ }
++
++# End of file
+diff -ur dhcp-4.0.0.orig/server/dhcpd.conf.example dhcp-4.0.0/server/dhcpd.conf.example
+--- dhcp-4.0.0.orig/server/dhcpd.conf.example	2002-08-13 02:55:17.000000000 +0200
++++ dhcp-4.0.0/server/dhcpd.conf.example	2008-02-23 23:50:52.132354533 +0100
+@@ -1,11 +1,11 @@
+-# dhcpd.conf
+ #
+-# Sample configuration file for ISC dhcpd
++# dhcpd.conf: Configuration file for ISC dhcpd
+ #
+ 
+-# option definitions common to all supported networks...
++# Option definitions common to all supported networks.
+ option domain-name "example.org";
+ option domain-name-servers ns1.example.org, ns2.example.org;
++ddns-update-style ad-hoc;
+ 
+ default-lease-time 600;
+ max-lease-time 7200;
+@@ -102,3 +102,5 @@
+     range 10.0.29.10 10.0.29.230;
+   }
+ }
++
++# End of file

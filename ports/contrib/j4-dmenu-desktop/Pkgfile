@@ -1,0 +1,22 @@
+# Description: A fast desktop menu
+# URL: https://github.com/enkore/j4-dmenu-desktop
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake
+
+name=j4-dmenu-desktop
+version=2.18
+release=1
+source=(https://github.com/enkore/j4-dmenu-desktop/archive/r$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_J4DD=' -G Ninja'
+  cmake -S $name-r$version -B build $PKGMK_J4DD \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -DWITH_TESTS="no" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

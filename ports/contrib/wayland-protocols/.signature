@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/NO9pqmb33PyCtq4OwonUdzB4vp0mHVEx3zkdKEdTl655wNFsxdHRwNfu5x5+q8+DkxiOAELkOWKyMs9LfHTgI=
+SHA256 (Pkgfile) = 1fc2721e954697f995a135cc388c59c49dd2a0ef8d6f09d2be55e0f325eb9fe7
+SHA256 (.footprint) = fe3606154682a7215bf644997cbc95816695f5aa8fe6b404f75c4aebfd8bc0a9
+SHA256 (wayland-protocols-1.20.tar.xz) = 9782b7a1a863d82d7c92478497d13c758f52e7da4f197aa16443f73de77e4de7

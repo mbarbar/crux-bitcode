@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wbmvgq4wzRU29a7DoFt09XpheFCVz0PHDr/f4woPcA+nmJrVqQTIUfkK9A49lpGON2Ocj1TspUAd1ekQyeQoAA=
+SHA256 (Pkgfile) = b83231564e54520a7290f878d7c4d2e71f52a47fc02f1e78c15cc221d0613c69
+SHA256 (.footprint) = c29f969e4523187b0f6dab4ed25b46acf41e5dbcc6cbe6732d64a70fafe6e9a8
+SHA256 (python3-click-log-0.3.2.tar.gz) = 16babb66a2ebf22c37c1cf38753a84e6027eb8991fcf9a8487971591b8ca9812

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31W/ip6RIFm9IqKyg36tEWfloRETrvnyGgUnCBsFROkQ6SRnqnoShN6elIbRJEoI1LpG4JP6zkhKrLbe9itb/w8=
+SHA256 (Pkgfile) = 759a4b7d6183c7c785f6f28fb788fbfb683583f8db9e2164ba06f9b1f77fb6fa
+SHA256 (.footprint) = d7bff0629a867d6897741647434e58a83ff6c7b54b347601366ba5ceca22df18
+SHA256 (xsel-1.2.0+git062e6d3.tar.gz) = fdb6cebad58fe306a08031ace787a92c4f4e8b75b836dd33958d140a666b1f91

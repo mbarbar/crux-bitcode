@@ -1,0 +1,17 @@
+# Description:	Multirouter traffic grapher
+# URL:	https://oss.oetiker.ch/mrtg/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on: perl, p5-gd
+
+name=mrtg
+version=2.17.7
+release=1
+source=(http://oss.oetiker.ch/mrtg/pub/mrtg-$version.tar.gz)
+
+build () {
+	cd mrtg-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/doc $PKG/usr/share/man/man1/mrtg-nt-guide.1 $PKG/usr/share/mrtg2
+}

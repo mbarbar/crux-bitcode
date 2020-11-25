@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/cpJPd23I8a/AF7umsODZfZrLlCCht1McafrD24Js2cJC52hyovQKp3kgoBn8CJOFzog0IMP0PDyd/AKW7lB8wc=
+SHA256 (Pkgfile) = bd35d9171c17cd2f85fe17115ce2e24bcad96716b0924e2fe4b707bdd8e5674a
+SHA256 (.footprint) = 64e8abaa030b116bfc7acc170accc18d9afec13e5db5e3a1a3465929eb2064c8
+SHA256 (libffcall-2.2.tar.gz) = ebfa37f97b6c94fac24ecf3193f9fc829517cf81aee9ac2d191af993d73cb747

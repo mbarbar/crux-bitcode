@@ -1,0 +1,16 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-r-xr-xr-x	root/root	usr/bin/sdl-config.pl
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/perl5/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/Alien/
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.28/Alien/SDL.pm
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/Alien/SDL/
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.28/Alien/SDL/ConfigData.pm
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man3/
+-r--r--r--	root/root	usr/share/man/man3/Alien::SDL.3pm.gz
+-r--r--r--	root/root	usr/share/man/man3/Alien::SDL::ConfigData.3pm.gz

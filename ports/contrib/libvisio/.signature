@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF312rFt5OEpnbVPShv99mklBEanuycZPdY5CV+dyd0nlKKVX5qhN3ZaGf9jUZBd74sjA1Vx6YF0DDfWpsTzC0hwQ=
+SHA256 (Pkgfile) = ccd798afb589a4af16c050e3edfe90062cdef5dde07482baff814d295aedd53e
+SHA256 (.footprint) = e13f1879f10c08a937d39005070957ecad750fb8ea4ac435d1cc3f4c1062f2b1
+SHA256 (libvisio-0.1.7.tar.xz) = 8faf8df870cb27b09a787a1959d6c646faa44d0d8ab151883df408b7166bea4c

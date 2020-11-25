@@ -1,0 +1,15 @@
+Kernel Configuration
+
+  Enable the following options in the kernel configuration and recompile the
+  kernel if necessary:
+
+    File systems  --->
+    <*/M> FUSE (Filesystem in Userspace) support [CONFIG_FUSE_FS]
+
+Installation of Ntfs-3g
+  If you want ordinary users to be able to mount NTFS partitions you'll need to
+  set mount.ntfs with the root user ID. Note: it is probably unsafe to do this
+  on a computer that needs to be secure (like a server). As the root user:
+
+  chmod -v 4755 /sbin/mount.ntfs
+

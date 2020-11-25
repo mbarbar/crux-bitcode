@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/kuyr3CEUnxvWkylnYFl/AWZtiJMefK1echBnR0xDZWQr+IgQpICQSkGI0fRdrCjgTu4wSb8u7i9qFUm7oA2AY=
+SHA256 (Pkgfile) = ec97968a9e992b9992f407c163a8b11ed476f1e1c295609d2836c87d75ee185c
+SHA256 (.footprint) = 4c7cfc0f7906deef569db6de2b44ff07bdb15ab06a480c4ef783d540108da245
+SHA256 (Socket6-0.29.tar.gz) = 468915fa3a04dcf6574fc957eff495915e24569434970c91ee8e4e1459fc9114

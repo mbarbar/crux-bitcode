@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35d0X5IH9EJAEhSe/MneMmQbjWws/oDdIGBQ27l7KUQcVeFBYrEElKOdYf7rFXRlvazoSTW41sjPtGxOwxpIXwo=
+SHA256 (Pkgfile) = 8bec57e5f5b7db5a74034be3037a0d063b96c6b2cfd9c4f03de482fde8683a56
+SHA256 (.footprint) = f2781103a8b0c0bd5c280ec9582366900f46bd1d2c6aa591cd9e98c17b4839a1
+SHA256 (libburn-1.5.2.tar.gz) = 7b32db1719d7f6516cce82a9d00dfddfb3581725db732ea87d41ea8ef0ce5227

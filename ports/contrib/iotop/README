@@ -1,0 +1,11 @@
+README for iotop
+
+REQUIREMENTS
+
+iotop requires Linux kernel >= 2.6.20 with the TASK_DELAY_ACCT and TASK_IO_ACCOUNTING options enabled.
+
+PRE-INSTALL
+
+POST-INSTALL
+
+PRECAUTION

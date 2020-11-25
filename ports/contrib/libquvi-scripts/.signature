@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+GWq+vh6JyBmGqkyqWtsXOqtcmEv/ucdvqbjT4GNFnw6CzQHyuTzAlPqLWZTQd1ZTZU1QUSe60BwCqhvuA32go=
+SHA256 (Pkgfile) = 794aef649fe5325c858a5c290ca917853d260fc714daa487770786b4b0fe069a
+SHA256 (.footprint) = dd2100621cae8eb90c027e902500398dfeaae8e0f6d0473e303c5a4985d9e691
+SHA256 (libquvi-scripts-0.9.20131130.tar.xz) = 17f21f9fac10cf60af2741f2c86a8ffd8007aa334d1eb78ff6ece130cb3777e3

@@ -1,0 +1,22 @@
+# Description: Utility library for managing the libnvdimm (non-volatile memory device) sub-system in the Linux kernel
+# URL: https://github.com/pmem/ndctl
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: json-c keyutils
+
+name=ndctl
+version=70.1
+release=1
+source=(https://github.com/pmem/ndctl/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  NOCONFIGURE=1 ./autogen.sh
+  sed '13944s/yes/no/' -i configure
+  sed '13961s/yes/no/' -i configure
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --with-systemd=no \
+    --disable-docs
+  make
+  make DESTDIR=$PKG install
+}

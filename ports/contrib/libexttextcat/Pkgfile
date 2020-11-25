@@ -1,0 +1,16 @@
+# Description: N-Gram-Based Text Categorization library primarily intended for language guessing
+# URL: http://www.freedesktop.org/wiki/Software/libexttextcat/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libexttextcat
+version=3.4.5
+release=1
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

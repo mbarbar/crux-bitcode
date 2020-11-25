@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/pdmFAi2jEgQ/zhbD3i6BZl4nCikonSd+kcsn9pmlGK8uUUqlWXnAHpLtTo0xP+T3KTrMmQJnNo5o2dYhKehgs=
+SHA256 (Pkgfile) = ac34b0ad33545c2a8a43ce838464c1464903623d089971889fe1276da1c774e6
+SHA256 (.footprint) = a71ed4a9b4cf21653b85aa4a2ac43cfbecefe1ad2fcaf1b33ef0b4dd2c5659bd
+SHA256 (Package-Stash-XS-0.29.tar.gz) = d3676ba94641e03d6a30e951f09266c4c3ca3f5b58aa7b314a67f28e419878aa

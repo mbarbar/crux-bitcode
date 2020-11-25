@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/TQR/6Nb3dhbaYOv+dVtDCSNaUzRzxz1hHXaMrYS6CavfuEUVodBK18LQHNQNkVLkhc8pTOGCvvpEqDLoon/IQs=
+SHA256 (Pkgfile) = d4c62ea2559fbd26be2afa70bc3466d4bc6e6096527d52a81bbece2a58f75f6e
+SHA256 (.footprint) = 9a0d3d09c7159afd00b5f816ce4ec2245b3ccb248a5abe8173891cdda514b4d3
+SHA256 (tmux-3.1c.tar.gz) = 918f7220447bef33a1902d4faff05317afd9db4ae1c9971bef5c787ac6c88386

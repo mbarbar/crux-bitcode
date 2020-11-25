@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/RF0QvdkmwF4ggu0ANlY5pWU9QIm3pMv5UKcNtl64PFy0dYcoPzQUobODCiDzr4HaspVnA2eCM+Srvdzcxf6PA0=
+SHA256 (Pkgfile) = dffdd98662277c533fd37285088848c3d749b084464891c1ddf5b71ff789afb9
+SHA256 (.footprint) = b94c86b5142ee97f890a026a12d37a67e97de7f868a0e1d1330e79f42b661cac
+SHA256 (libidn-1.35.tar.gz) = f11af1005b46b7b15d057d7f107315a1ad46935c7fcdf243c16e46ec14f0fe1e

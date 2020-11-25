@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+jACpJNcPPME6z6KUeMzAzR0YAPzdQr8eKT0YvnhwRrhc7gNJ9X2LxHWsjjHm8RW8CLJJ6X5zKN1WBsrSn9rwU=
+SHA256 (Pkgfile) = a0df8804c8d1c9e67bd139df91a875066174eea9f9aa2ea96de944eb4abde5c4
+SHA256 (.footprint) = ce28da158908efd7584e7795b24c5168632d55c664a878584b17eaaf971d0cc6
+SHA256 (jamvm-2.0.0.tar.gz) = 76428e96df0ae9dd964c7a7c74c1e9a837e2f312c39e9a357fa8178f7eff80da

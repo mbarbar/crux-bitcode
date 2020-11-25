@@ -1,0 +1,28 @@
+# Description:  A customizable open-source jukebox for large collections
+# URL:          https://gmusicbrowser.org/
+# Maintainer:   John Vogel, jvogel4 at stny dot rr dot com
+# Packager:     Alexandr Savca, alexandr dot savca89 at gmail dot com
+# Depends on:   p5-gtk2
+
+name=gmusicbrowser
+version=1.1.15
+release=1
+source=(https://gmusicbrowser.org/download/$name-$version.tar.gz)
+
+build() {
+        cd $name-$version
+
+        # Skip mkd->html documentation conversation
+        sed -i -r 's/(DOCS=.*)(layout_doc).html/\1\2.mkd/' Makefile
+
+        make
+        make DESTDIR=$PKG install
+
+        find $PKG -name perllocal.pod   \
+            -o -name .packlist          \
+            -o -name README             \
+            -o -name '*.bs'             \
+        | xargs rm -f
+
+        rm -rf $PKG/usr/share/{doc,appdata,locale}
+}

@@ -1,0 +1,31 @@
+# Description: Distributed Shell.
+# URL:         http://www.netfort.gr.jp/~dancer/software/dsh.html.en
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+# Depends on:  libdshconfig
+
+name=dsh
+version=0.25.10
+release=1
+source=(http://www.netfort.gr.jp/~dancer/software/downloads/$name-$version.tar.gz
+         machines.list)
+
+build () {
+   cd $name-$version
+
+   ./configure --prefix=/usr --disable-nls
+
+   make
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share/man/ja
+
+   sed -i -e 's|rsh|ssh|g' $name.conf
+
+   mkdir -p $PKG/etc/$name/group
+   install -m644 $SRC/machines.list $PKG/etc/$name/
+   install -m644 $name.conf $PKG/etc/$name/
+   ln -sf /etc/$name/machines.list $PKG/etc/$name/group/all
+   rm -r $PKG/usr/etc
+
+}

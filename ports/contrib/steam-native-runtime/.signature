@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/Eaq53F/RJLKADSNptbU2hHQUMpuv03GJ9bM/losU+dX16RobPRLpAlo+3hKcJcLfMRj1lGNxN3GknJQUXluQ0=
+SHA256 (Pkgfile) = 6feca8ca31feefc972fe61c5af0a4f0d21da3c54ab7e0a5aa9df025317acba65
+SHA256 (.footprint) = 5ff56e696db8131b399fce9cdd3b55bf3131ed3fa7a6e4532f358103daf2ef6d
+SHA256 (steam-native.sh) = 29f23d9ec588b4ccf3c4824895a884147822f82392a5d9266db017284754f804

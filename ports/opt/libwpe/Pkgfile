@@ -1,0 +1,19 @@
+# Description: General-purpose library for WPE WebKit
+# URL: https://wpewebkit.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libxkbcommon mesa3d
+
+name=libwpe
+version=1.6.0
+release=1
+source=(https://wpewebkit.org/releases/$name-$version.tar.xz)
+
+build() {
+	cmake -H$name-$version -Bbuild \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

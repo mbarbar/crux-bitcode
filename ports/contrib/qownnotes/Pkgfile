@@ -1,0 +1,30 @@
+# Description: Plain-text file notepad with markdown support and ownCloud integration
+# URL: https://www.qownnotes.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: qt5
+
+name=qownnotes
+version=20.11.9
+release=1
+source=(https://download.tuxfamily.org/$name/src/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+
+  echo "#define RELEASE \"CRUX\"" > release.h
+  /usr/lib/qt5/bin/qmake \
+    QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+    QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
+  make
+
+  install -D -m755 QOwnNotes $PKG/usr/bin/QOwnNotes
+  install -D -m644 PBE.QOwnNotes.desktop $PKG/usr/share/applications/PBE.QOwnNotes.desktop
+  install -D -m644 "images/icons/128x128/apps/QOwnNotes.png" $PKG/usr/share/pixmaps/QOwnNotes.png
+  for format in {16x16,24x24,32x32,48x48,64x64,96x96,128x128,256x256,512x512}; do
+    install -D -m644 images/icons/$format/apps/QOwnNotes.png \
+      $PKG/usr/share/icons/hicolor/$format/apps/QOwnNotes.png
+  done
+  install -D -m644 images/icons/scalable/apps/QOwnNotes.svg \
+    $PKG/usr/share/icons/hicolor/scalable/apps/QOwnNotes.svg
+}

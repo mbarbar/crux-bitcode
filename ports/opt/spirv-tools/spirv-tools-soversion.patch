@@ -1,0 +1,82 @@
+Index: SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/CMakeLists.txt
+===================================================================
+--- SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/CMakeLists.txt
++++ SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/CMakeLists.txt	2020-10-12 10:42:21.665118296 +0200
+@@ -28,6 +28,9 @@
+ enable_testing()
+ set(SPIRV_TOOLS "SPIRV-Tools")
+ 
++set(SPIRV_TOOLS_VERSION "0.0.0" CACHE STRING "Build version")
++set(SPIRV_TOOLS_SOVERSION "0" CACHE STRING "Library API version")
++
+ include(GNUInstallDirs)
+ 
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+Index: SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/CMakeLists.txt
+===================================================================
+--- SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/CMakeLists.txt
++++ SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/CMakeLists.txt	2020-10-12 10:43:48.111036375 +0200
+@@ -347,6 +347,7 @@
+ spvtools_pch(SPIRV_SOURCES pch_source)
+ 
+ add_library(${SPIRV_TOOLS} ${SPIRV_SOURCES})
++set_target_properties(${SPIRV_TOOLS} PROPERTIES VERSION ${SPIRV_TOOLS_VERSION} SOVERSION ${SPIRV_TOOLS_SOVERSION})
+ spvtools_default_compile_options(${SPIRV_TOOLS})
+ target_include_directories(${SPIRV_TOOLS}
+   PUBLIC
+@@ -360,6 +361,7 @@
+ add_dependencies( ${SPIRV_TOOLS} core_tables enum_string_mapping extinst_tables )
+ 
+ add_library(${SPIRV_TOOLS}-shared SHARED ${SPIRV_SOURCES})
++set_target_properties(${SPIRV_TOOLS}-shared PROPERTIES VERSION ${SPIRV_TOOLS_VERSION} SOVERSION ${SPIRV_TOOLS_SOVERSION})
+ spvtools_default_compile_options(${SPIRV_TOOLS}-shared)
+ target_include_directories(${SPIRV_TOOLS}-shared
+   PUBLIC
+Index: SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/fuzz/CMakeLists.txt
+===================================================================
+--- SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/fuzz/CMakeLists.txt
++++ SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/fuzz/CMakeLists.txt	2020-10-12 10:44:07.542017960 +0200
+@@ -397,6 +397,7 @@
+   spvtools_pch(SPIRV_TOOLS_FUZZ_SOURCES pch_source_fuzz)
+ 
+   add_library(SPIRV-Tools-fuzz ${SPIRV_TOOLS_FUZZ_SOURCES})
++  set_target_properties(${SPIRV_TOOLS}-fuzz PROPERTIES VERSION ${SPIRV_TOOLS_VERSION} SOVERSION ${SPIRV_TOOLS_SOVERSION})
+ 
+   spvtools_default_compile_options(SPIRV-Tools-fuzz)
+ 
+Index: SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/opt/CMakeLists.txt
+===================================================================
+--- SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/opt/CMakeLists.txt
++++ SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/opt/CMakeLists.txt	2020-10-12 10:44:24.508001881 +0200
+@@ -234,6 +234,7 @@
+ spvtools_pch(SPIRV_TOOLS_OPT_SOURCES pch_source_opt)
+ 
+ add_library(SPIRV-Tools-opt ${SPIRV_TOOLS_OPT_SOURCES})
++set_target_properties(${SPIRV_TOOLS}-opt PROPERTIES VERSION ${SPIRV_TOOLS_VERSION} SOVERSION ${SPIRV_TOOLS_SOVERSION})
+ 
+ spvtools_default_compile_options(SPIRV-Tools-opt)
+ target_include_directories(SPIRV-Tools-opt
+Index: SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/link/CMakeLists.txt
+===================================================================
+--- SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/link/CMakeLists.txt
++++ SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/link/CMakeLists.txt	2020-10-12 10:44:16.013009932 +0200
+@@ -14,6 +14,7 @@
+ add_library(SPIRV-Tools-link
+   linker.cpp
+ )
++set_target_properties(${SPIRV_TOOLS}-link PROPERTIES VERSION ${SPIRV_TOOLS_VERSION} SOVERSION ${SPIRV_TOOLS_SOVERSION})
+ 
+ spvtools_default_compile_options(SPIRV-Tools-link)
+ target_include_directories(SPIRV-Tools-link
+Index: SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/reduce/CMakeLists.txt
+===================================================================
+--- SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/reduce/CMakeLists.txt
++++ SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b/source/reduce/CMakeLists.txt	2020-10-12 10:44:34.239992658 +0200
+@@ -79,6 +79,7 @@
+ spvtools_pch(SPIRV_TOOLS_REDUCE_SOURCES pch_source_reduce)
+ 
+ add_library(SPIRV-Tools-reduce ${SPIRV_TOOLS_REDUCE_SOURCES})
++set_target_properties(${SPIRV_TOOLS}-reduce PROPERTIES VERSION ${SPIRV_TOOLS_VERSION} SOVERSION ${SPIRV_TOOLS_SOVERSION})
+ 
+ spvtools_default_compile_options(SPIRV-Tools-reduce)
+ target_include_directories(SPIRV-Tools-reduce

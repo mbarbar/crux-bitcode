@@ -1,0 +1,17 @@
+# Description: Specifications of extended Wayland protocols
+# URL: https://wayland.freedesktop.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: wayland
+
+name=wayland-protocols
+version=1.20
+release=1
+source=(https://wayland.freedesktop.org/releases/wayland-protocols-$version.tar.xz)
+
+build() {
+  cd wayland-protocols-$version
+  ./configure --prefix=/usr \
+    --datadir=/usr/lib
+  make
+  make DESTDIR=$PKG install
+}

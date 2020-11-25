@@ -1,0 +1,22 @@
+# Description: Higher-order list utility functions
+# URL: https://metacpan.org/pod/List::UtilsBy
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-list-utilsby
+version=0.11
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PE/PEVANS/List-UtilsBy-$version.tar.gz)
+
+build() {
+  cd List-UtilsBy-$version
+  export PERL_MM_USE_DEFAULT=1 \
+    PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='"$PKG"'" \
+    PERL_MB_OPT="--installdirs vendor --destdir '"$PKG"'" \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

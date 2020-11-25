@@ -1,0 +1,38 @@
+WARNING:
+
+  If you fail to rebuild input and video packages for xorg-server
+  on major ABI changes, eg. 1.16.0 -> 1.17.0. You will end up with
+  no mouse or keyboard and possibly no direct 3D acceleration for video.
+
+  If you do happen to forget and have sys-rq enabled in your kernel
+  you can do a safe reboot with holding down Alt + SysRq, and typing the
+  following sequence in order, pausing for several seconds between each key:
+
+  reisub
+
+PRE-INSTALL
+
+	xorg-server 1.16 new dependency libepoxy
+	xorg-server 1.16 removed dependency xorg-glamor-egl
+	xorg-server 1.17 new dependency xorg-xcb-util-keysyms
+	xorg-server 1.17 removed dependency xorg-xf86-video-modesetting
+
+	The current version of xorg-server needs these packages sorted out before 
+	a prt-get sysup from crux 3.1 release is done.
+
+prt-get remove xorg-xf86-video-modesetting xorg-glamor-egl
+prt-get depinst libepoxy xorg-xcb-util-keysyms
+
+POST-INSTALL
+
+  After upgrading xorg-server, from major versions rebuild video
+  and input packages:
+
+  NOTE: This only applies on ABI changes between major versions
+  eg, 1.16.0 -> 1.17.0.
+
+prt-get update -fr $(prt-get listinst --regex '^xorg-xf86-(input|video)|^mesa3d')
+
+  If you use nvidia you also need to do this:
+
+gl-select use xorg && gl-select use nvidia

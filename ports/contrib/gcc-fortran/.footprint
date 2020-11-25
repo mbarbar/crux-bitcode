@@ -1,0 +1,57 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/f90 -> gfortran
+lrwxrwxrwx	root/root	usr/bin/f95 -> gfortran
+lrwxrwxrwx	root/root	usr/bin/g77 -> gfortran
+-rwxr-xr-x	root/root	usr/bin/gfortran
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/gcc/
+drwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/
+drwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/
+drwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/
+drwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/ieee_arithmetic.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/ieee_exceptions.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/ieee_features.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/omp_lib.f90
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/omp_lib.h
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/omp_lib.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/omp_lib_kinds.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/openacc.f90
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/openacc.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/openacc_kinds.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/finclude/openacc_lib.h
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/libcaf_single.a
+-rwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/32/libcaf_single.la
+-rwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/f951
+drwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/ieee_arithmetic.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/ieee_exceptions.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/ieee_features.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/omp_lib.f90
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/omp_lib.h
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/omp_lib.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/omp_lib_kinds.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/openacc.f90
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/openacc.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/openacc_kinds.mod
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/finclude/openacc_lib.h
+-rw-r--r--	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/libcaf_single.a
+-rwxr-xr-x	root/root	usr/lib/gcc/x86_64-pc-linux-gnu/8.4.0/libcaf_single.la
+-rw-r--r--	root/root	usr/lib/libgfortran.a
+-rwxr-xr-x	root/root	usr/lib/libgfortran.la
+lrwxrwxrwx	root/root	usr/lib/libgfortran.so -> libgfortran.so.5.0.0
+lrwxrwxrwx	root/root	usr/lib/libgfortran.so.5 -> libgfortran.so.5.0.0
+-rwxr-xr-x	root/root	usr/lib/libgfortran.so.5.0.0
+-rw-r--r--	root/root	usr/lib/libgfortran.spec
+drwxr-xr-x	root/root	usr/lib32/
+-rw-r--r--	root/root	usr/lib32/libgfortran.a
+-rwxr-xr-x	root/root	usr/lib32/libgfortran.la
+lrwxrwxrwx	root/root	usr/lib32/libgfortran.so -> libgfortran.so.5.0.0
+lrwxrwxrwx	root/root	usr/lib32/libgfortran.so.5 -> libgfortran.so.5.0.0
+-rwxr-xr-x	root/root	usr/lib32/libgfortran.so.5.0.0
+-rw-r--r--	root/root	usr/lib32/libgfortran.spec
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/gfortran.1.gz

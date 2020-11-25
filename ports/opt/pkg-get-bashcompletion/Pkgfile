@@ -1,0 +1,15 @@
+# Description: Programmable bash completion for pkt-get
+# URL: http://www.varlock.com
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Depends on: bash-completion pkg-get
+
+name=pkg-get-bashcompletion
+version=0.4.5
+release=2
+source=(http://www.varlock.com/files/pkg-get-$version.tar.gz)
+
+build() {
+        cd pkg-get-$version/scripts
+        install -D -m 755 pkg-get_completion.sh \
+          $PKG/etc/bash_completion.d/pkg-get
+}

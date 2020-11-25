@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zyfLG7eujBKo/fXE0hWp2ej8Mi7zyW76C5cAcN3F+HyUadLszAITKvFTBzTFXHyr9latNmAc0ao3fc5OqAH/AE=
+SHA256 (Pkgfile) = 380b32ad847f9044012bfa3201d1bffa7efd7e951e24a46c344e7dacaeaf125e
+SHA256 (.footprint) = 4985a026cb92809c6e638ffcd8aa37226bfa893150a46b657630839f8b59eeb3
+SHA256 (gmime3-3.2.7.tar.gz) = 442db212b9ad71a13397b54cea742ab27cfcf95f43b3eb3d7ac4cec7cb4e59e5

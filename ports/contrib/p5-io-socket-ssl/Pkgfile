@@ -1,0 +1,26 @@
+# Description: Nearly transparent SSL encapsulation for IO::Socket::INET
+# URL: https://metacpan.org/pod/IO::Socket::SSL
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: p5-net-ssleay p5-uri
+
+name=p5-io-socket-ssl
+version=2.068
+release=1
+source=(https://www.cpan.org/modules/by-module/IO/IO-Socket-SSL-$version.tar.gz)
+
+build() {
+	cd IO-Socket-SSL-$version
+	yes | perl Makefile.PL
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+
+	# Remove perlcrap
+	find $PKG \( \
+		-name '.packlist' -or \
+		-name '*.bs' -or \
+		-name 'autosplit.ix' -or \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -delete
+}

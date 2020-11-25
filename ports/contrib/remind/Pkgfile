@@ -1,0 +1,17 @@
+# Description: A sophisticated CLI calendar and alarm program
+# URL:         https://dianne.skoll.ca/projects/remind/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    treach, treachster at gmail dot com
+# Depends on:
+
+name=remind
+version=03.03.03
+release=1
+source=(https://dianne.skoll.ca/projects/$name/download/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

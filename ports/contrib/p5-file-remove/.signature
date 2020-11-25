@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39Jve60NhFO1ij7NDEfHBypGWQTcZCEcNim9i9UgtCtfiCtfn0GT6hnMS/sOqeMLpL+ccKqODJ3Oa71fWMvKjwU=
+SHA256 (Pkgfile) = 4a37d5eaa3cef45b0a4ed7623c44f5f63dcfd5fe6ea0d3b756470bbaa0a092dd
+SHA256 (.footprint) = 92d4cce3f8befa6bf69ecfb46f66f03cc87781558a09d53494e92cf65b70bf68
+SHA256 (File-Remove-1.60.tar.gz) = e86e2a40ffedc6d5697d071503fd6ba14a5f9b8220af3af022110d8e724f8ca6

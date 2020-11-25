@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35TOQUvup8XiLifKyU0rN+ESKtKosNONakT3MgWdM3dJjIMctyGIxEoa3u2BUV1N/i5AomBZiCg8YTnvMbXjLw4=
+SHA256 (Pkgfile) = 5c88ba3edac41902208acab4b543ff5a4b1f74f82975ddbab61f2c8276ea53fc
+SHA256 (.footprint) = 7e5c41b49e66a51118982aa527c99ad0636deccc980a509a581490bca1d705b2
+SHA256 (GStreamer1-0.003.tar.gz) = 4cf0ecfaefd425ac6f171fff5430e770efc3ea161475ee8856ccd23a974502dc

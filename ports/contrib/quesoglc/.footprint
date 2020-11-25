@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/GL/
+-rw-r--r--	root/root	usr/include/GL/glc.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libGLC.a
+-rwxr-xr-x	root/root	usr/lib/libGLC.la
+lrwxrwxrwx	root/root	usr/lib/libGLC.so -> libGLC.so.0.0.7
+lrwxrwxrwx	root/root	usr/lib/libGLC.so.0 -> libGLC.so.0.0.7
+-rwxr-xr-x	root/root	usr/lib/libGLC.so.0.0.7
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/quesoglc.pc

@@ -1,0 +1,15 @@
+# Description: Compose is a tool for defining and running multi-container Docker applications
+# URL: https://docs.docker.com/compose/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-jsonschema python3-six python3-dockerpty python3-docker python3-websocket-client python3-texttable python3-requests python3-yaml python3-docopt python3-cached-property python3-importlib_metadata python3-pyrsistent python3-attrs python3-paramiko python3-zipp python3-pynacl python3-bcrypt python3-distro python3-dotenv
+
+name=docker-compose
+version=1.26.2
+release=1
+source=(https://github.com/docker/compose/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd compose-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

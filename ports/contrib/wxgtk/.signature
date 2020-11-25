@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36jE9lgOULgtBTSrJ+P772FdHvzxzIP4AYyEAf/s89FNpcqxc0vHCwOvGgS+9q1sKH9qDA8CnGj3hSnZFwurQAY=
+SHA256 (Pkgfile) = 70d21ece106a01df2bd6e6949d8d794963e144808be27d0abfe038ae0effb02f
+SHA256 (.footprint) = bb45efe84c64d223c01f0c0fa90beb39bee9c62711e38cd6dd5a74d16823f5b0
+SHA256 (wxWidgets-3.0.5.1.tar.bz2) = 440f6e73cf5afb2cbf9af10cec8da6cdd3d3998d527598a53db87099524ac807
+SHA256 (make-abicheck-non-fatal.patch) = 46a1bb97d69163547da13d5e23a4c73e68de27ee601da5d2fb5bc5c417931453

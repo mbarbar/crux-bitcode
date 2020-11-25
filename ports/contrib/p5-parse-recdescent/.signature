@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30ZEEYZP2rSN9xajZEVtfWdlhLWsllIdY97jtjuiWiKEkaWcuo80yImyuK7OgcML5XZ9vnJ5dGiVf3iahahgMA8=
+SHA256 (Pkgfile) = 2f22347359ad449338e3a2f9a8e6c5bcae667af5f2dcbe28fa612115dd152db6
+SHA256 (.footprint) = e0446bb722103349694ba13a9eaa2ea0038099bb5088cb8a8a502ce571a8ef53
+SHA256 (Parse-RecDescent-1.967015.tar.gz) = 1943336a4cb54f1788a733f0827c0c55db4310d5eae15e542639c9dd85656e37

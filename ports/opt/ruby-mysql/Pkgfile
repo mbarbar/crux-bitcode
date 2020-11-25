@@ -1,0 +1,23 @@
+# Description: Ruby bindings for MySQL
+# URL:         https://github.com/brianmario/mysql2
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  ruby mysql
+
+name=ruby-mysql
+version=0.5.3
+release=1
+source=(https://rubygems.org/downloads/mysql2-$version.gem)
+
+build () {
+	gem install mysql2 \
+		--ignore-dependencies \
+		--no-user-install \
+		--no-document \
+		--local \
+		--build-root $PKG
+
+	cd $PKG/$(gem env gemdir)
+	rm -r cache doc build_info
+	cd gems/mysql2-$version
+	rm CHANGELOG.md LICENSE README.md
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndOPIV6fbnntxT30G/8RPNo295I1AE4NjGDoxYe1a2Br+Zxfxak36LZdu6ekByJOMZegAfn4upZZv2vBDo3coCQ8=
+SHA256 (Pkgfile) = 2e0b65d775931403e679da2b832434d474d0e405099fd6edbd753d65fc3257db
+SHA256 (.footprint) = f4de01e9ed8bd72d121be1d7b6ccf2743c967b10e40ba6ebc8c13e9ca28f32ce
+SHA256 (rendercheck-1.5.tar.bz2) = 00605679436d65ccf9a6f1f1cb206df7a2e8b28a7821e867922d2b14b009f1cc

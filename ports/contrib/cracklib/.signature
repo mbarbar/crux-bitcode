@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32tzMBa89B8vbaEGGvrG4YDVT8SHv7nvXMyXYcxnNeAbZz+pVmR66RFjhtQzRbfjEfvIBQ4nB2jTi9FhlTeUYAs=
+SHA256 (Pkgfile) = cd45a41057db94919962cb56d44cc667cf534c52fbc2beddbddefcf332ceb5b7
+SHA256 (.footprint) = dc457e7c1b1455b0235c1f626a677b1ef1f4d9e63aa2e12e3578c6aa4b867ca7
+SHA256 (cracklib-2.9.7.tar.gz) = 8b6fd202f3f1d8fa395d3b7a5d821227cfd8bb4a9a584a7ae30cf62cea6287dd

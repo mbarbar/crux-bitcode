@@ -1,0 +1,21 @@
+# Description: practical wrapper for cryptsetup-luks
+# URL:         http://www.grml.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Simon Glossner, viper at hometux dot de
+# Depends on:  grml-shlib
+
+name=grml-crypt
+version=0.27
+release=2
+source=(http://deb.grml.org/pool/main/g/$name/${name}_${version}.tar.gz \
+  path_fstype.patch)
+
+build() {
+    cd $name-$version
+
+    patch -p1 < $SRC/path_fstype.patch
+
+    mkdir -p $PKG/usr/sbin
+
+    install -m 755 grml-crypt $PKG/usr/sbin
+}

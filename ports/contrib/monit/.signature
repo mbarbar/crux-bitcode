@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32AGmn+0YPf5c6N5DqPaDsXWyY9RsWXKTW+6wT7hpEN9sw3Gp8CUr6B2Fi/oHIb5O+SQ+ZOG0j8SKD+HWfEURww=
+SHA256 (Pkgfile) = b3a2efec804db21e26faa0d39b58c2ad1f14a884b63ce79292762340e835075e
+SHA256 (.footprint) = 1543986dc614b53b721621604afb2f1e34fa3f50e7f62ea8a5583e3adfb4575a
+SHA256 (monit-5.27.1.tar.gz) = f57408d16185687513a3c4eb3f2bb72eef76331ac16210e9652e846e5c84ed51
+SHA256 (monitd) = e8d5f6a67b0e75641bc0158bfdc942f1738f734d751c94ddfa82ec1f1c571f1e

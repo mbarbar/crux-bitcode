@@ -1,0 +1,25 @@
+# Description: XSL Transformations library.
+# URL: http://xmlsoft.org/XSLT/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libxml2
+
+name=libxslt
+version=1.1.34
+release=1
+source=(http://xmlsoft.org/sources/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--without-python \
+		--without-crypto
+
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+}

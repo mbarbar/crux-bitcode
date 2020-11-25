@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33MTYHwzdRJAQTddRB3uDGltHxSULt0TzaYMQ6J8a5rk7k/eAcTgeKZc5YPBgCdwCOxf1pzdoylJivTDNCWMdAI=
+SHA256 (Pkgfile) = 51ec8ca099162e9c310af10005566d88f15fbcd982dda2f75c379fb282fbb57a
+SHA256 (.footprint) = 7125edef48887e5a72ff80136e8a264837d9615b9324ff3bc7876db70c9930c7
+SHA256 (libblockdev-2.24.tar.gz) = dc207c70dbef52c818a8abbcb6b8e298a6b63c0b78a5e1f2773b5f7b89300773
+SHA256 (foo.patch) = bf89ef671f4c157b12d307ad41eb69630770c3a9ce14a932d2e22d87f27c8b80

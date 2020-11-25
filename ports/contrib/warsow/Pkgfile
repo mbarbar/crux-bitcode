@@ -1,0 +1,48 @@
+# Description: Fast paced first person shooter game.
+# URL: http://www.warsow.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Mark Rosenstand, mark at borkware dot net
+# Depends on: libjpeg-turbo libsdl libvorbis xorg-libxxf86dga xorg-libxinerama
+
+name=warsow
+version=0.42
+release=1
+source=(http://tastyspleen.net/quake/downloads/mods/warsow/warsow_${version}_unified.zip
+	http://tastyspleen.net/quake/downloads/mods/warsow/warsow_${version}_sdk.zip
+	warsow.sh)
+
+build() {
+	cd ${name}_${version}_src
+
+	sed -i source/qcommon/files.c \
+		-e '/fs_basepath = Cvar_Get/s|"\."|"/usr/lib/warsow"|' \
+		-e '/fs_usehomedir = Cvar_Get/s|"0"|"1"|'
+	
+	sed -i source/Makefile \
+		-e 's|-I$(X11BASE)/include|-I$(X11BASE)/include/X11|g' \
+		-e '/^all:/s| client openal qf ded cgame game ui irc tv_server| client openal qf cgame game ui irc |'
+
+	make -C source clean
+
+	make -C source \
+		BUILD_SERVER=NO \
+		BUILD_SND_OPENAL=NO \
+		BUILD_TV_SERVER=NO \
+		CLIENT_EXE=warsow \
+		LOCALBASE=/usr \
+		X11BASE=/usr
+
+	install -d $PKG/usr/lib/warsow/libs $PKG/usr/bin/
+	install -m 0755 $SRC/warsow.sh $PKG/usr/bin/warsow
+	install -m 0755 ../warsow_${version}_unified/warsow.i386 $PKG/usr/lib/warsow/
+	mv source/release/basewsw/*.so $PKG/usr/lib/warsow/libs/
+	cp -r source/release/* $PKG/usr/lib/warsow/
+	cp -r ../warsow_${version}_unified/basewsw/*.pk3 $PKG/usr/lib/warsow/basewsw/
+	rm $PKG/usr/lib/warsow/warsow
+	
+	cd libsrcs/curl-*/
+	chmod +x configure
+	./configure --enable-ipv6 --disable-static
+	make -C lib
+	install -s -m 0755 lib/.libs/libcurl.so.3.0.0 $PKG/usr/lib/warsow/libs/libcurl.so.3
+}

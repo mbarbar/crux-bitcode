@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37tJw/XO50dseSR5AEA/gBKpneVDH1sgX7fbGC54lILthgJmZTYk8RBnENKSJqmxkbL0KWyCMJixdAdNyMmmMws=
+SHA256 (Pkgfile) = d459a52454d0c33cec2b1a98fa274af98c46c06ea0131d6ac46576d20d641fcd
+SHA256 (.footprint) = 9c4a253cc0f3be1e1d10dc0cb713adde705321d0e02e0931489e6305ab196aba
+SHA256 (fltk-1.3.5-source.tar.bz2) = 2933c72400f9e7c0f4c3a81a1ce98bc9582b2a3edc44b8597ccd26e240e32c3c
+SHA256 (fltk-fix-lib-mess.patch) = b8061f26d989f76441d68a07ba4089b50eceb90fb3234106a88511a12d9ddb50

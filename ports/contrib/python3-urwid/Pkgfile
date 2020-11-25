@@ -1,0 +1,19 @@
+# Description: Console user interface library for Python
+# URL: http://urwid.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-urwid
+version=2.1.2
+release=1
+source=(https://github.com/urwid/urwid/archive/release-$version/urwid-$version.tar.gz)
+
+build() {
+  cd urwid-release-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --prefix=/usr \
+    -O1 \
+    --skip-build \
+    --root=$PKG
+}

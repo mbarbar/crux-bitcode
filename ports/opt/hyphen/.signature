@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/bqN5GXNwdiMFP4r63Gf6SqcMYd9Cd6bAJBLYiSoUyB8ssUTJmZacaNK17p0QTLM59D1+CZebH8+4XKp/k3KBgg=
+SHA256 (Pkgfile) = 1dede584ed886b76a23ca476f096751cfa15cdcc60bcaab62376f93d32e7b127
+SHA256 (.footprint) = 5a52ee3557898887cb294e2e1527a581331e802cce9ad0cc3e247dd2795747d6
+SHA256 (hyphen-2.8.8.tar.gz) = 304636d4eccd81a14b6914d07b84c79ebb815288c76fe027b9ebff6ff24d5705

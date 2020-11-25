@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35IeA5tjtYFqqKQsPk1b+g5MAGjlTKEdFgYmt0Zrtuil2xdsCzyc0XCUIhQn/B26pcsjggULouGAON3pIQ4GxgY=
+SHA256 (Pkgfile) = cad5609a3e634b7fccc3c598cba2507e795b43e82460c2cd4a01830096873bac
+SHA256 (.footprint) = 2d96074301a7cf53f19ea0ff3f5ecc6935a9f4385c02cc1f34c9e1fcfd0421ea
+SHA256 (masscan-1.0.5.tar.gz) = a0686929888674892f464014806444d26ded56838d45035221ff88ee9f6ead73

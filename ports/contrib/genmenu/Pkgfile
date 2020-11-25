@@ -1,0 +1,12 @@
+# Description: Menu generator for Flux/Black/Openbox, WindowMaker and Enlightenment.
+# URL:         http://f00l.de/genmenu/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=genmenu
+version=1.1.0
+release=1
+source=(http://f00l.de/genmenu/$name-$version.tar.bz2)
+
+build() {
+   install -D -m755 -groot -oroot $name-$version/genmenu $PKG/usr/bin/genmenu
+}

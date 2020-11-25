@@ -1,0 +1,38 @@
+# Description: A fast compiler cache.
+# URL: https://ccache.dev/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cmake
+# Optional: clang-ccache-bindings asciidoc zstd
+
+name=ccache
+version=4.1
+release=1
+source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.xz
+	ccache.1)
+
+build() {
+	[[ -e '/usr/bin/ninja' ]] && PKGMK_CCACHE+=' -G Ninja'
+
+	cmake -S $name-$version -B build $PKGMK_CCACHE \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D ZSTD_FROM_INTERNET="$(prt-get isinst zstd &> /dev/null && echo OFF || echo ON)"
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	# install bundled man page else generate it with asciidoc
+	if [ ! -e '/usr/bin/asciidoc' ]; then
+		install -d $PKG/usr/share/man/man1
+		install -m 644 $SRC/ccache.1 $PKG/usr/share/man/man1/
+	fi
+
+	install -d $PKG/usr/lib/ccache
+
+	for c in cc gcc g++ cpp c++; do
+		ln -s /usr/bin/ccache $PKG/usr/lib/ccache/$c
+	done
+}

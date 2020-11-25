@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/dgTvlSqtDei2m4IvMdxEoY9Hup4NnBuXsm7EeffbYeiCzDUk2J5GXTz0maDabB8aO7ng/nUW9F3K3/0majW3AA=
+SHA256 (Pkgfile) = 2feeaab0b321000e6704d7e3baefae95b612d1c9d6d3db76ea952e314f1247b5
+SHA256 (.footprint) = a0541d71707a3093e00e065ca42a816b6b2e57e521a92eb72f591a3607be4040
+SHA256 (libestr-0.1.11.tar.gz) = 46632b2785ff4a231dcf241eeb0dcb5fc0c7d4da8ee49cf5687722cdbe8b2024

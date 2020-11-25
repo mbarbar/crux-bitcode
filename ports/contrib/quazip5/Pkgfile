@@ -1,0 +1,21 @@
+# Description: C++ wrapper for the Gilles Vollant's ZIP/UNZIP C package
+# URL: https://stachenov.github.io/quazip/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: qt5
+
+name=quazip5
+version=1.1
+release=2
+source=(https://github.com/stachenov/quazip/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cmake -S quazip-$version -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

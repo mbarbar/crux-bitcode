@@ -1,0 +1,17 @@
+# Description: GNU enscript, converts ASCII files to PostScript
+# URL:         http://www.gnu.org/software/enscript/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=enscript
+version=1.6.6
+release=2
+source=(http://ftp.gnu.org/gnu/enscript/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr \
+                --disable-nls
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share/info
+}

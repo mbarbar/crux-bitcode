@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37s0r1VvU3jIL+J91U/K+tcDycIwreDcF+kZpk77Xzsd8EFnJ60zizMPZYMrIfA06I1mwIdv+EPv5ItIqtEHNgc=
+SHA256 (Pkgfile) = e53d082e58bfbd35a98ed6cd8006bf243ff5703919a2e48918c240d5da885e98
+SHA256 (.footprint) = 2a57a202f5e3f27dd1eba54857fefb40208d344a4b9e2e49fc732a27eec4d3ff
+SHA256 (ddrescue-1.25.tar.lz) = ce538ebd26a09f45da67d3ad3f7431932428231ceec7a2d255f716fa231a1063

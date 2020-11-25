@@ -1,0 +1,26 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/rtmpdump
+-rwxr-xr-x	root/root	usr/bin/rtmpgw
+-rwxr-xr-x	root/root	usr/bin/rtmpsrv
+-rwxr-xr-x	root/root	usr/bin/rtmpsuck
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/librtmp/
+-rw-r--r--	root/root	usr/include/librtmp/amf.h
+-rw-r--r--	root/root	usr/include/librtmp/http.h
+-rw-r--r--	root/root	usr/include/librtmp/log.h
+-rw-r--r--	root/root	usr/include/librtmp/rtmp.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/librtmp.a
+lrwxrwxrwx	root/root	usr/lib/librtmp.so -> librtmp.so.1
+-rwxr-xr-x	root/root	usr/lib/librtmp.so.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/librtmp.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/rtmpdump.1.gz
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/librtmp.3.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/rtmpgw.8.gz

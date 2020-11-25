@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/TrbRfxE4r2aPeR9jESNcNVRy+/TEfathG5Tu4fMLsTpRvNejJWMuyj3APvdU7+ayQfNGiGW5iwySDrLQUYA/AA=
+SHA256 (Pkgfile) = 46e30091f06b29c926fab4b3199bdb7460067786f7d4fc425dda2194abacf30d
+SHA256 (.footprint) = 6726225314c7024f9f5452e325605803f938f80c481c74ca74bd3fe5510f074a
+SHA256 (nss_wrapper-1.1.11.tar.gz) = fb45332e7fb4d85d3ea829ed18172366196c17cbd32ef690a7e1309f0c37b4e0

@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/faketime
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/faketime/
+-rw-r--r--	root/root	usr/lib/faketime/libfaketime.so.1
+-rw-r--r--	root/root	usr/lib/faketime/libfaketimeMT.so.1
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/faketime.1.gz

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/core.pub
+RWRJc1FUaeVeqiBPkb0qAn7hx2Iku6KYmAtpLmffTuJUyYkS5HKGAG366J425vdJ2qmqosG7xfNHv3AZ+bFfTgQVsTel0HgulAE=
+SHA256 (Pkgfile) = a2113332ee6ad18990252e377cd3485aad0f86f6e5097d09431708e38f3306ca
+SHA256 (.footprint) = 8a4326da010991271b467bd94b93fde64c6ee5e18b6261372a111925e264b03b
+SHA256 (acl-2.2.53.tar.gz) = 06be9865c6f418d851ff4494e12406568353b891ffe1f596b34693c387af26c7

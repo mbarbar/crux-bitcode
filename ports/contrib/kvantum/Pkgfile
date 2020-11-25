@@ -1,0 +1,21 @@
+# Description: theme engine for Qt4/Qt5 and KDE
+# URL: https://github.com/tsujan/Kvantum/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: icu kwindowsystem xorg-xcb-util-renderutil
+
+name=kvantum
+version=0.17.0
+release=1
+source=(https://github.com/tsujan/Kvantum/archive/V$version/Kvantum-v$version.tar.gz)
+
+build() {
+  cmake -S Kvantum-$version/Kvantum -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+  rm -fr $PKG/usr/share/{kvantumpreview/translations,kvantummanager/translations}
+}

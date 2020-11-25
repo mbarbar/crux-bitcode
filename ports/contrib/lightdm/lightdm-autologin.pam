@@ -1,0 +1,13 @@
+#
+# /etc/rc.d/lightdm-autologin
+#
+
+auth      required    pam_nologin.so
+auth      required    pam_env.so
+auth      required    pam_permit.so
+
+account   required    pam_unix.so
+
+password  required    pam_deny.so
+
+session   required    pam_unix.so

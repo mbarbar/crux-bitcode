@@ -1,0 +1,26 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/fsck.hfsplus -> hpfsck
+-rwxr-xr-x	root/root	usr/bin/hpcd
+-rwxr-xr-x	root/root	usr/bin/hpcopy
+-rwxr-xr-x	root/root	usr/bin/hpfsck
+-rwxr-xr-x	root/root	usr/bin/hpls
+-rwxr-xr-x	root/root	usr/bin/hpmkdir
+-rwxr-xr-x	root/root	usr/bin/hpmount
+-rwxr-xr-x	root/root	usr/bin/hppwd
+-rwxr-xr-x	root/root	usr/bin/hprm
+-rwxr-xr-x	root/root	usr/bin/hpumount
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+lrwxrwxrwx	root/root	usr/share/man/man1/fsck.hfsplus.1.gz -> hfsp.1.gz
+-rw-rw-r--	root/root	usr/share/man/man1/hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpcd.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpcopy.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpfsck.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpls.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpmkdir.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpmount.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hppwd.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hprm.1.gz -> hfsp.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/hpumount.1.gz -> hfsp.1.gz

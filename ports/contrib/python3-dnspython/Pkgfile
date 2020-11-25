@@ -1,0 +1,18 @@
+# Description: dnspython is a DNS toolkit for Python
+# URL: https://www.dnspython.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-dnspython
+version=2.0.0
+release=1
+source=(https://pypi.python.org/packages/source/d/dnspython/dnspython-$version.zip)
+
+build() {
+  cd dnspython-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --root=$PKG \
+    --optimize=1 \
+    --skip-build
+}

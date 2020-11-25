@@ -1,0 +1,11 @@
+--- asterisk-13.13.1/menuselect-tree.orig	2017-01-30 11:04:27.059563497 +0900
++++ asterisk-13.13.1/menuselect-tree	2017-01-30 11:06:05.912511323 +0900
+@@ -10,7 +10,7 @@
+ </member>
+ <member name="cdr_mysql" displayname="MySQL CDR Backend" remove_on_change="addons/cdr_mysql.o addons/cdr_mysql.so">
+ 	<depend>mysqlclient</depend>
+-	<defaultenabled>no</defaultenabled>
++	<defaultenabled>yes</defaultenabled>
+ 	<support_level>deprecated</support_level>
+ 	<replacement>cdr_adaptive_odbc</replacement>
+ </member>

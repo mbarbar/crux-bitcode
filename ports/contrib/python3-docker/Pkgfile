@@ -1,0 +1,15 @@
+# Description: A Python library for the Docker Engine API
+# URL: https://pypi.org/project/docker/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-requests python3-websocket-client
+
+name=python3-docker
+version=4.3.1
+release=1
+source=(https://files.pythonhosted.org/packages/b3/48/014af5285463adb8079f32f603c0d6d19c16d92a113ebacc6b07522dcff5/docker-$version.tar.gz)
+
+build() {
+	cd docker-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

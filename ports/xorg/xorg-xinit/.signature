@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndPrCMM6munUqsOznWx+zxIISaYuT70dau7MCiiQ8LMnrCQneHXABiZZ4iut/WNngJaPAKBkbRRcVHKuDxxNeqw4=
+SHA256 (Pkgfile) = b9e61b0a99a08cdd3e9fa079d855d326cb4e48b4c096b6710de8b7202338a740
+SHA256 (.footprint) = 6e9e50e15b9939516003ecd497c5d86ffa05f8184e3aabf196d6977e006edb96
+SHA256 (xinit-1.4.1.tar.bz2) = de9b8f617b68a70f6caf87da01fcf0ebd2b75690cdcba9c921d0ef54fa54abb9

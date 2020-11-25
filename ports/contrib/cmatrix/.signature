@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38Q5xgw6a31sEBPKyqs+GZcfkDVsz1ksT3M/L67JMOCvdww+YpdqIKHHUkTeMBmf/ZQKF/6iSl4H138L22tdoAQ=
+SHA256 (Pkgfile) = 42bd8f9ac715dcfbba8a2013a1e9adaf42ff3d9eca75b2a85091ad7c4d4418e0
+SHA256 (.footprint) = 813bd11d0a2f4c0c1cfc48afb74507d985dd8fc000753fbd13e52eb6c46c8ae3
+SHA256 (cmatrix-v2.0.tar.gz) = ad93ba39acd383696ab6a9ebbed1259ecf2d3cf9f49d6b97038c66f80749e99a

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xO/EKEY+bCSAv9kiHPbveycUFJKCBCmgRSprlTbhowoPIbv3nsH8IWi+x2EmTaUWZ5IejK97ER7VfYYjACAaAA=
+SHA256 (Pkgfile) = a740a1275b29e805514cfb108da65792c0ff9dc0cfa1ac8edb6a153a3bb58b07
+SHA256 (.footprint) = d822aa8c7017119e9ff7aa11db484952bbc1a0322481de76d1319c312924c1cc
+SHA256 (File-Slurp-Tiny-0.004.tar.gz) = 452995beeabf0e923e65fdc627a725dbb12c9e10c00d8018c16d10ba62757f1e

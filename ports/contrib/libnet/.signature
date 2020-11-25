@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33rCczo/0rxGisp7zCwYDfIXpx5JlKJgnF3sREEemREfmLSslutixrzg+EgZWRfTYChw2KGG0l6rkMigEz4EOQw=
+SHA256 (Pkgfile) = 83bcc1845dd53a98ebb414103c637175706db6de33cead90390bb10bdddda93b
+SHA256 (.footprint) = 4cbd51da5a0d03df0575f1f7ec9641a2985ce1a6ff79c4a42282cc92b1df3111
+SHA256 (libnet-1.2.tar.gz) = caa4868157d9e5f32e9c7eac9461efeff30cb28357f7f6bf07e73933fb4edaa7

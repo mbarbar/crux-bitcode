@@ -1,0 +1,25 @@
+# Description: Yubico YubiKey Personalization GUI
+# URL: https://github.com/Yubico/yubikey-personalization-gui
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: imagemagick qt5 yubikey-personalization
+
+name=yubikey-personalization-gui
+version=3.1.25
+release=1
+source=(https://github.com/Yubico/yubikey-personalization-gui/archive/$name-$version.tar.gz)
+
+build() {
+  cd $name-$name-$version
+  /usr/lib/qt5/bin/qmake
+  make
+  install -D -m0755 build/release/$name $PKG/usr/bin/yubikey-personalization-gui
+  install -D -m0644 resources/lin/$name.1 $PKG/usr/share/man/man1/yubikey-personalization-gui.1
+  install -D -m0644 resources/lin/$name.desktop $PKG/usr/share/applications/$name.desktop
+  install -D -m0644 resources/lin/$name.png $PKG/usr/share/icons/hicolor/128x128/apps/$name.png
+  for SIZE in 16 24 32 48 64 96; do
+    convert -scale ${SIZE} +set date:create +set date:modify \
+    resources/lin/$name.png \
+    $SRC/$name.png
+    install -D -m0644 $SRC/$name.png $PKG/usr/share/icons/hicolor/${SIZE}x${SIZE}/apps/$name.png
+  done
+}

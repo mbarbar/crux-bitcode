@@ -1,0 +1,20 @@
+# Description: Offline NT Password Editor - reset passwords in a Windows NT SAM user database file.
+# URL: http://pogostick.net/~pnh/ntpasswd/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=chntpw
+version=140201
+release=1
+source=(http://crux.ster.zone/downloads/$name/$name-source-$version.zip)
+#source=(http://pogostick.net/~pnh/ntpasswd/$name-source-$version.zip)
+
+build() {
+	cd $name-$version
+
+	sed -i 's/^CFLAGS= \(.*\) -m32 $/CFLAGS= \1/' Makefile
+
+	make chntpw cpnt reged samusrgrp sampasswd
+
+	install -d $PKG/usr/bin
+	install -m 0755 -t $PKG/usr/bin chntpw cpnt reged samusrgrp sampasswd
+}

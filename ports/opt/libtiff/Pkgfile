@@ -1,0 +1,18 @@
+# Description: Library for manipulation of TIFF (Tag Image File Format) images
+# URL:         http://www.simplesystems.org/libtiff
+# Maintainer:  Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on:  libjpeg-turbo, zlib
+
+name=libtiff
+version=4.1.0
+release=1
+source=(http://download.osgeo.org/libtiff/tiff-$version.tar.gz) 
+
+build() {
+	cd tiff-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	rm -r $PKG/usr/{bin,share/{doc,man/man1}}
+}

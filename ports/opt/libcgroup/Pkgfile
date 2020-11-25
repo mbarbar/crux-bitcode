@@ -1,0 +1,18 @@
+# Description: Library that abstracts the control group file system in Linux
+# URL:         https://github.com/libcgroup/libcgroup
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=libcgroup
+version=0.42.2
+release=2
+source=(https://github.com/libcgroup/libcgroup/releases/download/v$version/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+    --enable-pam-module-dir=/lib/security
+
+  make
+  make DESTDIR=$PKG install
+}

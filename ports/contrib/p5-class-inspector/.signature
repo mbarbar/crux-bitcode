@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33S/n5JbRu9ss+QzeJicLxJGrh4SK8uEhyMXHRYCT0tQcEqFnBSY1FstGX4d8VUrMVgoi2UNAq8lN9Y0tRStqwg=
+SHA256 (Pkgfile) = 1af967725276c44154757378a4d4e33a8c2e11a4f628e01eab1255dda7172583
+SHA256 (.footprint) = 6e09df398d6daa9086e625313228d99a8b3b425d03a0d8b733490d94f746cc7e
+SHA256 (Class-Inspector-1.36.tar.gz) = cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e

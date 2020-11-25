@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xb1rl9fXhjKnk1w5e0i/mTy6DdKShphRMx6IyQsv3581lESNffCaVzJALS9KlYhl05EZ0426UIJGsDQEOf3rwU=
+SHA256 (Pkgfile) = c6ecdb771f74cfc4bf5cf3159c4c8043ac66de6600df7cf9aba3e0f0b9f40487
+SHA256 (.footprint) = ae7a18c56cb21d7f97a48322cf8fcb5ebe5dff738408cbe3f4d06f851862047d
+SHA256 (qtkeychain-0.11.1.tar.gz) = 77fc6841c1743d9e6bd499989481cd9239c21bc9bf0760d41a4f4068d2f0a49d

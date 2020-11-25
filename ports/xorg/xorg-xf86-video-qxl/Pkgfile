@@ -1,0 +1,18 @@
+# Description: QXL virtual GPU video driver for the Xorg X server
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: spice-protocol xorg-server
+
+name=xorg-xf86-video-qxl
+version=0.1.5
+release=1
+source=(https://www.x.org/archive/individual/driver/xf86-video-qxl-$version.tar.bz2)
+
+build() {
+	cd xf86-video-qxl-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

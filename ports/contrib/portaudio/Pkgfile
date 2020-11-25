@@ -1,0 +1,24 @@
+# Description:	Portable cross-platform audio I/O library
+# URL:		http://portaudio.com
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	alsa-lib
+# Optional:	jack-audio-connection-kit
+
+name=portaudio
+version=19.6.0
+_version=190600_20161030
+release=1
+source=(http://www.portaudio.com/archives/pa_stable_v${_version}.tgz)
+
+build() {
+	mv $name $name-$version
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--enable-cxx
+
+	make -j1
+	make DESTDIR=$PKG install
+}
+

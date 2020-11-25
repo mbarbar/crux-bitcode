@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33E+6H6nLHY+sibExG4r1APnqDi1OstDRCx16Ko56UCUwJDo5L5rxgyGrVTPMjnf2To+8VJz34dORP4VoB3ffwI=
+SHA256 (Pkgfile) = 9921bf0a199e1232920d284d6d28e6690e503ea224f8314790e0f41926b6c0eb
+SHA256 (.footprint) = f251ed07762d9e99639e7e0be7eb455f14151b0149c5329e9af71e319c751f04
+SHA256 (PyQt-builder-1.5.0.tar.gz) = 11bbe26e8e3d5ffec6d2ef2f50596b1670eb2d8b49aee0f859821922d8282841

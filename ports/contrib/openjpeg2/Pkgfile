@@ -1,0 +1,24 @@
+# Description: An open source JPEG 2000 codec.
+# URL: https://github.com/uclouvain/openjpeg
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: lcms2 libpng
+
+name=openjpeg2
+version=2.3.1
+release=1
+source=(https://github.com/uclouvain/openjpeg/archive/v$version/openjpeg-$version.tar.gz)
+
+build() {
+	# cmake --build/install fails, so don't offer ninja right now
+	#[[ -e /usr/bin/ninja ]] && PKGMK_OJPG2+=' -G Ninja'
+	cmake -S openjpeg-$version -B build $PKGMK_OJPG2 \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+		-Wno-dev
+
+	# cmake --build/install fails
+	make -C build
+	make DESTDIR=$PKG -C build install
+}

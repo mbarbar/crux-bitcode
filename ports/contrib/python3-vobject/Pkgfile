@@ -1,0 +1,18 @@
+# Description: Python package for parsing and creating iCalendar and vCard files
+# URL: https://eventable.github.io/vobject/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-dateutil
+
+name=python3-vobject
+version=0.9.6.1
+release=1
+source=(https://github.com/eventable/vobject/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd vobject-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

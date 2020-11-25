@@ -1,0 +1,15 @@
+# Description: Postscript Utilities
+# URL:         https://github.com/rrthomas/psutils
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  paper p5-ipc-run3
+
+name=psutils
+version=2.04
+release=1
+source=(https://github.com/rrthomas/psutils/releases/download/v$version/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make DESTDIR=$PKG install
+}

@@ -1,0 +1,18 @@
+# Description: X font selector
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxaw
+
+name=xorg-xfontsel
+version=1.0.6
+release=1
+source=(https://www.x.org/releases/individual/app/xfontsel-$version.tar.bz2)
+
+build() {
+	cd xfontsel-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

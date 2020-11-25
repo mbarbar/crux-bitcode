@@ -1,0 +1,23 @@
+# Description: A library that implements the EBU R 128 standard for loudness normalisation.
+# URL: https://github.com/jiixyj/libebur128
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake
+
+name=libebur128
+version=1.2.4
+release=1
+source=(https://github.com/jiixyj/libebur128/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_LIBEBUR128+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_LIBEBUR128 \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D BUILD_STATIC_LIBS=OFF \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

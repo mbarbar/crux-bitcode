@@ -1,0 +1,16 @@
+# Description: A window switcher, application launcher and dmenu replacement
+# URL: https://github.com/DaveDavenport/rofi
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: pango startup-notification libxkbcommon xorg-xcb-util-xrm librsvg check xorg-xcb-util-wm
+
+name=rofi
+version=1.6.1
+release=1
+source=(https://github.com/DaveDavenport/$name/releases/download/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

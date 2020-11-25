@@ -1,0 +1,9 @@
+#
+# /etc/pam.d/mysql - mariadb service module configuration
+#
+
+auth       include   common-auth
+auth       required  pam_user_map.so
+
+account    include   common-account
+

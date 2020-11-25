@@ -1,0 +1,12 @@
+diff -pruN vobcopy-1.2.0.orig/vobcopy.c vobcopy-1.2.0/vobcopy.c
+--- vobcopy-1.2.0.orig/vobcopy.c	2009-11-07 16:13:48.000426908 +1100
++++ vobcopy-1.2.0/vobcopy.c	2009-11-07 16:16:03.144426444 +1100
+@@ -1812,7 +1812,7 @@ The man replies, "I was talking to the s
+ 
+ 	  while( ( blocks = DVDReadBlocks( dvd_file,( offset + seek_start ), file_block_count, bufferin ) ) <= 0 && tries < 10 )
+ 	    {
+-	      if( tries == 9 )
++	      if( tries == 1 )
+ 		{
+ 		  offset += file_block_count;
+ 		  skipped_blocks +=1;

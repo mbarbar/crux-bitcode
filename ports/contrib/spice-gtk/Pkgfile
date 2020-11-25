@@ -1,0 +1,22 @@
+# Description: GTK viewer for the spice protocol
+# URL:         https://spice-space.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: meson ninja gtk3 spice-protocol pulseaudio xorg-libpixman gobject-introspection libjpeg-turbo cyrus-sasl python3-pyparsing python3-six gst-plugins-base gst-plugins-good gst-plugins-bad json-glib
+# Optional:    usbredir opus lz4 celt51
+
+name=spice-gtk
+version=0.38
+release=1
+# no need to fill in $name $version as this shitty link changes with every update <3
+source=(https://gitlab.freedesktop.org/spice/spice-gtk/uploads/d09bd4bfb9619e9720c92622c2220b7e/spice-gtk-0.38.tar.xz)
+
+build() {
+  meson $name-$version build \
+    --prefix=/usr \
+    -Dgtk=enabled \
+    -Dgtk_doc=disabled
+  ninja -C build
+  DESTDIR=$PKG meson install -C build
+
+  rm -rf $PKG/usr/{lib/gtk-doc/,lib/systemd,lib/locale,share/locale}
+}

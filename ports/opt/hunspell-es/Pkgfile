@@ -1,0 +1,42 @@
+# Description:	Hunspell dictionary for Spanish
+# URL:		https://github.com/sbosio/rla-es/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	hunspell zip unzip
+
+name=hunspell-es
+version=2.5
+release=1
+source=(https://github.com/sbosio/rla-es/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd rla-es-$version
+
+	# Generate .oxt files
+	dicts="$(for i in $(find . -type d -name l10n); do ls $i; done |grep ^es_ |sort |uniq)"
+	cd $SRC/rla-es-$version/ortograf/herramientas
+	for dict in $dicts; do
+		./make_dict.sh -c -l=$dict
+	done
+
+	# Install .aff and .dic files
+	mkdir -p $PKG/usr/share/hunspell
+	for i in *.oxt; do 
+		unzip -q -n $i '*.dic' '*.aff' -d $PKG/usr/share/hunspell
+	done
+
+	# Replace duplicate files with symbolic links
+	cd $PKG/usr/share/hunspell
+	(md5sum * | sort | uniq --repeated -w 32 --all-repeated=separate; echo) | \
+	while read sum name; do
+		if [ -n "$name" ]; then
+			[ -z "$dups" ] && declare -A dups
+			dups[${#dups[*]}]=$name
+		else
+			for name in ${dups[@]}; do
+				[ $name != ${dups[0]} ] && ln -s -f ${dups[0]} $name
+			done
+			unset dups
+		fi
+	done
+
+}

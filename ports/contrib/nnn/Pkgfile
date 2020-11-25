@@ -1,0 +1,46 @@
+# Description: Tiny, lightning fast, feature-packed file manager
+# URL: https://github.com/jarun/nnn
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: ncurses readline
+# Optional: patool mediainfo icons-in-terminal
+
+name=nnn
+version=3.5
+release=1
+source=(https://github.com/jarun/nnn/releases/download/v$version/$name-v$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  sed -i 's/install: all/install:/' Makefile
+
+  # build with icons support if contrib/icons-in-terminal is installed
+  [[ -e /usr/share/icons-in-terminal ]] && PKGMK_NNN=' O_ICONS=1'
+
+  make $PKGMK_NNN
+  make DESTDIR=$PKG PREFIX=/usr install
+
+  mkdir $PKG/usr/share/nnn
+  # install provided scripts and plugins to $PKG/usr/share
+  pushd misc
+  for i in $(find . -type d | xargs) ; do
+    cp -r $i $PKG/usr/share/nnn;
+  done
+  popd
+  mv plugins $PKG/usr/share/nnn
+
+  # install auto-completion files if the ports for it are installed
+  if [ -e /usr/share/zsh ]; then
+    install -Dm644 $PKG/usr/share/nnn/zsh/_nnn \
+      $PKG/usr/share/zsh/site-functions/_nnn
+  fi
+  if [ -e /usr/lib/pkgconfig/bash-completion.pc ]; then
+    install -Dm644 $PKG/usr/share/nnn/bash/nnn-completion.bash \
+      $PKG/usr/share/bash-completion/completions/nnn
+  fi
+  # fish is not in core/opt/contrib, but the script get's installed to
+
+  find $PKG \(\
+    -iname '*README.md*' -o \
+    -iname '*contributing*' \) -delete
+}

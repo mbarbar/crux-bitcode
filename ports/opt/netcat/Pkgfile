@@ -1,0 +1,21 @@
+# Description: Read and write data across network connections
+# URL: http://netcat.sourceforge.net
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot guru
+# Depends on:
+
+name=netcat
+version=0.7.1
+release=3
+
+source=(http://download.sourceforge.net/netcat/netcat-0.7.1.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+                    --mandir=/usr/share/man
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/{share/locale,info}
+}

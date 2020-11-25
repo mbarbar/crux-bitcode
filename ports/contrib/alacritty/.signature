@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+4h1suyApD9cd3RHNe1I7StDI9dqSdr6fo4kqsnGyTYGVn47bW1qhfK5gVhWklmZxOHlavZFOadZiu1q8489gU=
+SHA256 (Pkgfile) = 804ee2d9b10b562ce771427318c3626fb56569a7b4d7a07005ff78d153cf328c
+SHA256 (.footprint) = 8e3755b0080c73bbd3a39dcd7b932053af4f6fdd00683270a6d1f8bd6da998a3
+SHA256 (alacritty-0.5.0.tar.gz) = 9bc0e6ff9a0772ea522d7e34ab8371faa96e6cc4e588459966585f0dbb848dcb

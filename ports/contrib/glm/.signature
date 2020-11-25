@@ -1,0 +1,9 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33EI1SLBgusrl7ip8qu78tvN7o7ZN7vxvmWFI6iNuPXM4TxQq7tPk1O7eMvxDuOeSBC2iRbUzIFr5yK0duEjswQ=
+SHA256 (Pkgfile) = 4583ca122936aa3cf3a4e1d0cb6d4d97592fc4002f4705e3a30d6795833bfa47
+SHA256 (.footprint) = f9dd28d03902ea52207bddfb224de960a8d7a51701af9d4ef6ca31f13c5ff829
+SHA256 (glm-0.9.9.8.tar.gz) = 7d508ab72cb5d43227a3711420f06ff99b0a0cb63ee2f93631b162bfe1fe9592
+SHA256 (glm.pc.in) = 2dde573981460aa9c516cd45db8c3fd4b3b86e89bbaecba22e34a1179d33d821
+SHA256 (glmConfig.cmake.in) = 96cfaaade71da56ee7b0866dc1c702d23d3051a66a73936252d640e0e927fd59
+SHA256 (glmConfigVersion.cmake.in) = faccd8476fa930e628153e9928eddcb647137d4bb339d3944c0145e950079723
+SHA256 (glmTargets.cmake) = 8857079960df183cc70bf81e836dd971c671e6cc03d415565400ffff139b8f99

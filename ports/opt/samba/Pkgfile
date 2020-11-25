@@ -1,0 +1,45 @@
+# Description: SMB server and client for unix
+# URL:         https://www.samba.org
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  linux-pam libarchive libcap dbus popt tdb tevent ldb python3 gnutls p5-parse-yapp
+
+name=samba
+version=4.13.2
+release=1
+source=(https://www.samba.org/samba/ftp/stable/$name-$version.tar.gz \
+        samba)
+
+build () {
+    cd $name-$version
+
+    ./configure --enable-fhs \
+                --prefix=/usr \
+                --libexecdir=/usr/lib \
+                --localstatedir=/var \
+                --sysconfdir=/etc \
+                --with-privatedir=/etc/samba/private \
+                --bundled-libraries=!tdb,!talloc,!tevent,!popt,!ldb \
+                --without-{ad-dc,ads,ldap} \
+                --without-json
+
+    python3 ./buildtools/bin/waf build --jobs=${JOBS:-1}
+    python3 ./buildtools/bin/waf install --destdir=$PKG
+
+    # man pages
+    local p
+    for p in docs/manpages/*; do 
+        install -D -m 644 $p $PKG/usr/share/man/man${p##*.}/${p##*/}
+    done
+
+    # cleanup
+    chmod 1777 $PKG/var/lock
+
+    # config-file and start-script
+    install -d $PKG/etc/{samba,rc.d}
+    install -m 0600 examples/smb.conf.default $PKG/etc/samba
+    install -m 0755 $SRC/samba $PKG/etc/rc.d
+
+    # revdep
+    install -d $PKG/etc/revdep.d
+    echo '/usr/lib/samba' > $PKG/etc/revdep.d/samba
+}

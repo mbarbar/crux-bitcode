@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32H/BeRAyma0y9lIkA25ezyqZ7AVwFgLjxwlZ/U5rLeHLdLlAuDzWQd0yZpR69kXULfHqnE0ap8PJW9zalda2QA=
+SHA256 (Pkgfile) = eac9947babea33dbf01db4263c6ebde6225077d2ff238e39c539bc3e8b30b15f
+SHA256 (.footprint) = 1bbd0ec030af992e2df13a81b48bde1e5b0d6efeed5aaacbdbc01f6228b17d8c
+SHA256 (gpgme-1.15.0.tar.bz2) = 0b472bc12c7d455906c8a539ec56da0a6480ef1c3a87aa5b74d7125df68d0e5b

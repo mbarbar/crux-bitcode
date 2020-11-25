@@ -1,0 +1,6 @@
+#!/bin/sh
+
+getent group bitlbee || /usr/sbin/groupadd bitlbee
+getent passwd bitlbee || /usr/sbin/useradd -g bitlbee -d /etc/bitlbee -s /bin/false bitlbee
+/usr/bin/passwd -l bitlbee
+

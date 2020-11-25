@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Tf+5tog3wI70TbIC3n4CSniLSWicRlBh7gjzRQMCdL+AFPwRvQRdnLW5vokRFlANktTCXk6igZYkQAs/BzX8A0=
+SHA256 (Pkgfile) = cc5d24bc6f8615856595c233c27cf5fa490c10b3b9d28d226b61f7f337ffdee0
+SHA256 (.footprint) = 186632ae744c3ab515eebecf07214e684889dd70e84c3aa168cf0ee277aeb5d2
+SHA256 (mariadb-10.5.8.tar.gz) = eb4824f6f2c532cd3fc6a6bce7bf78ea7c6b949f8bdd07656b2c84344e757be8
+SHA256 (mariadb.rc) = 737fe0eaad407e2b078ba21c1e4082dc4361da10354939ed4f6da651a76a8c1f
+SHA256 (mariadb.pam) = 962b53d37719ed4798643a8fe3557454d23f74c2b14f1dfc1c1c67d361cab891
+SHA256 (pre-install) = 62040c17eeb3da88172d49240633c871a93c3c642ad7f61911ce2e83d8414d1c

@@ -1,0 +1,52 @@
+# Description:	Hunspell dictionary for English
+# URL:		http://wordlist.sourceforge.net/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	hunspell
+
+name=hunspell-en
+version=2019.10.06
+release=1
+source=(
+http://downloads.sourceforge.net/wordlist/speller/$version/hunspell-en_AU-$version.zip
+http://downloads.sourceforge.net/wordlist/speller/$version/hunspell-en_US-$version.zip
+http://downloads.sourceforge.net/wordlist/speller/$version/hunspell-en_CA-$version.zip
+http://downloads.sourceforge.net/wordlist/speller/$version/hunspell-en_GB-ise-$version.zip
+)
+
+build() {
+	declare -A missing
+	missing[en_GB]="en_AG en_BS en_BW en_BZ en_DK en_GH en_HK en_IE en_IN en_JM en_NA en_NG en_NZ en_SG en_TT en_ZA en_ZW"
+	missing[en_US]="en_PH"
+
+	mkdir -p $PKG/usr/share/hunspell
+
+	cp $SRC/*.aff $SRC/*.dic $PKG/usr/share/hunspell/
+	mv $PKG/usr/share/hunspell/{en_GB-ise.aff,en_GB.aff}
+	mv $PKG/usr/share/hunspell/{en_GB-ise.dic,en_GB.dic}
+
+	# Replace duplicate files with symbolic links
+	pushd $PKG/usr/share/hunspell
+	(md5sum * | sort | uniq --repeated -w 32 --all-repeated=separate; echo) | \
+	while read sum name; do
+		if [ -n "$name" ]; then
+			[ -z "$dups" ] && declare -A dups
+			dups[${#dups[*]}]=$name
+		else
+			for name in ${dups[@]}; do
+				[ $name != ${dups[0]} ] && ln -s -f ${dups[0]} $name
+			done
+			unset dups
+		fi
+	done
+	popd
+
+	# Create symbolic links for missing dictionaries
+	pushd $PKG/usr/share/hunspell
+	for lang in ${!missing[@]}; do
+		for new in ${missing[$lang]}; do
+			ln -s $lang.aff $new.aff
+			ln -s $lang.dic $new.dic
+		done
+	done
+	popd
+}

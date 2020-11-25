@@ -1,0 +1,15 @@
+# Description: Winetricks is an easy way to work around problems in Wine
+# URL: https://github.com/Winetricks/winetricks/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cabextract unzip wine xmessage
+# Optional: zenity
+
+name=winetricks
+version=20200412
+release=1
+source=(https://github.com/Winetricks/winetricks/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  make DESTDIR=$PKG install
+}

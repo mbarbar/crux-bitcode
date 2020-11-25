@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wIrjFJ7qQMLZFK4YzUJnXFoH8powZvZU3VX3UNl4ECDs/XXtpBO0JoAgvBgqfegiBGzRqSad9dO7+sM5xUxtQY=
+SHA256 (Pkgfile) = 201ca124bbf9ddb1511e14c9b2828c91c8527586cb467fe4d0ab9d70efddc400
+SHA256 (.footprint) = 2f1f895149aacb40deebca6b1a9ffa4b6a96136b1f8e7f8c2090a6e45b152a68
+SHA256 (Module-Install-1.19.tar.gz) = 1a53a78ddf3ab9e3c03fc5e354b436319a944cba4281baf0b904fa932a13011b

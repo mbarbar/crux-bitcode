@@ -1,0 +1,28 @@
+# Description: Utilities to control and monitor S.M.A.R.T. hard drives
+# URL:         http://smartmontools.sourceforge.net/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=smartmontools
+version=7.1
+release=1
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz \
+        smartd)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --with-initscriptdir=/etc/rc.d \
+                --localstatedir=/var \
+                --with-savestates \
+                --with-attributelog
+
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/var/lib/smartmontools
+    install -m 755 $SRC/smartd $PKG/etc/rc.d
+
+    rm -r $PKG/usr/share/doc
+}

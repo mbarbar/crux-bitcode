@@ -1,0 +1,17 @@
+diff --git a/xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/VaapiEGL.h b/xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/VaapiEGL.h
+index b24f1ca77d..11011187c1 100644
+--- a/xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/VaapiEGL.h
++++ b/xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/VaapiEGL.h
+@@ -12,11 +12,10 @@
+ 
+ #if defined(HAS_GL)
+ #include <GL/gl.h>
+-#elif defined(HAS_GLES)
++#endif
+ #include <GLES2/gl2.h>
+ #include <GLES2/gl2ext.h>
+ #include <GLES3/gl3.h>
+-#endif
+ 
+ #include <EGL/egl.h>
+ #include <EGL/eglext.h>

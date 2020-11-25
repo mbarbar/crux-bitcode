@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/WYx7Wy5eFYeg5if+x3Wi0GdHDWT686adatzh/qhtVoEyvdGPWtBH6qtMEO+Sqg0EVI8zQrs8gsVL29z5KnJJwY=
+SHA256 (Pkgfile) = 81794578feb435f513bb0532a31897616683159186272a4bccc734a283052a4b
+SHA256 (.footprint) = e1335decfdd21ae8e30774428d8204670a85e0b73d1506ad8ede2c8aeb585ab5
+SHA256 (exfat-1.3.0.tar.gz) = 689bcb4a639acd2d45e6fa0ff455f7f18edb2421d4f4f42909943775adc0e375

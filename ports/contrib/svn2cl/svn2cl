@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/share/svn2cl/svn2cl.sh $@
+
+# End of file

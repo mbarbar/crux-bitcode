@@ -1,0 +1,15 @@
+# Description: An enhanced version of the BSD tftp client/server
+# URL: http://freshmeat.net/projects/tftp-hpa/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=tftp-hpa
+version=5.2
+release=2
+source=(http://www.kernel.org/pub/software/network/tftp/tftp-hpa/$name-$version.tar.xz)
+
+build () {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make INSTALLROOT=$PKG install
+}

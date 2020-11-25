@@ -1,0 +1,26 @@
+# Description: Show a scrolling 'Matrix' like screen in Linux.
+# URL:         https://www.asty.org/cmatrix/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Vincenzo Colosimo vico at bicisport dot de
+# Depends on:  cmake
+
+name=cmatrix
+version=2.0
+release=1
+source=(https://github.com/abishekvashok/cmatrix/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_CMATRIX+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_CMATRIX \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+
+  install -D -m644 -groot -oroot $name-$version/cmatrix.1 $PKG/usr/share/man/1/cmatrix.1
+  install -D -m644 -groot -oroot $name-$version/matrix.fnt $PKG/usr/share/kbd/consolefonts/matrix.fnt
+  install -D -m644 -groot -oroot $name-$version/matrix.psf.gz $PKG/usr/share/kbd/consolefonts/matrix.psf.gz
+  install -D -m644 -groot -oroot $name-$version/mtx.pcf $PKG/usr/share/fonts/X11/misc/mtx.pcf
+}

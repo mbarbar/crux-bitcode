@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x7gjntEjCyCKY0dRKREkEugQ9NcaAU4udOUcOPEQuHu58D8wIJR8lbpzFrnD0m3UUfyRZ8J4P0kBF1w1DR/AgU=
+SHA256 (Pkgfile) = ff4111f13d45c6c82605e332cc4309c0ab8f96c2caba6d03996e3dbfa2ca1c3a
+SHA256 (.footprint) = fb716bc1a9c813625cdbd861bcd48925823bc73549cd2f81915e1c485f3c16ee
+SHA256 (youtube-dl-2020.11.21.1.tar.gz) = d4b173bb1113bc1641cf130d088976bb8d1484f6bd5937872c1f89b1e28e3429

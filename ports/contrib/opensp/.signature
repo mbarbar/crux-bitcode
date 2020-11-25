@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y8eNNlNVwGKrfTiBz5IS1uHKgs4OVLOxiWkTOcSGVBcIN8c/MK/v3ox4+NTgG1qAYaDrqSUXzbwc3a8gEnwnAc=
+SHA256 (Pkgfile) = 44cdf082280bf2036fbeaa15f69652e1ad4c40c5e25b583f2611793da6c05cb7
+SHA256 (.footprint) = e17afe2016f5a97aaad58a8f846cdc91636e1d98c4021112f2a43966db6128f1
+SHA256 (OpenSP-1.5.2.tar.gz) = 57f4898498a368918b0d49c826aa434bb5b703d2c3b169beb348016ab25617ce

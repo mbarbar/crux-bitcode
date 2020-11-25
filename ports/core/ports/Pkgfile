@@ -1,0 +1,29 @@
+# Description: CRUX ports system tools
+# URL:         http://crux.nu
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=ports
+version=1.6
+release=1
+
+source=(http://crux.nu/files/tools/ports/$name-$version.tar.gz \
+        core.pub opt.pub xorg.pub compat-32.pub contrib.pub \
+        core.rsync opt.rsync xorg.rsync \
+        compat-32.rsync.inactive contrib.rsync.inactive)
+
+build () {
+    cd $name-$version
+    make
+    make DESTDIR=$PKG MANDIR=/usr/share/man install
+
+    install -m 0644 $SRC/core.rsync $PKG/etc/ports
+    install -m 0644 $SRC/opt.rsync $PKG/etc/ports
+    install -m 0644 $SRC/xorg.rsync $PKG/etc/ports
+    install -m 0644 $SRC/compat-32.rsync.inactive $PKG/etc/ports
+    install -m 0644 $SRC/contrib.rsync.inactive $PKG/etc/ports
+    install -m 0644 $SRC/core.pub $PKG/etc/ports
+    install -m 0644 $SRC/opt.pub $PKG/etc/ports
+    install -m 0644 $SRC/xorg.pub $PKG/etc/ports
+    install -m 0644 $SRC/compat-32.pub $PKG/etc/ports
+    install -m 0644 $SRC/contrib.pub $PKG/etc/ports
+}

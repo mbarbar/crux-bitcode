@@ -1,0 +1,27 @@
+# Description: An effort to make Nvidia Optimus laptops work in GNU/Linux
+# URL: https://bumblebee-project.org/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: libbsd xorg-libx11 glib bbswitch
+
+name=bumblebee
+version=3.2.1
+release=1
+source=(http://bumblebee-project.org/$name-$version.tar.gz \
+	libglvnd.patch blacklist.conf bumblebeed.rc)
+
+build() {
+	cd $name-$version
+	patch -p1 -i $SRC/libglvnd.patch
+	./configure \
+		CONF_DRIVER_MODULE_NVIDIA=nvidia \
+		CONF_LDPATH_NVIDIA=/usr/lib/nvidia:/usr/lib32/nvidia:/usr/lib:/usr/lib32 \
+		CONF_MODPATH_NVIDIA=/usr/lib/nvidia/xorg,/usr/lib/xorg/modules \
+		--prefix=/usr \
+		--sysconfdir=/etc
+	make
+	make DESTDIR=$PKG install
+	rm -r $PKG/usr/share/doc
+	mv $PKG/etc/bash_completion.d/{bumblebee,optirun}
+	install -D -m 0644 $SRC/blacklist.conf $PKG/etc/modprobe.d/bumblebee.conf
+	install -D -m 0755 $SRC/bumblebeed.rc $PKG/etc/rc.d/bumblebeed
+}

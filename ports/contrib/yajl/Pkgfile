@@ -1,0 +1,21 @@
+# Description: Yet Another JSON Library
+# URL: http://lloyd.github.com/yajl/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake
+
+name=yajl
+version=2.1.0
+release=1
+source=(https://github.com/lloyd/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_YAJL+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_YAJL \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

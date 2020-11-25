@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33q3sIpW09/FQQYWaZl4QtqDN7e0MzYDuRARzK0/rlLYBo+s8/CbdwZ8ylr/G3tVWoDgxZUh2oz5y8ApZ7Yf2gM=
+SHA256 (Pkgfile) = aa99c27e28c0ad2c20d7158ffa187ebbbc341895f30cb4f8cae404241cfb3f22
+SHA256 (.footprint) = e81f1bc1c02d57e0ec5428abaaa2c4952d8ecc4a2264e5086309b1fcf8625d90
+SHA256 (libdvdcss-1.4.2.tar.bz2) = 78c2ed77ec9c0d8fbed7bf7d3abc82068b8864be494cfad165821377ff3f2575

@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/aspell-0.60/
+-rw-r--r--	root/root	usr/lib/aspell-0.60/ro-classic-only.rws
+-rw-r--r--	root/root	usr/lib/aspell-0.60/ro-classic.multi
+-rw-r--r--	root/root	usr/lib/aspell-0.60/ro-common.rws
+-rw-r--r--	root/root	usr/lib/aspell-0.60/ro-only.rws
+-rw-r--r--	root/root	usr/lib/aspell-0.60/ro.dat
+-rw-r--r--	root/root	usr/lib/aspell-0.60/ro.multi
+-rw-r--r--	root/root	usr/lib/aspell-0.60/romanian-classic.alias
+-rw-r--r--	root/root	usr/lib/aspell-0.60/romanian.alias

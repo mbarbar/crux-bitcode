@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/pmd2raw
+-rwxr-xr-x	root/root	usr/bin/pmd2svg
+-rwxr-xr-x	root/root	usr/bin/pmd2text
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libpagemaker-0.0/
+drwxr-xr-x	root/root	usr/include/libpagemaker-0.0/libpagemaker/
+-rw-r--r--	root/root	usr/include/libpagemaker-0.0/libpagemaker/PMDocument.h
+-rw-r--r--	root/root	usr/include/libpagemaker-0.0/libpagemaker/libpagemaker.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libpagemaker-0.0.la
+lrwxrwxrwx	root/root	usr/lib/libpagemaker-0.0.so -> libpagemaker-0.0.so.0.0.4
+lrwxrwxrwx	root/root	usr/lib/libpagemaker-0.0.so.0 -> libpagemaker-0.0.so.0.0.4
+-rwxr-xr-x	root/root	usr/lib/libpagemaker-0.0.so.0.0.4
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libpagemaker-0.0.pc

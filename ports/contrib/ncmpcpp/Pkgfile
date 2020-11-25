@@ -1,0 +1,28 @@
+# Description: An almost exact clone of ncmpc with some new features
+# URL: https://rybczak.net/ncmpcpp/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: boost libmpdclient
+# Optional: mpd fftw taglib
+
+name=ncmpcpp
+version=0.8.2
+release=2
+source=(https://github.com/ncmpcpp/ncmpcpp/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  [[ -e /usr/lib/pkgconfig/fftw3.pc ]] && PKGMK_NCMPCPP+=' --with-fftw --enable-visualizer'
+  [[ -e /usr/lib/pkgconfig/taglib.pc ]] && PKGMK_NCMPCPP+=' --with-taglib'
+  ./autogen.sh
+  ./configure $PKGMK_NCMPCPP \
+    --prefix=/usr \
+    --enable-shared='yes' \
+    --enable-static='no' \
+    --enable-fast-install='yes' \
+    --enable-clock \
+    --enable-outputs
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share
+}

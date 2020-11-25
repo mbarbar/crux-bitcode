@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36v7cOzKHf0ZQaR8gE4oCQPKU6IUBwfIZ1OJn17T/VcXNCroih0fsF36DLkxRxlWzTaUtl5ZRfueKIHx30DoFgA=
+SHA256 (Pkgfile) = 7229d59368cac4b17bc141593d1dc8831699af264cd197da17397dc2287efcb5
+SHA256 (.footprint) = aca7078a5d5c2c3b0dd8fea94d5bb3bd6f8b8614ec91a4a8a847372af4b1192c
+SHA256 (cpufrequtils-008.tar.xz) = a2149db551f83112209b1a8e79bd50d386979bbf64edbc69126f4e0b4f0a4cab
