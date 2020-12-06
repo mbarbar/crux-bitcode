@@ -1,0 +1,114 @@
+#!/usr/bin/python3
+
+import os
+import subprocess
+import sys
+
+# Commands we may use.
+PRT = "prt-get"
+GETBC = "get-bc"
+DIS = "llvm-dis"
+PKGINFO = "pkginfo"
+
+BC_DIR = ""
+try:
+    BC_DIR = os.environ["BC_DIR"]
+except:
+    print("BC_DIR environment variable not set!")
+    sys.exit(3)
+
+try:
+    os.mkdir(BC_DIR)
+except FileExistsError:
+    pass
+except Exception as e:
+    print("Could not make $BC_DIR: {}".format(e))
+
+PKGS_FILE = ""
+try:
+    PKGS_FILE = os.environ["PKGS_FILE"]
+except:
+    print("PKGS_FILE environment variable not set!")
+    sys.exit(3)
+
+PKGMK_CONF = "/etc/pkgmk.conf"
+
+# First four bytes of ELF files.
+ELF_MAGIC = bytes.fromhex("7F454c46")
+
+pkgs = []
+deps = set()
+
+# Set CFLAGS and CXXFLAGS from pkgmk.conf. Some ports don't respect pkgmk.conf's.
+try:
+    with open(PKGMK_CONF, "r") as f:
+        for l in f.readlines():
+            l = l.strip()
+            if len(l) >= 6 and l[:6] == "CFLAGS":
+                parts = l.split("=")
+                if len(parts) > 1:
+                    os.environ["CFLAGS"] = "".join(parts[1:])
+                    print("Exported CFLAGS")
+            if len(l) >= 8 and l[:8] == "CXXFLAGS":
+                parts = l.split("=")
+                if len(parts) > 1:
+                    os.environ["CXXFLAGS"] = "".join(parts[1:])
+                    print("Exported CXXFLAGS")
+except:
+    print("Did not export CFLAGS/CXXFLAGS")
+    pass
+
+try:
+    pkgs_f = open(PKGS_FILE, "r")
+except Exception as e:
+    print("Could not open packages file: {}".format(e))
+    sys.exit(1)
+else:
+    with pkgs_f:
+        for pkg in pkgs_f:
+            pkg = pkg.strip()
+
+            # Check the package exists.
+            if subprocess.run([PRT, "info", pkg], stdout=subprocess.DEVNULL).returncode != 0:
+                print("Bad package name: {}".format(pkg))
+                sys.exit(2)
+
+            # We want the bitcode of pkg.
+            pkgs.append(pkg)
+
+            pkg_deps = subprocess.run([PRT, "depends", pkg], capture_output=True)
+            # Skip the first line because it is some output info for the user.
+            for dep in pkg_deps.stdout.strip().split(b"\n")[1:]:
+                deps.add(dep.split()[1])
+
+for pkg in pkgs:
+    # Build + install the package.
+
+    # If it's already installed, we update, otherwise, depinst.
+    command = "update"
+    if subprocess.run([PRT, "isinst", pkg]).returncode != 0:
+        command = "depinst"
+
+    if subprocess.run([PRT, "-kw", "-fr", command, pkg]).returncode != 0:
+        print("Failed to build {}!".format(pkg))
+        sys.exit(4)
+
+    # Grab bitcode from binaries. We're looking for ELF files.
+    footprint = subprocess.run([PKGINFO, "-l", pkg], capture_output=True)
+    for installed_file in footprint.stdout.strip().split(b"\n"):
+        # These files are relative to the package; make them relative to root.
+        installed_file = "/" + installed_file.decode("utf-8")
+
+        # Don't need directories, obviously.
+        if os.path.isdir(installed_file):
+            continue
+
+        with open(installed_file, "rb") as f:
+            if f.read()[:4] == ELF_MAGIC:
+                get = subprocess.run([GETBC, "-o",
+                                      BC_DIR + "/" + os.path.basename(installed_file) + ".bc",
+                                      installed_file],
+                                     capture_output=True)
+                if get.returncode != 0:
+                    print("Failed to get BC for {}: {}".format(installed_file, get.stdout))
+                    sys.exit(5)
