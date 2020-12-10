@@ -16,7 +16,6 @@ build() {
 
 	mkdir obj ; cd obj
 
-	export CC=gcc CXX=g++
 	export LLVM_OBJDUMP=/bin/false
 
 	../js/src/configure \

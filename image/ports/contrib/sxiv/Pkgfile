@@ -15,6 +15,6 @@ build () {
 		cp $SRC/config.h .
 	fi
 
-	make CC=gcc CFLAGS="$CFLAGS"
+	make CFLAGS="$CFLAGS"
 	make DESTDIR=$PKG PREFIX=/usr install
 }

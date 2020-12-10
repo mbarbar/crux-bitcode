@@ -10,9 +10,6 @@ source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/
   llvm-config.h)
 
 build() {
-  export CC=gcc
-  export CXX=g++
-
   cmake -S $name-$version.src -B build -G Ninja \
     -DLLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}" \
     -DLLVM_INCLUDE_EXAMPLES=0 \
