@@ -9,6 +9,7 @@ PRT = "prt-get"
 GETBC = "get-bc"
 DIS = "llvm-dis"
 PKGINFO = "pkginfo"
+LOC = "loc"
 
 BC_DIR = ""
 try:
@@ -16,6 +17,9 @@ try:
 except:
     print("BC_DIR environment variable not set!")
     sys.exit(3)
+
+# Bitcode info file.
+BC_INFO = BC_DIR + "/info.txt"
 
 try:
     os.mkdir(BC_DIR)
@@ -104,11 +108,30 @@ for pkg in pkgs:
             continue
 
         with open(installed_file, "rb") as f:
+            bc_basename_path = BC_DIR + "/" + os.path.basename(installed_file)
             if f.read()[:4] == ELF_MAGIC:
-                get = subprocess.run([GETBC, "-o",
-                                      BC_DIR + "/" + os.path.basename(installed_file) + ".bc",
+                get = subprocess.run([GETBC, "-o", bc_basename_path + ".bc",
                                       installed_file],
                                      capture_output=True)
                 if get.returncode != 0:
                     print("Failed to get BC for {}: {}".format(installed_file, get.stdout))
                     sys.exit(5)
+
+                # Grab .ll (for loc).
+                if subprocess.run([DIS, bc_basename_path + ".bc"]).returncode != 0:
+                    print("Failed to get disassemble {}".format(bc_basename_path + ".bc"))
+                    sys.exit(6)
+
+                # Run the loc script and delete the .ll.
+                loc = subprocess.run([LOC, bc_basename_path + ".ll"], capture_output=True)
+                os.remove(bc_basename_path + ".ll")
+
+                loc = loc.stdout.strip().decode("ascii")
+                try:
+                    bc_info = open(BC_INFO, "a")
+                except Exception as e:
+                    print("Could not open bitcode info file file: {}".format(e))
+                else:
+                    with bc_info:
+                        bc_info.write(os.path.basename(bc_basename_path)\
+                                      + ".bc\t\t\t" + loc + "\n")
