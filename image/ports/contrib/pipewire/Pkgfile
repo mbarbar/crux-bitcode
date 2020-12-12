@@ -4,7 +4,7 @@
 # Depends on: alsa-lib dbus fdk-aac ffmpeg glib gnutls lame libva libvpx libwebp x264 x265
 
 name=pipewire
-version=0.3.16
+version=0.3.17
 release=1
 source=(https://github.com/PipeWire/pipewire/archive/$version/$name-$version.tar.gz)
 

@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF38mBkxnSRNms2UfuGNfsouLbPzT7B7kPcT/3J+Bdky2H/C1g4O6eS6UD4EWnS8mXp8pn/c7q91oBDxzd5UP6Mwc=
-SHA256 (Pkgfile) = 0070ef910cfeaff02468621460e7c8814a91a0b4d4821d44124a264c67b78c8f
+RWSagIOpLGJF3xZP+sSaHN3i+/n515CW28yDlgse1XKlbex/T7BbU3sJXNXQYgqRbTCv6fPDcrvMQBNO/iToTahSPr45lFyQwAg=
+SHA256 (Pkgfile) = 74d90947ff067fc0a331bbbada8725ed58cf4eb14ea88ef65d80726d04fccef5
 SHA256 (.footprint) = 07474b487f0cefadeb11340667c106af2ef76ecff104ffc38691f945c1d9ec66
 SHA256 (clementine-1.4.0rc1-269.tar.gz) = bc33ee5309efff530fc66b48275b137bd9b2701cff74ba93a9aa6d8770e6f410
 SHA256 (clementine-gcc6.patch) = 05bd4dc0138eed084332fa1a688a96858418731f337f54e0d8ab0853123f40ee

@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3yUWxBYsuf8xNBILmYL4gyJ38lzoLy0o9Kd7OLQLVwcDYreHicgxsv+9PFX04vvv/SbqQ9urkSZa3nb2TVt1yA4=
-SHA256 (Pkgfile) = 8871cdb403efff0bb979a753a9aa454f281d2f3b67bce86fee7898d7a8cd29f7
+RWSagIOpLGJF30KXMJ6rSwXSFnYILugoceqGqCY2S4Cr6w4a1XHHUSqMku2Y8vapGNCKDwXJizLD5ss3bCHDT0fyvm3gzaTp+QE=
+SHA256 (Pkgfile) = e264994d8cfd19aba9b14f26049ef10511f9daf9ac4b1daaf567db118b83257a
 SHA256 (.footprint) = 78fd6ca14fa5000a0d6a003f7f07324f0d754f80ab6cfe17038fec651fc42f82
-SHA256 (Image-ExifTool-12.10.tar.gz) = da611df6b25e5f7750ebe34c6b565bb7a4027c4ca209f9de723555f9dc204976
+SHA256 (Image-ExifTool-12.12.tar.gz) = 4a6536c69c86a0c87b8eed355938ba3eb903324d2f3aea5e6e87d91172b8ecc8

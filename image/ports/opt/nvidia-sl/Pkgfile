@@ -1,12 +1,12 @@
 # Description: NVIDIA Linux Display Driver (short lived branch)
-# URL: http://www.nvidia.com/
+# URL: https://www.nvidia.com/
 # Maintainer: Matt Housh, jaeger at crux dot ninja
 # Depends on: gtk gtk3 libglvnd
 
 name=nvidia-sl
 version=455.45.01
-release=1
-source=(http://us.download.nvidia.com/XFree86/Linux-x86_64/$version/NVIDIA-Linux-x86_64-$version.run \
+release=2
+source=(https://us.download.nvidia.com/XFree86/Linux-x86_64/$version/NVIDIA-Linux-x86_64-$version.run \
 	90-nvidia-uvm.rules 10-nvidia-drm-outputclass.conf)
 
 build() {
@@ -85,6 +85,8 @@ build() {
 
 	# monitoring and management API library
 	install -m 0755 libnvidia-ml.so.$version $PKG/usr/lib/
+	ln -s libnvidia-ml.so.$version $PKG/usr/lib/libnvidia-ml.so.1
+	ln -s libnvidia-ml.so.$version $PKG/usr/lib/libnvidia-ml.so
 
 	# applications
 	install -m 4755 nvidia-modprobe $PKG/usr/bin/

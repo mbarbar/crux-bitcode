@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/opt.pub
-RWSE3ohX2g5d/TfuGop364cBn+GIBGtPuqefrmu7Dlqpl9/PCPJHxQoQggQRycr/hO3JYxuk3623q8gzf/JK3h0brxwxU5A8tAQ=
-SHA256 (Pkgfile) = c427d7751e5c95f8850ee2d44a1b8937f2e78a0b0c5220203bc950a6459f8861
+RWSE3ohX2g5d/fERcZq3Tfmeu2vl9JiGtj/Ua6kqpSwHSxYszKnGfYwRFMYx/jPztshb40da/dEp9KRdLRZ8qt4YZ9z/b1doiA8=
+SHA256 (Pkgfile) = d2842f1289aa77a87166419e7279556eea56dc0a693a5f5e572bb9028a161f92
 SHA256 (.footprint) = caf9005cb9de0d6ba0efe5220ab8ef3eba29687acbaf95eb542c4b82df85f03b
-SHA256 (thunderbird-78.5.0.tar.bz2) = 297429aff3f10ab7c2859a37ec351b6b0a478495b8a34e8b492ae3473f052c7f
+SHA256 (thunderbird-78.5.1.tar.bz2) = 4363d8fd759ac4f4783eeb76726c8cf22e5afb3c171f26fe5cca5ab194ab6959
 SHA256 (policies.json) = cf856011307f7831d74cdacb4e80b6dceaa49882b8dcba008d527a78764903f4

@@ -648,7 +648,6 @@ drwxr-xr-x	root/root	usr/lib/wireshark/cmake/
 -rw-r--r--	root/root	usr/lib/wireshark/cmake/WiresharkTargets.cmake
 drwxr-xr-x	root/root	usr/lib/wireshark/extcap/
 -rwxr-xr-x	root/root	usr/lib/wireshark/extcap/androiddump
--rwxr-xr-x	root/root	usr/lib/wireshark/extcap/dpauxmon
 -rwxr-xr-x	root/root	usr/lib/wireshark/extcap/randpktdump
 -rwxr-xr-x	root/root	usr/lib/wireshark/extcap/udpdump
 drwxr-xr-x	root/root	usr/lib/wireshark/plugins/
@@ -724,7 +723,6 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/captype.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/ciscodump.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/dftest.1.gz
--rw-r--r--	root/root	usr/share/man/man1/dpauxmon.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/dumpcap.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/editcap.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/mergecap.1.gz

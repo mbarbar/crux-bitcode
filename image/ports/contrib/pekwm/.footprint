@@ -36,6 +36,15 @@ drwxr-xr-x	root/root	usr/share/pekwm/themes/default/
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/bottom-left_unfocus.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/bottom-right.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/bottom-right_unfocus.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-close.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-close_hover.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-close_press.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-max.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-max_hover.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-max_press.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-min.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-min_hover.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/button-min_press.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/button.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/button_hover.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/button_press.png
@@ -58,5 +67,8 @@ drwxr-xr-x	root/root	usr/share/pekwm/themes/default/
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/top-border_unfocus.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/top-left.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/top-left_unfocus.png
+-rw-r--r--	root/root	usr/share/pekwm/themes/default/top-right-no-buttons.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/top-right.png
 -rw-r--r--	root/root	usr/share/pekwm/themes/default/top-right_unfocus.png
+drwxr-xr-x	root/root	usr/share/pekwm/themes/pion/
+-rw-r--r--	root/root	usr/share/pekwm/themes/pion/theme

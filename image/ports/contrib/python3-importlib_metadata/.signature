@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3zFIP4/PBKobUKvnnk6H6myY+e5wT0vCgZ14urBgpwWxjEWTEF40xG5C6PGPH8t7+TqLyiiq7gwF9P4GWVcNvQ4=
-SHA256 (Pkgfile) = f04a361d4f8ed6a7804e36524ddab09b5e876224fb2945c1c369f0282d775998
-SHA256 (.footprint) = 7c22aeaed7cb6a32541bcd5e22dd364b2c70b1142e925b65550371bd5ed5d302
-SHA256 (importlib_metadata-3.0.0.tar.gz) = d582eb5c35b2f16c78e365e0f89e369f36af38fdaad0146208aa973c693ba247
+RWSagIOpLGJF3zGZjzbRAGzCqhDHRcNeR1Gcx4VIj/1YbZznrjywxee578qUG1OB2O4gdpT+KBf9GIYHnDEiWE9yjeDm2B6iNAA=
+SHA256 (Pkgfile) = 0238fd5864c8bf3700bfee6e1db2838a6ba6f9a6a6b516da4814dd6b6846299b
+SHA256 (.footprint) = f33a1ba721ae801fd648d772f46043b2912536bd163f41fde8a416a73e83c5b7
+SHA256 (importlib_metadata-3.1.0.tar.gz) = d9b8a46a0885337627a6430db287176970fff18ad421becec1d64cfc763c2099

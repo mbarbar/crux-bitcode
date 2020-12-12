@@ -4,12 +4,11 @@
 # Depends on:  python3
 
 name=sqlmap
-version=1.4.11
+version=1.4.12
 release=1
 source=(https://github.com/sqlmapproject/sqlmap/archive/$version/$name-$version.tar.gz)
 
 build() {
-
   find $name-$version -name README\* -delete
 
   install -d $PKG/usr/share $PKG/usr/bin

@@ -5,7 +5,7 @@
 
 name=lua53
 version=5.3.6
-release=1
+release=2
 source=(https://www.lua.org/ftp/lua-$version.tar.gz
 	liblua.so.patch lua.pc)
 
@@ -38,7 +38,7 @@ build() {
 		INSTALL_MAN="$PKG/usr/share/man/man1" \
 		install
 
-	install -m 0644 -D lua.pc $PKG/usr/lib/pkgconfig/lua5.3.pc
+	install -m 0644 -D $SRC/lua.pc $PKG/usr/lib/pkgconfig/lua5.3.pc
 	ln -sf lua53.pc $PKG/usr/lib/pkgconfig/lua5.3.pc
 	ln -sf lua53.pc $PKG/usr/lib/pkgconfig/lua-5.3.pc
 

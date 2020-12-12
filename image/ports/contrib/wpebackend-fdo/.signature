@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF30coAXGS9Vw0xvfT2c1f2AmQw/n4S9nOCUxEuOSfmC4lDYWnA+KCbVZhyylEuZ7z8x0UEBZXUZJBIhjoyorJGQY=
-SHA256 (Pkgfile) = a17e19b9eff835a57cc6684c2508097041243d16b783cabf9c36360871e1a3b6
+RWSagIOpLGJF35GcL9z1AkSABiMjD0ikNdPLiWAd39/efJx0fu6si3wb46y7J2ldBXqU0FX4+jhJaexqhgqynvR4i7fHlCGOQgk=
+SHA256 (Pkgfile) = 0d73f51e6138b71880bd688d12649ecfb6bf495386a3502bfff2256e3dd2b0eb
 SHA256 (.footprint) = f1940f4af0fef2c1a95b9a696daf17c4ca47a636ef452e45e9b44e43743716b1
 SHA256 (wpebackend-fdo-1.8.0.tar.xz) = 9652a99c75fe1c6eab0585b6395f4e104b2427e4d1f42969f1f77df29920d253

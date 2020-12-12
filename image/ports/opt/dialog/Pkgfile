@@ -4,7 +4,7 @@
 # Depends on:  ncurses
 
 name=dialog
-version=1.3-20200327
+version=1.3-20201126
 release=1
 source=(https://invisible-mirror.net/archives/$name/$name-$version.tgz)
 #source=(ftp://ftp.invisible-island.net/$name/$name-$version.tgz)

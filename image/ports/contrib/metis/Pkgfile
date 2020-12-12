@@ -13,8 +13,8 @@ build() {
   cmake -S petsc-pkg-metis-c8d2dc1e751e -B build $PKGMK_METIS \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
     -D SHARED=ON \
     -Wno-dev
   cmake --build build

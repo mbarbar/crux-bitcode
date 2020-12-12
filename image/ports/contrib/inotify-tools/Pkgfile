@@ -4,7 +4,7 @@
 # Packager:    Till Biedermann, tillbiedermann at yahoo dot de
 
 name=inotify-tools
-version=3.20.2.2
+version=3.20.11.0
 release=1
 source=(http://github.com/rvoicilas/inotify-tools/archive/$version/inotify-tools-$version.tar.gz)
 

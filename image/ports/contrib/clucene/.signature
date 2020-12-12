@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF33VGq1m2IRaiToP/vSnymP7fZucs6tq1jZMndyncB8hcGxAdaQSN7O80RCClHIoiRI2OytJXPHvG8AsL6e7lRwo=
-SHA256 (Pkgfile) = ca24d9216bc39b534ed5913155d1ed9ddee91c89c9a57057ea5617ac1229c10d
+RWSagIOpLGJF32YShWD6rWLj/EOArdtePQoAypE47TECPxdq+GTO39iMPBs7s7D6JaGNwBAYMsmZN5AK9qB2DqBbF4HmhCr4Tgg=
+SHA256 (Pkgfile) = 007d2dbe76fbd40631572660ba32e394c0d0b6efbe9e7c4acfe21487509d8fb9
 SHA256 (.footprint) = a90f1fa99e0d767eabd4549e23d941298085272b3cb5e0a93f0f2b267befd22f
 SHA256 (clucene-core-2.3.3.4.tar.gz) = ddfdc433dd8ad31b5c5819cc4404a8d2127472a3b720d3e744e8c51d79732eab
 SHA256 (fix_zlib_detections.diff) = e1a6a58dc344d8d5e3218137a5e7a689900eb6ea4cce1dc426e861706ab78889

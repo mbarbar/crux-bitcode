@@ -4,14 +4,9 @@
 # Depends on:  boost cups harfbuzz-icu hunspell libart_lgpl poppler qt5
 
 name=scribus
-version=1.5.5
+version=1.5.6.1
 release=1
 source=(https://downloads.sourceforge.net/$name/$name-$version.tar.xz
-  https://github.com/scribusproject/scribus/commit/6db15ec1.patch
-  https://github.com/scribusproject/scribus/commit/b51c2bab.patch
-  https://github.com/scribusproject/scribus/commit/37425599.patch
-  https://github.com/scribusproject/scribus/commit/17d6a983.patch
-  scribus-boost-1.71.patch scribus-poppler-0.86.patch
   https://poppler.freedesktop.org/poppler-0.90.0.tar.xz)
 
 # snatched from contrib/inkscape, thx romster :>
@@ -20,8 +15,8 @@ poppler() {
     -D CMAKE_INSTALL_PREFIX=$SRC/poppler \
     -D CMAKE_INSTALL_LIBDIR=$SRC/poppler/lib \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
     -D ENABLE_UNSTABLE_API_ABI_HEADERS=ON \
     -D ENABLE_UTILS=ON \
     -D ENABLE_SPLASH=ON \
@@ -49,13 +44,6 @@ build() {
   # scribus is using the internal poppler api which
   # is known to break every other release
   [ ! -e '/usr/lib/libpoppler.so.101' ] && poppler
-  # https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/scribus
-  patch -p1 -d $name-$version -i $SRC/6db15ec1.patch
-  patch -p1 -d $name-$version -i $SRC/b51c2bab.patch
-  patch -p1 -d $name-$version -i $SRC/37425599.patch
-  patch -p1 -d $name-$version -i $SRC/scribus-poppler-0.86.patch
-  patch -p1 -d $name-$version -i $SRC/scribus-boost-1.71.patch
-  patch -p1 -d $name-$version -i $SRC/17d6a983.patch
 
   sed \
     -e 's|#!/usr/bin/python|#!/usr/bin/python3|' \
@@ -65,8 +53,8 @@ build() {
   cmake -S $name-$version -B build -G Ninja \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
     -Wno-dev
   cmake --build build
   DESTDIR=$PKG cmake --install build

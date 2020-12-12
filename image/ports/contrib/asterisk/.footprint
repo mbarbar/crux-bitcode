@@ -233,6 +233,7 @@ drwxr-xr-x	root/root	usr/include/asterisk/doxygen/
 -rw-r--r--	root/root	usr/include/asterisk/localtime.h
 -rw-r--r--	root/root	usr/include/asterisk/lock.h
 -rw-r--r--	root/root	usr/include/asterisk/logger.h
+-rw-r--r--	root/root	usr/include/asterisk/logger_category.h
 -rw-r--r--	root/root	usr/include/asterisk/manager.h
 -rw-r--r--	root/root	usr/include/asterisk/max_forwards.h
 -rw-r--r--	root/root	usr/include/asterisk/md5.h

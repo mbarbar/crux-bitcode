@@ -9,19 +9,19 @@ drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libpcre2-16.a
 -rwxr-xr-x	root/root	usr/lib/libpcre2-16.la
-lrwxrwxrwx	root/root	usr/lib/libpcre2-16.so -> libpcre2-16.so.0.10.0
-lrwxrwxrwx	root/root	usr/lib/libpcre2-16.so.0 -> libpcre2-16.so.0.10.0
--rwxr-xr-x	root/root	usr/lib/libpcre2-16.so.0.10.0
+lrwxrwxrwx	root/root	usr/lib/libpcre2-16.so -> libpcre2-16.so.0.10.1
+lrwxrwxrwx	root/root	usr/lib/libpcre2-16.so.0 -> libpcre2-16.so.0.10.1
+-rwxr-xr-x	root/root	usr/lib/libpcre2-16.so.0.10.1
 -rw-r--r--	root/root	usr/lib/libpcre2-32.a
 -rwxr-xr-x	root/root	usr/lib/libpcre2-32.la
-lrwxrwxrwx	root/root	usr/lib/libpcre2-32.so -> libpcre2-32.so.0.10.0
-lrwxrwxrwx	root/root	usr/lib/libpcre2-32.so.0 -> libpcre2-32.so.0.10.0
--rwxr-xr-x	root/root	usr/lib/libpcre2-32.so.0.10.0
+lrwxrwxrwx	root/root	usr/lib/libpcre2-32.so -> libpcre2-32.so.0.10.1
+lrwxrwxrwx	root/root	usr/lib/libpcre2-32.so.0 -> libpcre2-32.so.0.10.1
+-rwxr-xr-x	root/root	usr/lib/libpcre2-32.so.0.10.1
 -rw-r--r--	root/root	usr/lib/libpcre2-8.a
 -rwxr-xr-x	root/root	usr/lib/libpcre2-8.la
-lrwxrwxrwx	root/root	usr/lib/libpcre2-8.so -> libpcre2-8.so.0.10.0
-lrwxrwxrwx	root/root	usr/lib/libpcre2-8.so.0 -> libpcre2-8.so.0.10.0
--rwxr-xr-x	root/root	usr/lib/libpcre2-8.so.0.10.0
+lrwxrwxrwx	root/root	usr/lib/libpcre2-8.so -> libpcre2-8.so.0.10.1
+lrwxrwxrwx	root/root	usr/lib/libpcre2-8.so.0 -> libpcre2-8.so.0.10.1
+-rwxr-xr-x	root/root	usr/lib/libpcre2-8.so.0.10.1
 -rw-r--r--	root/root	usr/lib/libpcre2-posix.a
 -rwxr-xr-x	root/root	usr/lib/libpcre2-posix.la
 lrwxrwxrwx	root/root	usr/lib/libpcre2-posix.so -> libpcre2-posix.so.2.0.3

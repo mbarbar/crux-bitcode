@@ -19,10 +19,10 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/mpd/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/mpd/base.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/mpd/tests.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/mpd/twisted.py
-drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/PKG-INFO
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/SOURCES.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/dependency_links.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/requires.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/top_level.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.0-py3.7.egg-info/zip-safe
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/PKG-INFO
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/SOURCES.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/dependency_links.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/requires.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/top_level.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/python_mpd2-2.0.1-py3.7.egg-info/zip-safe

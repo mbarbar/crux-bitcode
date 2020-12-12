@@ -20,8 +20,8 @@ drwxr-xr-x	root/root	usr/lib/girepository-1.0/
 drwxr-xr-x	root/root	usr/lib/gnome-desktop/
 -rwxr-xr-x	root/root	usr/lib/gnome-desktop/gnome-rr-debug
 lrwxrwxrwx	root/root	usr/lib/libgnome-desktop-3.so -> libgnome-desktop-3.so.19
-lrwxrwxrwx	root/root	usr/lib/libgnome-desktop-3.so.19 -> libgnome-desktop-3.so.19.0.9
--rwxr-xr-x	root/root	usr/lib/libgnome-desktop-3.so.19.0.9
+lrwxrwxrwx	root/root	usr/lib/libgnome-desktop-3.so.19 -> libgnome-desktop-3.so.19.0.10
+-rwxr-xr-x	root/root	usr/lib/libgnome-desktop-3.so.19.0.10
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/gnome-desktop-3.0.pc
 drwxr-xr-x	root/root	usr/share/

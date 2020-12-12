@@ -3,7 +3,7 @@
 # Maintainer:  Juergen Daubert, jue at crux dot nu
 
 name=php-gettext
-version=7.4.12
+version=7.4.13
 release=1
 source=(https://www.php.net/distributions/php-$version.tar.xz)
 

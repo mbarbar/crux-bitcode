@@ -4,7 +4,7 @@
 # Depends on: qt5
 
 name=qownnotes
-version=20.11.9
+version=20.12.1
 release=1
 source=(https://download.tuxfamily.org/$name/src/$name-$version.tar.xz)
 

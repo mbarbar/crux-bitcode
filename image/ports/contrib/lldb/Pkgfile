@@ -12,8 +12,8 @@ build() {
   cmake -S $name-$version.src -B build -G Ninja \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
     -D PYTHON_EXECUTABLE=/usr/bin/python3 \
     -D LLVM_LINK_LLVM_DYLIB=ON \
     -D LLDB_USE_SYSTEM_SIX=1 \

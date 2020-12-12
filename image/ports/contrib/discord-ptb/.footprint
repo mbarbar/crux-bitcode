@@ -10,6 +10,8 @@ drwxr-xr-x	root/root	opt/discord-ptb/
 -rw-r--r--	root/root	opt/discord-ptb/libEGL.so
 -rw-r--r--	root/root	opt/discord-ptb/libGLESv2.so
 -rw-r--r--	root/root	opt/discord-ptb/libffmpeg.so
+-rw-r--r--	root/root	opt/discord-ptb/libvk_swiftshader.so
+-rw-r--r--	root/root	opt/discord-ptb/libvulkan.so
 drwxr-xr-x	root/root	opt/discord-ptb/locales/
 -rw-r--r--	root/root	opt/discord-ptb/locales/am.pak
 -rw-r--r--	root/root	opt/discord-ptb/locales/ar.pak
@@ -64,7 +66,6 @@ drwxr-xr-x	root/root	opt/discord-ptb/locales/
 -rw-r--r--	root/root	opt/discord-ptb/locales/vi.pak
 -rw-r--r--	root/root	opt/discord-ptb/locales/zh-CN.pak
 -rw-r--r--	root/root	opt/discord-ptb/locales/zh-TW.pak
--rw-r--r--	root/root	opt/discord-ptb/natives_blob.bin
 -rwxr-xr-x	root/root	opt/discord-ptb/postinst.sh
 -rw-r--r--	root/root	opt/discord-ptb/resources.pak
 drwxr-xr-x	root/root	opt/discord-ptb/resources/
@@ -76,7 +77,6 @@ drwxr-xr-x	root/root	opt/discord-ptb/resources/bootstrap/
 drwxr-xr-x	root/root	opt/discord-ptb/swiftshader/
 -rw-r--r--	root/root	opt/discord-ptb/swiftshader/libEGL.so
 -rw-r--r--	root/root	opt/discord-ptb/swiftshader/libGLESv2.so
--rw-r--r--	root/root	opt/discord-ptb/swiftshader/libvk_swiftshader.so
 -rw-r--r--	root/root	opt/discord-ptb/v8_context_snapshot.bin
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/

@@ -5,8 +5,8 @@
 # Optional: notmuch pulseaudio
 
 name=i3status-rust
-version=0.14.2
-release=2
+version=0.14.3
+release=1
 source=(https://github.com/greshake/i3status-rust/archive/v$version/$name-$version-01.tar.gz)
 
 build() {

@@ -5,24 +5,29 @@
 
 name=irssi
 version=1.2.2
-release=1
-source=(https://github.com/irssi-import/irssi/releases/download/$version/$name-$version.tar.xz)
+release=2
+source=(https://github.com/irssi-import/irssi/releases/download/$version/$name-$version.tar.xz
+        glib-2-63.patch)
 
 build () {
-    cd $name-$version
+	cd $name-$version
 
-    ./configure \
-      --prefix=/usr \
-      --with-proxy \
-      --with-perl-lib=site
+	patch -p1 -i $SRC/glib-2-63.patch
 
-    make
-    make DESTDIR=$PKG install
+	export CFLAGS+=" -Wno-deprecated-declarations"
 
-    find $PKG \
-      -name .packlist -or \
-      -name perllocal.pod -or \
-      -name '*.bs' -or \
-      -name autosplit.ix | xargs rm
-    rm -rf $PKG/usr/{include,share/doc}
+	./configure \
+		--prefix=/usr \
+		--with-proxy \
+		--with-perl-lib=site
+
+	make
+	make DESTDIR=$PKG install
+
+	find $PKG \
+		-name .packlist -or \
+		-name perllocal.pod -or \
+		-name '*.bs' -or \
+		-name autosplit.ix | xargs rm
+	rm -rf $PKG/usr/{include,share/doc}
 }

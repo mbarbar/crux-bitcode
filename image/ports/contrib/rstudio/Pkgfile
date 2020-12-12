@@ -33,8 +33,8 @@ build() {
   cmake -S $name-$version -B build -G Ninja\
     -D CMAKE_INSTALL_PREFIX=/usr/lib/rstudio \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
     -D RSTUDIO_TARGET=Desktop \
     -D RSTUDIO_USE_SYSTEM_BOOST=ON \
     -D QT_QMAKE_EXECUTABLE=/usr/lib/qt5/bin/qmake \

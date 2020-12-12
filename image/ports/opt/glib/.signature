@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/opt.pub
-RWSE3ohX2g5d/RL6vDzmY81gyKePGVyjsBTy38+W/n6zN+uwaPPfK5GOpy9lnoqSZnc1XpcnL4ASMnBasUY/ZsLx4DNbbZs9OQw=
-SHA256 (Pkgfile) = c9c612937d15e2eb005e16e1c99dbf36eede81edc5ca76202299d9db88eb644f
-SHA256 (.footprint) = 0a3ce14f171af851144e8fa613a43c2b2b8ab6440f7bd766856f5c27df916b80
-SHA256 (glib-2.66.2.tar.xz) = ec390bed4e8dd0f89e918f385e8d4cfd7470b1ef7c1ce93ec5c4fc6e3c6a17c4
+RWSE3ohX2g5d/bLCB4OFpGwOHc3i/Vo08emXT7b8mmpRkEq59xEFcHE9nS9JGzRZQtKycP7kupTEe3K0BM+kuSSwzc3krn3LNAE=
+SHA256 (Pkgfile) = 89bf862c23b03279bb77386a827e24855e30afafbb27a271f64dc1200aab7770
+SHA256 (.footprint) = ae9baac35771ee235a0c1c0a3ccb7fc6316177f5eae8210bf2617c21c271c6c0
+SHA256 (glib-2.66.3.tar.xz) = 79f31365a99cb1cc9db028625635d1438890702acde9e2802eae0acebcf7b5b1
 SHA256 (gschemas.compiled) = f2ca328db96bf936e677d53b3e89fc4bf57ada9a1d5e2466cb0afe85307a1e75

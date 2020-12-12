@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3/OSyDhwBjh7PXbYuOZ7oCIBh8MDoChcdWBv7V8EQ4vUUeCSFWhjwb6gbi4Duzh+G8FNpi8kmdKdq0ZjMVMkYQA=
-SHA256 (Pkgfile) = 6740da0a1038389249532a7c758e889cd982d895eff7ba65f4287626874df5cd
-SHA256 (.footprint) = ae4fe1932ad317f6b3a8eea95fac888d9dc4733be09de77d7b52b211a857906a
-SHA256 (unifont-13.0.03.tar.gz) = 071e2ca005d97d72e79b8cb68df886f1f730cb5f0e7739a4c6e8d068ded28212
+RWSagIOpLGJF3/q05q7r0xsbmGD2ZtWcldp6caU9yY2D0FGSELkDDnyg0ZftszjcbHAopAtU3iX/W1rlL1agdZKiIEJJM74zKw8=
+SHA256 (Pkgfile) = 5abfbd4903f2eca1a43d27588608c661957c0f8b10a897d29ef9801a4096038b
+SHA256 (.footprint) = c4a41c816bfb9615494df65b8333e9233a3bdd1df4f6b93cd0bf5f579f26362e
+SHA256 (unifont-13.0.04.tar.gz) = 92a41a478eebc42f218e8a429ea03fef8b8ec012fa6ba96ee54c986fd7a59118

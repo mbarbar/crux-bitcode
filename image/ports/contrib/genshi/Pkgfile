@@ -4,7 +4,7 @@
 # Depends on: python3-setuptools
 
 name=genshi
-version=0.7.4
+version=0.7.5
 release=1
 source=(https://github.com/edgewall/genshi/archive/$version/$name-$version.tar.gz)
 

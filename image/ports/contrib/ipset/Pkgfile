@@ -1,12 +1,12 @@
 # Description: Administration tool for IP or port sets.
-# URL: http://ipset.netfilter.org/
+# URL: https://ipset.netfilter.org/
 # Maintainer: Danny Rawlins, crux at romster dot me
 # Depends on: iptables libmnl
 
 name=ipset
-version=7.7
+version=7.9
 release=1
-source=(http://$name.netfilter.org/$name-$version.tar.bz2)
+source=(https://$name.netfilter.org/$name-$version.tar.bz2)
 
 build() {
 	cd $name-$version

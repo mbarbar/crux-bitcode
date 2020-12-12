@@ -43,9 +43,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/PyQt5/bindings/QtWebEngineW
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQt5/bindings/QtWebEngineWidgets/qwebenginescriptcollection.sip
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQt5/bindings/QtWebEngineWidgets/qwebenginesettings.sip
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQt5/bindings/QtWebEngineWidgets/qwebengineview.sip
-drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/PyQtWebEngine-5.15.1.dist-info/
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQtWebEngine-5.15.1.dist-info/METADATA
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQtWebEngine-5.15.1.dist-info/RECORD
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/PyQtWebEngine-5.15.2.dist-info/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQtWebEngine-5.15.2.dist-info/METADATA
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/PyQtWebEngine-5.15.2.dist-info/RECORD
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/qt/
 drwxr-xr-x	root/root	usr/share/qt/qsci/

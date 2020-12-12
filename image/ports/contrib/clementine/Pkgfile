@@ -18,8 +18,8 @@ build() {
 	cmake -S Clementine-68d375c43c108d1888c64b14d736597dbb83f0b7 -B build -G Ninja \
 		-D CMAKE_INSTALL_PREFIX=/usr \
 		-D CMAKE_BUILD_TYPE=Release \
-		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
-		-D CMAKE_CXX_FLAGS="$CXXFLAGS -DNDEBUG -Wno-catch-value" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_CXX_FLAGS="$CXXFLAGS -Wno-catch-value" \
 		-Wno-dev
 
 	cmake --build build

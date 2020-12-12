@@ -5,7 +5,7 @@
 # Optional: dahdi pjsip opus unixodbc
 
 name=asterisk
-version=18.0.1
+version=18.1.0
 release=1
 source=(https://downloads.asterisk.org/pub/telephony/asterisk/$name-$version.tar.gz
   asterisk.rc)

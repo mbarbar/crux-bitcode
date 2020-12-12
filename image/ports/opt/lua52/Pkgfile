@@ -5,7 +5,7 @@
 
 name=lua52
 version=5.2.4
-release=1
+release=2
 source=(http://www.lua.org/ftp/lua-$version.tar.gz
 	lua.diff lua-5.2-cflags.diff lua.pc)
 
@@ -36,7 +36,7 @@ build() {
 		INSTALL_MAN="$PKG/usr/share/man/man1" \
 		install
 
-	install -m 0644 -D lua.pc $PKG/usr/lib/pkgconfig/lua5.2.pc
+	install -m 0644 -D $SRC/lua.pc $PKG/usr/lib/pkgconfig/lua5.2.pc
 
 	# fixups
 	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.5.2

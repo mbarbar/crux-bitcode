@@ -14,6 +14,7 @@ drwxr-xr-x	root/root	usr/lib/geeqie/
 -rwxr-xr-x	root/root	usr/lib/geeqie/geeqie-tethered-photography-hook-script
 -rwxr-xr-x	root/root	usr/lib/geeqie/geeqie-ufraw
 -rwxr-xr-x	root/root	usr/lib/geeqie/geocode-parameters.awk
+-rwxr-xr-x	root/root	usr/lib/geeqie/lensID
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/applications/
 -rw-r--r--	root/root	usr/share/applications/geeqie.desktop

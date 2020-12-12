@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF329sngfGU2bV/kH1t6KnxB6N9cl/zIzmkUnbnP/p3Mownj4KwfIjtGfUYHl+toNpqCdr3Jl751F4eofUfVDw9Ac=
-SHA256 (Pkgfile) = 4b72d9fe32198dcb1fa5ba10178b6c8a410a0701d345090624be7375b43c8095
+RWSagIOpLGJF3yFKw0xw1CG9elOcrerkuhDJyXQapiFe5aPxv5Rixqd+a8nrBHa5dYvw/hRfEVXvcaLKR6S5bSgniIgEzq1VMQk=
+SHA256 (Pkgfile) = 6acce69e6c9dd767cfec0668fc0df8c20fed232367956e66c31ac197f1af728a
 SHA256 (.footprint) = 7a05f0ddab434ff55fafcfdf74cd82e5b1709700fa4639d81b062ac41ac888a6
 SHA256 (chromaprint-1.5.0.tar.gz) = 573a5400e635b3823fc2394cfa7a217fbb46e8e50ecebd4a61991451a8af766a

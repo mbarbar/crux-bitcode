@@ -3,7 +3,7 @@
 # Maintainer: Matt Housh, jaeger at crux dot ninja
 
 name=go
-version=1.15.4
+version=1.15.6
 release=1
 source=(https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz \
     https://storage.googleapis.com/golang/${name}${version}.src.tar.gz)

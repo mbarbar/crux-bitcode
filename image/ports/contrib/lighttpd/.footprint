@@ -20,8 +20,6 @@ drwxr-xr-x	root/root	usr/lib/lighttpd/
 -rwxr-xr-x	root/root	usr/lib/lighttpd/mod_authn_file.so
 -rwxr-xr-x	root/root	usr/lib/lighttpd/mod_cgi.la
 -rwxr-xr-x	root/root	usr/lib/lighttpd/mod_cgi.so
--rwxr-xr-x	root/root	usr/lib/lighttpd/mod_compress.la
--rwxr-xr-x	root/root	usr/lib/lighttpd/mod_compress.so
 -rwxr-xr-x	root/root	usr/lib/lighttpd/mod_deflate.la
 -rwxr-xr-x	root/root	usr/lib/lighttpd/mod_deflate.so
 -rwxr-xr-x	root/root	usr/lib/lighttpd/mod_dirlisting.la

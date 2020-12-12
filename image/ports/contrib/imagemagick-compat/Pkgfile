@@ -4,7 +4,7 @@
 # Depends on: lcms2 pango xorg-libxt
 
 name=imagemagick-compat
-version=6.9.11-42
+version=6.9.11-45
 release=1
 source=(https://www.imagemagick.org/download/ImageMagick-$version.tar.xz
 	IM6-GS-policy.patch)

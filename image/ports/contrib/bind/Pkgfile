@@ -4,7 +4,7 @@
 # Depends on:  libuv python3-ply
 
 name=bind
-version=9.16.8
+version=9.16.9
 release=1
 source=(ftp://ftp.isc.org/isc/bind9/$version/$name-$version.tar.xz
   named.root db.0.0.127 db.localhost db.ip6.arpa named named.conf)

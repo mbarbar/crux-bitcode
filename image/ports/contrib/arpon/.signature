@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF37iqKHixEc/V9ff1m7QRUMqfx5EAowWTB5Ocl2xQADcQSvMkgQdvDuQLFVxJguchVmH9wdpwHNCUwBVoHS41kwQ=
-SHA256 (Pkgfile) = e2b99bbc9564f97d09524e84e0252e5b9e0c34b27afcfb4c76039b77bbeffa59
+RWSagIOpLGJF36KW7qj3OzL/b4DrntVaI0217SO9CP196LTLMGuL9ErMFVWn7s+j3Li+HUNi+wW8UykCkqSycYCKYf9bxsVt8Qw=
+SHA256 (Pkgfile) = 7c2010ecb58bf6e49d14c05399ee593d692c93e2ecdef9acd8b398dce88831bc
 SHA256 (.footprint) = 8025ac39d61d0f228f05023a9c995fde0a026ba3943a69af1c517e8ea46747dd
 SHA256 (ArpON-3.0-ng.tar.gz) = ea55d1641b4573b19103ca596368e418aecd2a1409adbdce3a9f76dc8ebad590
 SHA256 (arpon) = 295d1363e52e0c0f4799651a0da2e60d6da0178b5eac8276fb256fc47feae2c6

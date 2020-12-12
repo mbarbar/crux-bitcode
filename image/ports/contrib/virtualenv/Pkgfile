@@ -4,7 +4,7 @@
 # Depends on:  python3-setuptools python3-appdirs python3-importlib_metadata python3-six python3-filelock python3-distlib
 
 name=virtualenv
-version=20.1.0
+version=20.2.1
 release=1
 source=(https://pypi.io/packages/source/v/virtualenv/virtualenv-${version}.tar.gz)
 

@@ -1,13 +1,12 @@
 # Description: GTK+ Diagramming Creation Software.
-# URL: http://live.gnome.org/Dia/
+# URL: https://wiki.gnome.org/action/show/Apps/Dia
 # Maintainer: Danny Rawlins, crux at romster dot me
-# Packager: Younes Hafri, ycrux at club dash internet dot fr
 # Depends on: docbook-xsl gtk libart_lgpl python xorg-libxdamage
 
 name=dia
 version=0.97.3
 release=2
-source=(ftp://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz
+source=(https://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz
 	# https://gitweb.gentoo.org/repo/gentoo.git/tree/app-office/dia/files
 	dia-0.97.2-underlinking.patch dia-0.97.3-freetype_pkgconfig.patch
 	dia-0.97.0-gnome-doc.patch)

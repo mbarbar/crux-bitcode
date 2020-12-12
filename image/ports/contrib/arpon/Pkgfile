@@ -20,8 +20,8 @@ build() {
   cmake -S ArpON-$version -B build $PKGMK_ARPON \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG -Wno-error=stringop-truncation" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -Wno-error=stringop-truncation" \
     -Wno-dev
   cmake --build build
   DESTDIR=$PKG cmake --install build

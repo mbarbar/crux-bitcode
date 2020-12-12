@@ -38,6 +38,7 @@ drwxr-xr-x	root/root	lib/modules/<kernel-version>/extra/
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/xt_geoip_fetch
+-rwxr-xr-x	root/root	usr/bin/xt_geoip_fetch_maxmind
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libxt_ACCOUNT_cl.la
 lrwxrwxrwx	root/root	usr/lib/libxt_ACCOUNT_cl.so -> libxt_ACCOUNT_cl.so.0.0.0
@@ -45,7 +46,9 @@ lrwxrwxrwx	root/root	usr/lib/libxt_ACCOUNT_cl.so.0 -> libxt_ACCOUNT_cl.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libxt_ACCOUNT_cl.so.0.0.0
 drwxr-xr-x	root/root	usr/lib/xtables-addons/
 -rwxr-xr-x	root/root	usr/lib/xtables-addons/xt_geoip_build
+-rwxr-xr-x	root/root	usr/lib/xtables-addons/xt_geoip_build_maxmind
 -rwxr-xr-x	root/root	usr/lib/xtables-addons/xt_geoip_dl
+-rwxr-xr-x	root/root	usr/lib/xtables-addons/xt_geoip_dl_maxmind
 drwxr-xr-x	root/root	usr/lib/xtables/
 -rwxr-xr-x	root/root	usr/lib/xtables/libxt_ACCOUNT.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libxt_CHAOS.so
@@ -82,4 +85,5 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/xt_geoip_fetch.1.gz
 drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/iptaccount.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/pknlusr.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/xtables-addons.8.gz

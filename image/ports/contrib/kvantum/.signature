@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF32joGpeFHShSD9cTs1nPMVowQx+yjllSTq0dTl/2rnyCUtucdXiIDEjTw8RCaxsx83qH/FT0NYQfs3hXmy8RVgw=
-SHA256 (Pkgfile) = 9d0f629e1da424942440c2cbffb3d786550e562598ac8dd0b8bfb3fa6bb61c59
+RWSagIOpLGJF3/AzsjXjDS8Z9PMW4ksOAKJHJVIcjkllZ2aQXUFg5xrnleRERWuJ20g9+OjQrByGMHpOFV0ZFi4eJksjl3An6gE=
+SHA256 (Pkgfile) = bf916ba026b554358f21e7ea676a3e42df6eed8bb04ca22ae6d8a6d721840143
 SHA256 (.footprint) = 080235fe47f02d53378325a59ba7c02ecca86502a518f6bb74bc2b296a9244aa
 SHA256 (Kvantum-v0.17.0.tar.gz) = 2d8eda6d44943a5e12baacae7228856c41e120235a374958c7cb50c39148cbfe

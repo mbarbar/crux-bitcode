@@ -5,7 +5,7 @@
 # Optional: cyrus-sasl gpgme krb5 lua notmuch
 
 name=neomutt
-version=20201120
+version=20201127
 release=1
 source=(https://github.com/neomutt/neomutt/archive/$version/$name-$version.tar.gz)
 

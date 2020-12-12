@@ -4,7 +4,7 @@
 # Depends on:  cairo p5-glib
 
 name=p5-cairo
-version=1.107
+version=1.108
 release=1
 source=(http://search.cpan.org/CPAN/authors/id/X/XA/XAOC/Cairo-$version.tar.gz)
 

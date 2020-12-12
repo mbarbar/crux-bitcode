@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3wW38viW1FLe1laDiqNKRgrJ/V/WFkFdzM2qF1EAfz2hoBj9U4a/MHJR8IGB5SGSfZX3M1jLtKDXkkgb/47vSAQ=
-SHA256 (Pkgfile) = ae30a0b853ceae16ae70e1fdc113932659c3113c38e0dc3fe4483664f4720e02
-SHA256 (.footprint) = be35c476047059e844e7cf29b15d4afa6a6afd692c6ca903bec5edc13074454f
-SHA256 (aspell5-ro-3.3-2.tar.bz2) = 53c38b7668a540cf90ddca11c007ce812d2ad86bd11c2c43a08da9e06392683d
+RWSagIOpLGJF36TS272PDFUOKaVe+ZUuNYSJZTLIkOiOketDEwxfQmg7cf4wuOiZTIKk7ixWwECpM/2T0cfzuoWvb8c9F4zWiQQ=
+SHA256 (Pkgfile) = 95226ddabcbfd66572de62ccf9904f0700a9dfcb350a96e1f8ac7facf3400f4a
+SHA256 (.footprint) = 05907205454fac4afe3b2f9ac96bc27eeee6dc33b3b9cee33c394f6c3485cf7f
+SHA256 (aspell5-ro-3.3.10.tar.bz2) = 27e1909da37438caace8ca0a4de80062dc71913fd487536ffc3184145f077aed

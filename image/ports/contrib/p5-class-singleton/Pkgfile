@@ -4,7 +4,7 @@
 # Depends on:
 
 name=p5-class-singleton
-version=1.5
+version=1.6
 release=1
 source=(https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-$version.tar.gz)
 

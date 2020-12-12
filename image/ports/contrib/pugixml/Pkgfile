@@ -4,7 +4,7 @@
 # Depends on: cmake
 
 name=pugixml
-version=1.10
+version=1.11.1
 release=1
 source=(http://github.com/zeux/pugixml/releases/download/v$version/$name-$version.tar.gz)
 
@@ -14,8 +14,7 @@ build() {
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D CMAKE_INSTALL_LIBDIR=lib \
     -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -DNDEBUG" \
-    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -DNDEBUG" \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
     -D BUILD_SHARED_LIBS=ON \
     -Wno-dev
   cmake --build build

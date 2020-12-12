@@ -5,7 +5,7 @@
 # Optional: pulseaudio-32
 
 name=steam
-version=1.0.0.67
+version=1.0.0.68
 release=1
 source=(http://repo.steampowered.com/$name/pool/$name/s/$name/${name}_$version.tar.gz
 	steam-runtime.sh)

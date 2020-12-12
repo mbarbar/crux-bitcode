@@ -4,7 +4,7 @@
 # Depends on: sdl2_image sdl2_mixer sdl2_net
 
 name=rocksndiamonds
-version=4.2.0.4
+version=4.2.0.5
 release=1
 source=(https://www.artsoft.org/RELEASES/unix/rocksndiamonds/rocksndiamonds-$version.tar.gz)
 

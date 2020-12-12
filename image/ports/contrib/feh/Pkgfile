@@ -4,7 +4,7 @@
 # Depends on: giblib harfbuzz xorg-libxinerama xorg-libxt
 
 name=feh
-version=3.5
+version=3.6
 release=1
 source=(https://feh.finalrewind.org/feh-${version}.tar.bz2)
 

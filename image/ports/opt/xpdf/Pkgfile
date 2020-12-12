@@ -6,33 +6,28 @@
 
 name=xpdf
 version=4.02
-release=1
-source=(https://xpdfreader-dl.s3.amazonaws.com/xpdf-${version}.tar.gz
+release=2
+source=(https://dl.xpdfreader.com/$name-$version.tar.gz
     xpdf-automagic.patch
     xpdf-visibility.patch
     xpdf-shared-libs.patch)
 
 build() {
-    cd $name-$version
-
     CXXFLAGS+=' -Wno-deprecated -Wno-deprecated-declarations'
 
-    patch -p1 -i $SRC/xpdf-automagic.patch
-    patch -p1 -i $SRC/xpdf-visibility.patch
-    patch -p1 -i $SRC/xpdf-shared-libs.patch
+    patch -d $name-$version -p1 -i $SRC/xpdf-automagic.patch
+    patch -d $name-$version -p1 -i $SRC/xpdf-visibility.patch
+    patch -d $name-$version -p1 -i $SRC/xpdf-shared-libs.patch
 
-    mkdir build
-    cd build
+    cmake -S $name-$version -B build -G Ninja \
+          -D CMAKE_INSTALL_PREFIX=/usr \
+          -D CMAKE_INSTALL_LIBDIR=lib \
+          -D CMAKE_BUILD_TYPE=Release \
+          -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+          -D A4_PAPER=ON  \
+          -D XPDFWIDGET_PRINTING="$(prt-get isinst cups >/dev/null && echo ON || echo OFF)" \
+          -D WITH_LIBPAPER="$(prt-get isinst paper >/dev/null && echo ON || echo OFF)"
 
-    cmake -DCMAKE_BUILD_TYPE=Release \
-          -DCMAKE_INSTALL_PREFIX=/usr \
-          -DA4_PAPER=ON  \
-          -DXPDFWIDGET_PRINTING="$(prt-get isinst cups >/dev/null && echo ON || echo OFF)" \
-          -DWITH_LIBPAPER=$(prt-get isinst paper >/dev/null && echo ON || echo OFF) .. 
-
-    cd xpdf-qt
-
-    make
-    make install DESTDIR=$PKG
-
+    cmake --build build -- xpdf
+    DESTDIR=$PKG cmake --install build/xpdf-qt
 }

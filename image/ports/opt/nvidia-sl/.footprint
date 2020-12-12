@@ -52,6 +52,8 @@ lrwxrwxrwx	root/root	usr/lib/libcuda.so.1 -> libcuda.so.455.45.01
 -rwxr-xr-x	root/root	usr/lib/libnvidia-gtk2.so.455.45.01
 -rwxr-xr-x	root/root	usr/lib/libnvidia-gtk3.so.455.45.01
 -rwxr-xr-x	root/root	usr/lib/libnvidia-ifr.so.455.45.01
+lrwxrwxrwx	root/root	usr/lib/libnvidia-ml.so -> libnvidia-ml.so.455.45.01
+lrwxrwxrwx	root/root	usr/lib/libnvidia-ml.so.1 -> libnvidia-ml.so.455.45.01
 -rwxr-xr-x	root/root	usr/lib/libnvidia-ml.so.455.45.01
 lrwxrwxrwx	root/root	usr/lib/libnvidia-opencl.so -> libnvidia-opencl.so.455.45.01
 lrwxrwxrwx	root/root	usr/lib/libnvidia-opencl.so.1 -> libnvidia-opencl.so.455.45.01

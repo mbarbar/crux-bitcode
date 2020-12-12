@@ -4,7 +4,7 @@
 # Depends on: go
 
 name=fzf
-version=0.24.3
+version=0.24.4
 release=1
 source=(https://github.com/junegunn/fzf/archive/$version/$name-$version.tar.gz)
 

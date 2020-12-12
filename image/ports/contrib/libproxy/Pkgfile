@@ -12,8 +12,8 @@ build() {
 	cmake -S$name-$version -B build -G Ninja \
 		-D CMAKE_BUILD_TYPE=Release \
 		-D CMAKE_INSTALL_PREFIX=/usr \
-		-D CMAKE_C_FLAGS="$CFLAGS -DNDEBUG" \
-		-D CMAKE_CXX_FLAGS="$CXXFLAGS -DNDEBUG" \
+		-D CMAKE_C_FLAGS="$CFLAGS" \
+		-D CMAKE_CXX_FLAGS="$CXXFLAGS" \
 		-D WITH_DOTNET=off \
 		-D WITH_GNOME3=off \
 		-D WITH_KDE=off \

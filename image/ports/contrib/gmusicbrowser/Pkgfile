@@ -5,7 +5,7 @@
 # Depends on:   p5-gtk2
 
 name=gmusicbrowser
-version=1.1.15
+version=1.1.16
 release=1
 source=(https://gmusicbrowser.org/download/$name-$version.tar.gz)
 

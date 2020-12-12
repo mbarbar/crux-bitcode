@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF39EsJVnnpBIPVZyFGM4KCQP1bjO0LXnDlPzPkL/+pcQSRiga1m6HRv8vub3xR/TtZqi1yJXo5U74DoAUmPGd+Qs=
-SHA256 (Pkgfile) = 785bfaa5b3ca848b2f12c3d918c9c745c1d5adf33787cbf3b6d3294af6b98592
+RWSagIOpLGJF33wnsnXrqlEaf+R2sv297akC5bapgwQMYEPQdXSP2x6M05TgkOApSFAeRvxRiTeHQkE/uiyqFBrsFWFFXrTYUgw=
+SHA256 (Pkgfile) = 106aa4e0b84e1bb9ab6f045426304c75721eead9762e18a3d2d425612bcd7843
 SHA256 (.footprint) = a183c6b4321c6243854e00228577e6bd9149c6fb2fd1483622411f28b242bfbd
 SHA256 (spdlog-1.8.1.tar.gz) = 5197b3147cfcfaa67dd564db7b878e4a4b3d9f3443801722b3915cdeced656cb

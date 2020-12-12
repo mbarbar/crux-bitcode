@@ -4,7 +4,7 @@
 # Depends on:
 
 name=papirus-icon-theme
-version=20201031
+version=20201201
 release=1
 source=(https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/$version/$name-$version.tar.gz)
 

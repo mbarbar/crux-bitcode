@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/opt.pub
-RWSE3ohX2g5d/cx++f9KGd+n4sw4L6AqapzfqqyzUn5TeL5xAaiYcCWgrq7t54MCmLigOawq22UJ4l9beAtw2/JBLAa44U1S2gg=
-SHA256 (Pkgfile) = 93d1dfa47d5280adf5319487f159d62432bff62a582ca2c4023727a204d73b8d
-SHA256 (.footprint) = 0238ddc78ea9813c9702497f1a85dabafd81c55a64af8fcd2aeee10b2b0aedd0
-SHA256 (gtk+-3.24.23.tar.xz) = 5d864d248357a2251545b3387b35942de5f66e4c66013f0962eb5cb6f8dae2b1
+RWSE3ohX2g5d/QR6fYSCi+QJwzdsicfLgZ+8Phf/pV4j05LiwNKsHb9qIBR3tb3ONpeWUkyeYOrbc9fYDiZU1JFS6F72ng3OOwg=
+SHA256 (Pkgfile) = c6b25389766ba67cec11815e7d1a1a44bd2ecd349e4e83389f1d1326a7bdee0f
+SHA256 (.footprint) = 7b87faf6e73c1eaad5ef5acf7f2fb895fdfd7917808787e4f2418138a6767eef
+SHA256 (gtk+-3.24.24.tar.xz) = cc9d4367c55b724832f6b09ab85481738ea456871f0381768a6a99335a98378a

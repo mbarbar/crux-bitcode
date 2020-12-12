@@ -4,9 +4,9 @@
 # Depends on:  libsdl glib xorg-libpixman
  
 name=qemu-agent
-version=4.2.0
-release=2
-source=(http://wiki.qemu-project.org/download/qemu-$version.tar.bz2 qemu-agent)
+version=5.2.0
+release=1
+source=(http://wiki.qemu-project.org/download/qemu-$version.tar.xz qemu-agent)
 
 build() {
   cd qemu-$version
@@ -24,7 +24,7 @@ build() {
   # fix include issues with nspr
   make ${MAKEFLAGS:=} qemu-ga
 
-  install -D -m 755 qemu-ga $PKG/usr/bin/qemu-ga
+  install -D -m 755 build/qga/qemu-ga $PKG/usr/bin/qemu-ga
   install -d -m 755 $PKG/etc/qemu
   install scripts/qemu-guest-agent/fsfreeze-hook $PKG/etc/qemu
   cp -a scripts/qemu-guest-agent/fsfreeze-hook.d $PKG/etc/qemu

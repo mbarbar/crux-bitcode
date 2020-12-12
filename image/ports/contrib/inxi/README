@@ -1,0 +1,8 @@
+README for inxi
+
+NOTES
+    To obtain more information about your system will be nice to have:
+        xorg-xprop:	Desktop data
+        xorg-xdpyinfo:	Multi screen resolution
+        xorg-xrandr:	Single screen resolution
+        lm_sensors:	Sensors output

@@ -6,7 +6,7 @@
 
 name=p5-net-dns
 capsname=Net-DNS
-version=1.27
+version=1.29
 release=1
 source=(https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-$version.tar.gz)
 

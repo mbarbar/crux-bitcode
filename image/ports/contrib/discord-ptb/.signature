@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF35k5IHqKCGUFKdLQ5tD+mWtltoYcpWKaUkSNOsKOQeaSVIIkk1ewJK1PihCLWR3yHIvHIbiYoeYCPyYbBx0jWAY=
-SHA256 (Pkgfile) = 7f3f4825b03e8bd343b7e8c5c462ab4acca62fba6f8f241922b31e6faff43f0a
-SHA256 (.footprint) = 9017104deca6eb0ee4299c37cb80a26ef6b867eaa8e88b5908a9ca632d2ba6e1
-SHA256 (discord-ptb-0.0.22.tar.gz) = 3225e1f1c96e781566ece413968dcc8fb5cad6aa5ec5830f36349e9622821e1b
+RWSagIOpLGJF33gfChjVmB8u3gm6rO7tWnk2NBYrP2RvjzjQEcdn8qfr3hyRMksOoljzsIBGAP0FZKIHOhKrUxZW4+kU2pKYQg0=
+SHA256 (Pkgfile) = 619f9e9a53b4ff1ed08b3bf2fa9c3e1e59e4b8a061653e019c0da20a73898ece
+SHA256 (.footprint) = af59f8642100f84acdc61ad89dd8101a22840dcb14e8ced2cb0645502c128019
+SHA256 (discord-ptb-0.0.23.tar.gz) = b25c0d7da3e082da4241a0a6f74df3cb78e6e83a945faa02af75e5463732bf6f
 SHA256 (discord-ptb.sh) = 5e665305a885aadd2281c75e1cfcb9a11f80fdcfb65bfcfceec735c3e385c517

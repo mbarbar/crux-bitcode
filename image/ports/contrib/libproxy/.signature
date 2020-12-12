@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3zhAOc1LCVMmZIBh5aUJtaQbzasEn2q0m9HCo3AiNxc1+bMxUeTIWrq4m3sI5mLA7kqMZWp2slRIE572qgSOXA8=
-SHA256 (Pkgfile) = 3a7bc80662d52510aafc61ab3940ecdf9acd3eb59674048f72e72e662cd66e57
+RWSagIOpLGJF3xvaK/n8YhwWYkFLX2yy/qjgL0Rj1h7d5D72v8ru+2QXA71EunIDDbqIokYxcPdxIgEc7YS/kGTP2GqLqMbFggQ=
+SHA256 (Pkgfile) = 594b5e399e858f9e4d1d74efd774a358f23957c24021725730b2eabfb323e09e
 SHA256 (.footprint) = e9d5184325707b70c1a1c49c0fc3f2465f60e87e0b506ccefd8f9cdbba051e03
 SHA256 (libproxy-0.4.15.tar.xz) = 654db464120c9534654590b6683c7fa3887b3dad0ca1c4cd412af24fbfca6d4f

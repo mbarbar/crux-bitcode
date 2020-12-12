@@ -4,7 +4,7 @@
 # Depends on:
 
 name=gradm
-version=3.1-201903191516
+version=3.1-202009270723
 release=1
 source=(https://grsecurity.net/stable/gradm-$version.tar.gz)
 

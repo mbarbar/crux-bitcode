@@ -4,7 +4,7 @@
 # Depends on: libestr json-c libgcrypt liblogging libfastjson
 
 name=rsyslog
-version=8.2008.0
+version=8.2012.0
 release=1
 source=(http://www.rsyslog.com/files/download/$name/$name-$version.tar.gz \
     $name.conf rsyslogd.rc)

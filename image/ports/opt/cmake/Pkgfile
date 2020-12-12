@@ -4,7 +4,7 @@
 # Depends on: curl libarchive expat ncurses
 
 name=cmake
-version=3.18.5
+version=3.19.1
 release=1
 source=(https://cmake.org/files/v${version%.*}/$name-$version.tar.gz)
 

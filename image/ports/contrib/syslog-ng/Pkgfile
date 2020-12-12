@@ -4,7 +4,7 @@
 # Depends on:  glib json-c python3
 
 name=syslog-ng
-version=3.29.1
+version=3.30.1
 release=1
 source=(https://github.com/$name/$name/releases/download/$name-$version/$name-$version.tar.gz
   syslog-ng.rc syslog-ng.conf)

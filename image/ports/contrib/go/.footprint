@@ -198,6 +198,7 @@ drwxr-xr-x	root/root	usr/lib/go/misc/arm/
 -rwxr-xr-x	root/root	usr/lib/go/misc/arm/a
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/errors/
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/badsym_test.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/errors_test.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/ptr_test.go
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/errors/testdata/
@@ -2457,6 +2458,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/script/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/install_relative_gobin_fail.txt
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/install_shadow_gopath.txt
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/issue36000.txt
+-rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/ldflag.txt
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/link_syso_issue33139.txt
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/linkname.txt
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/script/list_ambiguous_path.txt
@@ -7422,6 +7424,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/lockosthread.c
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/lockosthread.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/main.go
+-rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/needmdeadlock.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/numgoroutine.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/pprof.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/raceprof.go
@@ -9992,6 +9995,7 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue4252.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue4252.dir/main.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue4252.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue4264.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue42753.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue4283.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue4313.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue4316.go

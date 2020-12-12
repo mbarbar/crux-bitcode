@@ -3,7 +3,7 @@
 # Maintainer:  Juergen Daubert, jue at crux dot nu
 
 name=courier-unicode
-version=2.1
+version=2.1.2
 release=1
 source=(http://download.sourceforge.net/project/courier/$name/$version/$name-$version.tar.bz2)
 

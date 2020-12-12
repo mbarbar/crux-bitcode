@@ -4,7 +4,7 @@
 # Depends on: python3-pyqt5 qtwebengine
 
 name=python3-pyqtwebengine
-version=5.15.1
+version=5.15.2
 release=1
 source=(https://pypi.python.org/packages/source/P/PyQtWebEngine/PyQtWebEngine-$version.tar.gz)
 

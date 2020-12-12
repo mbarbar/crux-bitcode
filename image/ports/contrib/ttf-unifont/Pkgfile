@@ -4,7 +4,7 @@
 # Depends on:
 
 name=ttf-unifont
-version=13.0.03
+version=13.0.04
 release=1
 source=(http://unifoundry.com/pub/unifont/unifont-$version/unifont-$version.tar.gz)
 

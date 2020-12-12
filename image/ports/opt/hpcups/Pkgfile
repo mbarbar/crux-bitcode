@@ -4,7 +4,7 @@
 # Depends on:  cups libjpeg-turbo
 
 name=hpcups
-version=3.20.9
+version=3.20.11
 release=1
 source=(http://downloads.sourceforge.net/project/hplip/hplip/$version/hplip-$version.tar.gz)
 

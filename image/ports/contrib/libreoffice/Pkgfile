@@ -5,18 +5,16 @@
 # Optional: cups kio qt5 valgrind vlc
 
 name=libreoffice
-version=7.0.3.1
+version=7.0.4.1
 release=1
-pdfiumversion=4137
+pdfiumversion=4306
 source=(https://downloadarchive.documentfoundation.org/libreoffice/old/$version/src/$name-$version.tar.xz
   https://downloadarchive.documentfoundation.org/libreoffice/old/$version/src/$name-dictionaries-$version.tar.xz
   https://dev-www.libreoffice.org/extern/185d60944ea767075d27247c3162b3bc-unowinreg.dll
   https://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
   https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
   https://dev-www.libreoffice.org/src/skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz
-  https://dev-www.libreoffice.org/src/pdfium-$pdfiumversion.tar.bz2 makefile.in.patch
-  # https://gitweb.gentoo.org/repo/gentoo.git/tree/app-office/libreoffice/files
-  libreoffice-6.4.7.2-icu-68-1.patch)
+  https://dev-www.libreoffice.org/src/pdfium-$pdfiumversion.tar.bz2 makefile.in.patch)
 
 unpack_source() {
   for file in ${source[@]}; do
@@ -48,8 +46,6 @@ build() {
   cd $name-$version
 
   patch -Np1 -i $SRC/makefile.in.patch
-  [ $(pkginfo -i | awk '/^icu / {split($2,a,"."); print a[1]}') -ge 68 ] && \
-    patch -Np1 -i $SRC/libreoffice-6.4.7.2-icu-68-1.patch
 
   find -L . \
      \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \

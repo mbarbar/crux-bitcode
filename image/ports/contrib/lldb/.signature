@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF368LlOiWkuoHjLMMcvSEA/jZlPjufRtvZJkoY0jkGBFYwMdoJFWWG4f6I6xKTSs/TzXmgZSpngmmFJFxj16eUgk=
-SHA256 (Pkgfile) = 8c8126dad6bc8915c374410d0d7dcd70b6c2a1db2b348bf34cb4c386ee7632cd
+RWSagIOpLGJF3/FD3PJvGRm3UG+BzoMg3aH89u51H1oYZxB7TYh08FNo4VvVweV08nGXnhM9zw8kjFBpUSbEPpge4qj0cSijcQQ=
+SHA256 (Pkgfile) = 4e3a1964452ab4963bc0e26ede6a4f26c87541309831b7864a2d48815cf2afcb
 SHA256 (.footprint) = 2b834f6b3742e340fd1eb66be8740b5ab2ae5247099645e2df5194ab54b72c5f
 SHA256 (lldb-10.0.1.src.tar.xz) = 07abe87c25876aa306e73127330f5f37d270b6b082d50cc679e31b4fc02a3714

@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF30k/a7fcqbZdKDo/Li9s6PNPY+kawfsuoVziecmdSAedvsGfxupexj8cRFH71xkw209RmzQX0UdEJjnVyMMv3Q4=
-SHA256 (Pkgfile) = 654fc1f5e576630a0b99cf926362de760f63dfb0ab010f4b26d32d1b77be7fbf
+RWSagIOpLGJF3xHKls0sePqnHzkh0tR/7XC4HQbMK91Qi96wWgvpEcNIzfgmoCG/Z/AR2m1xts573ARdIEteqrybTwGTci/blAc=
+SHA256 (Pkgfile) = 0358d19f274aa8528eec198f80d1eef212cef6780419071ff2fb16c97191dad5
 SHA256 (.footprint) = 04abd4549e0b16e2332cbb2314fadbdc962ee902b9193df64425b39c456df854
 SHA256 (lensfun-0.3.2.tar.gz) = ae8bcad46614ca47f5bda65b00af4a257a9564a61725df9c74cb260da544d331
 SHA256 (lensfun-fix-python-install-dir.patch) = 11e0f9ce2d5c5fef4373ce6adbb19dbcbcd8a10efa02447db9c92b03798d5654

@@ -4,10 +4,9 @@
 # Depends on: xorg-mkfontscale fontconfig
 
 name=xorg-font-inconsolata-dz
-#date -d "$(curl -sI http://media.nodnod.net/Inconsolata-dz.otf.zip | grep '^Last-Modified:' | cut -d' ' -f2-)" +%Y%m%d
-version=20090212
+version=20201205
 release=1
-source=(http://media.nodnod.net/Inconsolata-dz.otf.zip)
+source=(https://nodnod.net/posts/inconsolata-dz/files/Inconsolata-dz.otf)
 
 build() {
 	install -m 0644 -D $SRC/Inconsolata-dz.otf $PKG/usr/share/fonts/X11/OTF/Inconsolata-dz.otf

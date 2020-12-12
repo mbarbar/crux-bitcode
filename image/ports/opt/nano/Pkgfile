@@ -4,7 +4,7 @@
 # Depends on:  file ncurses bzip2 xz
 
 name=nano
-version=5.3
+version=5.4
 release=1
 source=(https://www.nano-editor.org/dist/v${version%%.*}/$name-$version.tar.xz)
 

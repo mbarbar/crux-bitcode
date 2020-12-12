@@ -5,7 +5,7 @@
 # Depends on: iptables libmnl
 
 name=xtables-addons
-version=3.11
+version=3.13
 release=1
 source=(https://inai.de/files/$name/$name-$version.tar.xz)
 

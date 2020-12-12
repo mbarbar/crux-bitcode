@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39mXaGO52AdZXWKeM5Tyx8QszHL93eb7q0RDx+ko9OyU4LlbJRNOGCZ0pQPz4cjhYN7CSCBPpsX2hlVLalwb7wc=
+SHA256 (Pkgfile) = e4576d35f8d44d44df0762d683ea4a7c7aa23383c13ef300e24db4277c3dd8fc
+SHA256 (.footprint) = b0b5f3cca4e63fe3aa47b120051b89eddfbebb5fcbe01e09bf6bbca9c8c7b8c0
+SHA256 (kwidgetsaddons-5.76.0.tar.xz) = ab7aa94bb1f63e5bea5cf461349c1add96fd608a73c5b7c9d374e6bf035fcac6

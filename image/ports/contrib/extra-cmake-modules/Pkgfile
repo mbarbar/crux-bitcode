@@ -1,0 +1,19 @@
+# Description: Extra cmake modules
+# URL:         http://fmtlib.net/
+# Maintainer:  Stamatin Cristina, dear dot volgk at gmail dot com
+# Depends on:  cmake
+
+name=extra-cmake-modules
+version=5.76.0
+release=1
+source=(https://github.com/KDE/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cmake -S$name-$version -Bbuild      \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DBUILD_TESTING=OFF
+
+	cmake --build build -v
+
+	DESTDIR=$PKG cmake --install build
+}

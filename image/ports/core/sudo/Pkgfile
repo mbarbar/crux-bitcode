@@ -4,7 +4,7 @@
 # Depends on:  zlib linux-pam
 
 name=sudo
-version=1.9.3p1
+version=1.9.4
 release=1
 source=(https://www.sudo.ws/dist/$name-$version.tar.gz \
     $name.pam)
@@ -17,6 +17,7 @@ build() {
                 --with-logfac=auth \
                 --with-vardir=/var/lib/sudo \
                 --with-rundir=/var/run/sudo \
+                --with-sendmail=/usr/sbin/sendmail \
                 --disable-nls
 
     make

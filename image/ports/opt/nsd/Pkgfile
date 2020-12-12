@@ -4,7 +4,7 @@
 # Depends on:  openssl
 
 name=nsd
-version=4.3.3
+version=4.3.4
 release=1
 source=(http://www.nlnetlabs.nl/downloads/nsd/$name-$version.tar.gz
         README pre-install)

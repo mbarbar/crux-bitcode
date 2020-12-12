@@ -4,7 +4,7 @@
 # Depends on:  openssl expat
 
 name=unbound
-version=1.12.0
+version=1.13.0
 release=1
 source=(https://unbound.net/downloads/$name-$version.tar.gz
         unbound

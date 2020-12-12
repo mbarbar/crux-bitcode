@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/opt.pub
-RWSE3ohX2g5d/UIZlHsADFVEHko39BtQtZbs7esitzqcGsbqffbSgwQpFFx7yyDC049vD0IGxTOKm3lstJJQh74tFs0pXMulagU=
-SHA256 (Pkgfile) = d0904d8a7ead82f82b002e6de14908c1e57f059426cdf7a93fc6346776f7e07c
+RWSE3ohX2g5d/fCj+6G2ltZMQ1Y8AUVnBe6t/fDkvhjRblubWWalnKxlOcnomfKDqM7pKfa850gnfazM0pn4WXm44hR+eCdmkQk=
+SHA256 (Pkgfile) = d9c06be8c8ae9634458e79d85aa894572cdd63be0a207f8a67576a592a9a1d35
 SHA256 (.footprint) = b04fc4d3a62e3311e32f9350e044e905495c74101132621641fe2088f7248bdc
 SHA256 (xpdf-4.02.tar.gz) = 52d51dc943b9614b8da66e8662b3031a3c82dc25bfc792eac6b438aa36d549a4
 SHA256 (xpdf-automagic.patch) = 3cf7b618a90e39891b140978c9147e7b8edfd39666f11c9eb11bfe8727241cd9

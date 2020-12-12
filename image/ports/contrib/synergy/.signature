@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3zmgxZnMu0OhLIzWFZdRBpkK/nx5HmPvxeD5u5WNb1wiasmEyYhoJn7Y+sdo/ZfKV82Fcq4Q3TNnm9q8v8R5WQk=
-SHA256 (Pkgfile) = 8e7a50a121b974abcdfecdf977e58656db0aa72446ffaa5381920cd17b065cda
+RWSagIOpLGJF38cCgbN98SV4NFKxnTBa6oOb657VdmWhCD63NI53l7m8iVhIhwwxWcYH1wL9znGOIyr9BfctelukPE7uFtWKaAg=
+SHA256 (Pkgfile) = f3f1e5c62d4fee7140b5c64fd8d957272aa1c849d69ba7a21587dfd06caa5d8c
 SHA256 (.footprint) = bc82db54aefa88b2d5fb268ce5e0d5420c0b763983c5bdc6fdd5d008a237eca9
 SHA256 (synergy-1.12.0.tar.gz) = ec9577816569a83250216373e0925571b7618f1cd0e6dd719bf7d86a2bb4b02e
 SHA256 (googletest-2fe3bd9.zip) = 6aba02cc122d60f517cb6cd439a6a8fc49be0657855dd3ae96b09d438e5a59d8

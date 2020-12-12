@@ -22,9 +22,9 @@ drwxr-xr-x	root/root	usr/include/libipset/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libipset.a
 -rwxr-xr-x	root/root	usr/lib/libipset.la
-lrwxrwxrwx	root/root	usr/lib/libipset.so -> libipset.so.12.2.1
-lrwxrwxrwx	root/root	usr/lib/libipset.so.12 -> libipset.so.12.2.1
--rwxr-xr-x	root/root	usr/lib/libipset.so.12.2.1
+lrwxrwxrwx	root/root	usr/lib/libipset.so -> libipset.so.13.2.0
+lrwxrwxrwx	root/root	usr/lib/libipset.so.13 -> libipset.so.13.2.0
+-rwxr-xr-x	root/root	usr/lib/libipset.so.13.2.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libipset.pc
 drwxr-xr-x	root/root	usr/sbin/

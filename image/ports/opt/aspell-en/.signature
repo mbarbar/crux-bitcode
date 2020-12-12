@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/opt.pub
-RWSE3ohX2g5d/R7XwbTa/+LAAMfibQHPqjbzTbfUV24VZnjl9lI69r91UVxm9JQTc1Jx7AsX461pCWdll/QkdBYHMjbqe9pR8gc=
-SHA256 (Pkgfile) = f3d08d9b1898e6d92704d518470bd2690a3216133e1286d4d769441fe07ee28a
+RWSE3ohX2g5d/ev+VRagiaddyjdED8ZdfD0vvWKXtmvUNMQQ3qqyugit+dfn7r+6sdvdO+kuoltd5bvTw3rY790aah6QO02MkAo=
+SHA256 (Pkgfile) = bef0336e2ee7b5983b4aed1306146a37dfceb52753cb7634552f6694791f513b
 SHA256 (.footprint) = 650aaccec5c129116fccdba6af148716f1b66a339b22fd2751d25e92d9b27a9f
-SHA256 (aspell6-en-2019.10.06-0.tar.bz2) = 24334b4daac6890a679084f4089e1ce7edbe33c442ace776fa693d8e334f51fd
+SHA256 (aspell6-en-2020.12.07-0.tar.bz2) = 4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3

@@ -23,6 +23,7 @@ drwxr-xr-x	root/root	usr/include/hwloc/
 drwxr-xr-x	root/root	usr/include/hwloc/autogen/
 -rw-r--r--	root/root	usr/include/hwloc/autogen/config.h
 -rw-r--r--	root/root	usr/include/hwloc/bitmap.h
+-rw-r--r--	root/root	usr/include/hwloc/cpukinds.h
 -rw-r--r--	root/root	usr/include/hwloc/cuda.h
 -rw-r--r--	root/root	usr/include/hwloc/cudart.h
 -rw-r--r--	root/root	usr/include/hwloc/deprecated.h
@@ -45,9 +46,9 @@ drwxr-xr-x	root/root	usr/include/hwloc/autogen/
 -rw-r--r--	root/root	usr/include/hwloc/shmem.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libhwloc.la
-lrwxrwxrwx	root/root	usr/lib/libhwloc.so -> libhwloc.so.15.3.0
-lrwxrwxrwx	root/root	usr/lib/libhwloc.so.15 -> libhwloc.so.15.3.0
--rwxr-xr-x	root/root	usr/lib/libhwloc.so.15.3.0
+lrwxrwxrwx	root/root	usr/lib/libhwloc.so -> libhwloc.so.15.4.0
+lrwxrwxrwx	root/root	usr/lib/libhwloc.so.15 -> libhwloc.so.15.4.0
+-rwxr-xr-x	root/root	usr/lib/libhwloc.so.15.4.0
 -rwxr-xr-x	root/root	usr/lib/libnetloc.la
 lrwxrwxrwx	root/root	usr/lib/libnetloc.so -> libnetloc.so.0.0.0
 lrwxrwxrwx	root/root	usr/lib/libnetloc.so.0 -> libnetloc.so.0.0.0
@@ -245,6 +246,10 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/hwloc_const_cpuset_t.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwloc_const_nodeset_t.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwloc_cpubind_flags_t.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/hwloc_cpukinds_get_by_cpuset.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/hwloc_cpukinds_get_info.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/hwloc_cpukinds_get_nr.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/hwloc_cpukinds_register.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwloc_cpuset_from_glibc_sched_affinity.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwloc_cpuset_from_linux_libnuma_bitmask.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwloc_cpuset_from_linux_libnuma_ulongs.3.gz
@@ -491,6 +496,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/hwlocality_bitmap.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwlocality_configuration.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwlocality_cpubinding.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/hwlocality_cpukinds.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwlocality_creation.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwlocality_cuda.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/hwlocality_cudart.3.gz

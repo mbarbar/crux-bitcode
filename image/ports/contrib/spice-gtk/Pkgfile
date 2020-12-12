@@ -5,10 +5,10 @@
 # Optional:    usbredir opus lz4 celt51
 
 name=spice-gtk
-version=0.38
+version=0.39
 release=1
 # no need to fill in $name $version as this shitty link changes with every update <3
-source=(https://gitlab.freedesktop.org/spice/spice-gtk/uploads/d09bd4bfb9619e9720c92622c2220b7e/spice-gtk-0.38.tar.xz)
+source=(https://gitlab.freedesktop.org/spice/spice-gtk/uploads/bfadacc5af0a22df5ad04bba96e90a64/spice-gtk-0.39.tar.xz)
 
 build() {
   meson $name-$version build \

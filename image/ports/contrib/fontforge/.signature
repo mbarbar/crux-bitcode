@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3xlqzlpUSjH6LvnxDRcrLfkUz8N74qeC0Y/LvItXpYUtYfYvVxhdi/gyRTJ4KCBqEPVmpb119YRQWqqLLI4Vzg0=
-SHA256 (Pkgfile) = 44a10a4aa859f1ea8a4f89f7214000249380ba24282f59dfca261dd529e81915
+RWSagIOpLGJF3wHxaiEgdl/VvRo+73lw8iIsjQT8gfAo5QNHvQn/ujniOH04EoUQATFUKAzVqo5FPzSYRPJjyyIGA+LcaNmTEAA=
+SHA256 (Pkgfile) = 375002acbee189f9abb17d99ffb39a8fd87a2af9d5387de0745da841825f48bf
 SHA256 (.footprint) = 189d9170acb286b6622f90d53a3d8b50e0a76bf862e1360f6dad7b0c158dd6bb
 SHA256 (fontforge-20201107.tar.xz) = 68bcba8f602819eddc29cd356ee13fafbad7a80d19b652d354c6791343476c78

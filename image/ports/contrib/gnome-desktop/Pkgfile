@@ -4,7 +4,7 @@
 # Depends on: gsettings-desktop-schemas gtk3 iso-codes libseccomp xorg-libxcomposite xorg-libxcursor xorg-libxinerama xkeyboard-config
 
 name=gnome-desktop
-version=3.38.1
+version=3.38.2
 release=1
 source=(https://download.gnome.org/sources/gnome-desktop/${version::4}/$name-$version.tar.xz)
 

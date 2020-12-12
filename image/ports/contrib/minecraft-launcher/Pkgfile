@@ -4,7 +4,7 @@
 # Depends on: gconf openjdk8
 
 name=minecraft-launcher
-version=2.1.17785
+version=2.2.741
 release=1
 source=(https://launcher.mojang.com/download/linux/x86_64/minecraft-launcher_$version.tar.gz
 	https://launcher.mojang.com/download/minecraft-launcher.svg

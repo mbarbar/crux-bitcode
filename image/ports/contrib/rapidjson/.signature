@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF31JJiTlelm80lrszfoCTVAnu3GOPPynZY4B8rSAl97F4MaXYmAJjQfYiDNpXYbhM/X29sWW7O+Q+3kt8z2zM0Qg=
-SHA256 (Pkgfile) = ee567693be623577debe850909ef0519e8896588267c26d0c499aa87aa0d4336
+RWSagIOpLGJF3/KKpxQxh/c1GD3oEvfFC02jFknXH5uireISo9CxiDOvz9bjj5mhQioKK7sKrf6a5RQep2YIlrqv1z9WtZlJVA4=
+SHA256 (Pkgfile) = fc6e1d2794f41bcc64917c6524702d5e785899c2bd3a173eb95d480ed4d311fe
 SHA256 (.footprint) = b4bef9b0129fa2f3800eb41e617931f8ff9e9f4ed407c31a26bceafbc4e53d9e
 SHA256 (rapidjson-1.1.0.tar.gz) = bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e

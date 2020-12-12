@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF37dU9b++0PSDgEiYkO3zUVAqzTK9VVYs5/3fslA9q8Jmyx44/xm6inOBfIAM3X6X7thXl5TWIKLdOvAt5zoNewg=
-SHA256 (Pkgfile) = b598b83582092c65ea1f190e158ad2a76f279c919f560cc92f36129f32c3eb7f
+RWSagIOpLGJF302aErYZBYp7y0NvmM4Tii4eJLNKkjzCsfYEsIw2UYunLJDD/PKrtgu6IvGMSx4h3ocQSvFrgJ4B25gGd/kZgwg=
+SHA256 (Pkgfile) = b82c95f108440d5e902fce25b79b2a66ec9f16613cd7f7547542a2c2d3f61a2e
 SHA256 (.footprint) = 608ccf24fd335af06b1871d651462533d636ab76acf97ac85ebee01f8852760e
 SHA256 (double-conversion-v3.1.5.tar.gz) = a63ecb93182134ba4293fd5f22d6e08ca417caafa244afaa751cbfddf6415b13

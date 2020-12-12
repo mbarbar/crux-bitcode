@@ -10,12 +10,12 @@ drwxr-xr-x	root/root	usr/etc/fish/completions/
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/python3.7/
 drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/
-drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.11.21.1-py3.7.egg-info/
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.11.21.1-py3.7.egg-info/PKG-INFO
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.11.21.1-py3.7.egg-info/SOURCES.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.11.21.1-py3.7.egg-info/dependency_links.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.11.21.1-py3.7.egg-info/entry_points.txt
--rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.11.21.1-py3.7.egg-info/top_level.txt
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.12.5-py3.7.egg-info/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.12.5-py3.7.egg-info/PKG-INFO
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.12.5-py3.7.egg-info/SOURCES.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.12.5-py3.7.egg-info/dependency_links.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.12.5-py3.7.egg-info/entry_points.txt
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl-2020.12.5-py3.7.egg-info/top_level.txt
 drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/YoutubeDL.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/__init__.py
@@ -216,6 +216,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/bokecc.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/bostonglobe.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/bostonglobe.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/box.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/box.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/bpb.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/bpb.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/br.cpython-37.opt-1.pyc
@@ -514,6 +516,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/freshlive.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/frontendmasters.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/frontendmasters.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/fujitv.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/fujitv.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/funimation.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/funimation.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/funk.cpython-37.opt-1.pyc
@@ -766,6 +770,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/matchtv.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/mdr.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/mdr.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/medaltv.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/medaltv.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/medialaan.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/medialaan.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/mediaset.cpython-37.opt-1.pyc
@@ -988,6 +994,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/piksel.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/pinkbike.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/pinkbike.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/pinterest.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/pinterest.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/pladform.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/pladform.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/platzi.cpython-37.opt-1.pyc
@@ -1114,6 +1122,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/rtvs.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/ruhd.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/ruhd.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/rumble.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/rumble.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/rutube.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/rutube.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/rutv.cpython-37.opt-1.pyc
@@ -1164,6 +1174,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sixplay.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sky.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sky.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/skyit.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/skyit.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/skylinewebcams.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/skylinewebcams.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/skynewsarabia.cpython-37.opt-1.pyc
@@ -1202,6 +1214,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sportbox.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sportdeutschland.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sportdeutschland.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/spreaker.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/spreaker.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/springboardplatform.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/springboardplatform.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/sprout.cpython-37.opt-1.pyc
@@ -1370,6 +1384,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tvanouvelles.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tvc.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tvc.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tver.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tver.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tvigle.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tvigle.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pycache__/tvland.cpython-37.opt-1.pyc
@@ -1685,6 +1701,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/bloomberg.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/bokecc.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/bostonglobe.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/box.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/bpb.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/br.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/bravotv.py
@@ -1834,6 +1851,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/freespeech.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/freshlive.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/frontendmasters.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/fujitv.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/funimation.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/funk.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/fusion.py
@@ -1960,6 +1978,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/massengeschmacktv.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/matchtv.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/mdr.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/medaltv.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/medialaan.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/mediaset.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/mediasite.py
@@ -2071,6 +2090,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/picarto.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/piksel.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/pinkbike.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/pinterest.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/pladform.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/platzi.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/playfm.py
@@ -2134,6 +2154,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/rtvnh.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/rtvs.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/ruhd.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/rumble.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/rutube.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/rutv.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/ruutu.py
@@ -2159,6 +2180,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sina.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sixplay.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sky.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/skyit.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/skylinewebcams.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/skynewsarabia.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/slideshare.py
@@ -2178,6 +2200,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sport5.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sportbox.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sportdeutschland.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/spreaker.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/springboardplatform.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/sprout.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/srgssr.py
@@ -2262,6 +2285,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/__pyca
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tva.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tvanouvelles.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tvc.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tver.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tvigle.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tvland.py
 -rw-r--r--	root/root	usr/lib/python3.7/site-packages/youtube_dl/extractor/tvn24.py

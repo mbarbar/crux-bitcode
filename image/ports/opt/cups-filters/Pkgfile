@@ -4,7 +4,7 @@
 # Depends on:  ghostscript poppler qpdf mupdf xorg-font-dejavu-ttf
 
 name=cups-filters
-version=1.28.5
+version=1.28.6
 release=1
 source=(https://www.openprinting.org/download/$name/$name-$version.tar.xz
         cups-browsed)

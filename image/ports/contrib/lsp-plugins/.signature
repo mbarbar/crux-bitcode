@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF31TjHkd8zYocnUfp5JRH9ET5A+eA9sw1tCjv57nTngrUh8qa2MC0gb9JgKWNqw4XxwkVYVK5BPTQgq9JkM+5uwQ=
-SHA256 (Pkgfile) = 5ac4904c9b09e35865283c48b902d69dc1150f967edc1e4c36f422da6761ce5c
+RWSagIOpLGJF331QwbuJJdAccfsPm7XpO3pUiRl955ZkOiaJdrM8uhSif9sXmhbiFVTTEtY5eKZjeBDcL7gNwtPW9JOzZ0hepgY=
+SHA256 (Pkgfile) = c98b58aee4b57374c4f21ce8c6d0fc9a4e45951dee2a7c11d86b6442e59ab18f
 SHA256 (.footprint) = f31813f7275c2f544d6411395a42c47f8c3078a2d7c2e511aadd1eb7e2b9beac
 SHA256 (lsp-plugins-src-1.1.26.tar.gz) = 159ad312e11d39967fba92b5210316d423856c37f4b95aaaa297f772a5f009fb

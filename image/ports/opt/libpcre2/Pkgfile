@@ -1,11 +1,10 @@
 # Description: Perl Compatible Regular Expressions
 # URL:         http://www.pcre.org
 # Maintainer:  Juergen Daubert, jue at crux dot nu
-# Depends on:
 
 name=libpcre2
-version=10.35
-release=2
+version=10.36
+release=1
 source=(https://ftp.pcre.org/pub/pcre/pcre2-$version.tar.bz2)
 
 build() {

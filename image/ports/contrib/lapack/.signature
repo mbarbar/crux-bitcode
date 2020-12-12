@@ -1,6 +1,6 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF39Vf2Pi2plfXcge/3eAr5NqOC+4Ea64f2OqiN9MZ4evmjkRSNJdRcdvg/2oDBQ1B/AGNeYv88sgqnbsvcDl3ZQI=
-SHA256 (Pkgfile) = a5e15892855f48d6b903752a00058112df2dfa3f1e2ef88f26202c1cb88eeac3
+RWSagIOpLGJF31MhIwmCDSTxUJNfU1jZiE5Ht47XNrsBIzFtwJG4z/V4SKnpSToxakiCmPa6baFr+w8Qys//yeNfRdfDxgXUrww=
+SHA256 (Pkgfile) = f7e41451e0d717879a1b24e63788b5ffcd7f36a8cff75ab09acd829c99ab0ad6
 SHA256 (.footprint) = 270d36a46c5a39470ede7ed88db1fa9cd153ebddad41777ed7b4195472341df1
 SHA256 (lapack-3.9.0.tar.gz) = 106087f1bb5f46afdfba7f569d0cbe23dacb9a07cd24733765a0e89dbe1ad573
 SHA256 (87536aa3.patch) = 327d62ee39eeb967ce48b4ed0b95e78c6210f688b5c3f944810aafe68d2dadfa

@@ -4,9 +4,9 @@
 # Depends on:  aspell
 
 name=aspell-ro
-version=3.3-2
+version=3.3.10
 release=1
-source=(http://mirrors.sunsite.dk/gnu/aspell/dict/ro/aspell5-ro-$version.tar.bz2)
+source=(https://download.sourceforge.net/rospell/aspell5-ro-$version.tar.bz2)
 
 build () {
 	cd aspell5-ro-$version

@@ -4,7 +4,7 @@
 # Depends on:  openssl
 
 name=hcxdumptool
-version=6.1.3
+version=6.1.4
 release=1
 source=(https://github.com/ZerBea/$name/archive/$version/$name-$version.tar.gz)
 

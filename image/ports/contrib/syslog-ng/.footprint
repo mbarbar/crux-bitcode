@@ -39,6 +39,7 @@ drwxr-xr-x	root/root	usr/include/syslog-ng/ack-tracker/
 -rw-r--r--	root/root	usr/include/syslog-ng/cfg-args.h
 -rw-r--r--	root/root	usr/include/syslog-ng/cfg-block-generator.h
 -rw-r--r--	root/root	usr/include/syslog-ng/cfg-block.h
+-rw-r--r--	root/root	usr/include/syslog-ng/cfg-grammar-internal.h
 -rw-r--r--	root/root	usr/include/syslog-ng/cfg-grammar.h
 -rw-r--r--	root/root	usr/include/syslog-ng/cfg-lexer-subst.h
 -rw-r--r--	root/root	usr/include/syslog-ng/cfg-lexer.h
@@ -144,6 +145,7 @@ drwxr-xr-x	root/root	usr/include/syslog-ng/logproto/
 -rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-framed-server.h
 -rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-indented-multiline-server.h
 -rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-multiline-server.h
+-rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-proxied-text-server.h
 -rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-record-server.h
 -rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-regexp-multiline-server.h
 -rw-r--r--	root/root	usr/include/syslog-ng/logproto/logproto-server.h
@@ -248,6 +250,7 @@ drwxr-xr-x	root/root	usr/include/syslog-ng/template/
 -rw-r--r--	root/root	usr/include/syslog-ng/template/common-template-typedefs.h
 -rw-r--r--	root/root	usr/include/syslog-ng/template/compiler.h
 -rw-r--r--	root/root	usr/include/syslog-ng/template/escaping.h
+-rw-r--r--	root/root	usr/include/syslog-ng/template/eval.h
 -rw-r--r--	root/root	usr/include/syslog-ng/template/function.h
 -rw-r--r--	root/root	usr/include/syslog-ng/template/macros.h
 -rw-r--r--	root/root	usr/include/syslog-ng/template/repr.h
@@ -296,27 +299,27 @@ drwxr-xr-x	root/root	usr/include/syslog-ng/value-pairs/
 -rw-r--r--	root/root	usr/include/syslog-ng/versioning.h
 -rw-r--r--	root/root	usr/include/syslog-ng/window-size-counter.h
 drwxr-xr-x	root/root	usr/lib/
-lrwxrwxrwx	root/root	usr/lib/libevtlog-3.29.so.0 -> libevtlog-3.29.so.0.0.0
--rwxr-xr-x	root/root	usr/lib/libevtlog-3.29.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libevtlog-3.30.so.0 -> libevtlog-3.30.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libevtlog-3.30.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libevtlog.la
-lrwxrwxrwx	root/root	usr/lib/libevtlog.so -> libevtlog-3.29.so.0.0.0
-lrwxrwxrwx	root/root	usr/lib/libloggen_helper-3.29.so.0 -> libloggen_helper-3.29.so.0.0.0
--rwxr-xr-x	root/root	usr/lib/libloggen_helper-3.29.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libevtlog.so -> libevtlog-3.30.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libloggen_helper-3.30.so.0 -> libloggen_helper-3.30.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libloggen_helper-3.30.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libloggen_helper.la
-lrwxrwxrwx	root/root	usr/lib/libloggen_helper.so -> libloggen_helper-3.29.so.0.0.0
-lrwxrwxrwx	root/root	usr/lib/libloggen_plugin-3.29.so.0 -> libloggen_plugin-3.29.so.0.0.0
--rwxr-xr-x	root/root	usr/lib/libloggen_plugin-3.29.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libloggen_helper.so -> libloggen_helper-3.30.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libloggen_plugin-3.30.so.0 -> libloggen_plugin-3.30.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libloggen_plugin-3.30.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libloggen_plugin.la
-lrwxrwxrwx	root/root	usr/lib/libloggen_plugin.so -> libloggen_plugin-3.29.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libloggen_plugin.so -> libloggen_plugin-3.30.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libsecret-storage.la
 lrwxrwxrwx	root/root	usr/lib/libsecret-storage.so -> libsecret-storage.so.0.0.0
 lrwxrwxrwx	root/root	usr/lib/libsecret-storage.so.0 -> libsecret-storage.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libsecret-storage.so.0.0.0
-lrwxrwxrwx	root/root	usr/lib/libsyslog-ng-3.29.so.0 -> libsyslog-ng-3.29.so.0.0.0
--rwxr-xr-x	root/root	usr/lib/libsyslog-ng-3.29.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libsyslog-ng-3.30.so.0 -> libsyslog-ng-3.30.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libsyslog-ng-3.30.so.0.0.0
 -rw-r--r--	root/root	usr/lib/libsyslog-ng-native-connector.a
 -rwxr-xr-x	root/root	usr/lib/libsyslog-ng.la
-lrwxrwxrwx	root/root	usr/lib/libsyslog-ng.so -> libsyslog-ng-3.29.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libsyslog-ng.so -> libsyslog-ng-3.30.so.0.0.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/syslog-ng-native-connector.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/syslog-ng.pc
@@ -416,6 +419,8 @@ drwxr-xr-x	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/debuggercli.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/debuglang.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/debuglang.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/editline.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/editline.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/getoptlexer.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/getoptlexer.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/langcompleter.cpython-37.opt-1.pyc
@@ -444,6 +449,7 @@ drwxr-xr-x	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/__pycache__/
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/completerlang.py
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/debuggercli.py
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/debuglang.py
+-rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/editline.py
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/getoptlexer.py
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/langcompleter.py
 -rw-r--r--	root/root	usr/lib/syslog-ng/python/syslogng/debuggercli/lexer.py
@@ -459,82 +465,82 @@ drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/syslog-ng/
 drwxr-xr-x	root/root	usr/share/syslog-ng/include/
 drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/apache/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/apache/apache.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/checkpoint/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/checkpoint/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/cim/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/cim/adapter.conf
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/cim/template.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/cisco/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/cisco/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/collectd/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/collectd/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/default-network-drivers/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/default-network-drivers/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/elasticsearch/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/elasticsearch/elastic-http.conf
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/elasticsearch/elastic-java.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/ewmm/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/ewmm/ewmm.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/graphite/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/graphite/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/graylog2/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/graylog2/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/hdfs/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/hdfs/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/iptables/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/iptables/iptables.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/junos/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/junos/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/kafka/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/kafka/kafka-java.conf
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/kafka/kafka.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/linux-audit/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/linux-audit/linux-audit.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/loadbalancer/
--rwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/loadbalancer/gen-loadbalancer.sh
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/loadbalancer/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/loggly/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/loggly/loggly.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/logmatic/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/logmatic/logmatic.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/mbox/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/mbox/mbox.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/netskope/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/netskope/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/nodejs/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/nodejs/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/osquery/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/osquery/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/pacct/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/pacct/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/paloalto/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/paloalto/panos.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/rewrite/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/rewrite/cc-mask.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/slack/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/slack/slack.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/snmptrap/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/snmptrap/snmptrapd-source.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/solaris/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/solaris/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/sudo/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/sudo/sudo.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/sumologic/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/sumologic/sumologic.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/syslogconf/
--rwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/syslogconf/convert-syslogconf.awk
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/syslogconf/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/system/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/system/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/telegram/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/telegram/telegram.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/websense/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/websense/plugin.conf
-drwxrwxr-x	root/root	usr/share/syslog-ng/include/scl/windowseventlog/
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/windowseventlog/plugin.conf
--rw-rw-r--	root/root	usr/share/syslog-ng/include/scl/windowseventlog/windowseventlog.xml
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/apache/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/apache/apache.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/checkpoint/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/checkpoint/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/cim/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/cim/adapter.conf
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/cim/template.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/cisco/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/cisco/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/collectd/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/collectd/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/default-network-drivers/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/default-network-drivers/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/elasticsearch/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/elasticsearch/elastic-http.conf
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/elasticsearch/elastic-java.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/ewmm/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/ewmm/ewmm.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/graphite/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/graphite/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/graylog2/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/graylog2/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/hdfs/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/hdfs/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/iptables/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/iptables/iptables.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/junos/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/junos/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/kafka/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/kafka/kafka-java.conf
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/kafka/kafka.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/linux-audit/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/linux-audit/linux-audit.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/loadbalancer/
+-rwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/loadbalancer/gen-loadbalancer.sh
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/loadbalancer/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/loggly/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/loggly/loggly.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/logmatic/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/logmatic/logmatic.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/mbox/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/mbox/mbox.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/netskope/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/netskope/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/nodejs/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/nodejs/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/osquery/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/osquery/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/pacct/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/pacct/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/paloalto/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/paloalto/panos.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/rewrite/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/rewrite/cc-mask.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/slack/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/slack/slack.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/snmptrap/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/snmptrap/snmptrapd-source.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/solaris/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/solaris/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/sudo/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/sudo/sudo.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/sumologic/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/sumologic/sumologic.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/syslogconf/
+-rwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/syslogconf/convert-syslogconf.awk
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/syslogconf/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/system/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/system/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/telegram/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/telegram/telegram.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/websense/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/websense/plugin.conf
+drwxr-xr-x	root/root	usr/share/syslog-ng/include/scl/windowseventlog/
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/windowseventlog/plugin.conf
+-rw-r--r--	root/root	usr/share/syslog-ng/include/scl/windowseventlog/windowseventlog.xml
 drwxr-xr-x	root/root	usr/share/syslog-ng/tools/
 -rw-r--r--	root/root	usr/share/syslog-ng/tools/cfg-grammar.y
 -rw-r--r--	root/root	usr/share/syslog-ng/tools/lex-rules.am

@@ -4,7 +4,7 @@
 # Depends on: libpcre zlib openssl
 
 name=nginx
-version=1.19.4
+version=1.19.5
 release=1
 source=(http://nginx.org/download/$name-$version.tar.gz \
     $name.conf $name.rc)

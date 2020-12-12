@@ -4,7 +4,7 @@
 # Depends on:  libusb linux-pam util-linux glib libsdl2 xorg-libpixman libxkbcommon
  
 name=qemu
-version=5.1.0
+version=5.2.0
 release=1
 source=(https://download.qemu.org/$name-$version.tar.xz
 	$name-man-$version.tar.xz)

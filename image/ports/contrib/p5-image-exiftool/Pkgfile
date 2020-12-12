@@ -4,7 +4,7 @@
 # Depends on:
 
 name=p5-image-exiftool
-version=12.10
+version=12.12
 release=1
 source=(https://exiftool.org/Image-ExifTool-$version.tar.gz)
 

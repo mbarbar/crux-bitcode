@@ -1,5 +1,5 @@
 untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF32lNbQerm6mIoAvuWVlj7MAIrjY1Zbuxo4xE/vJD6MVcjoPgmM1T1tPIRwpLgjdsv4colxzOwPgWoeM17Y5G2g4=
-SHA256 (Pkgfile) = 8da337d8a733b5e9a439ba4d07d07c07581f28921417c1480d2fd61a5fe251b3
+RWSagIOpLGJF35YuTtkjGaV1F5FE6Z/fr2oD9vQxKaA++l0U50ihDi+Co0k1F+gZBJKF7dFyLzt8Ykt6P06+tZrm8UlgQ8xrJQc=
+SHA256 (Pkgfile) = c103b2d7ca5a1eecb2024947f06c837dc0485f7c2afee744e0a56a00874a4337
 SHA256 (.footprint) = 944cb9fd472c66a70b21545b291de64d9cb415f140f2f1d8057dac894143168c
-SHA256 (xdiskusage-1.52.tgz) = eb17f1177c933b8b764ad8b3cad0ec97501d69dde9117ce2a7c759eb60ecb2c7
+SHA256 (xdiskusage-1.53.tgz) = ede4d7ef5311e83aadd291b5dc0fc40a34bec1bba4195d4d73a92c56f93b52c6
