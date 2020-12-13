@@ -43,20 +43,25 @@ ELF_MAGIC = bytes.fromhex("7F454c46")
 pkgs = []
 deps = set()
 
+cflags = ""
+cxxflags = ""
+
 # Set CFLAGS and CXXFLAGS from pkgmk.conf. Some ports don't respect pkgmk.conf's.
 try:
     with open(PKGMK_CONF, "r") as f:
         for l in f.readlines():
             l = l.strip()
-            if len(l) >= 6 and l[:6] == "CFLAGS":
+            if len(l) >= 6 and l[:13] == "export CFLAGS":
                 parts = l.split("=")
                 if len(parts) > 1:
-                    os.environ["CFLAGS"] = "".join(parts[1:])
+                    cflags = "".join(parts[1:])
+                    os.environ["CFLAGS"] = cflags
                     print("Exported CFLAGS")
-            if len(l) >= 8 and l[:8] == "CXXFLAGS":
+            if len(l) >= 8 and l[:15] == "export CXXFLAGS":
                 parts = l.split("=")
                 if len(parts) > 1:
-                    os.environ["CXXFLAGS"] = "".join(parts[1:])
+                    cxxflags = "".join(parts[1:])
+                    os.environ["CXXFLAGS"] = cxxflags
                     print("Exported CXXFLAGS")
 except:
     print("Did not export CFLAGS/CXXFLAGS")
