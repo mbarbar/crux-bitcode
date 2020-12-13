@@ -8,7 +8,7 @@ Docker.
 The first run may be slow as the (large) image is downloaded.
 
 ## Usage
-1. Create a list of desired ports in a file `pkgs.txt`.
+1. Create a list of desired ports in a file `pkgs.txt` (modify included file).
    (The full list of possibilities can be seen by running `ls ports/*/`.)
 2. Run `./build-bitcode.sh`.
 3. unzip the generated `bitcode-XYZ.zip`.
