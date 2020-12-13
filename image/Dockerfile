@@ -39,9 +39,20 @@ RUN prt-get -is --install-scripts depinst zip
 ENV CC=gclang
 ENV CXX=gclang++
 
-RUN rm /usr/bin/cc
-RUN ln -s `which gclang` /usr/bin/cc
-RUN ln -s `which gclang++` /usr/bin/cxx
+# Move gclang to a lower precedence in PATH and overwrite all C compilers,
+# including gclang, with cc.sh which will solve some of our CFLAGS woes
+# and hardcoded gcc.
+# TODO: does hardcoded clang appear?
+RUN mv "$HOME/go/bin/gclang" /bin/gclang
+COPY cc.sh /usr/bin/gclang
+COPY cc.sh /usr/bin/gcc
+COPY cc.sh /usr/bin/cc
+
+# Repeat for C++ compilers.
+RUN mv "$HOME/go/bin/gclang++" /bin/gclang++
+COPY cxx.sh /usr/bin/gclang++
+COPY cxx.sh /usr/bin/g++
+COPY cxx.sh /usr/bin/cxx
 
 ENV PKGS_FILE "/etc/pkgs.txt"
 ENV BC_DIR "$HOME/bitcode"
