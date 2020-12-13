@@ -4,7 +4,7 @@
 for path in /usr/ports/core/*; do
     port=`basename $path`
     if [ $port = "COPYING" -o $port = "COPYRIGHT" ]; then continue; fi
-    prt-get isinst $port || prt-get depinst --install-scripts $port || exit 1
+    prt-get isinst $port || prt-get -is --install-scripts depinst $port || exit 1
 done
 
 # Some programs used in the build system are linked against libreadline/libhistory,
@@ -29,7 +29,7 @@ prt-get update openssl
 
 for port in $ports; do
   cd /usr/ports/core/$port
-  pkgmk -u || exit 1
+  pkgmk -is -if -u || exit 1
 done
 
 prt-get remove iputils || exit 1

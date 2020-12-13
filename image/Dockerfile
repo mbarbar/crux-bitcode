@@ -17,15 +17,15 @@ COPY pre-sysup.sh /bin
 RUN pre-sysup.sh
 
 # Update core.
-RUN prt-get -if sysup
+RUN prt-get -is -if sysup
 
 # Build LLVM that we'll use to build other software with GLLVM.
-RUN prt-get depinst --install-scripts llvm
-RUN prt-get depinst --install-scripts clang
+RUN prt-get -is --install-scripts depinst llvm
+RUN prt-get -is --install-scripts depinst clang
 
 # Install GLLVM. No need for a port; this is a throwaway container.
-RUN prt-get depinst --install-scripts git
-RUN prt-get depinst --install-scripts go
+RUN prt-get depinst -is --install-scripts git
+RUN prt-get depinst -is --install-scripts go
 RUN go get github.com/SRI-CSL/gllvm/cmd/...
 ENV PATH="${HOME}/go/bin/:${PATH}"
 
@@ -33,7 +33,7 @@ ENV PATH="${HOME}/go/bin/:${PATH}"
 RUN go get -u github.com/boyter/scc/
 
 # Install zip.
-RUN prt-get depinst --install-scripts zip
+RUN prt-get -is --install-scripts depinst zip
 
 # Actually use GLLVM.
 ENV CC=gclang
