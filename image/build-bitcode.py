@@ -90,6 +90,27 @@ else:
             for dep in pkg_deps.stdout.strip().split(b"\n")[1:]:
                 deps.add(dep.split()[1])
 
+try:
+    bc_info = open(BC_INFO, "a")
+except Exception as e:
+    print("Could not open bitcode info file file: {}".format(e))
+
+if cflags == "":
+    cflags = "No user-defined CFLAGS"
+if cxxflags == "":
+    cxxflags = "No user-defined CXXFLAGS"
+
+bc_info.write("CFLAGS\n")
+bc_info.write("------\n")
+bc_info.write(cflags + "\n\n")
+
+bc_info.write("CXXFLAGS\n")
+bc_info.write("--------\n")
+bc_info.write(cxxflags + "\n\n")
+
+bc_info.write("LOC\t\tBitcode\n")
+bc_info.write("---\t\t-------\n")
+
 for pkg in pkgs:
     # Build + install the package.
 
@@ -132,11 +153,6 @@ for pkg in pkgs:
                 os.remove(bc_basename_path + ".ll")
 
                 loc = loc.stdout.strip().decode("ascii")
-                try:
-                    bc_info = open(BC_INFO, "a")
-                except Exception as e:
-                    print("Could not open bitcode info file file: {}".format(e))
-                else:
-                    with bc_info:
-                        bc_info.write(os.path.basename(bc_basename_path)\
-                                      + ".bc\t\t\t" + loc + "\n")
+                bc_info.write(loc + "\t\t" + os.path.basename(bc_basename_path)\
+                              + ".bc\n")
+
