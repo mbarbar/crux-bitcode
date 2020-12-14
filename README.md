@@ -15,6 +15,7 @@ The first run may be slow as the (large) image is downloaded.
 
 An `info.txt` file is provided alongside the bitcode files containing (an estimate of) the lines of C/C++ code used to generate each bitcode file.
 This is calculated by counting the lines of code in the files mentioned in the debug information.
+`info.txt` also includes the user-defined `CFLAGS` and `CXXFLAGS`.
 
 ## Customisation
 * `build-bitcode.sh` copies `ports` into the container, so ports can be modified, and new ports can be created or copied from elsewhere.
@@ -22,12 +23,9 @@ This is calculated by counting the lines of code in the files mentioned in the d
 
 
 ## Caveats
-Some software will not successfully build if the build system of a port hardcodes use of a specific compiler or the port's `Pkgfile` hardcodes use of a compiler.
-To overcomes these problems, the ports tree can be modified.
-In the first case, a patch can be provided for `pkgutils` to apply, and for the second, the `Pkgfile` can be edited.
-
-Some ports may not respect `CFLAGS`/`CXXFLAGS`.
-The image attempts to resolve this by intercepting calls to the compiler (see `image/intercept.sh`).
+Some ports may not respect `CFLAGS`/`CXXFLAGS` nor `CC`/`CXX`..
+The image attempts to resolve this by intercepting calls to the compiler (see `image/cc.sh`, `image/cxx.sh`).
+Some ports may need to have their `Pkgfile` modified, or a patch added if problems arise.
 
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
