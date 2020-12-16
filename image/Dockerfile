@@ -1,4 +1,4 @@
-FROM crux:3.5
+FROM mbarbar/crux:3.5
 
 ENV HOME="/root"
 
