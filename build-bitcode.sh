@@ -9,10 +9,12 @@ sid=`echo $id | head -c 10`
 docker cp pkgmk.conf $id:/etc/pkgmk.conf
 docker cp pkgs.txt $id:/etc/pkgs.txt
 
-docker exec "$id" build-bitcode
-docker exec "$id" mv "bitcode" "bitcode-$sid"
-docker exec "$id" zip -r "bitcode-$sid.zip" "bitcode-$sid"
+if docker exec "$id" build-bitcode; then
+  docker exec "$id" mv "bitcode" "bitcode-$sid"
+  docker exec "$id" zip -r "bitcode-$sid.zip" "bitcode-$sid"
+  docker cp "$id:/root/bitcode-$sid.zip" "bitcode-$sid.zip"
+else
+  echo "^ fatal error" 1>&2
+fi
 
-docker cp "$id:/root/bitcode-$sid.zip" "bitcode-$sid.zip"
-
-docker stop "$id"
+docker stop "$id" > /dev/null
