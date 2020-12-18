@@ -23,9 +23,9 @@ This is calculated by counting the lines of code in the files mentioned in the d
 
 
 ## Caveats
-Some ports may not respect `CFLAGS`/`CXXFLAGS` nor `CC`/`CXX`..
+Some ports may not respect `CFLAGS`/`CXXFLAGS` nor `CC`/`CXX`.
 The image attempts to resolve this by intercepting calls to the compiler (see `image/cc.sh`, `image/cxx.sh`).
-Some ports may need to have their `Pkgfile` modified, or a patch added if problems arise.
+Some ports may need to have their `Pkgfile` modified, or a patch added, if problems arise.
 
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
