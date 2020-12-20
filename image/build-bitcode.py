@@ -156,3 +156,4 @@ for pkg in pkgs:
                 bc_info.write(loc + "\t\t" + os.path.basename(bc_basename_path)\
                               + ".bc\n")
 
+bc_info.close()
