@@ -30,8 +30,6 @@ Some ports may need to have their `Pkgfile` modified, or a patch added, if probl
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
 * Command line options for `build-bitcode.sh` and `build-bitcode.py`.
-* Detect duplicates when running `get-bc`/`loc.awk`.
-  * Should improve performance a fair bit.
 * Reduce image size.
 * Test more ports.
 * Remove non-C/C++ ports.
