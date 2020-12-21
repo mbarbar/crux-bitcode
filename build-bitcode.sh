@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Spin up a container.
-id=`docker run --rm --detach -it mbarbar/crux-bitcode:10.0.1 bash`
+id=`docker run --rm --detach -it mbarbar/crux-bitcode:10.0.1.1 bash`
 # Short ID, for more wieldy filenames.
 sid=`echo $id | head -c 10`
 
