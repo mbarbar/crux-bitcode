@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import hashlib
 import os
 import subprocess
 import sys
@@ -42,6 +43,13 @@ ELF_MAGIC = bytes.fromhex("7F454c46")
 
 pkgs = []
 deps = set()
+
+# Maps MD5 hashes to sets of installed files with that hash
+aliases = {}
+# Maps MD5 hashes to a "canonical" filename.
+canon_fn = {}
+# Maps MD5 hashes to the LOC of that BC.
+locs = {}
 
 cflags = ""
 cxxflags = ""
@@ -90,27 +98,6 @@ else:
             for dep in pkg_deps.stdout.strip().split(b"\n")[1:]:
                 deps.add(dep.split()[1])
 
-try:
-    bc_info = open(BC_INFO, "a")
-except Exception as e:
-    print("Could not open bitcode info file file: {}".format(e))
-
-if cflags == "":
-    cflags = "No user-defined CFLAGS"
-if cxxflags == "":
-    cxxflags = "No user-defined CXXFLAGS"
-
-bc_info.write("CFLAGS\n")
-bc_info.write("------\n")
-bc_info.write(cflags + "\n\n")
-
-bc_info.write("CXXFLAGS\n")
-bc_info.write("--------\n")
-bc_info.write(cxxflags + "\n\n")
-
-bc_info.write("LOC\t\tBitcode\n")
-bc_info.write("---\t\t-------\n")
-
 for pkg in pkgs:
     # Build + install the package.
 
@@ -135,7 +122,18 @@ for pkg in pkgs:
 
         with open(installed_file, "rb") as f:
             bc_basename_path = BC_DIR + "/" + os.path.basename(installed_file)
-            if f.read()[:4] == ELF_MAGIC:
+            bc_basename = os.path.basename(bc_basename_path) + ".bc"
+            if f.read(4) == ELF_MAGIC:
+                md5 = hashlib.md5(f.read()).hexdigest()
+                if md5 not in canon_fn:
+                    canon_fn[md5] = bc_basename
+                    # This wouldn't exist yet if we are here.
+                    aliases[md5] = set()
+                else:
+                    aliases[md5].add(bc_basename)
+                    # Already processed the canon file; this is the same.
+                    continue
+
                 get = subprocess.run([GETBC, "-o", bc_basename_path + ".bc",
                                       installed_file],
                                      capture_output=True)
@@ -151,9 +149,43 @@ for pkg in pkgs:
                 # Run the loc script and delete the .ll.
                 loc = subprocess.run([LOC, bc_basename_path + ".ll"], capture_output=True)
                 os.remove(bc_basename_path + ".ll")
-
                 loc = loc.stdout.strip().decode("ascii")
-                bc_info.write(loc + "\t\t" + os.path.basename(bc_basename_path)\
-                              + ".bc\n")
+                locs[md5] = loc
 
-bc_info.close()
+try:
+    bc_info = open(BC_INFO, "a")
+except Exception as e:
+    print("Could not open bitcode info file file: {}".format(e))
+
+if cflags == "":
+    cflags = "No user-defined CFLAGS"
+if cxxflags == "":
+    cxxflags = "No user-defined CXXFLAGS"
+
+with bc_info:
+    bc_info.write("CFLAGS\n")
+    bc_info.write("------\n")
+    bc_info.write(cflags + "\n\n")
+
+    bc_info.write("CXXFLAGS\n")
+    bc_info.write("--------\n")
+    bc_info.write(cxxflags + "\n\n")
+
+    bc_info.write("LOC\t\tBitcode\t\tAliases\n")
+    bc_info.write("---\t\t-------\t\t-------\n")
+
+    for md5 in canon_fn.keys():
+        fn = canon_fn[md5]
+        loc = locs[md5]
+        fn_aliases = aliases[md5]
+
+        bc_info.write(loc + "\t\t" + fn + "\t\t")
+        first = True
+        for alias in fn_aliases:
+            if not first:
+                bc_info.write(" ")
+
+            bc_info.write(alias)
+            first = False
+
+        bc_info.write("\n")
