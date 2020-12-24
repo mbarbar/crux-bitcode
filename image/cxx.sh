@@ -1,3 +1,3 @@
 #!/bin/sh
 # See comment in cc.sh.
-/bin/gclang++ $@ $CFLAGS
+/bin/gclang++ "$@" $CFLAGS
