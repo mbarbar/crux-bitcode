@@ -8,6 +8,7 @@ sid=`echo $id | head -c 10`
 # Copy over user config.
 docker cp pkgmk.conf $id:/etc/pkgmk.conf
 docker cp pkgs.txt $id:/etc/pkgs.txt
+docker cp ports/. $id:/usr/ports/
 
 if docker exec "$id" build-bitcode; then
   docker exec "$id" mv "bitcode" "bitcode-$sid"
