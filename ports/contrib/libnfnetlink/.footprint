@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libnfnetlink/
+-rw-r--r--	root/root	usr/include/libnfnetlink/libnfnetlink.h
+-rw-r--r--	root/root	usr/include/libnfnetlink/linux_nfnetlink.h
+-rw-r--r--	root/root	usr/include/libnfnetlink/linux_nfnetlink_compat.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libnfnetlink.la
+lrwxrwxrwx	root/root	usr/lib/libnfnetlink.so -> libnfnetlink.so.0.2.0
+lrwxrwxrwx	root/root	usr/lib/libnfnetlink.so.0 -> libnfnetlink.so.0.2.0
+-rwxr-xr-x	root/root	usr/lib/libnfnetlink.so.0.2.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libnfnetlink.pc

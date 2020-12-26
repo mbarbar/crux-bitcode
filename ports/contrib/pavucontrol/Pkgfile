@@ -1,0 +1,21 @@
+# Description: PulseAudio Volume Control
+# URL: https://freedesktop.org/software/pulseaudio/pavucontrol/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Packager: Pedja, predivan at mts dot rs
+# Depends on: pulseaudio gtkmm3 libcanberra
+
+name=pavucontrol
+version=4.0
+release=1
+source=(http://freedesktop.org/software/pulseaudio/$name/$name-$version.tar.gz)
+
+build() {
+  export CXXFLAGS="${CXXFLAGs} -std=c++11"
+  cd $name-$version
+  ./configure --prefix=/usr \
+      --disable-nls
+  make
+  make DESTDIR=$PKG install
+
+  rm -r $PKG/usr/share/{doc,locale}
+}

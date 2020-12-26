@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x89ZbU7MwinyuTTtx32ZUdyfmrJerLQd1ui0Jf63aB1QM/A4e/Wm1Abf50TBlggLOYdWkjNnDapBk0B9ZvJHwY=
+SHA256 (Pkgfile) = dc670008120149fa41316aee5d98c00ea75c2db332f917ca546e1e4edd3f4d91
+SHA256 (.footprint) = 1f1ea88f2b363f129d4141051c015df6ab23a10f9e173365540489ce281bf735
+SHA256 (vkmark-20200521.tar.gz) = a8b4f5d86d8a6328528500fa9e13908e4a4c0df331084a08dab5515630efec02

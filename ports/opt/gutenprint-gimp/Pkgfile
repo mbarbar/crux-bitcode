@@ -1,0 +1,29 @@
+# Description: Print plugin for gimp
+# URL:         http://gimp-print.sourceforge.net/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  gimp gutenprint
+
+name=gutenprint-gimp
+version=5.3.3
+release=1
+source=(http://downloads.sourceforge.net/project/gimp-print/gutenprint-5.3/$version/gutenprint-$version.tar.xz)
+
+build () {
+    cd gutenprint-$version
+
+    CONFIG_SHELL=/bin/bash \
+    ./configure --prefix=/usr \
+                --disable-{nls,samples,escputil} \
+                --without-{foomatic,ghostscript,doc} \
+                --enable-libgutenprintui2 \
+                --with-gimp2
+    make
+    make DESTDIR=$PKG install
+
+    rm $PKG/usr/lib/libgutenprint.*
+    rm $PKG/usr/lib/pkgconfig/gutenprint.pc
+    rm -r $PKG/usr/include/gutenprint
+    rm -r $PKG/usr/lib/gutenprint
+    rm -r $PKG/usr/lib/cups
+    rm -r $PKG/usr/{bin,sbin,share} $PKG/etc
+}

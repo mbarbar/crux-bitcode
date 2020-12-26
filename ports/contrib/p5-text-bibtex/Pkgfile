@@ -1,0 +1,20 @@
+# Description: Perl interface to read and parse BibTeX files
+# URL: https://metacpan.org/release/Text-BibTeX
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-config-autoconf p5-extutils-libbuilder p5-module-build
+
+name=p5-text-bibtex
+version=0.88
+release=1
+source=(https://cpan.metacpan.org/authors/id/A/AM/AMBS/Text-BibTeX-$version.tar.gz)
+
+build() {
+  cd Text-BibTeX-$version
+  sed -i s,lib64,lib,g Build.PL
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Build.PL
+  ./Build
+  ./Build install installdirs=vendor destdir=$PKG
+  find $PKG \( -iname '*.packlist' -o -iname '*.pod' -o -iname 'BibTex.bs' \) -delete
+}

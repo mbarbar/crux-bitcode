@@ -1,0 +1,16 @@
+# Description: a simple thesaurus
+# URL: http://hunspell.sourceforge.net/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: hunspell
+
+name=libmythes
+version=1.2.4
+release=1
+source=(https://downloads.sourceforge.net/project/hunspell/MyThes/$version/${name/lib/}-$version.tar.gz)
+
+build() {
+  cd mythes-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

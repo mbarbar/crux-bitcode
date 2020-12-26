@@ -1,0 +1,18 @@
+# Description: Romanian dictionary for aspell
+# URL:         http://aspell.net
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  aspell
+
+name=aspell-ro
+version=3.3.10
+release=1
+source=(https://download.sourceforge.net/rospell/aspell5-ro-$version.tar.bz2)
+
+build () {
+	cd aspell5-ro-$version
+
+	./configure
+
+	make
+	make DESTDIR=$PKG install
+}

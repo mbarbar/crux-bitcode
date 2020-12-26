@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndAYaxz9VpkHtebv7pVRQxikU7u/ZshxciR2PJeQKHccPr0VgF/oFftALHERVCkORqEtMF81TbVH2m64iKf9jbgY=
+SHA256 (Pkgfile) = a640437377e554ff0a56ad56d5956483ecad069cbddb6813bcc11d826ea1cf87
+SHA256 (.footprint) = b33f5a90140bbfe94aee1843cc0ab35c1b5cefcf61d6a73a3a94c77487b77b63
+SHA256 (libXpm-3.5.13.tar.bz2) = 9cd1da57588b6cb71450eff2273ef6b657537a9ac4d02d0014228845b935ac25

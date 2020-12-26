@@ -1,0 +1,17 @@
+# Description: Portable implementation of which
+# URL: https://metacpan.org/release/File-Which
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-file-which
+version=1.23
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Which-$version.tar.gz)
+
+build() {
+  cd File-Which-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

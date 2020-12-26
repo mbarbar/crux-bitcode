@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x2cc8AlDDsF3CUfalRix+nLUofKlGsx+AYG5N9D5czm527v1D440Gz/xqU4yN3xDYwphYHUAoq8rtBd8cNfRwk=
+SHA256 (Pkgfile) = 95ba875f95b85e8209d1ab75e513806389e301e3d1ba18eb2b42205d599012be
+SHA256 (.footprint) = af2de3fc0da348c610fa82e499f2f107c165a10e38bb3408b21c6c85bb3aab7e
+SHA256 (pwgen-2.08.tar.gz) = dab03dd30ad5a58e578c5581241a6e87e184a18eb2c3b2e0fffa8a9cf105c97b

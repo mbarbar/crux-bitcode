@@ -1,0 +1,25 @@
+# Description: Declare version conflicts for your dist
+# URL: https://metacpan.org/release/Dist-CheckConflicts
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-list-moreutils
+
+name=p5-dist-checkconflicts
+version=0.11
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DO/DOY/Dist-CheckConflicts-$version.tar.gz)
+
+build() {
+  cd Dist-CheckConflicts-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+      PERL_AUTOINSTALL=--skipdeps            \
+      PERL_MM_OPT="INSTALLDIRS=vendor"       \
+      PERL_MB_OPT="--installdirs vendor"     \
+      MODULEBUILDRC=/dev/null
+  /usr/bin/perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

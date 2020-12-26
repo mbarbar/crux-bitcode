@@ -1,0 +1,17 @@
+# Description: A utility to deliver and manage a complete PKI configuration.
+# URL: https://github.com/djlucas/make-ca/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=make-ca
+version=1.7
+release=1
+source=(https://github.com/djlucas/make-ca/releases/download/v$version/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	sed -i -e 's|^\(LIBEXECDIR=\).*|\1/usr/lib/make-ca|' Makefile
+
+	make
+	make DESTDIR=$PKG install
+}

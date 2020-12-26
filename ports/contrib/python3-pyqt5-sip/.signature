@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+sxBT7DIJgV5TOLuHl+wYpUSRxezJjcppun35pzJO1zPNEXzLm0/DtK4Ue/8ZnSrUs0oYOOZKHmMx3klSUy7gs=
+SHA256 (Pkgfile) = 6754ca20f31decc9c93464a75150c4c641015a9dc1e9f6ff855815b9000a2813
+SHA256 (.footprint) = 12f0de661f0449f916dd8880a42568e7ded63ffd8327f0e51b18d74896329f95
+SHA256 (PyQt5_sip-12.8.1.tar.gz) = 30e944db9abee9cc757aea16906d4198129558533eb7fadbe48c5da2bd18e0bd

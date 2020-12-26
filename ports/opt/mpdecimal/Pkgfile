@@ -1,0 +1,20 @@
+# Description: Package for correctly-rounded arbitrary precision decimal floating point arithmetic.
+# URL: http://www.bytereef.org/mpdecimal/index.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=mpdecimal
+version=2.4.2
+release=1
+source=(http://www.bytereef.org/software/$name/releases/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+	rmdir $PKG/usr/share
+}

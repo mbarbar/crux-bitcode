@@ -1,0 +1,17 @@
+# Description: a library that parses the file format of QuarkXPress documents
+# URL: https://wiki.documentfoundation.org/DLP/Libraries/libqxp
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: librevenge icu
+
+name=libqxp
+version=0.0.2
+release=1
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --without-docs
+  make
+  make DESTDIR=$PKG install
+}

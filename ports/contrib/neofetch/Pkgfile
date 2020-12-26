@@ -1,0 +1,13 @@
+# Description: A command-line system information tool written in bash 3.2+
+# URL: https://github.com/dylanaraps/neofetch
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: bash
+
+name=neofetch
+version=7.1.0
+release=1
+source=(https://github.com/dylanaraps/neofetch/archive/$version/$name-$version.tar.gz)
+
+build() {
+  install -Dt $PKG/usr/bin $name-$version/neofetch
+}

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YZ2mU5+GoJSmuzEtuFH+61qv4JUxA6rXF5vYMWPrlt5ap8h/8RSnGOEFGjUuyeXhzULJpZs8xpHFASxr/t5+gY=
+SHA256 (Pkgfile) = 148d766701aa5b281c2cec269c04662a22a14ff81a7e39a9cbf87e878eb75f08
+SHA256 (.footprint) = 75aab53ceb8ff2006850a67151c196fac74b04d113ed4d1dea72dd0b714b42c6
+SHA256 (qpdfview-0.4.18.tar.gz) = cc642e7fa74029373ca9b9fbc29adc4883f8b455130a78ad54746d6844a0396c
+SHA256 (qt5-5.15.diff) = d5a15d296d0178a8bd22f49344db5377b6d937dfabb076dc1109d37ea6a6449f

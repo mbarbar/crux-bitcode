@@ -1,0 +1,17 @@
+# Description: Python binding of MusicBrainz libdiscid
+# URL: https://github.com/JonnyJD/python-discid
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3 libdiscid
+
+name=python3-discid
+version=1.2.0
+release=1
+source=(https://github.com/JonnyJD/python-discid/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd python-discid-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --skip-build \
+    --root=$PKG \
+    --optimize=1
+}

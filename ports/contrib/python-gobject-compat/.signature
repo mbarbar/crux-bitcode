@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3whADUvWSAiF8WScq+hWx3GX7dBYPx3/se/dJ+niwzT322vaVfNaRm1N9sDtEc/vKABxtylJMipufxj+RVlUWQE=
+SHA256 (Pkgfile) = 4a8ea752c18860fb4f5a4416fe7fedc4bf82b7ebc8f29c8d5245f5aa0364e1bd
+SHA256 (.footprint) = c7389c0bccc982df45610a1520eda254a8c05a6757708050c3f6610099dd11dc
+SHA256 (pygobject-2.28.7.tar.xz) = bb9d25a3442ca7511385a7c01b057492095c263784ef31231ffe589d83a96a5a

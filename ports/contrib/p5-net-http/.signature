@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/P2XSYRW/JvMJTuUhdX0llSxNniEC5xN1roHrs4o1Da8NbfAVGxKxHdrJwoLtEyrKD+n3qaeNScK0Wu41uo6A0=
+SHA256 (Pkgfile) = 507c56db756f5c748ac38ee6c9df1cc7afd4ee707bbd1d6e9b2639279a71b2d1
+SHA256 (.footprint) = b1446f0077a3501535c4421a0cdcfcc40b046afc643285e28df44db605346cdc
+SHA256 (Net-HTTP-6.19.tar.gz) = 52b76ec13959522cae64d965f15da3d99dcb445eddd85d2ce4e4f4df385b2fc4

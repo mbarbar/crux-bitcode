@@ -1,0 +1,25 @@
+# Description: Light-weight system monitor
+# URL:         https://github.com/brndnmtthws/conky
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  curl cmake lua imlib2 libxml2 xorg-libxdamage xorg-libxft xorg-libxinerama
+
+name=conky
+version=1.11.6
+release=1
+source=(https://github.com/brndnmtthws/conky/archive/v$version/$name-$version.tar.gz)
+
+build() {
+    cmake -S $name-$version -B build \
+        -D CMAKE_BUILD_TYPE=Release \
+        -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D SYSTEM_CONFIG_FILE=/usr/etc/conky.conf \
+        -D BUILD_DOCS=OFF \
+        -D BUILD_I18N=OFF \
+        -D BUILD_CURL=ON \
+        -D BUILD_RSS=ON \
+        -D RELEASE=TRUE
+    cmake --build build
+    DESTDIR=$PKG cmake --install build
+    rm -r $PKG/usr/share/doc
+}

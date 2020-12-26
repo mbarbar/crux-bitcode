@@ -1,0 +1,18 @@
+# Description: xorg driver xf86-input-keyboard
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-server
+
+name=xorg-xf86-input-keyboard
+version=1.9.0
+release=1
+source=(https://www.x.org/releases/individual/driver/xf86-input-keyboard-$version.tar.bz2)
+
+build() {
+	cd xf86-input-keyboard-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

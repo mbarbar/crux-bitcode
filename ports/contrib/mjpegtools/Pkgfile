@@ -1,0 +1,31 @@
+# Description: Tools for recording, editing, playing and encoding mpeg video.
+# URL: http://mjpeg.sourceforge.net
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libdv libjpeg-turbo libpng
+# Optional: v4l-utils sdl_gfx
+
+name=mjpegtools
+version=2.1.0
+release=4
+source=(https://downloads.sourceforge.net/project/mjpeg/$name/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	sed -i -e '/ARCHFLAGS=/s:=.*:=:' configure
+	export CFLAGS+=' -fPIC'
+	export CXXFLAGS+=' -fPIC'
+	export LDFLAGS+=' -fPIC'
+
+	./configure \
+		--prefix=/usr \
+		--enable-largefile \
+		--enable-simd-accel \
+		--disable-dependency-tracking \
+		--disable-assert
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/info
+}

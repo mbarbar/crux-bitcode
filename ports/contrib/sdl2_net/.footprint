@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/SDL2/
+-rw-r--r--	root/root	usr/include/SDL2/SDL_net.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libSDL2_net-2.0.so.0 -> libSDL2_net-2.0.so.0.0.1
+-rwxr-xr-x	root/root	usr/lib/libSDL2_net-2.0.so.0.0.1
+-rw-r--r--	root/root	usr/lib/libSDL2_net.a
+-rwxr-xr-x	root/root	usr/lib/libSDL2_net.la
+lrwxrwxrwx	root/root	usr/lib/libSDL2_net.so -> libSDL2_net-2.0.so.0.0.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/SDL2_net.pc

@@ -1,0 +1,20 @@
+# Description: Atomic file writes on POSIX
+# URL: https://github.com/untitaker/python-atomicwrites
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-atomicwrites
+_name=atomicwrites
+version=1.4.0
+release=1
+source=(https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz)
+
+build() {
+  cd $_name-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

@@ -1,0 +1,26 @@
+# Description: The World-Wide Web library for Perl.
+# URL: https://metacpan.org/release/libwww-perl
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: p5-html-parser p5-uri
+
+name=p5-libwww
+version=6.49
+release=1
+source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-$version.tar.gz)
+
+build() {
+	cd libwww-perl-$version
+	perl Makefile.PL --aliases INSTALLDIRS=vendor
+	make
+	make DESTDIR=$PKG install
+
+	# Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -or \
+		-name '*.bs' -or \
+		-name 'autosplit.ix' -or \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -exec rm -rf {} \;
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndGSntT0eco+dXWSN9sE4laL8XxjLDu/vRphr7Zfr2DThCBDuJKVWbys+WpAftF8llz3cJ0RYy6UdB4lZHN/UUAs=
+SHA256 (Pkgfile) = 8db95292ecde61c747e7522ec42aa9cb088deff734c55da882655f4f9bbb1907
+SHA256 (.footprint) = 9d97be9da7b5b6fab05b79931154a354c15073ac8e7c1fdd4b10fd813b2221b7
+SHA256 (libXft-2.3.3.tar.bz2) = 225c68e616dd29dbb27809e45e9eadf18e4d74c50be43020ef20015274529216

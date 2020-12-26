@@ -1,0 +1,21 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/combinediff -> interdiff
+-rwxr-xr-x	root/root	usr/bin/dehtmldiff
+-rwxr-xr-x	root/root	usr/bin/editdiff
+-rwxr-xr-x	root/root	usr/bin/espdiff
+-rwxr-xr-x	root/root	usr/bin/filterdiff
+-rwxr-xr-x	root/root	usr/bin/fixcvsdiff
+lrwxrwxrwx	root/root	usr/bin/flipdiff -> interdiff
+-rwxr-xr-x	root/root	usr/bin/gitdiff
+-rwxr-xr-x	root/root	usr/bin/gitdiffview
+lrwxrwxrwx	root/root	usr/bin/grepdiff -> filterdiff
+-rwxr-xr-x	root/root	usr/bin/interdiff
+lrwxrwxrwx	root/root	usr/bin/lsdiff -> filterdiff
+lrwxrwxrwx	root/root	usr/bin/patchview -> filterdiff
+-rwxr-xr-x	root/root	usr/bin/recountdiff
+-rwxr-xr-x	root/root	usr/bin/rediff
+-rwxr-xr-x	root/root	usr/bin/splitdiff
+-rwxr-xr-x	root/root	usr/bin/svndiff
+-rwxr-xr-x	root/root	usr/bin/svndiffview
+-rwxr-xr-x	root/root	usr/bin/unwrapdiff

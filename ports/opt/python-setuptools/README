@@ -1,0 +1,10 @@
+NOTES:
+
+setuptools has been renamed to python-setuptools in crux 3.3 only.
+
+prt-get remove appdirs pyparsing six pip packaging setuptools
+prt-get depinst python-setuptools
+
+No other changes should be necessary, ports in contrib and opt affected by
+this change have had there dependences changed to python-setuptools. Any third
+party ports trees should update there ports to reflect this.

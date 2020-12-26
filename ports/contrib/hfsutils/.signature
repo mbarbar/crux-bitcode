@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39Mznj0SF56RYTVT56g9s/Q7ku3WDkDGSwJbixG4Ek/CzEIEQrMGitBeeAT5bDSmj64s+nGk0RkNPcK8A7X2jw8=
+SHA256 (Pkgfile) = 8967a355e6ffd20957ac3c07b0f762612260f678a5c5683e1eb2c45c1aafa6e0
+SHA256 (.footprint) = 97ba4b747229220964d1b18745ef2ada5dd63c252e646e5a823a3da2d521ac05
+SHA256 (hfsutils-3.2.6.tar.gz) = bc9d22d6d252b920ec9cdf18e00b7655a6189b3f34f42e58d5bb152957289840
+SHA256 (hfsutils-3.2.6-errno.patch) = 06d374f92d3535d770b63c6cc98fa2e9ea942685e8f90c13270c2908ed98c735
+SHA256 (hfsutils-3.2.6-fix-tcl-8.6.patch) = bfa6dfcf2fe62d9be52094adff12d79780304a62db815219086d46dfcf093ee0
+SHA256 (largerthan2gb.patch) = 3427de6fde5e6916879b59054ffb129b5d37180772d7111607d98423fb76a3da

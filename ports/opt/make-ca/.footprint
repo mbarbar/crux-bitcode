@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	etc/
+-rw-r--r--	root/root	etc/make-ca.conf.dist
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/make-ca/
+-rwx------	root/root	usr/lib/make-ca/copy-trust-modifications
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/make-ca
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/make-ca.8.gz

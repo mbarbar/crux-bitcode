@@ -1,0 +1,18 @@
+# Description: The MirBSD Korn Shell
+# URL:         http://www.mirbsd.org/mksh.htm
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=mksh
+version=R59c
+release=1
+source=(https://www.mirbsd.org/MirOS/dist/mir/$name/$name-$version.tgz)
+
+build() {
+	cd $name
+
+	sh Build.sh -r
+
+	install -D -m 0755 $name $PKG/bin/$name
+	install -D -m 0644 $name.1 $PKG/usr/share/man/man1/$name.1
+	install -D -m 0644 dot.${name}rc $PKG/etc/${name}rc
+}

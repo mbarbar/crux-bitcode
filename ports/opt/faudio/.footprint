@@ -1,0 +1,19 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/F3DAudio.h
+-rw-r--r--	root/root	usr/include/FACT.h
+-rw-r--r--	root/root	usr/include/FACT3D.h
+-rw-r--r--	root/root	usr/include/FAPO.h
+-rw-r--r--	root/root	usr/include/FAPOBase.h
+-rw-r--r--	root/root	usr/include/FAPOFX.h
+-rw-r--r--	root/root	usr/include/FAudio.h
+-rw-r--r--	root/root	usr/include/FAudioFX.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/FAudio/
+-rw-r--r--	root/root	usr/lib/cmake/FAudio/FAudio-config.cmake
+-rw-r--r--	root/root	usr/lib/cmake/FAudio/FAudio-targets-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/FAudio/FAudio-targets.cmake
+lrwxrwxrwx	root/root	usr/lib/libFAudio.so -> libFAudio.so.0
+lrwxrwxrwx	root/root	usr/lib/libFAudio.so.0 -> libFAudio.so.0.20.11
+-rwxr-xr-x	root/root	usr/lib/libFAudio.so.0.20.11

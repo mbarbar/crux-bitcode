@@ -1,0 +1,17 @@
+# Description:	Network bandwidth measurement tool
+# URL:		https://sourceforge.net/projects/iperf2/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:
+
+name=iperf
+version=2.0.13
+release=1
+source=(https://downloads.sourceforge.net/sourceforge/iperf2/files/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
+

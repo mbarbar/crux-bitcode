@@ -1,0 +1,32 @@
+# Description: Validating, recursive, and caching DNS resolver
+# URL:         http://unbound.net/index.html
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  openssl expat
+
+name=unbound
+version=1.13.0
+release=1
+source=(https://unbound.net/downloads/$name-$version.tar.gz
+        unbound
+        README pre-install)
+
+build () {
+    cd $name-$version
+    
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --with-pidfile=/var/run/unbound.pid \
+                --with-chroot-dir=/etc/unbound \
+                --with-rootkey-file=/etc/unbound/anchor/root.key \
+                --disable-shared \
+                --disable-flto \
+                --with-username=unbound 
+
+    make
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/{lib,include,share/man/man3}
+
+    install -d -o unbound -g unbound $PKG/etc/unbound/anchor
+    install -D -m 755 $SRC/unbound $PKG/etc/rc.d/unbound
+}

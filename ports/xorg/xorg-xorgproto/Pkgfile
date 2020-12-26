@@ -1,0 +1,24 @@
+# Description: Headers defining the core protocol and extensions for the X Window System
+# URL:         http://xorg.freedesktop.org
+# Maintainer:  CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: 
+
+name=xorg-xorgproto
+version=2020.1
+release=1
+source=(https://xorg.freedesktop.org/archive/individual/proto/xorgproto-$version.tar.bz2)
+
+build() {
+	cd xorgproto-$version
+
+	./configure \
+		--prefix=/usr \
+		--enable-legacy
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/include/X11/extensions/{apple,windows}*
+	rm $PKG/usr/share/pkgconfig/{apple,windows}wmproto.pc
+	rm -r $PKG/usr/share/doc
+}

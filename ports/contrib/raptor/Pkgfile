@@ -1,0 +1,19 @@
+# Description: A C library that parses RDF/XML/N-Triples into RDF triples
+# URL: http://librdf.org/raptor
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: brotli gnutls icu keyutils libpsl libxslt openldap rtmpdump
+
+name=raptor
+version=2.0.15
+release=1
+source=(http://librdf.org/dist/source/raptor2-$version.tar.gz)
+
+build() {
+  cd "$name"2-$version
+  ./configure --prefix=/usr \
+    --with-yajl=no \
+    --with-icu-config=/usr/bin/icu-config
+  make
+  make prefix="$PKG"/usr install
+  rm -r $PKG/usr/share/gtk-doc
+}

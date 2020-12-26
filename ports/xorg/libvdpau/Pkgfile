@@ -1,0 +1,19 @@
+# Description: Video Decode and Presentation API for Unix provides a complete solution for decoding, post-processing, compositing, and displaying compressed or uncompressed video streams.
+# URL: https://gitlab.freedesktop.org/vdpau/libvdpau
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxext meson ninja
+
+name=libvdpau
+version=1.4
+release=1
+source=(https://gitlab.freedesktop.org/vdpau/$name/-/archive/$version//$name-$version.tar.bz2)
+
+build() {
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--buildtype=plain \
+		-D documentation=false
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

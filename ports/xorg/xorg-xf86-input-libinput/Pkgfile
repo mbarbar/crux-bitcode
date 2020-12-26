@@ -1,0 +1,16 @@
+# Description: X driver based on libinput
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: libinput xorg-server
+
+name=xorg-xf86-input-libinput
+version=0.30.0
+release=1
+source=(https://www.x.org/releases/individual/driver/xf86-input-libinput-$version.tar.bz2)
+
+build() {
+	cd xf86-input-libinput-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

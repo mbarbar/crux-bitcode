@@ -1,0 +1,21 @@
+# Description: A PNG optimizer that recompresses image files to a smaller size, without losing any information.
+# URL: http://optipng.sourceforge.net/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libpng
+
+name=optipng
+version=0.7.7
+release=1
+source=(http://downloads.sourceforge.net/project/optipng/OptiPNG/$name-$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version/
+
+  ./configure \
+    -prefix=/usr \
+    -with-system-libpng \
+    -with-system-zlib
+
+  make
+  make prefix=$PKG/usr mandir=$PKG/usr/share/man install
+}

@@ -1,0 +1,15 @@
+# Description: net top tool showing network usage by PID
+# URL:         https://github.com/raboof/nethogs
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libpcap
+
+name=nethogs
+version=0.8.6
+release=1
+source=(https://github.com/raboof/nethogs/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+  cd $name-$version
+  make
+  make PREFIX=/usr DESTDIR=$PKG install
+}

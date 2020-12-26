@@ -1,0 +1,31 @@
+# Description: Text-based email client that sucks less
+# URL:         http://www.mutt.org
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  gdbm openssl zlib
+
+name=mutt
+version=2.0.3
+release=1
+source=(https://bitbucket.org/mutt/mutt/downloads/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --with-mailpath=/var/spool/mail \
+                --enable-pop \
+                --enable-imap \
+                --with-ssl \
+                --enable-hcache \
+                --disable-nls \
+                --enable-sidebar \
+                # --enable-gpgme \
+                # --enable-smtp --with-sasl
+
+    make
+    make DESTDIR=$PKG install
+
+    rm $PKG/usr/etc/{Muttrc,mime.types}.dist 
+    rm -r $PKG/usr/share/{doc,info}
+    rm $PKG/usr/share/man/man5/{mmdf.5,mbox.5}
+}

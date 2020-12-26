@@ -1,0 +1,22 @@
+# Description: Patches text with given patch
+# URL: https://metacpan.org/release/Text-Patch
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: p5-text-diff
+
+name=p5-text-patch
+_realname=Text-Patch
+_author=CADE
+version=1.8
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	perl Makefile.PL INSTALLDIRS=vendor
+	make
+	make DESTDIR="$PKG" install
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

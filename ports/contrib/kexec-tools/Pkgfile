@@ -1,0 +1,17 @@
+# Description: kexec-tools for the linux kernel
+# URL:         http://kernel.org/pub/linux/utils/kernel/kexec
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=kexec-tools
+version=2.0.20
+release=1
+source=(https://git.kernel.org/pub/scm/utils/kernel/kexec/kexec-tools.git/snapshot/kexec-tools-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./bootstrap
+  ./configure --prefix=/usr
+
+  make
+  make DESTDIR=$PKG install
+}

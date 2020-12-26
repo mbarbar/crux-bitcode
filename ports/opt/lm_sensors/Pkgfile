@@ -1,0 +1,18 @@
+# Description: Tools for monitoring system health (temperatures, voltages, fan speed, etc)
+# URL: https://github.com/groeck/lm-sensors
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot guru
+# Depends on: perl
+
+name=lm_sensors
+version=3.6.0
+release=1
+source=(https://github.com/groeck/lm-sensors/archive/V${version//./-}.tar.gz)
+
+build () {
+  cd lm-sensors-${version//./-}
+
+  make install PREFIX=/usr \
+               ETCDIR=/usr/etc \
+               MANDIR=/usr/share/man \
+               DESTDIR=$PKG
+}

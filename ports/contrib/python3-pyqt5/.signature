@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3w8tkzHSH9L4BvRrLJNU7lPxegjLZB4ttw1AFD4vfHRRsn6TmhYesgB2sZrLneBxsiSj7KHMTdC6DZyxQfpZkQE=
+SHA256 (Pkgfile) = fba95841356ba0548f855087e2be12fc75ea6a18dafb63244889ca21e64400bb
+SHA256 (.footprint) = 8a738293c2d686644fb29da9cbcde2abbbe9d1c7ae5f86b8fd28516cae4826a6
+SHA256 (PyQt5-5.15.2.tar.gz) = 372b08dc9321d1201e4690182697c5e7ffb2e0770e6b4a45519025134b12e4fc

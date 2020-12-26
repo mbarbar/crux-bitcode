@@ -1,0 +1,31 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/flatc
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/flatbuffers/
+-rw-r--r--	root/root	usr/include/flatbuffers/base.h
+-rw-r--r--	root/root	usr/include/flatbuffers/code_generators.h
+-rw-r--r--	root/root	usr/include/flatbuffers/flatbuffers.h
+-rw-r--r--	root/root	usr/include/flatbuffers/flatc.h
+-rw-r--r--	root/root	usr/include/flatbuffers/flexbuffers.h
+-rw-r--r--	root/root	usr/include/flatbuffers/grpc.h
+-rw-r--r--	root/root	usr/include/flatbuffers/hash.h
+-rw-r--r--	root/root	usr/include/flatbuffers/idl.h
+-rw-r--r--	root/root	usr/include/flatbuffers/minireflect.h
+-rw-r--r--	root/root	usr/include/flatbuffers/reflection.h
+-rw-r--r--	root/root	usr/include/flatbuffers/reflection_generated.h
+-rw-r--r--	root/root	usr/include/flatbuffers/registry.h
+-rw-r--r--	root/root	usr/include/flatbuffers/stl_emulation.h
+-rw-r--r--	root/root	usr/include/flatbuffers/util.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/flatbuffers/
+-rw-r--r--	root/root	usr/lib/cmake/flatbuffers/FlatbuffersConfig.cmake
+-rw-r--r--	root/root	usr/lib/cmake/flatbuffers/FlatbuffersConfigVersion.cmake
+-rw-r--r--	root/root	usr/lib/cmake/flatbuffers/FlatbuffersSharedTargets-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/flatbuffers/FlatbuffersSharedTargets.cmake
+-rw-r--r--	root/root	usr/lib/cmake/flatbuffers/FlatcTargets-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/flatbuffers/FlatcTargets.cmake
+lrwxrwxrwx	root/root	usr/lib/libflatbuffers.so -> libflatbuffers.so.1
+lrwxrwxrwx	root/root	usr/lib/libflatbuffers.so.1 -> libflatbuffers.so.1.12.0
+-rwxr-xr-x	root/root	usr/lib/libflatbuffers.so.1.12.0

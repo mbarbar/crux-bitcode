@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/sslh
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/sslh
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man8/
+-rw-r--r--	root/root	usr/share/man8/sslh.8.gz

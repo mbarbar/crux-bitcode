@@ -1,0 +1,24 @@
+# Description: COIN-OR linear programming solver
+# URL: https://projects.coin-or.org/Clp
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: coin-or-osi suitesparse
+
+name=coin-or-clp
+version=1.17.6
+release=1
+source=(https://github.com/coin-or/Clp/archive/releases/$version/$name-$version.tar.gz)
+
+build() {
+  cd Clp-releases-$version/Clp
+  COIN_SKIP_PROJECTS="Sample" \
+  ./configure --prefix=/usr \
+    --with-osi-lib="$(pkg-config --libs osi)" \
+    --with-osi-incdir="/usr/include/coin/" \
+    --with-coinutils-lib="$(pkg-config --libs coinutils)" \
+    --with-coinutils-incdir="/usr/include/coin/" \
+    --with-cholmod-lib='-lcholmod' --with-cholmod-incdir=/usr/include
+  make
+  PKG_CONFIG_LIBDIR="$PKG"/usr/lib/pkgconfig/ \
+  make DESTDIR="$PKG" install
+  rm -fr $PKG/usr/share/coin/doc
+}

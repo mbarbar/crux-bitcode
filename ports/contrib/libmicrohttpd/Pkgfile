@@ -1,0 +1,17 @@
+# Description: A library for creating an embedded HTTP server
+# URL: http://www.gnu.org/software/libmicrohttpd/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=libmicrohttpd
+version=0.9.71
+release=1
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+		--disable-static
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/info
+}

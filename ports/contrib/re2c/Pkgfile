@@ -1,0 +1,17 @@
+# Description: A tool for generating C-based recognizers from regular expressions
+# URL: https://re2c.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=re2c
+version=2.0.3
+release=1
+source=(https://github.com/skvadrik/re2c/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./autogen.sh
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

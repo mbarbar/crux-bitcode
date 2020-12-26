@@ -1,0 +1,31 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/glmovie
+-rwxr-xr-x	root/root	usr/bin/plaympeg
+-rwxr-xr-x	root/root	usr/bin/smpeg-config
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/smpeg/
+-rw-r--r--	root/root	usr/include/smpeg/MPEG.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGaction.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGaudio.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGerror.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGfilter.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGlist.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGring.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGstream.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGsystem.h
+-rw-r--r--	root/root	usr/include/smpeg/MPEGvideo.h
+-rw-r--r--	root/root	usr/include/smpeg/smpeg.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libsmpeg-0.4.so.0 -> libsmpeg-0.4.so.0.1.4
+-rwxr-xr-x	root/root	usr/lib/libsmpeg-0.4.so.0.1.4
+-rw-r--r--	root/root	usr/lib/libsmpeg.a
+-rwxr-xr-x	root/root	usr/lib/libsmpeg.la
+lrwxrwxrwx	root/root	usr/lib/libsmpeg.so -> libsmpeg-0.4.so.0.1.4
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/aclocal/
+-rw-r--r--	root/root	usr/share/aclocal/smpeg.m4
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/gtv.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/plaympeg.1.gz

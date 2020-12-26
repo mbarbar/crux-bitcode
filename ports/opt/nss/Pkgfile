@@ -1,0 +1,63 @@
+# Description: Mozilla Network Security Services (NSS)
+# URL:         https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
+# Maintainer:  UNMAINTAINED
+# Depends on:  nspr sqlite3
+
+name=nss
+version=3.59
+release=1
+source=(https://ftp.mozilla.org/pub/security/nss/releases/NSS_${version//./_}_RTM/src/$name-$version.tar.gz \
+        nss-3.54-standalone-2.patch \
+        nss-config.in nss.pc.in nss-softokn.pc.in nss-util.pc.in)
+
+build() {
+	cd $name-$version/
+
+	patch -Np1 -i ../nss-3.54-standalone-2.patch
+
+	export NSPR_INCLUDE_DIR=/usr/include/nspr
+	export NSPR_LIB_DIR=/usr/lib
+	export NSS_USE_SYSTEM_SQLITE=1
+	export USE_SYSTEM_ZLIB=1
+	export NSS_ENABLE_ECC=1
+	export NSS_ENABLE_TLS_1_3=1
+	export BUILD_OPT=1
+	export NSS_ENABLE_WERROR=0
+	export NSS_DISABLE_GTESTS=1
+	export USE_64=1
+
+	make -C nss
+
+	install -d $PKG/usr/{bin,lib/pkgconfig,include/nss/private}
+
+	cd dist/*.OBJ/bin
+	install -t "$PKG/usr/bin" *util shlibsign signtool signver ssltap
+	cd ../lib
+	install -t "$PKG/usr/lib" *.so
+	install -t "$PKG/usr/lib" -m644 libcrmf.a libfreebl.a *.chk
+	cd ../../public/nss
+	install -t "$PKG/usr/include/nss" -m644 *.h
+	cd ../../private/nss
+	install -t "$PKG/usr/include/nss/private" -m644 blapi.h alghmac.h
+	install -m 0755 $SRC/nss-config.in $PKG/usr/bin/nss-config
+
+	_version=$(printf "%i.%i.%i" ${version//./ })
+	sed -i "s/@VERSION@/$_version/" $PKG/usr/bin/nss-config
+
+	NSS_LIBS=`$PKG/usr/bin/nss-config --libs`
+	NSS_CFLAGS=`$PKG/usr/bin/nss-config --cflags`
+	NSPR_VERSION=`pkg-config --modversion nspr`
+	for module in nss nss-util nss-softokn; do
+		sed $SRC/$module.pc.in \
+			-e "s,%libdir%,/usr/lib," \
+			-e "s,%prefix%,/usr," \
+			-e "s,%exec_prefix%,/usr/bin," \
+			-e "s,%includedir%,/usr/include/nss," \
+			-e "s,%NSS_VERSION%,$version," \
+			-e "s,%NSPR_VERSION%,$NSPR_VERSION," \
+			-e "s,%FULL_NSS_LIBS%,$NSS_LIBS," \
+			-e "s,%FULL_NSS_CFLAGS%,$NSS_CFLAGS," > \
+		$PKG/usr/lib/pkgconfig/$module.pc
+	done
+
+}

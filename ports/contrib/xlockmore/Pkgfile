@@ -1,0 +1,30 @@
+# Description: X Window System Lock Screen
+# URL: https://sillycycle.com/xlockmore.html
+# Maintainer: Thomas Penteker, tek at serverop dot de
+# Depends on: fortune glu gtk xorg-libxmu xorg-libxpm
+
+name=xlockmore
+version=5.66
+release=1
+source=(https://sillycycle.com/xlock/xlockmore-${version}.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--enable-appdefaultdir=/usr/share/X11/app-defaults \
+		--enable-vtlock \
+		--enable-syslog \
+		--enable-multiple-user \
+		--enable-multiple-root \
+		--with-opengl \
+		--without-motif \
+		--without-esound
+
+	make
+
+	install -d $PKG/usr/share/xlock/sounds
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,44 @@
+# Description: Clone of the old BoulderDash and Rockford game.
+# URL: https://www.artsoft.org/rocksndiamonds/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: sdl2_image sdl2_mixer sdl2_net
+
+name=rocksndiamonds
+version=4.2.0.5
+release=1
+source=(https://www.artsoft.org/RELEASES/unix/rocksndiamonds/rocksndiamonds-$version.tar.gz)
+
+build() {
+	cd rocksndiamonds-$version
+
+	sed -i src/Makefile \
+		-e '/^OPTIONS = $(DEBUG) -Wall.*$/d' \
+		-e "/^OPTIONS = -O3 -Wall/s/-O3 -Wall/$CFLAGS -Wall -O3/"
+
+	export BUILD_DIST=1
+	export RO_GAME_DIR='/usr/share/rocksndiamonds'
+	export RW_GAME_DIR='/var/lib/games/rocksndiamonds'
+	make
+
+	install -d \
+		$PKG/usr/share/rocksndiamonds/graphics \
+		$PKG/usr/share/rocksndiamonds/levels \
+		$PKG/usr/share/rocksndiamonds/music \
+		$PKG/usr/share/rocksndiamonds/sounds \
+		$PKG/var/lib/games/rocksndiamonds
+
+	cp -r graphics $PKG/usr/share/rocksndiamonds
+	cp -r levels $PKG/usr/share/rocksndiamonds
+	cp -r music $PKG/usr/share/rocksndiamonds
+	cp -r sounds $PKG/usr/share/rocksndiamonds
+
+	#cp -r scores $PKG/var/lib/games/rocksndiamonds
+	install -D -m 0755 rocksndiamonds $PKG/usr/bin/rocksndiamonds
+
+	rm $PKG/usr/share/rocksndiamonds/levels/Tutorials/rnd_tutorial_niko_boehm/README
+
+	unset BUILD_DIST
+	unset RO_GAME_DIR
+	unset RW_GAME_DIR
+}
+

@@ -1,0 +1,13 @@
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+	* Add fgetty to your /etc/inittab, I use this:
+c1:123:respawn:/sbin/fgetty tty1
+c2:23:respawn:/sbin/fgetty tty2
+c3:23:respawn:/sbin/fgetty tty3
+c4:23:respawn:/sbin/fgetty tty4
+
+PRECAUTION

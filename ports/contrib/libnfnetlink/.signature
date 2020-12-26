@@ -1,0 +1,11 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xGHoT4DE2J/oWP4oFe6EZeVk3aSMu6ZGIJFrTJxZ9gjkuo7z6x2OzvZQzG9qEy3DkXeaG6AZUhdsAKVAvqxkwk=
+SHA256 (Pkgfile) = a87e72f202f3eadabb663dc4aed55cb003737e5dec363b4ff87f58f436a7a603
+SHA256 (.footprint) = 790bf0e51fd246b1b45aa1a7ce0b8fa4f874a9ec83406d377ca02dbe73dd93cb
+SHA256 (libnfnetlink-1.0.1.tar.bz2) = f270e19de9127642d2a11589ef2ec97ef90a649a74f56cf9a96306b04817b51a
+SHA256 (0001-build-resolve-automake-1.12-warnings.patch) = a2c1c352bb08cbf2efccd0f05d1a24a3d476efaa4e3b847ac8d79cdea03c3ecc
+SHA256 (0002-src-get-source-code-license-header-in-sync-with-curr.patch) = 2ef6209142f0899531ff0a72c2544cf1986848efa654226a5d7ad54163b3db2a
+SHA256 (0003-configure-uclinux-is-also-linux.patch) = e3e2be028ea49f44d10bc5e515c1d5c1d60f68e07680eeafb7f6e58aaf9c9e74
+SHA256 (0004-libnfnetlink-initialize-attribute-padding-to-resolve.patch) = 0dd4c954a8158596efcbe2b16e31adbe53c8bd3aaab4ba6efd663689dacd27a7
+SHA256 (0005-include-Sync-with-kernel-headers.patch) = b7858eeb53352af4cc5c1d1f17a541a0f3b6629b6bdb1ebe8554f39064ac8242
+SHA256 (0006-src-Use-stdint-types-everywhere.patch) = 552ff8b2a0f9fb173e61017c9031b707fad4661168ab96696432b3504cb01f01

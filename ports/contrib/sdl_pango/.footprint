@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/SDL_Pango.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libSDL_Pango.a
+-rwxr-xr-x	root/root	usr/lib/libSDL_Pango.la
+lrwxrwxrwx	root/root	usr/lib/libSDL_Pango.so -> libSDL_Pango.so.1.1.0
+lrwxrwxrwx	root/root	usr/lib/libSDL_Pango.so.1 -> libSDL_Pango.so.1.1.0
+-rwxr-xr-x	root/root	usr/lib/libSDL_Pango.so.1.1.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/SDL_Pango.pc

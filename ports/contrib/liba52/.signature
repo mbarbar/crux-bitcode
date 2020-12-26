@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39bHuM6M0syNZ4W4tdqsXr5uW/Ryyr47Q6861FuTqjJGEPnc257z2Xc42M4EaQ6dhwO/GlBG7Y2Z33GwFFUb3gE=
+SHA256 (Pkgfile) = 02c74a129f88f997ebd01b7dabf8f38d6f240f9c68c7d38202e30d07a23b13dd
+SHA256 (.footprint) = 5a21f40e12e1c450b69459e741906e21a7810c25c4e6a7fb0dfde9fadcfe642c
+SHA256 (a52dec-0.7.4.tar.gz) = a21d724ab3b3933330194353687df82c475b5dfb997513eef4c25de6c865ec33
+SHA256 (a52dec-0.7.4-build.patch) = 7a230e6aab861b9c7f42f0911cb9ea1c4a53b806c8104bf33bcdfa3d1f266640

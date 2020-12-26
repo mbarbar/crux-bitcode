@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF385nM2DQW5FuHfoHSbh0gyPpKfYmdKhEwNGN8WjyaqxCRMF0nZGJrPIJ6z8ks5ge86rAC0zxLDRlrR+1yn1nKwU=
+SHA256 (Pkgfile) = 06895035c3ca32c038fbc795bc810139e8cc78c2a9a93b7e1091611b76287f02
+SHA256 (.footprint) = 34f1837446adbae6a107119c9d7edc293cee43d2363f568267d5c51dcad0b9f6
+SHA256 (libostree-2020.8.tar.xz) = fdaa5992d0a6f62157152355449ac8476c50df6602be398e9ad10438cc1e679b

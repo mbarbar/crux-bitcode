@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31avCC90zYnZf8gRoPe9UdTTk/M1r6ZndD6E/VnWtx+4BRLBsnT+Tf4xSGo1rSZC3iCwTgu0gAe9D1gWlwFijwI=
+SHA256 (Pkgfile) = 23611cbf8c7d9de09231d9c6d8e6e291b3c853a84e8f6e1df9ed15e7ad7ab86a
+SHA256 (.footprint) = 4f6f1b61837f0bdd1cbcf6ca3819d51d97e9c83f85c1307663a0dbc38381bebb
+SHA256 (rdesktop-v1.9.0.tar.gz) = d547c2e6f3e4c818a7e69a0f39adb39fac303633e0c25aa804bb588507ffc230

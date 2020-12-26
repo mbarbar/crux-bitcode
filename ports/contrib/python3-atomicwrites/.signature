@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33nCUpDFwYmWHrEcWNGOB7YhwIQ0O7KG7bigwegbPjg0D4WBrMCHOMTlWHZ+H42kAXWiAL590QzJrClwnsbAygE=
+SHA256 (Pkgfile) = 7caace904f0b3cb8554999b4e07574dde8bef8937cdec693f3b0ae2f38a81414
+SHA256 (.footprint) = 26281ecf0e43b8d8aee559102b0d39cc5e8827ddea7c62d7d7e69f6a621b9a00
+SHA256 (atomicwrites-1.4.0.tar.gz) = ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a

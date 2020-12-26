@@ -1,0 +1,20 @@
+# Description: Window Navigator Construction Kit library
+# URL: https://gitlab.gnome.org/GNOME/libwnck
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtk3 startup-notification xorg-libxres
+
+name=libwnck-gtk3
+version=3.36.0
+release=1
+source=(https://ftp.gnome.org/pub/gnome/sources/libwnck/${version%.*}/libwnck-$version.tar.xz)
+
+build() {
+	meson build libwnck-$version --prefix=/usr
+	ninja -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+
+	mv $PKG/usr/bin/wnck-urgency-monitor{,3}
+	mv $PKG/usr/bin/wnckprop{,3}
+
+	rm -r $PKG/usr/share/locale
+}

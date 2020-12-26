@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/cpHM5I325/rdm29LwZsguYh0iad5pjSo7PnQRFiM432ddgbObomCP46LJMAEKMsxvZlk1bRjPL01GVKq2218g8=
+SHA256 (Pkgfile) = c9c4ecb8a087f934f432578daa84fecb5a2e121d1a926dd28baf6deb88469a19
+SHA256 (.footprint) = 5d47799d69d21b860be70eb9e767298617679bcee2140d245cbc74f4a2a4502e
+SHA256 (dropbear-2020.81.tar.bz2) = 48235d10b37775dbda59341ac0c4b239b82ad6318c31568b985730c788aac53b
+SHA256 (dropbear.rc) = def8d4ebda5759a3bc55055957235fa47f7e40216badf07830f487f05e7fbd42
+SHA256 (dropbear.pam) = 0c0aff342e586e64f2d2a814ef127a2748b223e746c3efccfccc91a5aadbce4a

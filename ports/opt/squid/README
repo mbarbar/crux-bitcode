@@ -1,0 +1,20 @@
+README for squid 3.x
+
+REQUIREMENTS
+
+PRE-INSTALL
+1. Create user/group squid with a unused id < 99:
+   'groupadd -g 40 squid'
+   'useradd -g squid -u 40 -d /var/squid -s /bin/false squid'
+   'passwd -l squid'
+
+POST-INSTALL
+1. squid requires a mounted /dev/shm for shared memory access
+2. add a cache_dir entry to /etc/squid/squid.conf:
+   cache_dir aufs /var/squid 2000 16 256
+3. run '/usr/sbin/squid -z' to build the cache structure
+
+PRECAUTION
+1. all directories used by squid must be chown to 
+   squid.squid or to the effective cache user/group defined 
+   in squid.conf

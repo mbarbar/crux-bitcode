@@ -1,0 +1,21 @@
+# Description: Brute-force dictionary attack against WPA-PSK
+# URL:         https://github.com/joswr1ght/cowpatty
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  openssl libpcap
+
+name=cowpatty
+version=4.8
+release=1
+source=(https://github.com/joswr1ght/$name/archive/$version/$name-$version.tar.gz
+	fix_parallel_build.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/fix_parallel_build.patch
+
+	make CFLAGS="${CFLAGS} -DOPENSSL" CC="gcc" BINDIR=$PKG/usr/bin install
+
+	# install man page manually
+	install -Dm0644 $name.1 $PKG/usr/share/man/man1/$name.1
+}

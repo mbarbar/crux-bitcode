@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37qJiC6vlqMuNkIPNxqZTeCfwj0rEnC2ZmoxVVAI122mm1zRgFSR9Mctd5ysj0IaYxHpduuXv83iU0PHYebKvgg=
+SHA256 (Pkgfile) = 55027091a209cd4fc4d32860633cce65d7ccee056e168eb07bcd30c31a4125ba
+SHA256 (.footprint) = 7695b8a9f9f93b3753e0c6ece7ec95f16f5cc81ba52f0a2af6e2ff843848a1d9
+SHA256 (suil-0.10.8.tar.bz2) = 91cd87e17e80d2e43d64700369b93a5c2d0f1648e36411e0233253a0c3840f40

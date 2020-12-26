@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF309QqN+dmM3RUcrcFfVFBhYP4ha3l83fbtPWmMbpxJZfQCi1oq3hvn8s91J4rFMYmyiTBKGv2Hm4zZzsuhp9/ww=
+SHA256 (Pkgfile) = bc3cb79352aad7647ea500bd6f577bbd4047f4c24f70bedd72d608f191b8c114
+SHA256 (.footprint) = a1ffe32e490ba5e3b8e0f6c06cf89b31006903faae937c8c9451ccd63372a474
+SHA256 (libido3-16.10.tar.gz) = 9b205871268379560b00bc960fabc5c0c71b480d4469c738fb01f3f19e20ea6a
+SHA256 (ido-optional-ubuntu-private.patch) = 9b627a4c7ec2d3f2fa0c28761445e7b961a9ca5a473fe2b8a462018b667e2996
+SHA256 (0001-Temporarily-disable-previous-button-drop-shadow-draw.patch) = 735fdec1318655026840686d8c581cdd87d7aefed8b6ea8ea53901d3c903ed88

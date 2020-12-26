@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/8DCOYWOKavFGyJXQ744O5WWquyDk5uDcBlkce1KuFWjzB4gy0cJ7i2dK5QFVDjrdLOCQ8ZJM71u6KUb5CfKw4=
+SHA256 (Pkgfile) = a02f431cf05997f6fe2ffd895b8807c424c21f70113e9efb6fb285590c27f034
+SHA256 (.footprint) = 6a71c827871eda3ec353640f848c1f3ef7abfc7351fefad74143848d35854563
+SHA256 (ripgrep-12.1.1.tar.gz) = 2513338d61a5c12c8fea18a0387b3e0651079ef9b31f306050b1f0aaa926271e

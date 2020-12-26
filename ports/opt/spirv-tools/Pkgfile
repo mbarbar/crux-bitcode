@@ -1,0 +1,44 @@
+# Description: API and commands for processing SPIR-V modules
+# URL: https://www.khronos.org/vulkan/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: spirv-headers
+
+name=spirv-tools
+version=2020.5-b27e039
+release=1
+source=(
+	#https://github.com/KhronosGroup/SPIRV-Tools/archive/v$version/SPIRV-Tools-v$version.tar.gz
+	https://github.com/KhronosGroup/SPIRV-Tools/archive/b27e039c68dd9eb959bb9249fcb2c9a54841474b.zip
+	0001-Revert-CMake-Enable-building-with-BUILD_SHARED_LIBS-.patch
+	spirv-tools-soversion.patch
+	0001-CMake-FIx-pkg-config-libdir-with-absolute-CMAKE_INST.patch)
+
+build() {
+	mv SPIRV-Tools-b27e039c68dd9eb959bb9249fcb2c9a54841474b SPIRV-Tools-$version
+
+	local config="
+-SSPIRV-Tools-$version \
+-DCMAKE_INSTALL_PREFIX=/usr \
+-DCMAKE_INSTALL_LIBDIR=lib \
+-DCMAKE_BUILD_TYPE=Release \
+-DSPIRV_WERROR=OFF \
+-DSPIRV-Headers_SOURCE_DIR=/usr \
+-DPYTHON_EXECUTABLE=/usr/bin/python3 \
+-GNinja"
+
+	# https://github.com/KhronosGroup/SPIRV-Tools/issues/3626
+	patch -d SPIRV-Tools-$version -p1 -i $SRC/0001-Revert-CMake-Enable-building-with-BUILD_SHARED_LIBS-.patch
+	patch -d SPIRV-Tools-$version -p1 -i $SRC/spirv-tools-soversion.patch
+
+	# https://github.com/KhronosGroup/SPIRV-Tools/pull/3906
+	patch -d SPIRV-Tools-$version -p1 -i $SRC/0001-CMake-FIx-pkg-config-libdir-with-absolute-CMAKE_INST.patch
+
+	cmake -Bbuild-static $config -DBUILD_SHARED_LIBS=OFF
+	cmake --build build-static
+
+	cmake -Bbuild-shared $config -DBUILD_SHARED_LIBS=ON
+	cmake --build build-shared
+
+	DESTDIR=$PKG cmake --build build-static --target install
+	DESTDIR=$PKG cmake --build build-shared --target install
+}

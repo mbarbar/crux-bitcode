@@ -1,0 +1,17 @@
+# Description: Interface to the gnome libxslt library
+# URL: https://metacpan.org/pod/XML::LibXSLT
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libxslt p5-xml-libxml
+
+name=p5-xml-libxslt
+version=1.99
+release=1
+source=(https://www.cpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-$version.tar.gz)
+
+build() {
+  cd XML-LibXSLT-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

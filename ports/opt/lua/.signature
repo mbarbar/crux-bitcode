@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Xw1h492DZNgKYOW1PldLW7WoFm222rW84j8aZb8cTpMo3SE2IZdFxJv0W4KtZANorrRiOcC42E2+UzmYAD1sgU=
+SHA256 (Pkgfile) = 7bc4c4fa6516f50b175d3e434f0ca2deec4ca96ead3fd6e867b26753ca29e108
+SHA256 (.footprint) = e7a569b489a3012d1d3e0db8fdf327171da10ef56a03c5ad8cbf9715ed20228d
+SHA256 (lua-5.4.2.tar.gz) = 11570d97e9d7303c0a59567ed1ac7c648340cd0db10d5fd594c09223ef2f524f
+SHA256 (liblua.so.patch) = a8a7f89ab0c03b4bc1d58a935c54df792ad628edb4d1788c5ac66e4fc2d9f800
+SHA256 (lua.pc) = ca9252633e782b8f85d6a94ea4f6babd4fe30bd759085b373160b1878e36ff78

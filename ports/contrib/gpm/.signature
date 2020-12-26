@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3ytIdF2rkX2lZ+LH1/SAQRlPDwxV7jAuyOB608pMvxaKw5YpsvB4/OYKUeNwOO7gBiKQcKM1SujaKINxExSrfgs=
+SHA256 (Pkgfile) = fb1986b3400914332b6f80c033f4295b7b21f7f7aa8fc00932c7c462801f7c63
+SHA256 (.footprint) = de489cff1dda5ecf94ed8bfbb5ccc9faba51d67fe3a71ad871bbab332b623e62
+SHA256 (gpm-1.20.7.tar.bz2) = f011b7dc7afb824e0a017b89b7300514e772853ece7fc4ee640310889411a48d
+SHA256 (gpm-1.20.7-glibc_2.26-1.patch) = 420820b560bfdb22e0e5fdc05416b380f179091b00c42c407add245ff317d32d
+SHA256 (gpm.rc) = c6e7824b8178323cd3d949fe1658ddfac908b0b0ab1bd6e082707c41b10a61a6

@@ -1,0 +1,16 @@
+# Description: "Essential" win32 binary codecs for mplayer, xine, etc.
+# URL:         http://www.mplayerhq.hu/DOCS/codecs-status.html
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=win32-essential-codecs
+version=20110131
+release=1
+source=(http://www.mplayerhq.hu/MPlayer/releases/codecs/all-$version.tar.bz2)
+
+build() {
+  cd all-$version
+  mkdir -p $PKG/usr/share/codecs
+  install -m 0644 * $PKG/usr/share/codecs/
+  rm -f $PKG/usr/lib
+  rm $PKG/usr/share/codecs/README
+}

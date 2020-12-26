@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/libdshconfig.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libdshconfig.a
+-rwxr-xr-x	root/root	usr/lib/libdshconfig.la
+lrwxrwxrwx	root/root	usr/lib/libdshconfig.so -> libdshconfig.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/libdshconfig.so.1 -> libdshconfig.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/libdshconfig.so.1.0.0

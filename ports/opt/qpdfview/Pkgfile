@@ -1,0 +1,30 @@
+# Description: PDF viewer
+# URL:         https://launchpad.net/qpdfview
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  poppler-qt5
+
+name=qpdfview
+version=0.4.18
+release=2
+source=(https://launchpad.net/qpdfview/trunk/$version/+download/$name-$version.tar.gz
+        qt5-5.15.diff)
+
+build () {
+    cd $name-$version
+
+    patch -p0 -i $SRC/qt5-5.15.diff
+
+    local OPTS
+    pkginfo -i | grep -q '^cups '       || OPTS+='without_cups '
+    pkginfo -i | grep -q '^libspectre ' || OPTS+='without_ps '
+    pkginfo -i | grep -q '^djvulibre '  || OPTS+='without_djvu '
+
+    qmake-qt5 qpdfview.pro \
+        MANUAL_INSTALL_PATH=/usr/share/man/man1 \
+        CONFIG+="$OPTS"
+
+    make
+    make INSTALL_ROOT=$PKG install
+    
+    rm $PKG/usr/share/qpdfview/help_*.html
+}

@@ -1,0 +1,22 @@
+# Description: A set of serial programs for partitioning graphs, partitioning finite element meshes, and producing fill reducing orderings for sparse matrices
+# URL: http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake
+
+name=metis
+version=5.1.0-p10
+release=1
+source=(https://bitbucket.org/petsc/pkg-metis/get/v$version.tar.bz2)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_METIS+=' -G Ninja'
+  cmake -S petsc-pkg-metis-c8d2dc1e751e -B build $PKGMK_METIS \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+    -D SHARED=ON \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

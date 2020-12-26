@@ -1,0 +1,24 @@
+# Description: Exploit common IEEE 802.11 protocol weaknesses
+# URL:         https://github.com/charlesxsh/mdk3-master
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  libnl libpcap
+
+name=mdk4
+version=4.1
+release=1
+source=(https://github.com/aircrack-ng/mdk4/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	# remove default debug/optimization flags
+	sed -i 's/-g -O3//' src/Makefile src/attacks/Makefile
+
+	EXTRAFLAGS="-I.. -I/usr/include/libnl3 -DCONFIG_LIBNL30 -DCONFIG_LIBNL"
+
+	make CFLAGS="$CFLAGS $EXTRAFLAGS" -j1 # fix parallel build
+	make -C src install PREFIX=$PKG/usr
+
+	# install man page manually
+	install -Dm644 man/mdk4.1 $PKG/usr/share/man/man8/mdk4.8
+}

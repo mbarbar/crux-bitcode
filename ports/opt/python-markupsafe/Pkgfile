@@ -1,0 +1,18 @@
+# Description: Implements a XML/HTML/XHTML Markup safe string for Python.
+# URL: http://pypi.python.org/pypi/MarkupSafe
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python-setuptools
+
+name=python-markupsafe
+version=1.1.1
+release=1
+source=(https://pypi.io/packages/source/M/MarkupSafe/MarkupSafe-$version.tar.gz)
+
+build() {
+	cd MarkupSafe-$version
+
+	/usr/bin/python setup.py build
+
+	/usr/bin/python setup.py install --prefix=/usr \
+		--root=$PKG --optimize=1
+}

@@ -1,0 +1,40 @@
+# Description: A System V Release 4.0 curses emulation library
+# URL:         http://www.gnu.org/software/ncurses/ncurses.html
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=ncurses
+version=6.2
+release=1
+source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --mandir=/usr/share/man \
+                --with-{normal,shared} \
+                --without-{debug,ada,tests} \
+                --enable-pc-files \
+                --with-pkg-config-libdir=/usr/lib/pkgconfig \
+                --enable-widec
+
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/lib
+
+    # move library to /lib and create symlinks
+    mv $PKG/usr/lib/libncursesw.so.* $PKG/lib
+    ln -sf ../../lib/libncursesw.so.$version $PKG/usr/lib/libncursesw.so
+    ln -s libncursesw.so.$version $PKG/lib/libncurses.so.${version%%.*}
+
+    # linker scripts and .pc files for non-wide ncurses
+    for LIB in ncurses form panel menu ; do
+       echo "INPUT(-l${LIB}w)" > $PKG/usr/lib/lib${LIB}.so
+       ln -s ${LIB}w.pc $PKG/usr/lib/pkgconfig/${LIB}.pc
+    done
+
+    # linker script for the curses library
+    echo "INPUT(-lncursesw)" > $PKG/usr/lib/libcursesw.so
+    ln -s libncurses.so $PKG/usr/lib/libcurses.so
+}

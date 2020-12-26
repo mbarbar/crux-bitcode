@@ -1,0 +1,22 @@
+# Description: An EXIF tag parsing library
+# URL:         https://libexif.github.io/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=libexif
+version=0.6.22
+release=1
+source=(https://github.com/$name/$name/releases/download/$name-${version//./_}-release/$name-$version.tar.xz)
+
+build () {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--with-doc-dir=/usr/share/doc
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share
+}

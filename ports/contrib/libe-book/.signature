@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zb0ALIxNwiN5EdTbMWj9ibmx3aVTiQliFyG5MRoHOasMWy5eS79a52V2q6/5tCVIbrSz7nDNrF3ptx0+fxBXg0=
+SHA256 (Pkgfile) = 90ec8586e2c404c02cc5d80dd4c3d945f501aeb40747a248ae4cdf8a3e74d835
+SHA256 (.footprint) = 29095ae079951d22653c41754fbae8ecad3adfbc33ada913cf2f7e610b926c41
+SHA256 (libe-book-0.1.3.tar.xz) = 7e8d8ff34f27831aca3bc6f9cc532c2f90d2057c778963b884ff3d1e34dfe1f9
+SHA256 (libebook-0.1.3-icu-68.patch) = d183878b0e543af9aa1da0de3f7d7914ee68a393d136b3731044254315af6920

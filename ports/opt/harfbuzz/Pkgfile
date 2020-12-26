@@ -1,0 +1,25 @@
+# Description: An OpenType text shaping engine
+# URL:         https://github.com/harfbuzz/harfbuzz
+# Maintainer:  Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on:  cairo
+
+name=harfbuzz
+version=2.7.2
+release=1
+source=(https://github.com/harfbuzz/harfbuzz/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	
+	echo "EXTRA_DIST = " > gtk-doc.make
+	autoreconf --force --install
+	./configure	--prefix=/usr \
+			--with-glib \
+			--with-freetype \
+			--with-cairo \
+			--with-icu=no \
+			--with-graphite2=auto
+
+	make
+	make DESTDIR=$PKG install
+}

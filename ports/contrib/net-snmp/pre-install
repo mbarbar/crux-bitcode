@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "`getent group snmp`" ]
+then
+  /usr/sbin/groupadd -g 72 snmp
+fi
+
+if [ -z "`getent passwd snmp`" ]
+then
+  /usr/sbin/useradd  -u 72 -g snmp -d /var/lib/snmp/ -s /bin/false snmp
+  /usr/bin/passwd -l snmp
+fi
+
+# End of file

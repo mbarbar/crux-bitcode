@@ -1,0 +1,6 @@
+* post-install:
+	Try setting gl_ext_texture3D to "0" in ~/.warsow/basewsw/config.cfg
+	if you see this error message:
+
+		ERROR: R_Upload32_3D: texture (***r_dlighttexture***) is too
+		large (resizing is not supported)

@@ -1,0 +1,22 @@
+# Description: ssh library
+# URL:         https://libssh.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  cmake
+
+name=libssh
+version=0.9.5
+release=1
+source=(https://www.libssh.org/files/${version%.*}/libssh-${version}.tar.xz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_LIBSSH+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_LIBSSH \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

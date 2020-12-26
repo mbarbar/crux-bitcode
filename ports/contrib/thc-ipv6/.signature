@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37RohuasuM4oGxXowUqmmD5dMe0mFmMPutbGbJQlkQRHcU6w2NpFlV4cR22kB+oSHVJAjdPfbSO4imLbiTub5w4=
+SHA256 (Pkgfile) = f454f1ae8841758f1ec34f9ed2d56e75eb7ce1a3d80941cba0a1aa0552571c64
+SHA256 (.footprint) = 7fdec22adac9330e3f7181fac3abb2e70f2333723363ce11fbfbfdd9739a80f3
+SHA256 (thc-ipv6-3.8.tar.gz) = b60be61a8b0a944a66e3b719704b4c03c1bc2c22f32d5d21e99e434c82a9d769
+SHA256 (fake_dhcps6v2.c) = 22aece1f21de88bd6d6bc0f866e0c1f8c65dd26d6b20f0b698f58a8fc7248cd6

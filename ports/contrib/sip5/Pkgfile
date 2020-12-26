@@ -1,0 +1,20 @@
+# Description: A tool that makes it easy to create Python bindings for C and C++ libraries
+# URL: https://www.riverbankcomputing.com/software/sip/intro
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-toml
+
+name=sip5
+version=5.5.0
+release=1
+source=(https://pypi.python.org/packages/source/s/sip/sip-$version.tar.gz)
+
+build() {
+  cd sip-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --skip-build \
+    --root=$PKG \
+    --optimize=1
+  find $PKG \
+    -iname "*README*" \
+    -delete
+}

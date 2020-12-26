@@ -1,0 +1,22 @@
+
+README for pkg-get
+
+
+REQUERIMENTS
+
+	To use pkg-repgen you'll need prt-get to be installed.
+
+
+IMPORTANT
+
+	The PKGREPO file format chaged a bit from 0.3.3,
+	please regenerate your repositories with pkg-repgen
+
+	the /etc/pkg-get.conf options slightly changed
+	in version 0.3.0 in order to handle multiple
+	repositories.
+
+	pkg-get is beta software. I did not have much
+	time to test it, expecially latest features
+	added (locking, pre-post install scripts, printf).
+

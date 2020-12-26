@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/SDL2/
+-rw-r--r--	root/root	usr/include/SDL2/SDL_mixer.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libSDL2_mixer-2.0.so.0 -> libSDL2_mixer-2.0.so.0.2.2
+-rwxr-xr-x	root/root	usr/lib/libSDL2_mixer-2.0.so.0.2.2
+-rw-r--r--	root/root	usr/lib/libSDL2_mixer.a
+-rwxr-xr-x	root/root	usr/lib/libSDL2_mixer.la
+lrwxrwxrwx	root/root	usr/lib/libSDL2_mixer.so -> libSDL2_mixer-2.0.so.0.2.2
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/SDL2_mixer.pc

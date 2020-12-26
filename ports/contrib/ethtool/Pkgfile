@@ -1,0 +1,16 @@
+# Description: Linux net driver diagnostic and tuning tool
+# URL:         https://www.kernel.org/pub/software/network/ethtool/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  libmnl
+
+name=ethtool
+version=5.9
+release=1
+source=(https://www.kernel.org/pub/software/network/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

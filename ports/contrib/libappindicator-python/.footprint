@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/python2.7/
+drwxr-xr-x	root/root	usr/lib/python2.7/site-packages/
+drwxr-xr-x	root/root	usr/lib/python2.7/site-packages/appindicator/
+-rw-r--r--	root/root	usr/lib/python2.7/site-packages/appindicator/__init__.py
+-rw-r--r--	root/root	usr/lib/python2.7/site-packages/appindicator/__init__.pyc
+-rw-r--r--	root/root	usr/lib/python2.7/site-packages/appindicator/__init__.pyo
+-rwxr-xr-x	root/root	usr/lib/python2.7/site-packages/appindicator/_appindicator.la
+-rwxr-xr-x	root/root	usr/lib/python2.7/site-packages/appindicator/_appindicator.so
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/pygtk/
+drwxr-xr-x	root/root	usr/share/pygtk/2.0/
+drwxr-xr-x	root/root	usr/share/pygtk/2.0/defs/
+-rw-r--r--	root/root	usr/share/pygtk/2.0/defs/appindicator.defs

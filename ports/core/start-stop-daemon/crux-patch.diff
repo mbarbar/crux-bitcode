@@ -1,0 +1,258 @@
+diff --git a/start-stop-daemon.8 b/start-stop-daemon.8
+index 2a083f3..5daeab2 100644
+--- a/start-stop-daemon.8
++++ b/start-stop-daemon.8
+@@ -20,7 +20,7 @@
+ .\" You should have received a copy of the GNU General Public License
+ .\" along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+-.TH start\-stop\-daemon 8 "%RELEASE_DATE%" "%VERSION%" "dpkg suite"
++.TH start\-stop\-daemon 8 "2019-03-10" "CRUX 3.5" "dpkg suite"
+ .nh
+ .SH NAME
+ start\-stop\-daemon \- start and stop system daemon programs
+@@ -269,33 +269,6 @@ reason. This is a last resort, and is only meant for programs that either
+ make no sense forking on their own, or where it's not feasible to add the
+ code for them to do this themselves.
+ .TP
+-.BR \-\-notify\-await
+-Wait for the background process to send a readiness notification before
+-considering the service started (since version 1.19.3).
+-This implements parts of the systemd readiness procotol, as specified
+-in the \fBsd_notify\fP(3) man page.
+-The following variables are supported:
+-.RS
+-.TP
+-.B READY=1
+-The program is ready to give service, so we can exit safely.
+-.TP
+-.BI EXTEND_TIMEOUT_USEC= number
+-The program requests to extend the timeout by \fInumber\fP microseconds.
+-This will reset the current timeout to the specified value.
+-.TP
+-.BI ERRNO= number
+-The program is exiting with an error.
+-Do the same and print the user-friendly string for the \fBerrno\fP value.
+-.RE
+-.
+-.TP
+-.BI \-\-notify\-timeout timeout
+-Set a timeout for the \fB\-\-notify\-await\fP option (since version 1.19.3).
+-When the timeout is reached, \fBstart\-stop\-daemon\fP will exit with an
+-error code, and no readiness notification will be awaited.
+-The default is \fB60\fP seconds.
+-.TP
+ .BR \-C ", " \-\-no\-close
+ Do not close any file descriptor when forcing the daemon into the background
+ (since version 1.16.5).
+diff --git a/start-stop-daemon.c b/start-stop-daemon.c
+index 88c9726..bcdce53 100644
+--- a/start-stop-daemon.c
++++ b/start-stop-daemon.c
+@@ -20,10 +20,37 @@
+  * Changes by Ian Jackson: added --retry (and associated rearrangements).
+  */
+ 
++#if 0
+ #include <config.h>
+ #include <compat.h>
+ 
+ #include <dpkg/macros.h>
++#else
++# define VERSION 		"20190310"
++# define CRUX 			"CRUX-Linux"
++
++# define WANT_SYSTEMD_NOTIFY	0 /* 1=yes */
++
++# define HAVE_SYS_PARAM_H
++# define HAVE_SYS_SYSCALL_H
++# define HAVE_SYS_SYSCTL_H
++# define HAVE_SYS_USER_H
++# define HAVE_STDDEF_H
++# define HAVE_ERROR_H
++# define HAVE_ERR_H
++
++# define HAVE_CLOCK_MONOTONIC
++# define HAVE_GETDTABLESIZE
++# define HAVE_IOPRIO_SET
++# define HAVE_SETSID
++
++# define DPKG_ATTR_NORET	__attribute__((noreturn))
++# define DPKG_ATTR_PRINTF(X)
++# define DPKG_ATTR_VPRINTF(X)
++
++# define _GNU_SOURCE
++# include <unistd.h>
++#endif
+ 
+ #if defined(__linux__)
+ #  define OS_Linux
+@@ -160,6 +187,10 @@
+ #define HAVE_IOPRIO_SET
+ #endif
+ 
++#ifndef array_count
++# define array_count(x) 	(sizeof(x) / sizeof((x)[0]))
++#endif
++
+ #define IOPRIO_CLASS_SHIFT 13
+ #define IOPRIO_PRIO_VALUE(class, prio) (((class) << IOPRIO_CLASS_SHIFT) | (prio))
+ #define IO_SCHED_PRIO_MIN 0
+@@ -212,10 +243,12 @@ static int quietmode = 0;
+ static int exitnodo = 1;
+ static bool background = false;
+ static bool close_io = true;
++#if WANT_SYSTEMD_NOTIFY
+ static bool notify_await = false;
+ static int notify_timeout = 60;
+ static char *notify_sockdir;
+ static char *notify_socket;
++#endif
+ static bool mpidfile = false;
+ static bool rpidfile = false;
+ static int signal_nr = SIGTERM;
+@@ -405,8 +438,7 @@ xstrndup(const char *str, size_t n)
+ static void
+ timespec_gettime(struct timespec *ts)
+ {
+-#if defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0 && \
+-    defined(_POSIX_MONOTONIC_CLOCK) && _POSIX_MONOTONIC_CLOCK > 0
++#ifdef HAVE_CLOCK_MONOTONIC
+ 	if (clock_gettime(CLOCK_MONOTONIC, ts) < 0)
+ 		fatale("clock_gettime failed");
+ #else
+@@ -548,6 +580,7 @@ wait_for_child(pid_t pid)
+ 	}
+ }
+ 
++#if WANT_SYSTEMD_NOTIFY
+ static void
+ cleanup_socket_dir(void)
+ {
+@@ -737,6 +770,7 @@ wait_for_notify(int fd)
+ 		}
+ 	}
+ }
++#endif /* WANT_SYSTEMD_NOTIFY */
+ 
+ static void
+ write_pidfile(const char *filename, pid_t pid)
+@@ -769,7 +803,9 @@ remove_pidfile(const char *filename)
+ static void
+ daemonize(void)
+ {
++#if WANT_SYSTEMD_NOTIFY
+ 	int notify_fd = -1;
++#endif
+ 	pid_t pid;
+ 	sigset_t mask;
+ 	sigset_t oldmask;
+@@ -783,8 +819,10 @@ daemonize(void)
+ 	if (sigprocmask(SIG_BLOCK, &mask, &oldmask) == -1)
+ 		fatale("cannot block SIGCHLD");
+ 
++#if WANT_SYSTEMD_NOTIFY
+ 	if (notify_await)
+ 		notify_fd = create_notify_socket();
++#endif
+ 
+ 	pid = fork();
+ 	if (pid < 0)
+@@ -795,6 +833,7 @@ daemonize(void)
+ 		 * not suffer from race conditions on return. */
+ 		wait_for_child(pid);
+ 
++#if WANT_SYSTEMD_NOTIFY
+ 		if (notify_await) {
+ 			/* Wait for a readiness notification from the second
+ 			 * child, so that we can safely exit when the service
+@@ -803,6 +842,7 @@ daemonize(void)
+ 			close(notify_fd);
+ 			cleanup_socket_dir();
+ 		}
++#endif
+ 
+ 		_exit(0);
+ 	}
+@@ -901,8 +941,10 @@ usage(void)
+ "                                  scheduler (default prio is 4)\n"
+ "  -k, --umask <mask>            change the umask to <mask> before starting\n"
+ "  -b, --background              force the process to detach\n"
++#if WANT_SYSTEMD_NOTIFY
+ "      --notify-await            wait for a readiness notification\n"
+ "      --notify-timeout <int>    timeout after <int> seconds of notify wait\n"
++#endif
+ "  -C, --no-close                do not close any file descriptor\n"
+ "  -m, --make-pidfile            create the pidfile before starting\n"
+ "      --remove-pidfile          delete the pidfile after stopping\n"
+@@ -947,9 +989,9 @@ usage(void)
+ static void
+ do_version(void)
+ {
+-	printf("start-stop-daemon %s for Debian\n\n", VERSION);
+-
+-	printf("Written by Marek Michalkiewicz, public domain.\n");
++	printf("start-stop-daemon " VERSION " for " CRUX "\n\n"
++		"Written by Marek Michalkiewicz, public domain.\n"
++		"Adjusted for " CRUX ".\n");
+ }
+ 
+ static void DPKG_ATTR_NORET
+@@ -1274,8 +1316,10 @@ parse_options(int argc, char * const *argv)
+ 		{ "iosched",	  1, NULL, 'I'},
+ 		{ "umask",	  1, NULL, 'k'},
+ 		{ "background",	  0, NULL, 'b'},
++#if WANT_SYSTEMD_NOTIFY
+ 		{ "notify-await", 0, NULL, OPT_NOTIFY_AWAIT},
+ 		{ "notify-timeout", 1, NULL, OPT_NOTIFY_TIMEOUT},
++#endif
+ 		{ "no-close",	  0, NULL, 'C'},
+ 		{ "make-pidfile", 0, NULL, 'm'},
+ 		{ "remove-pidfile", 0, NULL, OPT_RM_PIDFILE},
+@@ -1290,7 +1334,9 @@ parse_options(int argc, char * const *argv)
+ 	const char *schedule_str = NULL;
+ 	const char *proc_schedule_str = NULL;
+ 	const char *io_schedule_str = NULL;
++#if WANT_SYSTEMD_NOTIFY
+ 	const char *notify_timeout_str = NULL;
++#endif
+ 	size_t changeuser_len;
+ 	int c;
+ 
+@@ -1390,12 +1436,14 @@ parse_options(int argc, char * const *argv)
+ 		case 'b':  /* --background */
+ 			background = true;
+ 			break;
++#if WANT_SYSTEMD_NOTIFY
+ 		case OPT_NOTIFY_AWAIT:
+ 			notify_await = true;
+ 			break;
+ 		case OPT_NOTIFY_TIMEOUT:
+ 			notify_timeout_str = optarg;
+ 			break;
++#endif
+ 		case 'C': /* --no-close */
+ 			close_io = false;
+ 			break;
+@@ -1448,9 +1496,11 @@ parse_options(int argc, char * const *argv)
+ 			badusage("umask value must be a positive number");
+ 	}
+ 
++#if WANT_SYSTEMD_NOTIFY
+ 	if (notify_timeout_str != NULL)
+ 		if (parse_unsigned(notify_timeout_str, 10, &notify_timeout) != 0)
+ 			badusage("invalid notify timeout value");
++#endif
+ 
+ 	if (action == ACTION_NONE)
+ 		badusage("need one of --start or --stop or --status");
+@@ -2298,7 +2348,8 @@ do_pidfile(const char *name)
+ 
+ 			if (match_mode == MATCH_PIDFILE &&
+ 			    ((st.st_uid != getuid() && st.st_uid != 0) ||
+-			     (st.st_gid != getgid() && st.st_gid != 0)))
++			     ((st.st_gid != getgid() && st.st_gid != 0) &&
++			      (st.st_mode & 0020))))
+ 				fatal("matching only on non-root pidfile %s is insecure", name);
+ 			if (st.st_mode & 0002)
+ 				fatal("matching on world-writable pidfile %s is insecure", name);

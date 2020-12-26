@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# /etc/rc.d/conntrackd: start/stop conntrack daemon
+#
+
+# User settings here
+DAEMON=conntrackd
+RUN_AS_USER=root
+
+# If you have to edit this section for this or any other 
+# port useage let me know, with a patch or added lines, 
+# or simplely e-mail me the altered file and I'll include the changes.
+
+RETVAL=0
+
+case $1 in
+start)
+	echo -n "Starting $DAEMON..."
+	su $RUN_AS_USER -c /usr/sbin/$DAEMON > /dev/null & RETVAL=$?
+	if [ $RETVAL = 0 ]; then
+		echo " done."
+	fi
+	;;
+stop)
+	echo -n "Shutting down $DAEMON..."
+	killall -q /usr/sbin/$DAEMON
+	RETVAL=$?
+	echo " done."
+	;;
+restart)
+	$0 stop
+	sleep 5
+	$0 start
+	RETVAL=$?
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	exit 1
+	;;
+esac
+
+exit $RETVAL
+
+# End of file

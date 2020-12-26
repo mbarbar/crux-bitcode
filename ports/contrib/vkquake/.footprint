@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/vkquake
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/applications/
+-rw-r--r--	root/root	usr/share/applications/vkquake.desktop
+drwxr-xr-x	root/root	usr/share/games/
+drwxr-xr-x	root/root	usr/share/games/vkquake/
+-rw-r--r--	root/root	usr/share/games/vkquake/vkquake.pak
+drwxr-xr-x	root/root	usr/share/pixmaps/
+-rw-r--r--	root/root	usr/share/pixmaps/vkquake.png

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zetW7vsVx+epNwi/8bd1IeM5sXBpPv8IGc08CWeemN7UExBvJ0L0eUy848nq0Y6UejOKIsDPg2UQyIOdcFyBgI=
+SHA256 (Pkgfile) = c2c271fdfca0f6db72193e647198947c93344eb267d8c0096632f1d43952964a
+SHA256 (.footprint) = 60d44f86e797c049f0b262180055966f5a49b6548cad994932b986ac98f640a6
+SHA256 (raqm-0.7.0.tar.gz) = e28575ecdd4e8a1d277d9be8268bb663ce1e476aaf55eb0456787821ddf0f941

@@ -1,0 +1,24 @@
+# Description: Free Civilisation Clone
+# URL:         http://www.freeciv.org
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  gtk3 lua sdl2_mixer xorg-libxaw xorg-libxpm
+
+name=freeciv
+version=2.6.2
+release=1
+source=(http://prdownloads.sf.net/freeciv/$name-$version.tar.bz2)
+
+build() {
+   cd $name-$version
+   ./configure --prefix=/usr \
+     --enable-shared \
+     --enable-sys-lua \
+     --enable-client=gtk3 \
+     --enable-fcmp=gtk3 \
+     --without-ggz-client
+   make
+   make DESTDIR=$PKG install
+   rm -rf $PKG/usr/share/{locale,doc}
+   find $PKG -iname '*readme*' -exec rm -fr '{}' \+
+}

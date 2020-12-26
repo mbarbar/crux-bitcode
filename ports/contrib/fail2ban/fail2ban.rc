@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# /etc/rc.d/fail2ban: start/stop fail2ban daemon
+#
+
+# User settings here
+DAEMON=fail2ban-client
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin:"
+
+# Check for configuration files
+[ -f /etc/fail2ban/fail2ban.conf ] || exit 1
+
+# If you have to edit this section for this or any other 
+# port useage let me know, with a patch or added lines, 
+# or simplely e-mail me the altered file and I'll include the changes.
+
+RETVAL=0
+
+case $1 in
+start)
+	echo -n "Starting $DAEMON..."
+	rm -rf /var/run/fail2ban/fail2ban.sock # in case of unclean shutdown
+	/usr/bin/$DAEMON start > /dev/null & RETVAL=$?
+	if [ $RETVAL = 0 ]; then
+		echo " done."
+	fi
+	;;
+stop)
+	echo -n "Shutting down $DAEMON..."
+	/usr/bin/$DAEMON stop > /dev/null
+	RETVAL=$?
+	echo " done."
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	RETVAL=$?
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	exit 1
+	;;
+esac
+
+exit $RETVAL
+
+# End of file

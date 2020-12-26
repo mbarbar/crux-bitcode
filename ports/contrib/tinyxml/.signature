@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33a20OuGBErBcOWYzEGVdqpalrqzTYrf1/lYkpj82NwntQU7a2L4kaCXtOsfrlJXSPxjZLUt/6mvaOtIeSwuRQE=
+SHA256 (Pkgfile) = d93fbe9159da21fe72b169bf960202c2877e25e99e37272b8f6dd9d1e9ac4cbe
+SHA256 (.footprint) = a1e18a04ec6ecc8e74d03f9b2f2e2df4b84afa88c8ec38534255add85e363de1
+SHA256 (tinyxml_2_6_2.zip) = ac6bb9501c6f50cc922d22f26b02fab168db47521be5e845b83d3451a3e1d512
+SHA256 (entity.patch) = ef493209b0a51160171fd834a7ecdddd02679463b85fb89a2ea254213e47f99b
+SHA256 (tinyxml-use-stl.patch) = 14d01a56f9f702d7e1d52eaff6783201314aa0eb48365524ef0c9acb75e7a8b2

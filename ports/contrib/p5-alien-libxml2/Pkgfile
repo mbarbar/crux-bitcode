@@ -1,0 +1,17 @@
+# Description: Install the C libxml2 library on your system
+# URL: https://metacpan.org/release/Alien-Libxml2
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libxml2 p5-alien-build p5-html-parser p5-sort-versions p5-uri
+
+name=p5-alien-libxml2
+version=0.17
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Libxml2-$version.tar.gz)
+
+build() {
+  cd Alien-Libxml2-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

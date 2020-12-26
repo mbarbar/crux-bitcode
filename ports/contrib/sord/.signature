@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/NlZyi2/6YhkD5oIZykpAlyzWW9Fh+piJ/1UI+Fke4bkA21EcW6jsHEZncw07gjFNK8lSI3OzlWm6L1ZUifMgk=
+SHA256 (Pkgfile) = b343f9f5573d71b8522776a40dd726fbece24c94dc489e29ceeb48e1254c4788
+SHA256 (.footprint) = 0ab39e4f9f0513dcd97e867a13da40de0cb68ccf1743d351f56c505a55aef127
+SHA256 (sord-0.16.6.tar.bz2) = 667af27a76085336d3865d087c1bb31a9d5f85b3359bcb27112dc43659229d44

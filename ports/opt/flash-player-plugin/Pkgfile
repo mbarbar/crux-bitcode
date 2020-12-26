@@ -1,0 +1,14 @@
+# Description: Macromedia Flash Plugin for Firefox
+# URL:         http://www.adobe.com/products/flashplayer/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  util-linux gtk nss libglvnd xorg-libxdamage xorg-libxt
+
+name=flash-player-plugin
+version=32.0.0.453
+release=1
+source=(https://fpdownload.adobe.com/pub/flashplayer/pdc/$version/flash-player-npapi-$version-release.x86_64.rpm)
+
+build() {
+	install -D -m 0755 usr/lib64/flash-plugin/libflashplayer.so \
+		$PKG/usr/lib/mozilla/plugins/libflashplayer.so
+}

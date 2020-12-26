@@ -1,0 +1,10 @@
+README for scapy
+
+NOTES
+
+    Optional software for special features:
+        python3-matplotlib:        Plotting support
+        python3-pyx:               PostScript and PDF graphs drawing
+        graphviz and imagemagick:  Graph generation
+        python3-cryptography:      WEP, PKI and TLS support
+        sox:                       VOIP support

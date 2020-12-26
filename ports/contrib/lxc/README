@@ -1,0 +1,93 @@
+First, your kernel needs to be configured correctly to be able to use LXC.
+Enable the following options in your kernel config:
+CONFIG_NAMESPACES
+CONFIG_UTS_NS
+CONFIG_IPC_NS
+CONFIG_PID_NS
+CONFIG_USER_NS
+CONFIG_NET_NS
+CONFIG_CGROUPS
+CONFIG_CGROUP_NS
+CONFIG_CGROUP_DEVICE
+CONFIG_CGROUP_SCHED
+CONFIG_CGROUP_CPUACCT
+CONFIG_CGROUP_FREEZER
+CONFIG_CGROUP_RDMA
+CONFIG_CGROUP_PIDS
+CONFIG_BLK_CGROUP
+CONFIG_MEMCG
+CONFIG_MEMCG_SWAP
+CONFIG_CPUSETS
+CONFIG_VETH
+CONFIG_BRIDGE
+CONFIG_MACVLAN
+CONFIG_VLAN_8021Q
+CONFIG_NETFILTER_ADVANCED
+CONFIG_NF_NAT_IPV4
+CONFIG_NF_NAT_IPV6
+CONFIG_IP_NF_TARGET_MASQUERADE
+CONFIG_IP6_NF_TARGET_MASQUERADE
+CONFIG_NETFILTER_XT_TARGET_CHECKSUM
+CONFIG_NETFILTER_XT_MATCH_COMMENT
+CONFIG_FUSE_FS
+CONFIG_CHECKPOINT_RESTORE
+CONFIG_FHANDLE
+CONFIG_EVENTFD
+CONFIG_EPOLL
+CONFIG_UNIX_DIAG
+CONFIG_INET_DIAG
+CONFIG_PACKET_DIAG
+CONFIG_NETLINK_DIAG
+
+Second, you need to edit /etc/lxc/default.conf to suite your desired
+container setup. The default network configuration is designed to use
+the default LXC managed bridge which relies on NAT to provide access
+to any external networks. Be sure to modify this if you wish to do
+something different. Also, if unprivileged containers are desired,
+then be sure to uncomment the uidmap configuration.
+
+Third, you need to edit /etc/rc.conf to enable any desired LXC services.
+First, the lxc-cgroups service needs to be enabled and placed before any
+other LXC services for LXC to function correctly. Next, the lxc-net
+service should be enabled and placed before lxc if you are wanting LXC to
+manage your container networking. Last, the lxc service should be enabled
+and placed after any other LXC services if you are wanting LXC to manage
+the startup of your containers.
+
+Fourth, if you are wanting to allow unprivileged users to use LXC containers,
+then you will need to do some setup. First, be sure that you have enabled LXC
+unprivileged containers as is documented above. Second, you need to edit
+/etc/lxc/lxc-usernet and add any users that you wish to have access to LXC
+unprivileged containers. The comments in the file will show how to do this.
+Third, you need to run the following command to setup each user, which will
+create the subuids, create the subgids, setup their BASH profile for LXC,
+and create their initial LXC configuration file: lxc-users-setup
+Please note that you will also need to reboot or restart the lxc-cgroups
+service for the new user cgroups to be available for use. Last, if you are
+wanting LXC to manage the startup of your user containers, be sure to place
+the lxc-users service after lxc in the /etc/rc.conf file.
+
+Fifth, you need to add the following line to /etc/pam.d/common-session:
+session   optional    pam_cgfs.so -c all
+
+Now you are ready to start using LXC. See below for some examples of basic
+usage of LXC.
+
+You can create a container using lxc-create:
+lxc-create -t download -- alpine -d alpine -r 3.8 -a amd64
+
+You can start this container using lxc-start:
+lxc-start -n alpine
+
+You can get a shell in this container using lxc-attach:
+lxc-attach -n alpine
+
+You can run arbitrary commands in this container using lxc-attach:
+lxc-attach -n alpine -- echo Hello World!
+
+You can stop this container using lxc-stop:
+lxc-stop -n alpine
+
+You can start LXC containers at boot by adding this line to your
+container configuration:
+lxc.start.auto = 1

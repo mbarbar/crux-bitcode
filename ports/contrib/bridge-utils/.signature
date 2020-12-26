@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38/V9pNDPhUzK9ZRS/jDNdKJoE7Oj5oYwinH1ryyJH8MzTYA2remMwGj6wJJeDWbHRuzotDv2eUkM1Lc71nF1go=
+SHA256 (Pkgfile) = af835277fbcd374dd01476c85470d25ffdb81480d2acf49f8fa41621be605c29
+SHA256 (.footprint) = 17197ce86e1ec11083ee1a9fcda95f253b2ff6f482bbb9427c07582ea12b06d9
+SHA256 (bridge-utils-1.7.tar.gz) = 4b9b12f31d147320dea931f1041b8a69d84741ddb92cf35ea1f896b67da98b7c

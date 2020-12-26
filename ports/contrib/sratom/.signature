@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33lpAL7CASf9087PuUGxY1Y6Sldd9U9R2Nwy3em47DSX+zcPRrgDNZb6+0ZUaYT5THPjrtzzBmHUNmyM9DEJzgI=
+SHA256 (Pkgfile) = 6a6699f530ab881b481a2d8f7e7f06ee386299bc9eed7301e8e47a9ad6d1bba6
+SHA256 (.footprint) = d09bbceef9778806bd0eb3fff2cdd129624969e2c22798d58eeb1498ae602fa1
+SHA256 (sratom-0.6.6.tar.bz2) = fb910bf62a5e69f4430bf09653d386fc4de9ff02bfd58635e1d45cbd31481b9d

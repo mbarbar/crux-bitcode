@@ -1,0 +1,17 @@
+# Description:	Small getty for Linux
+# URL:		http://www.fefe.de/fgetty/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	dietlibc
+
+name=fgetty
+version=0.7
+release=2
+source=(http://www.fefe.de/$name/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	make DIET="/usr/dietlibc/bin/diet"
+	sed 's!$(DESTDIR)\/usr\/man\/man8!$(DESTDIR)\/usr\/share\/man\/man8!g' -i Makefile
+	make DESTDIR=$PKG install
+	# rm -f $PKG/bin/{login1,login2,checkpassword.login}
+}

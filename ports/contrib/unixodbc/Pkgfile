@@ -1,0 +1,17 @@
+# Description: Open Source ODBC (Open DataBase Connectivity) sub-system
+# URL: http://www.unixodbc.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libtool readline
+
+name=unixodbc
+version=2.3.9
+release=1
+source=(ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$version.tar.gz)
+
+build() {
+  cd unixODBC-$version
+  ./configure \
+    --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

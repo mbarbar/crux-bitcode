@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39AuHrMuvF8hQ6FgYYaC1h4me3uHFMqaxXK1F/EYMX9ywesOjVFn73BhiJ4cBt9UngWu2XEDCBWdmjH50V8gnQ0=
+SHA256 (Pkgfile) = 637e1e80eb8149e5f520ff7ff9492255bbdc0bde89dcc4dc52d79e5ee05ad09d
+SHA256 (.footprint) = 09e74ff4ec946a1c0dc666a6a2ef69f056d462ddfa8c4ab9702eb7886b8f8486
+SHA256 (rustscan-2.0.1.tar.gz) = 1d458cb081cbed2db38472ff33f9546a6640632148b4396bd12f0229ca9de7eb

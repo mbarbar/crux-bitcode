@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xMdFqAWgjZ1kuA1+SZoOSL80kpOWVL04NRFtcG6CgU4X+pVCF9qarjrv4zb+pm2i22IRNEFjwOuy2q8Wo5rqQE=
+SHA256 (Pkgfile) = 60d66864eb91f7adf779738fe10e741d76ae30fc386bcb0a1fce4a461b0f354a
+SHA256 (.footprint) = a3feaf86006264e76e0b0e1464d87460d291eb3102f1a2c65a0f47fd02f308e0
+SHA256 (Babel-2.9.0.tar.gz) = da031ab54472314f210b0adcff1588ee5d1d1d0ba4dbd07b94dba82bde791e05
+SHA256 (cldr-common-37.0.zip) = ba93f5ba256a61a6f8253397c6c4b1a9b9e77531f013cc7ffa7977b5f7e4da57

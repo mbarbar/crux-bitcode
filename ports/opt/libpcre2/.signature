@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Y5lnP9I3wVlXkBJmRKoLMMCrRqMMbxjVrJ5dMVfivzx9J04Lbgn2yvwPq9Fik7AGeAHgY5/yKBaSsNdOTu95wc=
+SHA256 (Pkgfile) = 35a615cfdd3b482536ae33a98f795eedf524280e7f97534172e089f0533c6916
+SHA256 (.footprint) = c5bd4fc845a62e229234f77ca445132f388148c62736f48e6171c2a261cd5c6f
+SHA256 (pcre2-10.36.tar.bz2) = a9ef39278113542968c7c73a31cfcb81aca1faa64690f400b907e8ab6b4a665c

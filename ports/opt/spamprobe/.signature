@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/bYjm8F0RSPN7PGoGTKugpE87la/IzWBNhUu9UjjOD/RsQfJxJS+sv7eJynk6m/Ky2smt5bR8nfY93hAzrt69ws=
+SHA256 (Pkgfile) = 00dfa7f30ce5a61fdb79478d5c587873793509c8a97fcdf83f33f852e3e0dc5a
+SHA256 (.footprint) = 18a8e9a9a4743437d61b5a7cf02bfd38a3337a240229441d169b9d8e4c253add
+SHA256 (spamprobe-1.4d.tar.gz) = 217ce47dcc6f58d8201fbb0a5e2dc38b5b06349fadb1378fb3647ad8a3f44d68
+SHA256 (64bit.patch) = 86af19e88f769d4c35d2e0941d1e7c1670e77d3a6b0012902737529ff5bd14d9
+SHA256 (compile-fixes.patch) = 9c7452e24e257d17bd1f55468b08bbae55c64c70c4e8ac3051fed926343ccf86

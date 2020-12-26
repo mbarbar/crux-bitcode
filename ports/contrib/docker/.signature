@@ -1,0 +1,9 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zvzh96CnWgX9kbJWxLP5bmIg/vIOwxs+8/jKetXLPO4FYXkthYBBj7DRonn7cTaxs6lgWoJbVNn6akvRJAC/wg=
+SHA256 (Pkgfile) = 57fc9b0af51d065e2b7e54627ad874b488d53347b085fad0bd60925c2037c138
+SHA256 (.footprint) = bb919844c882663bd9d47875128ebc9d9e52ca3b569ea271d4b990fff980820a
+SHA256 (docker-ce-v19.03.13.tar.gz) = b2ff08675738031b6d6d59a90226657c16726851957c11b5fb85a4598b933b92
+SHA256 (docker-man-pages-19.03.13.tar.xz) = 4e20dacb9d0b67e15b5353d782c7732911f17322a9e4feee7f801deecee32b9b
+SHA256 (libnetwork-026aaba.tar.xz) = 64b6ed48eec91a7522111858489d015fd92f5ec35f50813dc4ac16d767a782a1
+SHA256 (docker.rc) = 258ff4d10d199b2b847df07d22eac04bb8bd749a10af29d67111e53a8b81a46c
+SHA256 (docker.conf) = 51f264d548d6d3871d07670e7e5ba6414c3b4317dcc6d59cd7cc45dc1045659e

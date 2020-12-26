@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37gjtZbgV0KHqG+TT0iBYP64ttBqOCZridW41r3iWCor/wlI9ZjSyxxZZmTOjXcZhXEOFgZBrtqXFRffwEImyw8=
+SHA256 (Pkgfile) = be4be4f9044b7297396b31ecd5433e106b4ed7f67aff23fc30d0cbd2301c2b24
+SHA256 (.footprint) = 0847ffb990fbd434b7d7a8843c1eed8bf8d3a3d83eef37b50d928b72ee978d20
+SHA256 (xlockmore-5.66.tar.xz) = 5976a5c3662828d14522c90e06f28ddcfc8e57788fde08eb8b7a70e9ef3bab71

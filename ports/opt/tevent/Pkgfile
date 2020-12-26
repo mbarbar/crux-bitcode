@@ -1,0 +1,20 @@
+# Description: Event library based on talloc
+# URL:         https://tevent.samba.org/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  talloc
+
+name=tevent
+version=0.10.2
+release=1
+source=(https://www.samba.org/ftp/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--bundled-libraries=NONE \
+		--prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

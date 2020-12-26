@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3//sAAt2VQ3UrGDjQEzgb+HUyNkn6geptWCxgdUWvIlQrvBkBJ37jti3xDwwx/9osH/dBSu7Hs80FFsOR1QLlQA=
+SHA256 (Pkgfile) = 0655bb7485f8954bab4eed02e0262eef44a3c553d8c3d0c2729c75e92f2a5d99
+SHA256 (.footprint) = c4760045c414ef66a15b973114f1ed47f71fe09e5e5ae038dea4aef41cdf6219
+SHA256 (py3c-1.2.tar.gz) = 0e28ea43f5f092967a344294194f55a81fb55adc3c17a0314545d606eb5f6267

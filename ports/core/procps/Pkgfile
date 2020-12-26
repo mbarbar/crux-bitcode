@@ -1,0 +1,33 @@
+# Description: The /proc file system utilities
+# URL:         https://gitlab.com/procps-ng/procps
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  ncurses
+
+name=procps
+version=3.3.16
+release=1
+source=(http://downloads.sourceforge.net/project/procps-ng/Production/$name-ng-$version.tar.xz
+        sysctl.conf)
+
+build() {
+    cd $name-ng-$version
+
+    ./configure --prefix=/usr \
+                --sbindir=/sbin \
+                --libdir=/usr/lib \
+                --sysconfdir=/etc \
+                --disable-nls \
+                --disable-kill \
+                --disable-modern-top
+
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/{bin,lib,etc}
+    mv $PKG/usr/bin/{ps,pidof} $PKG/bin/
+    mv $PKG/usr/lib/libprocps.so.* $PKG/lib
+    ln -sf ../../lib/$(readlink $PKG/lib/libprocps.so.8) $PKG/usr/lib/libprocps.so
+    install -m 0644 $SRC/sysctl.conf $PKG/etc/sysctl.conf
+
+    rm -r $PKG/usr/share/doc
+}

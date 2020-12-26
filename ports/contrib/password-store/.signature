@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30KA09CiAnI4w3ApP31uBT24BTIsPLpixjvdBEtGDu3RI67LX2xuGxvjbcEmp/ZUH7ApxWtYOnJHcGu4BSytEgs=
+SHA256 (Pkgfile) = e74df4af711fafdf1b188716dca8fd94bc14581c291e029977ba7f1fed86ab2d
+SHA256 (.footprint) = 36c556857a5439b234552b25b178a828a35a668c38ca308bc0f2022e3ba57a98
+SHA256 (password-store-1.7.3.tar.xz) = 2b6c65846ebace9a15a118503dcd31b6440949a30d3b5291dfb5b1615b99a3f4

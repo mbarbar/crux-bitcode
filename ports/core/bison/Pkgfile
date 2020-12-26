@@ -1,0 +1,18 @@
+# Description: The GNU Project parser generator
+# URL:         https://www.gnu.org/software/bison/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  gettext
+
+name=bison
+version=3.7.4
+release=1
+source=(https://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr --disable-nls
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share/{doc,info}
+    rm $PKG/usr/share/bison/{README.md,skeletons/README-D.txt}
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32ptNdggHWXYpmyh3m/UKPY3wz4N2GCTz2XnAJFWHe+iTSCgHOmJlmAJKsclTo7AvdMptJaHI6ukv0vGRXesXAw=
+SHA256 (Pkgfile) = a184790ef1eff1609790572a9413993e9257e5a5de19d0c5c92d2b88860c7b98
+SHA256 (.footprint) = 87824f740fb9fbf13dd29153a22dc8d7791026ad380bca15e3436c48395791ae
+SHA256 (libixion-0.15.0.tar.xz) = b1f60af61be875e3bfa7ad18203a6c8ccdeb9922a531e196029fc42fbfa0b9e6

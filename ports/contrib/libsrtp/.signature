@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zv02AQgNW6VrKZwaYxitchCrDj893VghNzrqx1IAqT6hhucaD7+a/hsQ6mNlzE/f5bIl56NDln24B1EbQCTZwU=
+SHA256 (Pkgfile) = 188813f38f4053664b04c652019158365fce6423a35b676512a588ac3f3455a7
+SHA256 (.footprint) = 91295a1aca3241912bd2cf2fb57bdf10b3f3d53025e35c879a35d70ca34f09a3
+SHA256 (libsrtp-2.3.0.tar.gz) = 94093a5d04c5f4743e8d81182b76938374df6d393b45322f24960d250b0110e8

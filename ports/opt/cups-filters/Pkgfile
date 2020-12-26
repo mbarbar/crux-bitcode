@@ -1,0 +1,30 @@
+# Description: Backends and filters for CUPS
+# URL:         https://openprinting.github.io/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  ghostscript poppler qpdf mupdf xorg-font-dejavu-ttf
+
+name=cups-filters
+version=1.28.6
+release=1
+source=(https://www.openprinting.org/download/$name/$name-$version.tar.xz
+        cups-browsed)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --without-php \
+                --disable-avahi \
+                --disable-dbus \
+                --disable-braille \
+                --without-rcdir \
+                --with-browseremoteprotocols=cups 
+
+    make
+    make DESTDIR=$PKG install
+
+    install -D -m 0755 $SRC/cups-browsed $PKG/etc/rc.d/cups-browsed
+
+    rm -r $PKG/usr/share/doc
+}

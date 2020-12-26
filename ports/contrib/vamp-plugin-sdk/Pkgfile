@@ -1,0 +1,17 @@
+# Description: The Vamp audio analysis plug-in system.
+# URL: https://www.vamp-plugins.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Packager: Danny Rawlins, crux at romster dot me
+# Depends on: libsndfile
+
+name=vamp-plugin-sdk
+version=2.10.0
+release=1
+source=(https://code.soundsoftware.ac.uk/attachments/download/2691/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

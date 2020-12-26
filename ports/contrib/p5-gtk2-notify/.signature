@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33c9rrPBxPYf8R978sle2jMH0y7c0GPFkW7UcE1skpmFRsy7bx5DiqqsHoVIEhhzkPIJAol52XddGyCrV4Ph5gA=
+SHA256 (Pkgfile) = 90cb6ea7984cc40168ad1df76da85dd83de29fec4c676450a3b04d48e56326d3
+SHA256 (.footprint) = af256d0584d3a126e2a7eee67d04b9f87f38df30e9145e83be7f0d89350bceea
+SHA256 (Gtk2-Notify-0.05.tar.gz) = 88189ae68dfbd54615ad133df07e2ec8048d06d8b9586add1227d74eb2ebb047
+SHA256 (libnotify.patch.gz) = 23b27df89d00fe9345bcfc7acb19b853baa289762e5a9cdecb88d8cdc71dff2e
+SHA256 (makefile.patch.gz) = 4eeb650c4be786e9c888f38cdb88ad01a7025c9eec98f4a0761f72295c2e88db

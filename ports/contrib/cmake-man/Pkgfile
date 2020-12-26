@@ -1,0 +1,17 @@
+# Description: Man pages for cmake.
+# URL: http://www.cmake.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cmake python3-sphinx
+
+name=cmake-man
+version=3.18.4
+release=1
+source=(https://cmake.org/files/v${version%.*}/cmake-$version.tar.gz)
+
+build() {
+	cmake -Scmake-$version/Utilities/Sphinx -Bbuild \
+		-DCMAKE_INSTALL_PREFIX=/usr/share -DSPHINX_MAN=ON
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

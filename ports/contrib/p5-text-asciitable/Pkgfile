@@ -1,0 +1,28 @@
+# Description: Create a nice formatted table using ASCII characters
+# URL:         https://metacpan.org/pod/Text::ASCIITable
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  p5-module-build
+
+name=p5-text-asciitable
+version=0.22
+release=1
+source=(https://cpan.metacpan.org/authors/id/L/LU/LUNATIC/Text-ASCIITable-$version.tar.gz)
+
+build() {
+	cd Text-ASCIITable-$version
+
+	yes | perl Makefile.PL
+
+	make
+	make DESTDIR=$PKG install
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

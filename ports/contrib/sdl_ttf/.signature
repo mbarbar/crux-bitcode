@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wMqgmpyDXwlGyPhyvwrmPk2OI86dHHRGph+X2+whDeQ0ziGycEkXcF7dR7ifLvloQiPeviUQ/nc16eFqQO+Lwg=
+SHA256 (Pkgfile) = 7670b947de6ffed51a2aee18014edd70840c90cf45d7ac9dfd55bf1a5c37626e
+SHA256 (.footprint) = 2b4e678b2ec669dfd9c984c938bb395b191ff84f71b12239239087ab514f50d2
+SHA256 (SDL_ttf-2.0.11.tar.gz) = 724cd895ecf4da319a3ef164892b72078bd92632a5d812111261cde248ebcdb7
+SHA256 (freetype-pkgconfig.patch) = 87412f614b97b4724cb4845db882f07c15caf098dee57a856d6dbae0f58de80d
+SHA256 (bug1433.patch) = 4baea703454b9bca9498a920485552f1b8489a5007f8f1366080b14a4cd74c90

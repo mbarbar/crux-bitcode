@@ -1,0 +1,18 @@
+# Description:	GNU SASL Library
+# URL:		https://josefsson.org/gsasl/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:   libgcrypt
+
+name=libgsasl
+version=1.8.1
+release=1
+source=(https://download.savannah.nongnu.org/releases/gsasl/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+	./configure \
+		--prefix=/usr \
+		--disable-nls
+	make
+	make DESTDIR=$PKG install
+}

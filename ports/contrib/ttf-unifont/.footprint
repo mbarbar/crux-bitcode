@@ -1,0 +1,10 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/fonts/
+drwxr-xr-x	root/root	usr/share/fonts/TTF/
+-rw-r--r--	root/root	usr/share/fonts/TTF/unifont-13.0.04.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/unifont_csur-13.0.04.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/unifont_jp-13.0.04.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/unifont_sample-13.0.04.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/unifont_upper-13.0.04.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/unifont_upper_sample-13.0.04.ttf

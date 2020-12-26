@@ -1,0 +1,23 @@
+# Description: GTK Interface Builder.
+# URL: https://glade.gnome.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtk3 itstool
+# Optional: webkitgtk gtk-doc python3-gobject
+
+name=glade
+version=3.38.2
+release=1
+source=(https://download.gnome.org/sources/$name/${version::4}/$name-$version.tar.xz)
+
+build() {
+	prt-get isinst gtk-doc || PKGMK_GLADE+=' -D man=false'
+
+	meson setup build $name-$version ${PKGMK_GLADE} \
+		--prefix=/usr \
+		--buildtype=plain
+
+	meson compile -C build -j ${JOBS-1}
+	DESTDIR=$PKG meson install -C build
+
+	rm -r $PKG/usr/share/{help,locale}
+}

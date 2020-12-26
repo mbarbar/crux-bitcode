@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+d80kPL8WzChzhoPO57IDJcjmtTEwHJwlfLZTCNj5goyZ0xL3e0zQLatrtaLgxf4jlhV/PxlieZojZRJ6CMmw4=
+SHA256 (Pkgfile) = f75be836521bd444e3cf053081499c1199417771c881b2a8599d4b49745aeb3f
+SHA256 (.footprint) = 75fbe69668caf1e82c85a1a7d32268f347a55d180372f814af98ba3ae9159cec
+SHA256 (leafpad-0.8.18.1.tar.gz) = 959d22ae07f22803bc66ff40d373a854532a6e4732680bf8a96a3fbcb9f80a2c

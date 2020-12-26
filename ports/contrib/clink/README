@@ -1,0 +1,17 @@
+REQUIREMENTS:
+
+PRECAUTION:
+
+PRE-INSTALL:
+
+POST-INSTALL:
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+	Creates a directory called "common-files" and moves the common file there and 
+	then creates symlinks to that file in the current directory.
+

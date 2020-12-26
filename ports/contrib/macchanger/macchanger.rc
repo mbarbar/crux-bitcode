@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# /etc/rc.d/macchanger: start/stop mac interface changing
+#
+
+# To see your available devices run "ip link"
+DEV=wlp1s0
+
+# Leave it empty for a random mac address
+MAC=
+
+case $1 in
+	start)
+		/sbin/ip link set $DEV down
+		case $MAC in
+		"") /usr/bin/macchanger --random   $DEV ;;
+		*)  /usr/bin/macchanger --mac=$MAC $DEV ;;
+		esac
+		/sbin/ip link set $DEV up
+		;;
+	stop)
+		/sbin/ip link set $DEV down
+		/usr/bin/macchanger --permanent $DEV
+		/sbin/ip link set $DEV up
+		;;
+	restart)
+		$0 stop
+		$0 start
+		;;
+	status)
+		/usr/bin/macchanger --show $DEV
+		;;
+	*)
+		echo "Usage: $0 [start|stop|restart|status]"
+		;;
+esac
+
+# End of file

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xulYQfa/rgR5vK2b6ui8X40KBiEmamvOiMDp7Wj8W+wpYvg1K/FkIQKUQTC4r75qYSA8aPMniE0ve1kFnNIXA4=
+SHA256 (Pkgfile) = a238d352fd208ba91b755bf74281ea4a11da11cd0576d676a8f89c8468e82756
+SHA256 (.footprint) = be072e530dd70c9bc7d4c4ad34c047aa9ea1b39b1dfb6fc05c65b9f77fe143f9
+SHA256 (dietlibc-0.34.tar.xz) = 7994ad5a63d00446da2e95da1f3f03355b272f096d7eb9830417ab14393b3ace

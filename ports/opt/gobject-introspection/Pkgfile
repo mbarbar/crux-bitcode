@@ -1,0 +1,19 @@
+# Description: A middleware layer between C libraries (using GObject) and language bindings.
+# URL: https://live.gnome.org/GObjectIntrospection
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glib
+
+name=gobject-introspection
+version=1.66.1
+release=1
+source=(https://ftp.gnome.org/pub/GNOME/sources/$name/${version::4}/$name-$version.tar.xz)
+
+build() {
+	meson build $name-$version \
+		--prefix /usr \
+		-D cairo=disabled \
+		-D doctool=disabled
+
+	ninja -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

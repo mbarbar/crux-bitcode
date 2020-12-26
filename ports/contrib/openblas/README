@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# This was originally my post-install for this port!
+# openblas and lapack are not meant to co-exist, but
+# the decision to swap them out is only yours to make! 
+# Please review the consequences of this script!
+
+alias="openblas: lapack"
+
+if [ -z "$(grep "$alias" /var/lib/pkg/prt-get.aliases)" ]; then
+	echo "$alias" >> /var/lib/pkg/prt-get.aliases
+fi

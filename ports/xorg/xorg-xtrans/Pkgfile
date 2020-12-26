@@ -1,0 +1,21 @@
+# Description: Library of code to handle network protocol transport
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-util-macros
+
+name=xorg-xtrans
+version=1.4.0
+release=1
+source=(https://www.x.org/releases/individual/lib/xtrans-$version.tar.bz2)
+
+build() {
+	cd xtrans-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/share/doc/xtrans/xtrans.xml
+	rmdir $PKG/usr/share/doc/{xtrans,}
+}

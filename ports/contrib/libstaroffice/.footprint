@@ -1,0 +1,19 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/sd2raw
+-rwxr-xr-x	root/root	usr/bin/sd2svg
+-rwxr-xr-x	root/root	usr/bin/sd2text
+-rwxr-xr-x	root/root	usr/bin/sdc2csv
+-rwxr-xr-x	root/root	usr/bin/sdw2html
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libstaroffice-0.0/
+drwxr-xr-x	root/root	usr/include/libstaroffice-0.0/libstaroffice/
+-rw-r--r--	root/root	usr/include/libstaroffice-0.0/libstaroffice/STOFFDocument.hxx
+-rw-r--r--	root/root	usr/include/libstaroffice-0.0/libstaroffice/libstaroffice.hxx
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libstaroffice-0.0.la
+lrwxrwxrwx	root/root	usr/lib/libstaroffice-0.0.so -> libstaroffice-0.0.so.0.0.7
+lrwxrwxrwx	root/root	usr/lib/libstaroffice-0.0.so.0 -> libstaroffice-0.0.so.0.0.7
+-rwxr-xr-x	root/root	usr/lib/libstaroffice-0.0.so.0.0.7
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libstaroffice-0.0.pc

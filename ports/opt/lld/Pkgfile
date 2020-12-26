@@ -1,0 +1,22 @@
+# Description: Linker from the LLVM project
+# URL: https:lld.//llvm.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: llvm
+
+name=lld
+version=10.0.1
+release=1
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/{llvm,$name}-$version.src.tar.xz)
+
+build() {
+	cmake -H$name-$version.src -Bbuild -G Ninja \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DLLVM_LINK_LLVM_DYLIB=ON \
+		-DLLVM_MAIN_SRC_DIR="$SRC/llvm-$version.src" \
+		-DLLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}" \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

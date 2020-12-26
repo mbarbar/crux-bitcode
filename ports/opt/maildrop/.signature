@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ZWCKvElNeSkLi/kkk4Gc6T42+KYbINyOsGNQ8SaF4hkJg81zSr0o1pMTO8BoxazuCmIIkB6tpR4RC2d3Af7swA=
+SHA256 (Pkgfile) = c957ec39bed92bff6351a4bf59de859cb714b1c7b23084e3d84dcd8688c5cbb5
+SHA256 (.footprint) = 5db95470879a80622486eb0d9098a0c2f3cc808b4e82d9c7fce16b55be82602f
+SHA256 (maildrop-3.0.1.tar.bz2) = 5d0c3643ebfd45a31335dcabc09d014388476db3da329ab9cd5e5dd2aa484a7e

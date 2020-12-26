@@ -1,0 +1,15 @@
+# Description: World timezone definitions, modern and historical
+# URL: https://pythonhosted.org/pytz/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python-setuptools
+
+name=python-pytz
+version=2020.1
+release=1
+source=(https://pypi.io/packages/source/p/pytz/pytz-$version.tar.gz)
+
+build() {
+  cd pytz-$version
+  /usr/bin/python setup.py build
+  /usr/bin/python setup.py install --root="$PKG" --optimize=1 --skip-build
+}

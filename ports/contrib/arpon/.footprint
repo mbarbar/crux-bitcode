@@ -1,0 +1,16 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/arpon
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/etc/
+-rw-r--r--	root/root	usr/etc/arpon.conf
+drwxr-xr-x	root/root	usr/log/
+-rw-r-----	root/root	usr/log/arpon.log (EMPTY)
+drwxr-xr-x	root/root	usr/run/
+-rw-r--r--	root/root	usr/run/arpon.pid (EMPTY)
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/arpon
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-r--r--r--	root/root	usr/share/man/man8/arpon.8.gz

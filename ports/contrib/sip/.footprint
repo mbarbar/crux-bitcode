@@ -1,0 +1,5 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/sip
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/sip.h

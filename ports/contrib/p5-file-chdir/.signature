@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+xVWESkKDYsvPMImmtbOzvm9vZ07Ci6JjnX+tfqXQOGNhkC50anpGsFAYspYd1SoY+B3A2WGgpNFjp/gRmLmwk=
+SHA256 (Pkgfile) = 1e1ced2008a135144656ed8aed9d5857d524310ca264bc289984e21f37c77eff
+SHA256 (.footprint) = b81387838adf96be955346f627732d2fa13e5dab97cb837447338d859bcd3a1b
+SHA256 (File-chdir-0.1011.tar.gz) = 31ebf912df48d5d681def74b9880d78b1f3aca4351a0ed1fe3570b8e03af6c79

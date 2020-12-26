@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37mdKQ+AHZCvkpAaam+Z6T8EeuAtLhoiXxuV+C034jRuZ+C6hAk6S/WRek/IC7MvkzVzppp9cURV40PssPPojgM=
+SHA256 (Pkgfile) = c81dfa82e99021992e9cbccf31d294aafa4445e272dcc8d8297de59b1c120f63
+SHA256 (.footprint) = 58bc28c3394beb92e615b41327c665c8e9f6aebce4493197dde1c66cc45a1ae4
+SHA256 (File-ShareDir-Install-0.13.tar.gz) = 45befdf0d95cbefe7c25a1daf293d85f780d6d2576146546e6828aad26e580f9

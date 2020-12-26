@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF313m6c4k1hmQ4N4WX6W5eXikeBuJPJrJRpU2a5Jgb10zrUjU85LYxICvKa1iknGqCvwn3801/qkNKKvQVMQKgg0=
+SHA256 (Pkgfile) = b8e44e47d7209bdcf909c5441c71615a9c57f20fe12aae0a1a7b5d2787372838
+SHA256 (.footprint) = 833e7fc010236a1ab333bd103b2d72b50fa75565c720ad10b54274d6de0678a1
+SHA256 (scribus-1.5.6.1.tar.xz) = d4257695539cfa40dead8abdaf04c51e34d4d74bcad5a2c934d08e6e9d43b7ab
+SHA256 (poppler-0.90.0.tar.xz) = 94edb0ad3330b74d22caac807aa501e9cc61cbf45a8010625670428b51989685

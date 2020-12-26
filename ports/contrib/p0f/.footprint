@@ -1,0 +1,8 @@
+drwxr-xr-x	root/root	etc/
+-rw-r--r--	root/root	etc/p0f.fp
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/p0f
+-rwxr-xr-x	root/root	usr/sbin/p0f-client
+-rwxr-xr-x	root/root	usr/sbin/p0f-sendsyn
+-rwxr-xr-x	root/root	usr/sbin/p0f-sendsyn6

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37X0fcOlg9WcgKHtru2uneWS0/ufvaGqkhhdmi2xaC+qW/xBw/7EHsbTQ5GfYCwRBRyS00CgLdrtw1rY2+5FpQ8=
+SHA256 (Pkgfile) = 3d34ae9c81f7b2e88ba54fa0d95f4d3e2425b292ee8cd330feda8ad8fd6e4220
+SHA256 (.footprint) = a03e571ffe6ac81a364892e4d0d19106e252c17de5c6ab2827aff816b3fda3e7
+SHA256 (CoinUtils-2.11.4.tgz) = 1b24f8f6057661b3225d24f4e671527f53bf13aff66e06cbbbd4f20cc7d31dce

@@ -1,0 +1,18 @@
+# Description: imake build system
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-cf-files xorg-xorgproto
+
+name=xorg-imake
+version=1.0.8
+release=1
+source=(https://www.x.org/releases/individual/util/imake-$version.tar.bz2)
+
+build() {
+	cd imake-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,37 @@
+# Description: Javascript engine library
+# URL:         https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey
+# Maintainer:  Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:  autoconf-2.13 readline zlib nspr python python3
+
+name=spidermonkey
+version=68.12.0
+release=1
+source=(https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz)
+
+build() {
+	cd firefox-$version
+
+	# http://www.linuxfromscratch.org/blfs/view/svn/general/js68.html
+	sed '21,+4d' -i js/moz.configure 
+
+	mkdir obj ; cd obj
+
+	export CC=gcc CXX=g++
+	export LLVM_OBJDUMP=/bin/false
+
+	../js/src/configure \
+		--prefix=/usr \
+		--disable-jemalloc \
+		--disable-debug-symbols \
+		--disable-optimize \
+		--enable-readline \
+		--with-intl-api \
+		--with-system-nspr \
+		--with-system-zlib
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/lib/libjs_static.ajs
+	chmod -x $PKG/usr/lib/pkgconfig/*
+}

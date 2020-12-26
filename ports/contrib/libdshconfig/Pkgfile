@@ -1,0 +1,17 @@
+# Description: Library for parsing dsh-style configuration files.
+# URL:         http://www.netfort.gr.jp/~dancer/software/dsh.html.en
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+# Depends on:   
+
+name=libdshconfig
+version=0.20.13
+release=1
+source=(http://www.netfort.gr.jp/~dancer/software/downloads/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+   ./configure --prefix=$PKG/usr
+   make && make install
+}
+

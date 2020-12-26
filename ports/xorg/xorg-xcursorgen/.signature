@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndLiQdacXJQFlA/0bD1mYnRalfbz5oOHfk2ZksOOYRbvnbfvK/W7n1dy1F6XMN86rk/9udYYoRyi3eTC6lJMoZQ4=
+SHA256 (Pkgfile) = 3dd814d3f112498283106e85e728687e69fe3eea3f89b376293c3cd66805efe3
+SHA256 (.footprint) = 848b52a43db28f81f439bbf3f73a1f6c7c5c83f695c121fa1fee4e09cd9f02ad
+SHA256 (xcursorgen-1.0.7.tar.bz2) = 35b6f844b24f1776e9006c880a745728800764dbe3b327a128772b4610d8eb3d

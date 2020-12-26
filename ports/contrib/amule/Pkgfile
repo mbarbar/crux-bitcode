@@ -1,0 +1,24 @@
+# Description: An all-platform Edonkey client.
+# URL: http://www.amule.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: crypto++ wxgtk
+
+name=amule
+version=11025
+release=1
+source=(https://repo.or.cz/amule.git/snapshot/314e62e87ff0481d3171f74751aaf0179e518765.tar.gz)
+#https://downloads.sourceforge.net/project/amule/aMule/$version/aMule-$version.tar.bz2
+
+build() {
+	cd amule-314e62e
+	#cd aMule-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls
+
+	make
+	make install DESTDIR=$PKG
+
+	rm -r $PKG/usr/share/doc
+}

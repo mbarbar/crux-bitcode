@@ -1,0 +1,27 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/nsd/
+-rw-r--r--	root/root	etc/nsd/nsd.conf.sample
+drwxr-xr-x	root/root	etc/rc.d/
+lrwxrwxrwx	root/root	etc/rc.d/nsd -> /usr/sbin/nsd-control
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/nsd
+-rwxr-xr-x	root/root	usr/sbin/nsd-checkconf
+-rwxr-xr-x	root/root	usr/sbin/nsd-checkzone
+-rwxr-xr-x	root/root	usr/sbin/nsd-control
+-rwxr-xr-x	root/root	usr/sbin/nsd-control-setup
+-rwxr-xr-x	root/root	usr/sbin/nsd-mem
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/nsd.conf.5.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/nsd-checkconf.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/nsd-checkzone.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/nsd-control.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/nsd.8.gz
+drwxr-xr-x	root/root	var/
+drwxr-xr-x	root/root	var/lib/
+drwxr-xr-x	nsd/root	var/lib/nsd/
+drwxr-xr-x	root/root	var/run/
+drwxr-xr-x	nsd/root	var/run/nsd/

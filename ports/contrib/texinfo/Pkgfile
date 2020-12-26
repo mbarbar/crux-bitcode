@@ -1,0 +1,19 @@
+# Description: GNU documentation system for on-line information and printed output
+# URL: http://www.gnu.org/software/texinfo/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: ncurses
+
+name=texinfo
+version=6.7
+release=1
+source=(ftp://ftp.gnu.org/gnu/texinfo/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure \
+    --prefix=/usr \
+    --disable-nls
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/info
+}

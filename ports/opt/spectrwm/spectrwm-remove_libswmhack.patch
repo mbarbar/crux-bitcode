@@ -1,0 +1,52 @@
+diff -Nru spectrwm-SPECTRWM_3_4_0.orig/linux/Makefile spectrwm-SPECTRWM_3_4_0/linux/Makefile
+--- spectrwm-SPECTRWM_3_4_0.orig/linux/Makefile	2020-06-18 19:13:58.945671800 +0200
++++ spectrwm-SPECTRWM_3_4_0/linux/Makefile	2020-06-18 19:14:28.289107455 +0200
+@@ -14,7 +14,7 @@
+ 
+ MAINT_CFLAGS   = -std=c99 -Wmissing-prototypes -Wall -Wextra -Wshadow -Wno-uninitialized -g
+ MAINT_LDFLAGS  = -Wl,--as-needed
+-MAINT_CPPFLAGS = -I. -D_GNU_SOURCE -DSWM_LIB=\"$(LIBDIR)/libswmhack.so.$(LIBVERSION)\"
++MAINT_CPPFLAGS = -I. -D_GNU_SOURCE
+ 
+ ifneq ("${BUILDVERSION}", "")
+ MAINT_CPPFLAGS += -DSPECTRWM_BUILDSTR=\"$(BUILDVERSION)\"
+@@ -29,7 +29,7 @@
+ LIB_CPPFLAGS = $(shell $(PKG_CONFIG) --cflags x11)
+ LIB_LDLIBS   = $(shell $(PKG_CONFIG) --libs   x11) -ldl
+ 
+-all: spectrwm libswmhack.so.$(LIBVERSION)
++all: spectrwm
+ 
+ spectrwm: spectrwm.o linux.o
+ 	$(CC) $(MAINT_LDFLAGS) $(BIN_LDFLAGS) $(LDFLAGS) -o $@ $+ $(BIN_LDLIBS) $(LDLIBS)
+diff -Nru spectrwm-SPECTRWM_3_4_0.orig/spectrwm.c spectrwm-SPECTRWM_3_4_0/spectrwm.c
+--- spectrwm-SPECTRWM_3_4_0.orig/spectrwm.c	2020-06-18 19:13:58.949005145 +0200
++++ spectrwm-SPECTRWM_3_4_0/spectrwm.c	2020-06-18 19:14:28.292440799 +0200
+@@ -309,9 +309,9 @@
+ #define SWM_CONF_DEFAULT	(0)
+ #define SWM_CONF_KEYMAPPING	(1)
+ 
+-#ifndef SWM_LIB
++/* #ifndef SWM_LIB
+ #define SWM_LIB			"/usr/local/lib/libswmhack.so"
+-#endif
++#endif */
+ 
+ char			**start_argv;
+ xcb_atom_t		a_state;
+@@ -4526,6 +4526,7 @@
+ 
+ 	close(xcb_get_file_descriptor(conn));
+ 
++	/*
+ 	if ((ret = getenv("LD_PRELOAD"))) {
+ 		if (asprintf(&ret, "%s:%s", SWM_LIB, ret) == -1) {
+ 			warn("spawn: asprintf LD_PRELOAD");
+@@ -4536,6 +4537,7 @@
+ 	} else {
+ 		setenv("LD_PRELOAD", SWM_LIB, 1);
+ 	}
++	*/
+ 
+ 	if (asprintf(&ret, "%d", ws_idx) == -1) {
+ 		warn("spawn: asprintf SWM_WS");

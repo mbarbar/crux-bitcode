@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndPKd0Lgba9NztoY8ZWepg0XbOihKitQ+Ff9DDyz+6uzkYLU3IDsbUPWapj50O0DdbkMYsoeE3vo3hrumqRpKdgU=
+SHA256 (Pkgfile) = 18e581e8751ec50241b2aa527610abf033a8d8ced94318e9896feca1a26fed56
+SHA256 (.footprint) = c856a8adf381c826d533ccc8cfac02d8e1c04dd50720ba5ec4841948e15251a6
+SHA256 (xf86-video-vmware-13.3.0.tar.bz2) = 47971924659e51666a757269ad941a059ef5afe7a47b5101c174a6022ac4066c

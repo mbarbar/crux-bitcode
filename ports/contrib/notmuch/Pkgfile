@@ -1,0 +1,40 @@
+# Description: a fast, global-search and tag-based email system
+# URL: https://notmuchmail.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gmime3 talloc xapian-core
+# Optional: bash-completion mutt neomutt ruby zsh
+
+name=notmuch
+version=0.31.2
+release=1
+source=(https://notmuchmail.org/releases/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --includedir=/usr/include \
+    --zshcompletiondir=/usr/share/zsh/site-functions
+  make DESTDIR=$PKG LIBDIR_IN_LDCONFIG=0 WITH_EMACS=0 install
+
+  pushd bindings/python
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG --optimize=1 --skip-build
+  popd
+
+  make -C vim DESTDIR=$PKG prefix=/usr/share/vim install
+  install -Dm755 notmuch-shared $PKG/usr/bin/notmuch
+
+  if [ -n "$(pkginfo -i | grep '^ruby ')" ]; then
+    make ruby-bindings
+    sed -i 's:INSTALL = .*[^D]$:& -D:' bindings/ruby/Makefile
+    make -C bindings/ruby exec_prefix=$PKG/usr install
+  fi
+
+  [[ -n "$(pkginfo -i | grep '^mutt \|^neomutt ')" ]] && make -C contrib/notmuch-mutt ; install -Dm755 contrib/notmuch-mutt/notmuch-mutt $PKG/usr/bin/notmuch-mutt || true
+
+  [[ -n "$(pkginfo -i | grep '^zsh ')" ]] && true || rm -fr $PKG/usr/share/zsh
+
+  [[ -n "$(pkginfo -i | grep '^bash-completion ')" ]] && make DESTDIR=$PKG WITH_BASH=1 install-completion || true
+}

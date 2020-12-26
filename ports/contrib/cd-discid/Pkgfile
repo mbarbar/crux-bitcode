@@ -1,0 +1,14 @@
+# Description: Backend utility to get cddb information
+# URL:         http://linukz.org/cd-discid.shtml
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=cd-discid
+version=1.4
+release=1
+source=(http://linukz.org/download/$name-$version.tar.gz)
+
+build () {
+    cd "$name-$version"
+    make
+    make STRIP=/bin/true DESTDIR=$PKG PREFIX=/usr install
+}

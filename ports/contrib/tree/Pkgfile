@@ -1,0 +1,20 @@
+# Description: Display directory tree
+# URL: http://mama.indstate.edu/users/ice/tree/
+# Maintainer: Jan-Michael Franz, jmf at mesecons dot net
+# Packager: Giorgio Lando, patroclo7 at gmail dot com
+# Depends on:
+
+name=tree
+version=1.8.0
+release=1
+source=(ftp://mama.indstate.edu/linux/$name/$name-$version.tgz)
+
+build () {
+  cd $name-$version
+
+  sed "s|CFLAGS=|CFLAGS=$CFLAGS |" -i Makefile
+  make
+
+  install -D -m 0755 $name $PKG/usr/bin/$name
+  install -D -m 0644 doc/$name.1 $PKG/usr/share/man/man1/$name.1
+}

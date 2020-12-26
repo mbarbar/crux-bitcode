@@ -1,0 +1,22 @@
+# Description: GNU grep, egrep and fgrep
+# URL:         http://www.gnu.org/software/grep/grep.html
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  libpcre
+
+name=grep
+version=3.6
+release=1
+source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    # don't link against libsigsegv
+    export ac_cv_libsigsegv=no
+
+    ./configure --prefix=/usr --disable-nls
+    make
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/share/info
+}

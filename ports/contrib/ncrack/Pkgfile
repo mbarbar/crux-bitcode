@@ -1,0 +1,31 @@
+# Description: High-speed network authentication cracking tool
+# URL:         https://nmap.org/ncrack/
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  openssl
+
+name=ncrack
+version=0.7
+release=1
+source=(https://github.com/nmap/ncrack/archive/$version/$name-$version.tar.gz
+	fix-spelling-errors.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/fix-spelling-errors.patch
+
+	# remove default debug and optimization flags
+	sed -i  \
+		-e '/CFLAGS\s*=\s*/s/-g//;s/-O2//'   \
+		-e '/CXXFLAGS\s*=\s*/s/-g//;s/-O2//' \
+		nsock/src/configure                  \
+		nbase/configure                      \
+		opensshlib/configure                 \
+		configure.ac                         \
+		configure
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

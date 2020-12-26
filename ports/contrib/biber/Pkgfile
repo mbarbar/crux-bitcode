@@ -1,0 +1,17 @@
+# Description: tex bibtex plugin biber
+# URL: http://biblatex-biber.sourceforge.net
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-autovivification p5-business-isbn p5-business-ismn p5-business-issn p5-data-compare p5-data-dump p5-file-find-rule p5-data-uniqid p5-datetime-calendar-julian p5-datetime-format-builder p5-file-slurper p5-class-accessor p5-io-string p5-ipc-run3 p5-lingua-translit p5-list-allutils p5-log-log4perl p5-lwp-protocol-https p5-mozilla-ca p5-perlio-utf8-strict p5-regexp-common p5-sort-key p5-text-bibtex p5-text-csv p5-text-roman p5-unicode-linebreak p5-xml-libxml-simple p5-xml-libxslt p5-xml-writer p5-module-build p5-test-differences p5-parse-recdescent
+
+name=biber
+version=2.15
+release=1
+source=(https://github.com/plk/biber/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  perl ./Build.PL
+  ./Build
+  ./Build install destdir=$PKG
+  find $PKG -name .packlist | xargs rm
+}

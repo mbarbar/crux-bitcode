@@ -1,0 +1,27 @@
+# Description: Perl script indenter and reformatter
+# URL:         https://metacpan.org/release/Perl-Tidy
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=perltidy
+version=20201207
+release=1
+source=(https://cpan.metacpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-$version.tar.gz)
+
+build() {
+	cd Perl-Tidy-$version
+
+	perl Makefile.PL
+
+	make
+	make DESTDIR=$PKG install
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

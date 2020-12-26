@@ -1,0 +1,14 @@
+# Description: A kernel module for automating module switches on optimus laptops
+# URL: https://github.com/Bumblebee-Project/bbswitch
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=bbswitch
+version=0.8
+release=1
+source=(https://github.com/Bumblebee-Project/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make
+	install -D -m 0644 $name.ko $PKG/lib/modules/$(uname -r)/misc/$name.ko
+}

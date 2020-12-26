@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# check for asterisk group or add one
+getent group asterisk || /usr/sbin/groupadd -g 79 asterisk
+
+# check for asterisk user or add one
+getent passwd asterisk || /usr/sbin/useradd -g asterisk -u 79 -d /var/empty -s /bin/false -c "Asterisk User" asterisk
+
+# lock the account
+/usr/bin/passwd -l asterisk

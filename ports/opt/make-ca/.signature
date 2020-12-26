@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/RpXq8lvto08JVR2HTBnidFo6V31rEHU1ysrc1L0SBsOvDB6eMPEt7wd+PCQLdknNvgvTXfImV0XRMjDg6S7XA4=
+SHA256 (Pkgfile) = fc1f85f8c5a4f2eae969e379fb97e16ecf326471321c4e8177bbe3e4beb5f386
+SHA256 (.footprint) = 3b9c010175c27456e068b3119d491df84fdb75cfe9ce2f0fb6391fd23ea1db7b
+SHA256 (make-ca-1.7.tar.xz) = 6db8b96c961790507c5e36e0ed75a079ae95300f520cd88ac061cf44a4733c2f

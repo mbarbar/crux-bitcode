@@ -1,0 +1,28 @@
+# Description:  Use any fonts in the terminal without replacing or patching
+# URL: https://github.com/sebastiencs/icons-in-terminal
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: fontconfig
+
+name=icons-in-terminal
+version=20170727
+release=1
+_commit=b12286d0d8bf9793a1599a737faa4d64435193f1
+source=(https://github.com/sebastiencs/icons-in-terminal/archive/$_commit/$name-$version.tar.gz)
+
+build() {
+  cd $name-$_commit
+  sed -i 's filename="./build/mapping.txt" filename="/usr/share/icons-in-terminal/mapping.txt" ' \
+    print_icons.sh
+  ./scripts/generate_fontconfig.sh > "30-$name.conf"
+  install -dm755 $PKG/usr/share/$name
+  install -Dm644 build/$name.ttf $PKG/usr/share/fonts/TTF/$name.ttf
+  install -Dm755 print_icons.sh $PKG/usr/bin/$name
+
+  find build/ -type f ! \( -name "*.ttf" -o -name "*fish" \) -exec install -m644 {} "$PKG/usr/share/$name/" \;
+
+  install -dm755 $PKG/etc/fonts/conf.{avail,d}
+  install -Dm644 "30-$name.conf" $PKG/etc/fonts/conf.avail
+
+  # enable if you want, nnn shouldn't need it
+  #ln -rs $PKG/etc/fonts/conf.avail/30-$name.conf $PKG/etc/fonts/conf.d/30-$name.conf
+}

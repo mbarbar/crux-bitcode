@@ -1,0 +1,31 @@
+# Description: Library for decoding ATSC A/52 streams.
+# URL: http://liba52.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=liba52
+version=0.7.4
+release=7
+source=(http://liba52.sourceforge.net/files/a52dec-$version.tar.gz
+	a52dec-0.7.4-build.patch)
+
+build() {
+	cd a52dec-$version
+
+	# fix for automake 1.13.x
+	install -d m4
+	sed -i -e 's/^AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' configure.in
+
+	patch -p 1 -i $SRC/a52dec-0.7.4-build.patch
+	./bootstrap
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--disable-solaris-audio \
+		--disable-win \
+		--enable-shared \
+		--with-pic
+
+	make
+	make DESTDIR=$PKG install
+}

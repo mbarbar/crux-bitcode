@@ -1,0 +1,26 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/usbredirfilter.h
+-rw-r--r--	root/root	usr/include/usbredirhost.h
+-rw-r--r--	root/root	usr/include/usbredirparser.h
+-rw-r--r--	root/root	usr/include/usbredirproto.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libusbredirhost.a
+-rwxr-xr-x	root/root	usr/lib/libusbredirhost.la
+lrwxrwxrwx	root/root	usr/lib/libusbredirhost.so -> libusbredirhost.so.1.0.1
+lrwxrwxrwx	root/root	usr/lib/libusbredirhost.so.1 -> libusbredirhost.so.1.0.1
+-rwxr-xr-x	root/root	usr/lib/libusbredirhost.so.1.0.1
+-rw-r--r--	root/root	usr/lib/libusbredirparser.a
+-rwxr-xr-x	root/root	usr/lib/libusbredirparser.la
+lrwxrwxrwx	root/root	usr/lib/libusbredirparser.so -> libusbredirparser.so.1.0.1
+lrwxrwxrwx	root/root	usr/lib/libusbredirparser.so.1 -> libusbredirparser.so.1.0.1
+-rwxr-xr-x	root/root	usr/lib/libusbredirparser.so.1.0.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libusbredirhost.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libusbredirparser-0.5.pc
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/usbredirserver
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/usbredirserver.1.gz

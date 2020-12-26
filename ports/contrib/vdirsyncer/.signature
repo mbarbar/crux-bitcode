@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zE7bpqDrUM9IOgM5C+Tx2cBxDi8tG0ZNrcZl/NqjAwfooDQ+aKVbkc7KvlhKoOMF8nf93YrGOKY82vATabrvQg=
+SHA256 (Pkgfile) = 72558613f17cafd363187ed9bc74736a487421756a91e7b9e010a5272e2fc912
+SHA256 (.footprint) = 6ea583907974f0a1a73eb3760891186869cd85bb11ad2ca692458a72d591df4a
+SHA256 (vdirsyncer-0.16.8.tar.gz) = bfdb422f52e1d4d60bd0635d203fb59fa7f613397d079661eb48e79464ba13c5

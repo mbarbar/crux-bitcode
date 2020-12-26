@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39ccMLx841feZoGsMyEhYAgPPkOS4+vPrXg9enCgKQEeEcHr6kpz6XoYwlaPMOseZJlcjS+d0k2qZVRTcnm/wA0=
+SHA256 (Pkgfile) = eb425ec1bd527cecaf9743705f07f415bc9548fdc5391ea5b2ea6eaee25daf53
+SHA256 (.footprint) = 6d1ba822e606c7cccc7df27bec2d670e046c758647f8509b03806feacbe2647a
+SHA256 (Gtk2-TrayIcon-0.06.tar.gz) = cbb7632b75d7f41554dfe8ee9063dbfd1d8522291077c65d0d82e9ceb5e94ae2

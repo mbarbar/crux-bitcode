@@ -1,0 +1,35 @@
+# URL: http://corefonts.sourceforge.net/
+# Description: Microsoft's Web Fonts (truetype)
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: fontconfig xorg-mkfontscale cabextract
+
+name=xorg-font-msttcorefonts
+version=1.4
+release=2
+source=(http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/andale32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/arial32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/arialb32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/comic32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/courie32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/georgi32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/impact32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/times32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/trebuc32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/verdan32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/wd97vwr32.exe
+	http://downloads.sourceforge.net/project/corefonts/the%20fonts/final/webdin32.exe)
+
+build() {
+	# Despite the files saying 32, this port will work on any arch
+	local font
+
+	for font in *.exe; do
+		cabextract --lowercase $font
+	done
+
+	cabextract --lowercase viewer1.cab
+	install -d $PKG/usr/share/fonts/X11/TTF
+
+	install -o root -g root -m 0644 \
+		-t $PKG/usr/share/fonts/X11/TTF *.ttf
+}

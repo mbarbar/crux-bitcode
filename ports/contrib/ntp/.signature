@@ -1,0 +1,9 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36oi/bxvMika7yPHxdaIe8WWDSo+VbuCs9pt2+n6yW5LM2KEvZEa9hSH3KClZGMZsqbddzsibZg1Py5xsDlKRAw=
+SHA256 (Pkgfile) = bec4ea107edd218199909888f1f11dfe1c926b2f329625753064f48f68355fa6
+SHA256 (.footprint) = 0d110ca02e0ad4c6a5f9de4df929d79093c4314df5c9aced43a2c02ed63119a4
+SHA256 (ntp-4.2.8p15.tar.gz) = f65840deab68614d5d7ceb2d0bb9304ff70dcdedd09abb79754a87536b849c19
+SHA256 (ntpd) = a117c4b99139d836264c267cd0804f15b313bcab233837bf7f5676681b2a9955
+SHA256 (ntpdate) = 79e158ce339a836966966ab76c42ebecfa7023c3bbc2770c215817bfae2838d1
+SHA256 (ntp.conf) = 8351e20d8c73c5a920625d14cf584bb43127429cfa1d5977daf5d05f7e110383
+SHA256 (ntp-64bit.diff) = 7622ec8b5d5bcece5f66c843238b26c57e9a4d37da48f857b4cd1a9a3b4f2008

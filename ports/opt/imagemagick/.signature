@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XUGM+UaF2TqOwn9smUEImPK43A6gj7l+uxwZI+crNVwBr2FtenSq/OP2aseVjUtj1s+MLrxfLdMD6ZSEGAohg4=
+SHA256 (Pkgfile) = 2d79e394899b8265569bd4c1ac6a897679f5d28073e1c2166bc909d7fe7cea68
+SHA256 (.footprint) = b0adf99981b3a0c8a9666e207cef002f5dd46b2911fe4c4de8577d6d1ba65ea9
+SHA256 (ImageMagick-7.0.10-46.tar.xz) = 6098853e9fe83bf126a06d2daab5e020e906c6299358cb4d52bef8f37171636e

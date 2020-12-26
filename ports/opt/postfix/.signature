@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YOB+ljMWn8GLmpCDCxQJFlSKouEhBGhtVOghLXMssTGLVE/KPn35SD6ZHWnJoL4Qvou4Sk7u/kP+ElZ+CKjKAE=
+SHA256 (Pkgfile) = 7ff1f1f86997991d98f3ff7cf38e6a1e2a909c9c283d510672a2a8ec20d39810
+SHA256 (.footprint) = b1662bbb10f743e2602ba9c5cfcd4d7c5ea117e559601b13b7fb28940f76fa63
+SHA256 (postfix-3.4.18.tar.gz) = 48293bc9d7137e9e24d101a50656a2be7fe0ce6afc9663aa39ce2d3315b95291
+SHA256 (aliases) = b6de629cce43ed5dc06086c5742ebe85ccc7b59d085f0fec71d97e0e73a50271
+SHA256 (postfix.rc) = 78059f334abcf0f1662107f5b9542fba26f489d2cb0ca05cdc61a816f4e96dc7
+SHA256 (postfix.patch) = 5329a979c7c91f71aad27eec54ed0747bb51ed687e5180851296e45166d1bca6

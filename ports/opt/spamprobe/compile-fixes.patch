@@ -1,0 +1,59 @@
+diff -up spamprobe-1.4d/src/database/HashDataFile.h.compile-fixes spamprobe-1.4d/src/database/HashDataFile.h
+--- spamprobe-1.4d/src/database/HashDataFile.h.compile-fixes	2006-11-16 23:24:48.000000000 -0800
++++ spamprobe-1.4d/src/database/HashDataFile.h	2012-08-13 01:12:35.000000000 -0700
+@@ -93,7 +93,7 @@ public:
+ 
+   bool isReadOnly() const
+   {
+-    m_isReadOnly;
++    return m_isReadOnly;
+   }
+ 
+   int createMode() const
+diff -up spamprobe-1.4d/src/includes/MultiLineSubString.h.compile-fixes spamprobe-1.4d/src/includes/MultiLineSubString.h
+--- spamprobe-1.4d/src/includes/MultiLineSubString.h.compile-fixes	2006-11-16 23:24:48.000000000 -0800
++++ spamprobe-1.4d/src/includes/MultiLineSubString.h	2012-08-13 01:12:35.000000000 -0700
+@@ -31,6 +31,7 @@
+ #ifndef _MultiLineSubString_h
+ #define _MultiLineSubString_h
+ 
++#include <limits.h>
+ #include "AbstractMultiLineString.h"
+ 
+ class MultiLineSubString : public AbstractMultiLineString
+diff -up spamprobe-1.4d/src/includes/Ref.h.compile-fixes spamprobe-1.4d/src/includes/Ref.h
+--- spamprobe-1.4d/src/includes/Ref.h.compile-fixes	2006-11-16 23:24:48.000000000 -0800
++++ spamprobe-1.4d/src/includes/Ref.h	2012-08-13 01:19:29.000000000 -0700
+@@ -189,7 +189,7 @@ public:
+ 
+   CRef<T> &operator=(const CRef<T> &other)
+   {
+-    assign(other);
++    this->assign(other);
+     return *this;
+   }
+ 
+@@ -245,7 +245,7 @@ public:
+ 
+   Ref<T> &operator=(const Ref<T> &other)
+   {
+-    assign(other);
++    this->assign(other);
+     return *this;
+   }
+ 
+diff -up spamprobe-1.4d/src/includes/util.h.compile-fixes spamprobe-1.4d/src/includes/util.h
+--- spamprobe-1.4d/src/includes/util.h.compile-fixes	2006-11-16 23:24:49.000000000 -0800
++++ spamprobe-1.4d/src/includes/util.h	2012-08-13 01:12:35.000000000 -0700
+@@ -35,9 +35,10 @@
+     #include <unistd.h>
+ #endif
+ 
++#include <stdlib.h>
++#include <string.h>
+ #include <cmath>
+ #include <memory>
+-#include <string>
+ #include <cctype>
+ #include <cassert>
+ #include <iostream>

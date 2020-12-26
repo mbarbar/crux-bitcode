@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/RJiT8cKlXyYDElakwOvEk+Buc+DAZMfDE7gzYPgSwXwXiQBG1LgsKJhn8l1GFp4DowhFhuw4yUZbckEM+VdiwI=
+SHA256 (Pkgfile) = 85f80bd5789040944a48e13ec1daf01703468682d90477e308659379bf0592e7
+SHA256 (.footprint) = 88c88c8d9ea0ed7a726a52ca6ea31d5c3dbd59434060c6a3c54b54f7f51a3465
+SHA256 (libgudev-234.tar.xz) = 1baeacacf0db42fa073ad5183d1decce9317857416a2b0f82ce3370d711a2e37

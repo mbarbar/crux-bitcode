@@ -1,0 +1,23 @@
+# Description: Conversion between markup formats, "Bin"-Edition
+# URL: https://pandoc.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmark
+# Optional: texlive
+
+name=pandoc-bin
+version=2.11.2
+release=1
+source=(https://github.com/jgm/pandoc/releases/download/$version/pandoc-$version-linux-amd64.tar.gz
+  https://github.com/jgm/pandoc/archive/$version/pandoc-$version.tar.gz)
+
+build() {
+  cd pandoc-$version
+  mkdir -p $PKG/usr/share/pandoc
+  cp -R bin share $PKG/usr
+
+  cp -R data $PKG/usr/share/pandoc
+  find $PKG -iname '*README*' -delete
+  find $PKG/usr/share/pandoc/data/translations \(\
+    -not -type d \
+    -not -name en.yaml \) -exec rm '{}' \+
+}

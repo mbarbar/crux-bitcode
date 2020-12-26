@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31Gzyh3gSVBiT/DsUMgfKywbR/GmgHymifNMWNMnYF5/3ABcPD8nqYTTlW8a6EL+BI8DaO3aC+N5RKcI6qOuUA8=
+SHA256 (Pkgfile) = b2dc053a2561f71bb735f0d00f15146381b2d6bc3548a1aeb5844fe83d4449a7
+SHA256 (.footprint) = a94002d8a07086111124dce4cf590ce6291de47995b16177cdaec35119ef5af6
+SHA256 (paramiko-2.7.1.tar.gz) = 920492895db8013f6cc0179293147f830b8c7b21fdfc839b6bad760c27459d9f

@@ -1,0 +1,17 @@
+# Description: A script to clone virtualenvs
+# URL:         https://github.com/edwardgeorge/virtualenv-clone
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+# Depends on:  python3-setuptools
+
+name=virtualenv-clone
+version=0.5.4
+release=1
+source=(https://pypi.python.org/packages/source/v/$name/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    /usr/bin/python3 setup.py install --root=$PKG
+
+    find $PKG -name '*.pyc' -delete
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3ys3myelZ7Cd4qF1GjTKshpp9rsbhNulbUZX+PkOGy0QGj/mjRVBfQwdkB2SOzp9VNuPHhm/ir9kvuQn+5C27gU=
+SHA256 (Pkgfile) = a1436bb6dbc8b1ee6df1d1b5aaddbe3a31a063b4b4b9b4462d456340c4637858
+SHA256 (.footprint) = 5ed5eed780f718d1cf40670bfc29401860b951563381868be98c29aafa1a0bc1
+SHA256 (sphinx-3.3.0.tar.gz) = ed8b694fbab74cac5a2cde736940e8c402a484363029ec7c2dcb157382fb866f

@@ -1,0 +1,55 @@
+# Description: SNMP daemon and client tools
+# URL: http://net-snmp.sourceforge.net/
+# Maintainer: Fredrik Rinnestam, fredrik at rinnestam dot se
+# Depends on: lm_sensors
+
+name=net-snmp
+version=5.9
+release=1
+source=(http://download.sourceforge.net/$name/$name-$version.tar.gz \
+	snmpd snmpd.conf)
+
+build() {
+	cd $name-$version
+
+	#export NETSNMP_DONT_CHECK_VERSION=1
+	./configure --prefix=/usr \
+				--sysconfdir=/etc \
+				--enable-shared \
+				--enable-embedded-perl \
+				--with-perl-modules \
+				--without-rpm \
+				--with-openssl \
+				--with-zlib \
+				--with-mib-modules="ucd-snmp/lmsensorsMib smux agentx ucd-snmp/diskio" \
+				--with-sys-location="Unknown" \
+				--with-sys-contact="root@localhost" \
+				--with-default-snmp-version="3" \
+				--with-logfile=/var/log/snmp/snmpd.log \
+				--with-persistent-directory=/var/lib/snmp \
+				--with-ldflags="-lsensors"
+	make -j1
+	make install INSTALL_PREFIX=$PKG DESTDIR=$PKG
+
+	# Clean up perl stuff: clean common junks first, ...
+	find $PKG/usr/lib/perl5 -name .packlist \
+		-o -name perllocal.pod \
+		-o \( \
+		-name *.bs -a -empty \
+		\) \
+		| xargs rm
+	# ... less common ones and empty directories
+	rm -rf \
+		$PKG/usr/lib/perl5/site_perl/5.1?/linux/Bundle \
+		$PKG/usr/lib/perl5/5.1? \
+		$PKG/usr/lib/perl5/site_perl/5.1?/linux/auto/Bundle
+	rm $PKG/usr/include/net-snmp/library/README
+
+	mkdir -p $PKG/var/{lib,run,log}/snmp
+	touch $PKG/var/log/snmp/snmpd.log
+
+	chown -R snmp:snmp $PKG/var/{lib,run,log}/snmp
+
+	install -D -m 644 $SRC/snmpd.conf $PKG/etc/snmp/snmpd.conf
+	install -D -m 755 $SRC/snmpd $PKG/etc/rc.d/snmpd
+}

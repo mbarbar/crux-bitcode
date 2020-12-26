@@ -1,0 +1,12 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30iuq/9PrIl7cUlsUlyR9lukH6zoWT4keYWRa8KEN/6kMbjX6g6fpZZ6KdBUiNG+yDU6BOeiD/P5DeDnz4N+sQw=
+SHA256 (Pkgfile) = 27c0cbca060999a29b9f0dc0474554503fbec6648f8aa3acbcdfa99b47e20495
+SHA256 (.footprint) = a55f4db9a8f36310df010a88256abef6d13753f525ff212c4e7dcb390e6c1e66
+SHA256 (shaderc-v2020.3.tar.gz) = e595f71d0db0c37ee959b538cfda16e39e3f0dce8893a0bc0ac0080c342c0275
+SHA256 (glslc.1) = 468467ab0ec0eac2b221563ef370826443c22cee55f11f6dc8be81b168e3e492
+SHA256 (spvc.1) = 95b9a165ec12d022a58c41ece70f5783abf6127eab1676d4f66c88803e007a85
+SHA256 (glslc-asciidoc.patch) = 685d97223af4fcd169921ee5f9b2c49a2df3d84b7bf7df7dd1f6def4361321a6
+SHA256 (spvc-asciidoc.patch) = fd0c682186be4231fab5c83bf7625678f3b7905c980e3f7c9ae6cd5e212f9563
+SHA256 (0001-Drop-third-party-code-in-CMakeLists.txt.patch) = 382d0dbd50f691c81d3bd941ef4d85fea1ba0eeed3537a3a9cc7a666ff6504af
+SHA256 (shaderc-2020.3-system-glslang.patch) = 39a9e7a18824c255b125ed9af6bca3a732b52162faab716fb52cae994d73c9ce
+SHA256 (0001-Fix-SPIRV-includes-location.patch) = dc4a3d51aeb77a6a599921801ff690620167aa0288513b414022e9a40e387cfe

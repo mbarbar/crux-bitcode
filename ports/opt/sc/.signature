@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/SEsUXEfoCnFcmUBiU77KEzKDwiCt48NSXieWOrVAfCAwCD3bgK0gqt5BfcN+OX1msqNHPnX8z9N6LUTTujzCwU=
+SHA256 (Pkgfile) = 86c7a810f6c5ac081ed920b301fd4ac3910860a9dc2f0c009fa649eea01af48d
+SHA256 (.footprint) = 743761643f2ec04193f9766f2c2e84c0232755523f7e7d67eed13bf8f71f794d
+SHA256 (sc_7.16.orig.tar.gz) = e541f98bcf78ded2de2ce336abda9705a24b6ce67fc82806107880bf6504642a
+SHA256 (sc_7.16-4.debian.tar.xz) = 8bc1ad000417a9d7c22aa68b75da4d30bd662be04cec91f0c7c381fd06bb07e4

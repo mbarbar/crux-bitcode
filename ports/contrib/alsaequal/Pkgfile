@@ -1,0 +1,15 @@
+# Description: Real-time adjustable equalizer plugin for ALSA
+# URL:         https://github.com/bassdr/alsaequal
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  alsa-lib caps
+
+name=alsaequal
+version=0.7.1
+release=1
+source=(https://github.com/bassdr/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make Q= DESTDIR=$PKG install
+}

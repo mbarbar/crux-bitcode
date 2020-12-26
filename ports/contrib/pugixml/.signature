@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39C+WxHZXUvREu1dNWzoqxiU6vUUNxeZQELboBL4z5pq3rJsoD0yD1e3xFVdFzfGUuLv830E/o1LTK5eDQdjVg8=
+SHA256 (Pkgfile) = 652fe809894d2de1f41153c6ba7f4ca5e8cea0252eab9a003c6fb194e4e203cf
+SHA256 (.footprint) = 2888a801cb0d9e1b4167a78cc8b6287d96f536a2a9b3d7b4f80b2a1569e2b76f
+SHA256 (pugixml-1.11.1.tar.gz) = 9dce9f0a3756c5ab84ab7466c99972d030021d81d674f5d38b9e30e9a3ec4922

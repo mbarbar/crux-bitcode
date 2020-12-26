@@ -1,0 +1,16 @@
+# Description: high-performance event loop/event model with lots of features
+# URL:         http://software.schmorp.de/pkg/libev.html
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=libev
+version=4.33
+release=1
+source=(http://dist.schmorp.de/$name/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make prefix=$PKG/usr install
+    rm $PKG/usr/include/event.h
+}

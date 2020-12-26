@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cm2rem.tcl
+lrwxrwxrwx	root/root	usr/bin/rem -> remind
+-rwxr-xr-x	root/root	usr/bin/rem2ps
+-rwxr-xr-x	root/root	usr/bin/remind
+-rwxr-xr-x	root/root	usr/bin/tkremind
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/cm2rem.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/rem.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/rem2ps.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/remind.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/tkremind.1.gz

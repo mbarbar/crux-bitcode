@@ -1,0 +1,40 @@
+# Description: alternate syslogging daemon
+# URL:         http://www.balabit.com/network-security/syslog-ng/opensource-logging-system
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib json-c python3
+
+name=syslog-ng
+version=3.30.1
+release=1
+source=(https://github.com/$name/$name/releases/download/$name-$version/$name-$version.tar.gz
+  syslog-ng.rc syslog-ng.conf)
+
+build() {
+  cd $name-$version
+
+  ./configure \
+     --prefix=/usr \
+     --sysconfdir=/etc \
+     --libexecdir=/var/lib/$name \
+     --localstatedir=/var/run \
+     --enable-dynamic-linking \
+     --sbindir=/sbin \
+     --disable-java \
+     --disable-java-modules
+  make
+  make DESTDIR=$PKG install
+
+  python3 -m compileall -d /usr/lib/syslog-ng/python/syslogng $PKG/lib/syslog-ng/python/syslogng
+  python3 -O -m compileall -d /usr/lib/syslog-ng/python/syslogng $PKG/usr/lib/syslog-ng/python/syslogng
+
+  install -D -m 644 ../syslog-ng.conf $PKG/etc/syslog-ng.conf
+  install -D -m 755 ../syslog-ng.rc $PKG/etc/rc.d/syslog-ng
+
+  rm -rf $PKG/usr/doc
+  find $PKG \(\
+    -iname '*changelog*' -o \
+    -iname '*news*' -o \
+    -iname '*todo*' -o \
+    -iname '*readme*' -o \
+    -iname '*copying*' \) -exec rm -fr '{}' \+
+}

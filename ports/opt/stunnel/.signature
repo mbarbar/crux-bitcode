@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QCdCnAaJqpMHrzyPxHqcTc1MZt2BbEh/hX4AD2C6711s00lrR8dw2EJrgdXejUCQgBMnNs2XCqKg0dkx0eqcQE=
+SHA256 (Pkgfile) = 718fa2611e3214633c60798ca43b9b887787c72a76890c15ac89879dccca60c9
+SHA256 (.footprint) = f83e6abdfdb94cb68ef512ba0ef5d19a1e180887f2cf7c92d2916af0ec7b1e51
+SHA256 (stunnel-5.57.tar.gz) = af5ab973dde11807c38735b87bdd87563a47d2fa1c72a07929fcfce80a600fe1
+SHA256 (stunnel.conf) = ef09041fd68530a6029826678eb22db30a80d8a77308ee361b12aa466f7daa28
+SHA256 (stunnel) = c6e5c2bcfd87b709bbc24b5c24a603b43bc9440e125eeaf283a11daadc78cbd7

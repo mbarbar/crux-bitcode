@@ -1,0 +1,15 @@
+# Description: Low-level components of distutils2/packaging
+# URL: https://bitbucket.org/pypa/distlib/src/master/
+# Maintainer:
+# Depends on: python3
+
+name=python3-distlib
+version=0.3.1
+release=1
+source=(https://files.pythonhosted.org/packages/source/d/distlib/distlib-$version.zip)
+
+build() {
+  cd distlib-$version
+  python3 setup.py build
+  python3 setup.py install --root=$PKG --optimize=1 --skip-build
+}

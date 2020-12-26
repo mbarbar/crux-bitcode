@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x7ThWukW/A5sRaDTLP42eQRQ1AVcPKi12l+BgCN/095uF2zfQ+dS3o/yrcMGqOME8LWCRAlowBNPutTZpejgg0=
+SHA256 (Pkgfile) = 1f93c4f2fe876e1b0bf4cee23b9b74ef229251a6d1194b368b2fa2f89f2f6810
+SHA256 (.footprint) = 60507e3e309a700a86c8f88c90a7169889da2a9221927dc2abb402f3d302fa32
+SHA256 (lirc-0.10.1.tar.bz2) = 8b753c60df2a7f5dcda2db72c38e448ca300c3b4f6000c1501fcb0bd5df414f2
+SHA256 (lircd.rc) = 834b125d71f073df370cf1b986e6f76304b77c354325cdc9e51936fbe0569fa5
+SHA256 (lirc.patch) = fbd87973996ab7ef4e37b209a9dda4f4d29fc7348f5bd6917b4b9da62e8279af

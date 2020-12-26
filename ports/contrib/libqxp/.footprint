@@ -1,0 +1,19 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/qxp2raw
+-rwxr-xr-x	root/root	usr/bin/qxp2svg
+-rwxr-xr-x	root/root	usr/bin/qxp2text
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libqxp-0.0/
+drwxr-xr-x	root/root	usr/include/libqxp-0.0/libqxp/
+-rw-r--r--	root/root	usr/include/libqxp-0.0/libqxp/QXPDocument.h
+-rw-r--r--	root/root	usr/include/libqxp-0.0/libqxp/QXPPathResolver.h
+-rw-r--r--	root/root	usr/include/libqxp-0.0/libqxp/libqxp.h
+-rw-r--r--	root/root	usr/include/libqxp-0.0/libqxp/libqxp_api.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libqxp-0.0.la
+lrwxrwxrwx	root/root	usr/lib/libqxp-0.0.so -> libqxp-0.0.so.0.0.2
+lrwxrwxrwx	root/root	usr/lib/libqxp-0.0.so.0 -> libqxp-0.0.so.0.0.2
+-rwxr-xr-x	root/root	usr/lib/libqxp-0.0.so.0.0.2
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libqxp-0.0.pc

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x/EkHye+AiEyeNDavWIMAoUzEbDnG38qkcTQSL+6UhytyIEV3xRTQQxwau0YRJJrZMwnMFJ3rb9pJSs33ACNwg=
+SHA256 (Pkgfile) = fd016e3346996911bcfd08f8af23408f93157c074a98242ccac2358b3a5491d8
+SHA256 (.footprint) = bc676c2095342375625e0b067ba7ea8c83cdf3c545607a14da236d0928207d1d
+SHA256 (biber-2.15.tar.gz) = 08accfd56f67111a5d9e92de1d52f767cdf3da0175b3a2765e86979469683868

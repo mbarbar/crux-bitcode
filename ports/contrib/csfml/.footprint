@@ -1,0 +1,106 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/SFML/
+-rw-r--r--	root/root	usr/include/SFML/Audio.h
+drwxr-xr-x	root/root	usr/include/SFML/Audio/
+-rw-r--r--	root/root	usr/include/SFML/Audio/Export.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/Listener.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/Music.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/Sound.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/SoundBuffer.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/SoundBufferRecorder.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/SoundRecorder.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/SoundStatus.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/SoundStream.h
+-rw-r--r--	root/root	usr/include/SFML/Audio/Types.h
+-rw-r--r--	root/root	usr/include/SFML/Config.h
+-rw-r--r--	root/root	usr/include/SFML/GPUPreference.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics.h
+drwxr-xr-x	root/root	usr/include/SFML/Graphics/
+-rw-r--r--	root/root	usr/include/SFML/Graphics/BlendMode.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/CircleShape.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Color.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/ConvexShape.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Export.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Font.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/FontInfo.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Glsl.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Glyph.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Image.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/PrimitiveType.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Rect.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/RectangleShape.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/RenderStates.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/RenderTexture.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/RenderWindow.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Shader.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Shape.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Sprite.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Text.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Texture.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Transform.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Transformable.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Types.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/Vertex.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/VertexArray.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/VertexBuffer.h
+-rw-r--r--	root/root	usr/include/SFML/Graphics/View.h
+-rw-r--r--	root/root	usr/include/SFML/Network.h
+drwxr-xr-x	root/root	usr/include/SFML/Network/
+-rw-r--r--	root/root	usr/include/SFML/Network/Export.h
+-rw-r--r--	root/root	usr/include/SFML/Network/Ftp.h
+-rw-r--r--	root/root	usr/include/SFML/Network/Http.h
+-rw-r--r--	root/root	usr/include/SFML/Network/IpAddress.h
+-rw-r--r--	root/root	usr/include/SFML/Network/Packet.h
+-rw-r--r--	root/root	usr/include/SFML/Network/SocketSelector.h
+-rw-r--r--	root/root	usr/include/SFML/Network/SocketStatus.h
+-rw-r--r--	root/root	usr/include/SFML/Network/TcpListener.h
+-rw-r--r--	root/root	usr/include/SFML/Network/TcpSocket.h
+-rw-r--r--	root/root	usr/include/SFML/Network/Types.h
+-rw-r--r--	root/root	usr/include/SFML/Network/UdpSocket.h
+-rw-r--r--	root/root	usr/include/SFML/OpenGL.h
+-rw-r--r--	root/root	usr/include/SFML/System.h
+drwxr-xr-x	root/root	usr/include/SFML/System/
+-rw-r--r--	root/root	usr/include/SFML/System/Clock.h
+-rw-r--r--	root/root	usr/include/SFML/System/Export.h
+-rw-r--r--	root/root	usr/include/SFML/System/InputStream.h
+-rw-r--r--	root/root	usr/include/SFML/System/Mutex.h
+-rw-r--r--	root/root	usr/include/SFML/System/Sleep.h
+-rw-r--r--	root/root	usr/include/SFML/System/Thread.h
+-rw-r--r--	root/root	usr/include/SFML/System/Time.h
+-rw-r--r--	root/root	usr/include/SFML/System/Types.h
+-rw-r--r--	root/root	usr/include/SFML/System/Vector2.h
+-rw-r--r--	root/root	usr/include/SFML/System/Vector3.h
+-rw-r--r--	root/root	usr/include/SFML/Window.h
+drwxr-xr-x	root/root	usr/include/SFML/Window/
+-rw-r--r--	root/root	usr/include/SFML/Window/Clipboard.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Context.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Cursor.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Event.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Export.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Joystick.h
+-rw-r--r--	root/root	usr/include/SFML/Window/JoystickIdentification.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Keyboard.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Mouse.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Sensor.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Touch.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Types.h
+-rw-r--r--	root/root	usr/include/SFML/Window/VideoMode.h
+-rw-r--r--	root/root	usr/include/SFML/Window/Window.h
+-rw-r--r--	root/root	usr/include/SFML/Window/WindowHandle.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libcsfml-audio.so -> libcsfml-audio.so.2.5
+lrwxrwxrwx	root/root	usr/lib/libcsfml-audio.so.2.5 -> libcsfml-audio.so.2.5.0
+-rwxr-xr-x	root/root	usr/lib/libcsfml-audio.so.2.5.0
+lrwxrwxrwx	root/root	usr/lib/libcsfml-graphics.so -> libcsfml-graphics.so.2.5
+lrwxrwxrwx	root/root	usr/lib/libcsfml-graphics.so.2.5 -> libcsfml-graphics.so.2.5.0
+-rwxr-xr-x	root/root	usr/lib/libcsfml-graphics.so.2.5.0
+lrwxrwxrwx	root/root	usr/lib/libcsfml-network.so -> libcsfml-network.so.2.5
+lrwxrwxrwx	root/root	usr/lib/libcsfml-network.so.2.5 -> libcsfml-network.so.2.5.0
+-rwxr-xr-x	root/root	usr/lib/libcsfml-network.so.2.5.0
+lrwxrwxrwx	root/root	usr/lib/libcsfml-system.so -> libcsfml-system.so.2.5
+lrwxrwxrwx	root/root	usr/lib/libcsfml-system.so.2.5 -> libcsfml-system.so.2.5.0
+-rwxr-xr-x	root/root	usr/lib/libcsfml-system.so.2.5.0
+lrwxrwxrwx	root/root	usr/lib/libcsfml-window.so -> libcsfml-window.so.2.5
+lrwxrwxrwx	root/root	usr/lib/libcsfml-window.so.2.5 -> libcsfml-window.so.2.5.0
+-rwxr-xr-x	root/root	usr/lib/libcsfml-window.so.2.5.0

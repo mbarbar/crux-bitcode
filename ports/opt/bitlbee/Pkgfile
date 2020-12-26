@@ -1,0 +1,28 @@
+# Description: instant messaging via IRC
+# URL:         https://bitlbee.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib
+
+name=bitlbee
+version=3.6
+release=1
+source=(https://get.bitlbee.org/src/bitlbee-$version.tar.gz bitlbee \
+        bitlbee.conf)
+
+build() {
+	cd $name-$version
+  ./configure --ssl=openssl \
+              --prefix=/usr \
+              --etcdir=/etc/bitlbee
+
+  make
+
+  make install DESTDIR=$PKG
+  make install-etc DESTDIR=$PKG
+
+  install -d $PKG/etc/rc.d
+  install -d -o bitlbee $PKG/var/lib/bitlbee
+  install -m 644 $SRC/bitlbee.conf $PKG/etc/bitlbee
+  install -m 755 $SRC/bitlbee $PKG/etc/rc.d/
+
+}

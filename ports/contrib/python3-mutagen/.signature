@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36N2tavo02VdvWDOzONZylfETTEMLzQlfYtorOCluojgRYlTa0gFLLHKkt+DjkYTJuSuQKaot3dmarHoXpVKrw8=
+SHA256 (Pkgfile) = b7d246d67815f9af7e77a1d37a3800d1583c959c9c1434751e4f1e32e032ccaa
+SHA256 (.footprint) = 1b585a64c1dea368fce44958322a88b1a27a127ae403943d798dae36e2dd1b27
+SHA256 (python3-mutagen-1.45.1.tar.gz) = 308d5244c7242b084c824bbbea6d56ddd716300e1bce6420cb8c1e6781c0d4f9

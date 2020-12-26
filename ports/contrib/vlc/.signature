@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31th5/6owDes/eHI1IJG9SP9aJuKza8eke4yEiqGJCT5NcfgXIgeaqaRRRxbBlh0ZC9/1oh2ASyfOfLJXRm0OQs=
+SHA256 (Pkgfile) = 09a08bbbcf067b9cd75e2213c0d9baabc760fad6732a0600249611973b6d7ce2
+SHA256 (.footprint) = 613f5c72dca389b5bff56785fe1f770ba64a3129c1eba1f8643dcd3fc2c57a03
+SHA256 (vlc-3.0.11.1.tar.xz) = 189311d28aa814f106a7b3645211ac52c0b3e2b9f4b348de2f63bab3218086b8
+SHA256 (qt-5.15.patch) = db3be0e5a79cddced198d53b0932be9ca397fe52369524ea37e4ef2872e28596

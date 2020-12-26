@@ -1,0 +1,11 @@
+--- asterisk-13.13.1/menuselect-tree.orig	2017-01-30 11:04:27.059563497 +0900
++++ asterisk-13.13.1/menuselect-tree	2017-01-30 11:05:31.552645320 +0900
+@@ -1924,7 +1924,7 @@
+ 	<support_level>extended</support_level>
+   </member>
+   <member name="astcanary">
+-	<defaultenabled>yes</defaultenabled>
++	<defaultenabled>no</defaultenabled>
+ 	<support_level>core</support_level>
+   </member>
+   <member name="astdb2sqlite3">

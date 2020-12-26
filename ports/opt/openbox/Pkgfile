@@ -1,0 +1,23 @@
+# Description: Fast, lightweight, standards-compliant window manager
+# URL: http://openbox.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: xorg-libxinerama, xorg-libxrandr, pango, libxml2
+
+name=openbox
+version=3.6.1
+release=1
+source=(http://openbox.org/dist/openbox/openbox-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+              --disable-nls \
+              --libexecdir=/usr/lib/openbox
+
+	make
+	make DESTDIR=$PKG install
+
+	mv $PKG/usr/share/doc/$name/*.xsd $PKG/usr/etc/xdg/$name
+	rm -rf $PKG/usr/share/doc
+}

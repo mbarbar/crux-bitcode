@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30doZROisFbp/qr2C7f1R+38ERpZAk7r07qdk5nhtpJ5x6vglwOj0wZ8opB1oC20QUHrM7IlyMN1NqF2DxSZaww=
+SHA256 (Pkgfile) = 0f24534dadee8ee1f02b7118b7f9e2100439cb4fc0edd99cc43f3f9dc38bf3bc
+SHA256 (.footprint) = 05ecfb3dce58d3587abbd43ed2027c15abb23789f52892c465af466cd2e5c46e
+SHA256 (gtkspell-2.0.16.tar.gz) = 8fc7dc560167b2cb7193e76aca625a152dc19b0ebf49816b78539cbb90d80d02
+SHA256 (enchant-2.patch) = 52e693590161bc285ec46a2beece802f47c7ede65ec0b72ffa224ab0db176bad

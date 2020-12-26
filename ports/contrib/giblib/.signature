@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF355XtYEVolgcVqR/xsNgTni0v5OxrvKRLLVctWo7Wx5fPhX7KswPmF4CgWuwKPrfOwUrDOfSGYKiq2vsVmTicgc=
+SHA256 (Pkgfile) = a1673e8b63256f691f0eba4b37508abd9b9607d807bfa6014277344cc1b23aa7
+SHA256 (.footprint) = 87ecce07dda670bc2eba6df0d26e8b2397afd1fe628886f5b5cc5501c8adbcfa
+SHA256 (giblib-1.2.4.tar.gz) = 176611c4d88d742ea4013991ad54c2f9d2feefbc97a28434c0f48922ebaa8bac

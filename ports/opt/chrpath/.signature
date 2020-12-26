@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Rs6sPbEDes7IxCL0umA2OHX44UcVvFQphXhaRgQKeQQlBRRSCIHsVNn++HhXHnR4tytYHMhwi8TE4uDtHz+Dgo=
+SHA256 (Pkgfile) = efb710f4b161164d98a1b0ce843a7c6a6da126db63df2623c8f001c204a1daa2
+SHA256 (.footprint) = 63bf775cb82da089e4f0bd8e323b033d906ac04eab1858e2a603855d440ea955
+SHA256 (chrpath_0.16.orig.tar.gz) = bb0d4c54bac2990e1bdf8132f2c9477ae752859d523e141e72b3b11a12c26e7b

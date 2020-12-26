@@ -1,0 +1,24 @@
+# Description: A free alternative to the OpenGL Utility Toolkit (GLUT) library.
+# URL: http://freeglut.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glu xorg-libxi
+
+name=freeglut
+version=3.2.1
+release=2
+source=(https://downloads.sourceforge.net/$name/$name-$version.tar.gz
+	gcc10.patch)
+
+build() {
+	patch -d $name-$version -p1 -i $SRC/gcc10.patch
+
+	cmake -S$name-$version -Bbuild -GNinja \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DCMAKE_BUILD_TYPE=Release
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	ln -s glut.pc $PKG/usr/lib/pkgconfig/freeglut.pc
+}

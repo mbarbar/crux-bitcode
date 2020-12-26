@@ -1,0 +1,19 @@
+# Description: security-oriented fuzzer with compile-time instrumentation
+# URL:         https://lcamtuf.coredump.cx/afl/releases/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=afl
+version=2.66c
+release=1
+source=(https://github.com/AFLplusplus/AFLplusplus/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd AFLplusplus-$version
+
+  make
+  make PREFIX=/usr DESTDIR=$PKG install
+
+  rm -r $PKG/usr/share/doc
+  find $PKG -iname '*readme*' -delete
+}

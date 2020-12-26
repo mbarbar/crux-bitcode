@@ -1,0 +1,21 @@
+# Description: MediaInfo is a convenient unified display of the most relevant technical and tag data for video and audio files
+# URL: https://mediaarea.net/en/MediaInfo
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: brotli e2fsprogs keyutils libmms libpsl libzen openldap rtmpdump
+
+name=libmediainfo
+version=20.09
+release=1
+source=(https://mediaarea.net/download/source/libmediainfo/$version/libmediainfo_$version.tar.xz)
+
+build() {
+  cd MediaInfoLib/Project/GNU/Library
+  ./autogen.sh
+  ./configure --prefix=/usr \
+    --enable-shared \
+    --disable-static \
+    --with-libcurl \
+    --with-libmms
+  make
+  make DESTDIR=$PKG install
+}

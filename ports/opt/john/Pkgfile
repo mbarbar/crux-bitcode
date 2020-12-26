@@ -1,0 +1,62 @@
+# Description: John the Ripper is a fast password cracker
+# URL:         http://www.openwall.com/john/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libpcap python
+
+name=john
+version=1.9.0-jumbo-1
+release=1
+source=(https://www.openwall.com/$name/k/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version/src
+
+  sed 's|$prefix/bin|/usr/lib/john|' -i configure.ac
+  autoreconf -fiv
+  
+  CONFIG_SHELL=/bin/bash \
+  ./configure --prefix=/usr CFLAGS="${CFLAGS}"
+  
+  make
+  cd ..
+
+  # config
+  install -Dm 644 run/john.conf -t "$PKG/etc/john"
+  install -Dm 644 run/*.conf -t "$PKG/usr/share/john"
+
+  # opencl
+  #install -Dm 644 run/kernels/* -t "$PKG/usr/share/john/kernels"
+
+  # completion
+  install -Dm 644 run/john.bash_completion "$PKG/usr/share/bash-completion/completions/john"
+  install -Dm 644 run/john.zsh_completion "$PKG/usr/share/zsh/site-functions/_john"
+
+  # binaries
+  install -Dm 755 run/john -t "$PKG/usr/bin"
+  local john_bins=(calc_stat cprepair  genmkvpwd  luks2john.py    mkvcalcproba raw2dyna \
+                   relbench  tgtsnarf  uaf2john   wpapcap2john vncpcap2john SIPdump)
+  for bin in "${john_bins[@]}"; do
+    install -Dm 755 "run/${bin}" "$PKG/usr/bin/${bin/.py/}"
+  done
+
+  # scripts
+  install -Dm 755 run/*.py run/*.pl run/*.rb run/{mailer,benchmark-unify} -t "$PKG/usr/lib/john"
+
+  # data
+  install -Dm 644 run/*.chr run/*.lst run/dictionary* run/stats -t "$PKG/usr/share/john"
+  install -Dm 644 run/rules/* -t "$PKG/usr/share/john/rules"
+
+  # syminks
+  cd "$PKG/usr/bin"
+  local john_links=(base64conv    dmg2john       gpg2john      hccap2john    \
+                    keepass2john  keychain2john  keyring2john  keystore2john \
+                    kwallet2john  pfx2john       putty2john    pwsafe2john   \
+                    racf2john     rar2john       ssh2john      unique        \
+                    unshadow      zip2john       unafs         undrop        \
+                    truecrypt_volume2john)
+  for link in "${john_links[@]}"; do
+    ln -s john ${link}
+  done
+
+  find $PKG -type f ! -name deepsound2john.py -exec /usr/bin/python -mcompileall {} \+
+}

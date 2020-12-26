@@ -1,0 +1,10 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XbeOlEBaG+uBoBWpXeNrKnpgH7oTWe8VGN7ikDxC4UaaAx0SfDd5Aa9GmT/Ty/2dPtQn1ek9njf7u1uj10LnAc=
+SHA256 (Pkgfile) = ab033d3e4b102c4abe03a2726384861e5fc4fcd8201b431662e67ffcecafe9a5
+SHA256 (.footprint) = 8880cae79882460ff5b41bc7581a5b503f425c06f07f153c132c02481ff82939
+SHA256 (bacaef3237c515e40d1a24722be48c0a0b30f75f.zip) = c3161b15c83f47310afdfc1167f3dd9a67ba48b910e19b19405f0ba67eb1c1fa
+SHA256 (0001-CMake-Allow-linking-against-system-installed-SPIRV-T.patch) = 0eec9964c9ccf87f7179011d1a48df8d4c2dc8067c14cb8c660ad2bd3f2218e9
+SHA256 (0001-CMake-Make-glslang-default-resource-limits-STATIC.patch) = f99036f2d07bf45ed80ab3e221a3834ca514ba2dd50ec710ba1604a46b8165bb
+SHA256 (0002-CMake-Use-VERSION-SOVERSION-for-all-shared-libs.patch) = 73560f03d7da2861cc870be14b0eb99e7280c2455e5ee81e5eee9ebd04f95b29
+SHA256 (0001-glslang-Rename-and-move-cmake-export.patch) = aee56a7d0b4567f8259c461ea32510a98b394698febf034d32aa520ac9d37781
+SHA256 (0002-cmake-Use-the-same-export-config-for-all-installed-t.patch) = 8390e2537e9006fb5f1f948baa680955cf690b561432eec55ded8aef0bc13ee7

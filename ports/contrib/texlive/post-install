@@ -1,0 +1,8 @@
+#!/bin/sh
+
+umask 0022
+/usr/bin/mktexlsr
+/usr/bin/updmap-sys --nohash --syncwithtrees
+/usr/bin/mktexlsr
+/usr/bin/fmtutil-sys --all
+

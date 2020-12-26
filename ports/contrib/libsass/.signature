@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xA1wHft/zeVe0A/Hb7JMRZYPOML2NXR8IYyj5h7CBi2T/3rFQWDXJ2hkoJ9i09NtVD+TglWwF7Ckld35Tr8kw8=
+SHA256 (Pkgfile) = 4dcf4c794f37ec34ebaff6073ea7aee837cf14a8ceac3a680d47aa0e1c92f062
+SHA256 (.footprint) = f69fb308bd95ca4bc2bcfb16bbeec309a12f86896860012feea94729e80ac03f
+SHA256 (libsass-3.6.4.tar.gz) = f9484d9a6df60576e791566eab2f757a97fd414fce01dd41fc0a693ea5db2889

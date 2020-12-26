@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/playsound
+-rwxr-xr-x	root/root	usr/bin/playsound_simple
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/SDL/
+-rw-r--r--	root/root	usr/include/SDL/SDL_sound.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libSDL_sound-1.0.so.1 -> libSDL_sound-1.0.so.1.0.2
+-rwxr-xr-x	root/root	usr/lib/libSDL_sound-1.0.so.1.0.2
+-rw-r--r--	root/root	usr/lib/libSDL_sound.a
+-rwxr-xr-x	root/root	usr/lib/libSDL_sound.la
+lrwxrwxrwx	root/root	usr/lib/libSDL_sound.so -> libSDL_sound-1.0.so.1.0.2

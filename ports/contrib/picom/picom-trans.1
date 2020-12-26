@@ -1,0 +1,252 @@
+'\" t
+.\"     Title: picom-trans
+.\"    Author: [FIXME: author] [see http://www.docbook.org/tdg5/en/html/author]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 11/11/2020
+.\"    Manual: User Commands
+.\"    Source: picom v8.2
+.\"  Language: English
+.\"
+.TH "PICOM\-TRANS" "1" "11/11/2020" "picom v8\&.2" "User Commands"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+
+.SH "NAME"
+picom-trans \- an opacity setter tool
+.SH "SYNOPSIS"
+.sp
+\fBpicom\-trans\fR [\-w \fIWINDOW_ID\fR] [\-n \fIWINDOW_NAME\fR] [\-c] [\-s] \fIOPACITY\fR
+
+.SH "DESCRIPTION"
+
+.sp
+\fBpicom\-trans\fR is a bash script that sets \fI_NET_WM_WINDOW_OPACITY\fR attribute of a window using standard X11 command\-line utilities, including \fBxprop\fR(1) and \fBxwininfo\fR(1)\&. It is similar to \fBtransset\fR(1) or \fBtransset\-df\fR(1)\&.
+
+.SH "OPTIONS"
+
+
+
+.PP
+\fB\-w\fR \fIWINDOW_ID\fR
+.RS 4
+
+
+
+Specify the window id of the target window\&.
+
+.RE
+.PP
+\fB\-n\fR \fIWINDOW_NAME\fR
+.RS 4
+
+
+
+Specify and try to match a window name\&.
+
+.RE
+.PP
+\fB\-c\fR
+.RS 4
+
+
+
+Specify the currently active window as target\&. Only works if EWMH
+\fI_NET_ACTIVE_WINDOW\fR
+property exists on root window\&.
+
+.RE
+.PP
+\fB\-s\fR
+.RS 4
+
+
+
+Select target window with mouse cursor\&. This is the default if no window has been specified\&.
+
+.RE
+.PP
+\fB\-o\fR \fIOPACITY\fR
+.RS 4
+
+
+
+Specify the new opacity value for the window\&. This value can be anywhere from 1\-100\&. If it is prefixed with a plus or minus (+/\-), this will increment or decrement from the target window\(cqs current opacity instead\&.
+
+.RE
+
+.SH "EXAMPLES"
+
+
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Set the opacity of the window with specific window ID to 75%:
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+picom\-trans \-w "$WINDOWID" 75
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Set the opacity of the window with the name "urxvt" to 75%:
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+picom\-trans \-n "urxvt" 75
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Set current window to opacity of 75%:
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+picom\-trans \-c 75
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Select target window and set opacity to 75%:
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+picom\-trans \-s 75
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Increment opacity of current active window by 5%:
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+picom\-trans \-c +5
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Decrement opacity of current active window by 5%:
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+picom\-trans \-c \-\- \-5
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.SH "BUGS"
+
+.sp
+Please submit bug reports to \m[blue]\fBhttps://github\&.com/yshui/picom\fR\m[]\&.
+
+.SH "SEE ALSO"
+
+.sp
+\m[blue]\fB\fBpicom\fR(1)\fR\m[]\&\s-2\u[1]\d\s+2, \fBxprop\fR(1), \fBxwininfo\fR(1)
+
+

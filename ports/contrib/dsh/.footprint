@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/dsh/
+-rw-r--r--	root/root	etc/dsh/dsh.conf
+drwxr-xr-x	root/root	etc/dsh/group/
+lrwxrwxrwx	root/root	etc/dsh/group/all -> /etc/dsh/machines.list
+-rw-r--r--	root/root	etc/dsh/machines.list
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dsh
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dsh.1.gz
+drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/dsh.conf.5.gz

@@ -1,0 +1,14 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/perl5/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/linux-thread-multi/
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.28/linux-thread-multi/Socket6.pm
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/linux-thread-multi/auto/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/linux-thread-multi/auto/Socket6/
+-r-xr-xr-x	root/root	usr/lib/perl5/site_perl/5.28/linux-thread-multi/auto/Socket6/Socket6.so
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man3/
+-r--r--r--	root/root	usr/share/man/man3/Socket6.3pm.gz

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36R4rJd9gxYNqkw7mqGcEPmxLoye0lk1bOqbHz/mXIJ2JBIJEoMbrCh0HKEn4x30CO8M4mJQYCCnR0GbzN0Cdgw=
+SHA256 (Pkgfile) = dc7d908784f815ea02dc23123d7df41000ca6aa01c5e88df2d0902ba1ba12367
+SHA256 (.footprint) = fd60992957bd0010460d49684c69464200651af797acdb98547f4847fc9f3f3c
+SHA256 (cbindgen-v0.15.0.tar.gz) = 9e2756a292a3b1182b8f741d6bb9e5a8b8a8dc2eacfb187c7db649966452798d

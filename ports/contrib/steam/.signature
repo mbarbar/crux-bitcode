@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36P4EazBvVSL7AxJsg5rAzgkpxwzxYurQLGvbsde4jK/NTE4ugCwqX5ExlfAMswN7jKLGVcMWmOgz607/7HXLw4=
+SHA256 (Pkgfile) = a2acd0aa8c8dbef737e6be0b0f8e93c4238a89d36ee0c6ef66266b4c9de405b6
+SHA256 (.footprint) = a3ac4f5008d8736659f0a730a52a266c5bf283210a7cc08894ac727745a9db0e
+SHA256 (steam_1.0.0.68.tar.gz) = 65e882623c671f402d8796c1db4407984f11df0538ff7462030d8d521aeb28d3
+SHA256 (steam-runtime.sh) = 97ed274c291619063ea851efb68ade5a9f9eaba8724b96b0759767a811a0c770

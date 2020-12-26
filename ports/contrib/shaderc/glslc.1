@@ -1,0 +1,1405 @@
+'\" t
+.\"     Title: glslc
+.\"    Author: [see the "AUTHOR(S)" section]
+.\" Generator: Asciidoctor 2.0.10
+.\"      Date: 2020-10-24
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "`GLSLC`" "1" "2020-10-24" "\ \&" "\ \&"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.ss \n[.ss] 0
+.nh
+.ad l
+.de URL
+\fI\\$2\fP <\\$1>\\$3
+..
+.als MTO URL
+.if \n[.g] \{\
+.  mso www.tmac
+.  am URL
+.    ad l
+.  .
+.  am MTO
+.    ad l
+.  .
+.  LINKSTYLE blue R < >
+.\}
+.SH "NAME"
+`glslc` \- A command\-line GLSL/HLSL to SPIR\-V compiler with Clang\-compatible arguments.
+.SH "SYNOPSIS"
+.sp
+.if n .RS 4
+.nf
+glslc [\-\-help]
+glslc [\-h]
+
+glslc [\-\-show\-limits]
+
+glslc [\-c|\-S|\-E]
+      [\-x ...] [\-std=standard]
+      [ ... options for resource bindings ... ]
+      [\-fhlsl\-offsets]
+      [\-fhlsl\-functionality1]
+      [\-fentry\-point=<name>]
+      [\-fauto\-map\-locations]
+      [\-finvert\-y]
+      [\-flimit=...]
+      [\-flimit\-file <resource\-limits\-file>]
+      [\-fshader\-stage=...]
+      [\-\-target\-env=...]
+      [\-\-target\-spv=...]
+      [\-g]
+      [\-O0|\-Os]
+      [\-Idirectory...]
+      [\-Dmacroname[=value]...]
+      [\-w] [\-Werror]
+      [\-o outfile]
+      shader...
+.fi
+.if n .RE
+.SH "DESCRIPTION"
+.SS "Input file languages"
+.sp
+glslc accepts both GLSL/HLSL source and SPIR\-V assembly files as inputs.
+.SS "Shader stage specification"
+.sp
+glslc provides three ways to specify the shader stage of a GLSL source file:
+\f(CR\-fshader\-stage=<stage>\fP, \f(CR#pragma shader_stage(<stage>)\fP, and file extension.
+The \f(CR\-fshader\-stage=\fP option overrides \f(CR#pragma shader_stage()\fP, which overrides
+the file extension.
+.sp
+Shader stages can be specified by naming a file with an appropriate extension
+as shown in the following table. \f(CR\-fshader\-stage=\fP and \f(CR#pragma shader_stage()\fP,
+on the other hand, enable you to specify shader stages from the command line
+and within the source file. Possible \f(CRstage\fPs for them are also listed in
+the following table. Details about \f(CR\-fshader\-stage=\fP can be found in
+its own section.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.B Table 1. Shader Stage Selection
+.TS
+allbox tab(:);
+lt lt lt.
+T{
+.sp
+Shader Stage
+T}:T{
+.sp
+Shader File Extension
+T}:T{
+.sp
+\f(CR<stage>\fP
+T}
+T{
+.sp
+vertex
+T}:T{
+.sp
+\f(CR.vert\fP
+T}:T{
+.sp
+\f(CRvertex\fP
+T}
+T{
+.sp
+fragment
+T}:T{
+.sp
+\f(CR.frag\fP
+T}:T{
+.sp
+\f(CRfragment\fP
+T}
+T{
+.sp
+tesselation control
+T}:T{
+.sp
+\f(CR.tesc\fP
+T}:T{
+.sp
+\f(CRtesscontrol\fP
+T}
+T{
+.sp
+tesselation evaluation
+T}:T{
+.sp
+\f(CR.tese\fP
+T}:T{
+.sp
+\f(CRtesseval\fP
+T}
+T{
+.sp
+geometry
+T}:T{
+.sp
+\f(CR.geom\fP
+T}:T{
+.sp
+\f(CRgeometry\fP
+T}
+T{
+.sp
+compute
+T}:T{
+.sp
+\f(CR.comp\fP
+T}:T{
+.sp
+\f(CRcompute\fP
+T}
+.TE
+.sp
+.sp
+\f(CR#pragma shader_stage()\fP relies on the \f(CR#pragma\fP preprocessor directive; thus,
+the token inside \f(CRshader_stage()\fP is not subject to preprocessor macro
+expansion. It must be exactly one of the \f(CRstage\fPs in the above table.
+.sp
+\f(CR#pragma shader_stage()\fP behaves as follows:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+The first \f(CR#pragma shader_stage()\fP directive in a translation unit must
+precede any non\-preprocessor tokens.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If there is more than one \f(CR#pragma shader_stage()\fP directive in the same
+translation unit, all the \f(CRstage\fPs specified must be the same. Otherwise,
+glslc will issue an error.
+.RE
+.SS "SPIR\-V assembly files"
+.sp
+SPIR\-V assembly input files should follow the
+\c
+.URL "https://github.com/KhronosGroup/SPIRV\-Tools/blob/master/syntax.md" "syntax"
+defined in the \c
+.URL "https://github.com/KhronosGroup/SPIRV\-Tools" "SPIRV\-Tools"
+project and have the \f(CR.spvasm\fP extension. Command line options treat SPIR\-V
+assembly files differently; some may ignore them, e.g., \f(CR\-E\fP,
+\f(CR\-S\fP, and some may even treat them not as SPIR\-V assembly
+files, e.g., \f(CR\-fshader\-stage=\fP.
+.SS "Output file naming"
+.sp
+If a name is specified via \f(CR\-o\fP, the output file will be given that name.
+Otherwise,
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If a compilation stage selection option is given (\f(CR\-S\fP or \f(CR\-c\fP), there will
+be one output file generated per input shader file. The generated output file
+will end with a file extension that matches the compilation stage, which is
+\f(CR.spvasm\fP for \f(CR\-S\fP and \f(CR.spv\fP for \f(CR\-c\fP. The name will depend on the original
+file\(cqs name and extension.
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If the input file has a shader stage selection
+extension, the output file will be named as by appending the file extension
+for the compilation stage to the input file\(cqs name. E.g., \f(CRglslc \-c foo.vert\fP
+will generate \f(CRfoo.vert.spv\fP, and \f(CRglslc \-S bar.frag\fP will generate
+\f(CRbar.frag.spvasm\fP.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+Otherwise, the output file will be named as by replacing the input file\(cqs
+file extension, if any, with the file extension for the compilation stage.
+E.g., \f(CRglslc \-c foo\fP will generate \f(CRfoo.spv\fP, and \f(CRglslc \-S bar.glsl\fP will
+generate \f(CRbar.spvasm\fP.
+.RE
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If no compilation stage is selected, the output file will be named \f(CRa.spv\fP.
+.RE
+.SH "COMMAND LINE OPTIONS"
+.SS "Overall Options"
+.SS "\f(CR\-\-help\fP, \f(CR\-h\fP"
+.sp
+Option \f(CR\-\-help\fP or \f(CR\-h\fP tells the glslc compiler to display all available options and exit.
+.SS "\f(CR\-\-show\-limits\fP"
+.sp
+\f(CR\-\-show\-limits\fP shows default resource limits for shader compilation.  The syntax
+is the same as accepted by \f(CR\-flimit=\fP and for the contents of the file specified
+by \f(CR\-flimit\-file\fP.
+.SS "\f(CR\-o\fP"
+.sp
+\f(CR\-o\fP lets you specify the output file\(cqs name. It cannot be used when there are
+multiple files generated. A filename of \f(CR\-\fP represents standard output.
+.SS "Language and Mode Selection Options"
+.SS "\f(CR\-finvert\-y\fP"
+.sp
+Inverts position.Y output in a vertex shader.
+.SS "\f(CR\-flimit=\fP"
+.sp
+\f(CR\-flimit=<resource\-limits>\fP lets you specify resource limits.
+The argument should be a sequence of limit name, integer value pairs.  Tokens
+should be separated by whitespace.  If the same limit is specified several
+times, only the last setting takes effect.
+.sp
+Use \f(CR\-\-show\-limits\fP to show the default values, and example syntax.
+.sp
+This option affects all compiled shaders.
+.SS "\f(CR\-flimit\-file\fP"
+.sp
+\f(CR\-flimit\-file <resource\-limits\-file>\fP lets you specify resource limits in a file.
+The syntax of the file contents is the same as the argument to \f(CR\-flimit=\fP and
+the output of \f(CR\-\-show\-limits\fP.  This option accepts Glslang resource configuration
+files, e.g. as emitted by \f(CRglslangValidator \-c\fP.
+.sp
+This option affects all compiled shaders.
+.SS "\f(CR\-fshader\-stage=\fP"
+.sp
+\f(CR\-fshader\-stage=<stage>\fP lets you specify the shader stage for one or more
+inputs from the command line.
+.sp
+Possible values for \f(CR<stage>\fP are listed in the Shader Stage Selection table.
+.sp
+\f(CR\-fshader\-stage=\fP behaves as follows:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-fshader\-stage=\fP sets the shader stage for subsequent input files. It does
+not affect the stages of any preceding inputs on the command line.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+When supplying more than one \f(CR\-fshader\-stage=\fP argument, the most recent
+argument preceding an input file applies.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+A shader file not ending with known shader file
+extensions must have a \f(CR\-fshader\-stage=\fP argument ahead of it to specify
+its stage.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If there is a \f(CR\-fshader\-stage=\fP before a file in which there is a \f(CR#pragma
+shader_stage()\fP directive, the directive is ignored and the \f(CR\-fshader\-stage=\fP
+argument is used instead.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If there is a \f(CR\-fshader\-stage=\fP before a file with a known shader file
+extension, the file extension is ignored and the \f(CR\-fshader\-stage=\fP argument
+is used instead.
+.RE
+.if n .sp
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+.B Caution
+.ps -1
+.br
+.sp
+\f(CR\-fshader\-stage=\fP overrides file extension; that means it should not
+be used together with SPIR\-V assembly files because glslc will treat the given
+SPIR\-V assembly files as GLSL source code of the given shader stage. If you
+need to supply both SPIR\-V assembly files and \f(CR\-fshader\-stage=\fP on the same
+command line, please put SPIR\-V assembly files ahead of the first
+\f(CR\-fshader\-stage=\fP, since \f(CR\-fshader\-stage=\fP only affects the treatment of
+subsequent files.
+.sp .5v
+.RE
+.SS "\f(CR\-std=\fP"
+.sp
+\f(CR\-std=<value>\fP lets you specify a shader version and profile on the command
+line. \f(CR<value>\fP can be any valid concatenation of a GLSL version number and
+profile, e.g., \f(CR310es\fP, \f(CR450core\fP, etc. The profile can be omitted as allowed by
+GLSL, e.g., \f(CR450\fP.
+.sp
+\f(CR\-std=\fP behaves as follows:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-std=\fP affects the version of all GLSL inputs passed to \f(CRglslc\fP.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-std=\fP is ignored for HLSL inputs.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-std=\fP overwrites \f(CR#version\fP directives in all input shaders, including those
+preceding the argument.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If a \f(CR\-std=\fP argument specifies a different version from a \f(CR#version\fP
+directive in an input file, \f(CRglslc\fP will issue a warning.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+If multiple \f(CR\-std=\fP arguments are specified on the command line, only the last
+one takes effect.
+.RE
+.if n .sp
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+.B Caution
+.ps -1
+.br
+.sp
+\f(CR\-std=\fP does not affect the \f(CR#version\fP directive in the preprocessed
+output. That is, when \f(CR\-std=\fP specifies a version different from the shader
+source code, the \f(CR#version\fP directive in preprocessed output will still be the
+one in the source code. But \f(CR\-std=\fP does affect the behavior of \f(CR#line\fP
+directives in the preprocessed output. Behavior of \f(CR#line\fP directives will
+follow the version specified by \f(CR\-std=\fP.
+.sp .5v
+.RE
+.SS "\f(CR\-\-target\-env=\fP"
+.sp
+\f(CR\-\-target\-env=<value>\fP lets you specify a target environment on the command line.
+This affects the generation of warnings and errors. The \f(CR<value>\fP can be one of
+the following:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRvulkan\fP: create SPIR\-V under Vulkan 1.0 semantics.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRvulkan1.0\fP: create SPIR\-V under Vulkan 1.0 semantics.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRvulkan1.1\fP: create SPIR\-V under Vulkan 1.1 semantics.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRvulkan1.2\fP: create SPIR\-V under Vulkan 1.2 semantics.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRopengl\fP: create SPIR\-V under OpenGL 4.5 semantics.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRopengl4.5\fP: create SPIR\-V under OpenGL 4.5 semantics.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRopengl_compat\fP: create SPIR\-V under OpenGL semantics, including compatibility
+profile functions.
+.RE
+.sp
+Generated code uses SPIR\-V 1.0, except for code compiled for Vulkan 1.1, which uses
+SPIR\-V 1.3, and code compiled for Vulkan 1.5, which uses SPIR\-V 1.5.
+.sp
+If this option is not specified, a default of \f(CRvulkan1.0\fP is used.
+.SS "\f(CR\-\-target\-spv=\fP"
+.sp
+\f(CR\-\-target\-spv=<value>\fP lets you specify the SPIR\-V version to be used by the generated
+module.  The default is to use the highest version of SPIR\-V required to be supported
+by the target environment.  The defaults for specific Vulkan target environments are
+as follows: SPIR\-V 1.0 for Vulkan 1.0, SPIR\-V 1.3 for Vulkan 1.1, and SPIR\-V 1.5 for
+Vulkan 1.2.
+.sp
+The \f(CR<value>\fP can be one of the following:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRspv1.0\fP
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRspv1.1\fP
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRspv1.2\fP
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRspv1.3\fP
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRspv1.4\fP
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CRspv1.5\fP
+.RE
+.SS "\f(CR\-x\fP"
+.sp
+\f(CR\-x\fP lets you specify the language of the input shader files. Valid languages
+are \f(CRglsl\fP and \f(CRhlsl\fP.  If the file extension is \f(CRhlsl\fP then the default language
+is HLSL.  Otherwise the default is \(aqglsl\(aq.
+.sp
+Note: HLSL compilation will use HLSL packing (offset) rules for variables
+that are vertex shader outputs, and inputs and outputs of both geometry
+and pixel shaders.
+.SS "Compilation Stage Selection Options"
+.SS "\f(CR\-c\fP"
+.sp
+\f(CR\-c\fP tells the glslc compiler to run the preprocessing and compiling stage.
+Each input shader file results in a SPIR\-V binary file; these SPIR\-V binary
+files are named by the rules in the Output File Naming
+section.
+.SS "\f(CR\-E\fP"
+.sp
+\f(CR\-E\fP tells the glslc compiler to run only the preprocessing stage. It overrides
+\f(CR\-c\fP and \f(CR\-S\fP. Preprocessed output is written to standard output, while
+preprocessing errors are written to standard error. If multiple input shader
+files are given, their preprocessed output are all written to standard output,
+in the order specified on the command line.
+.sp
+glslc will do nothing for SPIR\-V assembly files with this option.
+.SS "\f(CR\-S\fP"
+.sp
+\f(CR\-S\fP tells the glslc compiler to run the preprocessing, compiling, and then
+disassembling stage. It overrides \f(CR\-c\fP. Each input shader file results in a
+SPIR\-V assembly file; these SPIR\-V assembly files are named by the rules in the
+Output File Naming section.
+.sp
+glslc will do nothing for SPIR\-V assembly files with this option.
+.SS "No Compilation Stage Selection"
+.sp
+If none of the above options is given, the glslc compiler will run
+preprocessing, compiling, and linking stages.
+.if n .sp
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+.B Warning
+.ps -1
+.br
+.sp
+Linking of multiple input shader files are not supported yet.
+.sp .5v
+.RE
+.SS "Preprocessor Options"
+.SS "\f(CR\-D\fP"
+.sp
+\f(CR\-Dmacroname[=[value]]\fP lets you define a preprocessor macro before input shader
+files are preprocessed. If \f(CRvalue\fP is omitted, the macro is defined with an
+empty value.
+.SS "\f(CR\-I\fP"
+.sp
+\f(CR\-Idirectory\fP or \f(CR\-I directory\fP adds the specified directory to the search path
+for include files.  The directory may be an absolute path or a relative path to
+the current working directory.
+.SS "Code Generation Options"
+.SS "\f(CR\-g\fP"
+.sp
+Requests that the compiler place source\-level debug information into the object
+code, such as identifier names and line numbers.
+.sp
+This option restrains \f(CR\-O\fP from turning on the strip\-debug\-info optimization
+pass.
+.if n .sp
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+.B Note
+.ps -1
+.br
+.sp
+Currently this option has no effect.  Full functionality depends on
+glslang support for generating debug info.
+.sp .5v
+.RE
+.SS "\f(CR\-O0\fP, \f(CR\-Os\fP"
+.sp
+\f(CR\-O\fP specifies which optimization level to use:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-O0\fP means "no optimization". This level generates the most debuggable code.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-O\fP means the default optimization level for better performance.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+\f(CR\-Os\fP enables optimizations to reduce code size.
+.RE
+.SS "\f(CR\-mfmt=<format>\fP"
+.sp
+\f(CR\-mfmt=<format>\fP selects output format for compilation output in SPIR\-V binary
+code form.  Supported options are listed in the
+binary output format options table. This
+option is only valid to be used when the compilation output is SPIR\-V binary
+code. Specifying any options listed below when the output is not SPIR\-V binary
+code, like disassembly (with \f(CR\-S\fP specified), text (with \f(CR\-M\fP, \f(CR\-MM\fP or \f(CR\-E\fP
+specified) will trigger an error.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.B Table 2. Binary Output Format Options
+.TS
+allbox tab(:);
+lt lt.
+T{
+.sp
+Format option
+T}:T{
+.sp
+Description
+T}
+T{
+.sp
+bin
+T}:T{
+.sp
+Output SPIR\-V binary code as a sequence of binary 32\-bitwords
+in host native endianness. This is the default format for
+SPIR\-V binary compilation output.
+T}
+T{
+.sp
+num
+T}:T{
+.sp
+Output SPIR\-V binary code as a text file containing a list of
+comma\-separated hex numbers.
+.br
+Example: \f(CRglslc \-c \-mfmt=num main.vert \-o output_file.txt\fP
+.br
+Content of the output_file.txt:
+.br
+0x07230203,0x00010000,0x00080001,0x00000006...
+T}
+T{
+.sp
+c
+T}:T{
+.sp
+Output SPIR\-V binary code as a text file containing C\-style
+.br
+initializer list.
+.br
+This is just wrapping the output of \f(CRnum\fP option with curly
+brackets.
+.br
+Example: \f(CRglslc \-c \-mfmt=c main.vert \-o output_file.txt\fP
+.br
+Content of output_file.txt:
+.br
+{0x07230203, 0x00010000, 0x00080001, 0x00000006...}
+T}
+.TE
+.sp
+.SS "\f(CR\-fhlsl\-offsets\fP"
+.sp
+Use HLSL packing rules instead of GLSL rules when determining offsets of
+members of blocks.  This option is always on when compiling for HLSL.
+.SS "\f(CR\-fhlsl\-functionality1\fP"
+.sp
+Enable extension \f(CRSPV_GOOGLE_hlsl_functionality1\fP, and instructs the compiler
+to:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+Annotate HLSL semantic string decorations on interface objects
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+Explicitly record the association of a UAV resource with its companion counter buffer.
+.RE
+.sp
+This option can also be spelled with an underscore: \f(CR\-fhlsl_functionality1\fP.
+.SS "\f(CR\-fentry\-point=<name>\fP"
+.sp
+\f(CR\-fentry\-point=<name>\fP lets you specify the entry point name.  This is only
+significant for HLSL compilation.  The default is "main".
+.SS "\f(CR\-fauto\-map\-locations\fP"
+.sp
+For GLSL compilation, option \f(CR\-fauto\-map\-locations\fP directs the compiler to automatically
+assign location numbers to user\-defined stage input and output variables if not explicitly
+specified by the shader source.
+.sp
+For HLSL compilation, this option is on by default.
+.sp
+Client APIs normally require adjacent stages to agree on their I/O interface.
+The compiler only sees one stage at a time, so it is strongly recommended that
+you avoid relying on this option to assign locations.
+.sp
+Instead, an explicit binding number should be specified in the shader source, as follows:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+In a GLSL shader, use a \f(CRlocation\fP layout qualifier:
+.RE
+.sp
+.if n .RS 4
+.nf
+layout(location = 1) in vec4 x;
+.fi
+.if n .RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+In an HLSL shader, use a \f(CRvk::location\fP attribute:
+.RE
+.sp
+.if n .RS 4
+.nf
+[[vk::location(1)]] float4 FooShader(
+  [[vk::location(0)]] float4 a,
+  [[vk::location(2)]] float4 b) : COLOR0 {
+  return a + b;
+}
+.fi
+.if n .RE
+.SS "Warning and Error Options"
+.SS "\f(CR\-w\fP"
+.sp
+\f(CR\-w\fP suppresses all warning output from \f(CRglslc\fP. Any warning that would have
+been generated is silently ignored.
+.SS "\f(CR\-Werror\fP"
+.sp
+\f(CR\-Werror\fP forces any warning to be treated as an error in \f(CRglslc\fP. This means
+that all \f(CRwarning:\fP messages are shown as \f(CRerror:\fP and any warnings will cause
+a non\-zero exit code from \f(CRglslc\fP. If \f(CR\-w\fP is specified the warnings
+generated are suppressed before they are converted to errors.
+.SS "Dependency Generation Options"
+.SS "\f(CR\-M\fP or \f(CR\-MM\fP"
+.sp
+\f(CR\-M\fP generates \fBmake\fP dependencies. It outputs a rule suitable for \fBmake\fP
+describing the dependencies of the input file. Instead of outputting the result
+of preprocessing, the preprocessor outputs one \fBmake\fP rule containing the
+SPIR\-V object file name for that source file, a colon, and the names of all the
+included files.
+.sp
+Unless specified explicitly (with \f(CR\-MT\fP), the SPIR\-V object file name in the
+generated \fBmake\fP rules follows the rules of  Output File
+Naming as in \f(CR\-c\fP compilation stage.
+.sp
+Specifying \f(CR\-M\fP implies \f(CR\-E\fP, and suppresses warnings with an implicit \f(CR\-w\fP.
+By default the output will be written to stdout, unless \f(CR\-MF\fP or \f(CR\-o\fP is
+specified.
+.sp
+The dependency info file name can be specified by \f(CR\-o\fP and \f(CR\-MF\fP options. When
+both are specified, \f(CR\-o\fP option is ignored.
+.sp
+Specifying multiple input files is valid when the \fBmake\fP rules are written to
+stdout, which means neither \f(CR\-MF\fP nor \f(CR\-o\fP is specified. When \f(CR\-o\fP or \f(CR\-MF\fP is
+specified, only one input file is allowed.
+.sp
+\f(CR\-MM\fP is an alias for \f(CR\-M\fP.
+.sp
+E.g., \f(CRglslc \-M main.vert\fP will dump \f(CRmain.vert.spv: main.vert <other included
+files>\fP to stdout. More examples are listed in
+Dependency Generation Examples
+.SS "\f(CR\-MD\fP"
+.sp
+\f(CR\-MD\fP tells the glslc compiler to both compile the source and generate \fBmake\fP
+dependencies. Dependencies are written to a file whose name is determined as
+follows: If option \f(CR\-MF\fP is specified, use its argument. Otherwise, use the
+filename formed by appending \fB.d\fP to the name of the file containing
+compilation results.
+.sp
+Specifying multiple input files is valid when neither \f(CR\-MF\fP nor \f(CR\-o\fP is
+specified. When \f(CR\-o\fP or \f(CR\-MF\fP is specified, only one input file is allowed.
+.sp
+E.g., \f(CRglslc \-c \-MD main.vert\fP will generate \f(CRmain.vert.spv\fP as the SPIR\-V
+object file and \f(CRmain.vert.spv.d\fP as the dependency info file. More examples
+are listed in Dependency Generation Examples
+.SS "\f(CR\-MF\fP"
+.sp
+\f(CR\-MF\fP lets you specify the dependency info file name when used with \f(CR\-M\fP or
+\f(CR\-MD\fP. This option is invalid when used with multiple input files.
+.sp
+E.g., \f(CRglslc \-c \-MD main.vert \-MF dep_info\fP will generate \f(CRmain.vert.spv\fP as
+the SPIR\-V object file and \f(CRdep_info\fP as the dependency info file.
+.SS "\f(CR\-MT\fP"
+.sp
+\f(CR\-MT\fP lets you specify the target of the rule emitted by dependency generation
+when used with \f(CR\-M\fP or \f(CR\-MD\fP.  This option is invalid when used with multiple
+input files.
+.sp
+E.g., \f(CRglslc \-M main.vert \-MT target\fP will dump following dependency info to
+stdout: \f(CRtarget: main.vert <other dependent files>\fP.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.B Table 3. Dependency Generation Examples
+.TS
+allbox tab(:);
+lt lt lt lt.
+T{
+.sp
+Command Line Input
+T}:T{
+.sp
+Compilation Output File
+T}:T{
+.sp
+Dependency Output File
+T}:T{
+.sp
+Dependency Info
+T}
+T{
+.sp
+glslc \-M main.vert
+T}:T{
+.sp
+<NA>
+T}:T{
+.sp
+<Stdout>
+T}:T{
+.sp
+main.vert.spv: main.vert
+T}
+T{
+.sp
+glslc \-M a.vert b.vert
+T}:T{
+.sp
+<NA>
+T}:T{
+.sp
+<Stdout>
+T}:T{
+.sp
+a.vert.spv: a.vert
+T}
+T{
+.sp
+T}:T{
+.sp
+<NA>
+T}:T{
+.sp
+<Stdout>
+T}:T{
+.sp
+b.vert.spv: b.vert
+T}
+T{
+.sp
+glslc \-M main.vert \-o dep_info
+T}:T{
+.sp
+<NA>
+T}:T{
+.sp
+dep_info
+T}:T{
+.sp
+main.vert.spv: main.vert
+T}
+T{
+.sp
+glslc \-M main.vert \-MF dep_info
+T}:T{
+.sp
+<NA>
+T}:T{
+.sp
+dep_info
+T}:T{
+.sp
+main.vert.spv: main.vert
+T}
+T{
+.sp
+glslc \-M main.vert \-MT target
+T}:T{
+.sp
+<NA>
+T}:T{
+.sp
+<Stdout>
+T}:T{
+.sp
+target: main.vert
+T}
+T{
+.sp
+glslc \-MD main.vert
+T}:T{
+.sp
+a.spv
+T}:T{
+.sp
+main.vert.spv.d
+T}:T{
+.sp
+main.vert.spv: main.vert
+T}
+T{
+.sp
+glslc \-c \-MD main.vert
+T}:T{
+.sp
+main.vert.spv
+T}:T{
+.sp
+main.vert.spv.d
+T}:T{
+.sp
+main.vert.spv: main.vert
+T}
+T{
+.sp
+glslc \-c \-MD a.vert b.vert
+T}:T{
+.sp
+a.vert.spv
+T}:T{
+.sp
+a.vert.spv.d
+T}:T{
+.sp
+a.vert.spv: a.vert
+T}
+T{
+.sp
+T}:T{
+.sp
+b.vert.spv
+T}:T{
+.sp
+b.vert.spv.d
+T}:T{
+.sp
+b.vert.spv: b.vert
+T}
+T{
+.sp
+glslc \-S \-MD main.vert
+T}:T{
+.sp
+main.vert.spvasm
+T}:T{
+.sp
+main.vert.spvasm.d
+T}:T{
+.sp
+main.vert.spvasm: main.vert
+T}
+T{
+.sp
+glslc \-c \-MD main.vert \-MF dep_info
+T}:T{
+.sp
+main.vert.spv
+T}:T{
+.sp
+dep_info
+T}:T{
+.sp
+main.vert.spv: main.vert
+T}
+T{
+.sp
+glslc \-c \-MD main.vert \-o obj
+T}:T{
+.sp
+obj
+T}:T{
+.sp
+obj.d
+T}:T{
+.sp
+obj: main.vert
+T}
+T{
+.sp
+glslc \-c \-MD main.vert \-o obj \-MF dep_info \-MT target
+T}:T{
+.sp
+obj
+T}:T{
+.sp
+dep_info
+T}:T{
+.sp
+target: main.vert
+T}
+.TE
+.sp
+.SS "Resource Binding Options"
+.SS "\f(CR\-fauto\-bind\-uniforms\fP"
+.sp
+Option \f(CR\-fauto\-bind\-uniforms\fP directs the compiler to automatically assign
+binding numbers to uniform variables, when an explicit binding is not
+specified in the shader source.
+.sp
+An explicit binding number can be specified in the shader source by using
+a \f(CRbinding\fP layout qualifier.  For example:
+.sp
+.if n .RS 4
+.nf
+layout(binding = 12) uniform texture2D;
+.fi
+.if n .RE
+.SS "\f(CR\-fhlsl\-iomap\fP"
+.sp
+Option \f(CR\-fhlsl\-iomap\fP directs the compiler to use HLSL register
+assignments as binding values.
+.SS "\f(CR\-fimage\-binding\-base\fP"
+.sp
+Option \f(CR\-fimage\-binding\-base [stage] base\fP sets the lowest automatically
+assigned binding for images.  If a stage is specified, only affects the specified
+stage.
+.sp
+For HLSL, sets one less than the base.
+.SS "\f(CR\-fsampler\-binding\-base\fP"
+.sp
+Option \f(CR\-fsampler\-binding\-base [stage] base\fP sets the lowest automatically
+assigned binding for samplers.  If a stage is specified, only affects the specified
+stage.
+.sp
+For HLSL, sets one less than the base.
+.SS "\f(CR\-ftexture\-binding\-base\fP"
+.sp
+Option \f(CR\-ftexture\-binding\-base [stage] base\fP sets the lowest automatically
+assigned binding for textures.  If a stage is specified, only affects the specified
+stage.
+.sp
+For HLSL, sets one less than the base.
+.SS "\f(CR\-fubo\-binding\-base\fP"
+.sp
+Option \f(CR\-fubo\-binding\-base [stage] base\fP sets the lowest automatically
+assigned binding for Uniform Buffer Objects (GLSL) or Cbuffers (HLSL).
+If a stage is specified, only affects the specified stage.
+.sp
+For HLSL, sets one less than the base.
+.SS "\f(CR\-fcbuffer\-binding\-base\fP"
+.sp
+Option \f(CR\-fcbuffer\-binding\-base [stage] base\fP is the same as
+\f(CR\-fubo\-binding\-base [stage] base\fP.
+.SS "\f(CR\-fssbo\-binding\-base\fP"
+.sp
+Option \f(CR\-fssbo\-binding\-base [stage] base\fP sets the lowest automatically
+assigned binding for Shader Storage Buffer Objects (GLSL).
+If a stage is specified, only affects the specified stage.
+.sp
+This only affects GLSL compilation.
+.SS "\f(CR\-fuav\-binding\-base\fP"
+.sp
+Option \f(CR\-fuav\-binding\-base [stage] base\fP sets one less than the lowest
+automatically assigned binding for Unordered Access Views (UAV).
+If a stage is specified, only affects the specified stage.
+.sp
+This only affects HLSL compilation.
+.SS "\f(CR\-fresource\-set\-binding\fP"
+.sp
+Option \f(CR\-fresource\-set\-binding [stage] <reg0> <set0> <binding0>\fP sets
+the descriptor set and binding for an HLSL resource, by register name.
+To specify settings for more registers, append their triples consisting
+of register name, descriptor set, and binding.
+.sp
+Example:
+.sp
+.if n .RS 4
+.nf
+# For a texture in register t1, use set 1 binding 0.
+# For a texture in register t2, use set 1 binding 3
+glslc \-x hlsl foo.frag \-fresource\-set\-binding t1 1 0 t2 1 3
+.fi
+.if n .RE
+.sp
+If a stage is specified, only affects the specified stage.
+.sp
+.if n .RS 4
+.nf
+# Same as the previous example, but the settings only apply
+# to fragment (pixel) shaders.
+glslc \-x hlsl foo.frag \-fresource\-set\-binding frag t1 1 0 t2 1 3
+.fi
+.if n .RE
+.SH "DIVERGENCE FROM AND EXTENSIONS TO GLSL SPECIFICATIONS"
+.SS "Source\-filename\-based \f(CR#line\fP and \f(CR__FILE__\fP"
+.sp
+This section describes how the glslc compiler extends the syntax for the \f(CR#line\fP
+directive and the \f(CR__FILE__\fP macro. By default, the glslc compiler enables
+the \f(CRGL_GOOGLE_cpp_style_line_directive\fP extension. It will generate this
+extended syntax in the preprocessed output (obtained via the \f(CR\-E\fP option).
+.if n .sp
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+.B Warning
+.ps -1
+.br
+.sp
+This section is still evolving. Expect changes.
+.sp .5v
+.RE
+.sp
+GLSL specifications have a notion of source strings.
+.RS 3
+.ll -.6i
+.sp
+The source for a single shader is an array of strings of characters from the
+character set. A single shader is made from the concatenation of these strings.
+.br
+.RE
+.ll
+.RS 5
+.ll -.10i
+\(em Section 3.2 of both version 3.30 and 4.50
+.RE
+.ll
+.sp
+With the above notion, the second parameter to the \f(CR#line\fP directive should
+be a constant integer expressions representing the source string number. Also
+the \f(CR__FILE__\fP macro will "substitute a decimal integer constant that says
+which source string number is currently being processed."
+.sp
+The glslc compiler implements the standard \f(CR#line\fP and \f(CR__FILE__\fP syntax. It
+also provides an extension, \f(CRGL_GOOGLE_cpp_style_line_directive\fP, to allow
+source filenames to be used instead of integer source string indices.
+Specifically, the \f(CR#line\fP directive can have, after macro substitution, one of
+the following three forms:
+.sp
+.if n .RS 4
+.nf
+#line line\-number
+#line line\-number integer\-source\-string\-index
+#line line\-number "source\-filename"
+.fi
+.if n .RE
+.sp
+where \f(CRsource\-filename\fP can be any combinations of characters except double
+quotation marks. (Note that according to the GLSL specification, "there are
+no escape sequences or other uses of the backslash beyond use as the
+line\-continuation character".)
+.sp
+And if source\-filename\-based \f(CR#line\fP is used, the \f(CR__FILE__\fP macro expands to
+a string whose contents are the filename quoted with double quotation marks.
+The filename is dertermined as the last of
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+The filename given to the glslc compiler,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.  sp -1
+.  IP \(bu 2.3
+.\}
+The filename argument of the most recent \f(CR#line\fP directive, if any.
+.RE
+.SS "\f(CR#include\fP"
+.sp
+The glslc compiler extends GLSL with the include syntax by turning on the
+\f(CRGL_GOOGLE_include_directive\fP extension. It will preprocess and substitute
+\f(CR#include\fP directives properly with the following behaviors.
+.if n .sp
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+.B Warning
+.ps -1
+.br
+.sp
+This section is still evolving. Expect changes.
+.sp .5v
+.RE
+.sp
+If \f(CR#include\fP directives are used in a shader, there will be an \f(CR#extension
+GL_GOOGLE_include_directive : enable\fP line generated into the preprocessed
+output.
+.sp
+The \f(CRGL_GOOGLE_cpp_style_line_directive\fP extension is implicitly turned on by
+the \f(CRGL_GOOGLE_include_directive\fP extension.
+.sp
+The file argument to \f(CR#include\fP must be enclosed in double quotes.  It must be a
+relative path, using whatever path separator the OS supports.  However, the last
+path element \(em the name of the file itself \(em must not contain either \(aq/\(aq or
+\(aq\(rs\(aq, regardless of which path separator is used.  This will not be flagged as an
+error but will instead trigger undefined behavior.  For example, let\(cqs say there
+is a file named \f(CRf\(rsilename.vert\fP on a Unix OS.  It is not possible to craft a
+\f(CR#include\fP that includes that file.
+.sp
+Furthermore, it is not possible to escape any characters in a \f(CR#include\fP
+directive, so the file argument cannot contain any special characters that need
+escaping in C.
+.sp
+The file argument is a relative path that is matched first against the including
+file\(cqs own directory and then against all \f(CR\-I\fP arguments in order of their
+appearance on the command line.  If the file cannot be found, \f(CRglslc\fP aborts
+with an error.

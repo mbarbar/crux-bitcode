@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30yNCLVPQ8KbkCGtI26JZOMfKiOWm9uh6VUvF4E5z736InKrhUG6fzxKE2fEgq34hEltT/tF5YdoDfH3HahGWAc=
+SHA256 (Pkgfile) = e22928c672852ecaa7f0764a53545b677048b9888fbbd1beaba3793ff9296b3d
+SHA256 (.footprint) = c6c4044875c829a735b8b94924a00ba71c17f31af7169726cba42b62d79ceb89
+SHA256 (Try-Tiny-0.30.tar.gz) = da5bd0d5c903519bbf10bb9ba0cb7bcac0563882bcfe4503aee3fb143eddef6b

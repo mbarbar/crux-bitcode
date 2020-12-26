@@ -1,0 +1,10 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/4Zr4Yo22oIt2NnXcaed34aR/IEaeqB2IgdM9RkgQm5PUjHjcJridzCYUSOiVQdFQTphfyTdvDYkVqBC+V42w4=
+SHA256 (Pkgfile) = 95e520731ffdedb4a00e890804dac9379c7882f75b2f87c03ddcd31da0889494
+SHA256 (.footprint) = bdf72209d0a425869e9799f1256bce336431c3a7df821741759708fd0326865f
+SHA256 (NetworkManager-1.26.4.tar.xz) = 7995802c67e54fc58be4c0e3d2095d943f53f4300a93bde7ff48822a0b1f62ea
+SHA256 (networkmanager.rc) = dc0b743685214c0402d392a6a9b2632b19714795a04c0f42ba10026250d9f3fc
+SHA256 (NetworkManager.conf) = 44b048804c7c0b8b3b0c29b8632b6ad613c397d0a1635ec918e10c0fbcdadf21
+SHA256 (polkit.conf) = 7410be567871e4dc8ef1e8204f80b7cfd0dd08abfa514408b7d549bdc70dbaba
+SHA256 (dhcp.conf) = cd2a4b0079c0726973c1cf226c4e1cb4f2d27d02c16e0e08af7e4d6b8770423c
+SHA256 (org.freedesktop.NetworkManager.rules) = 7708da5de800684eb7036f29534ac6f3004115695428484e09b712da5bb1e8a5

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+getent group nsd || /usr/sbin/groupadd -r nsd
+getent passwd nsd || /usr/sbin/useradd -g nsd -r -d /var/lib/nsd -s /bin/false nsd
+/usr/bin/passwd -l nsd
+

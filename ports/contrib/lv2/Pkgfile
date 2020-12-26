@@ -1,0 +1,18 @@
+# Description: Successor to the LADSPA audio plug-in standard.
+# URL: https://lv2plug.in/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Packager: Danny Rawlins, crux at romster dot me
+# Depends on: python3 libsndfile
+
+name=lv2
+version=1.18.0
+release=1
+source=(http://lv2plug.in/spec/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	/usr/bin/python3 waf configure --prefix=/usr
+	/usr/bin/python3 waf build $MAKEFLAGS
+	/usr/bin/python3 waf install --destdir="$PKG"
+}

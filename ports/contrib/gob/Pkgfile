@@ -1,0 +1,16 @@
+# Description: a preprocessor for making GObjects with # inline C
+# URL:         http://www.5z.com/jirka/gob.html#download
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib
+
+name=gob
+version=2.0.20
+release=2
+source=(http://ftp.5z.com/pub/gob/gob2-$version.tar.gz)
+
+build() {
+  cd gob2-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

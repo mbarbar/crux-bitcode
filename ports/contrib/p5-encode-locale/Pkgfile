@@ -1,0 +1,17 @@
+# Description: Determine the locale encoding
+# URL: https://metacpan.org/pod/Encode::Locale
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-encode-locale
+version=1.05
+release=1
+source=(https://cpan.metacpan.org/authors/id/G/GA/GAAS/Encode-Locale-$version.tar.gz)
+
+build() {
+  cd Encode-Locale-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+HSFUGO8dQmXy7fvtGO4ZusOfjtz4J7hQlFVdCkTF08oX2YjX4uUzcwzltZz84UzPj9IcS0dooaYscwWyj0Hws=
+SHA256 (Pkgfile) = afc0515288795b1578fd4cd90c072b311f343846d2dcd9b0e015c3ff960fc388
+SHA256 (.footprint) = e6949923aba35c200495e79e5a5c0f502d8cb92ad01a0d12b86daa09e41f5b0f
+SHA256 (hiredis-v1.0.0.tar.gz) = 2a0b5fe5119ec973a0c1966bfc4bd7ed39dbce1cb6d749064af9121fe971936f

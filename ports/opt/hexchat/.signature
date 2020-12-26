@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/SSEViDGzwTcNKrlgAUbcat9KErKyd2EuLXR31nXVwmEsusIwWhFH9Q+q4lfk6xkKnW0qCQZofBFFGyaEWGhLgA=
+SHA256 (Pkgfile) = 9b4340d4a94abbb873d92edd20711fe5b4bc75ad7062d4f0f19a4c08a75502ce
+SHA256 (.footprint) = 890fbae8258fa479df98a709305dec29ce2e972446df597faf3fc2013476308b
+SHA256 (hexchat-2.14.3.tar.xz) = 901a9d13db5a4da69b827f6093306bbd16863dc49016f7668bd3e4506512e882

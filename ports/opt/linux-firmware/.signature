@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Rh8Q0j1jVoeiv0thAwgLNseqhaPXr0yvASvIpyrJalP6hMmFjxbytVWTWWVgZzxmAzQiDtRovdcHExU+GISqwg=
+SHA256 (Pkgfile) = d4154f187d6cbd81e2ffe29772faeef32de583b48fb278c969cd04b509a47966
+SHA256 (.footprint) = 31c2510dfa6abfd7bc04642be9e97baec95611ae53bcdb6238eca1ae14e108ed
+SHA256 (linux-firmware-20201118.tar.gz) = 6229c58ef75133357276b551c0ddd13253ed3ed8881cbccdf21a022960491552

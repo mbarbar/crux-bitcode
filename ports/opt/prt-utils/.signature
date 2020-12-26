@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/car6iumqaHLU2FnbEWg6p2wYmrTkO2MuAZ7mEBHjBfN/ly48B9uRPjNVv0ByzTg+troT6Mx1LFGmrqWR19wpws=
+SHA256 (Pkgfile) = 2a0dbd17f3be169c67480aade2fcb5a7e294557334d4960c42b346f37299d3fd
+SHA256 (.footprint) = 75e14dc850b3f4e20a3105b72f0a0448ca575f478954e20c1ee5696fd49eea9a
+SHA256 (prt-utils-1.1.4.tar.xz) = caa8b634ca988ccdf801eac9986b8838caecdcba3755f01baed6bb5f929bd6d6

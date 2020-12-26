@@ -1,0 +1,17 @@
+# Description: Implementation of a singleton class
+# URL: https://metacpan.org/pod/Class::Singleton
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-class-singleton
+version=1.6
+release=1
+source=(https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-$version.tar.gz)
+
+build() {
+  cd Class-Singleton-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

@@ -1,0 +1,30 @@
+README for sane 1.0.x
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+  1. To find the vendor/product id of your scanner, run the command:
+
+     # sane-find-scanner -q
+     found USB scanner (vendor=0x04a9, product=0x2204 [CanoScan FB630U] at libusb:001:005
+
+     You need the 'vendor' id (04a9) and the 'product' id (2204)
+
+  2. Check if /etc/udev/rules.d/libsane.rules already knows about 
+     your scanner. If your scanner is not in this list, add a line 
+     like the following, remember to replace 04a9 and 2204 with 
+     your values:
+
+     SYSFS{idVendor}=="04a9", SYSFS{idProduct}=="2204", MODE="660", GROUP="scanner"
+  
+  3. Check the file permissions in /dev/bus/usb after you have plugged 
+     in your scanner device.
+
+     # ls -l /dev/bus/usb/001
+     total 0
+     -rw-r--r--  1 root root    43 Aug  3 10:58 001
+     -rw-rw----  1 root scanner 50 Aug  3 10:58 005
+
+PRECAUTION

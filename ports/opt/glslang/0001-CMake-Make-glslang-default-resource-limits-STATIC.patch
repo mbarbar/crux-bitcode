@@ -1,0 +1,25 @@
+From d6e59ca08971c261f8297027d9c274f884c9d1e0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?R=C3=A9mi=20Verschelde?= <rverschelde@gmail.com>
+Date: Mon, 12 Oct 2020 11:20:05 +0200
+Subject: [PATCH 1/2] CMake: Make glslang-default-resource-limits STATIC
+
+---
+ StandAlone/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
+index 8038c043..a2009165 100644
+--- a/StandAlone/CMakeLists.txt
++++ b/StandAlone/CMakeLists.txt
+@@ -31,7 +31,7 @@
+ # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ # POSSIBILITY OF SUCH DAMAGE.
+ 
+-add_library(glslang-default-resource-limits
++add_library(glslang-default-resource-limits STATIC
+             ${CMAKE_CURRENT_SOURCE_DIR}/ResourceLimits.cpp
+             ${CMAKE_CURRENT_SOURCE_DIR}/resource_limits_c.cpp)
+ set_property(TARGET glslang-default-resource-limits PROPERTY FOLDER glslang)
+-- 
+2.28.0
+

@@ -1,0 +1,44 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+lrwxrwxrwx	root/root	usr/sbin/cache_check -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/cache_dump -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/cache_metadata_size -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/cache_repair -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/cache_restore -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/cache_writeback -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/era_check -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/era_dump -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/era_invalidate -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/era_restore -> pdata_tools
+-rwxr-xr-x	root/root	usr/sbin/pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_check -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_delta -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_dump -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_ls -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_metadata_size -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_repair -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_restore -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_rmap -> pdata_tools
+lrwxrwxrwx	root/root	usr/sbin/thin_trim -> pdata_tools
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/cache_check.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/cache_dump.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/cache_metadata_size.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/cache_repair.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/cache_restore.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/cache_writeback.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/era_check.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/era_dump.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/era_invalidate.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/era_restore.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_check.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_delta.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_dump.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_ls.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_metadata_size.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_repair.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_restore.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_rmap.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/thin_trim.8.gz

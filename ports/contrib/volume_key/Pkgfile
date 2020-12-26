@@ -1,0 +1,18 @@
+# Description: A library for manipulating storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases
+# URL: https://pagure.io/volume_key
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cryptsetup glib gpgme nss
+
+name=volume_key
+version=0.3.12
+release=1
+source=(https://releases.pagure.org/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure \
+      --prefix=/usr \
+      --disable-nls
+  make
+  make DESTDIR=$PKG install
+}

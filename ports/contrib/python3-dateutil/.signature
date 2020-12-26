@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34tC8rolC87u2pup8g2+ukESwR00Vrlv5Livy0S9B4jpE46SdY8kxGz3i4Jk4EQ2Yb0D3t1VXhU9ig6ckHm8Ew8=
+SHA256 (Pkgfile) = 49d81e72f338559c41be1c569e60e393d79ca6ee4239c71e28b106f2525d0aba
+SHA256 (.footprint) = f96ce1b5111fe1d3a100676e529cc1bec8b0b6d7dc21a50bc30cb8953c0692fd
+SHA256 (python-dateutil-2.8.1.tar.gz) = 73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c

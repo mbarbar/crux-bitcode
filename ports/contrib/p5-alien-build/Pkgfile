@@ -1,0 +1,17 @@
+# Description: Build external dependencies for use in CPAN
+# URL: https://metacpan.org/release/Alien-Build
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-capture-tiny p5-ffi-checklib p5-file-chdir p5-file-which p5-path-tiny
+
+name=p5-alien-build
+version=2.37
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-$version.tar.gz)
+
+build() {
+  cd Alien-Build-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

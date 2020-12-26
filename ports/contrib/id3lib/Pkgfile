@@ -1,0 +1,41 @@
+# Description: An open-source, cross-platform library for reading/writing/manipulating ID3 tags.
+# URL: http://id3lib.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: zlib
+
+name=id3lib
+version=3.8.3
+release=3
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+	$name-3.8.3-zlib.patch
+	$name-3.8.3-test_io.patch
+	$name-3.8.3-autoconf259.patch
+	$name-3.8.3-unicode16.patch
+	$name-3.8.3-gcc-4.3.patch
+	CVE-2007-4460.diff)
+
+build() {
+	cd $name-$version
+
+	patch -p 1 -i $SRC/$name-3.8.3-zlib.patch
+	patch -p 1 -i $SRC/$name-3.8.3-test_io.patch
+	patch -p 1 -i $SRC/$name-3.8.3-autoconf259.patch
+	patch -p 1 -i $SRC/$name-3.8.3-unicode16.patch
+	patch -p 1 -i $SRC/$name-3.8.3-gcc-4.3.patch
+	patch -p 1 -i $SRC/CVE-2007-4460.diff
+
+	sed -i -e 's/^AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' \
+		configure.in zlib/configure.in
+
+	autoreconf -ivfs # buggy configure
+
+	CC='g++' \
+	./configure \
+		--prefix=/usr \
+		--disable-static \
+		--disable-assert \
+		--enable-debug=no
+
+	make
+	make DESTDIR=$PKG install
+}

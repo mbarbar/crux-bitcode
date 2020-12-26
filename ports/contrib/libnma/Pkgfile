@@ -1,0 +1,25 @@
+# Description: Networkmanager GUI client library
+# URL: https://gitlab.gnome.org/GNOME/libnma
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gcr networkmanager iso-codes
+
+name=libnma
+version=1.8.30
+release=1
+source=(https://gitlab.gnome.org/GNOME/libnma/-/archive/$version/libnma-$version.tar.bz2)
+
+build() {
+  # don't build nls
+  rm -r $name-$version/po
+  sed -e '298d' -i $name-$version/meson.build
+
+  meson setup $name-$version build \
+    --prefix=/usr \
+    --buildtype=plain \
+    -Db_ndebug=true \
+    -Dmobile_broadband_provider_info=false \
+    -Dgtk_doc=false \
+    -Dvapi=false
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+}

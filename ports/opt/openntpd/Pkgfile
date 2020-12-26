@@ -1,0 +1,34 @@
+# Description:	Portable version of OpenBSD's NTP implementation
+# URL:		http://www.openntpd.org/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+
+name=openntpd
+version=6.2p3
+release=1
+source=(
+http://ftp.openbsd.org/pub/OpenBSD/OpenNTPD/$name-$version.tar.gz
+ntpd
+openntpd-paths.patch
+)
+
+build() {
+	cd $name-$version
+
+	# change drift file and control socket locations
+	patch -p1 -i $SRC/openntpd-paths.patch
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--with-privsep-user=ntp \
+		--disable-https-constraint
+	make
+	make DESTDIR=$PKG install
+	
+	rmdir $PKG/var/db $PKG/var/run
+	install -D -m 0755 $SRC/ntpd $PKG/etc/rc.d/ntpd
+
+	# drift file will be created here
+	mkdir -p $PKG/var/lib/ntp
+}

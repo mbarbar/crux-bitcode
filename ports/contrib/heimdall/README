@@ -1,0 +1,27 @@
+README for heimdall
+
+NOTES
+
+    It may need to make your device visible for heimdall by adding the
+    device's IDs to udev rules.
+
+    1. Connect the device to USB and check the information:
+
+       $ lsusb
+       Bus 001 Device 009: ID 04e8:6860 Samsung Electronics Co.,
+       Ltd Galaxy series, misc. (MTP mode)
+
+    2. Write /etc/udev/rules.d/60-heimdall.rules using ID numbers:
+
+       SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860",
+       MODE="0666"
+
+    3. Change file permissions and reload udev rules:
+
+       # chmod a+r /etc/udev/rules.d/60-heimdall.rules
+       # udevadm control --reload-rules
+
+    4. Replug the device and check if it's detected:
+
+       # heimdall detect
+       Device detected

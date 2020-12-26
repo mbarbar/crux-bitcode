@@ -1,0 +1,18 @@
+# Description: Enhanced wiki and issue tracking system for software projects.
+# URL:         http://trac.edgewall.com/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  genshi python-jinja python-setuptools
+# Nice to have: subversion-python
+
+name=trac
+version=1.5.1
+release=1
+source=(http://ftp.edgewall.com/pub/trac/Trac-$version.tar.gz)
+
+build () {
+  cd Trac-$version
+  /usr/bin/python setup.py install --root=$PKG
+  find $PKG \(\
+    -iname '*readme*' -o \
+    -iname '*changelog*' \) -delete
+}

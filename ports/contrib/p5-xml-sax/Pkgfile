@@ -1,0 +1,17 @@
+# Description: Simple API for XML
+# URL: https://metacpan.org/pod/XML::SAX
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-xml-namespacesupport p5-xml-sax-base
+
+name=p5-xml-sax
+version=1.02
+release=1
+source=(https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-$version.tar.gz)
+
+build() {
+  cd XML-SAX-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  PERLLIB=blib/lib make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

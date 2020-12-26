@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yaj8p6RmwtIBIZzC0QDEaOlhKuxa0Rg4wTDS575Ppo6TBaULirzErN4GFTNSmeZEJDI+zR3MzbiMSrz3LFTkQg=
+SHA256 (Pkgfile) = 94df26249b0fcb70c574d72ba2724e11740154da418deacd31cfcd20e9d031e9
+SHA256 (.footprint) = d1d3e23363bd8fbd4670395f05de4f05de72b14664d7b8155bdfc94531504808
+SHA256 (iptstate-2.2.6.tar.bz2) = bef8eb67a4533e53079f397b71e91dd34da23f8cbd65cb2d5b67cb907b00c068

@@ -1,0 +1,34 @@
+README for libmtp
+
+POST-INSTALL
+
+    libmtp contains  /etc/udev/rules.d/69-libmtp.rules,  so there is
+    a need to reload rules:
+        # udevadm control --reload-rules
+
+NOTES
+
+    Run MTP as a regular user
+    -------------------------
+
+    1.  Create the plugdev group and add your user name into it:
+
+        getent group plugdev >/dev/null || groupadd -r plugdev
+        usermod -aG plugdev $USERNAME
+        newgrp plugdev
+
+    2.  Find your device's (VendorId:ProductId) in the lsusb output.
+
+    3.  Find your VendorId:ProductId in the
+        /etc/udev/rules.d/69-libmtp.rules , and change the line into
+        the following:
+
+        ATTR{idVendor}="...", ATTR{idProduct}="...", ...,
+        MODE="0666", GROUP="plugdev"
+
+    4.  Reload the udev rules (as described in the POST-INSTALL)
+
+    5.  You also may be interested to save your settings.
+        Add the following line into /etc/pkgadd.conf:
+
+           UPGRADE ^etc/udev/rules.d/69-libmtp.rules$ NO

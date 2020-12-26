@@ -1,0 +1,14 @@
+# Description: Next-generation distributed version control.
+# URL:         http://bazaar.canonical.com/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  python
+
+name=bzr
+version=2.7.0
+release=1
+source=(https://launchpad.net/$name/${version%.*}/$version/+download/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	python setup.py install --root=$PKG --prefix=/usr --install-data=/usr/share
+}

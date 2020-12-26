@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/fd7eDqn7AmS5xUqk9cMzVC6kkuNkeIPI7GMeJfVxvLSCqinl3DunEwO73kWJ9xdbhBNz2rb9e2f6Tu38c+LXw0=
+SHA256 (Pkgfile) = b2128a2a480242cb526dfa3ee6e5f26c7c69bc0be3f3eb6931aa90156306a723
+SHA256 (.footprint) = 203217745aafde2a04cab5d6620fe36d940d3aba7cc5a678130cb771bd8284c7
+SHA256 (SDL-1.2.15.tar.gz) = d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00
+SHA256 (libsdl-1.2.x-libx11.patch) = cdb44e23a1ce8336313f340e226e094d0c65d895772e396f9b3f55566ecd6394
+SHA256 (libsdl-1.2.15-bs.patch) = 86e2d2e680ccbd7e6a914455d80d39104a0528b949e4886203a7a4d0aa5b9242

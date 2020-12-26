@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30wqMEUs9vcIZlltFHYvYSb+IReOuoFjiDx0ZXU0hAljj6EA1YTm8B5scP5iWy7kSI/gU8cMnoWN6qIpiUh1TQQ=
+SHA256 (Pkgfile) = 537212c68f64d0f418c600bc6b441fb3135aad2e9833461f3d92a0b434969bf5
+SHA256 (.footprint) = 67613a8dd579ca249cc311dd0a13be61ac168005889dccc6cc53190496d37ec7
+SHA256 (smpeg-0.4.5.tar.xz) = c1551535476ed521c7e1fff446846d44027cd4a8afe2ce30d71f6ef8bd6759ea

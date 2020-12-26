@@ -1,0 +1,19 @@
+# Description: Alternative interface to File::Find
+# URL: https://search.mcpan.org/dist/File-Find-Rule
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-number-compare p5-text-glob
+
+name=p5-file-find-rule
+version=0.34
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-$version.tar.gz)
+
+build() {
+  cd File-Find-Rule-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

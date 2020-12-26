@@ -1,0 +1,16 @@
+# Description:	Alsa mixer with OSD and LIRC control
+# URL:		http://www.mizrahi.com.ve/projects/airmix/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends:	alsa-lib
+# Optional:	lirc
+
+name=airmix
+version=1.0
+release=1
+source=(http://www.mizrahi.com.ve/projects/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make
+	make DESTDIR=$PKG install
+}

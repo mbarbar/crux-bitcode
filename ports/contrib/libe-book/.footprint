@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ebook2html
+-rwxr-xr-x	root/root	usr/bin/ebook2raw
+-rwxr-xr-x	root/root	usr/bin/ebook2text
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libe-book-0.1/
+drwxr-xr-x	root/root	usr/include/libe-book-0.1/libe-book/
+-rw-r--r--	root/root	usr/include/libe-book-0.1/libe-book/EBOOKDocument.h
+-rw-r--r--	root/root	usr/include/libe-book-0.1/libe-book/libe-book.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libe-book-0.1.la
+lrwxrwxrwx	root/root	usr/lib/libe-book-0.1.so -> libe-book-0.1.so.1.0.3
+lrwxrwxrwx	root/root	usr/lib/libe-book-0.1.so.1 -> libe-book-0.1.so.1.0.3
+-rwxr-xr-x	root/root	usr/lib/libe-book-0.1.so.1.0.3
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libe-book-0.1.pc

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37wxDbuNyAyJKhDbPh5b3U2GLVJqDrcu6YaGv+mBV7CgfAeDOcNNidKGK0sLFKKDjogiRHChGAl6rGiwNCyo3gE=
+SHA256 (Pkgfile) = 7a2df950817efa54bad72e0435292fc144d7d603d6decfeb5108fc917a8749df
+SHA256 (.footprint) = 2fd1e17c6f286f2d8961bcab528c14657ebaedf831fd5a48ffe0605e0e4a3027
+SHA256 (vcdimager-2.0.1.tar.gz) = 67515fefb9829d054beae40f3e840309be60cda7d68753cafdd526727758f67a
+SHA256 (resurrect_library_symbols.patch) = e998bcc11b47e9a853baeb930155d71cba42e013e042a26a40ee82c2cacd3714

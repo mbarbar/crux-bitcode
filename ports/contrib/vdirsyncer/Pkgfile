@@ -1,0 +1,19 @@
+# Description: a command-line tool for synchronizing calendars and addressbooks
+# URL: https://github.com/pimutils/vdirsyncer
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-atomicwrites python3-click-log python3-click-threading python3-requests-toolbelt python3-setuptools-scm
+
+name=vdirsyncer
+version=0.16.8
+release=1
+source=(https://pypi.io/packages/source/v/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --prefix=/usr \
+    --skip-build \
+    --optimize=1 \
+    --root=$PKG
+}

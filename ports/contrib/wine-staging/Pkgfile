@@ -1,0 +1,64 @@
+# Description: WINE with staging patches
+# URL: https://wiki.winehq.org/Wine-Staging
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: fontconfig-32 freeglut-32 gnutls-32 lcms2-32 mpg123-32 openal-32 prelink xorg-libxcomposite-32 xorg-libxcursor-32 xorg-libxinerama-32 xorg-libxrandr-32 xorg-libxxf86dga-32 vkd3d-32
+
+name=wine-staging
+version=5.20
+release=1
+source=(https://dl.winehq.org/wine/source/5.x/wine-${version:0:4}.tar.xz \
+	https://github.com/$name/$name/archive/v$version/$name-$version.tar.gz \
+	https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi \
+	https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi \
+	https://dl.winehq.org/wine/wine-mono/5.1.1/wine-mono-5.1.1-x86.msi)
+
+build() {
+	# apply staging patches
+	cd $name-$version
+	./patches/patchinstall.sh DESTDIR=../wine-${version:0:4} --all
+	cd ..
+
+	install -d wine32 wine64
+
+	export CPPFLAGS="${CPPFLAGS/-D_FORTIFY_SOURCE=2/} -D_FORTIFY_SOURCE=0"
+
+	cd wine64
+
+	../wine-${version:0:4}/configure \
+		--prefix=/usr \
+		--libdir=/usr/lib \
+		--enable-win64
+
+	make depend
+	make
+	make DESTDIR=$PKG install
+
+	cd ../wine32
+	CFLAGS="${CFLAGS} -m32"
+	CXXFLAGS="${CXXFLAGS} -m32"
+	LDFLAGS="${LDFLAGS} -m32"
+	export PKG_CONFIG_LIBDIR="/usr/lib32/pkgconfig"
+
+	../wine-${version:0:4}/configure \
+		--prefix=/usr \
+		--libdir=/usr/lib32 \
+		--x-includes=/usr/include/X11 \
+		--x-libraries=/usr/lib32 \
+		--cache-file=config.cache \
+		--with-wine64=../wine64
+
+	make depend
+	make
+	make DESTDIR=$PKG install
+
+	install -d $PKG/usr/share/wine/gecko
+	install -d $PKG/usr/share/wine/mono
+
+	install -t $PKG/usr/share/wine/gecko/ \
+		$SRC/wine-gecko-2.47.1-x86.msi \
+		$SRC/wine-gecko-2.47.1-x86_64.msi
+
+	install $SRC/wine-mono-5.1.1-x86.msi $PKG/usr/share/wine/mono/
+
+	rm -r $PKG/usr/share/man/??.UTF-8
+}

@@ -1,0 +1,16 @@
+# Description: Generic build tool for OCaml libraries and programs
+# URL:         https://github.com/ocaml/ocamlbuild
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  ocaml
+
+name=ocamlbuild
+version=0.14.0
+release=1
+source=(https://github.com/ocaml/ocamlbuild/archive/$version.tar.gz)
+
+build() {
+  cd $name-$version
+  make configure OCAMLBUILD_PREFIX=/usr OCAMLBUILD_BINDIR=/usr/bin
+  make
+  make install DESTDIR=$PKG
+}

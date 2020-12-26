@@ -1,0 +1,22 @@
+# Description: A multi-platform game programming library for C/C++.
+# URL: https://liballeg.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: flac glu gtk libtheora libwebp openal opus physfs xorg-libxi xorg-libxpm
+
+name=allegro
+version=5.2.6.0
+release=1
+source=(https://github.com/liballeg/allegro5/releases/download/$version/$name-$version.tar.gz)
+
+build() {
+	cmake -S $name-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D WANT_DOCS_HTML=OFF \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

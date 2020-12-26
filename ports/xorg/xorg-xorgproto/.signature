@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndApjQf7DAhtTwVZYHaSAxBhSr8NBTaQzF9+OHurq5hUYoFtrf5vSCxjEevTcDnmoYoa+ZDkR33ku0I1MWYi5ugs=
+SHA256 (Pkgfile) = b83263c12dc8eac4e33598a833cd09418e12fa9643ccd2a0f2db81aee29ec4f8
+SHA256 (.footprint) = 8536979c0f05ddddf065059cb22dd039a1847f292ba2791b99e15c05ff903c9d
+SHA256 (xorgproto-2020.1.tar.bz2) = 54a153f139035a376c075845dd058049177212da94d7a9707cf9468367b699d2

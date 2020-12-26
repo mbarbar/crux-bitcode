@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yFEbcTXezuIPOT/cvxFVxC9ZGgttMS7W+5/Lleny/W8479HXzsdiBPtg8pVoDqqiXWfXNcnFJzwnOz2xTRwngE=
+SHA256 (Pkgfile) = 4497bd237d0a4a4a6a86a608dfd6531aa89e5c9ed1e4e4f2a1da44cfd238a746
+SHA256 (.footprint) = 226abcddc212f1d83873ad294fe0f024f108c1b41b10087be8e1199a83bcf3d5
+SHA256 (dhcp-4.4.2.tar.gz) = 1a7ccd64a16e5e68f7b5e0f527fd07240a2892ea53fe245620f4f5f607004521
+SHA256 (dhcpd) = a49171ca3a53f0c1d87190c57cd27b47131b79fba34a67e231deb3f96e9b501c
+SHA256 (dhclient) = b8bf3b0d8766fb987b204ace96f0c2c65e8e7a9187501bdee5a4c6e0e4924153
+SHA256 (default-config.diff) = 20486335665bc723b476c7f5380b07d4a4bc87466b331a5e5af319a6809782b8

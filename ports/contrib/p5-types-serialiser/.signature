@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39RBsi5uNqaIOm7uj2h37SPV4tckRbRVNa77ztT8hbSfVn2Akf3MBp3YVlO4qJaWHp32r6eAgaf4UqEYfkO41Q8=
+SHA256 (Pkgfile) = 11ec0f596bef8597316086492011a083d2d85605b2e230d9b8468d950de5f01a
+SHA256 (.footprint) = 001e4ee0c88f4b77dda5fdce9f16ac5015fa7eb5e3091ba1267fa9d2bc9e6e46
+SHA256 (Types-Serialiser-1.01.tar.gz) = f8c7173b0914d0e3d957282077b366f0c8c70256715eaef3298ff32b92388a80

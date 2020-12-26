@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UyONmhSwT/t1+uOgIM9p7My8MyfU1b66b2dLRn6xfA7vfpygR/Pi/nr2bOJ8kOOsCB0sxyeobe43htrB5g45AM=
+SHA256 (Pkgfile) = 77c6ff638cccd8e8e3e69f533fd0b5fef9754e18c6a4a7ece01218ea03f9822d
+SHA256 (.footprint) = 60bcd782db2cafa0ae4c87bf385a78a028923bb507ba02717d4cf44483d376bb
+SHA256 (libglade-2.6.4.tar.bz2) = 64361e7647839d36ed8336d992fd210d3e8139882269bed47dc4674980165dec
+SHA256 (libglade-2.0.1-nowarning.patch) = 423c12af1c73442caa851a0b8db33b00fa4b778b1b422a4e8ac33d121d043008

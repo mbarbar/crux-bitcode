@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37wJdmZIEcMzGP42Ii1l63jickiGjhOFQQTLXIKX+pqbUCQIKaSIn9qgOONTOwYN1W3xfzhSIZeiQa3u1EGwVg0=
+SHA256 (Pkgfile) = f6b6e8dcb63ace533faedbe8ed09606bd68b206c236e305246b9aa532ff5ce6b
+SHA256 (.footprint) = ef8b3c9cd38c4fe9ee8f80af59cbd2282bccef8f8a2eb00332ed67fa8a24fb57
+SHA256 (squashfs-tools-4.4.tar.gz) = a7fa4845e9908523c38d4acf92f8a41fdfcd19def41bd5090d7ad767a6dc75c3

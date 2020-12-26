@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/rsyslogd: start/stop rsyslogd logging daemon
+#
+
+PIDFILE=/var/run/rsyslogd.pid
+
+case $1 in
+    "start")
+        /usr/sbin/rsyslogd
+        ;;
+    "stop")
+        kill -TERM $(cat $PIDFILE)
+        ;;
+    "restart")
+        $0 stop
+        sleep 2
+        $0 start
+        ;;
+    *)
+        echo "usage: $0 [start|stop|restart]"
+        ;;
+esac

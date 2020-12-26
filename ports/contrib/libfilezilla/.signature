@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF384ufWcYKiOuFhx2h4M+uh+VkIKr4n3Zxvc+fvdRjhCfN75FKMQiocZ+02kXjguMnH2vD58i5aYjmZxMPUeoNAI=
+SHA256 (Pkgfile) = ca8a9ad4e7dead6156b1546bead7c379796f131a034811da1d738b780ef069c2
+SHA256 (.footprint) = d36c0b04b1e0eee79273e44f8d74ddb600f8ecbce171c9ca4cb70a7682c68ad6
+SHA256 (libfilezilla-0.25.0.tar.bz2) = 3bf6feb5246ed3d11b72d74b485d1989724be0884568cd456195e7624f9c7b2a

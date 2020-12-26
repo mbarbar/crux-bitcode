@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/kSUA6zgZC4w6jNcZgSyPDZEILkAaLLYYYDEJSQRqDWNoXqwspgSHNLEtZjGyhE1WzVjLNunvc7551RCsKJwgU=
+SHA256 (Pkgfile) = a51e9363672e54d9f07bdf707ba7b901adf9a641073f302852eb89f4fe412111
+SHA256 (.footprint) = 3b30fb7822649ffbc24fb285b9e56edaf02af30aa72ce29f1afc8ffadeec5427
+SHA256 (mdds-1.7.0.tar.bz2) = a66a2a8293a3abc6cd9baff7c236156e2666935cbfb69a15d64d38141638fecf

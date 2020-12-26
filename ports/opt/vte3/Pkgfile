@@ -1,0 +1,26 @@
+# Description: Virtual Terminal Emulator widget for use with GTK3
+# URL: https://wiki.gnome.org/action/show/Apps/Terminal/VTE
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gnutls gtk3 libpcre2
+# Optional: icu vala
+
+name=vte3
+version=0.62.1
+release=1
+source=(https://download.gnome.org/sources/vte/${version%.*}/vte-$version.tar.xz)
+
+build() {
+	prt-get isinst vala || PKGMK_VTE+=' -D vapi=false'
+	prt-get isinst icu || PKGMK_VTE+=' -D icu=false'
+
+	meson build vte-$version ${PKGMK_VTE} \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		-D _systemd=false
+
+
+	ninja -C build -j ${JOBS:-1}
+	DESTDIR=$PKG ninja -C build install
+
+	rm -r $PKG/usr/share/locale
+}

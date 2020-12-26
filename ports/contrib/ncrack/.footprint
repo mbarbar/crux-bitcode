@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ncrack
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/ncrack.1.gz
+drwxr-xr-x	root/root	usr/share/ncrack/
+-rw-r--r--	root/root	usr/share/ncrack/common.usr
+-rw-r--r--	root/root	usr/share/ncrack/default.pwd
+-rw-r--r--	root/root	usr/share/ncrack/default.usr
+-rw-r--r--	root/root	usr/share/ncrack/jtr.pwd
+-rw-r--r--	root/root	usr/share/ncrack/minimal.usr
+-rw-r--r--	root/root	usr/share/ncrack/myspace.pwd
+-rw-r--r--	root/root	usr/share/ncrack/ncrack-services
+-rw-r--r--	root/root	usr/share/ncrack/phpbb.pwd
+-rw-r--r--	root/root	usr/share/ncrack/top50000.pwd

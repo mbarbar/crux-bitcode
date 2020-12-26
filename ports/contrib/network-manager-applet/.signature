@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33Z14D7h6VsPUjVNg/y0twA/6Tres75ttwRaBkO97YeDkkyNB12bMjBL2RN4nJgMmYbOUpL5mYIDnLogc347jg4=
+SHA256 (Pkgfile) = 45db931e16fb43c2742983c43d2369345ee66ab40483dc98abe896f0a6d9c8ca
+SHA256 (.footprint) = ab0c8a9cba0548de5b4ed3c0f93ad9b66bfe29b78e3a40d3722b682ee575cb6c
+SHA256 (network-manager-applet-1.18.0.tar.gz) = 9c8122fad949ced0bd0b826baea01e482a89628efc9dfa8b0bda875532159c48

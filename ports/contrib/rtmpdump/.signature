@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yQ1+dWUVxI4HcBaKLRQ/vnXtXOF85DyjZN4MCqyp1JgCAP8JqsqeKqlxXxD/Pd65x1Mf0GhAMVmZuz8iQAvdwg=
+SHA256 (Pkgfile) = babfd16c945c935f6227907a80c4d969a0b61e380a7e67d10ab3ad5c17c71a49
+SHA256 (.footprint) = 18a78fe5a351a9baf2d0f144b99c2d06c7b8368d7dd9fe1e2a41300bbf4dad63
+SHA256 (rtmpdump-2.4-c5f04a58.tar.xz) = 14d2f9096998527b7d2d9462c720f8bc3f7d2166ef611a3a4d5da14b2518bbf6

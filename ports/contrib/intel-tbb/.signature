@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x6DAE+BJ9LvG45p7+q5KTgCUTqa9RL2G3m1NKBJt4fKGtkCOOXXH6GNixWfavlJwhzM5oyHabG9VciJ8G90Gw0=
+SHA256 (Pkgfile) = 4d200a65e8581672a2b6bc22e8037c574f00b82ccc26cf1cd39d66a64e646a12
+SHA256 (.footprint) = 73b1d3c471339997cf157ee97585697d157151be109c25b2213c70c767bcea5e
+SHA256 (intel-tbb-2020.3.tar.gz) = ebc4f6aa47972daed1f7bf71d100ae5bf6931c2e3144cf299c8cc7d041dca2f3

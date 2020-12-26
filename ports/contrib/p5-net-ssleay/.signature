@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wcapW080tZ4Z4ePikaxELUwXoMb03dkwizlUsFFJYb5Jm2dwGMdZisDPzGuppMQxeU1QK2n6hj3KjXT16ardgo=
+SHA256 (Pkgfile) = 8e7715c59e448c417b8571449e82184e9a8b664183c11877244a7d21f9fd154c
+SHA256 (.footprint) = 09c67bab7690bc15d713481851541d33432f8f1075bc605a05711dad245e1f05
+SHA256 (Net-SSLeay-1.88.tar.gz) = 2000da483c8471a0b61e06959e92a6fca7b9e40586d5c828de977d3d2081cfdd

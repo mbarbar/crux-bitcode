@@ -1,0 +1,27 @@
+# Description: Utilities for doing and managing mounts of the Linux CIFS filesystem
+# URL:         https://wiki.samba.org/index.php/LinuxCIFS_utils
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  linux-pam samba keyutils
+
+name=cifs-utils
+version=6.11
+release=1
+source=(https://download.samba.org/pub/linux-cifs/$name/$name-$version.tar.bz2
+        $name-$version.patch $name-man.tar.xz cifs)
+
+build () {
+    cd $name-$version
+
+    patch -p1 -i $SRC/$name-$version.patch
+
+    install -d $PKG/{sbin,usr/share/man/man{1,8}}
+    install -m 0644 $SRC/*.1 $PKG/usr/share/man/man1
+    install -m 0644 $SRC/*.8 $PKG/usr/share/man/man8
+
+    autoreconf -i
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+
+    install -D -m 0755 $SRC/cifs $PKG/etc/rc.d/cifs
+}

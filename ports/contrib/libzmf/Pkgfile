@@ -1,0 +1,18 @@
+# Description: a library for import of Zoner drawing and bitmap files
+# URL: https://wiki.documentfoundation.org/DLP/Libraries/libzmf
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libpng librevenge icu
+
+name=libzmf
+version=0.0.2
+release=2
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --disable-werror \
+    --without-docs
+  make
+  make DESTDIR=$PKG install
+}

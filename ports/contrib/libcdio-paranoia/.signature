@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF341mvLr3luSS/d/ZnC/yfM4KY2bj1AjINDCY0IETKeSR03moezPbCsAlhr+NacxKJnP3VXLGEmQsn0zYTwrF2QM=
+SHA256 (Pkgfile) = c1a6b5103f0d77ed92e28b36abdb100da44cb40db97dfa99c7b08109dab97f2d
+SHA256 (.footprint) = 2e882fff9f854e3675f7c777ac177c5bb703d4f5d1c26dce60f801d3ad7ac341
+SHA256 (libcdio-paranoia-10.2+2.0.1.tar.gz) = 28d7d00e4a83d0221acda0fd2eb3e3240bf094db4c00a85998922201939fa952

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30X8AsJr+HVAtOgObKXEUZm1VDYw5xsqf474/7YcMofxSscEjWPV66vpies7qcofVcN0XNnIIPJiygvlieQw0Aw=
+SHA256 (Pkgfile) = 1e12de24058c26cbc05fca71485d38c5581aac23f446c8b20ea26009a5f2a97d
+SHA256 (.footprint) = 5d023eae24d0cf372f32d64f6475e57c7da5d83328de455b5a970d42883d4d33
+SHA256 (open-vm-tools-11.2.0-16938113.tar.gz) = df16b78bb919e85fe2b9190148f4987ea4942f9f9667836bf1311dfc2eb839db
+SHA256 (vmtoolsd) = a443b32dd7b0505db463ed20ff10c0ea3aefc41f003feb704921afa4c72325d8

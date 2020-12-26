@@ -1,0 +1,23 @@
+# Description: GNU Linear Programming Kit : solve LP, MIP and other problems.
+# URL: https://www.gnu.org/software/glpk/glpk.html
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libgmp
+
+name=glpk
+version=4.65
+release=1
+source=(https://ftp.gnu.org/gnu/glpk/$name-$version.tar.gz glpk-remove-warnings.patch)
+
+build() {
+  cd $name-$version
+  find -L . \
+     \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+     -o -perm 511 \) -exec chmod 755 {} \; -o \
+     \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+     -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+  patch -p1 -i ../glpk-remove-warnings.patch
+  ./configure --prefix=/usr \
+    --with-gmp
+  make
+  make DESTDIR=$PKG install
+}

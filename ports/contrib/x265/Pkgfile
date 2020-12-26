@@ -1,0 +1,55 @@
+# Description: Open Source H265/HEVC video encoder.
+# URL: https://bitbucket.org/multicoreware/x265_git/wiki/Home
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cmake
+
+name=x265
+version=3.4
+release=1
+source=(#https://bitbucket.org/multicoreware/$name/downloads/${name}_$version.tar.gz
+	https://crux.ster.zone/downloads/$name/${name}_$version.tar.gz)
+
+build() {
+	[[ -e '/usr/bin/ninja' ]] && PKGMK_X265+=' -G Ninja'
+
+	# common args
+	local common_args=(
+		-D CMAKE_INSTALL_PREFIX=/usr
+		-D CMAKE_BUILD_TYPE=Release
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -Wno-restrict -Wno-format-overflow"
+		-D CMAKE_ASM_NASM_FLAGS_RELEASE=' -wno-macro-params-legacy'
+		-D HIGH_BIT_DEPTH=TRUE
+		-D EXPORT_C_API=FALSE
+		-D ENABLE_CLI=FALSE
+		-D ENABLE_SHARED=FALSE
+	)
+
+	# build 12
+	cmake -S $SRC/${name}_$version/source -B build-12 $PKGMK_X265 \
+		-D MAIN12=TRUE \
+		"${common_args[@]}" \
+		-Wno-dev
+	cmake --build build-12
+
+	# build 10
+	cmake -S $SRC/${name}_$version/source -B build-10 $PKGMK_X265 \
+		"${common_args[@]}" \
+		-Wno-dev
+	cmake --build build-10
+
+	# build 8
+	mkdir build-8
+	ln -s $SRC/build-12/libx265.a $SRC/build-8/libx265_main12.a
+	ln -s $SRC/build-10/libx265.a $SRC/build-8/libx265_main10.a
+
+	cmake -S $SRC/${name}_$version/source -B build-8 $PKGMK_X265 \
+		"${common_args[@]:0:10}" \
+		-D ENABLE_SHARED=TRUE \
+		-D EXTRA_LIB='x265_main10.a;x265_main12.a' \
+		-D EXTRA_LINK_FLAGS='-L.' \
+		-D LINKED_10BIT=TRUE \
+		-D LINKED_12BIT=TRUE \
+		-Wno-dev
+	cmake --build build-8
+	DESTDIR=$PKG cmake --install build-8
+}

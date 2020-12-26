@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33RPRIONN7ehzXP7WHD8PWirrGM4VNVpOi9Hmr3oioubjvtiIpKV06wUTSdKf8b/9mUOvGJJtY/YSXDJDWdQiwk=
+SHA256 (Pkgfile) = f1a1469e69c9aacec7e02564fec58a635a2b504daba56def4e7ae3a0b14f7f7f
+SHA256 (.footprint) = 89279271a7d84ef7c77482b23e805951228fe8d7dbfe4a9434874bde047e89b3
+SHA256 (libpam-ldap_186.orig.tar.gz) = c8fe22d559d5a3f528b24eb97175085f188c0f11ade337a868590ac0e0716453

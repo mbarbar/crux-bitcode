@@ -1,0 +1,30 @@
+# Description: Extremely small and JVM spec 2 (blue book) conformant Java Virtual Machine
+# URL:         http://jamvm.sourceforge.net/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  libffi
+
+name=jamvm
+version=2.0.0
+release=1
+source=(http://download.sourceforge.net/$name/$name/JamVM%20$version/$name-$version.tar.gz)
+
+build() {
+	find $name-$version ! -type l -a \( -perm /go+w -o ! -perm /u+rw \) \
+		-exec chmod go-w,u+rw {} \;
+
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--includedir=/usr/include/$name \
+		--enable-libffi \
+		--with-classpath-install-dir=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/lib/rt.jar
+	mv $PKG/usr/lib/libjvm.so{,.0.0.0}
+	ln -s libjvm.so.0.0.0 $PKG/usr/lib/libjvm.so
+	ln -s libjvm.so.0.0.0 $PKG/usr/lib/libjvm.so.0
+}

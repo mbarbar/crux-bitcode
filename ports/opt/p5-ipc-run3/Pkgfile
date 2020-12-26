@@ -1,0 +1,18 @@
+# Description: run a subprocess with input/ouput redirection
+# URL: https://metacpan.org/pod/IPC::Run3
+# Maintainer: Juergen Daubert, jue at crux dot nu
+
+name=p5-ipc-run3
+version=0.048
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RJ/RJBS/IPC-Run3-$version.tar.gz)
+
+build() {
+  cd IPC-Run3-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

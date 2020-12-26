@@ -1,0 +1,20 @@
+# Description: A library which supports many formats, including: mod, s3m, it, and xm.
+# URL: http://mikmod.raphnet.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: alsa-lib
+
+name=libmikmod
+version=3.3.11.1
+release=1
+source=(https://downloads.sourceforge.net/project/mikmod/libmikmod/$version/$name-$version.tar.gz)
+
+build(){
+	cd $name-$version
+
+	./configure --prefix=/usr
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/info
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# check for lirc group or add one
+getent group lirc || /usr/sbin/groupadd -g 112 lirc
+
+# check for lirc user or add one
+getent passwd lirc || /usr/sbin/useradd -g lirc -u 112 -d /var/empty -s /bin/false -c "LIRC User" lirc
+
+# lock the account
+/usr/bin/passwd -l lirc

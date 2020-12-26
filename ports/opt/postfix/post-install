@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd /usr/lib/postfix
+
+/bin/sh post-install \
+  daemon_directory=/usr/lib/postfix \
+  manpage_directory=/usr/share/man \
+  command_directory=/usr/sbin \
+  config_directory=/etc/postfix \
+  setgid_group=postdrop \
+  mail_owner=mail \
+  upgrade-package
+
+/bin/sh post-install \
+  daemon_directory=/usr/lib/postfix \
+  command_directory=/usr/sbin \
+  config_directory=/etc/postfix \
+  setgid_group=postdrop \
+  mail_owner=mail \
+  create-missing
+
+/usr/sbin/postalias /etc/postfix/aliases
+
+for hashfile in virtual relocated access transport; do
+  /usr/sbin/postmap hash:/etc/postfix/"$hashfile"
+done

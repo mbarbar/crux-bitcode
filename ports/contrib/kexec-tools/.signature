@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32rlSV1Y4VF+XEP/t7fWAhyXZoAsZyx3jGBpBk3hndACXaoGkALBtS90crkEJPluuKa/DQX1ABRHYWvMdKF7fQ0=
+SHA256 (Pkgfile) = 2cfa96dc5fe5df28bda7654530e379e7873ba36abe6d1379e7b5ea0c35dc241e
+SHA256 (.footprint) = 483baf3b5692da54a02afd0775245401ab78152f01426113988dc3773a2c2ccb
+SHA256 (kexec-tools-2.0.20.tar.gz) = 91788ea1efcebc2d335c4fc7deb07e76b6c4b19fb11f40f8376c68a0830c71dd

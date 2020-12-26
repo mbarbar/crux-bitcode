@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32ZPQ90ammtTRo/SgmGCX+xgfyus2thcksdScnja7hGvmzKcEx7YkOpxQP4VzG34OwnFQqbad1hFYouE2CkqLAQ=
+SHA256 (Pkgfile) = eb224cc65ff460c3ea049986ad9874ee236869a9f4e1a66638c1de56494e3296
+SHA256 (.footprint) = b4248d906985d06ef84ad725d86011cc86339c351b835343263f08b36dcc2d7c
+SHA256 (chardet-3.0.4.tar.gz) = 84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae

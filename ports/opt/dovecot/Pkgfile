@@ -1,0 +1,49 @@
+# Description: IMAP and POP3 server with ssl/ipv6 support, written with security primarily in mind
+# URL:         https://dovecot.org
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  zlib bzip2 xz openssl libcap linux-pam
+
+name=dovecot
+version=2.3.11.3
+release=1
+source=(https://dovecot.org/releases/2.3/$name-$version.tar.gz
+        dovecot.rc dovecot.pam)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --libexecdir=/usr/lib \
+                --sysconfdir=/etc \
+                --localstatedir=/var \
+                --with-moduledir=/usr/lib/dovecot/modules \
+                --with-pam \
+                --with-ssl=openssl
+
+    make
+    make DESTDIR=$PKG install
+
+    cp -r $PKG/usr/share/doc/dovecot/example-config/* $PKG/etc/dovecot
+
+    # RC script
+    install -D -m 755 $SRC/dovecot.rc $PKG/etc/rc.d/dovecot
+
+    # PAM
+    install -D -m 644 $SRC/dovecot.pam $PKG/etc/pam.d/dovecot
+
+    # SSL 
+    install -d $PKG/etc/ssl/{certs,private}
+    touch $PKG/etc/ssl/certs/dovecot.pem
+    touch $PKG/etc/ssl/private/dovecot.pem
+    chmod 0600 $PKG/etc/ssl/{certs/dovecot.pem,private/dovecot.pem}
+
+    # directories
+    install -d -m 0750 $PKG/var/lib/dovecot
+    install -d -m 0755 $PKG/var/run/dovecot
+    install -d -m 0750 -o root -g dovecot $PKG/var/run/dovecot/login
+
+    # cleanup
+    rm -r $PKG/usr/share/doc
+    rm $PKG/etc/dovecot/README
+
+}

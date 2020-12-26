@@ -1,0 +1,24 @@
+# Description: A sophisticated Object-Relational DBMS
+# URL:         https://www.postgresql.org
+# Packager:    Markus Heinz, markus dot heinz at uni-dortmund dot de
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  openssl
+
+name=postgresql
+version=13.1
+release=1
+source=(https://ftp.postgresql.org/pub/source/v$version/postgresql-$version.tar.bz2 postgresql)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr --with-openssl
+  make
+  make DESTDIR=$PKG install
+
+  cd doc/src/sgml
+  make DESTDIR=$PKG install-man
+  rm -rf $PKG/usr/share/doc
+
+  install -D -m 755 $SRC/postgresql $PKG/etc/rc.d/postgresql
+}

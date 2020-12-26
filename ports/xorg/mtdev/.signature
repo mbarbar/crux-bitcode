@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndOZSpFbeKiPpV1qysyommdJbiIdBZGa1RXtZffjp8g4f0MUDcxB0jSd/0MWawlmqSpYdVWpqMPfVodlHR/5zVwk=
+SHA256 (Pkgfile) = 3b83f74669c4d02ee7840f98f04d7d8684d252e6ee78153344b146e7f9edcdeb
+SHA256 (.footprint) = 5aa17ddc202fd871cbd63299e895970f0d2c1b3ad615efa27f3c5a69ea48588d
+SHA256 (mtdev-1.1.6.tar.gz) = 1325f389a2f25cd5f5a8ea4d29aad24aa7c3ec30401d679400dd79eb9c0a8dbb

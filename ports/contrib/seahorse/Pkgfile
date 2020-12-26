@@ -1,0 +1,23 @@
+# Description: Seahorse is a GNOME application for managing encryption keys and passwords in the GNOME Keyring
+# URL: https://wiki.gnome.org/Apps/Seahorse/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gcr gnome-keyring gpgme libhandy libpwquality libsecret libsoup openldap xorg-libxinerama
+# Optional: pam_ldap
+
+name=seahorse
+version=3.38.0.1
+release=1
+source=(https://gitlab.gnome.org/GNOME/seahorse/-/archive/$version/seahorse-$version.tar.bz2)
+
+build() {
+  meson setup $name-$version build \
+    --prefix=/usr \
+    --libexecdir=/usr/lib/$name \
+    --buildtype=plain \
+    -D b_ndebug=true \
+    -D help=false \
+    -D key-sharing=false
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+  rm -r $PKG/usr/share/locale
+}

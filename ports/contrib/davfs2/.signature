@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37hjjD+lxDVAeB5Yr4kUxlb3PnrTo2hkrhaWhlwS3j0D+chNl2lLkneu1njJTHuJ5GnYy2toNGbDZt05dkqsmAc=
+SHA256 (Pkgfile) = 907c1dfede58010e958c828ccfd6fb4a91258ba6e76249825fd1370360b82bf7
+SHA256 (.footprint) = e5fe013a18c9862c62f0bdd5d93b944ba45786f1b2e12317e92e02550ef75106
+SHA256 (davfs2-1.6.0.tar.gz) = 2e6b675685bd917772be60f0999ae098c80f79ff20dc131e8fec4547cbb63b50

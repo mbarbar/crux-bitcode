@@ -1,0 +1,17 @@
+# Description: Fake time preload library, report faked system time to programs without having to change the system-wide time.
+# URL: https://github.com/wolfcw/libfaketime
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libfaketime
+version=0.9.8
+release=1
+source=(https://github.com/wolfcw/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	cd libfaketime-$version
+
+	make PREFIX=/usr
+	make PREFIX=/usr DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+}

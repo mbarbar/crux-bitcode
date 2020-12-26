@@ -1,0 +1,21 @@
+# Description: a programming library for color text mode
+# URL: https://pagure.io/newt
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: slang popt python3
+
+name=libnewt
+version=0.52.21
+release=2
+source=(https://releases.pagure.org/newt/newt-$version.tar.gz)
+git=(https://pagure.io/newt.git)
+
+build() {
+  cd newt-$version
+  ./autogen.sh
+  ./configure --prefix=/usr --disable-nls
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/locale
+  # with python2 around, it populates this weird path
+  rm -r $PKG/usr/lib/usr || true
+}

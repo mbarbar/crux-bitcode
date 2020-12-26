@@ -1,0 +1,41 @@
+# Description: Audio recording and editing program
+# URL: https://www.audacityteam.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: jack-audio-connection-kit libid3tag libmad libsoxr lilv soundtouch suil twolame vamp-plugin-sdk wxgtk3
+# Optional: portsmf
+
+name=audacity
+version=2.4.2
+release=1
+source=(https://github.com/$name/$name/archive/Audacity-$version.tar.gz
+	lame.pc)
+
+build() {
+	# included in src/AboutDialog.cpp but not supplied in source tarball
+	touch $name-Audacity-$version/include/RevisionIdent.h
+
+	# cmake can't find libmp3lame without a .pc file
+	cp $SRC/lame.pc $name-Audacity-$version/lame.pc
+
+	export WX_CONFIG=wx-config-gtk3
+	export PKG_CONFIG_PATH="$PWD:$PKG_CONFIG_PATH"
+
+	[ -e '/usr/bin/ccache' ] && PATH=$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')
+
+	cmake -S $name-Audacity-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D BUILD_SHARED_LIBS=True \
+		-Wno-dev \
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+#	install -vDm 644 plug-ins/*.ny -t $PKG/usr/share/$name/plug-ins
+#	install -vDm 644 nyquist/*.lsp -t $PKG/usr/share/$name/nyquist
+
+	rm -r $PKG/usr/share/{doc,locale}
+}

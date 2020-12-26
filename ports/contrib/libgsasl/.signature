@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wENVHDwacIIUXm0CY+XK/mT6ciIRO8k/HJLR2IVVZxa1YDiMr/0ZXA/cImvqoEYiw4LOCpmXaSGUPuJtAW33QY=
+SHA256 (Pkgfile) = 703b71d09112aadba256e60f94d7e569e3a552d7b42f32c8a8e4b274cb296bbf
+SHA256 (.footprint) = f7a1523176955c0f7a97dd7b45eb7d9df777b2b3a835ec1eb24ee2beebcfce16
+SHA256 (libgsasl-1.8.1.tar.gz) = 19e2f90525c531010918c50bb1febef0d7115d620150cc66153b9ce73ff814e6

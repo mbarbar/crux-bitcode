@@ -1,0 +1,27 @@
+# Description: Secure, fast, compliant and very flexible web server
+# URL: http://www.lighttpd.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: libpcre
+
+name=lighttpd
+version=1.4.56
+release=1
+source=(https://download.$name.net/$name/releases-1.4.x/$name-$version.tar.xz \
+        $name.conf \
+        $name.rc)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr --libdir=/usr/lib/$name --with-openssl --with-pcre
+    make
+    make DESTDIR=$PKG install
+
+    install -D -m 644 $SRC/$name.conf $PKG/etc/$name.conf
+    install -D -m 755 $SRC/$name.rc $PKG/etc/rc.d/$name
+    install -d $PKG/var/www/{htdocs,logs}
+    install -d $PKG/var/run
+    install -d $PKG/etc/ssl/certs
+    #touch $PKG/var/run/lighttpd.pid
+    touch $PKG/etc/ssl/certs/lighttpd.pem
+    chmod 0600 $PKG/etc/ssl/certs/lighttpd.pem
+}

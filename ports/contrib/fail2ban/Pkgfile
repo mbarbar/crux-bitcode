@@ -1,0 +1,24 @@
+# Description: Bans IP that makes too many password failures.
+# URL: http://www.fail2ban.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python python3
+
+name=fail2ban
+version=0.11.2
+release=1
+source=(https://github.com/fail2ban/$name/archive/$version/$name-$version.tar.gz
+fail2ban.rc)
+
+build() {
+  cd $name-$version
+  ./fail2ban-2to3
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG --prefix=/usr --skip-build
+  /usr/bin/python3 -mcompileall $PKG
+
+  install -m 0750 -D $SRC/fail2ban.rc $PKG/etc/rc.d/fail2ban
+  find $PKG \(\
+    -iname "*README*" \
+    \) -exec rm '{}' \+
+  rm -r $PKG/usr/share/doc
+}

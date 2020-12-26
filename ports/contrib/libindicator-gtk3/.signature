@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38pexaI0thaAkpaW/p1oVgMNWcbNf6EPDWe6ZALDDhTXkXFoMWQ9XR2BLfRmEPVwc0oSb1+B6ONdtOqLd2y85gw=
+SHA256 (Pkgfile) = e58561ef0ae271fa6023e8851eeb059d0b411f27a9d842157ac39e8e8ac49d02
+SHA256 (.footprint) = 8d73fb616f3ca3ca249399b076c615545d4a3440e46b9f31c8a91c65afb7fd3b
+SHA256 (libindicator-16.10.tar.gz) = 03bb0f6aa4c0eeefd53f040f641e42bdccb8f7b791685bbdefd2cee50d95ca51

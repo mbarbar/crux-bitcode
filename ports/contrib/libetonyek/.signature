@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/GYP/7CFYN7Fz/5z6cgh3bhQ+uIoRW3yb17HJP6SR+M+0R+Y8hAzhmzM9YL6nR/A6VBxFb29QsWB1ibbo//OAE=
+SHA256 (Pkgfile) = 9c1efa4672f572172be07a0a8bd50bb4bff1e4d737bd427fe4eae9c0b96c728d
+SHA256 (.footprint) = 46d39f04e6636a7982c25335c12e465ae0fc81c0d3a42a0f59fe6caa0a91abf7
+SHA256 (libetonyek-0.1.9.tar.xz) = e61677e8799ce6e55b25afc11aa5339113f6a49cff031f336e32fa58635b1a4a
+SHA256 (libetonyek-0.1.9-boost-1.73.patch) = f5adffb233e9844b9c9998214990cc80ce6938f3473d61bd89f11384e9678e6d

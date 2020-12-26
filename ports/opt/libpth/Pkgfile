@@ -1,0 +1,16 @@
+# Description: The GNU Portable Threads library
+# URL:         http://www.gnu.org/software/pth/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=libpth
+version=2.0.7
+release=1
+source=(https://ftp.gnu.org/pub/gnu/pth/pth-$version.tar.gz)
+
+build() {
+    cd pth-$version
+
+    ./configure --prefix=/usr --mandir=/usr/share/man
+    make -j1
+    make -j1 DESTDIR=$PKG install
+}

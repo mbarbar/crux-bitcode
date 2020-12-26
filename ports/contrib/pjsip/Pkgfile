@@ -1,0 +1,51 @@
+# Description:  Multimedia communication library
+# URL: https://www.pjsip.org/
+# Maintainer: Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on: libsrtp pjproject
+
+name=pjsip
+version=2.10
+release=1
+source=(https://github.com/pjsip/pjproject/archive/$version/pjproject-$version.tar.gz)
+
+# Related ports:
+# pjsua: Standalone user-agent.
+# pjsip: The minimum that asterisk needs for res_pjsip.so and friends. Dynamic libraries.
+# pjproject: Libraries with most things enabled. Static and dynamic libraries.
+
+build() {
+  cd pjproject-$version
+
+  export CFLAGS="$CFLAGS -DNDEBUG"
+
+  # webrtc requires SSE2 (disabled temporarily)
+  if [ '' -a -n "$(grep '\bsse2\b' /proc/cpuinfo)" ]; then
+    webrtc="--enable-libwebrtc"
+  else
+    webrtc="--disable-libwebrtc"
+  fi
+
+  ./configure \
+    --prefix=/usr \
+    --enable-shared \
+    --disable-gsm-codec \
+    --with-external-srtp \
+    --disable-g7221-codec \
+    --disable-ilbc-codec \
+    --disable-libyuv \
+    --disable-opencore-amr \
+    --disable-resample \
+    --disable-sound \
+    --disable-speex-codec \
+    --disable-speex-aec \
+    --disable-video \
+    $webrtc
+
+  make dep
+  make
+  make DESTDIR=$PKG install
+
+  # remove static libs
+  rm -f $PKG/usr/lib/*.a
+  rm -f $PKG/usr/lib/{libpjsua.so*,libpjsua2.so*}
+}

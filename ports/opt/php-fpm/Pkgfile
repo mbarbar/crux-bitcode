@@ -1,0 +1,47 @@
+# Description: FastCGI Process Manager for PHP
+# URL:         https://www.php.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  libpcre2 libxml2
+
+name=php-fpm
+version=7.4.13
+release=1
+source=(https://php.net/distributions/php-$version.tar.xz
+        php-fpm)
+
+build () {
+    cd php-$version
+
+    local PHP_CONFIG="
+    --prefix=/usr \
+    --sysconfdir=/etc/php \
+    --localstatedir=/var \
+    --with-config-file-path=/etc/php \
+    --with-config-file-scan-dir=/etc/php/conf.d \
+    --with-zlib \
+    --with-external-pcre \
+    --disable-static --disable-debug \
+    --without-sqlite3 --without-pdo-sqlite \
+    --without-pear"
+
+    EXTENSION_DIR=/usr/lib/php/extensions \
+    ./configure \
+        $PHP_CONFIG \
+        --enable-fpm \
+        --disable-cli \
+        --with-fpm-user=www \
+        --with-fpm-group=www 
+
+    make
+
+    install -d $PKG/usr/{sbin,share/man/man8}
+    install -d $PKG/etc/{rc.d,php/php-fpm.d}
+    
+    install -m 755 sapi/fpm/php-fpm $PKG/usr/sbin/
+    install -m 644 sapi/fpm/php-fpm.conf $PKG/etc/php/
+    install -m 644 sapi/fpm/www.conf $PKG/etc/php/php-fpm.d/
+    install -m 644 sapi/fpm/php-fpm.8 $PKG/usr/share/man/man8/
+    install -m 755 $SRC/php-fpm $PKG/etc/rc.d/
+
+    sed '/;pid =/s/;//' -i $PKG/etc/php/php-fpm.conf
+}

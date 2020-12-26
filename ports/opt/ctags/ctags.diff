@@ -1,0 +1,22 @@
+Index: Makefile.in
+===================================================================
+--- Makefile.in	(revision 663)
++++ Makefile.in	(working copy)
+@@ -140,7 +140,7 @@
+ $(DEST_CTAGS): $(CTAGS_EXEC) $(bindir) FORCE
+ 	$(INSTALL_PROG) $(CTAGS_EXEC) $@  &&  chmod 755 $@
+ 
+-$(DEST_ETAGS):
++$(DEST_ETAGS): $(DEST_CTAGS)
+ 	- if [ -x $(DEST_CTAGS) ]; then \
+ 	    cd $(bindir) && $(SLINK) $(CTAGS_EXEC) $(ETAGS_EXEC); \
+ 	fi
+@@ -155,7 +155,7 @@
+ $(DEST_CMAN): $(man1dir) $(MANPAGE) FORCE
+ 	- $(INSTALL_DATA) $(srcdir)/$(MANPAGE) $@  &&  chmod 644 $@
+ 
+-$(DEST_EMAN):
++$(DEST_EMAN): $(DEST_CMAN)
+ 	- if [ -f $(DEST_CMAN) ]; then \
+ 	    cd $(man1dir) && $(SLINK) $(CMAN) $(EMAN); \
+ 	fi

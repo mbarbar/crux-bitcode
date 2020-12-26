@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UKIjw47FgFkl9KFUrE1bY3fh7Qgtw4m1PvmvOOTb2ahBSXKmjKvifyu+79BeY02SsJKcnfbbEf8X6B6AnwsUQw=
+SHA256 (Pkgfile) = 91e4cc4210c1b1f507c35fc79702264dd0fa49969d9dc365012988bb7e6596ed
+SHA256 (.footprint) = 81231b029011101874440f7e4115ef5d60f91f5803fd943438ccebce9d7a6a28
+SHA256 (iperf-2.0.13.tar.gz) = c88adec966096a81136dda91b4bd19c27aae06df4d45a7f547a8e50d723778ad

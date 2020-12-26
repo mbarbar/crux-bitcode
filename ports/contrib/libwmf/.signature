@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+N6Z05qn0TYnu7+3Hh45KLq+8l/JR00+3pPCcmhgh+LbUweB7kUWOkVCK5KQFyjvV6HGpj0Q7tODzjfhAKGJgA=
+SHA256 (Pkgfile) = 6a6d6edd9660c85f6b5257d57884c1a754e9d75ebe69c547ea047be6ea7fd9b4
+SHA256 (.footprint) = 447c8e1e21d354abf6137c547c602aca5576140c7d071368e03634a56655a2d0
+SHA256 (libwmf-v0.2.12.tar.gz) = 464ff63605d7eaf61a4a12dbd420f7a41a4d854675d8caf37729f5bc744820e2
+SHA256 (libwmf-freetype.patch) = c3b25a70ba55893fdd7637893a3852894260ed94c029f2b3916fc3df3fde32b8

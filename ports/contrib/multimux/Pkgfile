@@ -1,0 +1,16 @@
+# Description: Multipexes up to 8 mono channels into a multi channel wave file.
+# URL: http://www.ibiblio.org/pub/linux/apps/video/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on:
+
+name=multimux
+version=0.2.5.2
+release=1
+source=(http://www.ibiblio.org/pub/linux/apps/video/multimux-$version.tgz)
+
+build() {
+	cd multimux-$version
+	sed -i -e "s|-O2|$CFLAGS|" Makefile
+	make
+	install -D -m755 multimux $PKG/usr/bin/multimux
+}

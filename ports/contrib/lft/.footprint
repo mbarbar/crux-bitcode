@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwsr-xr-x	root/root	usr/bin/lft
+-rwxr-xr-x	root/root	usr/bin/whob
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rwxr-xr-x	root/root	usr/share/man/man8/lft.8.gz
+-rwxr-xr-x	root/root	usr/share/man/man8/whob.8.gz

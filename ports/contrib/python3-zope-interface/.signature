@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF301iwtsKSEhA0cg90HqOzgl1L7Pi7Sgk7Y5zenqrGMtMjTc2m8WGO0Pb9Gq6t8XNWpafNrHwVv1VLGRDuN1mDAI=
+SHA256 (Pkgfile) = a458668df489d30b6bbb338e1b850f7d41f31e499fc2dc3a9281a1598e081b31
+SHA256 (.footprint) = ac0b40fecb16230f018f1c5f54bbac798117f787edf4c4ddd40091371935f8ad
+SHA256 (zope.interface-5.2.0.tar.gz) = 8251f06a77985a2729a8bdbefbae79ee78567dddc3acbd499b87e705ca59fe24

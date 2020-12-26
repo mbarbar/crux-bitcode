@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libnetfilter_log/
+-rw-r--r--	root/root	usr/include/libnetfilter_log/libipulog.h
+-rw-r--r--	root/root	usr/include/libnetfilter_log/libnetfilter_log.h
+-rw-r--r--	root/root	usr/include/libnetfilter_log/linux_nfnetlink_log.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_log.la
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_log.so -> libnetfilter_log.so.1.1.0
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_log.so.1 -> libnetfilter_log.so.1.1.0
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_log.so.1.1.0
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_log_libipulog.la
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_log_libipulog.so -> libnetfilter_log_libipulog.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_log_libipulog.so.1 -> libnetfilter_log_libipulog.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_log_libipulog.so.1.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libnetfilter_log.pc

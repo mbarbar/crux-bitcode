@@ -1,0 +1,28 @@
+# Description: Interactive packet manipulation
+# URL:         https://github.com/secdev/scapy
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  python3-setuptools tcpdump
+
+name=scapy
+version=2.4.4
+release=1
+source=(https://github.com/secdev/$name/archive/v$version/$name-$version.tar.gz
+	scapy.py
+	UTscapy.sh)
+
+build() {
+	cd $name-$version
+
+	# prevent creating temporary build data in /tmp
+	export TMPDIR=$PKGMK_WORK_DIR
+
+	python3 setup.py build
+	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+
+	# install wrappers
+	install -Dm755 $SRC/scapy.py   $PKG/usr/bin/scapy
+	install -Dm755 $SRC/UTscapy.sh $PKG/usr/bin/UTscapy
+
+	# remove junk
+	rm -r $PKG/usr/lib/python3.7/site-packages/scapy-*-py*.egg-info
+}

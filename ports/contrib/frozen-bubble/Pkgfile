@@ -1,0 +1,34 @@
+# Description: Shoot balls and get 3 of the same colour in a group to make them drop.
+# URL: http://www.frozen-bubble.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: p5-compress-bzip2 p5-file-slurp p5-ipc-system-simple p5-locale-maketext-lexicon p5-sdl
+
+name=frozen-bubble
+version=2.2.1
+release=1
+source=(https://github.com/kthakore/frozen-bubble/archive/$version/$name-$version.tar.gz
+	fix-buffer-size-when-formatting-current-date.patch
+	$name.desktop)
+
+build() {
+	cd $name-$version
+
+	# https://bugzilla.redhat.com/show_bug.cgi?id=1541359
+	patch -p1 -i $SRC/fix-buffer-size-when-formatting-current-date.patch
+
+	sed -e 's|-Werror||' -i inc/My/Builder.pm
+
+	perl Build.PL installdirs=vendor
+	perl Build
+	perl Build install destdir="$PKG"
+
+	chmod -R u+w $PKG
+	
+	install -D -m 0644 share/icons/frozen-bubble-icon-64x64.png \
+		$PKG/usr/share/pixmaps/frozen-bubble.png
+
+	install -D -m 0644 $SRC/frozen-bubble.desktop \
+		$PKG/usr/share/applications/frozen-bubble.desktop
+
+	find $PKG \( -name '.packlist' -o -name '*.bs' \) -delete
+}

@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/raqm-version.h
+-rw-r--r--	root/root	usr/include/raqm.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libraqm.a
+-rwxr-xr-x	root/root	usr/lib/libraqm.la
+lrwxrwxrwx	root/root	usr/lib/libraqm.so -> libraqm.so.0.700.0
+lrwxrwxrwx	root/root	usr/lib/libraqm.so.0 -> libraqm.so.0.700.0
+-rwxr-xr-x	root/root	usr/lib/libraqm.so.0.700.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/raqm.pc
+drwxr-xr-x	root/root	usr/share/

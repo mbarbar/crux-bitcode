@@ -1,0 +1,23 @@
+# Description: Extract DVD .vob files.
+# URL: https://github.com/barak/vobcopy
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libdvdnav
+
+name=vobcopy
+version=1.2.0-7
+release=1
+source=(https://github.com/barak/vobcopy/archive/debian/$version/$name-$version.tar.gz
+	vobcopy-1.2.0_hardcode-tries-to-1.patch)
+
+build() {
+	cd $name-debian-$version
+
+	patch -p 1 -i $SRC/vobcopy-1.2.0_hardcode-tries-to-1.patch
+
+	make
+	make DESTDIR="$PKG" PREFIX=/usr/ MANDIR=/usr/share/man install
+
+	rm -r \
+		$PKG/usr/share/man/de \
+		$PKG/usr/share/doc
+}

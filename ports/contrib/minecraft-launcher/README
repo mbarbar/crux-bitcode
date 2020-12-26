@@ -1,0 +1,11 @@
+PACKAGES NOTES
+
+This is the full version of the game, you need a valid account to play it.
+To create an account, connect to http://www.minecraft.net/ and buy the full
+game from the store. You should then be able to log in and play.
+
+The game will auto update and store the updated binary and game configuration
+in ~/.minecraft
+
+For Java 9 users, please check the following link: http://bit.ly/2BAzKUP for
+details about how to run the game properly.

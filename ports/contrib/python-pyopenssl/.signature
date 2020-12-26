@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37eue2zzGWZW7V9Mb8xhKohbzdTo61xLuDmaDl0nALTBzSIFBPPA2/vz2LgNOV8JvMWxFtlt0rMN5FgMXz2sGw0=
+SHA256 (Pkgfile) = 99d7da336bf82316aa3a5023eb0dc7a00c60e536ab120f5a32f8540d91b016ef
+SHA256 (.footprint) = faf546dd6ef188afba432d912e9a1cb637fd184e3fe19c3eb9723b2df10176eb
+SHA256 (pyOpenSSL-19.1.0.tar.gz) = 9a24494b2602aaf402be5c9e30a0b82d4a5c67528fe8fb475e3f3bc00dd69507

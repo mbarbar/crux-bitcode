@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39rBx461G5b2NVy4io1nT3JsCudz9UegxwF00KZwQMivE4uQ0atYQHrViQ7RZnkoFKric2kAM9OFjbK4wIu+Ew0=
+SHA256 (Pkgfile) = 22b81321042f5531dfe3a5e75bcceca6fcbcaac73bf7c91d61e2b5e574a37418
+SHA256 (.footprint) = 2c8cfacc02c4f68b6a24f030a8fbc8e5d30e4081f6c5bca97aa40464eabc5cfc
+SHA256 (librevenge-0.0.4.tar.gz) = a2718efd86000fe769cb6178478af0fd424a9128807361241facd2491bcb772f

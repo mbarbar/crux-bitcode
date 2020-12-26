@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35i3yRAk6ELCHc8hF60labV2Oc9tpqTNR6mYMdFJVP+xmH/NTEYNCjEDyEeMgNcJ2PXMlF7TcackZjrL8x5ijwg=
+SHA256 (Pkgfile) = 1ca2e8f3e17bca86eb61a5861095de921e3c5defa2d6ad0a95c8add80f724524
+SHA256 (.footprint) = fb47d19a8ac984d301842eddfd6a19f62a40a7a4268db1af29889bd95cb71b76
+SHA256 (genshi-0.7.5.tar.gz) = 3c9419a4988a59c566b43e60980a28f63b6850c3fd8e1e513f8ca415be7e5081

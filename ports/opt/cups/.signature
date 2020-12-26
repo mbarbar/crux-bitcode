@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XvMV+Mzxo/TfmbpkS9BtGFkU9YM4terGoLOI7yqJBkCpp4/6zunkqor8euHds1d/jppBF3N8NbLgv5exeCRtAM=
+SHA256 (Pkgfile) = 0b4d0adf3b8fb36c8c3241a10619b7ffed0bc0b19daa5cbbbdb1692d1bd701c5
+SHA256 (.footprint) = 675bb897e7269a0518f11329a16a9683e2d54332c8e62f7b89ccf48e537d012e
+SHA256 (cups-2.3.3-source.tar.gz) = 261fd948bce8647b6d5cb2a1784f0c24cc52b5c4e827b71d726020bcc502f3ee
+SHA256 (cups.rc) = 61a1deceebcee0437e5c3f987621abf24642b6517961336ed4f26384ddab5639
+SHA256 (cups.pam) = 46b6b6e42e77c82435c0680405a45c66a37ec3d727af6aa6f036dd1d60215479

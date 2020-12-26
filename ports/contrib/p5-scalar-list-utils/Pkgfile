@@ -1,0 +1,26 @@
+# Description: A selection of general-utility list subroutines
+# URL: https://metacpan.org/release/Scalar-List-Utils
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-scalar-list-utils
+version=1.55
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-$version.tar.gz)
+
+build() {
+  cd Scalar-List-Utils-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+    PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='"$PKG"'" \
+    PERL_MB_OPT="--installdirs vendor --destdir '"$PKG"'" \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+  rm -fr $PKG/usr/share/man
+}

@@ -1,0 +1,54 @@
+
+REQUIREMENTS
+
+   1. Remove exim.  Postfix and exim can NOT coexist.     
+
+   2. Group "postdrop" MUST exist and MUST be empty.
+
+PRE-INSTALL
+
+   pkgrm exim
+   groupadd postdrop
+
+   NOTICE: If upgrading from 1.x.x / 2.0 / 2.1 series: STOP postfix
+     before update. 
+
+     AFTER upgrading from an older release DO NOT copy the old
+     master.cf/main.cf files over the new files. Instead, you MUST
+     let the Postfix installation procedure update the existing
+     configuration files with new service entries.
+
+     Please consult postfix release notes on Postfix website for
+     further update details.
+
+POST-INSTALL
+
+   cd /etc/postfix
+
+   sh post-install \
+       manpage_directory=/usr/share/man \
+       command_directory=/usr/sbin \
+       config_directory=/etc/postfix \
+       setgid_group=postdrop \
+       mail_owner=mail \
+       upgrade-package
+
+   sh post-install \
+       command_directory=/usr/sbin \
+       config_directory=/etc/postfix \
+       setgid_group=postdrop \
+       mail_owner=mail \
+       create-missing
+
+   Rebuild hash maps:
+
+       /usr/sbin/postalias /etc/postfix/aliases
+       /usr/sbin/postmap hash:/etc/postfix/{virtual,relocated,access,transport}
+
+MISCELLANEOUS
+
+  The packager of this port (Victor) also supplied an example
+  configuration and some notes. I've separated them from this port. You
+  can get them here:
+
+    http://hometux.de/crux/postfix_victor.tar.gz

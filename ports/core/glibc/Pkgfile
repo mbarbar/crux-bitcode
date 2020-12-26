@@ -1,0 +1,60 @@
+# Description: The C library used in the GNU system
+# URL:         http://www.gnu.org/software/libc/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=glibc
+version=2.28
+release=2
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
+	http://www.kernel.org/pub/linux/kernel/v4.x/linux-4.19.24.tar.xz \
+	glibc-2.28-1.patch \
+	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
+
+build() {
+	# install kernel headers
+	cd linux-4.19.24
+	make mrproper
+	make headers_check
+	make INSTALL_HDR_PATH=$PKG/usr headers_install
+	chown root:root $PKG/usr
+
+	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/$name-$version-1.patch
+
+	mkdir $SRC/build
+	cd $SRC/build
+	../$name-${version}/configure --prefix=/usr \
+		--libexecdir=/usr/lib \
+		--with-headers=$PKG/usr/include \
+		--enable-kernel=4.9 \
+		--enable-add-ons \
+		--enable-static-nss \
+		--enable-stack-protector=strong \
+		--enable-obsolete-rpc \
+		--enable-obsolete-nsl \
+		--disable-profile \
+		--disable-werror \
+		--without-gd \
+		--enable-multi-arch
+	make 
+	#make check
+	make install_root=$PKG install
+
+	install -m 0644 $SRC/$name-${version:0:4}/nscd/nscd.conf $PKG/etc 
+	install -d $PKG/var/{db,run}/nscd
+
+	install -m 0644 $SRC/{hosts,resolv.conf,nsswitch.conf,host.conf,ld.so.conf} $PKG/etc
+
+	# install needed headers
+	install -d $PKG/usr/include/rpcsvc
+	install -m 0644 $SRC/$name-${version:0:4}/nis/rpcsvc/yp* $PKG/usr/include/rpcsvc
+
+	ln -sf ../usr/share/zoneinfo/UTC $PKG/etc/localtime
+	install -d $PKG/etc/ld.so.conf.d $PKG/usr/lib/locale
+	touch $PKG/etc/ld.so.cache
+
+	rm -rf $PKG/usr/share/{info,locale} \
+		$PKG/usr/bin/tzselect \
+		$PKG/usr/sbin/z{dump,ic}
+	find $PKG -name "*install.cmd" -delete
+	find $PKG -name ".\install" -delete
+}

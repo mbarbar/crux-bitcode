@@ -1,0 +1,33 @@
+# Description: Perl bindings for subversion
+# URL:         https://subversion.apache.org
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  subversion swig
+
+name=subversion-perl
+version=1.14.0
+release=1
+source=(https://archive.apache.org/dist/subversion/subversion-$version.tar.bz2)
+
+build() {
+	cd subversion-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-static \
+		--disable-mod-activation
+
+	make swig-pl-lib
+	(cd subversion/bindings/swig/perl/native; perl Makefile.PL)
+	sed -i 's,LD_RUN_PATH="$(LD_RUN_PATH)" ,,' \
+		subversion/bindings/swig/perl/native/Makefile{,.client,.delta,.fs} \
+		subversion/bindings/swig/perl/native/Makefile{.ra,.repos,.wc}
+	touch subversion/bindings/swig/perl/native/Makefile*
+	make -j1 -C subversion/bindings/swig/perl/native
+
+	make DESTDIR=$PKG install-swig-pl-lib
+	make -C subversion/bindings/swig/perl/native DESTDIR=$PKG install
+
+	rm -rf $PKG/"$(eval $(perl -V:privlib) && echo $privlib)"
+	find $PKG \( -empty -o -name '.packlist' \) -delete
+}

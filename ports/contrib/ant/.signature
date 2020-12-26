@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30/oECG/3ItxULold9NnPGVrFsxTphS/DQTqci/M+Euta+BfOuRf8WTJnaObnUhIBxR+2nvp66WLn/jwlHrbKws=
+SHA256 (Pkgfile) = f4da07f571f4af091234d0586a3d664a016b83e343ba70533b94e81c7c41eadd
+SHA256 (.footprint) = 12c3d185e494867aafcde175bb3f702fa4ba9fd9c17753c8ba16def4a28290d0
+SHA256 (apache-ant-1.10.9-src.tar.xz) = 4b2008cc60fefd424b05567e9d43a071302865d5fd8b01a807e15e381b557ec2
+SHA256 (ant.conf) = df69b76897e52764ad65e2536ce73dc98f4df014c88551dcdfc802c10ec26ee6

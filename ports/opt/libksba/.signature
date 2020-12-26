@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Uyie69MBXpu8OqakX+87tyoyRJTI1KrmqXU+zunVz1ETdLntpEc4KOnNsZaduIfRhNShYUGNytNCVeZTvUUQAA=
+SHA256 (Pkgfile) = 272026879f222582a55029907803e0573bcea4afc9151b78cf3faf672edea48c
+SHA256 (.footprint) = 83914e43c68dcbfbd2223c775bfc5f957ca09add989cb9a528c90c0e883b2fa4
+SHA256 (libksba-1.5.0.tar.bz2) = ae4af129216b2d7fdea0b5bf2a788cd458a79c983bb09a43f4d525cc87aba0ba

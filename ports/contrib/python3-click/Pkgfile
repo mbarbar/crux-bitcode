@@ -1,0 +1,18 @@
+# Description: A simple wrapper around optparse for powerful command line utilities
+# URL: http://click.pocoo.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-click
+version=7.1.2
+release=1
+source=(https://github.com/pallets/click/archive/$version/click-$version.tar.gz)
+
+build() {
+  cd click-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --skip-build \
+    --root=$PKG \
+    --optimize=1
+}

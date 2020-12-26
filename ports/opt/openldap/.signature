@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QYdcBJCjMb7pC8Oww2p99L7Dk/VJbZjqN49aNG+cSd82RmzvDDTmzRXn/jszZ9m6qia+AvxT1Np2l7ZzmJbkg4=
+SHA256 (Pkgfile) = fd42f97ba77710b5466664c9c4b2318ea22830bec3ed3fcaeffeae96266a8c31
+SHA256 (.footprint) = 16849516ffe362329680380a8453f69f69b8684b3ead7c94f826cb8cd7d20021
+SHA256 (openldap-2.4.56.tgz) = 25520e0363c93f3bcb89802a4aa3db33046206039436e0c7c9262db5a61115e0
+SHA256 (openldap-config.patch) = 4cc73b3acb468926f372b34e83ce9905ea026377b76cb5412d62ed4f483ff20c
+SHA256 (slapd) = 944b82221355957485c9a4ccb34bc1e85631cc1bdd9ae480f70a3ab84780adc4

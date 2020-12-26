@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32nM2vTI0kRmiSzv2f/uKv7w1LgW1e50QDHJxo8hEkeVVlh0rR4NPXezfm30X6eHacxj8qzSDXxUJArkMLYeZQ8=
+SHA256 (Pkgfile) = 27d5f2c4b464a051f2cb94a62a594d67aeeedaee2f38a0f0d4a7a0b15db52e99
+SHA256 (.footprint) = 65948f6df1182bb97a0b1b1a484c973902260900ebdb147fb0518399ab4a1b30
+SHA256 (154730b5a2b58a4212e419b498476fcb5a60de7b.tar.gz) = 78127d836d75d635037d09cead6709f3d0686d75e7fc89bf780527d9dba8b806
+SHA256 (nss_ldap-249-sasl-compile.patch) = 3da93087461fb970d5da9fe6b169f5493ca83ae2149cb03be9e8486bfcf437d6

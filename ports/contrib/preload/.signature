@@ -1,0 +1,9 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3w1cnquL7VpCk4NX/mSE9HN0XzpIYm8OdP9ix4w+TXgMFGQgnYpT85maCsaGLXQTRQ1figi9QU9ygQjyBnXMbgE=
+SHA256 (Pkgfile) = e6431613eff454d84076ced616f4bff7d5fdf769daa6c117273db59f8e337598
+SHA256 (.footprint) = f7d1a1f8bfbc6fd058ec38b56bd9036a1095a234bc4c08680994d849e8aa4276
+SHA256 (preload-0.6.4.tar.gz) = d0a558e83cb29a51d9d96736ef39f4b4e55e43a589ad1aec594a048ca22f816b
+SHA256 (rc.preload) = 37f4087cef6fac3a76b7749f5200842b3079c598ff09dd9f4f1e0a3b87488b40
+SHA256 (preload-0.6.3-memcached-default.patch) = 6e7afdced2c174eae3c8c4ed348dc9597edfcb56d7e6d6135efd812daca0c16f
+SHA256 (preload-0.6.3-statedir-fix.patch) = 402ee20efb354cb8dadad915f55a1d97629c19aaf9c521f8200cfed34fb7321c
+SHA256 (preload-0.6.3-check-help2man.patch) = 69c2d0010238b0789f2680c439690c5ba9013019392b1717a781fe41c0e1d170

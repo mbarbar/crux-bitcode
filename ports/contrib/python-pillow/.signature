@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31WzjR7UZH9XW+CXOIePswVSvq+IhAXAAxVGkQjLKLivX2s7oGNiJKHAMMoGodlTcI5/VRYMwFXnJ45ka3ALCAk=
+SHA256 (Pkgfile) = 845dcef0a3c86e50934f110519c8d676c710a6ebde35fc2ce544ffc76c6c15b8
+SHA256 (.footprint) = 6e7a28291ce4a4540058e59e0a2ce25427482305fbc9d8bfb80af595c0797677
+SHA256 (Pillow-6.2.2.tar.gz) = db9ff0c251ed066d367f53b64827cc9e18ccea001b986d08c265e53625dab950

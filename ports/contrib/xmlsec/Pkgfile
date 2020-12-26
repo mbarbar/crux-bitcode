@@ -1,0 +1,18 @@
+# Description: XML Security Library is a C library based on LibXML2
+# URL: https://www.aleksey.com/xmlsec/index.html
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gnutls libgcrypt libidn2 libtool libxslt nss openssl
+
+name=xmlsec
+version=1.2.31
+release=1
+source=(https://www.aleksey.com/xmlsec/download/"$name"1-$version.tar.gz)
+
+build() {
+  cd "$name"1-$version
+  ./configure --prefix=/usr \
+    --disable-nls
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/doc
+}

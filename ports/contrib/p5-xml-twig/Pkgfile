@@ -1,0 +1,27 @@
+# Description:  Perl module for processing huge XML documents in tree mode
+# URL:          https://metacpan.org/pod/XML::Twig
+# Maintainer:   John Vogel, jvogel4 at stny dot rr dot com
+# Packager:     Alexandr Savca, alexandr dot savca89 at gmail dot com
+# Depends on:   p5-xml-parser
+
+name=p5-xml-twig
+version=3.52
+release=1
+source=(http://search.cpan.org/CPAN/authors/id/M/MI/MIROD/XML-Twig-$version.tar.gz)
+
+build() {
+        cd XML-Twig-$version
+        perl Makefile.PL -y
+
+        make OPTIMIZE="$CFLAGS"
+        make DESTDIR=$PKG install
+
+        find $PKG -name perllocal.pod   \
+            -o -name "*.bs"             \
+            -o -name .packlist          \
+            -o -name autosplit.ix       \
+        | xargs rm -f
+
+        find $PKG -depth -type d -empty -delete
+        find $PKG -type f -a -perm -u-w | xargs chmod u+w
+}

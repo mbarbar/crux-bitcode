@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QRl1cE5mBQmqQNSlU57LtprGXruQFm9eEMafOlSDucufJ8r1cEn5Vm5blgqJvGRxatEdaoUHfsbq6KqJV+ZkA8=
+SHA256 (Pkgfile) = 1219a63e76486dc4f4c275c4efa01b18f5484acefa1e991a31349c5de5632b09
+SHA256 (.footprint) = 04b02b54e056e57a6ee7039a34791e5ad87df1550519223ecf8fe0660bfe8ab6
+SHA256 (qpdf-10.0.4.tar.gz) = b191dc4af4ea4630cdc404a4ee95a0f21c12f56ecc4ae045f04425464d7c696e

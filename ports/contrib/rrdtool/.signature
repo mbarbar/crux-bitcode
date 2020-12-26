@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39lIpPYTdzcilkw5fIFUGjMNNxsPunF+8W8wAzNIKml9rF5jy6oPiU37fwnHzVWWayXGG5w+mt8EvMGGzH3DxQI=
+SHA256 (Pkgfile) = 509db2cdc987c668d1eb3ee6bb7044c8d4db46d1c2131191c291c393a051501f
+SHA256 (.footprint) = c6c8ea3c5cb0e1d9fed8df5815d55c1575a275d03881c08059ef0779f7601c9b
+SHA256 (rrdtool-1.7.2.tar.gz) = a199faeb7eff7cafc46fac253e682d833d08932f3db93a550a4a5af180ca58db

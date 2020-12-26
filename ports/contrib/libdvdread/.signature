@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wvJnn4Tf9QTdaz+XgKLI4cV3cNoseF0rF4Bx9WYGhUlOCsVq7BpaMwN3LD0Pv3KNbudJ+5flsHAdJTQEKZABQw=
+SHA256 (Pkgfile) = 8565f001e106f462136dc19089b84d186a7443a6b2a64d85a368266a31054a35
+SHA256 (.footprint) = fcd07c66e1becd75878dd676881d099871163632cd1e64232666f0a8d6ff465d
+SHA256 (libdvdread-6.1.1.tar.bz2) = 3e357309a17c5be3731385b9eabda6b7e3fa010f46022a06f104553bf8e21796

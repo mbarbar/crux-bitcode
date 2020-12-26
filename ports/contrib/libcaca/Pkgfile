@@ -1,0 +1,26 @@
+# Description: Color AsCii Art library
+# URL: http://caca.zoy.org/wiki/libcaca
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: xorg-libx11
+
+name=libcaca
+version=0.99.beta19
+release=1
+source=(http://libcaca.zoy.org/files/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure \
+    --prefix=/usr \
+    --enable-shared \
+    --disable-doc \
+    --disable-cxx \
+    --disable-gl \
+    --disable-csharp \
+    --disable-python \
+    --disable-slang
+
+  make
+  make DESTDIR=$PKG install
+}

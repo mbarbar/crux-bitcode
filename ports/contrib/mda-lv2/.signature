@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wsHwnC+GSXCPkNqThSaA7m9OACpKkGS5yRjtIoZjwAUlYzhcCUVWzn1RjQymEwQhm59eghKwabF5AMt41BB5gc=
+SHA256 (Pkgfile) = 019bf4405683470658e3ab648261e788fddf12bef109299ab769b77ce857833b
+SHA256 (.footprint) = bc8815b7baa5b4ee67fbd2eea3a2bcdbe7b2a826854f9eff9dbb01088676c634
+SHA256 (mda-lv2-1.2.4.tar.bz2) = a81a00e19594881174526cd6ee7a3e301236e0ca25191982f5c9af5eb8d96ca8

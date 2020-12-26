@@ -1,0 +1,18 @@
+# Description: AAC audio decoding library.
+# URL: https://www.audiocoding.com/faad2.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=faad2
+version=2.10.0
+release=1
+source=(https://github.com/knik0/$name/archive/${version//./_}/${name}_${version//./_}.tar.gz)
+
+build() {
+	cd $name-${version//./_}
+
+	./bootstrap
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

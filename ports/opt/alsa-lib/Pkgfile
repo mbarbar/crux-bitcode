@@ -1,0 +1,17 @@
+# Description: ALSA libraries
+# URL: http://www.alsa-project.org/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=alsa-lib
+version=1.2.4
+release=1
+source=(ftp://ftp.alsa-project.org/pub/lib/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+		--disable-python
+	make
+	make DESTDIR=$PKG install
+	rm -f $PKG/usr/share/alsa/alsa.conf.d/README
+}

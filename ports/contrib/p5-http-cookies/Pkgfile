@@ -1,0 +1,17 @@
+# Description: HTTP cookie jars
+# URL: https://metacpan.org/pod/HTTP::Cookies
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-http-date p5-http-message
+
+name=p5-http-cookies
+version=6.09
+release=1
+source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-$version.tar.gz)
+
+build() {
+  cd HTTP-Cookies-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

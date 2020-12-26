@@ -1,0 +1,20 @@
+# Description: A free DTS Coherent Acoustics decoder. (early development stage)
+# URL: http://www.videolan.org/developers/libdca.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libdca
+version=0.0.7
+release=1
+source=(https://download.videolan.org/pub/videolan/$name/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./bootstrap
+	./configure --prefix=/usr --disable-static
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -f $PKG/usr/lib/libdts.a
+}

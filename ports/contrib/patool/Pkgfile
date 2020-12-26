@@ -1,0 +1,18 @@
+# Description: patool is a portable command line archive file manager
+# URL: https://github.com/wummel/patool
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=patool
+version=1.12
+release=2
+source=(https://github.com/wummel/patool/archive/upstream/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-upstream-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG \
+    --prefix=/usr \
+    --optimize=1 \
+    --skip-build
+}

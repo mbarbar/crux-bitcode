@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+gOaX5kSnOszj8o3TZbTZA/LZTZahfUhVVxihS6rwVIytq/Y947GTlpEER64LTUEN09LZmA1zBfWEm3VYWx1gs=
+SHA256 (Pkgfile) = 6de9a84623fd60631db27230fffdf880c21bddeac9f7b4f76cacd0695719851b
+SHA256 (.footprint) = 7b648f8f0d2d6ae138ba46c41c5eb14aa88949a8222028513a54f31b77e21d0f
+SHA256 (liblo-0.31.tar.gz) = 2b4f446e1220dcd624ecd8405248b08b7601e9a0d87a0b94730c2907dbccc750

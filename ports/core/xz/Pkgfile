@@ -1,0 +1,16 @@
+# Description: Compression utility using the lzma algorithm, successor of lzma-utils
+# URL:         https://tukaani.org/xz/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=xz
+version=5.2.5
+release=1
+source=(https://tukaani.org/xz/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr --disable-nls 
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share/doc/
+}

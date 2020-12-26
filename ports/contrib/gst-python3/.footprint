@@ -1,0 +1,16 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstpython.so
+drwxr-xr-x	root/root	usr/lib/python3.7/
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/gi/
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/gi/overrides/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/gi/overrides/Gst.py
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/gi/overrides/GstPbutils.py
+drwxr-xr-x	root/root	usr/lib/python3.7/site-packages/gi/overrides/__pycache__/
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/gi/overrides/__pycache__/Gst.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/gi/overrides/__pycache__/Gst.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/gi/overrides/__pycache__/GstPbutils.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/site-packages/gi/overrides/__pycache__/GstPbutils.cpython-37.pyc
+-rwxr-xr-x	root/root	usr/lib/python3.7/site-packages/gi/overrides/_gi_gst.cpython-37m-x86_64-linux-gnu.so

@@ -1,0 +1,22 @@
+# Description: A Python module for determining appropriate platform-specific dirs.
+# URL: https://pypi.python.org/pypi/packaging/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3
+
+name=python3-appdirs
+version=1.4.4
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:8:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+
+	/usr/bin/python3 setup.py build
+
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+
+	# remove sdist metadata, as wheel metadata will be used with python3-pip
+	find $PKG/usr/lib/python*/site-packages/ -maxdepth 1 -type f \
+		-name "${name#*-}-$version-py*.egg-info" -delete
+}

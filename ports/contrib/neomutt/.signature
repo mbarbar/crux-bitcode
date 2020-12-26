@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33alWncjD5o3/+oy4D+nDDKxv3OMWakaJcq9SLn0v4rKKDJQm7Cdsia0ItsLPeSn0bJ5gez40gY+mBpne8rHMgA=
+SHA256 (Pkgfile) = 6a4af3122be3676557b14287cd5aad94d2d18d5768135df7164af6ad0055a64c
+SHA256 (.footprint) = 4b8b646e2de76fe03176e42efe0c768c5134d4c6ba4086f0c6c864ae2db092b7
+SHA256 (neomutt-20201127.tar.gz) = 29ac51a5ac5b4524dfdbb5ac78b59a1cc28c1090c541fb3da7bc86f838ab64cd

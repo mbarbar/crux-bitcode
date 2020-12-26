@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33QvvWXVr0iTg3jg0UpQtupsCQW2HKt7j0+XX+RX3DcH4ogjrA188oXxauJOKmpeZbOBbvhY4qo1BhKYzxE0swo=
+SHA256 (Pkgfile) = 937fe8de9de7a419cf7c922eeecc3172b70388be7170a434e4e4cd467acf4a8e
+SHA256 (.footprint) = 86035cdb9b8471cada09def8a48c20a01285f421ea0652eea3f10f86b1921b44
+SHA256 (gparted-1.1.0.tar.gz) = e2fe7b7afbc07e930491c00a05200c2682cc0576ca8f6da87245a000257f5924

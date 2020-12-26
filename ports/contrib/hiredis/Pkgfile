@@ -1,0 +1,16 @@
+# Description: minimalistic C client library for the redis database
+# URL:         https://github.com/redis/hiredis
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=hiredis
+version=1.0.0
+release=1
+source=(https://github.com/redis/hiredis/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  make
+  make PREFIX=/usr DESTDIR=$PKG install
+}

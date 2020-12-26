@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# /etc/rc.d/stunnel: start/stop stunnel daemon
+#
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/sbin/stunnel
+NAME=stunnel
+PID=/var/run/stunnel/stunnel.pid
+CFG=/etc/stunnel.conf
+
+CRT=/etc/ssl/certs/stunnel.crt
+KEY=/etc/ssl/keys/stunnel.key
+
+case $1 in
+start)
+	if [ ! -s $KEY -o ! -s $CRT ]; then 
+		/usr/bin/mksslcert $KEY $CRT
+	fi
+	$SSD --start --pidfile $PID --exec $PROG -- $CFG
+	;;
+stop)
+	$SSD --stop --retry 10 --name $NAME --pidfile $PID
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	$SSD --status --name $NAME --pidfile $PID
+	case $? in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|status]"
+	;;
+esac
+# End of file

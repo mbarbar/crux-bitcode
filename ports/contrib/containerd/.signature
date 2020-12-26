@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xdogemqPbXHSIm4Z+AIO205goeTWFJyghmtt1nZBr8qiS3a6A0RGT6eFHgQ0IOz4in9Zyi1en9cpFvUNZAPMwc=
+SHA256 (Pkgfile) = 81d404c737dfb83d43b102711aa5622bb9cc7d72bb43f747727661ac7352281f
+SHA256 (.footprint) = fcb21e77eaefae687cbea41bdacbe47a1191c052138040fc15368af8bf7b436c
+SHA256 (containerd-1.3.7.tar.xz) = fc35912adb1bae8a053221efaa13aa6763997d6c4fbd2c0faa2adf6fe802da97

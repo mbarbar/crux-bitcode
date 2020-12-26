@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF315TFkWWLvjZ8loLFSN6zMyJ6582ifM+AmTHiCRAVgGSQrp4lxDoWSoBIMMY6PfuJF7awHlzeHQMhxTNlbIdBg4=
+SHA256 (Pkgfile) = 27e96187d3ebe02b04fe2c15822e8a0ecced581b89db439138572c4b27d20ab3
+SHA256 (.footprint) = 92cc0a35ffe0b36abeb6d1a68f1b5c2989ee4916dc6437ae5319fe7c02b31469
+SHA256 (intel-vaapi-driver-2.4.1.tar.bz2) = 0081fce08eb3a83f7d99c3b853c8fdfa0af437b8f5b0fb7c66faeb83bcbe0c19

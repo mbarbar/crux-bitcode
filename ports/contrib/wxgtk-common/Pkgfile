@@ -1,0 +1,43 @@
+# Description: Common libraries and headers for wxgtk2 and wxgtk3
+# URL: http://www.wxwidgets.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtk glu gst-plugins-base
+
+name=wxgtk-common
+version=3.0.5.1
+release=1
+source=(https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2
+	make-abicheck-non-fatal.patch)
+
+build() {
+	cd wxWidgets-$version
+
+	# C++ ABI check is too strict and breaks with GCC 5.1
+	# https://bugzilla.redhat.com/show_bug.cgi?id=1200611
+	patch -p1 -i $SRC/make-abicheck-non-fatal.patch
+
+	./configure \
+		--prefix=/usr \
+		--libdir=/usr/lib \
+		--with-gtk=2 \
+		--with-opengl \
+		--enable-unicode \
+		--enable-graphics_ctx \
+		--enable-mediactrl \
+		--enable-webview \
+		--with-regex=builtin \
+		--with-libpng=sys \
+		--with-libxpm=sys \
+		--with-libjpeg=sys \
+		--with-libtiff=sys \
+		--disable-precomp-headers
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/{bin/wx-config,lib/{wx,libwx_gtk*}}
+
+	rm -r \
+		$PKG/usr/share/locale \
+		$PKG/usr/share/bakefile
+}

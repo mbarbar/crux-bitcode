@@ -1,0 +1,44 @@
+# Description: SQL database server
+# URL:         https://www.mysql.com
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  ncurses zlib openssl cmake libaio
+
+name=mysql
+version=5.7.32
+release=1
+source=(https://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-5.7/$name-boost-$version.tar.gz \
+        my.cnf mysqld)
+
+build () {
+
+    export CXXFLAGS+=" -Wno-deprecated-declarations"
+
+    cmake -S $name-$version -B build \
+        -D CMAKE_BUILD_TYPE=Release \
+        -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+        -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D BUILD_CONFIG=mysql_release \
+        -D INSTALL_LAYOUT=RPM \
+        -D SYSCONFDIR=/etc \
+        -D INSTALL_LIBDIR=lib \
+        -D INSTALL_PLUGINDIR=lib/mysql/plugin \
+        -D INSTALL_MANDIR=share/man \
+        -D INSTALL_SECURE_PRIVDIR=/var/lib/mysql-files \
+        -D WITH_BOOST=$name-$version/boost \
+        -D WITH_LIBWRAP=0 \
+        -D WITH_SSL=system \
+        -D WITH_ZLIB=system \
+        -Wno-dev
+
+    cmake --build build
+    DESTDIR=$PKG cmake --install build
+
+    rm -r $PKG/usr/share/{mysql-test,info}
+    rm $PKG/usr/share/mysql/charsets/README
+    find $PKG/usr/share/mysql/* -type d ! -name english ! -name charsets | xargs rm -rf {} \;
+
+    install -d -m 700 -o mysql -g mysql $PKG/var/{{lib,log,run}/mysql,lib/mysql-files}
+    install -D -m 755 $SRC/mysqld $PKG/etc/rc.d/mysqld
+    install -m 600 $SRC/my.cnf $PKG/etc
+}

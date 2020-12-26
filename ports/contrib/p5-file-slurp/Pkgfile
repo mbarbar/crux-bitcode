@@ -1,0 +1,21 @@
+# Description: Read/write/append files quickly
+# URL: https://metacpan.org/release/File-Slurp
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-file-slurp
+_realname=File-Slurp
+_author=CAPOEIRAB
+version=9999.32
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+	make DESTDIR="$PKG" install
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

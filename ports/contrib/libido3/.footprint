@@ -1,0 +1,27 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libido3-0.1/
+drwxr-xr-x	root/root	usr/include/libido3-0.1/libido/
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idocalendarmenuitem.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idoentrymenuitem.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idomessagedialog.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idorange.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idoscalemenuitem.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idoswitchmenuitem.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/idotimeline.h
+-rw-r--r--	root/root	usr/include/libido3-0.1/libido/libido.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/girepository-1.0/
+-rw-r--r--	root/root	usr/lib/girepository-1.0/Ido3-0.1.typelib
+-rwxr-xr-x	root/root	usr/lib/libido3-0.1.la
+lrwxrwxrwx	root/root	usr/lib/libido3-0.1.so -> libido3-0.1.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libido3-0.1.so.0 -> libido3-0.1.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libido3-0.1.so.0.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libido3-0.1.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/gir-1.0/
+-rw-r--r--	root/root	usr/share/gir-1.0/Ido3-0.1.gir
+drwxr-xr-x	root/root	usr/share/vala/
+drwxr-xr-x	root/root	usr/share/vala/vapi/
+-rw-r--r--	root/root	usr/share/vala/vapi/Ido3-0.1.vapi

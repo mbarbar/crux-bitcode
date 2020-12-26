@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "`getent group clamav`" ]; then
+	/usr/sbin/groupadd -r clamav
+fi
+
+if [ -z "`getent passwd clamav`" ]; then
+	/usr/sbin/useradd -r -g clamav -d /var/empty -s /bin/false -c "ClamAV" clamav
+	/usr/bin/passwd -l clamav
+fi

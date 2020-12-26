@@ -1,0 +1,177 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/ld.so.conf.d/
+-rw-r--r--	root/root	etc/ld.so.conf.d/ffmpeg3.conf
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/ffmpeg3/
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libavcodec/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/avcodec.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/avdct.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/avfft.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/d3d11va.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/dirac.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/dv_profile.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/dxva2.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/jni.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/mediacodec.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/qsv.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/vaapi.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/vda.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/vdpau.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/version.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/videotoolbox.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/vorbis_parser.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavcodec/xvmc.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libavdevice/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavdevice/avdevice.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavdevice/version.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libavfilter/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavfilter/avfilter.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavfilter/avfiltergraph.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavfilter/buffersink.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavfilter/buffersrc.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavfilter/version.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libavformat/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavformat/avformat.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavformat/avio.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavformat/version.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libavresample/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavresample/avresample.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavresample/version.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libavutil/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/adler32.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/aes.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/aes_ctr.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/attributes.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/audio_fifo.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/avassert.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/avconfig.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/avstring.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/avutil.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/base64.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/blowfish.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/bprint.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/bswap.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/buffer.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/camellia.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/cast5.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/channel_layout.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/common.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/cpu.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/crc.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/des.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/dict.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/display.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/downmix_info.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/error.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/eval.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/ffversion.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/fifo.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/file.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/frame.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hash.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hmac.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_cuda.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_d3d11va.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_drm.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_dxva2.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_qsv.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_vaapi.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_vdpau.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/hwcontext_videotoolbox.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/imgutils.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/intfloat.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/intreadwrite.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/lfg.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/log.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/lzo.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/macros.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/mastering_display_metadata.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/mathematics.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/md5.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/mem.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/motion_vector.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/murmur3.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/opt.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/parseutils.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/pixdesc.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/pixelutils.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/pixfmt.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/random_seed.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/rational.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/rc4.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/replaygain.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/ripemd.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/samplefmt.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/sha.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/sha512.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/spherical.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/stereo3d.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/tea.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/threadmessage.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/time.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/timecode.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/timestamp.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/tree.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/twofish.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/version.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libavutil/xtea.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libpostproc/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libpostproc/postprocess.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libpostproc/version.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libswresample/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libswresample/swresample.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libswresample/version.h
+drwxr-xr-x	root/root	usr/include/ffmpeg3/libswscale/
+-rw-r--r--	root/root	usr/include/ffmpeg3/libswscale/swscale.h
+-rw-r--r--	root/root	usr/include/ffmpeg3/libswscale/version.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/ffmpeg3/
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libavcodec.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavcodec.so -> libavcodec.so.57.107.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavcodec.so.57 -> libavcodec.so.57.107.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libavcodec.so.57.107.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libavdevice.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavdevice.so -> libavdevice.so.57.10.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavdevice.so.57 -> libavdevice.so.57.10.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libavdevice.so.57.10.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libavfilter.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavfilter.so -> libavfilter.so.6.107.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavfilter.so.6 -> libavfilter.so.6.107.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libavfilter.so.6.107.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libavformat.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavformat.so -> libavformat.so.57.83.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavformat.so.57 -> libavformat.so.57.83.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libavformat.so.57.83.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libavresample.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavresample.so -> libavresample.so.3.7.0
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavresample.so.3 -> libavresample.so.3.7.0
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libavresample.so.3.7.0
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libavutil.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavutil.so -> libavutil.so.55.78.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libavutil.so.55 -> libavutil.so.55.78.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libavutil.so.55.78.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libpostproc.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libpostproc.so -> libpostproc.so.54.7.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libpostproc.so.54 -> libpostproc.so.54.7.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libpostproc.so.54.7.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libswresample.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libswresample.so -> libswresample.so.2.9.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libswresample.so.2 -> libswresample.so.2.9.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libswresample.so.2.9.100
+-rw-r--r--	root/root	usr/lib/ffmpeg3/libswscale.a
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libswscale.so -> libswscale.so.4.8.100
+lrwxrwxrwx	root/root	usr/lib/ffmpeg3/libswscale.so.4 -> libswscale.so.4.8.100
+-rwxr-xr-x	root/root	usr/lib/ffmpeg3/libswscale.so.4.8.100
+drwxr-xr-x	root/root	usr/lib/ffmpeg3/pkgconfig/
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libavcodec.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libavdevice.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libavfilter.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libavformat.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libavresample.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libavutil.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libpostproc.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libswresample.pc
+-rw-r--r--	root/root	usr/lib/ffmpeg3/pkgconfig/libswscale.pc
+drwxr-xr-x	root/root	usr/share/

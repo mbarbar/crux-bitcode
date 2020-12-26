@@ -1,0 +1,17 @@
+# Description: Theme pack for qingy.
+# URL:         http://qingy.sourceforge.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Johannes Winkelmann, jw@tks6.net
+# Depends on:  qingy
+
+name=qingy-themepack
+version=1.0
+release=1
+source=(http://download.sourceforge.net/qingy/qingy_0.3_themepack_$version.tar.bz2)
+
+build() {
+   cd qingy_0.3_themepack_$version
+   mkdir -p $PKG/usr/share/qingy/themes 
+   cp -r * $PKG/usr/share/qingy/themes
+   rm $PKG/usr/share/qingy/themes/README
+}

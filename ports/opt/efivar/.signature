@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YVsAt5C8LeY13NTr3x2NMZaOQofaOdIcyy0aGp4M9P8P8XGagzYtEdFiht43XBbNU3qu7Qjof4X8xte23TepgY=
+SHA256 (Pkgfile) = 36559d2d41bc94bbb5b7620f8324205ac95fdbd97165da9d4f1ea2059cd11715
+SHA256 (.footprint) = 0beee9873ebfae4200842542150c881fedea35a2932c7f26d51daf227b0a6a22
+SHA256 (efivar-37.tar.bz2) = 3c67feb93f901b98fbb897d5ca82931a6698b5bcd6ac34f0815f670d77747b9f

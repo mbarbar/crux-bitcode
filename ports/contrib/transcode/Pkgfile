@@ -1,0 +1,82 @@
+# Description: Command line utilities for transcoding various media formats.
+# URL: https://www.transcoding.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: ffmpeg imagemagick lame liba52 libdvdread libmpeg2 libtheora libxvid mjpegtools x264 xorg-libxaw
+# Optional: libquicktime
+
+name=transcode
+version=1.1.7
+release=5
+source=(
+	https://crux.ster.zone/downloads/$name/$name-$version.tar.bz2
+	#https://bitbucket.org/france/transcode-tcforge/downloads/$name-$version.tar.bz2
+	http://downloads.sourceforge.net/project/subtitleripper/subtitleripper/subtitleripper-0.3-4/subtitleripper-0.3-4.tgz
+	subtitleripper-0.3.4-linkingorder.patch
+        subtitleripper-0.3.4-respect-ldflags.patch
+	transcode-ffmpeg3.patch
+	transcode-ffmpeg4.patch
+	transcode-imagemagick7.patch)
+
+build() {
+	cd $name-$version
+
+	CFLAGS+=' -pthread'
+
+	patch -p 1 -i $SRC/transcode-ffmpeg3.patch
+	patch -p 1 -i $SRC/transcode-ffmpeg4.patch
+	patch -p 1 -i $SRC/transcode-imagemagick7.patch
+
+	sed \
+	-e 's|freetype/ftglyph.h|freetype2/freetype/ftglyph.h|' \
+	-i filter/subtitler/load_font.c
+
+	autoreconf -vi
+
+	./configure \
+		--prefix=/usr \
+		--disable-dependency-tracking \
+		--enable-a52 \
+		--enable-alsa \
+		--enable-freetype2 \
+		--enable-imagemagick \
+		--enable-lame \
+		--enable-libdv \
+		--enable-libjpeg \
+		--enable-libmpeg2 \
+		--enable-libmpeg2convert \
+		--enable-libpostproc \
+		--enable-libxml2 \
+		--enable-lzo \
+		--enable-mjpegtools \
+		--enable-ogg \
+		--enable-sdl \
+		--enable-theora \
+		--enable-v4l \
+		--enable-vorbis \
+		--enable-x264 \
+		--enable-xvid
+
+	#https://bugzilla.gnome.org/show_bug.cgi?id=655517
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+
+	# Subtitle support
+	cd ../subtitleripper
+	patch -p1 -i $SRC/subtitleripper-0.3.4-linkingorder.patch
+	patch -p1 -i $SRC/subtitleripper-0.3.4-respect-ldflags.patch
+
+	sed \
+		-e 's|^\(.*lppm.*\)$|#\1|' \
+		-e 's|^\(.*D_HAVE_LIB_PPM.*\)$|#\1|' \
+		-e 's/DEFINES :=/DEFINES = -DHAVE_GETLINE/' \
+		-i Makefile
+
+	make
+	install -m 0755 -t $PKG/usr/bin \
+		pgm2txt srttool subtitle2pgm \
+		subtitle2vobsub vobsub2pgm
+}

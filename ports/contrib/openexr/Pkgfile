@@ -1,0 +1,24 @@
+# Description: A high dynamic-range (HDR) image file format developed by Industrial Light & Magic for use in computer imaging applications.
+# URL: https://www.openexr.com/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: cmake
+
+name=openexr
+version=2.5.3
+release=1
+source=(https://github.com/AcademySoftwareFoundation/openexr/archive/v$version/$name-$version.tar.gz \
+    openexr-pkg-config.patch)
+
+build() {
+    patch -d $name-$version -p1 -i $SRC/$name-pkg-config.patch
+    cmake -Bbuild \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+        -Wno-dev \
+        $name-$version
+    cmake --build build
+    DESTDIR=$PKG cmake --install build
+    rm -r $PKG/usr/share/doc
+}

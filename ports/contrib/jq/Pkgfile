@@ -1,0 +1,25 @@
+# Description: Lightweight and flexible command-line JSON processor
+# URL:         https://stedolan.github.io/jq/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Optional:    oniguruma
+
+name=jq
+version=1.6
+release=2
+source=(https://github.com/stedolan/jq/releases/download/jq-$version/jq-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  # never use bundled oniguruma for regex support
+  sed -i '242,245d;248,250d;256,267d' configure.ac
+  autoreconf -i
+
+  ./configure --prefix=/usr \
+              --with-oniguruma=/usr
+
+  make
+  make DESTDIR=$PKG install
+
+  rm -r $PKG/usr/share/doc
+}

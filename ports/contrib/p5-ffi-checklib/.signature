@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30X1gIGWXlLuccdCO9esPGrURbrtAlkOmwjL/dmgoU2KFL8NxBBHdsLwON+3NL1PdAWefo1LQ5ocYlav1Qu4Vw4=
+SHA256 (Pkgfile) = 5ef32657f20da0b0a9e650a78b4df5809ffcaf5cf43c0fa7b82e7a871d490aec
+SHA256 (.footprint) = 0f907bbdf11fcb863150a8da621785e53bb9ac090e492dcb889ab6d3fda094ac
+SHA256 (FFI-CheckLib-0.27.tar.gz) = 8d442747c24fcd8560107ed9deb98265838f17bc850cb7237f8b6d4821992d74

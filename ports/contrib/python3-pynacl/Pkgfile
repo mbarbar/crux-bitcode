@@ -1,0 +1,15 @@
+# Description: Python binding to the Networking and Cryptography (NaCl) library
+# URL: https://pypi.org/project/PyNaCl/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-setuptools
+
+name=python3-pynacl
+version=1.4.0
+release=1
+source=(https://files.pythonhosted.org/packages/cf/5a/25aeb636baeceab15c8e57e66b8aa930c011ec1c035f284170cacb05025e/PyNaCl-$version.tar.gz)
+
+build() {
+	cd PyNaCl-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

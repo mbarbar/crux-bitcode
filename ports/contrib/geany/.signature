@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38A6hfUoJZmYNyAhSfkEKn646EB+KEz/4/sSWN1+Sqdqg/wGo0TZgol81orp53fh4q6VrbtmUk0in+aBOf0Qxw8=
+SHA256 (Pkgfile) = ddadedb0d0cc6be57c6a01b7f49ddd68610abd113089fdca26e2b9e1c0343921
+SHA256 (.footprint) = 284b3d088ae8ad3206b740aff0c11aac1c3c03368f09b05b05293a0179218e67
+SHA256 (geany-1.37.1.tar.bz2) = 18c5756444c1d8bcd737c8ecfd4ef0b3607c924fc02560d4e8b78f6121531a18

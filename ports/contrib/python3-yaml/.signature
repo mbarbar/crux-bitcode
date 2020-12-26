@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32JGiZOqe1g+YUj8rLF00mox+o49olCqxCKjJZRP4BDamIhVmg+t512PmiUKYzxAMR0VKUQnFpedeSDQslc7pwg=
+SHA256 (Pkgfile) = bcd8a037a89f612cb0bee91a257b61cd393ba6b6733acc30dc14c10ecc65158e
+SHA256 (.footprint) = 2ac5bc65686e9a2392f0a72e0406e0d1b6a6138b9151104e01689db9e9ceb9a3
+SHA256 (PyYAML-5.3.1.tar.gz) = b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d

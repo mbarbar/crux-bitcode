@@ -1,0 +1,14 @@
+#
+# /etc/pam.d/dropbear - dropbear service module configuration
+#
+
+auth       include    common-auth
+
+account    required   pam_nologin.so
+account    include    common-account
+
+password   include    common-password
+
+session    include    common-session
+session    required   pam_limits.so
+

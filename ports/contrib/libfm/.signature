@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31ATmTyvEs8eswuN4t4If+BL1P6x6PwetEdTktKvhFw4imMDE1Bw2X5D3dVziVm42/vCyU1P5q3UMFejCIRdmA8=
+SHA256 (Pkgfile) = 8e57fa8adffdc537dcb873cbcde98b1443df373e8b58ac1711b4bd71e3fad851
+SHA256 (.footprint) = c42534b3c8a14abbe041cd2b63d3531d84beb600c91b96ddc78fdf05c19a2d9b
+SHA256 (libfm-1.3.1.tar.xz) = 96b1244bde41ca0eef0332cfb5c67bb16725dfd102128f3e6f74fadc13a1cfe4

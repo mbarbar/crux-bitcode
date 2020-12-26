@@ -1,0 +1,18 @@
+# Description: X Input client library
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxext xorg-libxfixes
+
+name=xorg-libxi
+version=1.7.10
+release=1
+source=(https://www.x.org/releases/individual/lib/libXi-$version.tar.bz2)
+
+build() {
+	cd libXi-$version
+
+	./configure --prefix=/usr --disable-{docs,specs}
+
+	make
+	make DESTDIR=$PKG install
+}

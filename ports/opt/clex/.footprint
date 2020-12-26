@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cfg-clex
+-rwxr-xr-x	root/root	usr/bin/clex
+-rwxr-xr-x	root/root	usr/bin/kbd-test
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/cfg-clex.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/clex.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/kbd-test.1.gz

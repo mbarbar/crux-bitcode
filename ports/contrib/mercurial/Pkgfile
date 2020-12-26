@@ -1,0 +1,23 @@
+# Description: Mercurial the distributed VCS.
+# URL:         https://www.mercurial-scm.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  python3-setuptools
+
+name=mercurial
+version=5.6
+release=1
+source=(https://www.mercurial-scm.org/release/mercurial-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  rm -r i18n
+
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG \
+    --skip-build
+
+  install -d $PKG/usr/share/man/man{1,5}
+  install -m 0644 doc/*.1 $PKG/usr/share/man/man1
+  install -m 0644 doc/*.5 $PKG/usr/share/man/man5
+
+}

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yTxbYvGbljQxEFKOq9eMSVgtkLfTaVkjoLJPu/4EMXIuv9srMLYzQhHmIAS3TYd8eSDy/xjXNCIR8VVqQOUuAs=
+SHA256 (Pkgfile) = 5d46f6ba0fb90ad27dce9d44b29099dbfb48edfe210f33bf7f1a272347090035
+SHA256 (.footprint) = 54ee23fa9fd04b59ac94ac7fc196855061db60b7fd473604cfcd9ad010e8f65c
+SHA256 (libxcrypt_2.4.orig.tar.gz) = 4207aee39c4454c1955b26a3d77f33e730eae94c20406976b6de80c3a3cfb1cd
+SHA256 (libxcrypt-2.4-glibc-2.16.patch) = 015041d4a9ee23eacc9b3c18216fedb2a6ac12d43c53e946695737de9212e746

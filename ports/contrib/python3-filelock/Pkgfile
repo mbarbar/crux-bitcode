@@ -1,0 +1,15 @@
+# Description: A platform independent file lock for Python
+# URL: https://github.com/benediktschmitt/py-filelock
+# Maintainer:
+# Depends on: python3-setuptools
+
+name=python3-filelock
+version=3.0.12
+release=1
+source=(https://github.com/benediktschmitt/py-filelock/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd py-filelock-$version
+  python3 setup.py build
+  python3 setup.py install --root="$PKG" --optimize=1
+}

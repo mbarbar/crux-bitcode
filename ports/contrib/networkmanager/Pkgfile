@@ -1,0 +1,81 @@
+# Description: Network configuration tool
+# URL: https://wiki.gnome.org/Projects/NetworkManager/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: curl dbus libndp libnewt libxslt nss polkit python3-gobject
+# Optional: ppp avahi bash-completion dbus libnl jansson libteam dnsmasq
+
+name=networkmanager
+version=1.26.4
+release=1
+source=(https://download.gnome.org/sources/NetworkManager/${version::4}/NetworkManager-$version.tar.xz
+  networkmanager.rc NetworkManager.conf polkit.conf dhcp.conf
+  org.freedesktop.NetworkManager.rules)
+
+build() {
+  sed '/initrd/d' -i NetworkManager-$version/src/meson.build
+
+  CXXFLAGS+="-O2 -fPIC" \
+  meson setup NetworkManager-$version build \
+    --prefix /usr \
+    --sysconfdir /etc \
+    --localstatedir /var \
+    --libexecdir /usr/lib/networkmanager \
+    --buildtype=plain \
+    -Db_ndebug=true \
+    -Ddbus_conf_dir=/usr/share/dbus-1/system.d \
+    -Dudev_dir=/lib/udev \
+    -Dresolvconf=true \
+    -Dconfig_dns_rc_manager_default=resolvconf \
+    -Dcrypto=nss \
+    -Dintrospection=true \
+    -Dsession_tracking_consolekit=true \
+    -Dwifi=true \
+    -Dwext=true \
+    -Dpolkit=true \
+    -Dpolkit_agent=true \
+    -Dmodify_system=true \
+    -Difupdown=true \
+    -Dnmtui=true \
+    -Dnmcli=true \
+    -Dlibnm_glib=false \
+    -Dsession_tracking=no \
+    -Db_lto=false \
+    -Dlibaudit=no \
+    -Dlibpsl=false \
+    -Dppp=false \
+    -Dofono=false \
+    -Dselinux=false \
+    -Djson_validation=false \
+    -Dovs=false \
+    -Dmodem_manager=false \
+    -Dsystemdsystemunitdir=no \
+    -Dsystemd_journal=false \
+    -Dqt=false \
+    -Ddocs=false \
+    -Dtests=no \
+    -Dmore_logging=false \
+    -Dmore_asserts=0 \
+    -Dlibpsl=false \
+
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+
+  # Install config file
+  install -Dm 644 $SRC/NetworkManager.conf $PKG/etc/NetworkManager/NetworkManager.conf
+  install -Dm 644 $SRC/dhcp.conf $PKG/etc/NetworkManager/conf.d/dhcp.conf
+  install -Dm 644 $SRC/polkit.conf $PKG/etc/NetworkManager/conf.d/polkit.conf
+
+  # Install startup script
+  install -Dm 755 $SRC/$name.rc $PKG/etc/rc.d/$name
+
+  # Remove rundir etc
+  rm -rf $PKG/var/run $PKG/usr/share/{gtk-,}doc $PKG/usr/share/man/man5/nmcli-examples.5 $PKG/usr/share/locale $PKG/usr/share/bash-completion
+
+  # install polkit rules
+  install -Dm 644 $SRC/org.freedesktop.NetworkManager.rules $PKG/usr/share/polkit-1/rules.d/org.freedesktop.NetworkManager.rules
+
+  # cleanup
+
+  rm -rf $PKG/usr/lib/firewalld
+  [ -e /usr/lib/pkgconfig/bash-completion.pc ] || rm -rf $PKG/usr/share/bash-completion
+}

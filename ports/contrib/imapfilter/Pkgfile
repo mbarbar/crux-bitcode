@@ -1,0 +1,18 @@
+# Description: IMAP mail filtering utility
+# URL: https://github.com/lefcha/imapfilter
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: lua libpcre2
+
+name=imapfilter
+version=2.7.5
+release=1
+source=(https://github.com/lefcha/imapfilter/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  sed -i "s/MYCFLAGS =/MYCFLAGS=${CFLAGS}/" src/Makefile
+  sed -i "s/MYLDFLAGS =/MYLDFLAGS=${LDFLAGS}/" src/Makefile
+
+  make PREFIX=/usr all
+  make PREFIX=/usr DESTDIR="$PKG/" MANDIR=/usr/share/man install
+}

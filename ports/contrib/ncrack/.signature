@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+NEVEcstL1h4EJLfmCqThhxknFDeEZ3B+XH1A0Q7D1mbZDm2S3wKaqqLno2hIYBR5clyqAcLXnGW92Qfde/iwQ=
+SHA256 (Pkgfile) = 4844707b132f71d395288e092da83332167f533daf204b86ee1873f63064bb90
+SHA256 (.footprint) = 6750b13f257789ef912611c76cf8b63915e5f8b624a6c0270a181810b93a7b56
+SHA256 (ncrack-0.7.tar.gz) = f3f971cd677c4a0c0668cb369002c581d305050b3b0411e18dd3cb9cc270d14a
+SHA256 (fix-spelling-errors.patch) = ab5345a0e619cea52837300c1f233c33509940eebc5576854bfee799b4bda195

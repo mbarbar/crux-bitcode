@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36BArwpj5WP6/Gw0/koaHcGXso4Mg2xJtjOxtgdVbscttnWCi8EwcOXMwcncTwHi04fVEn86miLGk2hZ3V124gE=
+SHA256 (Pkgfile) = bcec22d582c866d4deddc8d029c381dd6ba6f0bb245fe0c014e49b41f1527db4
+SHA256 (.footprint) = 3bd1a63b808728007d4376dfac5aae46419ba5a16fc6fb1364690d962b704ac5
+SHA256 (dhcp-spoof-a207d4c6d71db1e3f051deab9b1306defe3e987a.zip) = ff59005cd7ada795cb358ab3d5d2b5b479053e2f1bd24742a9af307efd0dfa20

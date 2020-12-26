@@ -1,0 +1,16 @@
+# Description: Library providing a API to the in-kernel connection tracking state table.
+# URL: https://www.netfilter.org/projects/libnetfilter_conntrack/index.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libnfnetlink libmnl
+
+name=libnetfilter_conntrack
+version=1.0.8
+release=1
+source=(https://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

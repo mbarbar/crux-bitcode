@@ -1,0 +1,19 @@
+# Description:	Perl interface to GD graphics library
+# URL:		https://metacpan.org/pod/GD
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	libgd p5-extutils-pkgconfig
+
+name=p5-gd
+version=2.73
+release=1
+source=(http://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/GD-$version.tar.gz)
+
+build() {
+	install -d $PKG/usr/bin
+	cd GD-$version
+	export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps"
+	perl Makefile.PL
+	make OPTIMIZE="${CFLAGS}"
+	make DESTDIR=${PKG} install
+	find $PKG \( \( -depth -empty \) -o \( -name .packlist -o -name '*.bs' -o -name autosplit.ix -o -name perllocal.pod \) \) -exec rm -rf {} \;
+}

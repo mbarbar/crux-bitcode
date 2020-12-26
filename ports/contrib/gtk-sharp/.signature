@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x4NW3LE8oqaFdA2MMOAPkE12X3cCXnPrhcDsCHSGycmRojZVGQbLzaaeZta8XWoJn6dmlkU3I7V9M2Oeuk3jgg=
+SHA256 (Pkgfile) = 8c4bb5b231bad52b7b93436fe7fea2f86e99425c30f8917bbccac32eecde1d91
+SHA256 (.footprint) = d88b1555c67e81047821f6733a1d4e71a074f3fccc22c080a9babb858d5f2bdf
+SHA256 (gtk-sharp-2.12.45.tar.gz) = 02680578e4535441064aac21d33315daa009d742cab8098ac8b2749d86fffb6a

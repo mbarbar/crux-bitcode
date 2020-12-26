@@ -1,0 +1,21 @@
+# Description: Recover lost partitions and files. 
+# URL: https://www.cgsecurity.org/wiki/TestDisk
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: ntfs-3g libjpeg-turbo
+
+name=testdisk
+version=7.1
+release=1
+source=(https://www.cgsecurity.org/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make 
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+	rm -r $PKG/usr/share/man/zh_CN
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38HuQhEOrcjPeShWCxAbw15cQFEt/fPMMAq48Z1wniTVkRJcv6w5h7AmAbPkGScc5dzrZsrirY7dLU3rmkjq/gg=
+SHA256 (Pkgfile) = 1e99c339aff38da7dce79f95734becf26f51c7f258c2649d8f43e70946faa326
+SHA256 (.footprint) = efb1f46be6443d7ec399f17c8f33382d01152e535cb837dd29ccb2f5397eea38
+SHA256 (bzr-2.7.0.tar.gz) = 0d451227b705a0dd21d8408353fe7e44d3a5069e6c4c26e5f146f1314b8fdab3

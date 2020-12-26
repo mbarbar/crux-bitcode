@@ -1,0 +1,23 @@
+# Description: LV2/DSSI/LADSPA plug-in suite and standalone Jack host
+# URL: https://calf-studio-gear.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: fluidsynth lv2
+# Optional: fftw gtk jack pulseaudio
+
+name=calf
+version=0.90.3
+release=1
+source=(https://calf-studio-gear.org/files/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  autoreconf -vfi
+  ./configure --prefix=/usr \
+    --with-lv2 \
+    --with-lv2-dir=/usr/lib/lv2 \
+    --enable-experimental \
+    --enable-sse
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/doc
+}

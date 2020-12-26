@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33gP8kYYZOTKhcvfccuYICQ+0Y2HZVMnnjHgEPp7xuYOrHh56fKMD5yz6vMMInYz+XFWR+m6vYSMGicOKANZFgE=
+SHA256 (Pkgfile) = 1abb8551d5695d0308987a2e5f341b9e92be9297a9d60a1a79df74b3096ce3b1
+SHA256 (.footprint) = ed7f5525432ff8a28c25094df9b623789c97b1cd8f9a772a456081713fa951e2
+SHA256 (libzen_0.4.38.tar.bz2) = 594e07bb4a0472cd9da258b3c4e050e9a37a39cccd85e3d8b5bf597d027b7eda

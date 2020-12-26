@@ -1,0 +1,18 @@
+# Description: a library for calculating the results of formula expressions stored in multiple named targets
+# URL: https://gitlab.com/ixion/ixion
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: mdds boost spdlog
+
+name=libixion
+version=0.15.0
+release=1
+source=(https://kohei.us/files/ixion/src/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  CFLAGS="-O2 -fPIC" \
+  CXXFLAGS="-O2 -fPIC" \
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

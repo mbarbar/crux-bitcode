@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XGTNKyS6quGGpxUOeDYYBzgdVa2Zn6cNrieinHpzNbCdEIMzw9NSx0+TU1Rw++arKR0fW0zky4hDpwhdMipLgU=
+SHA256 (Pkgfile) = 30f77c3625fde706383c889eac9eb12415e8787858e77b529ce95fd42de865f5
+SHA256 (.footprint) = 6ad036b3c0fb99e5f6cf7b4ee8834392de5c4aa20f6aa31af3900de9b5a7e188
+SHA256 (jfsutils-1.1.15.tar.gz) = 244a15f64015ce3ea17e49bdf6e1a0fb4f9af92b82fa9e05aa64cb30b5f07a4d
+SHA256 (inttypes.patch) = 15ea88350c240b23fe322d4adafbb79c8473b9850495d61efafc7bf68be391b3
+SHA256 (sysmacros.patch) = fd1a4e794a3bf2ebdb4b81f582e147655d70aadd59689aacea0ccc32c6381a28

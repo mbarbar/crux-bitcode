@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32dongKc2FTLjXlH5sAOYKA6zodcbSnDYkeYGItNiRXu7fkCsak/cPF7gVwXmdypkynjVyASvf7eLuvzm2KIYQo=
+SHA256 (Pkgfile) = 78cd19e491dd1196f5aaba7140e756f546d25e1c9dc084b7a40cab1b922dd468
+SHA256 (.footprint) = 9901b6a64b3b031c19c9543b56f7db34b8cc1e3c65a4dafd1646a90d5ea3f558
+SHA256 (mdk3-master-1bf2bd31b79560aa99fc42123f70f36a03154b9e.tar.gz) = b0b7c8888fd0f7a053936c56b337fbe0752748bbda94423ae2d1d9594391a04e

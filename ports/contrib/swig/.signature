@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33l+2VW5sJ1kF7FJ+x3puws3qHm81toc1YxpstYXamy1//sJkxUB8ZvAowrtsrZDLq6qWgHHZ2PHQWjuUJFrbws=
+SHA256 (Pkgfile) = c56e58e706364d38604881833f82a29ec43e50d8e9afcc9f3e6f075084022fd1
+SHA256 (.footprint) = d65643dc986f38fcd6b52a26eda719a4553c56cd54eee620152c58094ef6a13d
+SHA256 (swig-4.0.2.tar.gz) = d53be9730d8d58a16bf0cbd1f8ac0c0c3e1090573168bfa151b01eb47fa906fc

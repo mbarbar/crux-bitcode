@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yZoVHWePBr6sd+XJYP1r4aftg0yleAqwzXeuVhcAdsBm/QjkckADSAbvYdbIsbrS6NqtdrnWxyAsMVoa1nBqAY=
+SHA256 (Pkgfile) = 2bcc93ace344899000c8f1caa541e5141b0adfde389bfe77508e550d208042dc
+SHA256 (.footprint) = ccb80ea0c357e6bd2648006ae14727bebced007eec7871b14fbbe16833625b06
+SHA256 (aria2-1.35.0.tar.xz) = 1e2b7fd08d6af228856e51c07173cfcf987528f1ac97e04c5af4a47642617dfd

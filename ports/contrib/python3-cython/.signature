@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35wVMl2YmJ7DSSq7iMBknG7wzNBBqbFXmLDxOQqNuE/VzkoWoeB/i+GHMyTlqiNnHO6j/pw4FjqPyjZ5SOQmyA0=
+SHA256 (Pkgfile) = fc19d25370029903d864ff4bb8133973e7026f04bab1b860bfa66b1cb014efff
+SHA256 (.footprint) = 68398affb90c21ccf04c734e9bb571739337bc263ed124648f26ab873733e1fa
+SHA256 (Cython-0.29.21.tar.gz) = e57acb89bd55943c8d8bf813763d20b9099cc7165c0f16b707631a7654be9cad

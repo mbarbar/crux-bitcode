@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndD8mrXmfxquRsxs+a+UWjkkYNs8InO0WegwitP0zBLmCBwa6g/59oXInW4DtJa+bPgPfSxOx7y87+PsAFseUCAw=
+SHA256 (Pkgfile) = 591ae614f135cf2c605da40cf8a6129717d359a19b0aa6f1e9d42244db08d844
+SHA256 (.footprint) = caa405f8b3e584211bcf167fc0eae6ce94900b6482ad46aad202095474449136
+SHA256 (mkfontscale-1.2.1.tar.bz2) = ca0495eb974a179dd742bfa6199d561bda1c8da4a0c5a667f21fd82aaab6bac7

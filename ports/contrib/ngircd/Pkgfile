@@ -1,0 +1,26 @@
+# Description: A free, portable and lightweight Internet Relay Chat server for small or private network
+# URL: https://ngircd.barton.de/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: openssl zlib
+
+name=ngircd
+version=26
+release=1
+source=(http://ngircd.sourceforge.net/pub/$name/$name-$version.tar.gz \
+	$name $name.conf)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--with-openssl
+	make
+	make DESTDIR=$PKG install
+	install -d -m 0755 -o $name \
+		$PKG/var/run/$name
+	install -D -m 0755 $SRC/$name \
+		$PKG/etc/rc.d/$name
+	install -m 0600 $SRC/$name.conf \
+		$PKG/etc/$name.conf
+	rm -r $PKG/usr/share/doc
+}

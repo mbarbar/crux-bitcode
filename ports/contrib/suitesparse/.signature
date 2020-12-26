@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31UTFlt4nIG+QlUBbNm4y0VMxrah+VV0aF0FNuINoEkU8PPxjHmFowJv6XkZQVF6XOaGHiFz9CaVnbEC+hUUJwI=
+SHA256 (Pkgfile) = 0607953452575594bb8a4f867608b57421405b2549497a69db315e52f8bdd098
+SHA256 (.footprint) = a60969b8be5fbf4caf2151de2a90a7607019c22f24809c2c52302e0ae4f0094d
+SHA256 (suitesparse-5.8.1.tar.gz) = 06726e471fbaa55f792578f9b4ab282ea9d008cf39ddcc3b42b73400acddef40
+SHA256 (suitesparse-no-demo.patch) = 7b822beb12dbb884788c966f1075810561e0dbcf4758ea49dd1abd190d6c7ce1

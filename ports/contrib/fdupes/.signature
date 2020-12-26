@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33nnWBFT/WKWmYjb5Ugm/XhtGKX3dP7XwT6ma4T8+g2XJG7p7jxYcKWOfZMWKwIj6Q9T4nSILKsJACyYZGH/mwc=
+SHA256 (Pkgfile) = 6c4ad85eda5bdca68769efaa11aa617d7dea71527b99eb2cacc1b0c7cad92cdf
+SHA256 (.footprint) = 9e6a0d831a8ee2262a588b5b352953d8b1dad65348c11e289bae92c138c72d6f
+SHA256 (fdupes-2.1.2.tar.gz) = cd5cb53b6d898cf20f19b57b81114a5b263cc1149cd0da3104578b083b2837bd

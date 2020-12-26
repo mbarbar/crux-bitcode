@@ -1,0 +1,50 @@
+From ff9f30db21733aa019c6205536b21c246178d40a Mon Sep 17 00:00:00 2001
+From: Stamatin Cristina <dear.volgk@gmail.com>
+Date: Sun, 20 Sep 2020 19:46:58 +0300
+Subject: [PATCH] fix build for CRUX
+
+---
+ Makefile | 12 ++++++------
+ utils.c  |  2 +-
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 5d34ed6..3492abc 100644
+--- a/Makefile
++++ b/Makefile
+@@ -7,13 +7,13 @@
+ # <dragorn> i think thats all anyone does
+ # <dragorn> make is a twisted beast
+ ##################################
+-LDLIBS		= -lpcap -lcrypt
+-CFLAGS		= -pipe -Wall -D_LINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -I../../..
+-CFLAGS		+= -D_OPENSSL_MD4
++LDLIBS		 = -lpcap -lxcrypt -lssl
++CFLAGS		+= -D_LINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++CFLAGS		+= -D_OPENSSL_MD4 -I/usr/lib/libxcrypt2.4/include -L/usr/lib/libxcrypt2.4
++CFLAGS      += -Wl,-rpath=/usr/lib/libxcrypt2.4
+ LDLIBS		+= -lcrypto
+-CFLAGS		+= -g3 -ggdb -g
+-PROGOBJ		= asleap.o genkeys.o utils.o common.o sha1.o
+-PROG		= asleap genkeys
++PROGOBJ		 = asleap.o genkeys.o utils.o common.o sha1.o
++PROG		 = asleap genkeys
+ 
+ all: $(PROG) $(PROGOBJ)
+ 
+diff --git a/utils.c b/utils.c
+index 4941514..799a2a7 100644
+--- a/utils.c
++++ b/utils.c
+@@ -27,7 +27,7 @@
+ #include <stdarg.h>
+ #include <string.h>
+ #include <stdint.h>
+-#include <crypt.h>
++#include <xcrypt.h>
+ #include <unistd.h>
+ #include <ctype.h>
+ #include <netinet/in.h>		/* for ntohs() */
+-- 
+2.28.0
+

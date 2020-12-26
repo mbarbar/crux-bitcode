@@ -1,0 +1,24 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/distccd
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/distcc
+-rwxr-xr-x	root/root	usr/bin/distccmon-text
+-rwxr-xr-x	root/root	usr/bin/lsdistcc
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/distcc/
+lrwxrwxrwx	root/root	usr/lib/distcc/c++ -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/cc -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/cpp -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/g++ -> ../../bin/distcc
+lrwxrwxrwx	root/root	usr/lib/distcc/gcc -> ../../bin/distcc
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/distccd
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/distcc.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/distccd.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/distccmon-text.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/lsdistcc.1.gz

@@ -1,0 +1,142 @@
+# Description: OpenJDK 8 built using IcedTea build harness
+# URL:         http://icedtea.classpath.org
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  alsa-lib cups fontconfig freetype giflib gtk krb5 lcms2 libjpeg-turbo libpng libxslt nss p11-kit unzip xorg-libxt xorg-libxtst xorg-libxinerama zip
+
+name=openjdk8
+version=8u252-b09
+icedtea_version=3.16.0
+boot_version=20200504
+release=1
+source=(http://icedtea.wildebeest.org/download/source/icedtea-$icedtea_version.tar.xz
+	https://stygian.me/crux/distfiles/$name/corba-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/hotspot-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/jaxp-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/jaxws-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/jdk-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/langtools-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/nashorn-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name/openjdk-$version.tar.xz
+	https://stygian.me/crux/distfiles/$name-boot-$boot_version-bin.tar.xz)
+	# See README for links to originally named files and rationale of renaming/versioning/mirroring.
+
+unpack_source() {
+	for file in ${source[@]}; do
+		case ${file##*/} in
+			icedtea-$icedtea_version.tar.xz|\
+			$name-boot-$boot_version-bin.tar.xz)
+				bsdtar -p -o -C $SRC -xf $(get_filename $file) ;;
+			*)
+				cp $(get_filename $file) $SRC ;;
+		esac
+	done
+}
+
+build() {
+	# Most of these flags were snarfed directly from Alpine Linux APKBUILD for openjdk7, added -fabi-version.
+	# Fixes build failures due to suspected gcc8 changes for default std and abi.
+	export EXTRA_CPP_FLAGS="$CXXFLAGS -fabi-version=10 -std=gnu++98 -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-strict-overflow"
+	export EXTRA_CFLAGS="$CFLAGS -fabi-version=10 -std=gnu++98 -Wno-error -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-strict-overflow"
+
+	# Make sure we do not have ccache masquerade directory in PATH.
+	# Use --enable-ccache instead of providing a wrapped compiler.
+	# NOTE: the check for usr/bin/ccache may be too specific, since it rules out
+	#       local or opt installs.
+	if [ -e '/usr/bin/ccache' ]; then
+		EXTRA_OPTIONS='--enable-ccache'
+		PATH=$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')
+	fi
+
+	OLD_PATH=$PATH
+	export JAVA_HOME=$SRC/$name-boot
+	export PATH=$JAVA_HOME/bin:$OLD_PATH
+
+	if [ -f /etc/pki/tls/java/cacerts ]; then
+		JAVA_CACERTS=/etc/pki/tls/java/cacerts
+	else
+		/usr/sbin/make-ca -g -D $SRC/certs || exit 1
+		JAVA_CACERTS=$SRC/certs/etc/pki/tls/java/cacerts
+	fi
+
+	mkdir $SRC/build
+	cd $SRC/build
+
+	# Will fail if make-ca has not been run after p11-kit install
+	LC_ALL=C \
+	CONFIG_SHELL=/bin/bash \
+	../icedtea-$icedtea_version/configure ${EXTRA_OPTIONS} \
+		--prefix=/usr/lib/java/$name \
+		--disable-docs \
+		--disable-downloading \
+		--disable-hotspot-tests \
+		--disable-jdk-tests \
+		--disable-langtools-tests \
+		--disable-precompiled-headers \
+		--disable-system-pcsc \
+		--disable-system-sctp \
+		--disable-systemtap-tests \
+		--disable-tests \
+		--enable-improved-font-rendering \
+		--enable-non-nss-curves \
+		--enable-nss \
+		--enable-system-cups \
+		--enable-system-fontconfig \
+		--enable-system-gio \
+		--enable-system-gtk \
+		--enable-system-jpeg \
+		--enable-system-kerberos \
+		--enable-system-lcms \
+		--enable-system-png \
+		--enable-system-zlib \
+		--with-corba-src-zip=$SRC/corba-$version.tar.xz \
+		--with-hotspot-src-zip=$SRC/hotspot-$version.tar.xz \
+		--with-jaxp-src-zip=$SRC/jaxp-$version.tar.xz \
+		--with-jaxws-src-zip=$SRC/jaxws-$version.tar.xz \
+		--with-jdk-src-zip=$SRC/jdk-$version.tar.xz \
+		--with-langtools-src-zip=$SRC/langtools-$version.tar.xz \
+		--with-nashorn-src-zip=$SRC/nashorn-$version.tar.xz \
+		--with-openjdk-src-zip=$SRC/openjdk-$version.tar.xz \
+		--with-pkgversion=CRUX \
+		--with-jdk-home=$JAVA_HOME \
+		--with-cacerts-file=$JAVA_CACERTS \
+		--with-tzdata-dir=/usr/share/zoneinfo
+
+	LC_ALL=C \
+	make
+
+	# Copy the sdk image first before pruning it, saving original for later inspection/comparison.
+	install -d -m 0755 $PKG/usr/lib/java/$name
+	cp -a openjdk.build/images/j2sdk-image/* $PKG/usr/lib/java/$name
+
+	install -d -m 0755 $PKG/etc/revdep.d
+	echo "/usr/lib/java/$name/jre/lib/amd64" > $PKG/etc/revdep.d/$name
+	echo "/usr/lib/java/$name/jre/lib/amd64/jli" >> $PKG/etc/revdep.d/$name
+	echo "/usr/lib/java/$name/jre/lib/amd64/server" >> $PKG/etc/revdep.d/$name
+
+	# Remove unneeded files
+	rm -f $PKG/usr/lib/java/$name/src.zip
+	rm -rf $PKG/usr/lib/java/$name/{demo,man/ja*,sample}
+	rm -f $PKG/usr/lib/java/$name/{,jre/}THIRD_PARTY_README
+	find $PKG/usr/lib/java/$name \( \
+		-name '*.ja' -o \
+		-name 'ASSEMBLY_EXCEPTION' -o \
+		-name 'LICENSE' -o \
+		-name 'THIRD_PARTY_README' \) \
+		-delete
+
+	# Deduplicate
+	rm $PKG/usr/lib/java/$name/jre/lib/amd64/libjawt.so
+	ln -sr $PKG/usr/lib/java/$name/lib/amd64/libjawt.so \
+		$PKG/usr/lib/java/$name/jre/lib/amd64/libjawt.so
+	rm $PKG/usr/lib/java/$name/jre/lib/amd64/jli/libjli.so
+	ln -sr $PKG/usr/lib/java/$name/lib/amd64/jli/libjli.so \
+		$PKG/usr/lib/java/$name/jre/lib/amd64/jli/libjli.so
+	for f in $PKG/usr/lib/java/$name/jre/bin/* ; do
+		if [ -f $PKG/usr/lib/java/$name/bin/${f##*/} ]; then
+			rm $f
+			ln -sr $PKG/usr/lib/java/$name/bin/${f##*/} $f
+		fi
+	done
+
+	chmod u+w $PKG/usr/lib/java/$name/jre/lib/security/cacerts
+}

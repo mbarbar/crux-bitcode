@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yFrYFtYoKgCACVrh+8ESBp5K71P2au1iXf2X1wTkrqvwGSKxfNl08EeO0RtWpUdI5tWjrlPkQVsCHawkm1hUQw=
+SHA256 (Pkgfile) = fd76850f3417835fd9c1623f7281af9fcbc4b349cc4840b29959747271d07e00
+SHA256 (.footprint) = fe2b34b934881e928eda75e593f4c82a6c451d2803d3750882e868a7068f3b31
+SHA256 (python3-vobject-0.9.6.1.tar.gz) = 5da057f292fe03065ac58ca0a0d4ca51ff719068a6a0e018bb539c285b13bd87

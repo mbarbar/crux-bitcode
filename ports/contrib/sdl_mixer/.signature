@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+7e7CEUfZkc4ZU9h+NqswhIdDckLZl6HWcT6PPN7uqI03/7n7hmho2al978jNSpwELACvW6RdoOzeAnIDpPtwg=
+SHA256 (Pkgfile) = d403fbdc4a88d877ff9f9da7e78499f40e8b114f044c89b4a30445ca2a4c7147
+SHA256 (.footprint) = c1593123daee91b932d5cadbcb15f7b53bcaedc287ef5db045428d2c582d9176
+SHA256 (SDL_mixer-1.2.12.tar.gz) = 1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30Ck9dghXVxAspux6Br5CBAh/t2IcX092x3fkO10D5dpEU6DeV9L4LHXYAVrcxPbR7WJfrcm+qIjUbLSpg9w+ww=
+SHA256 (Pkgfile) = 8990da7d5584236ecbf03fb380d74cc40b97935580bcd1076cb0f23a92bcb6fd
+SHA256 (.footprint) = 2c7c8fcf243b98290bc57658573e65f2e3d860ba40614961307453438ad417c1
+SHA256 (Eval-Closure-0.14.tar.gz) = ea0944f2f5ec98d895bef6d503e6e4a376fea6383a6bc64c7670d46ff2218cad

@@ -1,0 +1,36 @@
+# Description: A port of 7-zip for POSIX systems.
+# URL: http://p7zip.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: yasm
+
+name=p7zip
+version=16.02
+release=2
+source=(https://downloads.sourceforge.net/project/$name/$name/$version/${name}_${version}_src_all.tar.bz2
+	CVE-2016-9296.patch
+	CVE-2017-17969.patch
+	CVE-2018-5996.patch)
+
+build() {
+	cd ${name}_$version
+
+	# https://nvd.nist.gov/vuln/detail/CVE-2016-9296
+	patch -p1 -i $SRC/CVE-2016-9296.patch
+
+	# https://nvd.nist.gov/vuln/detail/CVE-2017-17969
+	patch -p1 -i $SRC/CVE-2017-17969.patch
+
+	# https://nvd.nist.gov/vuln/detail/CVE-2018-5996
+	patch -p1 -i $SRC/CVE-2018-5996.patch
+
+	cp makefile.linux_amd64_asm makefile.machine
+
+	make all3 OPTFLAGS="$CFLAGS"
+
+	make install \
+		DEST_DIR="$PKG" \
+		DEST_HOME=/usr \
+		DEST_MAN=/usr/share/man
+
+	rm -r $PKG/usr/share/doc
+}

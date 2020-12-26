@@ -1,0 +1,26 @@
+# Description: Spam detection program that uses Bayesian analysis
+# URL:         http://spamprobe.sourceforge.net/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  db
+
+name=spamprobe
+version=1.4d
+release=8
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+        64bit.patch compile-fixes.patch)
+
+build () {
+    cd $SRC/$name-$version
+
+    # https://src.fedoraproject.org/rpms/spamprobe/tree/master
+    patch -p1 -i $SRC/64bit.patch
+    patch -p1 -i $SRC/compile-fixes.patch
+    
+    ./configure --prefix=/usr \
+                --mandir=/usr/share/man \
+                --enable-default-8-bit \
+                --without-{gif,jpeg,png}
+    
+    make 
+    make DESTDIR=$PKG install
+}

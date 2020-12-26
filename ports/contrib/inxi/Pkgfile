@@ -1,0 +1,15 @@
+# Description: System information script
+# URL:         https://code.google.com/p/inxi/
+# Maintainer:  Stamatin Cristina, dear dot volgk at gmail dot com
+
+name=inxi
+version=3.1.09-1
+release=1
+source=(https://github.com/smxi/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	install -Dm755 inxi   $PKG/usr/bin/inxi
+	install -Dm644 inxi.1 $PKG/usr/share/man/man1/inxi.1
+}

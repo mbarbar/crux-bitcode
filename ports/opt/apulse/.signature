@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YTGgU3O0NZJ9Adf7gMOjG9VxrYj+s8c6VnXegzE0W9nOQLl+FWlZ2B0yrLMtnHfmnhRd6QFxewqJOX8XSy/8g0=
+SHA256 (Pkgfile) = b465929d450bc34d29ac6cb8c4965a19217dd59429aed71db0d01ca41cabd93b
+SHA256 (.footprint) = 88a7a19b9a3fc9068b102b09e3f228e5a02651302be28e1fcb7a4ae4b46b430b
+SHA256 (apulse-v0.1.13.tar.gz) = 9234ec4e10e408b9c01d5f4ea768ad1fc15494217c932db2c435202a9c7b5efd

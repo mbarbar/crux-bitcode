@@ -1,0 +1,19 @@
+# Description: An SMTP client suitable for use with mutt etc.
+# URL:         https://marlam.de/msmtp/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  openssl
+
+name=msmtp
+version=1.8.13
+release=1
+source=(https://marlam.de/msmtp/releases/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+                --with-tls=openssl \
+                --disable-nls
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share/info
+}

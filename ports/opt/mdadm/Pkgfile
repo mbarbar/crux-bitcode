@@ -1,0 +1,15 @@
+# Description: Multiple device (RAID) admin tool
+# URL:         http://neil.brown.name/blog/mdadm
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=mdadm
+version=4.1
+release=1
+source=(http://www.kernel.org/pub/linux/utils/raid/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    make all mdadm.static
+    make DESTDIR=$PKG install
+    install -m755 mdadm.static $PKG/sbin
+}

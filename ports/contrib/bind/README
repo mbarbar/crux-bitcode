@@ -1,0 +1,32 @@
+# $Id:
+
+REQUIREMENTS:
+
+PRECAUTION:
+
+1. DON'T RUN BIND AS UID ROOT OR NOBODY !
+2. If you need only a caching/forwarding DNS server for your
+   small local network don't use bind for this. Dnsmasq is the 
+   suitable program for this application. You can find a port 
+   for dnsmasq under /usr/ports/contrib/dnsmasq.
+
+Juergen Daubert <juergen.daubert@t-online.de>,
+James Mills <prologic@shortcircuit.net.au>
+
+PRE-INSTALL:
+
+1. Create user/group named with an unused id < 99:
+   'groupadd -g 25 named'
+   'useradd -g named -u 25 -d /var/named -s /bin/false named'
+   'passwd -l named'
+	    
+POST-INSTALL:
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+Juergen Daubert <juergen.daubert@t-online.de>,
+James Mills <prologic@shortcircuit.net.au>

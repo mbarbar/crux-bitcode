@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/dtpLjBkWZFt8iIlZhdrJBtw9qb03qO5iw4Z5WXPpczh1FHHFgGo2sDOfpZxcXIkXfHZg9TsjetskfU6n1FDuQM=
+SHA256 (Pkgfile) = d7bf11204a4c9a88688398334d1b76ed2e71113c94c09519562f6bf870334f47
+SHA256 (.footprint) = 70da443ad9001947ee98a1a3280170fbb29baa4dbb48f1901d7bf612bb8c8136
+SHA256 (reiserfsprogs-3.6.27.tar.xz) = 0e95b67fa7746a3c2d59145e9b9c2feb4a6be52853e83b497b182eae508e62e3
+SHA256 (reiserfsprogs-3.6.27-loff_t.patch) = 2d4e90d5e2b0610021d0c078f350e098d5573edccdf2864909aada83ed0473f9

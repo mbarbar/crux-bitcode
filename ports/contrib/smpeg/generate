@@ -1,0 +1,8 @@
+svn checkout svn://svn.icculus.org/smpeg/tags/release_0_4_5
+mv release_0_4_5 smpeg-0.4.5
+cd smpeg-0.4.5
+./autogen.sh
+cd ..
+bsdtar -c -f smpeg-0.4.5.tar smpeg-0.4.5
+xz -9 smpeg-0.4.5.tar
+

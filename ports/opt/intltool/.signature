@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YotTUhpHSFrc14mXmRL/PJulocLEZi7bKr7IB96lMoDI99i8NktmQD6mV25Ju1Ta0eFAQd84Gcneb8/r7EJjgg=
+SHA256 (Pkgfile) = f4590ed166a2f4208ea64a3b07a9d3d63e89f0e70483396d764ae3b932572a40
+SHA256 (.footprint) = 647b419419a77beccead82fba60683ba623ed23dd16e2bdf2541e12c54546924
+SHA256 (intltool-0.51.0.tar.gz) = 67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd
+SHA256 (intltool-perl-5.22.patch) = ca9d6562f29f06c64150f50369a24402b7aa01a3a0dc73dce55106f3224330a1

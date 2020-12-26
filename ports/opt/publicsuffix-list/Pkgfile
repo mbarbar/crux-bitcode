@@ -1,0 +1,19 @@
+# Description: Cross-vendor public domain suffix database
+# URL: https://github.com/publicsuffix/list
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=publicsuffix-list
+version=20190531.806.6f03f42
+commit=6f03f42a65d006c8ae657f125f14fb8f9d3337f4
+release=1
+source=(https://github.com/publicsuffix/list/archive/$commit.tar.gz#/$name-$commit.tar.gz)
+
+
+build() {
+	cd list-$commit
+
+	install -D -m 644 -t $PKG/usr/share/publicsuffix \
+		public_suffix_list.dat tests/test_psl.txt
+
+	ln -s public_suffix_list.dat $PKG/usr/share/publicsuffix/effective_tld_names.dat
+}

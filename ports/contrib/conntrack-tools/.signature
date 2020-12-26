@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3w3moMY9cR785tEjzR/yYlYVY5iAh5vWPGws0CfGbYOos1pLo7A843FbO4t0vN2o3sKhKJvZtdE88kWmGlECmgI=
+SHA256 (Pkgfile) = d18257ec220b94f6126221f46cb8dd0255b1354e5e02614a0e2aece706238afe
+SHA256 (.footprint) = c27eeb488db6cb1afe1fd9c5b7aabfee96f63ccab06a4ef1c6d109977c4c88c6
+SHA256 (conntrack-tools-1.4.6.tar.bz2) = 590859cc848245dbfd9c6487761dd303b3a1771e007f4f42213063ca56205d5f
+SHA256 (conntrackd.rc) = 0016fd2a7bb89757d67da16893ec879648b4985d91fdf4304b3237643f493523

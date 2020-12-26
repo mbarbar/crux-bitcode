@@ -1,0 +1,18 @@
+# Description: Masquerade directory to use distcc with gcc-fortran.
+# URL: http://gcc.gnu.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gcc-fortran distcc
+
+name=gcc-fortran-distcc-bindings
+version=1
+release=2
+source=()
+
+build() {
+	install -d $PKG/usr/lib/distcc
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/f77
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/f90
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/f95
+	ln -s ../../bin/distcc $PKG/usr/lib/distcc/gfortran
+}
+

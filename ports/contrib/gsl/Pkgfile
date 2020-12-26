@@ -1,0 +1,19 @@
+# Description: A numerical library for C and C++ programmers.
+# URL: http://www.gnu.org/software/gsl/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=gsl
+version=2.6
+release=1
+source=(https://ftp.gnu.org/gnu/gsl/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/info
+}

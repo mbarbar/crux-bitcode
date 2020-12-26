@@ -1,0 +1,17 @@
+# Description: Python Imaging Library (PIL) fork.
+# URL: https://python-pillow.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: lcms2 libraqm libwebp python-setuptools
+# Optional: tk
+
+name=python-pillow
+_name=Pillow
+version=6.2.2
+release=1
+source=(https://files.pythonhosted.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz)
+
+build() {
+	cd $_name-$version
+	/usr/bin/python setup.py build
+	/usr/bin/python setup.py install --root=$PKG --optimize=1
+}

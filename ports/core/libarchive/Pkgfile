@@ -1,0 +1,28 @@
+# Description: Library to create and read several archive formats
+# URL:         http://www.libarchive.org/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  bzip2 xz zlib acl lzo
+
+name=libarchive
+version=3.5.0
+release=1
+source=(https://github.com/libarchive/libarchive/releases/download/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	# We're passing --without-xml2, --without-expat and --without-nettle
+	# to avoid linking to libraries which are only available in opt. 
+	# XML support is only needed for the xar format which we can live without.
+	
+	./configure \
+		--prefix=/usr \
+		--without-xml2 \
+		--without-expat \
+		--without-nettle \
+		--without-openssl \
+		--without-zstd
+
+	make
+	make DESTDIR=$PKG install
+}

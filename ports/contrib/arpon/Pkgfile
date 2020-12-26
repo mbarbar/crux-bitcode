@@ -1,0 +1,29 @@
+# Description: daemon and tools to handle all ARP aspects
+# URL:         http://arpon.sf.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  cmake libdnet
+
+name=arpon
+version=3.0-ng
+release=1
+source=(http://download.sourceforge.net/$name/ArpON-$version.tar.gz
+  arpon
+  # https://aur.archlinux.org/cgit/aur.git/tree/?h=arpon-ng
+  arpon-gcc7.patch arpon-syslog.patch)
+
+build() {
+  install arpon -D $PKG/etc/rc.d/arpon
+  patch -Np2 -d ArpON-$version -i $SRC/arpon-gcc7.patch
+  patch -Np2 -d ArpON-$version -i $SRC/arpon-syslog.patch
+
+  [[ -e /usr/bin/ninja ]] && PKGMK_ARPON+=' -G Ninja'
+  cmake -S ArpON-$version -B build $PKGMK_ARPON \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -Wno-error=stringop-truncation" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+  rm -r $PKG/usr/share/doc
+}

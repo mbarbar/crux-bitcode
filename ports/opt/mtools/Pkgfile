@@ -1,0 +1,22 @@
+# Description: Utilities to access MS-DOS disks without mounting them
+# URL: http://mtools.linux.lu/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=mtools
+version=4.0.26
+release=1
+source=(ftp://ftp.gnu.org/gnu/mtools/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc \
+              --disable-floppyd
+
+  make
+  sed -i Makefile -e 's|install-scripts install-info|install-scripts|'
+  make -j1 prefix=$PKG/usr install
+
+  rm -f $PKG/usr/share/man/man1/floppyd*
+}

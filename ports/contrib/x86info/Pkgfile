@@ -1,0 +1,18 @@
+# Description: In-depth CPU information tool.
+# URL:         https://github.com/kernelslacker/x86info
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=x86info
+version=1.31
+release=1
+source=(https://github.com/kernelslacker/x86info/archive/8ea5ed1/$name-$version.tar.gz)
+
+build() {
+   cd $name-8ea5ed19fae1d209eba9257171a10f7afd474618
+   sed -e 's/-Werror //' -i Makefile
+   make
+   mkdir -p $PKG/usr/{bin,share/man/man1}
+   install -D -m755 -oroot -groot $name $PKG/usr/bin/$name
+   install -D -m644 -oroot -groot $name.1 $PKG/usr/share/man/man1/$name.1
+}

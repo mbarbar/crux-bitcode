@@ -1,0 +1,28 @@
+# Description: Standalone, extensible Perl module installer
+# URL:         https://metacpan.org/pod/distribution/Module-Install/lib/Module/Install.pm
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  p5-file-remove p5-module-build p5-module-scandeps p5-yaml-tiny
+
+name=p5-module-install
+version=1.19
+release=1
+source=(https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-${version}.tar.gz)
+
+build() {
+	cd Module-Install-$version
+
+	perl Makefile.PL
+
+	make
+	make install DESTDIR=$PKG
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

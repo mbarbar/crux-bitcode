@@ -1,0 +1,21 @@
+# Description:	Unit testing framework
+# URL:		https://cmocka.org/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	cmake
+
+name=cmocka
+version=1.1.5
+release=2
+source=(https://cmocka.org/files/1.1/$name-$version.tar.xz)
+
+build() {
+	cmake -S $name-$version -B build \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D WITH_STATIC_LIB=On \
+		-D UNIT_TESTING=On
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

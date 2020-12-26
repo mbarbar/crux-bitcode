@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xxeS3K6rHKwUpkTZcTgYVCDOPgOhLI3Kxtgx734AM3Dq42t/BmXk5crFj27qrw0ZU1s6Az3i9aveIi8m28WOQY=
+SHA256 (Pkgfile) = dfc916a8cdbf3d635911eb65ff87901c0ec068c00ff465640703de435f46b0d3
+SHA256 (.footprint) = c7ef5e434f9b5837e8a29645ceeec0ebb3bca09c3d24e5740647821deb291ec2
+SHA256 (ccze-0.2.1-2.tar.gz) = d698e7ead8351a89538abbe6e762bf5a4576b3b083cc19ed039b68eab7dbaaaa

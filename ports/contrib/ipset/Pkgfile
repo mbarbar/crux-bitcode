@@ -1,0 +1,19 @@
+# Description: Administration tool for IP or port sets.
+# URL: https://ipset.netfilter.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: iptables libmnl
+
+name=ipset
+version=7.9
+release=1
+source=(https://$name.netfilter.org/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	CONFIG_SHELL=/bin/bash \
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35Nqxjc1cmwmh/XERopJhi1NRU7HDMM79AgVJe2B3+7xO1EBz0VIX21HVfClck1hk0+hBwrlVBimbIzDxOZaWg8=
+SHA256 (Pkgfile) = 5464199c99ce2435eddd6aa95e0636a3562da9982a7ad47f5dbd105046caf979
+SHA256 (.footprint) = 52afba7182c1a18a1f2204cd4a8b2b69db530600d547dafcffe5f626728fa971
+SHA256 (sslscan-2.0.6.tar.gz) = 9a2263246ffde5f950d49a51e46ddafea0ac95573e0a5a3a5f9194725fe561a4

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35DBxp3q3J7jVk+u9rP0D+ttl82QVknTmOzumGBS7j0cjA/YvJFFDm2xAGMoJ9z3jKTsh2ZFSEEybV9b66TGuw8=
+SHA256 (Pkgfile) = 735f574c356ffeb93286aea86ec3b7b4c2fd62447f93caa25bf794398d0ae2f8
+SHA256 (.footprint) = 98f37d2168eecccaff05978b4e301cf1541082d0ae3c82d9fc7aa434f7187656
+SHA256 (libdca-0.0.7.tar.bz2) = 3a0b13815f582c661d2388ffcabc2f1ea82f471783c400f765f2ec6c81065f6a

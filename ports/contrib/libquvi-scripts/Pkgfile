@@ -1,0 +1,23 @@
+# Description: Library for parsing video download links. - Scripts
+# URL:         http://quvi.sourceforge.net/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  lua
+
+name=libquvi-scripts
+version=0.9.20131130
+release=1
+source=(http://downloads.sourceforge.net/sourceforge/quvi/$name-$version.tar.xz)
+
+build () {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--with-nsfw \
+		--with-geoblocked
+
+	make
+	make DESTDIR=$PKG install
+
+	find $PKG/usr/share -name README -delete
+}

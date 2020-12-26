@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36LuLCRflY+L2R8/AfkG4s0iKlWRAInxH88titXoe0GAAwsrEv7zvKew/KIsDii9kSxlolkiAcBu223gMydwJgc=
+SHA256 (Pkgfile) = 48b643810888cf8ef854ce6831db427e4972c982b1a90a74e4e13849a1d33f3d
+SHA256 (.footprint) = 89952f6f37b10054ca79a931cb0fa36268d3adac2ba528fd71aaa6728ff83554
+SHA256 (tunctl-1.5.tar.gz) = aa2a6c4cc6bfacb11e0d9f62334a6638a0d435475c61230116f00b6af8b14fff

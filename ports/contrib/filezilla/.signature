@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37paFSbmiMWoGwDsk4bxswFNCP1OR8VX/P1pfYb/ELKdk1FnZ6EBj0FOi7gNqS22rqxBugh5CXb/rY6ej0d84w4=
+SHA256 (Pkgfile) = 6b9830de01bd4183300dac8300ad5922041add60e75cb7457cd0cba4ce180f2f
+SHA256 (.footprint) = ce396bd280b5be43cf8de9e9284767328fab4022b2000075e4762bb8142082e5
+SHA256 (FileZilla_3.51.0_src.tar.bz2) = 82be1c4a4f51bb32a599d0b4cc3a24127ba948c0af0f957233cc6a13ea3b6c4c
+SHA256 (missing-list-include.patch) = 01084d22d10eacabcbd5521beb2a22c57a70d4fc5fb546a4d0cc7489e88d42fb

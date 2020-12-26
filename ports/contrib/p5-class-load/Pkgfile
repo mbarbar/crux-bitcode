@@ -1,0 +1,17 @@
+# Description: a working (require 'Class::Name') and more
+# URL: https://metacpan.org/pod/Class::Load
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-data-optlist p5-module-implementation p5-module-runtime p5-namespace-clean p5-package-stash p5-try-tiny
+
+name=p5-class-load
+version=0.25
+release=1
+source=(https://cpan.metacpan.org/authors/id/E/ET/ETHER/Class-Load-$version.tar.gz)
+
+build() {
+  cd Class-Load-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

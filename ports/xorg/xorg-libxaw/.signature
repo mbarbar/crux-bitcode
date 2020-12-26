@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndCSBmrMNJMEFqFLOb41xx5tCvJvJj5F/6DDYakmzXjdyvkkD6pM+UbZZ6o9xdR2nL4/vIQ1ktf+mdUOOAHbJ2gE=
+SHA256 (Pkgfile) = 03a8a1dab720760883911d726b22f84267c5db743b45c6f39179352e45937fb6
+SHA256 (.footprint) = abe71f4eb356cc6406f1436d0047cf3cf7227d6f87f8ebc6e4cec8ff7e031789
+SHA256 (libXaw-1.0.13.tar.bz2) = 8ef8067312571292ccc2bbe94c41109dcf022ea5a4ec71656a83d8cce9edb0cd

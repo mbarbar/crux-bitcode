@@ -1,0 +1,19 @@
+README for fluxbox
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+RESOURCES
+
+PRECAUTION
+The new (v1.1.1) fluxbox binary will convert your 'old' ~/.fluxbox/*-files as
+necessary during its first startup. If you want the root-menu to appear if you
+right-click the desktop make sure to add the following lines to your
+~/.fluxbox/keys:
+
+OnDesktop Mouse1 :hideMenus
+OnDesktop Mouse3 :RootMenu
+

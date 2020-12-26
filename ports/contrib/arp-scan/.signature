@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31DaLHo8vA8n3567VERL7tzFctodVUMITkaa/Je+PfgayK3lQuUrX64xEwh5l2keMqWfiOaYO3Go64NV4XTesAE=
+SHA256 (Pkgfile) = 6046481881de6b8203af49600ce75e943796b196d080fc48b3b0ea4cef29e8e3
+SHA256 (.footprint) = 8b38f85077ee49a19f91c3df59b39a1917fce0b2ead1ca0800b8f8fd90680198
+SHA256 (arp-scan-1.9.7.tar.gz) = e03c36e4933c655bd0e4a841272554a347cd0136faf42c4a6564059e0761c039

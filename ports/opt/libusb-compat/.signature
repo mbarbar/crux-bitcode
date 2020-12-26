@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/d3KlSPL4xUkkflS8Tq6YHMrCV8jFfECrGbIazct6Ogu9DpntuVQPk17XA84Jk+YB+hYsD3Es/HTyD6VQPW3RQE=
+SHA256 (Pkgfile) = 3eb9168c924406568108b65887b4c305694c86ee449116773d90a8fe76e0f1f8
+SHA256 (.footprint) = eabc6c62c3718d6d4132e153516aba5ba3deb8bf75a97ad5e8b0d786411fa095
+SHA256 (libusb-compat-0.1.7.tar.bz2) = 8259f8d5b084fe43c47823a939e955e0ba21942b8d112266c39d228cc14764d6

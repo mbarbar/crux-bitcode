@@ -1,0 +1,16 @@
+# Description: Banish the mouse cursor when typing.
+# URL:         https://github.com/jcs/xbanish
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-libxi xorg-libxt
+
+name=xbanish
+version=1.7
+release=1
+source=(https://github.com/jcs/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make INCLUDES= LDPATH=
+	make BINDIR=$PKG/usr/bin MANDIR=$PKG/usr/share/man/man1 install
+}

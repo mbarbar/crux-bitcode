@@ -1,0 +1,39 @@
+# Description: HFS FS Access utils"
+# URL: https://www.mars.org/home/rob/proj/hfs/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=hfsutils
+version=3.2.6
+release=1
+source=(ftp://ftp.mars.org/pub/hfs/$name-$version.tar.gz
+	hfsutils-3.2.6-errno.patch
+	hfsutils-3.2.6-fix-tcl-8.6.patch
+	largerthan2gb.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/hfsutils-3.2.6-errno.patch
+	patch -p1 -i $SRC/hfsutils-3.2.6-fix-tcl-8.6.patch
+	patch -p0 -i $SRC/largerthan2gb.patch
+
+	./configure \
+		--prefix=/usr
+
+	make
+	make -C hfsck
+
+	install -d \
+		$PKG/usr/bin \
+		$PKG/usr/share/man/man1 \
+		$PKG/usr/share/info
+
+	make \
+		prefix=$PKG/usr \
+		MANDEST=$PKG/usr/share/man \
+		infodir=$PKG/usr/share/info \
+		install
+
+	install -m 0755 hfsck/hfsck $PKG/usr/bin/
+	rm -r $PKG/usr/share/info
+}

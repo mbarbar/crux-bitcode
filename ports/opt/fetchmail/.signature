@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Y6GP/jhubP6jVGJiWAbjEilVfcKy1XqKvSFdDHEpiRObvkJGREpMA7B22DMe0PtSz/B4SI1HSpNv+WI/Ul6hwI=
+SHA256 (Pkgfile) = 4bda668f35442d530f524f9926bc2cf4d28ac326eb7a9ec73ac2a65033db6a69
+SHA256 (.footprint) = c52f9b61b3ffbab88aa941546c7721245d6c825056bd4948b84b94966203996d
+SHA256 (fetchmail-6.4.14.tar.xz) = 424707390f7cdc6d16db4887931117f2242873846b28cc1d0ae1c0ecf158bdcb

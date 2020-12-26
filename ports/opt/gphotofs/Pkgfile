@@ -1,0 +1,16 @@
+# Description: FUSE filesystem client based on libgphoto2
+# URL:         http://www.gphoto.org
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  fuse, glib, libgphoto2
+
+name=gphotofs
+version=0.5
+release=1
+source=(http://downloads.sourceforge.net/project/gphoto/$name/$version.0/$name-$version.tar.bz2)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

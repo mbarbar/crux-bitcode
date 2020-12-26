@@ -1,0 +1,58 @@
+# Description: The C library used in the GNU system
+# URL:         http://www.gnu.org/software/libc/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=glibc-32
+version=2.28
+release=2
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
+	http://www.kernel.org/pub/linux/kernel/v4.x/linux-4.19.24.tar.xz \
+	glibc-2.28-1.patch lib32.conf) 
+
+build() {
+        # install kernel headers
+        cd linux-4.19.24
+        make mrproper
+        make headers_check
+        make INSTALL_HDR_PATH=$PKG/usr headers_install
+        chown root:root $PKG/usr
+
+        patch -p1 -d $SRC/glibc-${version:0:4} -i $SRC/glibc-$version-1.patch
+
+	mkdir $SRC/build
+	cd $SRC/build
+
+	export libc_cv_slibdir=/lib32
+	export CC="${CC:-gcc} -m32"
+	export CFLAGS="$CFLAGS -Wno-error=parentheses"
+
+	../glibc-${version:0:4}/configure --prefix=/usr \
+		--libdir=/usr/lib32 \
+		--libexecdir=/usr/lib32 \
+		--with-headers=$PKG/usr/include \
+		--enable-kernel=4.9 \
+		--enable-add-ons \
+		--disable-profile \
+		--disable-werror \
+		--without-gd \
+		--enable-stack-protector=strong \
+		--enable-obsolete-rpc \
+		--enable-obsolete-nsl \
+		--enable-multi-arch \
+		i686-pc-linux-gnu
+
+	make 
+	#make check
+	make install_root=$PKG install
+
+	rm -r $PKG/usr/{bin,sbin,share} $PKG/{etc,sbin} $PKG/var
+
+	mv $PKG/usr/include/gnu/stubs-32.h $SRC
+	rm -r $PKG/usr/include
+	install -D $SRC/stubs-32.h $PKG/usr/include/gnu/stubs-32.h
+
+	install -D $SRC/lib32.conf $PKG/etc/ld.so.conf.d/lib32.conf
+
+	install -d $PKG/lib
+	ln -s /lib32/ld-linux.so.2 $PKG/lib/ld-linux.so.2
+}

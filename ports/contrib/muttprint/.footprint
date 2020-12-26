@@ -1,0 +1,16 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/muttprint
+-rwxr-xr-x	root/root	usr/bin/muttprint-langinfo
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/muttprint.1.gz
+drwxr-xr-x	root/root	usr/share/muttprint/
+-rw-r--r--	root/root	usr/share/muttprint/BabyTuX.eps
+-rw-r--r--	root/root	usr/share/muttprint/BabyTuX.png
+-rw-r--r--	root/root	usr/share/muttprint/BabyTuX_color.eps
+-rw-r--r--	root/root	usr/share/muttprint/BabyTuX_color.png
+-rw-r--r--	root/root	usr/share/muttprint/muttprintrc
+-rw-r--r--	root/root	usr/share/muttprint/penguin.eps
+-rw-r--r--	root/root	usr/share/muttprint/penguin.jpg

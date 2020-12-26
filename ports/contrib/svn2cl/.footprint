@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/svn2cl
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/svn2cl.1.gz
+drwxr-xr-x	root/root	usr/share/svn2cl/
+-rwxr-xr-x	root/root	usr/share/svn2cl/svn2cl.sh
+-rw-r--r--	root/root	usr/share/svn2cl/svn2cl.xsl
+-rw-r--r--	root/root	usr/share/svn2cl/svn2html.css
+-rw-r--r--	root/root	usr/share/svn2cl/svn2html.xsl

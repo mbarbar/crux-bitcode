@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30LTO2K7B/1Zplx+OFK4HsfJytUkIIQQV5TxCWEQbxXBFizqhyPX+AbiCkKF3yHVe5gm5jVmo0voegD14Q5R0QM=
+SHA256 (Pkgfile) = 81f3640a6de996b564b2922ad6911c0cfdecbc7e15511abb9fbc97a33c0803cd
+SHA256 (.footprint) = 18b62d43e0461bcd17506113344658a118dde951568ecd8eb999bbbff320819a
+SHA256 (vobcopy-1.2.0-7.tar.gz) = d6cbd27105259427e8c9b9ffdc58a37f14dedd0c404e971d7b0f083baefece99
+SHA256 (vobcopy-1.2.0_hardcode-tries-to-1.patch) = 54464635c7ab9a56cd5fd87020fc09b70b7dfc001560210c07e077b176e4ee09

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3x5qGqa/sWpJxqxLkfubkLoUfcnM2jF6/Ra9W1SWARhXPGAZ/EHixMfqRnLIDE5mG/awq0TdO4CF2dEyAjjYIQQ=
+SHA256 (Pkgfile) = 44dd1e1819589593bfbf8589c5d77a0fb5b7bab231507389038c3db90b8049bb
+SHA256 (.footprint) = 10a27cc1f797370e93787855bab47275964747f7f13420dc5d4425042d4bbf49
+SHA256 (SDL2_ttf-2.0.15.tar.gz) = a9eceb1ad88c1f1545cd7bd28e7cbc0b2c14191d40238f531a15b01b1b22cd33

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "`getent group named`" ]
+then
+  /usr/sbin/groupadd -g 25 named
+fi
+
+if [ -z "`getent passwd named`" ]
+then
+  /usr/sbin/useradd  -u 25 -g named -d /var/named -s /bin/false named
+  /usr/bin/passwd -l named
+fi
+
+# End of file

@@ -1,0 +1,20 @@
+# Description: base 16/32/64 encoder/decoder
+# URL:         http://www.quarkline.net/basez
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=basez
+version=1.6.2
+release=1
+source=(http://www.quarkline.net/basez/download/basez-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr
+  make
+
+  install -d $PKG/usr/share/doc/basez
+  make DESTDIR=$PKG install-unix
+
+  rm -r $PKG/usr/share/doc $PKG/usr/bin/base{32,64} $PKG/usr/share/man/man1/base{32,64}.1
+}

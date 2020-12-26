@@ -1,0 +1,53 @@
+# Description: Pager that can also be used as a text-based web browser
+# URL:         http://w3m.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  boehm-gc
+
+name=w3m
+version=0.5.3-37
+release=1
+source=(https://github.com/tats/w3m/archive/debian/$version/$name-$version.tar.gz)
+
+build() {
+    cd $name-debian-$version
+
+    patch -p1 -i debian/patches/010_upstream.patch
+    patch -p1 -i debian/patches/020_debian.patch
+    rm -r doc/CVS
+
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --disable-image \
+        --disable-gopher \
+        --disable-japanese \
+        --disable-m17n \
+        --disable-messagel10n \
+        --disable-nls \
+        --disable-nntp \
+        --disable-unicode \
+        --disable-xface \
+        --enable-alarm \
+        --enable-ansi-color \
+        --enable-bgcolor \
+        --enable-color \
+        --enable-cookie \
+        --enable-dict \
+        --enable-digest-auth \
+        --enable-external-uri-loader \
+        --enable-help-cgi \
+        --enable-history \
+        --enable-ipv6 \
+        --enable-keymap=w3m \
+        --enable-menu \
+        --enable-mouse \
+        --enable-sslverify \
+        --enable-w3mmailer \
+        --with-gc
+    make
+    make DESTDIR=$PKG install 
+
+    rm -r $PKG/usr/share/man/{de,ja}
+    rm $PKG/usr/share/w3m/w3mhelp-funcdesc.{de,ja}.pl
+    rm -rf $PKG/usr/share/locale
+}

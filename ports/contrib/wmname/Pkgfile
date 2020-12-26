@@ -1,0 +1,16 @@
+# Description: wmname prints/sets the window manager name property of the root window
+# URL:         https://tools.suckless.org/x/wmname/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-libx11
+
+name=wmname
+version=0.1
+release=1
+source=(http://dl.suckless.org/tools/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	make CC=gcc
+	make PREFIX=$PKG/usr install
+}

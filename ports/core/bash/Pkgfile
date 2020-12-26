@@ -1,0 +1,27 @@
+# Description: An sh-compatible command language interpreter
+# URL:         https://tiswww.case.edu/php/chet/bash/bashtop.html
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  readline
+
+name=bash
+version=5.0.18
+release=1
+source=(http://ftpmirror.gnu.org/gnu/$name/$name-${version:0:3}.tar.gz \
+        $name-$version.patch.gz profile)
+
+build() {
+    cd $name-${version:0:3}
+
+    gunzip -c $SRC/$name-$version.patch.gz | patch -p0
+
+    ./configure --prefix=/usr \
+                --exec-prefix= \
+                --disable-nls \
+                --with-curses \
+                --with-installed-readline
+    make -j1
+
+    install -D -m 755 bash $PKG/bin/bash
+    install -D -m 644 doc/bash.1 $PKG/usr/share/man/man1/bash.1
+    install -D -m 644 $SRC/profile $PKG/etc/profile
+}

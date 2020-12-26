@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YLgGFGCQLVqFXbzzyYDJH2MJ8recs9wNckXmspwnyQeWrdjDafSMB2qtwIY5g9sHIKHJfos6lQCLmuVgE4WVQM=
+SHA256 (Pkgfile) = 6d926fa3ad21ec45f87cc38102537580baa629355b2216f51b3d39287dd1cddc
+SHA256 (.footprint) = a18449327294402bf01a678945340f34b94af0002b8cfbabbd37cb4a99337a81
+SHA256 (libsigsegv-2.12.tar.gz) = 3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6

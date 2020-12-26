@@ -1,0 +1,27 @@
+# Description: shared library for libmediainfo and mediainfo
+# URL: https://mediaarea.net/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libzen
+version=0.4.38
+release=1
+source=(https://mediaarea.net/download/source/libzen/$version/libzen_$version.tar.bz2)
+
+build() {
+    cd ZenLib/Project/GNU/Library
+    ./autogen.sh
+    ./configure --prefix=/usr --enable-shared
+    make
+    make DESTDIR=$PKG install
+
+    install -dm 755 $PKG/usr/include/ZenLib
+    install -m 644 $SRC/ZenLib/Source/ZenLib/*.h $PKG/usr/include/ZenLib
+    for i in HTTP_Client Format/Html Format/Http; do
+        install -dm0755 $PKG/usr/include/ZenLib/$i
+        install -m0644 $SRC/ZenLib/Source/ZenLib/$i/*.h $PKG/usr/include/ZenLib/$i
+    done
+    install -dm 755 $PKG/usr/lib/pkgconfig
+    install -m 644 $SRC/ZenLib/Project/GNU/Library/libzen.pc $PKG/usr/lib/pkgconfig
+    sed -i -e 's|Version: $|Version: '$version'|g' $PKG/usr/lib/pkgconfig/libzen.pc
+}

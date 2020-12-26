@@ -1,0 +1,27 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/amrnb-decoder
+-rwxr-xr-x	root/root	usr/bin/amrnb-decoder-etsi
+-rwxr-xr-x	root/root	usr/bin/amrnb-decoder-if2
+-rwxr-xr-x	root/root	usr/bin/amrnb-encoder
+-rwxr-xr-x	root/root	usr/bin/amrnb-encoder-etsi
+-rwxr-xr-x	root/root	usr/bin/amrnb-encoder-etsi-vad2
+-rwxr-xr-x	root/root	usr/bin/amrnb-encoder-if2
+-rwxr-xr-x	root/root	usr/bin/amrnb-encoder-if2-vad2
+-rwxr-xr-x	root/root	usr/bin/amrnb-encoder-vad2
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/amrnb/
+-rw-r--r--	root/root	usr/include/amrnb/interf_dec.h
+-rw-r--r--	root/root	usr/include/amrnb/interf_enc.h
+-rw-r--r--	root/root	usr/include/amrnb/interf_rom.h
+-rw-r--r--	root/root	usr/include/amrnb/rom_dec.h
+-rw-r--r--	root/root	usr/include/amrnb/rom_enc.h
+-rw-r--r--	root/root	usr/include/amrnb/sp_dec.h
+-rw-r--r--	root/root	usr/include/amrnb/sp_enc.h
+-rw-r--r--	root/root	usr/include/amrnb/typedef.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libamrnb.a
+-rwxr-xr-x	root/root	usr/lib/libamrnb.la
+lrwxrwxrwx	root/root	usr/lib/libamrnb.so -> libamrnb.so.3.0.0
+lrwxrwxrwx	root/root	usr/lib/libamrnb.so.3 -> libamrnb.so.3.0.0
+-rwxr-xr-x	root/root	usr/lib/libamrnb.so.3.0.0

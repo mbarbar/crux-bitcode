@@ -1,0 +1,15 @@
+# Description:	Asterisk extra sounds
+# URL:		http://www.asterisk.org
+# Maintainer:   Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	asterisk
+
+name=asterisk-extra-sounds-en-alaw
+version=1.5.2
+release=1
+source=(http://downloads.digium.com/pub/telephony/sounds/releases/$name-$version.tar.gz)
+
+build () {
+	mkdir -p $PKG/var/lib/asterisk/sounds
+	rm {CHANGES,CREDITS,LICENSE}-asterisk-extra-en-$version extra-sounds-en.txt
+	mv $SRC/* $PKG/var/lib/asterisk/sounds
+}

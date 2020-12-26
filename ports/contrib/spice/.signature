@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30zzsrTLu+iCaqiv+OF1gu2drcjCHV56e8CKUJuOhIaH4OoLXRTO2catwIaMwgFy9f1v4RpHE55AQaZY81C6DQE=
+SHA256 (Pkgfile) = 499cdd8c1893258346deda691f7b9ae3b400dc0de2ed75c9533d4d1c7607fd48
+SHA256 (.footprint) = b03e9ef124724863b6d7deb428bfd34df73cd0b461fb179262f3b07eabe5b4c4
+SHA256 (spice-0.14.3.tar.bz2) = 551d4be4a07667cf0543f3c895beb6da8a93ef5a9829f2ae47817be5e616a114

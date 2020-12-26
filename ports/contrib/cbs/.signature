@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36wwwnI5URoEtJsXAt+GXkn9A8sZzWkOrdN8IgkQt4rcBe2SVUUSgPQnq3SOVT2WCqxSwyX6FDvuF4NK/Ie1swk=
+SHA256 (Pkgfile) = 97bf0e9d3061feeb982388d6ca93c1298679d0af05380b931ecdfcdf6be20e26
+SHA256 (.footprint) = 6eccff822d2d532b2c22f8d2873c6e2cc5cea6d38a5166cf65ea225d645e171d
+SHA256 (cbs-0.1.0.tar.gz) = 963c70352f0518efd36851a6b0082b4ce7f9b77e53ade5dc0fc57a3f1c51cdad

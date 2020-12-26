@@ -1,0 +1,19 @@
+# Description: XML to PO and back again.
+# URL: http://itstool.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-libxml2
+
+name=itstool
+version=2.0.6
+release=2
+source=(http://files.itstool.org/itstool/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	PYTHON=/usr/bin/python3 \
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,23 @@
+# Description: A terminal emulator based on GTK and VTE.
+# URL: http://www.pleyades.net/david/projects/sakura
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: vte3
+
+name=sakura
+version=3.7.1
+release=1
+source=(https://launchpad.net/sakura/trunk/$version/+download/$name-$version.tar.bz2)
+
+build() {
+	cmake -S $name-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=RELEASE \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	rm -r $PKG/usr/share/{locale,doc}
+}

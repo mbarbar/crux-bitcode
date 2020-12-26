@@ -1,0 +1,13 @@
+README for net-snmp
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+If you want to separate privileges - run post-install. 
+
+It might be handy to run "snmpconf -g basic_setup" to configure
+net-snmp.
+
+RESOURCES

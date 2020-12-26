@@ -1,0 +1,32 @@
+diff -urN openexr-2.5.1.orig/IlmBase/config/CMakeLists.txt openexr-2.5.1/IlmBase/config/CMakeLists.txt
+--- openexr-2.5.1.orig/IlmBase/config/CMakeLists.txt	2020-05-11 15:53:42.000000000 +0000
++++ openexr-2.5.1/IlmBase/config/CMakeLists.txt	2020-05-14 05:53:22.969725396 +0000
+@@ -75,9 +75,9 @@
+   # use a helper function to avoid variable pollution, but pretty simple
+   function(ilmbase_pkg_config_help pcinfile)
+     set(prefix ${CMAKE_INSTALL_PREFIX})
+-    set(exec_prefix "\${prefix}")
+-    set(libdir "\${exec_prefix}/${CMAKE_INSTALL_LIBDIR}")
+-    set(includedir "\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}")
++    set(exec_prefix ${CMAKE_INSTALL_BINDIR})
++    set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
++    set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+     set(LIB_SUFFIX_DASH ${ILMBASE_LIB_SUFFIX})
+     if(TARGET Threads::Threads)
+       # hrm, can't use properties as they end up as generator expressions
+diff -urN openexr-2.5.1.orig/OpenEXR/config/CMakeLists.txt openexr-2.5.1/OpenEXR/config/CMakeLists.txt
+--- openexr-2.5.1.orig/OpenEXR/config/CMakeLists.txt	2020-05-11 15:53:42.000000000 +0000
++++ openexr-2.5.1/OpenEXR/config/CMakeLists.txt	2020-05-14 05:53:57.064665826 +0000
+@@ -72,9 +72,9 @@
+   # use a helper function to avoid variable pollution, but pretty simple
+   function(openexr_pkg_config_help pcinfile)
+     set(prefix ${CMAKE_INSTALL_PREFIX})
+-    set(exec_prefix "\${prefix}")
+-    set(libdir "\${exec_prefix}/${CMAKE_INSTALL_LIBDIR}")
+-    set(includedir "\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}")
++    set(exec_prefix ${CMAKE_INSTALL_BINDIR})
++    set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
++    set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+     set(LIB_SUFFIX_DASH ${OPENEXR_LIB_SUFFIX})
+     if(TARGET Threads::Threads)
+       # hrm, can't use properties as they end up as generator expressions

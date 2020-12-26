@@ -1,0 +1,25 @@
+# Description: Python bindings for GPGme.
+# URL: https://www.gnupg.org/gpgme.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gpgme swig python3
+
+name=python3-gpgme
+version=1.15.0
+release=1
+source=(https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2)
+
+build() {
+	cd gpgme-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-fd-passing \
+		--disable-gpgsm-test
+
+	make
+	cd lang/python
+	make DESTDIR=$PKG install
+
+	install -d $PKG/usr/etc/gpgme
+	echo python3 > $PKG/usr/etc/gpgme/python
+}

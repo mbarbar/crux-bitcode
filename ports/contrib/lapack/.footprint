@@ -1,0 +1,29 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/lapack.h
+-rw-r--r--	root/root	usr/include/lapacke.h
+-rw-r--r--	root/root	usr/include/lapacke_config.h
+-rw-r--r--	root/root	usr/include/lapacke_mangling.h
+-rw-r--r--	root/root	usr/include/lapacke_utils.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/lapack-3.9.0/
+-rw-r--r--	root/root	usr/lib/cmake/lapack-3.9.0/lapack-config-version.cmake
+-rw-r--r--	root/root	usr/lib/cmake/lapack-3.9.0/lapack-config.cmake
+-rw-r--r--	root/root	usr/lib/cmake/lapack-3.9.0/lapack-targets-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/lapack-3.9.0/lapack-targets.cmake
+drwxr-xr-x	root/root	usr/lib/cmake/lapacke-3.9.0/
+-rw-r--r--	root/root	usr/lib/cmake/lapacke-3.9.0/lapacke-config-version.cmake
+-rw-r--r--	root/root	usr/lib/cmake/lapacke-3.9.0/lapacke-config.cmake
+-rw-r--r--	root/root	usr/lib/cmake/lapacke-3.9.0/lapacke-targets-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/lapacke-3.9.0/lapacke-targets.cmake
+lrwxrwxrwx	root/root	usr/lib/liblapack.so -> liblapack.so.3
+lrwxrwxrwx	root/root	usr/lib/liblapack.so.3 -> liblapack.so.3.9.0
+-rwxr-xr-x	root/root	usr/lib/liblapack.so.3.9.0
+lrwxrwxrwx	root/root	usr/lib/liblapacke.so -> liblapacke.so.3
+lrwxrwxrwx	root/root	usr/lib/liblapacke.so.3 -> liblapacke.so.3.9.0
+-rwxr-xr-x	root/root	usr/lib/liblapacke.so.3.9.0
+-rwxr-xr-x	root/root	usr/lib/libtmglib.so
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/lapack.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/lapacke.pc

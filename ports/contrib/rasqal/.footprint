@@ -1,0 +1,22 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/rasqal-config
+-rwxr-xr-x	root/root	usr/bin/roqet
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/rasqal/
+-rw-r--r--	root/root	usr/include/rasqal/rasqal.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/librasqal.a
+-rwxr-xr-x	root/root	usr/lib/librasqal.la
+lrwxrwxrwx	root/root	usr/lib/librasqal.so -> librasqal.so.3.0.0
+lrwxrwxrwx	root/root	usr/lib/librasqal.so.3 -> librasqal.so.3.0.0
+-rwxr-xr-x	root/root	usr/lib/librasqal.so.3.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/rasqal.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/rasqal-config.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/roqet.1.gz
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/librasqal.3.gz

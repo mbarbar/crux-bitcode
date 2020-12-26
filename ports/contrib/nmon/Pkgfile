@@ -1,0 +1,14 @@
+# Description: Nigel's performance MONitor for Linux
+# URL:         http://nmon.sourceforge.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=nmon
+version=16m
+release=1
+source=(http://download.sourceforge.net/nmon/lmon${version}.c)
+
+build() {
+  install -d -m 755 $PKG/usr/bin
+  cc -lncurses -lm -DJFS -DLARGEMEM -DX86 -o $PKG/usr/bin/nmon lmon${version}.c
+}

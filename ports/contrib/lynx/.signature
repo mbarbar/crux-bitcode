@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y3bgv009fEvcOxGaOcPlkWJWNtId1FjcFNxTWZog0cFSqQAICDkvEMAjj79dhHG0a2ftsHqFcTeeTdVWcbnDQo=
+SHA256 (Pkgfile) = 34a60d0c724c82c30ccb9e9a80f0bc11e9f71028a6a494aa48e5b48022f13810
+SHA256 (.footprint) = 3b22ed545f3a1403432447183afc67b052735c0869852b7771979b48e2e4fb09
+SHA256 (lynx2.8.9rel.1.tar.bz2) = 387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595

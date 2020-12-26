@@ -1,0 +1,35 @@
+# Description: Linear Algebra PACKage - F77 routines for Linear Algebra.
+# URL: http://www.netlib.org/lapack/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake gcc-fortran python3 openblas
+
+name=lapack
+version=3.9.0
+release=1
+source=(https://github.com/Reference-LAPACK/lapack/archive/v$version/$name-$version.tar.gz
+  https://github.com/Reference-LAPACK/lapack/commit/87536aa3.patch)
+
+build() {
+  patch -d $name-$version -p1 -i ../87536aa3.patch
+
+  export CFLAGS+=' -fPIC'
+  [[ -e /usr/bin/ninja ]] && PKGMK_LAPACK+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_LAPACK \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS -fPIC" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS -fPIC" \
+    -D CMAKE_Fortran_FLAGS="$CFLAGS -fPIC" \
+    -D CMAKE_Fortran_COMPILER=gfortran \
+    -D CMAKE_SKIP_RPATH=YES \
+    -D USE_OPTIMIZED_BLAS=ON \
+    -D CBLAS=OFF \
+    -D LAPACKE_WITH_TMG=ON \
+    -D BUILD_SHARED_LIBS=ON \
+    -D BUILD_DEPRECATED=ON \
+    -Wno-dev
+
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

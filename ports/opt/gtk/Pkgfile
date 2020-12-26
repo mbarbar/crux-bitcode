@@ -1,0 +1,23 @@
+# Description: A multi-platform toolkit for creating graphical user interfaces
+# URL: https://www.gtk.org/
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on: atk, hicolor-icon-theme, gdk-pixbuf, pango, xorg-libxcursor, xorg-libxinerama, xorg-libxrandr, xorg-libxcomposite
+
+name=gtk
+version=2.24.32
+release=1
+source=(http://download.gnome.org/sources/gtk+/2.24/${name}+-$version.tar.xz \
+	gtk.immodules gtk-register.sh)
+
+build () {
+	cd gtk+-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	mkdir -p $PKG/usr/etc/gtk-2.0
+	install -m 644 $SRC/gtk.immodules $PKG/usr/etc/gtk-2.0/
+	rm -r $PKG/usr/share/{locale,gtk-doc,gtk-2.0} $PKG/usr/bin/gtk-demo
+
+	install -m 0755 $SRC/gtk-register.sh $PKG/usr/bin/gtk-register
+}

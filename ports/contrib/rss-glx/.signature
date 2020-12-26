@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/XZky8LbyQ1wOH1AmwJO/99LZmvFmGkyYBPQNzz1jv6Z5sqAuYTd+eZLXQuBC3qL2EStoK5s+pzuZpFi9GCYgw=
+SHA256 (Pkgfile) = 533a6181e29d500f4d10c220147cfa7a5ac000ee5319f2990e574c854f74bed2
+SHA256 (.footprint) = 8c0554d0d4cb0bbb655d00d1dc90345d25b6c877ceefd6aabf6fed1da8638082
+SHA256 (rss-glx_0.9.1.tar.bz2) = 8f8d773864695fd57e6ff21f430994369ad74c69a5e66ce510bbba8ca55333aa

@@ -1,0 +1,11 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF361CSiKH0Zuksmap5huYgZvQEEHZLmyKTqw9HtlQpOTxJFQ20UTYRLCLKKNTPujBZLp3qTHKI2B8RC3lCdQojAQ=
+SHA256 (Pkgfile) = c0eb31c7dfc2eaa0697a3849aa0f49f63cdf0a74221ca38ec241edc881e37042
+SHA256 (.footprint) = 21023f776f9072b8d534d7955dbbd8b2fa7a2ccb0dea0e87f5f3ab2f40592f3c
+SHA256 (ntfs-3g_ntfsprogs-2017.3.23.tgz) = 3e5a021d7b761261836dcb305370af299793eedbded731df3d6943802e1262d5
+SHA256 (ntfs3g-2014.2.15-no-split-usr.patch) = 3fdd9b2947e1ded82258a86d55d481d641613d8ff916f6eeacc6c0e68042beb8
+SHA256 (ntfs3g-2016.2.22-sysmacros.patch) = 9d9ed593acd23f01b2a862a86691d953253976c962e8b8cd52884bef86a2d342
+SHA256 (ntfs3g-2017.3.23-check-mftmirr.patch) = 479b6e9f5efb0d7029031bef5c504acd9762dd9674f1dbfcf12c3064e6d4f524
+SHA256 (ntfs3g-2017.3.23-big-sectors.patch) = f15c294cce26c813ab933291509d25d6bead87a99d75482bc4e28a2a8338a569
+SHA256 (ntfs3g-2017.3.23-full-clusters.patch) = 9b37edba1b1ec6fa5040626426d62494b1e36ea6419e748a25014707cce6abb4
+SHA256 (CVE-2019-9755.patch) = a1d400c2fa5c72328050056e3fac6d150b2b70527ae3200164cb157132880fd1

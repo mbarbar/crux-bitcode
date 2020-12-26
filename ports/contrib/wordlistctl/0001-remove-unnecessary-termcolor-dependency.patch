@@ -1,0 +1,55 @@
+From 0c71afede9c3c26e6080f9bf532a012d886e3e10 Mon Sep 17 00:00:00 2001
+From: Alexandr Savca <alexandrsavca89@gmail.com>
+Date: Thu, 24 Sep 2020 11:05:23 +0300
+Subject: [PATCH] remove unnecessary termcolor dependency
+
+---
+ wordlistctl.py | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+
+diff --git a/wordlistctl.py b/wordlistctl.py
+index d87f3d1..92e0738 100755
+--- a/wordlistctl.py
++++ b/wordlistctl.py
+@@ -24,7 +24,6 @@ from concurrent.futures import ThreadPoolExecutor
+ 
+ try:
+     import requests
+-    from termcolor import colored
+ except Exception as ex:
+     print(f"[-] {ex}", file=sys.stderr)
+     sys.exit(-1)
+@@ -44,25 +43,23 @@ RETRY_COUNT: int = 5
+ 
+ 
+ def error(string: str) -> None:
+-    print(colored("[-]", "red", attrs=["bold"]) +
+-          f" {string}", file=sys.stderr)
++    print(f"[-] {string}", file=sys.stderr)
+ 
+ 
+ def warning(string: str) -> None:
+-    print(colored("[!]", "yellow", attrs=["bold"]) + f" {string}")
++    print(f"[!] {string}")
+ 
+ 
+ def info(string: str) -> None:
+-    print(colored("[*]", "blue", attrs=["bold"]) + f" {string}")
++    print(f"[*] {string}")
+ 
+ 
+ def success(string: str) -> None:
+-    print(colored("[+]", "green", attrs=["bold"]) + f" {string}")
++    print(f"[+] {string}")
+ 
+ 
+ def banner() -> None:
+-    print(colored(f"--==[ {__project__} by {__organization__} ]==--\n",
+-                  "red", attrs=["bold"]))
++    print(f"--==[ {__project__} by {__organization__} ]==--\n")
+ 
+ 
+ def load_repo() -> None:
+-- 
+2.28.0
+

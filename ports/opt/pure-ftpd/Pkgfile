@@ -1,0 +1,33 @@
+# Description: Fast, secure, production-quality and standard-conformant FTP server
+# URL:         http://www.pureftpd.org/project/pure-ftpd 
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  openssl
+
+name=pure-ftpd
+version=1.0.49
+release=1
+source=(http://download.pureftpd.org/$name/releases/$name-$version.tar.bz2 \
+        pure-ftpd.rc pure-ftpd.pam)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --with-certfile=/etc/ssl/certs/pure-ftpd.pem \
+                --with-everything \
+                --with-tls \
+                --with-pam
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/etc/ssl/certs
+    touch $PKG/etc/ssl/certs/pure-ftpd.pem
+    chmod 0600 $PKG/etc/ssl/certs/pure-ftpd.pem
+
+    install -D -m 755 $SRC/pure-ftpd.rc $PKG/etc/rc.d/pure-ftpd
+    install -D -m 644 $SRC/pure-ftpd.pam $PKG/etc/pam.d/pure-ftpd
+    install -m 644 pam/ftpusers $PKG/etc/
+    install -m 644 pure-ftpd.conf $PKG/etc/
+
+    rm -r $PKG/usr/share/doc
+}

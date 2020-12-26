@@ -1,0 +1,22 @@
+# Description: A font family based on the Bitstream Vera Fonts
+# URL:         https://dejavu-fonts.github.io/
+# Maintainer:  CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on:  fontconfig xorg-mkfontscale
+
+name=xorg-font-dejavu-ttf
+version=2.37
+release=1
+source=(http://downloads.sourceforge.net/project/dejavu/dejavu/$version/dejavu-fonts-ttf-$version.tar.bz2)
+
+build() {
+    cd dejavu-fonts-ttf-$version
+
+    install -m 0755 -d $PKG/usr/share/fonts/X11/TTF
+    install -m 0644 -t $PKG/usr/share/fonts/X11/TTF ttf/*.ttf
+
+    install -m 0755 -d $PKG/etc/fonts/conf.{d,avail}
+    install -m 0644 -t $PKG/etc/fonts/conf.avail fontconfig/*.conf
+
+    cd $PKG/etc/fonts/conf.d
+    ln -s ../conf.avail/* .
+}

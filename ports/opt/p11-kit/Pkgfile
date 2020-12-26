@@ -1,0 +1,38 @@
+# Description: Provides a way to load and enumerate PKCS#11 modules
+# URL: https://p11-glue.github.io/p11-glue/p11-kit.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libtasn1 libffi make-ca
+
+name=p11-kit
+version=0.23.21
+release=1
+source=(https://github.com/p11-glue/$name/releases/download/$version/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	sed '20,$ d' -i trust/trust-extract-compat.in
+	cat >> trust/trust-extract-compat.in << "EOF"
+# Copy existing anchor modifications to /etc/ssl/local
+/usr/lib/make-ca/copy-trust-modifications
+
+# Generate a new trust store
+/usr/sbin/make-ca -f -g
+EOF
+
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--with-module-path=/usr/lib/pkcs11 \
+		--with-trust-paths=/etc/pki/anchors
+
+	make
+	make DESTDIR=$PKG install
+
+	ln -s ../lib/p11-kit/trust-extract-compat \
+		$PKG/usr/bin/update-ca-trust
+
+	rm -r $PKG/usr/share/gtk-doc
+}

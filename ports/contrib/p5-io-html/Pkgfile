@@ -1,0 +1,19 @@
+# Description: Open an HTML file with automatic charset detection
+# URL: https://metacpan.org/pod/IO::HTML
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-io-html
+version=1.004
+release=1
+source=(https://cpan.metacpan.org/authors/id/C/CJ/CJM/IO-HTML-$version.tar.gz)
+
+build() {
+  cd IO-HTML-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_MM_OPT="INSTALLDIRS=vendor" \
+    PERL_MB_OPT="--installdirs vendor"
+  perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

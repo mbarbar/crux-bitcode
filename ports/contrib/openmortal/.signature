@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31qZBsGiUtBHotvekRWWMt1eEiTAH5xV1CyG5nsxYxJ5qzY1iTQNExcBL8Q+p7SoxQMIiF8iJtwSItvScidz7gw=
+SHA256 (Pkgfile) = 978e9107d9869e128ab6afbb76e58b9ab0600a63d86fb6a2ba806e1b8c2be17e
+SHA256 (.footprint) = 59192cd6aa3ed9d6317d8fbfdbad06cb6584396a64de6b10b96f5d98ad658f1b
+SHA256 (openmortal-0.7.tar.bz2) = 9c302560d71ddcd3473ba2a1022fd118cbce87a4cd4b3080cb46288a410bb710
+SHA256 (fixcmenu.diff) = 310b36aadbd5d7e99d21cc6a937923f612742edfb5e57db8a180b2ab63ec3c16

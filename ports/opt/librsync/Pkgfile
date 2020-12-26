@@ -1,0 +1,23 @@
+# Description: Library for delta compression of streams
+# URL: http://librsync.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: popt cmake
+
+name=librsync
+version=2.3.1
+release=1
+source=(https://github.com/$name/$name/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+    cmake -S $name-$version -B build \
+        -D CMAKE_BUILD_TYPE=Release \
+        -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D CMAKE_INSTALL_LIBDIR=lib \
+
+    cmake --build build
+    DESTDIR=$PKG cmake --install build
+
+    rm -r $PKG/usr/share/man/man1
+    rm -r $PKG/usr/bin
+}

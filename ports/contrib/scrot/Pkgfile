@@ -1,0 +1,21 @@
+# Description: Commandline screen capture.
+# URL: https://github.com/resurrecting-open-source-projects/scrot
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: autoconf-archive giblib xorg-libxcursor xorg-libxcomposite
+
+name=scrot
+version=1.4
+release=1
+source=(https://github.com/resurrecting-open-source-projects/scrot/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man
+
+	make
+	make DESTDIR=$PKG install
+}

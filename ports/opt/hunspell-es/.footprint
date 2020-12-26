@@ -1,0 +1,48 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/hunspell/
+-rw-r--r--	root/root	usr/share/hunspell/es_AR.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_AR.dic
+-rw-r--r--	root/root	usr/share/hunspell/es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_BO.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_CL.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_CL.dic
+-rw-r--r--	root/root	usr/share/hunspell/es_CO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_CO.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_CR.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_CR.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_CU.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_CU.dic
+-rw-r--r--	root/root	usr/share/hunspell/es_DO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_DO.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_EC.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_EC.dic
+-rw-r--r--	root/root	usr/share/hunspell/es_ES.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_ES.dic
+-rw-r--r--	root/root	usr/share/hunspell/es_GT.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_GT.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_HN.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_HN.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_MX.aff -> es_CO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_MX.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_NI.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_NI.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_PA.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_PA.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_PE.aff -> es_CO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_PE.dic
+-rw-r--r--	root/root	usr/share/hunspell/es_PH.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_PH.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_PR.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_PR.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_PY.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_PY.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_SV.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_SV.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_US.aff -> es_PH.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_US.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_UY.aff -> es_BO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_UY.dic
+lrwxrwxrwx	root/root	usr/share/hunspell/es_VE.aff -> es_CO.aff
+-rw-r--r--	root/root	usr/share/hunspell/es_VE.dic
+-rw-r--r--	root/root	usr/share/hunspell/hyph_es_ANY.dic

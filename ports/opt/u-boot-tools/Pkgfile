@@ -1,0 +1,20 @@
+# Description: U-Boot tools
+# URL: http://www.denx.de/wiki/U-Boot/WebHome
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Depends on: openssl
+
+name=u-boot-tools
+version=2020.10
+release=1
+source=(https://ftp.denx.de/pub/u-boot/u-boot-$version.tar.bz2)
+
+build() {
+  cd u-boot-$version
+
+  make sandbox_config
+  make tools TOOLSUBDIRS=""
+
+  install -d -m 0755 $PKG/usr/{bin,share/man/man1}
+  install -m 0755 tools/mk{,env}image $PKG/usr/bin
+  install -m 0644 doc/mkimage.1 $PKG/usr/share/man/man1
+} 

@@ -1,0 +1,18 @@
+# Description: A free C library that handles Resource Description Framework (RDF) query syntaxes, query construction and query execution returning result bindings
+# URL: http://librdf.org/rasqal
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libgcrypt libmpfr libpcre raptor
+
+name=rasqal
+version=0.9.33
+release=1
+source=(http://download.librdf.org/source/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --enable-release
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/gtk-doc
+}

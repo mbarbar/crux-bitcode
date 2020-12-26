@@ -1,0 +1,8 @@
+--- README.asciidoc.orig	2019-10-12 13:12:51.338188365 +1100
++++ README.asciidoc	2019-10-12 13:13:14.557901897 +1100
+@@ -1,4 +1,4 @@
+-= spvc Manual
++= spvc(1)
+ :toc:
+ :toclevels: 3
+ :numbered:

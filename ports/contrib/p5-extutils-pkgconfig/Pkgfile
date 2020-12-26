@@ -1,0 +1,24 @@
+# Description: Perl bindings for pkgconfig
+# URL:         https://metacpan.org/pod/ExtUtils::PkgConfig
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  p5-xml-parser
+
+name=p5-extutils-pkgconfig
+version=1.16
+release=2
+source=(https://www.cpan.org/modules/by-module/ExtUtils/ExtUtils-PkgConfig-$version.tar.gz)
+
+build() {
+	cd ExtUtils-PkgConfig-$version
+	perl Makefile.PL
+
+	make OPTIMIZE="$CFLAGS"
+	make install DESTDIR=$PKG
+
+	find $PKG -type f -a ! -perm -u+w | xargs chmod u+w
+	find $PKG \
+		-name perllocal.pod \
+		-o -name "*.bs" \
+		-o -name .packlist | xargs rm
+	find $PKG -empty | xargs rmdir -p ||:
+}

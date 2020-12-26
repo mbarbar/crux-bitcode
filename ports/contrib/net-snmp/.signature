@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37UMijx9pNvo3OKf+tsHmFUt9kWTiZJ/7pas1sJe5Eb/CFzT+0Le/KKfCLkh+APTC/ieY4RBornMjHxyZVkWqAg=
+SHA256 (Pkgfile) = ada1e63d88bb5e165acaa145d6be91a5c39f849a8cfbeec7fddaab9c57d6dfc9
+SHA256 (.footprint) = bbb0937f80404be127c01e4ee3069f4d88cf48da560c22dd834a37dd48a314f3
+SHA256 (net-snmp-5.9.tar.gz) = 04303a66f85d6d8b16d3cc53bde50428877c82ab524e17591dfceaeb94df6071
+SHA256 (snmpd) = 2f8945dd66668cccd4ad884bbc1f425dfb5ace1261a5c410182222c928f54a34
+SHA256 (snmpd.conf) = fc23c35aa4e275456cb9e7e1a4c2af06a9ec089126932a98aef39093a3c33e3e

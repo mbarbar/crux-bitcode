@@ -1,0 +1,23 @@
+# Description: A tool for automatically generating simple manual pages from program output.
+# URL: https://www.gnu.org/software/help2man/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=help2man
+version=1.47.16
+release=1
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/info
+
+}

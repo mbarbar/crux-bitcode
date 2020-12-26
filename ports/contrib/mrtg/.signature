@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35eCjEY5fwHPDHW01IqL7fsXWSmon2sZdMlAnXfqSBwkweyPkWF5eDy8gMB4wsGmbAYBZCNlOxgSm9GcUAmYxgg=
+SHA256 (Pkgfile) = 551e9102fa430d931d31b1a4cf22b2c6fa18e3f3071cf66e6bb08cebb83e669d
+SHA256 (.footprint) = feb6912d7e7bb59cb655d55ec9a5afbf03b8cb5b5e063fa3b6267763eea8d293
+SHA256 (mrtg-2.17.7.tar.gz) = 9b94cb268fb15b0304ad3bb3ec92b9a8a16dacfcee72baac19298224a2c332c3

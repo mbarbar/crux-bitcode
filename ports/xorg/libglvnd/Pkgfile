@@ -1,0 +1,22 @@
+# Description: The GL Vendor-Neutral Dispatch library
+# URL: https://github.com/NVIDIA/libglvnd
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxext
+
+name=libglvnd
+version=1.3.2
+release=1
+source=(https://github.com/NVIDIA/$name/archive/v$version/$name-$version.tar.gz \
+	eglplatform.h)
+
+build() {
+	cd $name-$version
+
+	autoreconf -if
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+	# replace EGL/eglplatform.h with the newer mesa version
+	install -m 0644 $SRC/eglplatform.h $PKG/usr/include/EGL/
+}

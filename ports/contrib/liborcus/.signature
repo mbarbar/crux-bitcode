@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/WsUJOQN8mwbpnspfMmE7axBfl8qBW06T8o8R+z8FuxN49pKkhJH7ST7c7qsH0vPvrA8WdVS1cBe5bm3mvo4wQ=
+SHA256 (Pkgfile) = 0c618f909dfd59553351440a5c4b8dffdfa2d14ba57b7d824358d6454ce69767
+SHA256 (.footprint) = f79b1c945d6b80d96283bd8ce1ebd8cd0322fe1f3dee35a78ddd6bc6ea19a113
+SHA256 (liborcus-0.15.4.tar.xz) = b02173c1787373fa728fdaad1b9658184dbcefefcc23c3afcf5400571282e512

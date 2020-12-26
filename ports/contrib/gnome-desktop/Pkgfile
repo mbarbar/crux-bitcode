@@ -1,0 +1,25 @@
+# Description: Library with common API for various GNOME modules
+# URL: https://gitlab.gnome.org/GNOME/gnome-desktop
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gsettings-desktop-schemas gtk3 iso-codes libseccomp xorg-libxcomposite xorg-libxcursor xorg-libxinerama xkeyboard-config
+
+name=gnome-desktop
+version=3.38.2
+release=1
+source=(https://download.gnome.org/sources/gnome-desktop/${version::4}/$name-$version.tar.xz)
+
+build() {
+  meson setup $name-$version build \
+    --prefix=/usr \
+    --libexecdir=/usr/lib/$name \
+    --buildtype=plain \
+    -Db_ndebug=true \
+    -Dgnome_distributor="CRUX" \
+    -Dudev=enabled \
+    -Dgtk_doc=false \
+    -Ddesktop_docs=false \
+    -Dsystemd=disabled
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+  rm -fr $PKG/usr/share/locale
+}

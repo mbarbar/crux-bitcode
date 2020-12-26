@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UrniTyen21dIpZdrBgKO4+TIq/ocFmUfmAzMvO2+m20wD5lypaijAvcUozkHlnQhWrsNWxDRJm/rbyMZI2gDg4=
+SHA256 (Pkgfile) = ee592f58750d5af3e0260640bcd89de25df44bbf532f98cb2089d0eb473d38de
+SHA256 (.footprint) = 14b5a412144a3aa56ee80500beb67647f360cc8f50af0a7213fa83afd3072103
+SHA256 (elilo-3.16-all.tar.gz) = 69e361d95c01ea2657200b2215464fc0235b01d3e317d2f2276284259b06d392
+SHA256 (elilo-3.16-strncpy-clash.patch) = c213ecd8097739a08f905749c951bcfba909b6be776734dfe69fe3432246baa1

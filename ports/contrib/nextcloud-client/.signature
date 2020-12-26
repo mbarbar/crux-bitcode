@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wIk25h4kiumKCCLmwAWvXxM37UG/Af6wgQK/JoCeWOB1mGF0BKOwXvuysiibihUkxS8nIPsWd8hfaoyVBMDnwY=
+SHA256 (Pkgfile) = cb6452b331101607db9c9c5d9577eb749d30e90ab37dc91edab6b5d626e66e7f
+SHA256 (.footprint) = 15771f2a3093afab072dc2ed88028f4929e1a6f756a87bbd0ad1a8d8b6b5104c
+SHA256 (nextcloud-client-3.0.3-1.tar.gz) = abd021ff06ecb267221a221dbf8b4efd3bd8e418053cc49b6b6faa290717c6d8

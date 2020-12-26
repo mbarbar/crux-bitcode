@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3515XMLvhHhVG5wWsHTu18iFKQLMhNkLZwdGuTBxLE3od1I+TsIyhO71HZqRbJ1u8f848FnHBMyO1VFZ2+ylbwA=
+SHA256 (Pkgfile) = dbd7ebad8fee66e72328c0592200e9922acbb31b07f0c8e8c452e25400a7af4e
+SHA256 (.footprint) = be706cb5b9db3ed6060747ad64374fd2d21819813ebabc9dd41f7ea0345de268
+SHA256 (freeciv-2.6.2.tar.bz2) = 6181ef3d3c76264383aabbe0eaf1550d8a65ca42639e6c17cc2938165e176c8f

@@ -1,0 +1,23 @@
+# Description: X client library
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxcb xorg-xtrans
+
+name=xorg-libx11
+version=1.7.0
+release=1
+source=(https://www.x.org/releases/individual/lib/libX11-$version.tar.bz2)
+
+build() {
+	cd libX11-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	# Conflict with xorg-xorgproto
+	rm $PKG/usr/include/X11/extensions/XKBgeom.h
+
+	rm -r $PKG/usr/share/doc
+}

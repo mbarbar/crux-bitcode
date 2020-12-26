@@ -1,0 +1,16 @@
+# Description: client for the proprietary Microsoft Point-to-Point Tunneling Protocol
+# URL:         http://pptpclient.sf.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  ppp
+
+name=pptp
+version=1.10.0
+release=1
+source=(http://download.sourceforge.net/pptpclient/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+   make
+   make DESTDIR=$PKG install
+   rm -rf $PKG/usr/doc
+}

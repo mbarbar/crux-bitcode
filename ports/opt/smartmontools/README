@@ -1,0 +1,11 @@
+
+REQUIREMENTS
+    
+    To send email notifications smartd needs a mail binary. The opt port
+    mailx is recommend for that purpose.
+
+PRE-INSTALL
+
+POST-INSTALL
+
+PRECAUTION

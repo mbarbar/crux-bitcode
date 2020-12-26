@@ -1,0 +1,598 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/clementine
+-rwxr-xr-x	root/root	usr/bin/clementine-tagreader
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/applications/
+-rw-r--r--	root/root	usr/share/applications/clementine.desktop
+drwxr-xr-x	root/root	usr/share/clementine/
+drwxr-xr-x	root/root	usr/share/clementine/projectm-presets/
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Agitator.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Aimless (Gravity Directive Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Aimless (Spirogravity Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Airhandler (Menagerie Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Airs (Windy Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Anchorpulse (Pulse Of A Ghast II Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Anchorpulse (Verified Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Anomalous Material Science (Pure Splinter Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Antidote (Aqualung Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Antidote (Side Effects Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Antidote.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Antique Abyss.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Arise! (Padded Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Ashes Of Air (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Bitterfeld (Crystal Border Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Blender.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Bow To Gravity.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Brakefreak.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Candy Avian.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Causeway Of Dreams (Nightmare Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Causeway Of Dreams (REMix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Causeway Of Dreams.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Chromatic Abyss (The Other Side).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Circlefacade.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Contortion (Xenomorph Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Contortion.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Crystal Storm.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Dark Matter (Converse Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Elastoid.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Floater Society.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Flowing Form.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Making Time (Swamp Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Potion of Spirits.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Songflower (Moss Posy).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - Spillswirl.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - What Cannot Be Undone.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Aderrasi - What cannot be.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Bmelgren & Krash - Rainbow Orb Peacock (Centred Journey Mix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Bmelgren & Krash - Rainbow Orb Peacock (Lonely Signal Gone .milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Bmelgren - Godhead.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Bmelgren - Pentultimate Nerual Slipstream (Tweak 2).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Bmelgren - Take This Highway.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Che - Burning Hus.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Che - Escape.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Che - Watch & Fly.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/CrystalHigh - mad ravetriping.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/DaNOnE - Highway to Heaven (rotating).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/EMPR - Random - Changing Polyevolution.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/EMPR - Random - Look mama I'm on TV! 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/EMPR - Random - They're so cute Dad can I keep one!.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/EMPR - Random - Turbulence Sandwich.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. + Phat - chasers 18 hallway.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - glowsticks v2 03 music.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - glowsticks v2 04 music minimal.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - glowsticks v2 05 and proton lights (+Krash's beat code) _Phat_remix02b.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - glowsticks v2 05 and proton lights (+Krash's beat code) _Phat_remix07 recursive demons.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - heater core C_Phat's_class + sparks_mix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - heater core C_Phat's_on route_mix+beam.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - repeater 05 - rave on acid.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S. - repeater 15 - kaleidoscope b.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S.+Phat - Arm_upgrades - transformer.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Eo.S.+Phat Cool Bug v2 + (Krash's beat detection).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/EvilJim - Follow the ball.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/EvilJim - Ice Drops.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese & Idiot24-7 - Rearview Mirror.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - 0 To 60.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - A Blur.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - Lifesavor Anyone.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - New meetings.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - Quicksand.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - Round and Round (geiss gamma mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - Stand Still!.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - The Tunnel (Final Stage Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - Window Reflection 6.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - Zoom Effects (Remix 2).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Fvese - simple.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss & Rovastar - Julia Fractal (Vectrip Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss & Rovastar - Notions Of Tonality 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss & Rovastar - The Chaos Of Colours (sprouting dimentia mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss & Rovastar - Tokamak (Naked Intrusion Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss & Sperl - Feedback (projectM idle HDR mix).prjm
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Aieeeeee!!!.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Anomaly 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Anomaly 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Approach.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Asymptote.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bass Kaleidosphere.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bass Zoom.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bipolar 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bipolar 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bipolar 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bipolar 4.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bipolar 5.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Blasto.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bonfire.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bright Fiber Matrix 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Bright Fiber Matrix 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Calligraphy.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Casino.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Cepiasound.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Churn.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Constant Velocity.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Coral.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Corpus Callosum.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Cosmic Dust 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Cosmic Dust 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Cruzin'.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Cycloid 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Cycloid 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Davod The Pod.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - De La Moutard 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - De La Moutard 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Demonic Distortion.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Descent.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Destruction.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Diffraction.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Digital Smoke.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Downward Spiral.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Drift.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Dynamic Swirls 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Dynamic Swirls 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Eddies 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Eddies 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Eggs.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - El Cubismo.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Feedback 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Feedback.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Festive.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Fiberglass.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Flotsam.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Flower Blossom.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Flower.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Four Kinds of Amphetamines.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Galaxy 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Galaxy 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Greenland.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Heavenly 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Heavenly 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Heavenly 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - High Dynamic Range.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Hovering.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Hyperion.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Inkblot.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Iris.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Journey.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Julia Fractal 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Julia Fractal 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Luz.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Mega Swirl 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Mega Swirl 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Mega Swirl 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Microcosm.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Monotone Ripples.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Music Box.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Nautilus.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Octopus Blue.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Octopus Ever Changing.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Octopus Fat and Ever Changing.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Octopus Gold with Dots.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Octopus Gold.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Octopus.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Oldskool Mellowstyle.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Pelota De Fuego.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Pinch.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Pistons.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Planet 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Planet 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Quasilinear Submanifolds.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Reducto Absurdum.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Reducto Ad Nauseum.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Rocket.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Runoff.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Scary.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Script.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Serpent.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Shake.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Shift.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Sinews 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Sinews 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Smoke.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Solar Flare (Blue).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Solar Flare (Reptile).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Solar Flare.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Sound And The Fury.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Space Voyage (High-Warp).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Space Voyage Bright.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Space Voyage.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Spacedust.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Starfish 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Starfish 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Sunsets.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Supernova 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Supernova 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Surface.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirl 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirl 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirlie 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirlie 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirlie 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirlie 4.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Swirlie 5.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Symmetry.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - The Fatty Lumpkin Sunkle Tweaker.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Three And A Half Kinds Of Amphetamines.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Three Kinds Of Amphetamines.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Tokamak.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Tornado.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Toy.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Trampoline.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Tube.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Two-Pointed Pulsagon.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Ultrafast.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Volume Zoom.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Vortex 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Vortex 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Warp Of Dali 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Warp Of Dali 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Warp Of Dali Bright.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss - Waterfall.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Geiss and Rovastar - The Chaos Of Colours (sprouting diment.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot & Che - Various Abstract Effects.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot & Rovastar - Altars Of Madness 2 (X.42 Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot & Zylot - Unhealthy Love (Idiot's STDs Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - 9-7-02 (Remix) (sustain fixed).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - Cortex (Spiritual Visions Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - MOTIVATION!.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - Madness Within The Void (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - Tentacle Dreams (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - Texture Boxes (Remix 2).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - Texture Boxes (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - Typomatic (Remix 2).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - What Is.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot - What Shall Come.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot24-7 - Ascending to heaven 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Idiot24-7 - Meeting place.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Che - Return Of The King.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Che - The Piper.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Rovastar - Clouded Bottle.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Rovastar - Snowflake Delight.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Rovastar - Snowflake Return.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Unchained - Frozen Eye 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Unchained - Invade My Mind.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion & Unchained - Re-Enter Homeworld.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion - Figure Eight.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Illusion - Heavenly Eye.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Jess - Trying To Trap A Twister.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Idiot - Memories Of The Castle.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Illusion - Indecisive Mosaic.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Illusion - Spiral Movement.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Rovastar - A Million Miles from Earth (Ripple Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Rovastar - Altars Of Madness (Mad Ocean Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Rovastar - Cerebral Demons (Distant Memory Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Rovastar - Cerebral Demons - Phat + Eo.S. hall of ghouls Remix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Rovastar - Switching Polygons.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Rovastar - The Devil Is In The Details.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & TEcHNO - Rhythmic Mantas.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash & Zylot - Inside The Planar Portal (Indecision Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - 3D Shapes Demo 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - 3D Shapes Demo.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Digital Flame.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Dynamic Borders 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Framed Geometry.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Pulse.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Season's Greetings 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Twisting Indecision.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - War Machine (Shifting Complexity Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash - Windowframe To Mega Swirl 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash and Fvese - Molten Indecision (Fvese Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Krash and Rovastar - Rainbow Orb.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/M.tga
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Mstress & Juppy - Dancer.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Mstress & Juppy - Dancers In The Dark.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Mstress - Acoustic Nerve Impulses (Under Drug Effetcs (Hypn.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Mstress - Snowing Fiber City.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Phat+fiShbRaiN+Eo.S_Mandala_Chasers_remix - www.eos4life.com.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Phat+fiShbRaiN+Eo.S_Mandala_Chasers_remix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/PieturP - triptrap_(getting_concrete_visions_through_a_diafragma_version).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/PieturP - triptrap_(ultimate-trip-mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Redi Jedi - acid in your brain.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Redi Jedi - multiple points of origin, one destination.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Reenen - phoenix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rocke - Cold Love (Tei Zwaa).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rocke - Personal Comet.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Aderrasi - Oceanic Bassograph (Underwater Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Che - Adela The Flower (Altars Of Madness Mix 2).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Che - Asylum Animations.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Fvese - Dark Subconscious.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Fvese - Deadly Flower.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Fvese - Mosaic Waves.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Fvese - Paranormal Static.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Fvese - Stranger Minds (Astral Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Fvese - Stranger Minds.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Approach (Vectrip Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Bipolar 2 (Vectrip Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Broken Destiny Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Mysticial Awakening Mi.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Poltergiest Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Smoke Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Smoking Delusion Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Dynamic Swirls 3 (Voyage Of Twisted Soul.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Ice Planet.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Octoplasm.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Octotrip (MultiTrip Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Geiss - Octotrip.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Idiot24-7 - Balk Acid.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Idiot24-7 - Mixed Emotions (Harlequin's Shame Mi.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Idiot24-7 - Mixed Emotions (Harlequin's Shame Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Illusion - Shifting Sphere.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Krash - Cerebral Demons.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Krash - Flowing Synergy.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Krash - Interwoven (Contra Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Rocke - Answer.42 (Trippy S. Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Rocke - Headspin.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Rocke - Sugar Spun Sister.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Sperl - Tuxflower.prjm
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & StudioMusic - More Cherished Desires.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & StudioMusic - Twisted Spider Web.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Telek - Altars of Madness (Rolling Oceans Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Telek - Cosmic Fireworks.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Unchained - Ambrosia Mystic (Dark Heart Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Unchained - Centre Of Gravity.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Unchained - Demonology (Vampire Soul Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Unchained - Oddball World.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Unchained - Voodoo Chess Magnet (Everglow Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Unchained - Xen Traffic.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Zylot - Azirphaeli's Plan (Multiplan Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Zylot - Narell's Fever.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Zylot - Passion Flower.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar & Zylot - Sea Of Zigrot.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - A Million Miles From Earth (Wormhole Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - A Million Miles from Earth (Pathfinder Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - A Million Miles from Earth.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Harlequin's Maddess.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Harlequin's Madness (Dark Disorder Mix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness (A Million Miles From Earth Mi.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness (Boxfresh Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness (Duel Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness (Surealist Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness 2 (Frozen Time Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness 4 (Spirit Of Twisted Madness M.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Altars Of Madness.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Attacking Freedom.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Bellanova (New Wave Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Biohazard Warning.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Chapel Of Ghouls.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Chemical Spirituality.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Clouded Judgement 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Cosmic Echoes 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Cosmic Echoes 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Cosmic Havoc.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Cosmic Mosaic (Active Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Dark Ritual (Star Of Destiny Denied Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Dark Ritual (Star Of Destiny Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Decreasing Dreams (Extended Movement Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Dreamcatcher.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Explosive Minds.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Forgotten Moon.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Fractopia (Fantic Dancing Lights Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Fractopia (Galaxy Swirl Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Fractopia (Upspoken Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Fractopia (Upspoken Mix)_Phat_Speak_When_Spoken_2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Frozen Rapture .milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Future Speakers.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Halcyon Dreams 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Hallucinogenic Pyramids (Beat Time Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Delight (Endless Tunnel Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal (Crazed Spiral Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal (Dual Spiral Mix ).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Dynamic Fractal 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Fractal Encounter 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Fractal Encounter.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Spirit (Twisted Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Harlequin's Spirit.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Hyperspace (Frozen Rapture Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Hyperspace (Hyper Speed Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Hyperspace.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Inner Thoughts (Clouded Judgement Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Inner Thoughts (Dark Secret Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Inner Thoughts (Distant Memories Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Inner Thoughts (Frantic Thoughts Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Inner Thoughts (Strange Cargo Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Kalideostars (Altars Of Madness MIx).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Kalideostars (Round  Round Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Kalideostars.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - LabFunk.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Lost Souls of the Bermuda Triangle (Darkest Soul.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Magic Carpet.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Mosaics Of Ages.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Multiverse Starfield 1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Multiverse Starfield 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Omnipresence Resurrection (Raw Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Omnipresence Resurrection.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Oozing Resistance.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Pandora's Volcano.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Parallel Universe.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Sea Shells.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Snapshot Of Space.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Solarized Space (Space DNA Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Solarized Space.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Space (Twisted Dimension Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Space.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Starquake (Sunquake Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - The Awakening.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - The Chaos Of Colours (Drifting Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - The Chaos Of Colours.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - The Shroomery.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Timeless Voyage.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Touchdown on Mars (Detailed Pictures Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - Tripmaker.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - VooV's Movement (After Dark Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - VooV's Movement.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar - twisted bytes.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar and Krash - Hallucinogenic Pyramids (Extra Beat Ti.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar and Unchained - Braindance Visions.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rovastar and Unchained - Life After Pie (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzer & Zylot - Force Field Generator (Slowtime Tweak).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor & Aderrasi - Canon.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor & Che - Inside The House Of Nil.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor & Rovastar - Oozing Resistance (Waveform Mod).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor - Learning Curve (Invert tweak).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor and Idiot - Any Other Deep Rising.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor and Rovastar - Altars Of Madness 3 (ooze tweak with .milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor and Rovastar - Altars Of Madness 3 (ooze tweak).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor and StudioMusic - Vertigyny (Geiss shape mod).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor and Zylot - Associative Order.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Rozzor and che - Inside the House of nil.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Studio Music - Cherished Desires.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Studio Music and Unchained - Rapid Alteration.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic & Unchained - Entity.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic & Unchained - Minor Alteration.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic & Unchained - So Much Love.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic & Unchained - State Of Discretion.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic & Unchained - Wrenched Fate.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic - Harmonic Bliss (elated mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic - It's Only Make Believe.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic - Numerosity.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic - Twisted Galaxy.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/StudioMusic Aderrasi & nil - LA movement (Intellectual Sens.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/TEcHNO and SandStorm - Psychodelic Highway.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - City Helix Lattice.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Directive Swagger (Spectral Inferno) (fix...) maybe.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Flicker (xis).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Flicker.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Lost Star (Flash).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Recirculate (Cool).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Sine Wave.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Slow Shift Matrix (Ethereal Drift).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Slow Shift Matrix (bb4.5).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Slow Shift Matrix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Slow Thing (Spiderman Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Spiral Tabletop (New and Improved!).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Spokes (More Dynamic).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek - Target Practice (tracking retreat slide).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Telek EMPR - Scanner - Trust me I've got a Melways.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/TobiasWolfBoi - Cataract.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/TobiasWolfBoi - The Pit.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Tschoey - Music Flower.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Tux.tga
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & CTho - Bad Vibes.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Che - Oddnezz 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Che - Oddnezz 4 (Done it again).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Illusion - Dual Wave 3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Illusion - Logic Morph.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Illusion - Spirit Morph.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - For The Seagull.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Luckless.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Rainbow Obscura.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Slow Solstice.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Triptionary.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Wormhole Pillars (Hall of Shadows mi.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Wormhole Pillars.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained & Rovastar - Xen Traffic.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - A Matter Of Taste (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - All You Can Eat.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Bad Karma Oddnezz Style.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo (Demonology Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo 1.0.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo 10.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo 2.0.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo 2.1.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo 2.2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Beat Demo 2.3.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Cartoon Factory.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Cranked On Failure.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Custom Gramatix (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Deeper Logic.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Free to Feel (Valium Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - French Clothing.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Games With Light & Sound.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Ghostlight Whisper.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - God Of The Game (Remix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Goo Kung Fu.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Goofy Beat Detection.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Housed In A Childish Mind.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - In Memory Of Peg.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Invariant Under Rigorous Motions.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Jaded Emotion.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Jaundice.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Making a Science of It 4.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Morat's Final Voyage.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Non-Professional Music Analyzer.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Painful Plasma (Multi-Wave Mirrored Rage) -- Ro.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Perverted Dialect.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Picture Of Exile.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Picture Of Nectar.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Picture Of Poison.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - ReAwoke.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Resistance.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Ribald Ballad.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Shaping The Grid.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Subjective Experience Of The Manifold.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Unclaimed Wreckage 2 (Shamanic).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Unclaimed Wreckage.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Unified Drag 2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - Working the Grid.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Unchained - ventilation.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot & Aderrasi - Oceanic Bassograph (New Jersey Shore Mix.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot & Idiot - ATan2 Demo (Spiraling Mad Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot & Krash - Extremophile.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot & Mstress - Celebrate.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot & Mstress - Toxic Storm On Acid Sea (The End Of The W.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot & Rovastar - Crystal Ball (Cerimonial Decor Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Azirphaeli's Mirror.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Block Of Sound (Abstract Architecture Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Block Of Sound (Fractal Construction Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Color Of Music.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Crystal Ball (Magical Reaction Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - De(-a)range(d)(ment) complex.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - De(-a)range(d)(ment) strain.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Digiscape Advanced Processor.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Ether Storm.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Global Earthquake.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Inside The Planar Portal.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Mixing Pot.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Puddle Of Music.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Rainbow Planet Under Attack.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Rush.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - S Pulse Virus.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - String.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Tangent Universe (Collapsed With Artifact Mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - The Deeper.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - The Inner Workings of my New Computer.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Visionarie (geiss aspect ratio fix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Waves Of Blood.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - Wisps.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot - light of the path.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/Zylot and Rovastar - Iouo Stone Morphic Fusion.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/[Ishan] - Life in the drains.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/baked - mushroom rainbows[2].milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/che - adela the flower.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/che - burning hus (oil mix).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/che - terracarbon stream.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/fiShbRaiN - blueprint.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/headphones.tga
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/idiot - Nothing Yet - 03 - The worst of the pack.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/idiot - Nucleus.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/idiot - Sinful Code (unchained style).milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/idiot - Some big word I learned.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/idiot - Spectrum.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/illusion & studio music - charged bliss.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/nil - Can't Stop the Blithering.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/nil - Can't Stop the Cramming.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/nil - Cid and Lucy.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/nil - Disco Comet.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/nil - Singularity in My Oscilloscope.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/nil - Vortex of Vortices.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/project.tga
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
+-rw-r--r--	root/root	usr/share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk
+drwxr-xr-x	root/root	usr/share/icons/
+drwxr-xr-x	root/root	usr/share/icons/hicolor/
+drwxr-xr-x	root/root	usr/share/icons/hicolor/128x128/
+drwxr-xr-x	root/root	usr/share/icons/hicolor/128x128/apps/
+-rw-r--r--	root/root	usr/share/icons/hicolor/128x128/apps/clementine.png
+drwxr-xr-x	root/root	usr/share/icons/hicolor/64x64/
+drwxr-xr-x	root/root	usr/share/icons/hicolor/64x64/apps/
+-rw-r--r--	root/root	usr/share/icons/hicolor/64x64/apps/clementine.png
+drwxr-xr-x	root/root	usr/share/icons/hicolor/scalable/
+drwxr-xr-x	root/root	usr/share/icons/hicolor/scalable/apps/
+-rw-r--r--	root/root	usr/share/icons/hicolor/scalable/apps/clementine.svg
+drwxr-xr-x	root/root	usr/share/kservices5/
+-rw-r--r--	root/root	usr/share/kservices5/clementine-feed.protocol
+-rw-r--r--	root/root	usr/share/kservices5/clementine-itms.protocol
+-rw-r--r--	root/root	usr/share/kservices5/clementine-itpc.protocol
+-rw-r--r--	root/root	usr/share/kservices5/clementine-zune.protocol
+drwxr-xr-x	root/root	usr/share/metainfo/
+-rw-r--r--	root/root	usr/share/metainfo/clementine.appdata.xml

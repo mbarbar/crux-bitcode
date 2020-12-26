@@ -1,0 +1,33 @@
+# Description: Tools for the Linux quota system
+# URL:         https://sourceforge.net/projects/linuxquota/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  e2fsprogs libtirpc
+
+name=quota
+version=4.06
+release=1
+source=(https://downloads.sourceforge.net/sourceforge/linuxquota/$name-$version.tar.gz)
+
+build(){
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --disable-nls \
+                --disable-libwrap \
+                --disable-netlink \
+                --disable-ldapmail
+    
+    make
+    make DESTDIR=$PKG install
+    
+    rm -r $PKG/usr/{include,share/doc}
+    
+    install -d $PKG/etc $PKG/sbin
+
+    mv $PKG/usr/sbin/quotacheck $PKG/sbin
+    mv $PKG/usr/sbin/{quotaon,quotaoff} $PKG/sbin
+
+    install -m 644 warnquota.conf $PKG/etc
+    install -m 644 quotagrpadmins $PKG/etc
+}

@@ -1,0 +1,20 @@
+# Description:	Library of JPEG support functions.
+# URL:		https://www.libjpeg-turbo.org/
+# Maintainer:	Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on:	cmake, nasm
+
+name=libjpeg-turbo
+version=2.0.6
+release=1
+source=(http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-$version.tar.gz)
+
+build() {
+	cmake -S $name-$version -B build \
+		-G"Unix Makefiles" \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DWITH_JPEG8=ON
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+	rm -r $PKG/usr/share/doc
+}

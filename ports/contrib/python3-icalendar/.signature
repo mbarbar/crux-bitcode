@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+HrdEZUweXP+3/7jJJ7jWQ216649Unj8UvI/iJ4QPYy8gWoXOhlQs7ryO1DQ201tmxc/Q/tMHAo0gtagKqwiQA=
+SHA256 (Pkgfile) = 95a47518d88b7388c9cfd9a52174a8e5a0b07a0c6cba7b8ea0d51919881a441b
+SHA256 (.footprint) = 099ebff15f861b0dda4a601482c385a253f90285cfacb0f72a44c1e7ba4da8ae
+SHA256 (icalendar-4.0.7.tar.gz) = 0fc18d87f66e0b5da84fa731389496cfe18e4c21304e8f6713556b2e8724a7a4

@@ -1,0 +1,32 @@
+# Description: Netfilter kernel/userspace communication library.
+# URL: https://www.netfilter.org/projects/libnfnetlink/index.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libnfnetlink
+version=1.0.1
+release=3
+source=(
+	https://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2
+	0001-build-resolve-automake-1.12-warnings.patch
+	0002-src-get-source-code-license-header-in-sync-with-curr.patch
+	0003-configure-uclinux-is-also-linux.patch
+	0004-libnfnetlink-initialize-attribute-padding-to-resolve.patch
+	0005-include-Sync-with-kernel-headers.patch
+	0006-src-Use-stdint-types-everywhere.patch
+)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/0001-build-resolve-automake-1.12-warnings.patch
+	patch -p1 -i $SRC/0002-src-get-source-code-license-header-in-sync-with-curr.patch
+	patch -p1 -i $SRC/0003-configure-uclinux-is-also-linux.patch
+	patch -p1 -i $SRC/0004-libnfnetlink-initialize-attribute-padding-to-resolve.patch
+	patch -p1 -i $SRC/0005-include-Sync-with-kernel-headers.patch
+	patch -p1 -i $SRC/0006-src-Use-stdint-types-everywhere.patch
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# Description:	NVMe management command line interface.
+# URL:		https://github.com/linux-nvme/nvme-cli
+# Maintainer:	Fredrik Rinnestam, fredrik at crux dot guru
+# Depends on:
+
+name=nvme-cli
+version=1.13
+release=1
+source=(https://github.com/linux-nvme/nvme-cli/archive/v$version/nvme-cli-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make
+	make PREFIX=/usr DESTDIR=$PKG install-bin install-man
+}

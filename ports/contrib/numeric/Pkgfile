@@ -1,0 +1,15 @@
+# Description: Numeric Python Library.
+# URL: https://numeric.scipy.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: James Mills, prologic at shortcircuit dot net dot au
+# Depends on: python
+
+name=numeric
+version=24.2
+release=1
+source=(http://downloads.sourceforge.net/project/numpy/Old%20Numeric/$version/Numeric-$version.tar.gz)
+
+build() {
+	cd Numeric-$version
+	/usr/bin/python setup.py install --root=$PKG
+}

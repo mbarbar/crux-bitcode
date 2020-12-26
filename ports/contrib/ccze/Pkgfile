@@ -1,0 +1,24 @@
+# Description: A log colorizer written in C with plugin support.
+# URL: https://github.com/madhouse/ccze/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libpcre ncurses
+
+name=ccze
+version=0.2.1.2
+sversion=0.2.1-2
+release=1
+source=(https://github.com/madhouse/ccze/archive/$name-$sversion.tar.gz)
+
+build() {
+	cd $name-$name-$sversion
+
+	# GCC 4.x fixes
+	sed -i src/Makefile.in -e 's/-Wswitch -Wmulticharacter/-Wswitch/'
+	sed -i configure.ac -e '/AC_CHECK_TYPE(error_t, int)/d'
+	autoheader
+	autoconf
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,18 @@
+# Description: draw boxes around text
+# URL:         https://boxes.thomasjensen.com/boxes.shtml
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=boxes
+version=1.3
+release=1
+source=(https://github.com/ascii-boxes/boxes/archive/v$version/$name-v${version}.zip)
+
+build () {
+  cd $name-$version
+  sed -i -e "s|^GLOBALCONF.*|GLOBALCONF = /usr/share/boxes/config|" Makefile
+  make
+  install -D src/boxes $PKG/usr/bin/boxes
+  install -D doc/boxes.1 $PKG/usr/share/man/man1/boxes.1
+  install -D boxes-config $PKG/usr/share/boxes/config
+}

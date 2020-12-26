@@ -1,0 +1,25 @@
+POSTINSTALL
+
+  There are two ways to use ccache. You can either prefix your compilation
+  commands with ccache or you can let ccache masquerade as the compiler by
+  prepending /usr/lib/ccache to your $PATH environment variable. The first
+  method is most convenient if you just want to try out ccache or wish to
+  use it for some specific projects. The second method is most useful for
+  when you wish to use ccache for all your compilations.
+
+  You can also set CC and CXX like so,
+  export CC='ccache gcc' ; export CXX='ccache g++' to /etc/pkgmk.conf
+  But this method can break on some packages not expecting a space in
+  CC or CXX.
+
+  You might also want to change the ccache directory, using the CCACHE_DIR
+  environement variable. (I personally use
+  export CCACHE_DIR="/var/cache/ccache").
+
+  You may also want to use distcc as a backend to ccache by setting
+  export CCACHE_PREFIX="distcc"
+
+  Also if you plan to use this same cache between different crux versions and
+  compiler versions, you can do something like this
+  export CCACHE_COMPILERCHECK="%compiler% -dumpversion; crux"
+  to prevent cache errors.

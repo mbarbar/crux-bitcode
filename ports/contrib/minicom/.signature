@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39NRxfVbDR6kxUiKlYqGK+zawzds1+rXYvUObXJ+0qRk70644UoHwf7v4xwgZ+ODkClv5AV4wLfM/ClJeFhjkwo=
+SHA256 (Pkgfile) = d457940c9f53ef641a54964c1bf5e7dbe361379b58bc137c197b148fe4d06e0a
+SHA256 (.footprint) = 4628fd8fdf2a86a3733424f1ce5ddf1629b782d4784fec09c76eaeb6e80d900a
+SHA256 (minicom_2.7.1.orig.tar.gz) = 532f836b7a677eb0cb1dca8d70302b73729c3d30df26d58368d712e5cca041f1

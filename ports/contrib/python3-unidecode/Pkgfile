@@ -1,0 +1,19 @@
+# Description: ASCII transliterations of Unicode text
+# URL: https://github.com/avian2/unidecode
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-unidecode
+version=1.1.1
+release=1
+source=(https://github.com/avian2/unidecode/archive/unidecode-$version.tar.gz)
+
+build() {
+  cd unidecode-unidecode-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --root=$PKG \
+    --optimize=1 \
+    --skip-build
+  mv $PKG/usr/bin/unidecode{,3}
+}

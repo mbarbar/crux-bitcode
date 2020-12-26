@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/eYKNdYVkDzG+nF5WfxJdmEffyPudn5gwvxoDi18T7+jFT/I7KHwwlyUpT1QbsM0o2c12gUxrQWFbo/e0zPzaQY=
+SHA256 (Pkgfile) = 77cd7d9766770ffe05f52a7df909c70ebf13015e11bf2049e3a1fae710f2bfaf
+SHA256 (.footprint) = 12ce5e444e5f8592a98fb7a997eeb4f9285a44d4885136d12e88c9ca47a747ac
+SHA256 (qemu-5.2.0.tar.xz) = cb18d889b628fbe637672b0326789d9b0e3b8027e0445b936537c78549df17bc
+SHA256 (qemu-man-5.2.0.tar.xz) = afa32c7636f2ed22231046fc48ff28c8dea476524eaeebdec5e62efa301255f5

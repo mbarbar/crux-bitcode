@@ -1,0 +1,49 @@
+# Description: OpenGL and OpenGL ES shader front end and validator
+# URL: https://www.khronos.org/opengles/sdk/tools/Reference-Compiler
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: spirv-tools
+
+name=glslang
+version=11.0.0-bacaef3
+release=1
+source=(
+	#https://github.com/KhronosGroup/glslang/archive/$version/$name-$version.tar.gz
+	https://github.com/KhronosGroup/glslang/archive/bacaef3237c515e40d1a24722be48c0a0b30f75f.zip
+	0001-CMake-Allow-linking-against-system-installed-SPIRV-T.patch
+	0001-CMake-Make-glslang-default-resource-limits-STATIC.patch
+	0002-CMake-Use-VERSION-SOVERSION-for-all-shared-libs.patch
+	0001-glslang-Rename-and-move-cmake-export.patch
+	0002-cmake-Use-the-same-export-config-for-all-installed-t.patch)
+
+build() {
+	mv $name-bacaef3237c515e40d1a24722be48c0a0b30f75f $name-$version
+
+	# https://github.com/KhronosGroup/glslang/pull/1621
+	patch -d $name-$version -p1 -i $SRC/0001-CMake-Allow-linking-against-system-installed-SPIRV-T.patch
+
+	# https://github.com/KhronosGroup/glslang/pull/2419
+	patch -d $name-$version -p1 -i $SRC/0001-CMake-Make-glslang-default-resource-limits-STATIC.patch
+	patch -d $name-$version -p1 -i $SRC/0002-CMake-Use-VERSION-SOVERSION-for-all-shared-libs.patch
+
+	# https://github.com/KhronosGroup/glslang/pull/1978
+	patch -d $name-$version -p1 -i $SRC/0001-glslang-Rename-and-move-cmake-export.patch
+	patch -d $name-$version -p1 -i $SRC/0002-cmake-Use-the-same-export-config-for-all-installed-t.patch
+
+	local config="
+-S$name-$version \
+-DCMAKE_INSTALL_PREFIX=/usr \
+-DCMAKE_INSTALL_LIBDIR=lib \
+-DCMAKE_BUILD_TYPE=Release \
+-DCMAKE_SKIP_RPATH:BOOL=yes \
+-GNinja"
+
+	cmake -Bbuild-static $config -DBUILD_SHARED_LIBS=OFF
+	cmake --build build-static
+	
+	# https://github.com/KhronosGroup/glslang/issues/1484 -Wl,--no-undefined
+	cmake -Bbuild-shared $config -DBUILD_SHARED_LIBS=ON -DCMAKE_SHARED_LINKER_FLAGS='-Wl,--no-undefined'
+	cmake --build build-shared
+	
+	DESTDIR=$PKG cmake --build build-static --target install
+	DESTDIR=$PKG cmake --build build-shared --target install
+}

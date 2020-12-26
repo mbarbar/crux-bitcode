@@ -1,0 +1,25 @@
+# Description: TrueType library for libsdl.
+# URL: https://www.libsdl.org/projects/SDL_ttf/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: freetype libsdl
+
+name=sdl_ttf
+version=2.0.11
+release=2
+source=(https://www.libsdl.org/projects/SDL_ttf/release/SDL_ttf-$version.tar.gz
+	freetype-pkgconfig.patch
+	bug1433.patch)
+
+build() {
+	cd SDL_ttf-$version
+
+	patch -i $SRC/bug1433.patch
+	patch -p1 -i $SRC/freetype-pkgconfig.patch
+
+	touch NEWS README AUTHORS ChangeLog
+	autoreconf -vi
+
+	./configure --prefix=/usr
+	make 
+	make DESTDIR=$PKG install
+}

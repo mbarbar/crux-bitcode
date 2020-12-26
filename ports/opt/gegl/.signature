@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ZE8iaWAesukI2T3Hd0912PXPEUhg9twpPpH/12rLNlKcZhzu3c3aersAP9Vl2GT9BZsGltveqQc7UdedRD3Gw0=
+SHA256 (Pkgfile) = 4a6c3a85151e9b3b2cfa61de192101c67a7552d736429a6f82dc0fe3836411ac
+SHA256 (.footprint) = a4e035f123af020f839d625ba443ea4628e1f363d419b2ddd78f2edde3f12d5e
+SHA256 (gegl-0.4.26.tar.xz) = 0f371e2ed2b92162fefd3dde743e648ca08a6a1b2b05004867fbddc7e211e424

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31ypBvrBppqecavugZ/gYWVvS6eE6GBGGOCLgxfCJVv/Q5JxWWs4Cmr6b56RtMev/wgXyl2WWF47vd8pXlMZzAA=
+SHA256 (Pkgfile) = b04c15597f3e38acc53c36a5541184d64973d51c52d1fc7b688aecd5c1283395
+SHA256 (.footprint) = c693008c860784de169caec8dde86e11cb33430c91bd24ad3262e7212ab15126
+SHA256 (setuptools_scm-4.1.2.tar.gz) = a8994582e716ec690f33fec70cca0f85bd23ec974e3f783233e4879090a7faa8

@@ -1,0 +1,101 @@
+# Description: R is a free software environment for statistical computing and graphics
+# URL: https://www.r-project.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libpcre2 openblas zstd
+# Optional: lapack openjdk8 texlive tk
+
+name=r
+version=4.0.3
+release=1
+source=(https://cran.r-project.org/src/base/R-4/R-$version.tar.gz
+  r.desktop r.png R.conf
+  R-3.4.1-parallel.patch R-3.4.1-rmath-shared.patch
+  R-3.6.2-no-LDFLAGS-in-libR-pkg-config.patch)
+
+build() {
+  cd R-$version
+
+  # https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-lang/R/files
+  patch -Np1 -i $SRC/R-3.4.1-parallel.patch
+  patch -Np1 -i $SRC/R-3.4.1-rmath-shared.patch
+  patch -Np1 -i $SRC/R-3.6.2-no-LDFLAGS-in-libR-pkg-config.patch
+
+  # configuring R
+  [[ -e /usr/lib/pkgconfig/tk.pc ]] && PKGMK_R+=" --with-x=yes" || PKGMK_R+=" --with-x=no"
+  [[ -e /usr/lib/pkgconfig/lapack.pc ]] && PKGMK_R+=" --with-lapack LAPACK_LIBS=$(pkg-config --libs lapack)"
+  # this needs a properly working java environment!
+  [[ -e $(whereis javac) ]] && PKGMK_R+=" --enable-java" || PKGMK_R+=" --disable-java"
+
+  # set the correct dir for texmf distribution
+  sed -i 's|$(rsharedir)/texmf|${datarootdir}/texmf|' share/Makefile.in
+
+  unset R_HOME
+
+  # version 3.6.2 needs at least the addition to FCFLAGS
+  export CFLAGS+=' -fPIC'
+  export CPPFLAGS+=' -fPIC'
+  export FCFLAGS+=' -fPIC'
+  ./configure $PKGMK_R \
+    --prefix=/usr \
+    --libdir=/usr/lib \
+    --sysconfdir=/etc/R \
+    --datarootdir=/usr/share \
+    rsharedir=/usr/share/R/ \
+    rincludedir=/usr/include/R/ \
+    F77=gfortran \
+    LIBnn=lib \
+    BLAS_LIBS=$(pkg-config --libs blas) \
+    PKG_CONFIG=/usr/bin/pkg-config \
+    --with-blas \
+    --enable-BLAS-shlib \
+    --enable-R-shlib \
+    --enable-byte-compiled-packages \
+    --disable-nls
+  make
+
+  # make nmath library
+  pushd src/nmath/standalone
+  make shared
+  popd
+
+  # install R to $PKG
+  make DESTDIR=$PKG install
+  # same for the nmath library
+  pushd src/nmath/standalone
+  make DESTDIR=$PKG install
+  #popd
+
+  sed -i "s|$PKG ||" "$PKG/usr/bin/R"
+  rm "$PKG/usr/lib/R/bin/R"
+  cd "$PKG/usr/lib/R/bin"
+  ln -s ../../../bin/R
+
+  install -Dm644 "$SRC/r.desktop" \
+    "$PKG/usr/share/applications/r.desktop"
+  install -Dm644 "$SRC/r.png" \
+    "$PKG/usr/share/pixmaps/r.png"
+  install -Dm644 "$SRC/R.conf" \
+    "$PKG/etc/ld.so.conf.d/R.conf"
+
+  install -d $PKG/etc/R
+  cd $PKG/usr/lib/R/etc
+  for i in *; do
+    mv -f ${i} $PKG/etc/R
+    ln -s /etc/R/$i $i
+  done
+
+  #clean up
+  find $PKG \(\
+    -iname '*README*' -o \
+    -iname '*COPYING*' -o \
+    -iname '*AUTHORS*' -o \
+    -iname '*THANKS*' -o \
+    -iname '*NEWS*' -o \
+    -iname '*LICENSE*' -o \
+    -iname '*CHANGELOG*' \
+    \) -exec rm -r '{}' \+ || true
+    ## doh! don't remove INSTALL or you won't be able to install R packages
+    #-iname '*INSTALL*' -o \
+    ## rstudio now depends on finding docs that R provides..
+    #-iname 'doc' -o \
+}

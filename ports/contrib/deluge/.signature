@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wxvnOZIKObLKeB2pRrBBE+fQ5lNns7gg8ZeTJSM3Z2qzcbF4WFwvoQWqrUC+uKooQXED7D3h9f4aIIyFwFwag4=
+SHA256 (Pkgfile) = 3883fde133bc76d22c8fac5ea97757b31ee94cd1e2e17f328cca58f1ffc1d691
+SHA256 (.footprint) = b91252bdc20a9fc08566feb804689ebeff0c447afc338aea7103df637c9a5bec
+SHA256 (deluge-2.0.3.tar.xz) = 7e7ae8e6ca2a2bf0d487227cecf81e27332f0b92b567cc2bda38e47d859da891

@@ -1,0 +1,22 @@
+# Description: Adjusts screen temperature based on your surroundings
+# URL: http://jonls.dk/redshift/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libdrm intltool python3-pyxdg python3-gobject xorg-libxxf86vm
+
+name=redshift
+version=1.12
+release=1
+source=(https://github.com/jonls/$name/archive/v$version/$name-v$version.tar.gz)
+
+build () {
+  cd $name-$version
+  ./bootstrap
+  ./configure \
+    --prefix=/usr \
+    --enable-drm \
+    --enable-randr \
+    --enable-vidmode
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/locale
+}

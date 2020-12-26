@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/RnpJLI9EzRFoW+q250khxwkJw8iTSGGSWid2Y2/r7fOhvDCcMmMdMr9Tkh9LYr5zON8pVdfGV2MeK9XznBV8wU=
+SHA256 (Pkgfile) = a655118dc57d094526256758cd8827fac691386c71e84565b02c5f0a8d3b6ab8
+SHA256 (.footprint) = 5729b7e5f10d311a70d7364f4e47ffe156a809ff3b834874d63c9eb7df64f2be
+SHA256 (sane-backends-1.0.31.tar.gz) = 4a3b10fcb398ed854777d979498645edfe66fcac2f2fd2b9117a79ff45e2a5aa

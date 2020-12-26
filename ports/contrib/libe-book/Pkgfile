@@ -1,0 +1,20 @@
+# Description: Library for import of reflowable e-book formats.
+# URL: https://sourceforge.net/projects/libebook/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: liblangtag librevenge icu
+
+name=libe-book
+version=0.1.3
+release=2
+source=(https://sourceforge.net/projects/${name//-/}/files//${name}-${version}/$name-$version.tar.xz
+	libebook-0.1.3-icu-68.patch)
+
+build() {
+  cd $name-$version
+  [ $(pkginfo -i | awk '/^icu / {split($2,a,"."); print a[1]}') -ge 68 ] && \
+    patch -p1 -i $SRC/libebook-0.1.3-icu-68.patch
+  ./configure --prefix=/usr \
+    --without-docs
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,40 @@
+# Description: GTK+ based IRC client.
+# URL: https://hexchat.github.io/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtk iso-codes xorg-libxdamage
+# Optional: dbus-glib desktop-file-utils enchant libcanberra libnotify libproxy lua pciutils
+
+name=hexchat
+version=2.14.3
+release=1
+source=(https://dl.hexchat.net/hexchat/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	# Lua scripting plugin, value is pkg-config name
+	prt-get isinst lua && PKGMK_HEXCHAT+=' -Dwith-lua=lua' || PKGMK_HEXCHAT+=' -Dwith-lua=false'
+
+	# Support for getting proxy information
+	prt-get isinst libproxy || PKGMK_HEXCHAT+=' -Dwith-libproxy=false'
+
+	# Support for freedesktop notifications
+	prt-get isinst libnotify || PKGMK_HEXCHAT+=' -Dwith-libnotify=false'
+
+	# Support for sound alerts
+	prt-get isinst libcanberra || PKGMK_HEXCHAT+=' -Dwith-libcanberra=false'
+
+	# Support used for single-instance and scripting interface
+        prt-get isinst dbus-glib || PKGMK_HEXCHAT+=' -Dwith-dbus=false'
+
+	prt-get isinst pciutils && PKGMK_HEXCHAT+=' -Dwith-sysinfo=true'
+
+	meson build ${PKGMK_HEXCHAT} \
+		--prefix /usr \
+		-Dwith-text=true
+
+        ninja -C build -j ${JOBS:-1}
+        DESTDIR="$PKG" ninja -C build install
+
+	rm -r $PKG/usr/share/locale
+}

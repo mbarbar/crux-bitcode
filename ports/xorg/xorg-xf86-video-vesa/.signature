@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndIbEEWXxgEjUz+XkUqStuIc/YRs9i1PfIGvMJa9bREpektk684BLHuOrRrbGygAU4csDCEA4UGvcS/meJOBXugs=
+SHA256 (Pkgfile) = 652a566701a4db134b8d0e7af803db409a67d2c54bac597a0c468ffd6ca8a6b9
+SHA256 (.footprint) = 675c57efe7d575ea018b062e903e7f3cb28b5815783c7886347364c13063b04f
+SHA256 (xf86-video-vesa-2.5.0.tar.bz2) = 1f1624f3c73906801ad1bc98335a2cb5676a7a4d18e5374d9a1d18464e54c659

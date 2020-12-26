@@ -1,0 +1,31 @@
+# Description: Tools to write DVDs
+# URL: http://fy.chalmers.se/~appro/linux/DVD+RW/
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on: cdrkit
+
+name=dvd+rw-tools
+version=7.1
+release=5
+source=(http://fy.chalmers.se/~appro/linux/DVD+RW/tools/$name-$version.tar.gz \
+	$name.patch $name-gcc43.patch crux-3.5.patch)
+
+build() {
+    cd $name-$version
+    
+    patch -p1 -i $SRC/$name.patch
+    patch -p0 -i $SRC/$name-gcc43.patch
+    patch -p1 -i $SRC/crux-3.5.patch
+    make
+
+    mkdir -p $PKG/usr/bin $PKG/usr/share/man/man1
+    for exec in \
+	dvd+rw-booktype \
+	dvd+rw-format \
+	dvd+rw-mediainfo \
+	dvd-ram-control \
+	growisofs
+    do
+	install -m 755 $exec $PKG/usr/bin/
+    done
+    install -m 644 growisofs.1 $PKG/usr/share/man/man1/
+}

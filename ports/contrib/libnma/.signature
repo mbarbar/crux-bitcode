@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37seV+yaPGW1O+qLLMN3GQeotoMhhpTXQ1EuNCtwmRqnoKX2v0ZzYTFHTB6xGY7fpFI/dIpJEJdfnGycTLMIPws=
+SHA256 (Pkgfile) = 462776142db11267f687bfc2a5fad90c24bf5cd6542349bf9518925e446862db
+SHA256 (.footprint) = 4276de43dd9e333d3222661bc38dcfc62115444887fbac0cb149e2a6fde2abef
+SHA256 (libnma-1.8.30.tar.bz2) = f651093668f2306f38e5d48f272441e4807ec87aa98d09f7dc260981ff40995d

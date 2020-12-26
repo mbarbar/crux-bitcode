@@ -1,0 +1,6 @@
+This port needs kwindowsystem, provided by Torsten Henschel in his kde5
+repository.
+https://crux.nu/portdb/?a=repo&q=kde5
+
+Also, you need to rebuild qt5 with the optional dependency
+xorg-xcb-util-renderutil 

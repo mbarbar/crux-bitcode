@@ -1,0 +1,22 @@
+# Description: implementation of a Network Intrusion Detection System
+# URL:         http://libnids.sf.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib, libnet, libpcap
+
+name=libnids
+version=1.24
+release=2
+source=(https://sourceforge.net/projects/$name/files/$name/$version/$name-$version.tar.gz)
+
+build() {
+  cd  $name-$version
+
+  ./configure \
+    --prefix=/usr \
+    --man=/usr/share/man \
+    --enable-shared
+
+  make
+  make install_prefix="$PKG" install
+  ln -s libnids.so.1.24 $PKG/usr/lib/libnids.so.1
+}

@@ -1,0 +1,42 @@
+# Description: Interface to the pcap(3) LBL packet capture library
+# URL:         https://metacpan.org/pod/Net::Pcap
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  libpcap
+
+name=p5-net-pcap
+version=0.18
+release=1
+source=(https://cpan.metacpan.org/authors/id/S/SA/SAPER/Net-Pcap-$version.tar.gz
+	makefile.patch
+	listdatalinks.patch
+	pcapapi.patch
+	pcapapi2.patch
+	newapi.patch)
+
+build() {
+	cd Net-Pcap-$version
+	
+	patch -Np2 -b -z .orig < $SRC/makefile.patch
+	patch -Np2 -b -z .orig < $SRC/listdatalinks.patch
+	patch -Np1 -b -z .orig < $SRC/pcapapi.patch
+	# patch -Np1 -b -z .orig <$SRC/pcapapi2.patch
+	patch -Np2 -b -z .orig < $SRC/newapi.patch
+
+	perl Makefile.PL
+
+	# remove default -pipe flag
+	sed -i -e '/CCFLAGS = /s/ -pipe / /' Makefile
+
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

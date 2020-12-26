@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34lC6ppd5J8cnxnUKVxdcCXz+DF8XKmosLG7nH2FU73+ifffRo5lquvLGUhWlQu5fnL9m6N5i9dCRbJ0tIOQYA4=
+SHA256 (Pkgfile) = e3a0bbedb6df17ddc1311cf619cf6ac9bd40d73d8d5cc3520a04b33ba9cec02d
+SHA256 (.footprint) = 5f385ba21393c4b03888eb90d037eed52c1858dc9c4b7be92f4dfacb95ece2d6
+SHA256 (HTTP-Negotiate-6.01.tar.gz) = 1c729c1ea63100e878405cda7d66f9adfd3ed4f1d6cacaca0ee9152df728e016

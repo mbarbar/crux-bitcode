@@ -1,0 +1,52 @@
+# Description: PHP interpreter, extension modules and support stuff
+# URL:         https://www.php.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  bzip2 libpcre2 libxml2 curl db gdbm
+
+name=php
+version=7.4.13
+release=1
+source=(https://php.net/distributions/php-$version.tar.xz)
+
+build () {
+    cd php-$version
+
+    local PHP_CONFIG="
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --localstatedir=/var \
+    --with-config-file-path=/etc/php \
+    --with-config-file-scan-dir=/etc/php/conf.d \
+    --with-zlib \
+    --with-external-pcre \
+    --disable-static --disable-debug \
+    --without-sqlite3 --without-pdo-sqlite \
+    --without-pear"
+
+    local PHP_SHARED="
+    --enable-dba=shared --with-gdbm --with-db4 \
+    --with-bz2=shared \
+    --with-curl=shared \
+    --with-openssl=shared"
+    
+    EXTENSION_DIR=/usr/lib/php/extensions \
+    ./configure \
+        $PHP_CONFIG \
+        $PHP_SHARED \
+        --enable-cli \
+        --disable-cgi \
+        --with-readline
+
+    make
+    make -j1 INSTALL_ROOT=$PKG install
+    rm $PKG/usr/lib/php/extensions/*.a
+    ln -sf phar.phar $PKG/usr/bin/phar
+
+    sed -i '/^extension_dir/s|=.*$|= "/usr/lib/php/extensions"|' php.ini-*
+    install -d $PKG/etc/php/conf.d
+    install -m 644 php.ini-* $PKG/etc/php
+
+    # order matters !
+    printf 'extension=%s\n' {bz2,curl,openssl,dba}.so \
+           > $PKG/etc/php/conf.d/extensions.ini
+}

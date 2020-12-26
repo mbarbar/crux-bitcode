@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31Ncs+u9u1yBP4egurhGA9VEtrmdBlZZHtwgiKoTv4R1196bZ6YMPPqvikXx9yiy37KYX6AqB4e304qiOO1NQAM=
+SHA256 (Pkgfile) = a3e621a4875cda23c92bb35d039c89ae0430010ed5a3485b6f371a84bea28567
+SHA256 (.footprint) = c20c801ab9618fcfc482368072b99c7837aaf4419ebc7ace1d4b835bc26e9901
+SHA256 (cutemaze-1.2.6-src.tar.bz2) = 3cb3277fd08f129eec8bc62cfbd8fe2803a0224186a70f676cd6c511850c835f

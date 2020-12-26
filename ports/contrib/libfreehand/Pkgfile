@@ -1,0 +1,20 @@
+# Description: a library for import of Aldus/Macromedia/Adobe FreeHand documents
+# URL: https://wiki.documentfoundation.org/DLP/Libraries/libfreehand
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: lcms2 librevenge icu
+
+name=libfreehand
+version=0.1.2
+release=3
+source=(https://dev-www.libreoffice.org/src/libfreehand/$name-$version.tar.xz
+  0001-Add-missing-semicolon-to-fix-build-with-icu-65.1.patch)
+
+build() {
+  cd $name-$version
+  patch -Np1 -i $SRC/0001-Add-missing-semicolon-to-fix-build-with-icu-65.1.patch
+  ./configure --prefix=/usr \
+    --disable-werror \
+    --without-docs
+  make
+  make DESTDIR=$PKG install
+}

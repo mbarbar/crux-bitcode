@@ -1,0 +1,25 @@
+# Description: Faster and more correct implementation of the Package::Stash API
+# URL: https://metacpan.org/pod/Package::Stash::XS
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-package-stash-xs
+version=0.29
+release=1
+source=(https://cpan.metacpan.org/authors/id/E/ET/ETHER/Package-Stash-XS-$version.tar.gz)
+
+build() {
+  cd Package-Stash-XS-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+    PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT="INSTALLDIRS=vendor" \
+    PERL_MB_OPT="--installdirs vendor" \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

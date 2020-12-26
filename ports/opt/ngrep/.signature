@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/chmmmCvWLyJHDPuLRwGtylCRN+uqv6i7qFN4dcwYRt4mB2+F3mTf25OxC7qIsANtX0N33WaKpL+qRVCinOqNAU=
+SHA256 (Pkgfile) = b32cd76f1afc60cedc71eeb2ba04ca5e7d53fd4dc1b9b0981f57dcfcd6eed0a0
+SHA256 (.footprint) = e0003c041b3e51307926f61381776c99bb9e8fd187f82aacaf579cfac8456ecc
+SHA256 (ngrep-1.47.tar.gz) = dc4dbe20991cc36bac5e97e99475e2a1522fd88c59ee2e08f813432c04c5fff3

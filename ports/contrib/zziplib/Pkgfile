@@ -1,0 +1,29 @@
+# Description: ZIP-access Library with Easy-to-use API
+# URL:         https://github.com/gdraheim/zziplib
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  zlib python
+
+name=zziplib
+version=0.13.71
+release=1
+source=(https://github.com/gdraheim/$name/archive/v$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	# docs building currently broken for almost 1/6 or more of manpages
+	# TODO: troubleshoot and report upstream
+	sed -i -e 's,^\(SUBDIRS = .*\) docs\(.*\)$,\1\2,' \
+		-e 's,^\(DIST_SUBDIRS = .*\) docs\(.*\)$,\1\2,' Makefile.in
+
+	mkdir build
+	cd build
+
+	CONFIG_SHELL=/bin/bash \
+	../configure \
+		--prefix=/usr \
+		--disable-static
+
+	make
+	make DESTDIR=$PKG install
+}

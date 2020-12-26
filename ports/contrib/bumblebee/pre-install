@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "`getent group bumblebee`" ]; then
+	/usr/sbin/groupadd --system bumblebee
+fi
+
+if [ -z "`getent passwd bumblebee`" ]; then
+	/usr/sbin/useradd -r -g bumblebee -d /etc/bumblebee -s /bin/false -c "bumblebee user" bumblebee
+	/usr/bin/passwd -l bumblebee
+fi

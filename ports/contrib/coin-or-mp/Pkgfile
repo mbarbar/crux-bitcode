@@ -1,0 +1,31 @@
+# Description: C-API library that supports most of the functionality of CLP (Coin LP), CBC (Coin Branch-and-Cut), and CGL (Cut Generation Library) projects
+# URL: https://projects.coin-or.org/CoinMP
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: coin-or-cbc
+
+name=coin-or-mp
+version=1.8.4
+release=4
+source=(https://www.coin-or.org/download/source/CoinMP/CoinMP-$version.tgz)
+
+build() {
+  cd CoinMP-$version
+  COIN_SKIP_PROJECTS="Sample" \
+  ./configure --prefix=/usr \
+    --with-osi-lib="$(pkg-config --libs osi)" \
+    --with-osi-incdir="/usr/include/coin/" \
+    --with-clp-lib="$(pkg-config --libs clp)" \
+    --with-clp-incdir="/usr/include/coin/" \
+    --with-cgl-lib="$(pkg-config --libs cgl)" \
+    --with-cgl-incdir="/usr/include/coin/" \
+    --with-cbc-lib="$(pkg-config --libs cbc)" \
+    --with-cbc-incdir="/usr/include/coin/" \
+    --with-coinutils-lib="$(pkg-config --libs coinutils)" \
+    --with-coinutils-incdir="/usr/include/coin/"
+  make
+  make DESTDIR=$PKG install-exec
+  mkdir -p $PKG/usr/{include/coin,lib/pkgconfig}
+  install -c -m 644 CoinMP/src/CoinMP.h $PKG/usr/include/coin/CoinMP.h
+  install -c -m 644 CoinMP/coinmp.pc $PKG/usr/lib/pkgconfig/coinmp.pc
+  rm -fr $PKG/usr/share
+}

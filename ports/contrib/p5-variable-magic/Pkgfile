@@ -1,0 +1,26 @@
+# Description: Associate user-defined magic to variables from Perl.
+# URL: https://metacpan.org/pod/Variable::Magic
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-variable-magic
+version=0.62
+release=1
+source=(https://cpan.metacpan.org/authors/id/V/VP/VPIT/Variable-Magic-$version.tar.gz)
+
+build() {
+  cd Variable-Magic-$version
+  export \
+    PERL_MM_USE_DEFAULT="1" \
+    PERL_AUTOINSTALL="--skipdeps" \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='${PKG//\'/\\\'}'" \
+    PERL_MB_OPT="--installdirs vendor --destdir '${PKG//\'/\\\'}'" \
+    MODULEBUILDRC="/dev/null"
+  perl Makefile.PL
+  make
+  make install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

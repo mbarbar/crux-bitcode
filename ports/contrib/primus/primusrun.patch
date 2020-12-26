@@ -1,0 +1,21 @@
+diff -urN primus-0.2.orig/primusrun primus-0.2/primusrun
+--- primus-0.2.orig/primusrun	2015-03-28 14:29:18.000000000 -0500
++++ primus-0.2/primusrun	2018-07-10 00:03:37.898370455 -0500
+@@ -26,7 +26,7 @@
+ # export PRIMUS_libGLd=${PRIMUS_libGLd:-'/usr/$LIB/libGL.so.1'}
+ 
+ # Directory containing primus libGL
+-PRIMUS_libGL=${PRIMUS_libGL:-$(dirname `readlink -ne $0`)/'$LIB'}
++PRIMUS_libGL=/usr/\$LIB/primus
+ 
+ # On some distributions, e.g. on Ubuntu, libnvidia-tls.so is not available
+ # in default search paths.  Add its path manually after the primus library
+@@ -38,5 +38,8 @@
+ # Need functions from primus libGL to take precedence
+ export LD_LIBRARY_PATH=${PRIMUS_libGL}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+ 
++# needed for glvnd mesa
++export __GLVND_DISALLOW_PATCHING=1
++
+ # And go!
+ exec "$@"

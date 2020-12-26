@@ -1,0 +1,25 @@
+# Description: A sophisticated exporter for custom-built routines
+# URL: https://metacpan.org/release/Sub-Exporter
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-data-optlist p5-params-util p5-sub-install
+
+name=p5-sub-exporter
+version=0.987
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-$version.tar.gz)
+
+build() {
+  cd Sub-Exporter-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+    PERL_AUTOINSTALL="--skipdeps" \
+    PERL_MM_OPT="INSTALLDIRS=vendor" \
+    PERL_MB_OPT="--installdirs vendor" \
+    MODULEBUILDRC=/dev/null
+  /usr/bin/perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-07-15 07:58:07.491842393 +0000
++++ Makefile	2020-07-15 07:58:28.373318549 +0000
+@@ -16,7 +16,7 @@
+ # installs all libraries SuiteSparse/lib.
+ go: metis
+ 	( cd SuiteSparse_config && $(MAKE) )
+-	( cd Mongoose && $(MAKE) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' )
++	( cd Mongoose && $(MAKE) library CMAKE_OPTIONS='$(CMAKE_OPTIONS)' )
+ 	( cd AMD && $(MAKE) )
+ 	( cd BTF && $(MAKE) )
+ 	( cd CAMD && $(MAKE) )

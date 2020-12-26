@@ -1,0 +1,23 @@
+# Description: OpenVPN Plugin for Network Manager
+# URL: https://wiki.gnome.org/Projects/NetworkManager/VPN
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gcr graphite2 networkmanager network-manager-applet
+
+name=networkmanager-openvpn
+version=1.8.12
+release=1
+source=(https://download.gnome.org/sources/NetworkManager-openvpn/1.8/NetworkManager-openvpn-$version.tar.xz)
+
+build() {
+  cd NetworkManager-openvpn-$version
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --without-libnm-glib \
+    --disable-nls
+
+  make
+  make DESTDIR=$PKG install
+
+  rm -fr $PKG/usr/share/locale
+}

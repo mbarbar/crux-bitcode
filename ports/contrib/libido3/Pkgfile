@@ -1,0 +1,24 @@
+# Description: Widgets and other objects used for indicators
+# URL: https://github.com/AyatanaIndicators/ayatana-ido
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gtk3 vala gnome-common gtk-doc
+
+name=libido3
+version=16.10
+release=2
+source=(http://unrealize.co.uk/source/libido3-16.10.tar.gz
+  ido-optional-ubuntu-private.patch
+  0001-Temporarily-disable-previous-button-drop-shadow-draw.patch)
+
+build() {
+  cd $name-$version
+  sed -e 's/--enable-gtk-doc//g' -i autogen.sh
+  patch -Np1 -i $SRC/ido-optional-ubuntu-private.patch
+  patch -Np1 -i $SRC/0001-Temporarily-disable-previous-button-drop-shadow-draw.patch
+  sed -i -e 's/ -Werror//' src/Makefile.am
+  ./autogen.sh
+  ./configure --prefix=/usr \
+     --enable-ubuntu-private-api=no
+  make
+  make DESTDIR=$PKG install
+}

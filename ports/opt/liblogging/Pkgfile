@@ -1,0 +1,16 @@
+# Description: An easy to use logging library
+# URL: http://www.liblogging.org/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=liblogging
+version=1.0.6
+release=1
+source=(http://download.rsyslog.com/$name/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+        --disable-journal
+    make
+    make DESTDIR=$PKG install
+}

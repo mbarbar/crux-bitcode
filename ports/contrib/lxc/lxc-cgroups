@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# /etc/rc.d/lxc-cgroups: setup lxc cgroups
+#
+
+if test ! -f /proc/cgroups
+then
+    echo 'cgroups are not enabled on this kernel.'
+    exit 1
+fi
+
+case $1 in
+    start)
+        # Mount system cgroups.
+        mount -t tmpfs -o nosuid,nodev,noexec,mode=0755 tmpfs /sys/fs/cgroup
+        for i in $(awk '!/^#/{if($4==1){print$1}}' /proc/cgroups)
+        do
+            mkdir /sys/fs/cgroup/$i
+            mount -t cgroup -o nosuid,nodev,noexec,$i cgroup /sys/fs/cgroup/$i
+        done
+        mkdir /sys/fs/cgroup/systemd
+        mount -t cgroup -o nosuid,nodev,noexec,none,name=systemd cgroup /sys/fs/cgroup/systemd
+        mkdir /sys/fs/cgroup/unified
+        mount -t cgroup2 -o nosuid,nodev,noexec cgroup /sys/fs/cgroup/unified
+        mount -o ro,remount /sys/fs/cgroup
+        # Setup user cgroups.
+        if test -f /etc/lxc/lxc-usernet
+        then
+            test -f /sys/fs/cgroup/cpuset/cgroup.clone_children && echo 1 > /sys/fs/cgroup/cpuset/cgroup.clone_children
+            test -f /sys/fs/cgroup/memory/memory.use_hierarchy  && echo 1 > /sys/fs/cgroup/memory/memory.use_hierarchy
+            for i in $(awk '!/^#/{if($1!~"@"){print$1}}' /etc/lxc/lxc-usernet)
+            do
+                for j in /sys/fs/cgroup/*
+                do
+                    test $j = /sys/fs/cgroup/unified && continue
+                    mkdir -m 0755 -p $j/$i
+                    chown -R $i $j/$i
+                done
+            done
+        fi
+        ;;
+    stop)
+        umount -R /sys/fs/cgroup
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 [start|stop|restart]"
+        ;;
+esac
+
+# End of file

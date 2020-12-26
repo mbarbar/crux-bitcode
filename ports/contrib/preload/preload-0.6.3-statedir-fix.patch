@@ -1,0 +1,12 @@
+diff -pruN preload-0.6.3.orig/configure.ac preload-0.6.3/configure.ac
+--- preload-0.6.3.orig/configure.ac	2008-07-29 22:49:04.811143796 +1000
++++ preload-0.6.3/configure.ac	2008-07-29 22:50:23.204144610 +1000
+@@ -60,7 +60,7 @@ sysconfigdir='${sysconfdir}/sysconfig'
+ logrotatedir='${sysconfdir}/logrotate.d'
+ logdir='${localstatedir}/log'
+ subsysdir='${localstatedir}/lock/subsys'
+-pkglocalstatedir='${localstatedir}/lib/'${PACKAGE_NAME}
++pkglocalstatedir='${localstatedir}/cache/'${PACKAGE_NAME}
+ AC_SUBST(pkgdocdir)
+ AC_SUBST(initddir)
+ AC_SUBST(sysconfigdir)

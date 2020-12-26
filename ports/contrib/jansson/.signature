@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36aQUiRBwwGXdCbYxXvCVYlU9Gz/sATbrleLjUcsjtaEkfLT1463OMoYfO1WGwiIIxvKVpK5D7FOZw1JWxU01wU=
+SHA256 (Pkgfile) = b73cffb6ae3c20b02a8ede044939e92e2a083ede44da17d554088a4f0623613a
+SHA256 (.footprint) = c7eb9d0e61b890a0255c9642131ae46a2e515ced20dcdbaf42c279e463826e7d
+SHA256 (jansson-2.13.1.tar.bz2) = ee90a0f879d2b7b7159124ff22b937a2a9a8c36d3bb65d1da7dd3f04370a10bd

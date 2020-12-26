@@ -1,0 +1,48 @@
+# Description: Very powerfull shell
+# URL:         https://www.zsh.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libpcre
+
+name=zsh
+version=5.8
+release=1
+source=(http://www.zsh.org/pub/zsh-${version}.tar.xz _prt-get zsh-lovers.1)
+
+build() {
+    cd $name-$version
+
+    ./configure \
+      --prefix=/usr \
+      --enable-etcdir=/etc/zsh \
+      --enable-zshrc=/etc/zsh/zshrc \
+      --enable-zlogin=/etc/zsh/zshlogin \
+      --enable-zshenv=/etc/zsh/zshenv \
+      --enable-fndir=/usr/share/zsh/$version/functions \
+      --enable-site-fndir=/usr/share/zsh/site-functions \
+      --enable-maildir-support \
+      --enable-function-subdirs \
+      --enable-pcre \
+      --enable-restricted-r \
+      --enable-cap
+
+    # fix paths for kbd and usbutils
+    sed -i 's|/usr/share/keymaps|/usr/share/kbd/keymaps|g' Completion/Unix/Command/_loadkeys
+    sed -i 's|/usr/share/misc/usb.ids|/usr/share/usb.ids|g' Completion/Linux/Command/_lsusb
+
+    make
+    make DESTDIR=$PKG install
+
+    install -m 644 $SRC/zsh-lovers.1 $PKG/usr/share/man/man1/
+
+    rm $PKG/usr/share/man/man1/zshall.1
+    cat $PKG/usr/share/man/man1/* > $PKG/usr/share/man/man1/zshall.1
+
+    install -d $PKG/bin
+    ln -s /usr/bin/zsh $PKG/bin
+
+    # These completion files break things for CRUX' pkgutils,
+    # so remove them for now (see bug #381).
+    rm $PKG/usr/share/zsh/$version/functions/Completion/Unix/_pkg{add,rm,info}
+
+    install -m 644 -t $PKG/usr/share/zsh/site-functions $SRC/_prt-get
+}

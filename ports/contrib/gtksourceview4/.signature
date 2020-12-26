@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31lMzH7a4yjouiPA3WAP2DIdauzvTk4RsyDss7x84lognI6nsqeQLS0ettZGrIAjB7Nzduuj7Is1+hD6yLDD+gI=
+SHA256 (Pkgfile) = afc20b399d59c5c5580058ee9f6005da07ed2ee54a46f07afb02d19631b1ee37
+SHA256 (.footprint) = 3ed22afbf2006d4f99dec3a7722b62cbde8bdb4ff607433e8b202ab086293f72
+SHA256 (gtksourceview-4.8.0.tar.xz) = 00a19121500cedf1bae97f35af865d839841fd785d9facf188498e13975b4e1a

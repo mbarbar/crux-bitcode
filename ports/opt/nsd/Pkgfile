@@ -1,0 +1,32 @@
+# Description: Authoritative only, high performance name server
+# URL:         http://www.nlnetlabs.nl/projects/nsd/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  openssl
+
+name=nsd
+version=4.3.4
+release=1
+source=(http://www.nlnetlabs.nl/downloads/nsd/$name-$version.tar.gz
+        README pre-install)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --localstatedir=/var \
+                --with-dbfile=/var/lib/nsd/nsd.db \
+                --with-pidfile=/var/run/nsd/nsd.pid \
+                --with-xfrdir=/var/run/nsd \
+                --without-libevent \
+                --with-user=nsd
+    
+    make all nsd-mem
+    make DESTDIR=$PKG install
+
+    install -m 0755 nsd-mem $PKG/usr/sbin
+    install -d $PKG/etc/rc.d
+    ln -s /usr/sbin/nsd-control $PKG/etc/rc.d/nsd
+
+    chown nsd $PKG/var/{lib,run}/nsd
+}

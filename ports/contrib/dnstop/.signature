@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35rZInVL0FzDaJsiWNplGHVDSkooDESPjwGDH5Lfcy02X1PEJZSuQMiNMsiG4dqE232YaWls3S6+gnmG+AxKogM=
+SHA256 (Pkgfile) = 99cc7e26157859c370f20494aa105d6432ca0617cf3442fba42f1c363c70adca
+SHA256 (.footprint) = 106e40d14fbe3f3065c9317fe5e14ea0648007295bce4534b2a74baa96f653ed
+SHA256 (dnstop-20140915.tar.gz) = b4b03d02005b16e98d923fa79957ea947e3aa6638bb267403102d12290d0c57a

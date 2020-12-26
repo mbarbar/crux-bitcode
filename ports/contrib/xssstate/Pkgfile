@@ -1,0 +1,19 @@
+# Description: A simple tool to retrieve the X screensaver state.
+# URL:         https://tools.suckless.org/x/xssstate
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-libxscrnsaver
+
+name=xssstate
+version=1.1
+release=3
+source=(https://dl.suckless.org/tools/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	make CC=gcc
+	make DESTDIR=$PKG PREFIX=/usr install
+
+	#install -D -m 755 $SRC/$name-$version/xsidle.sh \
+	#	$PKG/usr/bin/xsidle.sh
+}

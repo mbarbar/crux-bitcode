@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF348XECbySaUmpPz/VlVdxigw50p1q4UtmIallhC6mwn7yNj0RTnhjpYxAHkshODCQqLbyNXf3hcNQve0uA26Zg8=
+SHA256 (Pkgfile) = 59bab96bf51420f2263ac06790cf975da85fab59728299ff5b68420c3cf1adb5
+SHA256 (.footprint) = 25fa88e34c0eb228dc353c6d3a66f3ddc7c381895c3418811c3fb1a664f2544e
+SHA256 (Dev86src-0.16.21.tar.gz) = 49c7ee9102d45c2eef072bfb8a49ba3821c9fe3ef31ccd3290f658b667b579a8
+SHA256 (bin86-x86_64.patch) = 3b41a07f6b31de8124d015f4526b9c1427771c3d7c9bd3bcbf888992f966bb47

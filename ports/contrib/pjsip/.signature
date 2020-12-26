@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32YtoFV4e25q+fydp6evtkzhrVkVc3kdXkZvF15z5XieQCM4CD7VOwwoP4UUDKiIwVCkjYcht0jehxijQlwiMgE=
+SHA256 (Pkgfile) = 451dd911fc07014b85360340321b5695b179d7924c596cdf7e50b179eb867e2b
+SHA256 (.footprint) = 6e203bade4ae3151a4493ab1df5ab8c2ca1291192772e68dc555187f668af43f
+SHA256 (pjproject-2.10.tar.gz) = 936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de

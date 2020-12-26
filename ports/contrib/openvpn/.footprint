@@ -1,0 +1,14 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/openvpn
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/openvpn-msg.h
+-rw-r--r--	root/root	usr/include/openvpn-plugin.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/openvpn/
+drwxr-xr-x	root/root	usr/lib/openvpn/plugins/
+-rwxr-xr-x	root/root	usr/lib/openvpn/plugins/openvpn-plugin-down-root.la
+-rwxr-xr-x	root/root	usr/lib/openvpn/plugins/openvpn-plugin-down-root.so
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/openvpn

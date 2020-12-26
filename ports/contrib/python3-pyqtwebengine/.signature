@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31duvxaXuaqkG/rjf+9hSytggN3FBlWmOIRLiJTYz83JA1lLmjrB9z6EpKa45YkfzIzYHue6ugpV9If9PIpOlAY=
+SHA256 (Pkgfile) = 390d6d0e21675b019c81489e73cd003b237413dac2f68bd76d28f683e6331802
+SHA256 (.footprint) = 6c2480f3641b1637ad3e09d3a6f530548f9b01a62b982aa376370eb0407278db
+SHA256 (PyQtWebEngine-5.15.2.tar.gz) = 4d72fea774071ce6f76e341a3d2c5d595886c9906a9b9493239c841cce54a634

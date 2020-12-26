@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3w4bajZ2fPXkBRBj+h0EhhGzR+ni/W7YMSXtB9askoc2a93+wbYSmlbAfN1xaaM/6xQYgUJxHxgwae6EbOflIwo=
+SHA256 (Pkgfile) = 307d3ce793b25c34b657f3036a8f40e4354b45a4ac783eba77ba5204e00c85be
+SHA256 (.footprint) = 0f532da25ee3c32ca621ebd74ef4505e801936ff394965ba4fee041fafdbc146
+SHA256 (snowball-2.0.0.tar.gz) = f047a33f3bcaf12f3ab06ce3f1237a911e21a510035dca9016f9140f4041b006
+SHA256 (dynamiclib.patch) = 99511a11cdeeb1ef1eaa9d7b777f6934693d4696ba9523de40b886f7d898058e

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31KP1cDSB8lEQSrZmkwJhXCWAnqGnL6ieoKWzTx74mt4eVaba5OZYQAcL18W/lSLeL3zBB482zbneHdiFcvrPgY=
+SHA256 (Pkgfile) = 7cb671b7e1de12e81e6468e7d0c6a7b7b142db55acb650631235891910f8be67
+SHA256 (.footprint) = 3f6201dd812134af3172675e16e268547061ed9324e7cc2545e34e7892d05b92
+SHA256 (File-Slurper-0.012.tar.gz) = 4efb2ea416b110a1bda6f8133549cc6ea3676402e3caf7529fce0313250aa578

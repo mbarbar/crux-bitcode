@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31Rgi8/TskCOwz0tDF/kofnhha+6eSxI7ORbvERP3g/nlQG0lICb9uQbhkAP9b23ya9bUXoIoApv3am7I5ApFwg=
+SHA256 (Pkgfile) = a9182f850b8a855e2412cab17c70e111fc51fbe81f24ff4187af1be0d831b500
+SHA256 (.footprint) = ba9dc28bfd821a2bac57b3318376a437cf2f24a180c8c94175063d3d4bf530f4
+SHA256 (mtr-v0.94.tar.gz) = ea036fdd45da488c241603f6ea59a06bbcfe6c26177ebd34fff54336a44494b8
+SHA256 (mtr-setcap.patch) = 398d9c4a77282b4b354a47176595cfe842d363eefe4c5ec27356e02df98a2722

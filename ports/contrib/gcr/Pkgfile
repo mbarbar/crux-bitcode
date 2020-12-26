@@ -1,0 +1,28 @@
+# Description: Libraries for cryptographic UIs and accessing PKCS#11 modules.
+# URL: https://developer.gnome.org/gcr/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gnupg gtk3 p11-kit vala xorg-libxcomposite xorg-libxcursor xorg-libxinerama
+
+name=gcr
+version=3.38.0
+release=1
+source=(https://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
+
+build() {
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--buildtype=plain \
+		-Db_ndebug=true \
+		-D gtk_doc=false
+
+	meson compile -C build -j ${JOBS-1}
+	DESTDIR=$PKG meson install -C build
+
+	rm -r $PKG/usr/share/locale
+
+	# https://bugzilla.gnome.org/show_bug.cgi?id=688161
+	install -Dm 644 /dev/stdin "$PKG/etc/security/limits.d/10-gcr.conf" <<END
+@users - memlock 1024
+END
+}

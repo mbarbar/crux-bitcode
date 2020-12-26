@@ -1,0 +1,19 @@
+README for fcron 3.x
+
+REQUIREMENTS
+
+PRE/POST-INSTALL
+
+1. Create a user/group fcron with a unused id < 99:
+
+   'groupadd -g 45 fcron'
+   'useradd -u 45 -g fcron -d /var/spool/fcron -s /bin/false fcron'
+   'passwd -l fcron'
+
+PRECAUTION
+
+   As of version 3.0.4 release 2 frcon is configured to use a 
+   user and group fcron instead of daemon/daemon. 
+   If you upgrade fcron you have to run rejmerge to get the right
+   owner for the files in /etc/fcron and manually adjust the owner
+   and group of /var/spool/fcron to fcron. 

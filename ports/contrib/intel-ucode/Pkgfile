@@ -1,0 +1,16 @@
+# Description: Intel CPU microcode update
+# URL: https://downloadcenter.intel.com/download/27591/Linux-Processor-Microcode-Data-File
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: iucode-tool
+
+name=intel-ucode
+version=20201118
+release=1
+source=(https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/archive/microcode-$version.tar.gz)
+
+build() {
+  cd Intel-Linux-Processor-Microcode-Data-Files-microcode-$version
+  install -d -m755 $PKG/boot
+  /usr/sbin/iucode_tool --write-earlyfw=early-ucode.cpio intel-ucode/
+  install -m644 early-ucode.cpio $PKG/boot/early-ucode.cpio
+}

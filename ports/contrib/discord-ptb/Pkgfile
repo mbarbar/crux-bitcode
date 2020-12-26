@@ -1,0 +1,30 @@
+# Description: All-in-one voice and text chat for gamers - Public Test Build
+# URL: https://discordapp.com/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: alsa-lib graphite2 gtk3 nss xorg-libxinerama xorg-libxcomposite xorg-libxcursor xorg-libxscrnsaver cups
+# Optional: pulseaudio apulse
+
+name=discord-ptb
+version=0.0.23
+release=1
+source=(https://dl-ptb.discordapp.net/apps/linux/$version/discord-ptb-$version.tar.gz
+	$name.sh)
+
+build() {
+	install -d $PKG/opt/$name
+	cp -a DiscordPTB/. $PKG/opt/$name
+	chmod 755 $PKG/opt/$name/DiscordPTB
+
+	install -Dm 755 $name.sh $PKG/usr/bin/$name
+
+	install -D $PKG/opt/$name/$name.desktop \
+		$PKG/usr/share/applications/$name.desktop
+
+	sed \
+		-e "s|^\(Exec=\).*|\1$name|" \
+		-i $PKG/usr/share/applications/$name.desktop
+
+	install -d $PKG/usr/share/pixmaps
+	ln -s ../../..//opt/$name/discord.png \
+		$PKG/usr/share/pixmaps/$name.png
+}

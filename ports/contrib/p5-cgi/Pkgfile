@@ -1,0 +1,19 @@
+# Description: Handle Common Gateway Interface requests and responses
+# URL: https://metacpan.org/release/CGI
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-html-parser
+
+name=p5-cgi
+version=4.51
+release=1
+source=(https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-$version.tar.gz)
+
+build() {
+  cd CGI-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  /usr/bin/perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

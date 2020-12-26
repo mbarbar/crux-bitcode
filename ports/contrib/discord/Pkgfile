@@ -1,0 +1,26 @@
+# Description: All-in-one voice and text chat for gamers
+# URL: https://discordapp.com/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: alsa-lib avahi cups graphite2 gtk3 nss util-linux xorg-libxcomposite xorg-libxcursor xorg-libxinerama xorg-libxscrnsaver
+
+name=discord
+version=0.0.13
+release=1
+source=(https://dl.discordapp.net/apps/linux/$version/$name-$version.tar.gz)
+
+build() {
+    install -d $PKG/opt/$name
+    cp -a Discord/. $PKG/opt/$name
+    chmod 755 $PKG/opt/$name/Discord
+
+    install -d $PKG/usr/share/applications
+    install $PKG/opt/$name/$name.desktop $PKG/usr/share/applications
+    sed -i s%/usr/share%/opt% $PKG/usr/share/applications/$name.desktop
+    mkdir -p $PKG/usr/bin
+    ln -s /opt/$name/Discord $PKG/usr/bin/$name
+
+    install -d $PKG/usr/share/pixmaps
+    ln -s /opt/$name/discord.png $PKG/usr/share/pixmaps/$name.png
+    install -d $PKG/usr/lib
+    ln -s /opt/discord/libffmpeg.so $PKG/usr/lib/libffmpeg.so
+}

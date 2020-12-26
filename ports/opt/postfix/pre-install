@@ -1,0 +1,3 @@
+#!/bin/sh
+
+getent group postdrop || /usr/sbin/groupadd postdrop

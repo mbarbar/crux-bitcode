@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wBoY3m9Dti17Pd8T973yLBsoQcFPsOZDIHXL8zUuvupaD1A0U3OIVPRLwSX5/2QUWHZyqjePsJDO58xgIKMPQA=
+SHA256 (Pkgfile) = f5eb08e8f02c168e72f092dc3faf95202926d1164c1d01834f60d7e64369d665
+SHA256 (.footprint) = e0e28c5eecd971a6f1f12566b00b284dffb3da90550baf9644851ee3d1d8fc51
+SHA256 (libsamplerate-0.1.9.tar.gz) = 0a7eb168e2f21353fb6d84da152e4512126f7dc48ccb0be80578c565413444c1

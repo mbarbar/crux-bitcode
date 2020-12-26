@@ -1,0 +1,24 @@
+# Description: Access Control Lists library
+# URL:         http://savannah.nongnu.org/projects/acl
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  attr
+
+name=acl
+version=2.2.53
+release=3
+source=(http://download-mirror.savannah.gnu.org/releases/$name/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr --bindir=/bin
+
+    make
+    make DESTDIR=$PKG install 
+
+    install -d $PKG/lib
+    mv $PKG/usr/lib/libacl.so.* $PKG/lib
+    ln -sf ../../lib/$(readlink $PKG/usr/lib/libacl.so) $PKG/usr/lib/libacl.so
+
+    rm -r $PKG/usr/share/{doc,locale}
+}

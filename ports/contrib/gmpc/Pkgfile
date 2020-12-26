@@ -1,0 +1,18 @@
+# Description: MPD client for GNOME
+# URL:         https://gmpc.fandom.com/wiki/Gnome_Music_Player_Client
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Mark Rosenstand, mark at borkware dot net
+# Depends on:  libglade, libmpd, gob, libsoup, vala, libunique
+
+name=gmpc
+version=11.8.16
+release=1
+source=(http://download.sarine.nl/Programs/$name/$version/$name-$version.tar.gz)
+
+build() {
+  cd gmpc-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/locale
+}

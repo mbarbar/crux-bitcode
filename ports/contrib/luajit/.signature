@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39QufO1WOhm8fhiXN6d7UbM+OVKyo50pdO4fFs6qIL9PcE4X30UIs//+Qz6Dq/kwIvpSqjiNJQN1lp/LK90mMg4=
+SHA256 (Pkgfile) = 3717a28cd9df8a8e676869f3fb274d924f066fbd26b4701819b45e43b770b9e3
+SHA256 (.footprint) = c0c2898c7cacffbc31f11aeb9e8a65fe1b37b3e3fb26eed10d0d86a325284473
+SHA256 (LuaJIT-2.0.5.tar.gz) = 874b1f8297c697821f561f9b73b57ffd419ed8f4278c82e05b48806d30c1e979

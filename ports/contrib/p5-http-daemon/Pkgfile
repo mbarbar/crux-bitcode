@@ -1,0 +1,17 @@
+# Description: Simple http server class
+# URL: https://metacpan.org/pod/HTTP::Daemon
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-http-date p5-http-message p5-lwp-mediatypes
+
+name=p5-http-daemon
+version=6.12
+release=1
+source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-$version.tar.gz)
+
+build() {
+  cd HTTP-Daemon-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

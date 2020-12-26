@@ -1,0 +1,18 @@
+# Description: Bluetooth low-complexity, subband codec library
+# URL: http://www.bluez.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=sbc
+version=1.4
+release=1
+source=(https://www.kernel.org/pub/linux/bluetooth/sbc-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure \
+    --prefix=/usr \
+    --disable-{static,tester,tools}
+  make
+  make DESTDIR=$PKG install
+}

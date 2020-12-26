@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31qXM8vr8fY0R0H/lXdKEbI8/xEih/crPEEKPGvJggg4oOwfkT8+KslwNQRsGeR3+9aPjy+H9MM1YNRtJeh2aQk=
+SHA256 (Pkgfile) = c966ccde839863a6311c5528dcf792617fcc82b42cb8f49737b496ea8cb4741f
+SHA256 (.footprint) = a0e4e83e233e576057e0fefc805049d80953df8dc89257079f31fb2be0b62256
+SHA256 (pyasn1-0.4.8.tar.gz) = aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF395hRwUMeD0tY0sMVztmS2OdYsoFqdALar0i8VYOjwDmbN/0lrdKjlie7jPg2zRmg2A7OyZL6VokUbzLjgyhtAw=
+SHA256 (Pkgfile) = 3947873a556fbe615607ecb7946dd3bfb1c438394e5c0e3fa7937982884454bf
+SHA256 (.footprint) = 9975fc517810b30f012e58ac00df20ad7dfa07103b12f5a7eacbfd75215a0b70
+SHA256 (fftw-3.3.8.tar.gz) = 6113262f6e92c5bd474f2875fa1b01054c4ad5040f6b0da7c03c98821d9ae303

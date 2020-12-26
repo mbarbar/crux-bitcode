@@ -1,0 +1,18 @@
+README for quota-tools
+
+REQUIREMENTS
+Enable quota support in your kernel.
+CONFIG_QUOTA=y
+CONFIG_QFMT_V2=y
+CONFIG_QUOTACTL=y
+
+PRE-INSTALL
+
+POST-INSTALL
+You'll probably want to adjust warnquota.conf if you plan to mail users about
+ther quota status.
+
+PRECAUTION
+
+RESOURCES
+http://tldp.org/HOWTO/Quota.html

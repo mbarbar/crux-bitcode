@@ -1,0 +1,29 @@
+# Description: X Window System server
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: libepoxy xorg-bdftopcf xorg-font-util xorg-libdmx xorg-libxaw xorg-libxcomposite xorg-libxcursor xorg-libxfont2 xorg-libxft xorg-libxinerama xorg-libxkbfile xorg-libxres xorg-libxtst xorg-libxxf86dga xorg-mkfontscale xorg-xcb-util-keysyms
+
+name=xorg-server
+version=1.20.10
+release=1
+source=(https://www.x.org/releases/individual/xserver/$name-$version.tar.bz2)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --localstatedir=/var \
+                --with-fontrootdir=/usr/share/fonts/X11 \
+                --with-xkb-output=/var/lib/xkb \
+                --enable-dri \
+                --with-sha1=libcrypto \
+                --disable-systemd-logind \
+                --enable-glamor
+
+    make
+    make DESTDIR=$PKG install
+
+    rmdir $PKG/var/log
+
+    install -m 755 -d $PKG/etc/X11/xorg.conf.d
+}

@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39rAin2p1DneC/18lca4VSNYOf6X3TknTRAL574IwU5pdIf0LuFqFAeGzpbMchqhqGyJHtHBd/mL8NLX/2OOkgc=
+SHA256 (Pkgfile) = f8215aeec6a1c92108ba31044dfe214c8dc3058bb4e7af233958f7b6bc2510d4
+SHA256 (.footprint) = c21eb747e36a5bc027c6f1560b36c4528d5673135a7d228b13009d9a99de969f
+SHA256 (redis-6.0.9.tar.gz) = dc2bdcf81c620e9f09cfd12e85d3bc631c897b2db7a55218fd8a65eaa37f86dd
+SHA256 (redis.conf) = c392fe6bb36ba7970561d97e2214e4a916193c32e12a82d1b8cb2dc12dac377f
+SHA256 (redis.rc) = 364257ea85d9e71196bdc1621da26b07684366c7030fbdea60b72a603e854a4f

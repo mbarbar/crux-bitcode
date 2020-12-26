@@ -1,0 +1,14 @@
+# Description: Set or autodetect the media type or mii chipset-based ethernet devices.
+# URL: http://freshmeat.sourceforge.net/projects/mii-tool/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=mii-tool
+version=1.65.0
+release=1
+source=(https://repo.or.cz/w/oss-qm-packages.git/snapshot/METUX.mii-tool-$version.0.tar.gz)
+
+build() {
+	cd oss-qm-packages-METUX.mii-tool-$version.*
+	make
+	make DESTDIR=$PKG install
+}

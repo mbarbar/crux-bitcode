@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/eM582Z1NmJAMwJ1tes1TOICYyB63Tk/oAptT9IgPsHaDfhKrQi2/xds/KjICKQseJHHGilHNYFSin1KD2BQcAw=
+SHA256 (Pkgfile) = 7032f946b3b9292f8d0e78fd7fdbef2b28b64162927272cd14a2a0e96b6c5542
+SHA256 (.footprint) = 76a8d3d155fd59aed8d0c621cfd9438b064f879675676a9c226acdb691dc7310
+SHA256 (clisp-c26de78733578fc38952d2485313065eba4f5caa.tar.bz2) = 01c80cb7ce18c0e3185f5a1c2fcdcdf6beaf04c16696bae4e7ee7dd0a9c9835a

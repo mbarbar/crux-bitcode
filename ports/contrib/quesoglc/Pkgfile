@@ -1,0 +1,17 @@
+# Description:	The OpenGL Character Renderer (GLC) is a state machine that provides OpenGL programs with character rendering services.
+# URL: http://quesoglc.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Danny Rawlins, crux at romster dot me
+# Depends on: fontconfig glu
+
+name=quesoglc
+version=0.7.2
+release=1
+source=(http://downloads.sourceforge.net/project/quesoglc/$version/quesoglc-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

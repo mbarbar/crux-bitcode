@@ -1,0 +1,27 @@
+# Description: File integrity / intrusion detection system
+# URL:         http://la-samhna.de/samhain/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=samhain
+version=4.4.2
+release=1
+source=(http://la-samhna.de/archive/${name}_signed-$version.tar.gz)
+
+build () {
+    tar xfz $name-$version.tar.gz
+
+    cd $name-$version
+    ./configure --prefix=/usr \
+                --localstatedir=/var \
+                --sysconfdir=/etc \
+                --with-log-file=/var/log/samhain.log \
+                --enable-static \
+                --enable-login-watch \
+                --enable-suidcheck
+    make
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/var/run
+    touch $PKG/var/log/samhain.log
+    chmod 0640 $PKG/var/log/samhain.log
+}

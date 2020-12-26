@@ -1,0 +1,21 @@
+# Description: Build an optimized subroutine parameter validator once, use it forever
+# URL: https://metacpan.org/pod/Params::ValidationCompiler
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-eval-closure p5-exception-class p5-role-tiny
+
+name=p5-params-validationcompiler
+version=0.30
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-$version.tar.gz)
+
+build() {
+  cd Params-ValidationCompiler-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps" \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='"$PKG"'" \
+    PERL_MB_OPT="--installdirs vendor --destdir '"$PKG"'" \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

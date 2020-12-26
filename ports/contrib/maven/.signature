@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32TQDfEflVfuocx7ii7+dXMYiqyLtKdoOEiiFjtrok5T5fr2etsephN+Ym5DqZxHuBIvYvcON7PW9Z3SdUz4PAw=
+SHA256 (Pkgfile) = 547fb83312c32e11a7928e43e9357986fbd602932850b0b1381a98306dc7aac1
+SHA256 (.footprint) = 76493f4ca4f889f245ed1bd556d39bf5f92759de06bdf4d75cbe0694fe0240b7
+SHA256 (apache-maven-3.6.3-src.tar.gz) = 7c1c990ba64dd4f88688120cc2ec93bf33dd500d2a62ae5cd57bd4b7f6335c07

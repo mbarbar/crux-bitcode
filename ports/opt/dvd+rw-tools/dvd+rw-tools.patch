@@ -1,0 +1,12 @@
+diff -Nru dvd+rw-tools-7.1/growisofs.c dvd+rw-tools-7.1-new/growisofs.c
+--- dvd+rw-tools-7.1/growisofs.c	2008-03-04 10:15:03.000000000 +0100
++++ dvd+rw-tools-7.1-new/growisofs.c	2008-10-18 21:29:51.000000000 +0200
+@@ -2964,7 +2964,7 @@
+ 
+ #if defined(__unix) || defined(__unix__)
+     env = getenv ("MKISOFS");
+-    mkisofs_argv[0] = (env?env:"mkisofs");
++    mkisofs_argv[0] = (env?env:"genisoimage");
+ #elif defined(_WIN32)
+     /*
+      * On Windows I insist on mkisofs.exe to reside in very same

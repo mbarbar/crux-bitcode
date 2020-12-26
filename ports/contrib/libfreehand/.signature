@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3869QtYiEkTdnXoce7it9rXfPPuiLgb+j+32c6nR8Qge9A4X6kEKKK1P9UcK++yHdTOVYIDwwqurKEoXuMJ42AY=
+SHA256 (Pkgfile) = f462da6a6df8fa5f093d377c549671290a57ef2faa540b5ca303c7f8a40a2e26
+SHA256 (.footprint) = 04270a51462a7b703152f5066f7f1b2a1054d8916d8de74dfc6df8535a8ee999
+SHA256 (libfreehand-0.1.2.tar.xz) = 0e422d1564a6dbf22a9af598535425271e583514c0f7ba7d9091676420de34ac
+SHA256 (0001-Add-missing-semicolon-to-fix-build-with-icu-65.1.patch) = 11b5b5fcbb4f427486e83ee042cd3f2b030bcf8238f5d1925942416067d0254b
