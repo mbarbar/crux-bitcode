@@ -5,7 +5,7 @@
 name=autoconf-2.13
 version=2.13
 release=1
-source=(ftp://ftp.gnu.org/gnu/autoconf/autoconf-$version.tar.gz)
+source=(http://ftp.gnu.org/gnu/autoconf/autoconf-$version.tar.gz)
 
 build () {
 	cd autoconf-$version
