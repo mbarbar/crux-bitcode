@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Sj/aV5hkSz+zT/t5OP5lBlHXlLDOBMfmhs0WEw+Arin8eEdF9BcD7ZkVbK8UeAcanuz5v9vOtoEwtxQeJACCQI=
+SHA256 (Pkgfile) = 7be60c28a4b32fbab1a5a1338d9c37d4e86b35075e6ce51ead9503cb84ec7536
+SHA256 (.footprint) = 84830aab196915180a7f80ea3f54b1bb073510b796ff5f268bb6b86cdeede254
+SHA256 (ruby-2.7.2.tar.xz) = 1b95ab193cc8f5b5e59d2686cb3d5dcf1ddf2a86cb6950e0b4bdaae5040ec0d6

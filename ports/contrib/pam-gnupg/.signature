@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xow5XC4W0Riuj9hG0irq59m3S+FWpBqE59LmGksyE7PpRlJpSxXAbzK90D3ytfadhOfiauTq8OFu98ub5dFSg8=
+SHA256 (Pkgfile) = cb8a4d73c67095ae774279e895c5a91d63f31cc99b48752409bf1b7b84e1e5cd
+SHA256 (.footprint) = 5333d0a1e4fc5524b971aa1c6c05ce2548aebbceddb0cac454d8297d41763dbb
+SHA256 (pam-gnupg-0.2.tar.gz) = 397334c45ed48499a466c0cb2acb21a7405edc4c0ab9c63cc6b2f3d159d60e5f

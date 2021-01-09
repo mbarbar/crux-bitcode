@@ -1,0 +1,43 @@
+README for f2fs-tools
+
+
+f2fs-tools' fsck tool by default refuses to check a mounted filesystem
+whether it's mounted read-only or not. This causes fsck to fail at boot
+and prompt for the root password for filesystem maintenance. In order to
+avoid this it is recommended that the 6th field (fs_passno) of any f2fs
+entries in /etc/fstab be set to 0.
+
+Hopefully this will be fixed upstream sometime in a new release.
+
+If you REALLY want to work around this limitation a user-submitted patch
+for /etc/rc can be found below, but note that this is NOT supported.
+
+
+patch:
+
+--- etc/rc.orig	2020-10-27 11:41:02.000000000 +0800
++++ etc/rc	2020-11-09 15:44:30.933015712 +0800
+@@ -27,8 +27,13 @@
+ fi
+ 
+ # Check filesystems
+-/sbin/fsck $FORCEFSCK -A -T -C -a
+-if [ $? -gt 1 ]; then
++ROOTFS=$(/bin/findmnt -lno fstype /)
++ROOTDEV=$(/bin/findmnt -lno source /)
++if [ "$ROOTFS" = "f2fs" ]; then
++  /sbin/fsck.f2fs -a -f "$ROOTDEV"
++else
++  /sbin/fsck $FORCEFSCK -A -T -C -a
++  if [ $? -gt 1 ]; then
+ 	echo
+ 	echo "***************  FILESYSTEM CHECK FAILED  ******************"
+ 	echo "*                                                          *"
+@@ -46,6 +51,7 @@
+ 	/bin/mount -o remount,ro /
+ 	/sbin/reboot -f
+ 	exit 0
++  fi
+ fi
+ 
+ # Mount local filesystems

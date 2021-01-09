@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37EdPFjsMkKnBnPYqWEw+ikwjtbGDaAz2j1YbltFiUf10BFEu1S8eYN2mi+FRoGtER/m9tEmYcgyleUnqYhGfAM=
+SHA256 (Pkgfile) = 357b0c56c60405e822a2dce4cd0c6fa6e2b92e126a004b549566bbac122df326
+SHA256 (.footprint) = c25197078c572e2f35142aa613f52db94088ff17645261cd0e5dfe40a5b7d0f2
+SHA256 (hefur-1.0.tar.xz) = 47964ee9e1fa1fd064080e94b8be5b0089eeb300fc9b7f1ec6ab554f065d710b
+SHA256 (hefurd) = 087242c4b07abf605835b3977bf864007cb4333b0e4a5e3bc196a2b59455e052

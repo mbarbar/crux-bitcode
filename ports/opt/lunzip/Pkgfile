@@ -1,0 +1,17 @@
+# Description:	Decompressor for lzip files
+# URL:		http://lzip.nongnu.org/lunzip.html
+# Maintainer:	Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on:
+
+name=lunzip
+version=1.11
+release=1
+source=(http://download.savannah.gnu.org/releases/lzip/lunzip/lunzip-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

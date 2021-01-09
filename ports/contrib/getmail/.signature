@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30XyX4EvbicPjXERQe9ZsdDBjDXEiW9j9a3TsRm5VRuzirvu7+KXI8ppljzV/QKw3A6wzThFKowt7S5BQMGEgQU=
+SHA256 (Pkgfile) = b7ecdd0742502205b097c13c3d32a44329ee9155b069cfff6fac6dfc4a5bd234
+SHA256 (.footprint) = a341c168b11061d833d9a2b5c6ad62b4af3cd7f24aa594002d01cacb8f085388
+SHA256 (getmail-6.9.tar.gz) = a5a92385831f2f1d22195c4f396fed5e91a9eb715b7e8ce22a1585a67e1c6c43

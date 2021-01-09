@@ -1,0 +1,16 @@
+# Description: Library for rendering Postscript documents
+# URL:         https://www.freedesktop.org/wiki/Software/libspectre
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  ghostscript
+
+name=libspectre
+version=0.2.9
+release=1
+source=(https://libspectre.freedesktop.org/releases/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

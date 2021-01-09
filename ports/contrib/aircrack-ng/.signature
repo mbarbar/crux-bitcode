@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30wbzh+1yiJg7geT2LddQmtlxeDVfbltxuJXq6WEkt02sXL87Q+tPRc28EeNty4F+qn5GIpVrfsbu17Vpx3brg4=
+SHA256 (Pkgfile) = 5f1ab5cd15bbabb02dc2dab957ef7289a072cd243909249b3ba5d7a764e20885
+SHA256 (.footprint) = 089eb88607e4d7371c8e4e379d6e7d439a0bb60c36a2fbacae67ba814a44685f
+SHA256 (aircrack-ng-1.6.tar.gz) = c9e7894ba30f5e45b8a20ec43b4599225ac739a795a5bdb98e3f1bbb854d54f7
+SHA256 (add-manufacturer-col-to-client-list.patch) = e776b4699faad85b1ec4620a856a11fa06cd174228da6378a1dae8ea4c3cf994

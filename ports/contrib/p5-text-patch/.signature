@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34ru/OI6pOoRzyDbp4SDDX8PyD/bsBcrvzw3zbKH2Ah9RS0d2QFL9Ff0OB5w3D1RqZ8Xnyc25uRbM8lDP8gPags=
+SHA256 (Pkgfile) = ffde27b0a9c601956a1773d2720d39e4cd9b41f03b4f00358cdd7685c61d9ce3
+SHA256 (.footprint) = d42259dbafd68739c58f8e8db6da23fd078d58491527a3603acb06d64a048a8a
+SHA256 (Text-Patch-1.8.tar.gz) = eaf18e61ba6a3e143846a7cc66f08ce58a0c4fbda92acb31aede25cb3b5c3dcc

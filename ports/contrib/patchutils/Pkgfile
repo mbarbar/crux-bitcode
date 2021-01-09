@@ -1,0 +1,21 @@
+# Description: A collection of programs that operate on patch files.
+# URL: http://cyberelk.net/tim/software/patchutils/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=patchutils
+version=0.4.2
+release=1
+source=(https://github.com/twaugh/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	autoreconf -i
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man
+
+	make CFLAGS="$CFLAGS"
+	make DESTDIR=$PKG install
+}

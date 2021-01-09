@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xxAKRQ1D4fDieL5OPcqYilHFimFGjvf3+opZGIGscjMox+t1a5HMTesu0VJH0Bs9O3L8NCCFjukQHUJs9P0lQk=
+SHA256 (Pkgfile) = c72efbfeeeb64a26c99f4949b2210132b3730fe73b7cc935e437579f37cae87d
+SHA256 (.footprint) = 4625e53a7d3781c45d231fa1615d3e2b525f01b844636f1c32c6e88283e9d370
+SHA256 (discord-0.0.13.tar.gz) = feeca83531607eec1a6231ad8eab88bbf1865c39cf5f82b884e3b5241733bf34

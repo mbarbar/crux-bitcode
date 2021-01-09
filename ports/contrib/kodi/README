@@ -1,0 +1,14 @@
+
+README for kodi
+
+
+In order to allow Kodi to shutdown/suspend/hibernate the machine,
+install dbus, polkit, consolekit, and upower and launch kodi like so:
+
+	~/.xinitrc:
+
+	exec ck-launch-session kodi
+
+If using a window manager or desktop environment that uses polkit and
+consolekit already, this is usually unnecessary.
+

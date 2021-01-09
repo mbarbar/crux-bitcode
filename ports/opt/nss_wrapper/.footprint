@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/nss_wrapper.pl
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/nss_wrapper/
+-rw-r--r--	root/root	usr/lib/cmake/nss_wrapper/nss_wrapper-config-version.cmake
+-rw-r--r--	root/root	usr/lib/cmake/nss_wrapper/nss_wrapper-config.cmake
+lrwxrwxrwx	root/root	usr/lib/libnss_wrapper.so -> libnss_wrapper.so.0
+lrwxrwxrwx	root/root	usr/lib/libnss_wrapper.so.0 -> libnss_wrapper.so.0.3.1
+-rwxr-xr-x	root/root	usr/lib/libnss_wrapper.so.0.3.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/nss_wrapper.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/nss_wrapper.1.gz

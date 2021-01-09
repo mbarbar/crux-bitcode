@@ -1,0 +1,17 @@
+# Description: TrueType version of the GNU Unifont
+# URL: http://unifoundry.com/unifont.html
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=ttf-unifont
+version=13.0.04
+release=1
+source=(http://unifoundry.com/pub/unifont/unifont-$version/unifont-$version.tar.gz)
+
+build() {
+  cd unifont-$version/font/precompiled
+  install -d $PKG/usr/share/fonts/TTF
+  for i in *.ttf; do
+      install -m644 $i $PKG/usr/share/fonts/TTF/;
+  done
+}

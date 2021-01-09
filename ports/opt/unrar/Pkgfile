@@ -1,0 +1,14 @@
+# Description: Extracts RAR archives
+# URL:         https://www.rarlab.com/rar_add.htm
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=unrar
+version=5.9.4
+release=1
+source=(https://www.rarlab.com/rar/${name}src-$version.tar.gz)
+
+build() {
+    cd $name
+    make CXXFLAGS="$CXXFLAGS" STRIP=:
+    make install DESTDIR=$PKG/usr
+}

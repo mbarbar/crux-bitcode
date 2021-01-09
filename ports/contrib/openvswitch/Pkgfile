@@ -1,0 +1,21 @@
+# Description: multilayer virtual software switch
+# URL:         http://openvswitch.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  python3-six
+
+name=openvswitch
+version=2.14.0
+release=1
+source=(http://openvswitch.org/releases/openvswitch-$version.tar.gz ovsd)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc \
+              --localstatedir=/var \
+              PYTHON=/usr/bin/python3
+  make
+  make install DESTDIR=$PKG
+
+  install -D $SRC/ovsd $PKG/etc/rc.d/ovsd
+}

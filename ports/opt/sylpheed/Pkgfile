@@ -1,0 +1,24 @@
+# Description: GTK+ email client and news reader
+# URL:         http://sylpheed.sraoss.jp/en/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  gtk
+
+name=sylpheed
+version=3.7.0
+release=1
+source=(https://sylpheed.sraoss.jp/sylpheed/v3.7/$name-$version.tar.xz)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+
+    sed -ri '/\[.+\]=/d' sylpheed.desktop
+    install -d $PKG/usr/share/{applications,pixmaps}
+    install -m 0644 sylpheed.desktop $PKG/usr/share/applications
+    install -m 0644 sylpheed.png $PKG/usr/share/pixmaps
+
+    rm -r $PKG/usr/share/{locale,sylpheed}
+}

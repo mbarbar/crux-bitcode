@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34q0eL6SIVHUq/wkM+E5OgMhLjsm1m7R8xfsgxrlOLubBK+Y33ijxgBv/Xa9S8r65/8qCa74TFqNN9rCcVa0vAM=
+SHA256 (Pkgfile) = 5d65c11c33d8f76e1461ba3fe949a00cc9514e723680a16d51257287f1cc1a36
+SHA256 (.footprint) = 0cefcc53674de6608c0b1551f282fdae320a27a9fd2578eb514a5a0cfd6ca451
+SHA256 (tzlocal-2.1.tar.gz) = 643c97c5294aedc737780a49d9df30889321cbe1204eac2c2ec6134035a92e44

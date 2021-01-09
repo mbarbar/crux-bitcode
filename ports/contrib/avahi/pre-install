@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "`getent group avahi`" ]; then
+	/usr/sbin/groupadd --system avahi
+fi
+
+if [ -z "`getent passwd avahi`" ]; then
+	/usr/sbin/useradd -r -g avahi -d /etc/avahi -s /bin/false -c "avahi daemon" avahi
+	/usr/bin/passwd -l avahi
+fi

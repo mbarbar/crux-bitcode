@@ -1,0 +1,22 @@
+# Description: compare perl data structures
+# URL: https://metacpan.org/release/Data-Compare
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-clone p5-json
+
+name=p5-data-compare
+version=1.27
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL/Data-Compare-$version.tar.gz)
+
+build() {
+  cd Data-Compare-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

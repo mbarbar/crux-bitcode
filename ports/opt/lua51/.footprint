@@ -1,0 +1,29 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/lua5.1
+-rwxr-xr-x	root/root	usr/bin/luac5.1
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/lua5.1/
+-rw-r--r--	root/root	usr/include/lua5.1/lauxlib.h
+-rw-r--r--	root/root	usr/include/lua5.1/lua.h
+-rw-r--r--	root/root	usr/include/lua5.1/lua.hpp
+-rw-r--r--	root/root	usr/include/lua5.1/luaconf.h
+-rw-r--r--	root/root	usr/include/lua5.1/lualib.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/liblua.so.5.1 -> liblua5.1.so
+lrwxrwxrwx	root/root	usr/lib/liblua.so.5.1.5 -> liblua5.1.so
+-rw-r--r--	root/root	usr/lib/liblua5.1.a
+lrwxrwxrwx	root/root	usr/lib/liblua5.1.so -> liblua5.1.so.5.1.5
+lrwxrwxrwx	root/root	usr/lib/liblua5.1.so.5.1 -> liblua5.1.so.5.1.5
+-rwxr-xr-x	root/root	usr/lib/liblua5.1.so.5.1.5
+drwxr-xr-x	root/root	usr/lib/lua/
+drwxr-xr-x	root/root	usr/lib/lua/5.1/
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/lua5.1.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/lua/
+drwxr-xr-x	root/root	usr/share/lua/5.1/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/lua5.1.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/luac5.1.1.gz

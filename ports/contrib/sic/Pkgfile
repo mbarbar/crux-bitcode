@@ -1,0 +1,14 @@
+# Description: extremely simple IRC client
+# URL:         http://tools.suckless.org/sic
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=sic
+version=1.2
+release=1
+source=(http://dl.suckless.org/tools/$name-$version.tar.gz)
+
+build () {
+    cd "$name-$version"
+    make
+    make DESTDIR=$PKG PREFIX=/usr install
+}

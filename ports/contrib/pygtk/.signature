@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/kArwKB0SP5xbVY050Fo6LRNLms0veohDdnVegz38izSgFL4Lgy5oo0aQ6hQ2Qvnxovj9IqCOXIYFMt2DaLagE=
+SHA256 (Pkgfile) = 9edec99f2a37a5118f97c411fed735b544be8c0f19feb4e45ec110caee4290a2
+SHA256 (.footprint) = 6d1e16b13d6a41f46564160687cc9ad0cbd71213381d505d806db4a03a26e561
+SHA256 (pygtk-2.24.0.tar.bz2) = cd1c1ea265bd63ff669e92a2d3c2a88eb26bcd9e5363e0f82c896e649f206912
+SHA256 (python27.patch) = 39a30456cba055a452bb55c74ef1ff2f5f7bfaad22855b4dd569ab009b56b682
+SHA256 (fix-leaks-of-pango-objects.patch) = 0ca9e910e9bb88897089dd19752a419aa78de15463df766cb19a1d0c2dd45bcb

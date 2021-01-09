@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/v+FXutwcTsa7NfRFwf6KkBxImK7sijyyIfy+4FdNW932g3Ch5+crPLK4GgJk/iBQ57OSI1V7hHhI11BBKMLQ4=
+SHA256 (Pkgfile) = e8a95aab1d497cff6dc6d138aa3f8abc9de8c6814f2cd5ee3e8e6baaf6cf24f1
+SHA256 (.footprint) = dab27860e5f8aaaca226ea0379540970ffeb7e4f3653f9c3dbc02443e6fc45e2
+SHA256 (mksh-R59c.tgz) = 77ae1665a337f1c48c61d6b961db3e52119b38e58884d1c89684af31f87bc506

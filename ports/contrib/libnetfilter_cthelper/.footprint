@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libnetfilter_cthelper/
+-rw-r--r--	root/root	usr/include/libnetfilter_cthelper/libnetfilter_cthelper.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_cthelper.la
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_cthelper.so -> libnetfilter_cthelper.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libnetfilter_cthelper.so.0 -> libnetfilter_cthelper.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libnetfilter_cthelper.so.0.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libnetfilter_cthelper.pc

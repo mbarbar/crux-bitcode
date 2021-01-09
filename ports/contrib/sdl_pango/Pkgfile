@@ -1,0 +1,20 @@
+# Description: Glue between perl and SDL.
+# URL: http://sdlpango.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: pango libsdl
+
+name=sdl_pango
+version=0.1.2
+release=2
+source=(https://downloads.sourceforge.net/sourceforge/sdlpango/SDL_Pango-$version.tar.gz
+	SDL_Pango-$version-API-adds.patch
+	matrix_declarations.patch)
+
+build() {
+	cd SDL_Pango-$version
+	patch -p0 -i $SRC/SDL_Pango-$version-API-adds.patch
+	patch -p1 -i $SRC/matrix_declarations.patch
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

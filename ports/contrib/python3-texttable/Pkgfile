@@ -1,0 +1,15 @@
+# Description: module for creating simple ASCII tables
+# URL: https://pypi.org/project/texttable/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-setuptools
+
+name=python3-texttable
+version=1.6.2
+release=1
+source=(https://files.pythonhosted.org/packages/82/a8/60df592e3a100a1f83928795aca210414d72cebdc6e4e0c95a6d8ac632fe/texttable-$version.tar.gz)
+
+build() {
+	cd texttable-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

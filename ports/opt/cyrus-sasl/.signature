@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Vhbibws7KK6930LuQcksptQS49VKZPhYVeF/L45qmLvv/AzMOJOD334q0O14XwZRlo0fg4GAHiPo20KZ1WQjwA=
+SHA256 (Pkgfile) = f559af8ea4758a3a9f70c33dc34f92b2f197ceb5e9b92f473c9a921acfe7d6c0
+SHA256 (.footprint) = e4e77c95f7485a0b84ae04ce6db392db6aa362e706da3a52ca28f95b97ca6abd
+SHA256 (cyrus-sasl-2.1.27.tar.gz) = 26866b1549b00ffd020f188a43c258017fa1c382b3ddadd8201536f72efb05d5
+SHA256 (saslauthd) = 2a96dca868261d5275087ed8e1eef59946f47c6d35797368710c3037f46e61bd
+SHA256 (cyrus-sasl-2.1.27-CVE-2019-19906.patch) = 7744ae3fd2a9f62a7fa7ba58604dc78d982cfe8f9b740a94dcfd9672ce00bfa8

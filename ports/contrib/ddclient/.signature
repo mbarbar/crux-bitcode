@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xSYnvdptmOTbiHXIi0nYMVhnw1huENzhb4mRQbb1Ixhmt3Ly44Tz1iYjsuHpHWFPRU7d0klKdqfoR5TVaAmGQw=
+SHA256 (Pkgfile) = a6e139ac6428c36dbd5d7e60e9b524b27b01dc561bec652ba31d31f64019e4d6
+SHA256 (.footprint) = 9d888cc14a2f6e9a90d80e360e3963cce73ae32aeb5caedb759b6846a452fe9a
+SHA256 (ddclient-v3.9.1.tar.gz) = e4969e15cc491fc52bdcd649d4c2b0e4b1bf0c9f9dba23471c634871acc52470
+SHA256 (ddclient.rc) = c80b3ede788eb0b45f0f27441271351486136b397d78d380e4e3eb91bb3b8aba

@@ -1,0 +1,16 @@
+# Description: A collection of multi-dimensional data structures and indexing algorithms
+# URL: https://gitlab.com/mdds/mdds
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: boost
+
+name=mdds
+version=1.7.0
+release=1
+source=(https://kohei.us/files/mdds/src/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  ./autogen.sh --prefix=/usr
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/doc
+}

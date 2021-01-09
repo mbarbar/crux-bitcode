@@ -1,0 +1,30 @@
+# Description: Perl interface for cyclic redundancy check generation
+# URL:         https://metacpan.org/pod/distribution/String-CRC32/CRC32.pod
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=p5-string-crc32
+version=2
+release=1
+source=(https://cpan.metacpan.org/authors/id/L/LE/LEEJO/String-CRC32-$version.tar.gz)
+
+build() {
+	cd String-CRC32-$version
+
+	perl Makefile.PL
+
+	# remove default -pipe flag
+	sed -i -e '/CCFLAGS = /s/ -pipe / /' Makefile
+
+	make OPTIMIZE="$CFLAGS"
+	make install DESTDIR=$PKG
+
+	# remove perlcrap
+	find $PKG  -name perllocal.pod  \
+		-o -name "*.bs"         \
+		-o -name .packlist      \
+		-o -name autosplit.ix   \
+	| xargs rm -f
+
+	# remove empty dirs
+	find $PKG -depth -type d -empty -delete
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndN76rpma5JhtnCrvO/3+0Z2WU4VdGEbzRdaaNgqwsDO6MO88A20IyYL4oFybyfEHpXfQ3HQDUzIkLm48E4lWZAs=
+SHA256 (Pkgfile) = 51548821fffca43f4d18f183f48cae18395c0d839d3ae615fc4b11f67a1c80a9
+SHA256 (.footprint) = 107a6aab5b45ce0c42e6d678493f04ca7719bc30817bf426a1efec93c66f002f
+SHA256 (xf86-input-penmount-1.5.0.tar.bz2) = f45a85911a59647ba24f84c15f49d31d5f62a9bb86ca56881bf3ecbc21113ce7

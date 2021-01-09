@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30OZLPC3wsT7WKLgP1B1dOg4jf+GkklVWtfLnQQQuz71wXCnDkis5gYrEXeLe6729C3A+ynvvOSWOvmOH7pY/gw=
+SHA256 (Pkgfile) = d7ba47c8b35173bab3ae8ecf1f61f518960c0f4524899eb4497c572e0bb0a926
+SHA256 (.footprint) = 212980685d40ead2db7722ab72e041f2928785aafcabe9477c599bdf0381e91a
+SHA256 (picard-2.5.2.tar.gz) = 925e197b99ae64f5515c893f69fa095fd11b84d0958a93f68bc87a665a9a0811

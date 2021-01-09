@@ -1,0 +1,47 @@
+# Description:  PBX Software implementation
+# URL: https://www.asterisk.org
+# Maintainer: Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on: jansson libedit libxml2 ncurses openssl sqlite3
+# Optional: dahdi pjsip opus unixodbc
+
+name=asterisk
+version=18.1.0
+release=1
+source=(https://downloads.asterisk.org/pub/telephony/asterisk/$name-$version.tar.gz
+  asterisk.rc)
+
+build () {
+  cd $name-$version
+
+  ./configure \
+    --prefix=/usr \
+    --with-curses \
+    --with-ssl \
+    --disable-xmldoc \
+    --with-pjproject-bundled=no \
+    --with-sounds-cache=/tmp
+
+  make menuselect.makeopts
+  ./menuselect/menuselect --disable BUILD_NATIVE
+  make # NOISY_BUILD=yes
+  make DESTDIR=$PKG install{,-headers}
+  #make DESTDIR=$PKG samples
+
+  # Init script
+  install -m 755 -D $SRC/asterisk.rc $PKG/etc/rc.d/asterisk
+
+  # Install default config files
+  install -d -m 750 -o root -g asterisk $PKG/etc/asterisk $PKG/etc/asterisk/default
+  for i in configs/samples/*.sample; do
+    install -m 640 -o root -g asterisk $i $PKG/etc/asterisk/default/$(basename $i .sample)
+  done
+
+  # Remove empty directory holders
+  rm -rf $PKG/var/lib/asterisk/sounds/*
+
+  # Remove documentation dir
+  # rm -rf $PKG/var/lib/asterisk/documentation
+
+  # Fix permissions
+  chown -R asterisk:asterisk $PKG/var/{lib,log,run,spool}/asterisk
+}

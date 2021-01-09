@@ -1,0 +1,9 @@
+
+README for nvidia 1xx.xx+
+
+
+
+*** NOTE for nvidia with udev ***
+
+If using udev, add your user to the "video" group to be able to
+use the nvidia devices required for 3d to function properly.

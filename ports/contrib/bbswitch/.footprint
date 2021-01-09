@@ -1,0 +1,5 @@
+drwxr-xr-x	root/root	lib/
+drwxr-xr-x	root/root	lib/modules/
+drwxr-xr-x	root/root	lib/modules/<kernel-version>/
+drwxr-xr-x	root/root	lib/modules/<kernel-version>/misc/
+-rw-r--r--	root/root	lib/modules/<kernel-version>/misc/bbswitch.ko

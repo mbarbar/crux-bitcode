@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF321S0s+t3kW34ibDAjScV6BJEK0/rVQhxD5l2xuVH0qI8GAj55n8Brkn85MB6VF3dbfXYGdEOjoC7RICFGFTvwU=
+SHA256 (Pkgfile) = 49db481fb663c8e89eeb024e5e201a1aeae3010dd251d23b4ff8a6d203e2694d
+SHA256 (.footprint) = ad9d6a7634c69ca88361daef61c0a688d05230b8251f58c1b45130a9cbee21c0
+SHA256 (pm-utils-1.4.1.tar.gz) = 8ed899032866d88b2933a1d34cc75e8ae42dcde20e1cc21836baaae3d4370c0b
+SHA256 (pm-quirks-20100619.tar.gz) = 14a50518928c27417cdc8bcbabb32b3d986931de105149aa248d8883e56c61ec

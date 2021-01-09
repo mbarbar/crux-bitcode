@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36F+wxpBM7fKJPDuTJGMAScZB7QH17/wZ9rOOmC0JmbcffcdsLo4uQ52LiZutmBntTsKXGlFiriXRtDE2fdqQQY=
+SHA256 (Pkgfile) = 83ff85fe1a8b18000636fa9a3eee45634466595091051601825a28080e04a040
+SHA256 (.footprint) = 7b48ff8aa534ab5a98904aee0c60dfd98bcc1f4279bf20911d73b0faa69b5015
+SHA256 (boost_1_74_0.tar.bz2) = 83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1

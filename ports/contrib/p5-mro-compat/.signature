@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32WxQgRD0iIOK+0UmSN41cCAZq5iY6yRd3b7ZWRJqidRTUaUD1/F7WZ6BO+ID0UVvPOFH7658vyRSwFtuKaWBww=
+SHA256 (Pkgfile) = 3d675288fb99bc83f2ceb5120e984785e6e04e86a7fb7070e30b935187068a43
+SHA256 (.footprint) = f867dc8798c940738d128ae41d0dfc9cb3db1a5eac4b2b19ba3e7110d88b6a1c
+SHA256 (MRO-Compat-0.13.tar.gz) = 8a2c3b6ccc19328d5579d02a7d91285e2afd85d801f49d423a8eb16f323da4f8

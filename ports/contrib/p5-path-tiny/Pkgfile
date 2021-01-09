@@ -1,0 +1,19 @@
+# Description: File path utility
+# URL: https://metacpan.org/release/Path-Tiny
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-path-tiny
+version=0.114
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-$version.tar.gz)
+
+build() {
+  cd Path-Tiny-${version/-TRIAL/}
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

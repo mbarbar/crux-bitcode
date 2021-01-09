@@ -1,0 +1,15 @@
+# Description: simple X display locker
+# URL:         http://tools.suckless.org/slock
+# Maintainer:  Fredrik Rinnestam, fredrik at crux dot guru
+# Depends on:  xorg-libxrandr
+
+name=slock
+version=1.4
+release=1
+source=(http://dl.suckless.org/tools/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make
+	make install PREFIX=/usr DESTDIR=$PKG
+}

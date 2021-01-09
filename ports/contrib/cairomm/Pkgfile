@@ -1,0 +1,18 @@
+# Description: C++ wrapper for the cairo graphics library.
+# URL: https://cairographics.org/cairomm/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cairo libsigc++
+
+name=cairomm
+version=1.16.0
+release=1
+source=(https://cairographics.org/releases/$name-$version.tar.xz)
+
+build() {
+	meson setup build $name-$version --prefix=/usr \
+		--buildtype=plain \
+		-D b_ndebug=true
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

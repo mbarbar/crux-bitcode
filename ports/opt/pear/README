@@ -1,0 +1,12 @@
+README file for pear
+
+post install
+
+Starting from php 5.1.0 we provide pear as a
+separate package. The php package does not
+longer set/imply the pear include dir, so add
+or edit the include_path in /etc/php.ini
+
+example:
+
+include_path = ".:/usr/share/pear/php"

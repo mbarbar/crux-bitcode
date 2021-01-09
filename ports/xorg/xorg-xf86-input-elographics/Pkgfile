@@ -1,0 +1,18 @@
+# Description: xorg driver xf86-input-elographics
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-server
+
+name=xorg-xf86-input-elographics
+version=1.4.2
+release=1
+source=(https://www.x.org/releases/individual/driver/xf86-input-elographics-$version.tar.bz2)
+
+build() {
+	cd xf86-input-elographics-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

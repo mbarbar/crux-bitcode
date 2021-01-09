@@ -1,0 +1,3269 @@
+diff --exclude='*~' -Naur dsniff-2.4.orig/arp.c dsniff-2.4/arp.c
+--- dsniff-2.4.orig/arp.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/arp.c	2006-01-21 18:56:37.000000000 -0200
+@@ -39,7 +39,7 @@
+ 
+ #ifdef BSD
+ int
+-arp_cache_lookup(in_addr_t ip, struct ether_addr *ether)
++arp_cache_lookup(in_addr_t ip, struct ether_addr *ether, const char* linf)
+ {
+ 	int mib[6];
+ 	size_t len;
+@@ -91,7 +91,7 @@
+ #endif
+ 
+ int
+-arp_cache_lookup(in_addr_t ip, struct ether_addr *ether)
++arp_cache_lookup(in_addr_t ip, struct ether_addr *ether, const char* lif)
+ {
+ 	int sock;
+ 	struct arpreq ar;
+@@ -99,7 +99,7 @@
+ 	
+ 	memset((char *)&ar, 0, sizeof(ar));
+ #ifdef __linux__
+-	strncpy(ar.arp_dev, "eth0", sizeof(ar.arp_dev));   /* XXX - *sigh* */
++	strncpy(ar.arp_dev, lif, strlen(lif));
+ #endif
+ 	sin = (struct sockaddr_in *)&ar.arp_pa;
+ 	sin->sin_family = AF_INET;
+diff --exclude='*~' -Naur dsniff-2.4.orig/arp.h dsniff-2.4/arp.h
+--- dsniff-2.4.orig/arp.h	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/arp.h	2006-01-21 18:56:37.000000000 -0200
+@@ -11,6 +11,6 @@
+ #ifndef _ARP_H_
+ #define _ARP_H_
+ 
+-int	arp_cache_lookup(in_addr_t ip, struct ether_addr *ether);
++int	arp_cache_lookup(in_addr_t ip, struct ether_addr *ether, const char* linf);
+ 
+ #endif /* _ARP_H_ */
+diff --exclude='*~' -Naur dsniff-2.4.orig/arpspoof.c dsniff-2.4/arpspoof.c
+--- dsniff-2.4.orig/arpspoof.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/arpspoof.c	2006-01-21 18:56:45.000000000 -0200
+@@ -27,7 +27,7 @@
+ 
+ extern char *ether_ntoa(struct ether_addr *);
+ 
+-static struct libnet_link_int *llif;
++static libnet_t *l;
+ static struct ether_addr spoof_mac, target_mac;
+ static in_addr_t spoof_ip, target_ip;
+ static char *intf;
+@@ -41,47 +41,41 @@
+ }
+ 
+ static int
+-arp_send(struct libnet_link_int *llif, char *dev,
+-	 int op, u_char *sha, in_addr_t spa, u_char *tha, in_addr_t tpa)
++arp_send(libnet_t *l, int op, u_int8_t *sha,
++	 in_addr_t spa, u_int8_t *tha, in_addr_t tpa)
+ {
+-	char ebuf[128];
+-	u_char pkt[60];
+-	
+ 	if (sha == NULL &&
+-	    (sha = (u_char *)libnet_get_hwaddr(llif, dev, ebuf)) == NULL) {
++	    (sha = (u_int8_t *)libnet_get_hwaddr(l)) == NULL) {
+ 		return (-1);
+ 	}
+ 	if (spa == 0) {
+-		if ((spa = libnet_get_ipaddr(llif, dev, ebuf)) == 0)
++		if ((spa = libnet_get_ipaddr4(l)) == -1)
+ 			return (-1);
+-		spa = htonl(spa); /* XXX */
+ 	}
+ 	if (tha == NULL)
+ 		tha = "\xff\xff\xff\xff\xff\xff";
+ 	
+-	libnet_build_ethernet(tha, sha, ETHERTYPE_ARP, NULL, 0, pkt);
++	libnet_autobuild_arp(op, sha, (u_int8_t *)&spa,
++			     tha, (u_int8_t *)&tpa, l);
++	libnet_build_ethernet(tha, sha, ETHERTYPE_ARP, NULL, 0, l, 0);
+ 	
+-	libnet_build_arp(ARPHRD_ETHER, ETHERTYPE_IP, ETHER_ADDR_LEN, 4,
+-			 op, sha, (u_char *)&spa, tha, (u_char *)&tpa,
+-			 NULL, 0, pkt + ETH_H);
+-
+ 	fprintf(stderr, "%s ",
+ 		ether_ntoa((struct ether_addr *)sha));
+ 
+ 	if (op == ARPOP_REQUEST) {
+ 		fprintf(stderr, "%s 0806 42: arp who-has %s tell %s\n",
+ 			ether_ntoa((struct ether_addr *)tha),
+-			libnet_host_lookup(tpa, 0),
+-			libnet_host_lookup(spa, 0));
++			libnet_addr2name4(tpa, LIBNET_DONT_RESOLVE),
++			libnet_addr2name4(spa, LIBNET_DONT_RESOLVE));
+ 	}
+ 	else {
+ 		fprintf(stderr, "%s 0806 42: arp reply %s is-at ",
+ 			ether_ntoa((struct ether_addr *)tha),
+-			libnet_host_lookup(spa, 0));
++			libnet_addr2name4(spa, LIBNET_DONT_RESOLVE));
+ 		fprintf(stderr, "%s\n",
+ 			ether_ntoa((struct ether_addr *)sha));
+ 	}
+-	return (libnet_write_link_layer(llif, dev, pkt, sizeof(pkt)) == sizeof(pkt));
++	return (libnet_write(l));
+ }
+ 
+ #ifdef __linux__
+@@ -113,13 +107,13 @@
+ 	int i = 0;
+ 
+ 	do {
+-		if (arp_cache_lookup(ip, mac) == 0)
++		if (arp_cache_lookup(ip, mac, intf) == 0)
+ 			return (1);
+ #ifdef __linux__
+ 		/* XXX - force the kernel to arp. feh. */
+ 		arp_force(ip);
+ #else
+-		arp_send(llif, intf, ARPOP_REQUEST, NULL, 0, NULL, ip);
++		arp_send(l, ARPOP_REQUEST, NULL, 0, NULL, ip);
+ #endif
+ 		sleep(1);
+ 	}
+@@ -136,9 +130,9 @@
+ 	if (arp_find(spoof_ip, &spoof_mac)) {
+ 		for (i = 0; i < 3; i++) {
+ 			/* XXX - on BSD, requires ETHERSPOOF kernel. */
+-			arp_send(llif, intf, ARPOP_REPLY,
+-				 (u_char *)&spoof_mac, spoof_ip,
+-				 (target_ip ? (u_char *)&target_mac : NULL),
++			arp_send(l, ARPOP_REPLY,
++				 (u_int8_t *)&spoof_mac, spoof_ip,
++				 (target_ip ? (u_int8_t *)&target_mac : NULL),
+ 				 target_ip);
+ 			sleep(1);
+ 		}
+@@ -151,7 +145,8 @@
+ {
+ 	extern char *optarg;
+ 	extern int optind;
+-	char ebuf[PCAP_ERRBUF_SIZE];
++	char pcap_ebuf[PCAP_ERRBUF_SIZE];
++	char libnet_ebuf[LIBNET_ERRBUF_SIZE];
+ 	int c;
+ 	
+ 	intf = NULL;
+@@ -163,7 +158,7 @@
+ 			intf = optarg;
+ 			break;
+ 		case 't':
+-			if ((target_ip = libnet_name_resolve(optarg, 1)) == -1)
++			if ((target_ip = libnet_name2addr4(l, optarg, LIBNET_RESOLVE)) == -1)
+ 				usage();
+ 			break;
+ 		default:
+@@ -176,26 +171,26 @@
+ 	if (argc != 1)
+ 		usage();
+ 	
+-	if ((spoof_ip = libnet_name_resolve(argv[0], 1)) == -1)
++	if ((spoof_ip = libnet_name2addr4(l, argv[0], LIBNET_RESOLVE)) == -1)
+ 		usage();
+ 	
+-	if (intf == NULL && (intf = pcap_lookupdev(ebuf)) == NULL)
+-		errx(1, "%s", ebuf);
++	if (intf == NULL && (intf = pcap_lookupdev(pcap_ebuf)) == NULL)
++		errx(1, "%s", pcap_ebuf);
+ 	
+-	if ((llif = libnet_open_link_interface(intf, ebuf)) == 0)
+-		errx(1, "%s", ebuf);
++	if ((l = libnet_init(LIBNET_LINK, intf, libnet_ebuf)) == NULL)
++		errx(1, "%s", libnet_ebuf);
+ 	
+ 	if (target_ip != 0 && !arp_find(target_ip, &target_mac))
+ 		errx(1, "couldn't arp for host %s",
+-		     libnet_host_lookup(target_ip, 0));
++		     libnet_addr2name4(target_ip, LIBNET_DONT_RESOLVE));
+ 	
+ 	signal(SIGHUP, cleanup);
+ 	signal(SIGINT, cleanup);
+ 	signal(SIGTERM, cleanup);
+ 	
+ 	for (;;) {
+-		arp_send(llif, intf, ARPOP_REPLY, NULL, spoof_ip,
+-			 (target_ip ? (u_char *)&target_mac : NULL),
++		arp_send(l, ARPOP_REPLY, NULL, spoof_ip,
++			 (target_ip ? (u_int8_t *)&target_mac : NULL),
+ 			 target_ip);
+ 		sleep(2);
+ 	}
+diff --exclude='*~' -Naur dsniff-2.4.orig/dnsspoof.8 dsniff-2.4/dnsspoof.8
+--- dsniff-2.4.orig/dnsspoof.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/dnsspoof.8	2006-01-21 18:56:50.000000000 -0200
+@@ -31,7 +31,7 @@
+ address queries on the LAN with an answer of the local machine's IP
+ address.
+ .SH FILES
+-.IP \fI/usr/local/lib/dnsspoof.hosts\fR
++.IP \fI/etc/dsniff/dnsspoof.hosts\fR
+ Sample hosts file.
+ .SH "SEE ALSO"
+ dsniff(8), hosts(5)
+diff --exclude='*~' -Naur dsniff-2.4.orig/dnsspoof.c dsniff-2.4/dnsspoof.c
+--- dsniff-2.4.orig/dnsspoof.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/dnsspoof.c	2006-01-21 18:56:45.000000000 -0200
+@@ -38,7 +38,7 @@
+ 
+ pcap_t		*pcap_pd = NULL;
+ int		 pcap_off = -1;
+-int		 lnet_sock = -1;
++libnet_t	*l;
+ u_long		 lnet_ip = -1;
+ 
+ static void
+@@ -90,19 +90,18 @@
+ dns_init(char *dev, char *filename)
+ {
+ 	FILE *f;
+-	struct libnet_link_int *llif;
++	libnet_t *l;
++	char libnet_ebuf[LIBNET_ERRBUF_SIZE];
+ 	struct dnsent *de;
+ 	char *ip, *name, buf[1024];
+ 
+-	if ((llif = libnet_open_link_interface(dev, buf)) == NULL)
+-		errx(1, "%s", buf);
++	if ((l = libnet_init(LIBNET_LINK, dev, libnet_ebuf)) == NULL)
++		errx(1, "%s", libnet_ebuf);
+ 	
+-	if ((lnet_ip = libnet_get_ipaddr(llif, dev, buf)) == -1)
+-		errx(1, "%s", buf);
++	if ((lnet_ip = libnet_get_ipaddr4(l)) == -1)
++		errx(1, "%s", libnet_geterror(l));
+ 
+-	lnet_ip = htonl(lnet_ip);
+-	
+-	libnet_close_link_interface(llif);
++	libnet_destroy(l);
+ 
+ 	SLIST_INIT(&dns_entries);
+ 	
+@@ -180,7 +179,7 @@
+ static void
+ dns_spoof(u_char *u, const struct pcap_pkthdr *pkthdr, const u_char *pkt)
+ {
+-	struct libnet_ip_hdr *ip;
++	struct libnet_ipv4_hdr *ip;
+ 	struct libnet_udp_hdr *udp;
+ 	HEADER *dns;
+ 	char name[MAXHOSTNAMELEN];
+@@ -189,7 +188,7 @@
+ 	in_addr_t dst;
+ 	u_short type, class;
+ 
+-	ip = (struct libnet_ip_hdr *)(pkt + pcap_off);
++	ip = (struct libnet_ipv4_hdr *)(pkt + pcap_off);
+ 	udp = (struct libnet_udp_hdr *)(pkt + pcap_off + (ip->ip_hl * 4));
+ 	dns = (HEADER *)(udp + 1);
+ 	p = (u_char *)(dns + 1);
+@@ -212,7 +211,7 @@
+ 	if (class != C_IN)
+ 		return;
+ 
+-	p = buf + IP_H + UDP_H + dnslen;
++	p = buf + dnslen;
+ 	
+ 	if (type == T_A) {
+ 		if ((dst = dns_lookup_a(name)) == -1)
+@@ -234,38 +233,38 @@
+ 		anslen += 12;
+ 	}
+ 	else return;
+-	
+-	libnet_build_ip(UDP_H + dnslen + anslen, 0, libnet_get_prand(PRu16),
+-			0, 64, IPPROTO_UDP, ip->ip_dst.s_addr,
+-			ip->ip_src.s_addr, NULL, 0, buf);
+-	
+-	libnet_build_udp(ntohs(udp->uh_dport), ntohs(udp->uh_sport),
+-			 NULL, dnslen + anslen, buf + IP_H);
+ 
+-	memcpy(buf + IP_H + UDP_H, (u_char *)dns, dnslen);
++	memcpy(buf, (u_char *)dns, dnslen);
+ 
+-	dns = (HEADER *)(buf + IP_H + UDP_H);
++	dns = (HEADER *)buf;
+ 	dns->qr = dns->ra = 1;
+ 	if (type == T_PTR) dns->aa = 1;
+ 	dns->ancount = htons(1);
+ 
+ 	dnslen += anslen;
++
++	libnet_clear_packet(l);
++	libnet_build_udp(ntohs(udp->uh_dport), ntohs(udp->uh_sport),
++			 LIBNET_UDP_H + dnslen, 0,
++			 (u_int8_t *)buf, dnslen, l, 0);
++
++	libnet_build_ipv4(LIBNET_IPV4_H + LIBNET_UDP_H + dnslen, 0,
++			  libnet_get_prand(LIBNET_PRu16), 0, 64, IPPROTO_UDP, 0,
++			  ip->ip_dst.s_addr, ip->ip_src.s_addr, NULL, 0, l, 0);
+ 	
+-	libnet_do_checksum(buf, IPPROTO_UDP, UDP_H + dnslen);
+-	
+-	if (libnet_write_ip(lnet_sock, buf, IP_H + UDP_H + dnslen) < 0)
++	if (libnet_write(l) < 0)
+ 		warn("write");
+ 
+ 	fprintf(stderr, "%s.%d > %s.%d:  %d+ %s? %s\n",
+-	      libnet_host_lookup(ip->ip_src.s_addr, 0), ntohs(udp->uh_sport),
+-	      libnet_host_lookup(ip->ip_dst.s_addr, 0), ntohs(udp->uh_dport),
++	      libnet_addr2name4(ip->ip_src.s_addr, 0), ntohs(udp->uh_sport),
++	      libnet_addr2name4(ip->ip_dst.s_addr, 0), ntohs(udp->uh_dport),
+ 	      ntohs(dns->id), type == T_A ? "A" : "PTR", name);
+ }
+ 
+ static void
+ cleanup(int sig)
+ {
+-	libnet_close_raw_sock(lnet_sock);
++	libnet_destroy(l);
+ 	pcap_close(pcap_pd);
+ 	exit(0);
+ }
+@@ -276,6 +275,7 @@
+ 	extern char *optarg;
+ 	extern int optind;
+ 	char *p, *dev, *hosts, buf[1024];
++	char ebuf[LIBNET_ERRBUF_SIZE];
+ 	int i;
+ 
+ 	dev = hosts = NULL;
+@@ -306,7 +306,7 @@
+ 		strlcpy(buf, p, sizeof(buf));
+ 	}
+ 	else snprintf(buf, sizeof(buf), "udp dst port 53 and not src %s",
+-		      libnet_host_lookup(lnet_ip, 0));
++		      libnet_addr2name4(lnet_ip, LIBNET_DONT_RESOLVE));
+ 	
+ 	if ((pcap_pd = pcap_init(dev, buf, 128)) == NULL)
+ 		errx(1, "couldn't initialize sniffing");
+@@ -314,10 +314,10 @@
+ 	if ((pcap_off = pcap_dloff(pcap_pd)) < 0)
+ 		errx(1, "couldn't determine link layer offset");
+ 	
+-	if ((lnet_sock = libnet_open_raw_sock(IPPROTO_RAW)) == -1)
++	if ((l = libnet_init(LIBNET_RAW4, dev, ebuf)) == NULL)
+ 		errx(1, "couldn't initialize sending");
+ 	
+-	libnet_seed_prand();
++	libnet_seed_prand(l);
+ 	
+ 	signal(SIGHUP, cleanup);
+ 	signal(SIGINT, cleanup);
+diff --exclude='*~' -Naur dsniff-2.4.orig/dsniff.8 dsniff-2.4/dsniff.8
+--- dsniff-2.4.orig/dsniff.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/dsniff.8	2006-01-21 18:56:50.000000000 -0200
+@@ -10,7 +10,7 @@
+ .nf
+ .fi
+ \fBdsniff\fR [\fB-c\fR] [\fB-d\fR] [\fB-m\fR] [\fB-n\fR] [\fB-i
+-\fIinterface\fR] [\fB-s \fIsnaplen\fR] [\fB-f \fIservices\fR]
++\fIinterface\fR | \fB-p \fIpcapfile\fR] [\fB-s \fIsnaplen\fR] [\fB-f \fIservices\fR]
+ [\fB-t \fItrigger[,...]\fR]]
+ [\fB-r\fR|\fB-w\fR \fIsavefile\fR] [\fIexpression\fR]
+ .SH DESCRIPTION
+@@ -45,6 +45,9 @@
+ Do not resolve IP addresses to hostnames.
+ .IP "\fB-i \fIinterface\fR"
+ Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Rather than processing the contents of packets observed upon the network 
++process the given PCAP capture file.
+ .IP "\fB-s \fIsnaplen\fR"
+ Analyze at most the first \fIsnaplen\fR bytes of each TCP connection,
+ rather than the default of 1024.
+@@ -65,9 +68,9 @@
+ On a hangup signal \fBdsniff\fR will dump its current trigger table to
+ \fIdsniff.services\fR.
+ .SH FILES
+-.IP \fI/usr/local/lib/dsniff.services\fR
++.IP \fI/etc/dsniff/dsniff.services\fR
+ Default trigger table
+-.IP \fI/usr/local/lib/dsniff.magic\fR
++.IP \fI/etc/dsniff/dsniff.magic\fR
+ Network protocol magic
+ .SH "SEE ALSO"
+ arpspoof(8), libnids(3), services(5), magic(5)
+diff --exclude='*~' -Naur dsniff-2.4.orig/dsniff.8.orig dsniff-2.4/dsniff.8.orig
+--- dsniff-2.4.orig/dsniff.8.orig	1969-12-31 21:00:00.000000000 -0300
++++ dsniff-2.4/dsniff.8.orig	2006-01-21 18:56:40.000000000 -0200
+@@ -0,0 +1,84 @@
++.TH DSNIFF 8
++.ad
++.fi
++.SH NAME
++dsniff
++\-
++password sniffer
++.SH SYNOPSIS
++.na
++.nf
++.fi
++\fBdsniff\fR [\fB-c\fR] [\fB-d\fR] [\fB-m\fR] [\fB-n\fR] [\fB-i
++\fIinterface\fR | \fB-p \fIpcapfile\fR] [\fB-s \fIsnaplen\fR] [\fB-f \fIservices\fR]
++[\fB-t \fItrigger[,...]\fR]]
++[\fB-r\fR|\fB-w\fR \fIsavefile\fR] [\fIexpression\fR]
++.SH DESCRIPTION
++.ad
++.fi
++\fBdsniff\fR is a password sniffer which handles FTP, Telnet, SMTP,
++HTTP, POP, poppass, NNTP, IMAP, SNMP, LDAP, Rlogin, RIP, OSPF, PPTP
++MS-CHAP, NFS, VRRP, YP/NIS, SOCKS, X11, CVS, IRC, AIM, ICQ, Napster,
++PostgreSQL, Meeting Maker, Citrix ICA, Symantec pcAnywhere, NAI
++Sniffer, Microsoft SMB, Oracle SQL*Net, Sybase and Microsoft SQL
++protocols.
++.LP
++\fBdsniff\fR automatically detects and minimally parses each
++application protocol, only saving the interesting bits, and uses
++Berkeley DB as its output file format, only logging unique
++authentication attempts. Full TCP/IP reassembly is provided by
++libnids(3).
++.LP
++I wrote \fBdsniff\fR with honest intentions - to audit my own network,
++and to demonstrate the insecurity of cleartext network protocols.
++Please do not abuse this software.
++.SH OPTIONS
++.IP \fB-c\fR
++Perform half-duplex TCP stream reassembly, to handle asymmetrically
++routed traffic (such as when using arpspoof(8) to intercept client
++traffic bound for the local gateway).
++.IP \fB-d\fR
++Enable debugging mode.
++.IP \fB-m\fR
++Enable automatic protocol detection.
++.IP \fB-n\fR
++Do not resolve IP addresses to hostnames.
++.IP "\fB-i \fIinterface\fR"
++Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Rather than processing the contents of packets observed upon the network 
++process the given PCAP capture file.
++.IP "\fB-s \fIsnaplen\fR"
++Analyze at most the first \fIsnaplen\fR bytes of each TCP connection,
++rather than the default of 1024.
++.IP "\fB-f \fIservices\fR"
++Load triggers from a \fIservices\fR file.
++.IP "\fB -t \fItrigger\fR[,...]"
++Load triggers from a comma-separated list, specified as
++\fIport\fR/\fIproto\fR=\fIservice\fR (e.g. 80/tcp=http).
++.IP "\fB-r \fIsavefile\fR"
++Read sniffed sessions from a \fIsavefile\fR created with the \fB-w\fR
++option.
++.IP "\fB-w \fIfile\fR"
++Write sniffed sessions to \fIsavefile\fR rather than parsing and
++printing them out.
++.IP "\fIexpression\fR"
++Specify a tcpdump(8) filter expression to select traffic to sniff.
++.LP
++On a hangup signal \fBdsniff\fR will dump its current trigger table to
++\fIdsniff.services\fR.
++.SH FILES
++.IP \fI/usr/local/lib/dsniff.services\fR
++Default trigger table
++.IP \fI/usr/local/lib/dsniff.magic\fR
++Network protocol magic
++.SH "SEE ALSO"
++arpspoof(8), libnids(3), services(5), magic(5)
++.SH AUTHOR
++.na
++.nf
++Dug Song <dugsong@monkey.org>
++.SH BUGS
++\fBdsniff\fR's automatic protocol detection feature is based on the
++classic file(1) command by Ian Darwin, and shares its historical
++limitations and bugs.
+diff --exclude='*~' -Naur dsniff-2.4.orig/dsniff.c dsniff-2.4/dsniff.c
+--- dsniff-2.4.orig/dsniff.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/dsniff.c	2006-01-21 18:56:40.000000000 -0200
+@@ -46,8 +46,9 @@
+ usage(void)
+ {
+ 	fprintf(stderr, "Version: " VERSION "\n"
+-		"Usage: dsniff [-cdmn] [-i interface] [-s snaplen] [-f services]\n"
+-		"              [-t trigger[,...]] [-r|-w savefile] [expression]\n");
++		"Usage: dsniff [-cdmn] [-i interface | -p pcapfile] [-s snaplen]\n"
++		"              [-f services] [-t trigger[,...]] [-r|-w savefile]\n"
++		"              [expression]\n");
+ 	exit(1);
+ }
+ 
+@@ -79,7 +80,7 @@
+ 
+ 	services = savefile = triggers = NULL;
+ 	
+-	while ((c = getopt(argc, argv, "cdf:i:mnr:s:t:w:h?V")) != -1) {
++	while ((c = getopt(argc, argv, "cdf:i:mnp:r:s:t:w:h?V")) != -1) {
+ 		switch (c) {
+ 		case 'c':
+ 			Opt_client = 1;
+@@ -99,6 +100,9 @@
+ 		case 'n':
+ 			Opt_dns = 0;
+ 			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
+ 		case 'r':
+ 			Opt_read = 1;
+ 			savefile = optarg;
+@@ -168,10 +172,23 @@
+ 	else nids_register_tcp(trigger_tcp);
+ 	
+ 	if (nids_params.pcap_filter != NULL) {
+-		warnx("listening on %s [%s]", nids_params.device,
+-		      nids_params.pcap_filter);
++		if (nids_params.filename == NULL) {
++			warnx("listening on %s [%s]", nids_params.device,
++		        nids_params.pcap_filter);
++		}
++		else {
++			warnx("using %s [%s]", nids_params.filename,
++		        nids_params.pcap_filter);
++		}
++	}
++	else {
++		if (nids_params.filename == NULL) {
++			warnx("listening on %s", nids_params.device);
++		}
++		else {
++			warnx("using %s", nids_params.filename);
++		}
+ 	}
+-	else warnx("listening on %s", nids_params.device);
+ 	
+ 	nids_run();
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/filesnarf.8 dsniff-2.4/filesnarf.8
+--- dsniff-2.4.orig/filesnarf.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/filesnarf.8	2006-01-21 18:56:40.000000000 -0200
+@@ -9,7 +9,7 @@
+ .na
+ .nf
+ .fi
+-\fBfilesnarf\fR [\fB-i \fIinterface\fR] [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
++\fBfilesnarf\fR [\fB-i \fIinterface\fR | \fB-p \fIpcapfile\fR] [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
+ .SH DESCRIPTION
+ .ad
+ .fi
+@@ -18,6 +18,8 @@
+ .SH OPTIONS
+ .IP "\fB-i \fIinterface\fR"
+ Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Process packets from the specified PCAP capture file instead of the network.
+ .IP \fB-v\fR
+ "Versus" mode. Invert the sense of matching, to select non-matching
+ files.
+diff --exclude='*~' -Naur dsniff-2.4.orig/filesnarf.c dsniff-2.4/filesnarf.c
+--- dsniff-2.4.orig/filesnarf.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/filesnarf.c	2006-01-21 18:56:45.000000000 -0200
+@@ -51,7 +51,7 @@
+ usage(void)
+ {
+ 	fprintf(stderr, "Version: " VERSION "\n"
+-		"Usage: filesnarf [-i interface] [[-v] pattern [expression]]\n");
++		"Usage: filesnarf [-i interface | -p pcapfile] [[-v] pattern [expression]]\n");
+ 	exit(1);
+ }
+ 
+@@ -134,8 +134,8 @@
+ 	int fd;
+ 
+ 	warnx("%s.%d > %s.%d: %s (%d@%d)",
+-	      libnet_host_lookup(addr->daddr, 0), addr->dest,
+-	      libnet_host_lookup(addr->saddr, 0), addr->source,
++	      libnet_addr2name4(addr->daddr, LIBNET_DONT_RESOLVE), addr->dest,
++	      libnet_addr2name4(addr->saddr, LIBNET_DONT_RESOLVE), addr->source,
+ 	      ma->filename, len, ma->offset);
+ 	
+ 	if ((fd = open(ma->filename, O_WRONLY|O_CREAT, 0644)) >= 0) {
+@@ -353,7 +353,7 @@
+ }
+ 
+ static void
+-decode_udp_nfs(struct libnet_ip_hdr *ip)
++decode_udp_nfs(struct libnet_ipv4_hdr *ip)
+ {
+ 	static struct tuple4 addr;
+ 	struct libnet_udp_hdr *udp;
+@@ -464,11 +464,14 @@
+ 	extern int optind;
+ 	int c;
+ 
+-	while ((c = getopt(argc, argv, "i:vh?V")) != -1) {
++	while ((c = getopt(argc, argv, "i:p:vh?V")) != -1) {
+ 		switch (c) {
+ 		case 'i':
+ 			nids_params.device = optarg;
+ 			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
+ 		case 'v':
+ 			Opt_invert = 1;
+ 			break;
+@@ -498,11 +501,24 @@
+ 	nids_register_ip(decode_udp_nfs);
+ 	nids_register_tcp(decode_tcp_nfs);
+ 
+-	if (nids_params.pcap_filter != NULL) {
+-		warnx("listening on %s [%s]", nids_params.device,
+-		      nids_params.pcap_filter);
+-	}
+-	else warnx("listening on %s", nids_params.device);
++        if (nids_params.pcap_filter != NULL) {
++                if (nids_params.filename == NULL) {
++                        warnx("listening on %s [%s]", nids_params.device,
++                              nids_params.pcap_filter);
++                }
++                else {
++                        warnx("using %s [%s]", nids_params.filename,
++                              nids_params.pcap_filter);
++                }
++        }
++        else {
++                if (nids_params.filename == NULL) {
++                        warnx("listening on %s", nids_params.device);
++                }
++                else {
++                        warnx("using %s", nids_params.filename);
++                }
++        }
+ 
+ 	nids_run();
+ 
+diff --exclude='*~' -Naur dsniff-2.4.orig/macof.c dsniff-2.4/macof.c
+--- dsniff-2.4.orig/macof.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/macof.c	2006-01-21 18:56:45.000000000 -0200
+@@ -48,8 +48,8 @@
+ static void
+ gen_mac(u_char *mac)
+ {
+-	*((in_addr_t *)mac) = libnet_get_prand(PRu32);
+-	*((u_short *)(mac + 4)) = libnet_get_prand(PRu16);
++	*((in_addr_t *)mac) = libnet_get_prand(LIBNET_PRu32);
++	*((u_short *)(mac + 4)) = libnet_get_prand(LIBNET_PRu16);
+ }
+ 
+ int
+@@ -59,22 +59,23 @@
+ 	extern int optind;
+ 	int c, i;
+ 	struct libnet_link_int *llif;
+-	char ebuf[PCAP_ERRBUF_SIZE];
++	char pcap_ebuf[PCAP_ERRBUF_SIZE];
++	char libnet_ebuf[LIBNET_ERRBUF_SIZE];
+ 	u_char sha[ETHER_ADDR_LEN], tha[ETHER_ADDR_LEN];
+ 	in_addr_t src, dst;
+ 	u_short sport, dport;
+ 	u_int32_t seq;
+-	u_char pkt[ETH_H + IP_H + TCP_H];
++	libnet_t *l;
+ 	
+ 	while ((c = getopt(argc, argv, "vs:d:e:x:y:i:n:h?V")) != -1) {
+ 		switch (c) {
+ 		case 'v':
+ 			break;
+ 		case 's':
+-			Src = libnet_name_resolve(optarg, 0);
++			Src = libnet_name2addr4(l, optarg, 0);
+ 			break;
+ 		case 'd':
+-			Dst = libnet_name_resolve(optarg, 0);
++			Dst = libnet_name2addr4(l, optarg, 0);
+ 			break;
+ 		case 'e':
+ 			Tha = (u_char *)ether_aton(optarg);
+@@ -101,13 +102,13 @@
+ 	if (argc != 0)
+ 		usage();
+ 	
+-	if (!Intf && (Intf = pcap_lookupdev(ebuf)) == NULL)
+-		errx(1, "%s", ebuf);
++	if (!Intf && (Intf = pcap_lookupdev(pcap_ebuf)) == NULL)
++		errx(1, "%s", pcap_ebuf);
+ 	
+-	if ((llif = libnet_open_link_interface(Intf, ebuf)) == 0)
+-		errx(1, "%s", ebuf);
++	if ((l = libnet_init(LIBNET_LINK, Intf, libnet_ebuf)) == NULL)
++		errx(1, "%s", libnet_ebuf);
+ 	
+-	libnet_seed_prand();
++	libnet_seed_prand(l);
+ 	
+ 	for (i = 0; i != Repeat; i++) {
+ 		
+@@ -117,39 +118,37 @@
+ 		else memcpy(tha, Tha, sizeof(tha));
+ 		
+ 		if (Src != 0) src = Src;
+-		else src = libnet_get_prand(PRu32);
++		else src = libnet_get_prand(LIBNET_PRu32);
+ 		
+ 		if (Dst != 0) dst = Dst;
+-		else dst = libnet_get_prand(PRu32);
++		else dst = libnet_get_prand(LIBNET_PRu32);
+ 		
+ 		if (Sport != 0) sport = Sport;
+-		else sport = libnet_get_prand(PRu16);
++		else sport = libnet_get_prand(LIBNET_PRu16);
+ 		
+ 		if (Dport != 0) dport = Dport;
+-		else dport = libnet_get_prand(PRu16);
++		else dport = libnet_get_prand(LIBNET_PRu16);
+ 
+-		seq = libnet_get_prand(PRu32);
+-		
+-		libnet_build_ethernet(tha, sha, ETHERTYPE_IP, NULL, 0, pkt);
+-		
+-		libnet_build_ip(TCP_H, 0, libnet_get_prand(PRu16), 0, 64,
+-				IPPROTO_TCP, src, dst, NULL, 0, pkt + ETH_H);
++		seq = libnet_get_prand(LIBNET_PRu32);
+ 		
+ 		libnet_build_tcp(sport, dport, seq, 0, TH_SYN, 512,
+-				 0, NULL, 0, pkt + ETH_H + IP_H);
++				 0, 0, LIBNET_TCP_H, NULL, 0, l, 0);
++		
++		libnet_build_ipv4(LIBNET_TCP_H, 0,
++				  libnet_get_prand(LIBNET_PRu16), 0, 64,
++				  IPPROTO_TCP, 0, src, dst, NULL, 0, l, 0);
+ 		
+-		libnet_do_checksum(pkt + ETH_H, IPPROTO_IP, IP_H);
+-		libnet_do_checksum(pkt + ETH_H, IPPROTO_TCP, TCP_H);
++		libnet_build_ethernet(tha, sha, ETHERTYPE_IP, NULL, 0, l, 0);
+ 		
+-		if (libnet_write_link_layer(llif, Intf, pkt, sizeof(pkt)) < 0)
++		if (libnet_write(l) < 0)
+ 			errx(1, "write");
+ 
+ 		fprintf(stderr, "%s ",
+ 			ether_ntoa((struct ether_addr *)sha));
+ 		fprintf(stderr, "%s %s.%d > %s.%d: S %u:%u(0) win 512\n",
+ 			ether_ntoa((struct ether_addr *)tha),
+-			libnet_host_lookup(Src, 0), sport,
+-			libnet_host_lookup(Dst, 0), dport, seq, seq);
++			libnet_addr2name4(Src, 0), sport,
++			libnet_addr2name4(Dst, 0), dport, seq, seq);
+ 	}
+ 	exit(0);
+ }
+diff --exclude='*~' -Naur dsniff-2.4.orig/mailsnarf.8 dsniff-2.4/mailsnarf.8
+--- dsniff-2.4.orig/mailsnarf.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/mailsnarf.8	2006-01-21 18:56:40.000000000 -0200
+@@ -9,7 +9,7 @@
+ .na
+ .nf
+ .fi
+-\fBmailsnarf\fR [\fB-i \fIinterface\fR] [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
++\fBmailsnarf\fR [\fB-i \fIinterface\fR | \fB-p \fIpcapfile\fR] [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
+ .SH DESCRIPTION
+ .ad
+ .fi
+@@ -19,6 +19,8 @@
+ .SH OPTIONS
+ .IP "\fB-i \fIinterface\fR"
+ Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Process packets from the specified PCAP capture file instead of the network.
+ .IP \fB-v\fR
+ "Versus" mode. Invert the sense of matching, to select non-matching
+ messages.
+diff --exclude='*~' -Naur dsniff-2.4.orig/mailsnarf.c dsniff-2.4/mailsnarf.c
+--- dsniff-2.4.orig/mailsnarf.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/mailsnarf.c	2006-01-21 18:56:40.000000000 -0200
+@@ -59,7 +59,7 @@
+ usage(void)
+ {
+ 	fprintf(stderr, "Version: " VERSION "\n"
+-		"Usage: mailsnarf [-i interface] [[-v] pattern [expression]]\n");
++		"Usage: mailsnarf [-i interface | -p pcapfile] [[-v] pattern [expression]]\n");
+ 	exit(1);
+ }
+ 
+@@ -178,7 +178,7 @@
+ 	if (smtp->state != SMTP_DATA) {
+ 		while ((i = buf_index(&buf, "\r\n", 2)) >= 0) {
+ 			line = buf_tok(&buf, NULL, i + 2);
+-			line->base[line->end] = '\0';
++			line->base[line->end-1] = '\0';
+ 			p = buf_ptr(line);
+ 			
+ 			if (strncasecmp(p, "RSET", 4) == 0) {
+@@ -344,11 +344,14 @@
+ 	extern int optind;
+ 	int c;
+ 	
+-	while ((c = getopt(argc, argv, "i:vh?V")) != -1) {
++	while ((c = getopt(argc, argv, "i:p:vh?V")) != -1) {
+ 		switch (c) {
+ 		case 'i':
+ 			nids_params.device = optarg;
+ 			break;
++                case 'p':
++                        nids_params.filename = optarg;
++                        break;
+ 		case 'v':
+ 			Opt_invert = 1;
+ 			break;
+@@ -378,10 +381,23 @@
+ 	nids_register_tcp(sniff_pop_session);
+ 
+ 	if (nids_params.pcap_filter != NULL) {
+-		warnx("listening on %s [%s]", nids_params.device,
+-		      nids_params.pcap_filter);
+-	}
+-	else warnx("listening on %s", nids_params.device);
++                if (nids_params.filename == NULL) {
++		        warnx("listening on %s [%s]", nids_params.device,
++		              nids_params.pcap_filter);
++                }
++                else {
++		        warnx("using %s [%s]", nids_params.filename,
++		              nids_params.pcap_filter);
++                }
++	}
++	else {
++                if (nids_params.filename == NULL) {
++                    warnx("listening on %s", nids_params.device);
++                }
++                else {
++                    warnx("using %s", nids_params.filename);
++                }
++        }
+ 	
+ 	nids_run();
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/Makefile.in dsniff-2.4/Makefile.in
+--- dsniff-2.4.orig/Makefile.in	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/Makefile.in	2006-01-21 18:56:50.000000000 -0200
+@@ -11,7 +11,7 @@
+ install_prefix  =
+ prefix          = @prefix@
+ exec_prefix	= @exec_prefix@
+-libdir		= @libdir@
++libdir		= $(prefix)/share/dsniff
+ sbindir         = @sbindir@
+ mandir		= @mandir@
+ 
+@@ -37,8 +37,7 @@
+ X11INC	= @X_CFLAGS@
+ X11LIB	= @X_LIBS@ @X_PRE_LIBS@ -lXmu -lX11 @X_EXTRA_LIBS@
+ 
+-INCS	= -I. $(NIDSINC) $(PCAPINC) $(LNETINC) $(DBINC) $(SSLINC) $(X11INC) \
+-	  -I$(srcdir)/missing
++INCS	= -I. $(X11INC) -I$(srcdir)/missing 
+ LIBS	= @LIBS@ -L$(srcdir) -lmissing
+ 
+ INSTALL	= @INSTALL@
+diff --exclude='*~' -Naur dsniff-2.4.orig/msgsnarf.8 dsniff-2.4/msgsnarf.8
+--- dsniff-2.4.orig/msgsnarf.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/msgsnarf.8	2006-01-21 18:56:40.000000000 -0200
+@@ -9,7 +9,7 @@
+ .na
+ .nf
+ .fi
+-\fBmsgsnarf\fR [\fB-i \fIinterface\fR] [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
++\fBmsgsnarf\fR [\fB-i \fIinterface\fR | \fB-p \fIpcapfile\fR] [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
+ .SH DESCRIPTION
+ .ad
+ .fi
+@@ -19,6 +19,8 @@
+ .SH OPTIONS
+ .IP "\fB-i \fIinterface\fR"
+ Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Process packets from the specified PCAP capture file instead of the network.
+ .IP \fB-v\fR
+ "Versus" mode. Invert the sense of matching, to select non-matching
+ messages.
+diff --exclude='*~' -Naur dsniff-2.4.orig/msgsnarf.c dsniff-2.4/msgsnarf.c
+--- dsniff-2.4.orig/msgsnarf.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/msgsnarf.c	2006-01-21 18:56:40.000000000 -0200
+@@ -23,6 +23,7 @@
+ #include <nids.h>
+ #include <pcap.h>
+ #include <pcaputil.h>
++#include <time.h>
+ 
+ #include "buf.h"
+ #include "decode.h"
+@@ -44,7 +45,7 @@
+ usage(void)
+ {
+ 	fprintf(stderr, "Version: " VERSION "\n"
+-		"Usage: msgsnarf [-i interface] [[-v] pattern [expression]]\n");
++		"Usage: msgsnarf [-i interface | -p pcapfile] [[-v] pattern [expression]]\n");
+ 	exit(1);
+ }
+ 
+@@ -632,11 +633,14 @@
+ 	extern int optind;
+ 	int c;
+ 	
+-	while ((c = getopt(argc, argv, "i:hv?V")) != -1) {
++	while ((c = getopt(argc, argv, "i:p:hv?V")) != -1) {
+ 		switch (c) {
+ 		case 'i':
+ 			nids_params.device = optarg;
+ 			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
+ 		case 'v':
+ 			Opt_invert = 1;
+ 			break;
+@@ -665,11 +669,24 @@
+ 	
+ 	nids_register_tcp(sniff_msgs);
+ 
+-	if (nids_params.pcap_filter != NULL) {
+-		warnx("listening on %s [%s]", nids_params.device,
+-		      nids_params.pcap_filter);
+-	}
+-	else warnx("listening on %s", nids_params.device);
++        if (nids_params.pcap_filter != NULL) {
++                if (nids_params.filename == NULL) {
++                        warnx("listening on %s [%s]", nids_params.device,
++                              nids_params.pcap_filter);
++                }
++                else {
++                        warnx("using %s [%s]", nids_params.filename,
++                              nids_params.pcap_filter);
++                }
++        }
++        else {
++                if (nids_params.filename == NULL) {
++                    warnx("listening on %s", nids_params.device);
++                }
++                else {
++                    warnx("using %s", nids_params.filename);
++                }
++        }
+ 
+ 	nids_run();
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/msgsnarf.c.orig dsniff-2.4/msgsnarf.c.orig
+--- dsniff-2.4.orig/msgsnarf.c.orig	1969-12-31 21:00:00.000000000 -0300
++++ dsniff-2.4/msgsnarf.c.orig	2006-01-21 18:56:30.000000000 -0200
+@@ -0,0 +1,680 @@
++/*
++ * msgsnarf.c
++ *
++ * Sniff chat messages (AIM, ICQ, IRC, MSN, Yahoo) on a network.
++ *
++ * Copyright (c) 1999 Dug Song <dugsong@monkey.org>
++ *
++ * $Id: msgsnarf.c,v 1.11 2001/03/15 08:33:04 dugsong Exp $
++ */
++
++#include "config.h"
++
++#include <sys/types.h>
++#include <sys/queue.h>
++#include <netinet/in.h>
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <regex.h>
++#include <err.h>
++#include <libnet.h>
++#include <nids.h>
++#include <pcap.h>
++#include <pcaputil.h>
++#include <time.h>
++
++#include "buf.h"
++#include "decode.h"
++#include "version.h"
++
++struct client_info {
++	char	       *nick;
++	char	       *peer;
++	char	       *type;
++	in_addr_t	ip;
++	SLIST_ENTRY(client_info) next;
++};
++
++SLIST_HEAD(, client_info) client_list;
++int		Opt_invert = 0;
++regex_t	       *pregex = NULL;
++
++static void
++usage(void)
++{
++	fprintf(stderr, "Version: " VERSION "\n"
++		"Usage: msgsnarf [-i interface] [[-v] pattern [expression]]\n");
++	exit(1);
++}
++
++static char *
++timestamp(void)
++{
++	static char stamp[32];
++	struct tm *tm;
++	time_t now;
++
++	time(&now);
++	tm = localtime(&now);
++	strftime(stamp, sizeof(stamp), "%b %e %T", tm);
++
++	return (stamp);
++}
++
++static int
++regex_match(char *string)
++{
++	return (pregex == NULL ||
++		((regexec(pregex, string, 0, NULL, 0) == 0) ^ Opt_invert));
++}
++
++struct flap {
++	u_char	start;
++	u_char	channel;
++	u_short	seqnum;
++	u_short	datalen;
++};
++
++struct snac {
++	u_short		family;
++	u_short		subtype;
++	u_short		flags;
++	u_int32_t	reqid;
++};
++
++static int
++process_aim(struct client_info *info, u_char *data, int len)
++{
++	struct buf *msg, *word, buf;
++	struct flap *flap;
++	struct snac *snac;
++	u_char c, *p;
++	int i, reply;
++
++	buf_init(&buf, data, len);
++
++	if (buf_cmp(&buf, "FLAPON\r\n\r\n", 10) == 0)
++		buf_skip(&buf, 10);
++
++	while (buf_len(&buf) > sizeof(*flap)) {
++		flap = (struct flap *)buf_ptr(&buf);
++		flap->datalen = ntohs(flap->datalen);
++
++		i = sizeof(*flap) + flap->datalen;
++
++		if ((msg = buf_tok(&buf, NULL, i)) == NULL)
++			break;
++
++		buf_skip(msg, sizeof(*flap));
++		snac = (struct snac *)buf_ptr(msg);
++		
++		if (flap->start != 0x2a)
++			continue;
++		
++		if (flap->channel == 0x01) {
++			if (buf_cmp(msg, "\x00\x00\x00\x01\x00\x01\x00", 7) == 0) {
++				buf_skip(msg, 7);
++				buf_get(msg, &c, 1);
++
++				if ((word = buf_getbuf(msg, 0, c)) != NULL) {
++					if (info->nick) free(info->nick);
++					info->nick = buf_strdup(word);
++					buf_free(word);
++				}
++				buf_skip(msg, 3);
++				buf_get(msg, &c, 1);
++				buf_skip(msg, c + 4);
++
++				if (buf_cmp(msg, "ICQ", 3) == 0)
++					info->type = "ICQ";
++				else info->type = "AIM";
++			}
++		}
++		else if (flap->channel == 0x02) {
++			if (buf_cmp(msg, "toc_send_im ", 12) == 0) {
++				buf_skip(msg, 12);
++				
++				if ((word = buf_getword(msg, " ", 1)) == NULL)
++					continue;
++				
++				buf_skip(msg, 1);
++				
++				if (buf_len(msg) < 3) continue;
++				msg->end -= 2;
++				p = buf_strdup(msg);
++
++				if (regex_match(p))
++					printf("%s AIM %s > %.*s: %s\n",
++					       timestamp(), info->nick,
++					       buf_len(word), buf_ptr(word), p);
++				buf_free(word);
++				free(p);
++			}
++			else if (buf_cmp(msg, "IM_IN:", 6) == 0) {
++				buf_skip(msg, 6);
++				
++				if ((word = buf_getword(msg, ":", 1)) == NULL)
++					continue;
++				
++				buf_skip(msg, 2);
++				p = buf_strdup(msg);
++
++				if (regex_match(p))
++					printf("%s AIM %.*s > %s: %s\n",
++					       timestamp(), buf_len(word),
++					       buf_ptr(word), info->nick, p);
++				buf_free(word);
++				free(p);
++			}
++			else if (ntohs(snac->family) == 0x04) {
++				
++				if (ntohs(snac->subtype) == 0x06)
++					reply = 0;
++				else if (ntohs(snac->subtype) == 0x07)
++					reply = 1;
++				else continue;
++				
++				buf_skip(msg, sizeof(*snac) + 8);
++				buf_get(msg, &c, 1);
++				
++				if ((word = buf_getbuf(msg, 0, c)) == NULL)
++					continue;
++
++				/* XXX - ugh, this is totally bogus. help! */
++				if (buf_cmp(msg, "\x00\x02", 2) == 0) {
++					buf_skip(msg, 17);
++					while (buf_cmp(msg, "\x00", 1) == 0)
++						buf_skip(msg, 1);
++				}
++				else if (buf_cmp(msg, "\x00\x05", 2) == 0) {
++					buf_skip(msg, 97);
++				}
++				else if (buf_cmp(msg, "\x00\x00", 2) == 0) {
++					if (buf_skip(msg, 145) < 0)
++						buf_skip(msg, 57);
++				}
++				p = buf_strdup(msg);
++				
++				if (p && strlen(p) && regex_match(p)) {
++					if (reply) {
++						printf("%s %s %.*s > %s: %s\n",
++						       timestamp(), info->type,
++						       buf_len(word),
++						       buf_ptr(word),
++						       info->nick, p);
++					}
++					else printf("%s %s %s > %.*s: %s\n",
++						    timestamp(), info->type,
++						    info->nick, buf_len(word),
++						    buf_ptr(word), p);
++				}
++				buf_free(word);
++				if (p) free(p);
++			}
++		}
++	}
++	return (len - buf_len(&buf));
++}
++			
++static int
++process_irc(struct client_info *info, u_char *data, int len)
++{
++	struct buf *line, *word, *prefix, buf;
++	char *p;
++	int i;
++
++	buf_init(&buf, data, len);
++
++	while ((i = buf_index(&buf, "\n", 1)) >= 0) {
++		line = buf_tok(&buf, NULL, i);
++		buf_skip(&buf, 1);
++		
++		if (line->base[line->end-1] == '\r')
++			line->end--;
++		
++		if (buf_cmp(line, ":", 1) == 0) {
++			buf_skip(line, 1);
++			if ((prefix = buf_getword(line, " ", 1)) == NULL)
++				continue;
++			if ((i = buf_index(prefix, "!", 1)) < 0)
++				continue;
++			prefix->end = i;
++		}
++		else prefix = NULL;
++
++		if (buf_cmp(line, "JOIN ", 5) == 0 && prefix != NULL) {
++			buf_skip(line, 5);
++			if (buf_cmp(line, ":", 1) == 0)
++				buf_skip(line, 1);
++
++			printf("%s IRC *** %.*s ", timestamp(),
++			       buf_len(prefix), buf_ptr(prefix));
++
++			prefix->offset = prefix->end + 1;
++			prefix->end = prefix->size;
++
++			printf("(%.*s) has joined channel %.*s\n",
++			       buf_len(prefix), buf_ptr(prefix),
++			       buf_len(line), buf_ptr(line));
++		}
++		else if (buf_cmp(line, "PART ", 5) == 0 && prefix != NULL) {
++			buf_skip(line, 5);
++			if (buf_cmp(line, ":", 1) == 0)
++				buf_skip(line, 1);
++
++			if ((word = buf_getword(line, " :", 2)) == NULL)
++				continue;
++			
++			printf("%s IRC *** %.*s has left channel %.*s\n",
++			       timestamp(), buf_len(prefix), buf_ptr(prefix),
++			       buf_len(word), buf_ptr(word));
++
++			buf_free(word);
++		}
++		else if (buf_cmp(line, "QUIT ", 5) == 0 && prefix != NULL) {
++			buf_skip(line, 5);
++			if (buf_cmp(line, ":", 1) == 0)
++				buf_skip(line, 1);
++
++			printf("%s IRC *** Signoff: %.*s (%.*s)\n",
++			       timestamp(), buf_len(prefix), buf_ptr(prefix),
++			       buf_len(line), buf_ptr(line));
++		}
++		else if (buf_cmp(line, "NICK ", 5) == 0) {
++			buf_skip(line, 5);
++			if (buf_cmp(line, ":", 1) == 0)
++				buf_skip(line, 1);
++			
++			if (prefix != NULL) {
++				printf("%s IRC *** %.*s is now known as %.*s\n",
++				       timestamp(),
++				       buf_len(prefix), buf_ptr(prefix),
++				       buf_len(line), buf_ptr(line));
++			}
++			else {
++				if (info->nick) free(info->nick);
++				info->nick = buf_strdup(line);
++			}
++		}
++		else if (buf_cmp(line, "PRIVMSG ", 8) == 0) {
++			buf_skip(line, 8);
++			if ((word = buf_getword(line, " :", 2)) == NULL)
++				continue;
++			p = buf_strdup(line);
++			
++			if (regex_match(p)) {
++				if (strncmp(p + 1, "ACTION ", 7) == 0) {
++					printf("%s IRC * Action: ",
++					       timestamp());
++					
++					if (prefix != NULL) {
++						printf("%.*s %s\n",
++						       buf_len(prefix),
++						       buf_ptr(prefix), p + 8);
++					}
++					else printf("%s %s\n",
++						    info->nick, p + 8);
++				}
++				else {
++					if (prefix != NULL) {
++						printf("%s IRC %.*s > ",
++						       timestamp(),
++						       buf_len(prefix),
++						       buf_ptr(prefix));
++					}
++					else printf("%s IRC %s > ",
++						    timestamp(),
++						    info->nick);
++					
++					printf("%.*s: %s\n", buf_len(word),
++					       buf_ptr(word), p);
++				}
++			}
++			buf_free(word);
++			free(p);
++		}
++	}
++	return (len - buf_len(&buf));
++}
++
++static int
++process_msn(struct client_info *info, u_char *data, int len)
++{
++	struct buf *word, *line, buf;
++	char *p;
++	int i, reply;
++
++	buf_init(&buf, data, len);
++	
++	while ((i = buf_index(&buf, "\r\n", 2)) >= 0) {
++		line = buf_tok(&buf, NULL, i);
++		buf_skip(&buf, 2);
++		
++		if (buf_cmp(line, "USR ", 4) == 0) {
++			if ((i = buf_index(line, "MD5 ", 4)) > 0) {
++				buf_skip(line, i + 4);
++				
++				if (buf_cmp(line, "I ", 2) == 0) {
++					buf_skip(line, 2);
++					if (info->nick != NULL)
++						free(info->nick);
++					info->nick = buf_strdup(line);
++				}
++			}
++		}
++		else if (buf_cmp(line, "IRO ", 4) == 0) {
++			if ((i = buf_rindex(line, "1 ", 2)) < 0)
++				continue;
++			buf_skip(line, i + 2);
++			word = buf_getword(line, " ", 1);
++			if (info->peer != NULL) free(info->peer);
++			info->peer = buf_strdup(word);
++			buf_free(word);
++		}
++		else if (buf_cmp(line, "MSG ", 4) == 0) {
++			buf_skip(line, 4);
++			reply = 0;
++
++			if ((word = buf_getword(line, " ", 1)) == NULL)
++				continue;
++
++			if (buf_cmp(line, "N ", 2) == 0 ||
++			    buf_cmp(line, "U ", 2) == 0) {
++				reply = 1;
++			}
++			else {
++				if (info->peer != NULL) free(info->peer);
++				info->peer = buf_strdup(word);
++			}
++			buf_free(word);
++			
++			if ((i = buf_rindex(line, " ", 1)) < 0)
++				continue;
++			
++			buf_skip(line, i + 1);
++			p = buf_strdup(line);
++			i = atoi(p); free(p);
++			if (i <= 0) continue;
++			
++			if ((line = buf_tok(NULL, NULL, i)) == NULL)
++				break;
++			
++			if (buf_index(line, "Content-Type: text/plain", 24) > 0) {
++				if ((i = buf_rindex(line, "\r\n\r\n", 4)) < 0)
++					continue;
++				
++				buf_skip(line, i + 4);
++				p = buf_strdup(line);
++
++				if (regex_match(p)) {
++					if (reply) {
++						printf("%s MSN %s > %s: %s\n",
++						       timestamp(), info->nick,
++						       info->peer, p);
++					}
++					else printf("%s MSN %s > %s: %s\n",
++						    timestamp(), info->peer,
++						    info->nick, p);
++				}
++				free(p);
++			}
++		}
++	}
++	return (len - buf_len(&buf));
++}
++
++struct yhoo {
++	u_char		version[8];
++	u_int32_t	length;		/* all fields little-endian */
++	u_int32_t	service;
++	u_int32_t	connid;
++	u_int32_t	magic;
++	u_int32_t	unknown;
++	u_int32_t	type;
++	u_char		nick1[36];
++	u_char		nick2[36];
++};
++
++struct ymsg {
++	u_char		version[8];
++	u_short		length;
++	u_short		type;
++	u_int32_t	unknown1;
++	u_int32_t	unknown2;
++};
++
++static int
++process_yahoo(struct client_info *info, u_char *data, int len)
++{
++	struct yhoo *yhoo;
++	struct ymsg *ymsg;
++	struct buf *msg, *nick1, *nick2, buf;
++	int i, reply;
++	char *p;
++
++	buf_init(&buf, data, len);
++	
++	if (buf_cmp(&buf, "YMSG", 4) == 0) {
++		while (buf_len(&buf) > sizeof(*ymsg)) {
++			ymsg = (struct ymsg *)buf_ptr(&buf);
++			ymsg->length = ntohs(ymsg->length);
++			ymsg->type = ntohs(ymsg->type);
++
++			i = sizeof(*ymsg) + ymsg->length;
++
++			if ((msg = buf_tok(&buf, NULL, i)) == NULL)
++				break;
++			
++			buf_skip(msg, sizeof(*ymsg));
++			
++			if (ymsg->type != 0x06)
++				continue;
++			
++			reply = (buf_cmp(msg, "1", 1) != 0);
++			buf_skip(msg, 3);
++
++			nick1 = buf_getword(msg, "\xc0\x80", 2);
++			buf_skip(msg, 3);
++
++			nick2 = buf_getword(msg, "\xc0\x80", 2);
++			buf_skip(msg, 4);
++
++			msg->end -= 2;
++			p = buf_strdup(msg);
++
++			if (regex_match(p) && nick1 && nick2 && msg) {
++				printf("%s Yahoo ", timestamp());
++				if (reply)
++					printf("%.*s > %.*s: %s\n",
++					       buf_len(nick2), buf_ptr(nick2),
++					       buf_len(nick1), buf_ptr(nick1),
++					       p);
++				else printf("%.*s > %.*s: %s\n",
++					    buf_len(nick1), buf_ptr(nick1),
++					    buf_len(nick2), buf_ptr(nick2), p);
++			}
++			if (nick1) buf_free(nick1);
++			if (nick2) buf_free(nick2);
++			free(p);
++		}
++	}
++	else {
++		while (buf_len(&buf) > sizeof(*yhoo)) {
++			yhoo = (struct yhoo *)buf_ptr(&buf);
++			yhoo->length = pletohl(&yhoo->length);
++			yhoo->service = pletohl(&yhoo->service);
++			yhoo->type = pletohl(&yhoo->type);
++			yhoo->nick1[sizeof(yhoo->nick1) - 1] = '\0';
++			yhoo->nick2[sizeof(yhoo->nick2) - 1] = '\0';
++
++			i = sizeof(*yhoo) + yhoo->length;
++			
++			if ((msg = buf_tok(&buf, NULL, i)) == NULL)
++				break;
++			
++			buf_skip(msg, sizeof(*yhoo));
++			
++			if (yhoo->service != 6 || yhoo->type > 1)
++				continue;
++			
++			if ((nick1 = buf_getword(msg, ",", 1)) == NULL)
++				continue;
++			
++			if (memcmp(yhoo->version, "YHOO", 4) == 0) {
++				buf_skip(msg, 1);
++				reply = 0;
++			}
++			else reply = 1;
++
++			p = buf_strdup(msg);
++
++			if (regex_match(p)) {
++				if (reply)
++					printf("%s Yahoo %.*s > %s: %s\n",
++					       timestamp(),
++					       buf_len(nick1), buf_ptr(nick1),
++					       yhoo->nick2, p);
++				else
++					printf("%s Yahoo %s > %.*s: %s\n",
++					       timestamp(), yhoo->nick2,
++					       buf_len(nick1), buf_ptr(nick1),
++					       buf_ptr(msg));
++			}
++			free(p);
++		}
++	}
++	return (len - buf_len(&buf));
++}
++
++static void
++sniff_msgs(struct tcp_stream *ts, void **conn_save)
++{
++	struct client_info *c;
++	int (*process_msgs)(struct client_info *, u_char *, int);
++	int i;
++	
++	if (ts->addr.dest >= 6660 && ts->addr.dest <= 6680) {
++		process_msgs = process_irc;
++	}
++	else if (ts->addr.dest == 5190 || ts->addr.dest == 9898) {
++		process_msgs = process_aim;
++	}
++	else if (ts->addr.dest == 5050) {
++		process_msgs = process_yahoo;
++	}
++	else if (ts->addr.dest == 1863) {
++		process_msgs = process_msn;
++	}
++	else return;
++	
++	switch (ts->nids_state) {
++		
++	case NIDS_JUST_EST:
++		ts->server.collect = 1;
++		ts->client.collect = 1;
++
++		i = 0;
++		SLIST_FOREACH(c, &client_list, next) {
++			if (c->ip == ts->addr.saddr) {
++				i = 1; break;
++			}
++		}
++		if (i == 0) {
++			if ((c = malloc(sizeof(*c))) == NULL)
++				nids_params.no_mem("sniff_msgs");
++			c->ip = ts->addr.saddr;
++			c->nick = strdup("unknown");
++			SLIST_INSERT_HEAD(&client_list, c, next);
++		}
++		*conn_save = (void *)c;
++		break;
++
++	case NIDS_DATA:
++		c = (struct client_info *)*conn_save;
++		
++		if (ts->server.count_new > 0) {
++			i = process_msgs(c, ts->server.data,
++					 ts->server.count - ts->server.offset);
++			nids_discard(ts, i);
++		}
++		else if (ts->client.count_new > 0) {
++			i = process_msgs(c, ts->client.data,
++					 ts->client.count - ts->client.offset);
++			nids_discard(ts, i);
++		}
++		fflush(stdout);
++		break;
++		
++	default:
++		c = (struct client_info *)*conn_save;
++		
++		if (ts->server.count > 0)
++			process_msgs(c, ts->server.data,
++				     ts->server.count - ts->server.offset);
++		else if (ts->client.count > 0)
++			process_msgs(c, ts->client.data,
++				     ts->client.count - ts->client.offset);
++		fflush(stdout);
++		break;
++	}
++}
++
++static void
++null_syslog(int type, int errnum, struct ip *iph, void *data)
++{
++}
++
++int
++main(int argc, char *argv[])
++{
++	extern char *optarg;
++	extern int optind;
++	int c;
++	
++	while ((c = getopt(argc, argv, "i:hv?V")) != -1) {
++		switch (c) {
++		case 'i':
++			nids_params.device = optarg;
++			break;
++		case 'v':
++			Opt_invert = 1;
++			break;
++		default:
++			usage();
++		}
++	}
++	argc -= optind;
++	argv += optind;
++	
++	if (argc > 0 && strlen(argv[0])) {
++		if ((pregex = (regex_t *) malloc(sizeof(*pregex))) == NULL)
++			err(1, "malloc");
++		if (regcomp(pregex, argv[0], REG_EXTENDED|REG_NOSUB) != 0)
++			errx(1, "invalid regular expression");
++	}
++	if (argc > 1)
++		nids_params.pcap_filter = copy_argv(argv + 1);
++	nids_params.scan_num_hosts = 0;
++	nids_params.syslog = null_syslog;
++	
++	if (!nids_init())
++		errx(1, "%s", nids_errbuf);
++
++	SLIST_INIT(&client_list);
++	
++	nids_register_tcp(sniff_msgs);
++
++	if (nids_params.pcap_filter != NULL) {
++		warnx("listening on %s [%s]", nids_params.device,
++		      nids_params.pcap_filter);
++	}
++	else warnx("listening on %s", nids_params.device);
++
++	nids_run();
++	
++	/* NOTREACHED */
++	
++	exit(0);
++}
+diff --exclude='*~' -Naur dsniff-2.4.orig/pathnames.h dsniff-2.4/pathnames.h
+--- dsniff-2.4.orig/pathnames.h	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/pathnames.h	2006-01-21 18:56:50.000000000 -0200
+@@ -12,7 +12,7 @@
+ #define PATHNAMES_H
+ 
+ #ifndef DSNIFF_LIBDIR
+-#define DSNIFF_LIBDIR		"/usr/local/lib/"
++#define DSNIFF_LIBDIR		"/etc/dsniff/"
+ #endif
+ 
+ #define DSNIFF_SERVICES		"dsniff.services"
+diff --exclude='*~' -Naur dsniff-2.4.orig/record.c dsniff-2.4/record.c
+--- dsniff-2.4.orig/record.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/record.c	2006-01-21 18:56:45.000000000 -0200
+@@ -65,8 +65,8 @@
+ 	tm = localtime(&rec->time);
+ 	strftime(tstr, sizeof(tstr), "%x %X", tm);
+ 	
+-	srcp = libnet_host_lookup(rec->src, Opt_dns);
+-	dstp = libnet_host_lookup(rec->dst, Opt_dns);
++	srcp = libnet_addr2name4(rec->src, Opt_dns);
++	dstp = libnet_addr2name4(rec->dst, Opt_dns);
+ 
+ 	if ((pr = getprotobynumber(rec->proto)) == NULL)
+ 		protop = "unknown";
+diff --exclude='*~' -Naur dsniff-2.4.orig/sshcrypto.c dsniff-2.4/sshcrypto.c
+--- dsniff-2.4.orig/sshcrypto.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/sshcrypto.c	2006-01-21 18:56:26.000000000 -0200
+@@ -14,6 +14,8 @@
+ 
+ #include <sys/types.h>
+ #include <openssl/ssl.h>
++#include <openssl/blowfish.h>
++#include <openssl/des.h>
+ 
+ #include <err.h>
+ #include <stdio.h>
+diff --exclude='*~' -Naur dsniff-2.4.orig/sshmitm.c dsniff-2.4/sshmitm.c
+--- dsniff-2.4.orig/sshmitm.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/sshmitm.c	2006-01-21 18:56:45.000000000 -0200
+@@ -389,7 +389,7 @@
+ 	if (argc < 1)
+ 		usage();
+ 	
+-	if ((ip = libnet_name_resolve(argv[0], 1)) == -1)
++	if ((ip = libnet_name2addr4(NULL, argv[0], LIBNET_RESOLVE)) == -1)
+ 		usage();
+ 
+ 	if (argc == 2 && (rport = atoi(argv[1])) == 0)
+diff --exclude='*~' -Naur dsniff-2.4.orig/sshow.8 dsniff-2.4/sshow.8
+--- dsniff-2.4.orig/sshow.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/sshow.8	2006-01-21 18:56:40.000000000 -0200
+@@ -9,7 +9,7 @@
+ .na
+ .nf
+ .fi
+-\fBsshow\fR [\fB-d\fR] [\fB-i \fIinterface\fR] [\fIexpression\fR]
++\fBsshow\fR [\fB-d\fR] [\fB-i \fIinterface\fR | \fB-p \fIpcapfile\fR] [\fIexpression\fR]
+ .SH DESCRIPTION
+ .ad
+ .fi
+@@ -28,6 +28,8 @@
+ Enable verbose debugging output.
+ .IP "\fB-i \fIinterface\fR"
+ Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Process packets from the specified PCAP capture file instead of the network.
+ .IP "\fIexpression\fR"
+ Specify a tcpdump(8) filter expression to select traffic to sniff.
+ .SH "SEE ALSO"
+diff --exclude='*~' -Naur dsniff-2.4.orig/sshow.c dsniff-2.4/sshow.c
+--- dsniff-2.4.orig/sshow.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/sshow.c	2006-01-21 18:56:40.000000000 -0200
+@@ -15,6 +15,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/times.h>
++#include <time.h>
+ 
+ #include <netinet/in_systm.h>
+ #include <netinet/in.h>
+@@ -81,7 +82,7 @@
+ static void
+ usage(void)
+ {
+-	fprintf(stderr, "Usage: sshow [-d] [-i interface]\n");
++	fprintf(stderr, "Usage: sshow [-d] [-i interface | -p pcapfile]\n");
+ 	exit(1);
+ }
+ 
+@@ -615,7 +616,7 @@
+ 	extern int optind;
+ 	int c;
+ 	
+-	while ((c = getopt(argc, argv, "di:h?")) != -1) {
++	while ((c = getopt(argc, argv, "di:p:h?")) != -1) {
+ 		switch (c) {
+ 		case 'd':
+ 			debug++;
+@@ -623,6 +624,9 @@
+ 		case 'i':
+ 			nids_params.device = optarg;
+ 			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
+ 		default:
+ 			usage();
+ 			break;
+@@ -651,11 +655,24 @@
+ 	
+ 	nids_register_tcp(process_event);
+ 
+-	if (nids_params.pcap_filter != NULL) {
+-		warnx("listening on %s [%s]", nids_params.device,
+-		      nids_params.pcap_filter);
+-	}
+-	else warnx("listening on %s", nids_params.device);
++        if (nids_params.pcap_filter != NULL) {
++                if (nids_params.filename == NULL) {
++                        warnx("listening on %s [%s]", nids_params.device,
++                              nids_params.pcap_filter);
++                }
++                else {
++                        warnx("using %s [%s]", nids_params.filename,
++                              nids_params.pcap_filter);
++                }
++        }
++        else {
++                if (nids_params.filename == NULL) {
++                    warnx("listening on %s", nids_params.device);
++                }
++                else {
++                    warnx("using %s", nids_params.filename);
++                }
++        }
+ 
+ 	nids_run();
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/sshow.c.orig dsniff-2.4/sshow.c.orig
+--- dsniff-2.4.orig/sshow.c.orig	1969-12-31 21:00:00.000000000 -0300
++++ dsniff-2.4/sshow.c.orig	2006-01-21 18:56:30.000000000 -0200
+@@ -0,0 +1,664 @@
++/*
++ * sshow.c
++ *
++ * Passive SSH traffic analysis.
++ *
++ * http://www.openwall.com/advisories/OW-003-ssh-traffic-analysis.txt
++ *
++ * Copyright (c) 2000-2001 Solar Designer <solar@openwall.com>
++ * Copyright (c) 2000 Dug Song <dugsong@monkey.org>
++ *
++ * $Id: sshow.c,v 1.2 2001/03/19 06:52:15 dugsong Exp $
++ */
++
++#include "config.h"
++
++#include <sys/types.h>
++#include <sys/times.h>
++#include <time.h>
++
++#include <netinet/in_systm.h>
++#include <netinet/in.h>
++#include <netinet/ip.h>
++#include <netinet/tcp.h>
++#include <arpa/inet.h>
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <ctype.h>
++#include <unistd.h>
++#include <signal.h>
++#include <errno.h>
++#include <err.h>
++#include <nids.h>
++#include <pcap.h>
++
++#include "pcaputil.h"
++
++#if !defined(NIDS_MAJOR) || (NIDS_MAJOR == 1 && NIDS_MINOR < 15)
++#error This program requires libnids 1.15+
++#endif
++
++#define HISTORY_SIZE			16
++
++typedef struct {
++	u_int min, max;
++} range;
++
++typedef struct {
++	int direction;			/* 0 for client to server */
++	clock_t timestamp;		/* timestamp of this packet */
++	u_int cipher_size;		/* ciphertext size */
++	range plain_range;		/* possible plaintext sizes */
++} record;
++
++struct history {
++	record packets[HISTORY_SIZE];	/* recent packets (circular list) */
++	int index;			/* next (free) index into packets[] */
++	u_int directions;		/* recent directions (bitmask) */
++	clock_t timestamps[2];		/* last timestamps in each direction */
++};
++
++struct line {
++	int input_count;		/* input packets (client to server) */
++	int input_size;			/* input size (estimated) */
++	int input_last;			/* last input packet size */
++	int echo_count;			/* echo packets (server to client) */
++};
++
++struct session {
++	int protocol;		/* -1 not SSH, 0 unknown, 1 or 2 once known */
++	int state;		/* 1 after username, 2 after authentication */
++	int compressed;		/* whether compression is known to be used */
++	struct history history;	/* session history */
++	struct line line;	/* current command line */
++};
++
++static int debug = 0;
++
++static clock_t now;
++
++static void
++usage(void)
++{
++	fprintf(stderr, "Usage: sshow [-d] [-i interface]\n");
++	exit(1);
++}
++
++static clock_t
++add_history(struct session *session, int direction,
++	    u_int cipher_size, range *plain_range)
++{
++	record *current;
++	clock_t delay;
++
++	current = &session->history.packets[session->history.index++];
++	session->history.index %= HISTORY_SIZE;
++
++	current->direction = direction;
++	current->timestamp = now;
++	current->cipher_size = cipher_size;
++	current->plain_range = *plain_range;
++
++	session->history.directions <<= 1;
++	session->history.directions |= direction;
++
++	delay = now - session->history.timestamps[direction];
++	session->history.timestamps[direction] = now;
++
++	return (delay);
++}
++
++static record *
++get_history(struct session *session, int age)
++{
++	int index;
++
++	index = session->history.index + (HISTORY_SIZE - 1) - age;
++	index %= HISTORY_SIZE;
++
++	return (&session->history.packets[index]);
++}
++
++static char *
++s_saddr(struct tcp_stream *ts)
++{
++	static char output[32];
++
++	snprintf(output, sizeof(output), "%s:%u",
++		inet_ntoa(*((struct in_addr *)&ts->addr.saddr)),
++		ts->addr.source);
++	return (output);
++}
++
++static char *
++s_daddr(struct tcp_stream *ts)
++{
++	static char output[32];
++
++	snprintf(output, sizeof(output), "%s:%u",
++		inet_ntoa(*((struct in_addr *)&ts->addr.daddr)),
++		ts->addr.dest);
++	return (output);
++}
++
++static char *
++s_range(range *range)
++{
++	static char output[32];
++
++	snprintf(output, sizeof(output),
++		range->min == range->max ? "%u" : "%u to %u",
++		range->min, range->max);
++	return (output);
++}
++
++static void
++print_data(struct half_stream *stream, u_int count)
++{
++	u_int i;
++	int printable;
++
++	printable = 1;
++	for (i = 0; i < count; i++) {
++		printf("%02x%c", (int)(u_char)stream->data[i],
++			i < count - 1 && i % 24 != 23
++			? ' ' : '\n');
++		printable &=
++			isprint(stream->data[i]) ||
++			stream->data[i] == '\n';
++	}
++	if (printable && count >= 4 && !memcmp(stream->data, "SSH-", 4))
++		fwrite(stream->data, count, 1, stdout);
++}
++
++static u_int
++ssh1_plain_size(struct half_stream *stream)
++{
++	if (stream->count_new < 4) return (0);
++
++	return (u_int)(u_char)stream->data[3] |
++		((u_int)(u_char)stream->data[2] << 8) |
++		((u_int)(u_char)stream->data[1] << 16) |
++		((u_int)(u_char)stream->data[0] << 24);
++}
++
++static u_int
++ssh1_cipher_size(struct half_stream *stream)
++{
++	return (4 + ((ssh1_plain_size(stream) + 8) & ~7));
++}
++
++static range *
++ssh1_plain_range(struct half_stream *stream)
++{
++	static range output;
++
++	output.min = output.max = ssh1_plain_size(stream) - 5;
++	return (&output);
++}
++
++static range *
++ssh2_plain_range(struct half_stream *stream)
++{
++	static range output;
++
++	output.max = stream->count_new - 16;
++	/* Assume min padding + 8-byte cipher blocksize */
++	output.min = output.max - 7;
++	if ((int)output.min < 0) output.min = 0;
++	return (&output);
++}
++
++static void
++client_to_server(struct tcp_stream *ts, struct session *session,
++		 u_int cipher_size, range *plain_range)
++{
++	clock_t delay;
++	int payload;
++
++	delay = add_history(session, 0, cipher_size, plain_range);
++
++	if (debug)
++		printf("- %s -> %s: DATA (%s bytes, %.2f seconds)\n",
++			s_saddr(ts), s_daddr(ts), s_range(plain_range),
++			(float)delay / CLK_TCK);
++	if (debug > 1)
++		print_data(&ts->server, cipher_size);
++
++	payload = plain_range->min;
++	if (session->state == 2 && payload > 0) {
++		session->line.input_count++;
++		session->line.input_last = payload;
++		if (session->protocol == 1)
++			payload -= 4;
++		else {
++			payload -= 20 + 1;
++			/* Assume several SSH-2 packets in this IP packet */
++			if (payload % 44 == 0) {
++				session->line.input_count += payload / 44;
++				/* One character per SSH-2 packet (typical) */
++				payload += payload / 44;
++				payload %= 44;
++			}
++			payload++;
++		}
++		if (payload <= 0) {
++			if (payload < 0 && !session->compressed &&
++			    session->protocol == 1) {
++				session->compressed = 1;
++				printf("+ %s -> %s: Compression detected, "
++					"guesses will be much less reliable\n",
++					s_saddr(ts), s_daddr(ts));
++			}
++			payload = 1;
++		}
++		session->line.input_size += payload;
++	}
++}
++
++static void
++server_to_client(struct tcp_stream *ts, struct session *session,
++		 u_int cipher_size, range *plain_range)
++{
++	clock_t delay;
++	int skip;
++	range string_range;
++	
++	delay = add_history(session, 1, cipher_size, plain_range);
++	
++	if (debug)
++		printf("- %s <- %s: DATA (%s bytes, %.2f seconds)\n",
++		       s_saddr(ts), s_daddr(ts), s_range(plain_range),
++		       (float)delay / CLK_TCK);
++	if (debug > 1)
++		print_data(&ts->client, cipher_size);
++	
++/*
++ * Some of the checks may want to skip over multiple server responses.
++ * For example, there's a debugging packet sent for every option found
++ * in authorized_keys, but we can't use those packets in our pattern.
++ */
++	skip = 0;
++	while (((session->history.directions >> skip) & 3) == 3)
++		if (++skip > HISTORY_SIZE - 5) break;
++	
++	if (session->state == 0 &&
++	    session->protocol == 1 &&
++	    ((session->history.directions >> skip) & 7) == 5 &&
++	    plain_range->min == 0 &&
++	    get_history(session, skip + 1)->plain_range.min > 4 &&
++	    get_history(session, skip + 2)->plain_range.min == 0) {
++		session->state = 1;
++		string_range = get_history(session, skip + 1)->plain_range;
++		string_range.min -= 4; string_range.max -= 4;
++		printf("+ %s -> %s: GUESS: Username length is %s\n",
++		       s_saddr(ts), s_daddr(ts), s_range(&string_range));
++		return;
++	}
++	
++	if (session->state == 1 &&
++#ifdef USE_TIMING
++	    now - get_history(session, 2)->timestamp >= CLK_TCK &&
++#endif
++	    session->protocol == 1 &&
++	    (session->history.directions & 7) == 5 &&
++	    plain_range->min == 0 &&
++	    get_history(session, 1)->plain_range.min > 4 &&
++	    get_history(session, 2)->plain_range.min == 0) {
++		session->state = 2;
++		string_range = get_history(session, 1)->plain_range;
++		string_range.min -= 4; string_range.max -= 4;
++		printf("+ %s -> %s: GUESS: Password authentication, "
++		       "password length %s %s%s\n",
++		       s_saddr(ts), s_daddr(ts),
++		       string_range.min == 32 ? "appears to be" : "is",
++		       s_range(&string_range),
++		       string_range.min == 32 ? " (padded?)" : "");
++	}
++	
++	if (session->state == 0 &&
++	    session->protocol == 2 &&
++	    (session->history.directions & 7) == 5) {
++		if (plain_range->min == 4 + 9) {
++			string_range = get_history(session, 1)->plain_range;
++			
++			if (string_range.min > 500 && string_range.min < 600) {
++				session->state = 2;
++				printf("+ %s -> %s: GUESS: DSA "
++				       "authentication accepted\n",
++				       s_saddr(ts), s_daddr(ts));
++			} else
++				if (string_range.min > 42 + 9) {
++					session->state = 2;
++					printf("+ %s -> %s: GUESS: Password "
++					       "authentication accepted\n",
++					       s_saddr(ts), s_daddr(ts));
++				}
++		} else if (plain_range->min > 12 + 9 &&
++			   plain_range->min < 56 + 9) {
++			string_range = get_history(session, 1)->plain_range;
++			
++			if (string_range.min > 500 && string_range.min < 600)
++				printf("+ %s -> %s: GUESS: DSA "
++				       "authentication failed\n",
++				       s_saddr(ts), s_daddr(ts));
++			else if (string_range.min > 42 + 9)
++				printf("+ %s -> %s: GUESS: Password "
++				       "authentication failed\n",
++				       s_saddr(ts), s_daddr(ts));
++		}
++	}
++	
++	if (session->state == 1 &&
++	    session->protocol == 1 &&
++	    (session->history.directions & 3) == 1 &&
++	    plain_range->min == 0 &&
++	    get_history(session, 1)->plain_range.min == 130) {
++		printf("+ %s -> %s: GUESS: RSA authentication refused\n",
++		       s_saddr(ts), s_daddr(ts));
++	}
++	
++	if (session->state == 1 &&
++	    session->protocol == 1 &&
++	    skip >= 1 &&
++	    ((session->history.directions >> (skip - 1)) & 037) == 013 &&
++	    plain_range->min == 0 &&
++	    get_history(session, skip - 1 + 2)->plain_range.min == 16 &&
++	    get_history(session, skip - 1 + 3)->plain_range.min == 130 &&
++	    get_history(session, skip - 1 + 4)->plain_range.min == 130) {
++		char *what;
++		
++		switch (get_history(session, 1)->plain_range.min - 4) {
++		case 28:
++			/* "RSA authentication accepted." */
++			session->state = 2;
++			if (skip > 1 && (what = alloca(64))) {
++				snprintf(what, 64, "accepted "
++					 "(%d+ authorized_keys option%s)",
++					 skip - 1, skip - 1 == 1 ? "" : "s");
++				break;
++			}
++			what = "accepted";
++			break;
++			
++		case 47:
++			/* "Wrong response to RSA authentication challenge." */
++			what = "failed";
++			break;
++			
++		default:
++			what = "???";
++		}
++		printf("+ %s -> %s: GUESS: RSA authentication %s\n",
++		       s_saddr(ts), s_daddr(ts), what);
++	}
++	
++	if (session->state == 2) {
++		session->line.echo_count++;
++		
++		/* Check for backspace */
++		if (session->protocol == 1 && !session->compressed &&
++		    plain_range->min == 4 + 3 &&
++		    session->line.input_size >= 2)
++			session->line.input_size -= 2;
++		
++		if (plain_range->min > 4 + session->line.input_last &&
++		    session->line.input_count >= 2 &&
++		    session->line.input_size >= 2) {
++			int size;
++			char *what;
++			
++			size = session->line.input_size;
++			if (session->line.echo_count + 1 >=
++			    session->line.input_count &&
++			    size <= (session->line.input_count << 2) &&
++			    size < 0x100) {
++				what = "(command) line";
++			}
++			else {
++				if (session->line.echo_count <= 2 &&
++				    size <= (session->line.input_count << 1) &&
++				    size >= 2 + 1 && size <= 40 + 1) {
++					what = "password";
++				}
++				else what = NULL;
++			}
++			if (debug) {
++				printf("- %s -> %s: sent %d packets "
++				       "(%d characters), seen %d replies\n",
++				       s_saddr(ts), s_daddr(ts),
++				       session->line.input_count, size,
++				       session->line.echo_count);
++			}
++			if (what) {
++				printf("+ %s -> %s: GUESS: "
++				       "a %s of %d character%s\n",
++				       s_saddr(ts), s_daddr(ts),
++				       what, size - 1, size == 2 ? "" : "s");
++			}
++		}
++		if (plain_range->min <= 0 ||
++		    plain_range->min > 4 + session->line.input_last) {
++			session->line.input_count = 0;
++			session->line.input_size = 0;
++			session->line.echo_count = 0;
++		}
++	}
++}
++
++static void
++process_data(struct tcp_stream *ts, struct session *session)
++{
++	u_int have, need;
++	char *lf;
++	
++	if (session->protocol < 0) return;
++	
++	if (ts->client.count_new &&
++	    (have = ts->client.count - ts->client.offset)) {
++		switch (session->protocol) {
++		case 1:
++			if (have < (need = ssh1_cipher_size(&ts->client))) {
++				if (debug) {
++					printf("- %s <- %s: got %u of "
++					       "%u bytes\n", s_saddr(ts),
++					       s_daddr(ts), have, need);
++				}
++				nids_discard(ts, 0);
++				return;
++			}
++			if (have != need && debug) {
++				printf("- %s <- %s: left %u bytes\n",
++				       s_saddr(ts), s_daddr(ts),
++				       have - need);
++			}
++			nids_discard(ts, need);
++			server_to_client(ts, session, need,
++				ssh1_plain_range(&ts->client));
++			return;
++			
++		case 2:
++			server_to_client(ts, session, have,
++					 ssh2_plain_range(&ts->client));
++			return;
++			
++		default:
++			break;
++		}
++	}
++	if (ts->server.count_new &&
++	    (have = ts->server.count - ts->server.offset)) {
++		if (!session->protocol) {
++			lf = (char *)memchr(ts->server.data, '\n', have);
++			if (have < 7 || (!lf && have < 0x100)) {
++				nids_discard(ts, 0);
++				return;
++			}
++			if (lf && !memcmp(ts->server.data, "SSH-", 4))
++				session->protocol = ts->server.data[4] - '0';
++			/* some clients announce SSH-1.99 instead of SSH-2.0 */
++			if (session->protocol == 1 &&
++			    ts->server.data[5] == '.' &&
++			    ts->server.data[6] == '9') {
++				session->protocol = 2;
++			}
++			if (session->protocol != 1 && session->protocol != 2) {
++				session->protocol = -1;
++				if (debug) {
++					printf("- %s -> %s: not SSH\n",
++					       s_saddr(ts), s_daddr(ts));
++				}
++				return;
++			}
++			need = lf - ts->server.data + 1;
++			nids_discard(ts, need);
++			printf("+ %s -> %s: SSH protocol %d\n",
++			       s_saddr(ts), s_daddr(ts), session->protocol);
++			if (debug)
++				print_data(&ts->server, have);
++			return;
++		}
++		
++		switch (session->protocol) {
++		case 1:
++			if (have < (need = ssh1_cipher_size(&ts->server))) {
++				if (debug) {
++					printf("- %s -> %s: got %u of "
++					       "%u bytes\n", s_saddr(ts),
++					       s_daddr(ts), have, need);
++				}
++				nids_discard(ts, 0);
++				return;
++			}
++			if (have != need && debug) {
++				printf("- %s -> %s: left %u bytes\n",
++				       s_saddr(ts), s_daddr(ts),
++				       have - need);
++			}
++			nids_discard(ts, need);
++			client_to_server(ts, session, need,
++					 ssh1_plain_range(&ts->server));
++			return;
++			
++		case 2:
++			client_to_server(ts, session, have,
++					 ssh2_plain_range(&ts->server));
++		}
++	}
++}
++
++static void
++process_event(struct tcp_stream *ts, struct session **session)
++{
++	struct tms buf;
++	char *what;
++	
++	now = times(&buf);
++	what = NULL;
++	
++	switch (ts->nids_state) {
++	case NIDS_JUST_EST:
++		ts->client.collect = 1;
++		ts->server.collect = 1;
++		if (debug) {
++			printf("- %s -> %s: ESTABLISHED\n",
++			       s_saddr(ts), s_daddr(ts));
++		}
++		if (!(*session = calloc(1, sizeof(**session)))) {
++			err(1, "calloc");
++		}
++		(*session)->history.timestamps[0] = now;
++		(*session)->history.timestamps[1] = now;
++		return;
++		
++	case NIDS_CLOSE:
++		what = "CLOSED";
++		
++	case NIDS_RESET:
++		if (!what) what = "RESET";
++		
++	case NIDS_TIMED_OUT:
++		if (!what) what = "TIMED OUT";
++		if ((*session)->protocol > 0) {
++			printf("+ %s -- %s: %s\n",
++			       s_saddr(ts), s_daddr(ts), what);
++		}
++		else if (debug) {
++			printf("- %s -- %s: %s\n",
++			       s_saddr(ts), s_daddr(ts), what);
++		}
++		free(*session);
++		return;
++		
++	case NIDS_DATA:
++		process_data(ts, *session);
++		return;
++	}
++}
++
++static void
++null_syslog(int type, int errnum, struct ip *iph, void *data)
++{
++}
++
++static void
++cleanup(int signum)
++{
++	exit(0);	/* Just so that atexit(3) jobs are called */
++}
++
++int
++main(int argc, char *argv[])
++{
++	extern char *optarg;
++	extern int optind;
++	int c;
++	
++	while ((c = getopt(argc, argv, "di:h?")) != -1) {
++		switch (c) {
++		case 'd':
++			debug++;
++			break;
++		case 'i':
++			nids_params.device = optarg;
++			break;
++		default:
++			usage();
++			break;
++		}
++	}
++	argc -= optind;
++	argv += optind;
++	
++	signal(SIGTERM, cleanup);
++	signal(SIGINT, cleanup);
++	signal(SIGHUP, cleanup);
++	
++	setlinebuf(stdout);
++	
++	if (argc > 0) {
++		nids_params.pcap_filter = copy_argv(argv);
++	}
++	else nids_params.pcap_filter = "tcp";
++	
++	nids_params.syslog = null_syslog;
++	nids_params.scan_num_hosts = 0;
++	nids_params.one_loop_less = 1;
++	
++	if (!nids_init())
++		errx(1, "nids_init: %s", nids_errbuf);
++	
++	nids_register_tcp(process_event);
++
++	if (nids_params.pcap_filter != NULL) {
++		warnx("listening on %s [%s]", nids_params.device,
++		      nids_params.pcap_filter);
++	}
++	else warnx("listening on %s", nids_params.device);
++
++	nids_run();
++	
++	return (0);
++}
+diff --exclude='*~' -Naur dsniff-2.4.orig/tcpkill.c dsniff-2.4/tcpkill.c
+--- dsniff-2.4.orig/tcpkill.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/tcpkill.c	2006-01-21 18:56:45.000000000 -0200
+@@ -39,17 +39,18 @@
+ static void
+ tcp_kill_cb(u_char *user, const struct pcap_pkthdr *pcap, const u_char *pkt)
+ {
+-	struct libnet_ip_hdr *ip;
++	struct libnet_ipv4_hdr *ip;
+ 	struct libnet_tcp_hdr *tcp;
+-	u_char ctext[64], buf[IP_H + TCP_H];
++	u_char ctext[64];
+ 	u_int32_t seq, win;
+-	int i, *sock, len;
++	int i, len;
++	libnet_t *l;
+ 
+-	sock = (int *)user;
++	l = (libnet_t *)user;
+ 	pkt += pcap_off;
+ 	len = pcap->caplen - pcap_off;
+ 
+-	ip = (struct libnet_ip_hdr *)pkt;
++	ip = (struct libnet_ipv4_hdr *)pkt;
+ 	if (ip->ip_p != IPPROTO_TCP)
+ 		return;
+ 	
+@@ -57,34 +58,31 @@
+ 	if (tcp->th_flags & (TH_SYN|TH_FIN|TH_RST))
+ 		return;
+ 
+-	libnet_build_ip(TCP_H, 0, 0, 0, 64, IPPROTO_TCP,
+-			ip->ip_dst.s_addr, ip->ip_src.s_addr,
+-			NULL, 0, buf);
+-
+-	libnet_build_tcp(ntohs(tcp->th_dport), ntohs(tcp->th_sport),
+-			 0, 0, TH_RST, 0, 0, NULL, 0, buf + IP_H);
+-	
+ 	seq = ntohl(tcp->th_ack);
+ 	win = ntohs(tcp->th_win);
+ 	
+ 	snprintf(ctext, sizeof(ctext), "%s:%d > %s:%d:",
+-		 libnet_host_lookup(ip->ip_src.s_addr, 0),
++		 libnet_addr2name4(ip->ip_src.s_addr, LIBNET_DONT_RESOLVE),
+ 		 ntohs(tcp->th_sport),
+-		 libnet_host_lookup(ip->ip_dst.s_addr, 0),
++		 libnet_addr2name4(ip->ip_dst.s_addr, LIBNET_DONT_RESOLVE),
+ 		 ntohs(tcp->th_dport));
+ 	
+-	ip = (struct libnet_ip_hdr *)buf;
+-	tcp = (struct libnet_tcp_hdr *)(ip + 1);
+-	
+ 	for (i = 0; i < Opt_severity; i++) {
+-		ip->ip_id = libnet_get_prand(PRu16);
+ 		seq += (i * win);
+-		tcp->th_seq = htonl(seq);
+ 		
+-		libnet_do_checksum(buf, IPPROTO_TCP, TCP_H);
++		libnet_clear_packet(l);
++		
++		libnet_build_tcp(ntohs(tcp->th_dport), ntohs(tcp->th_sport),
++				 seq, 0, TH_RST, 0, 0, 0, LIBNET_TCP_H, 
++				 NULL, 0, l, 0);
++		
++		libnet_build_ipv4(LIBNET_IPV4_H + LIBNET_TCP_H, 0,
++				  libnet_get_prand(LIBNET_PRu16), 0, 64,
++				  IPPROTO_TCP, 0, ip->ip_dst.s_addr,
++				  ip->ip_src.s_addr, NULL, 0, l, 0);
+ 		
+-		if (libnet_write_ip(*sock, buf, sizeof(buf)) < 0)
+-			warn("write_ip");
++		if (libnet_write(l) < 0)
++			warn("write");
+ 		
+ 		fprintf(stderr, "%s R %lu:%lu(0) win 0\n", ctext, seq, seq);
+ 	}
+@@ -95,8 +93,10 @@
+ {
+ 	extern char *optarg;
+ 	extern int optind;
+-	int c, sock;
++	int c;
+ 	char *p, *intf, *filter, ebuf[PCAP_ERRBUF_SIZE];
++	char libnet_ebuf[LIBNET_ERRBUF_SIZE];
++	libnet_t *l;
+ 	pcap_t *pd;
+ 	
+ 	intf = NULL;
+@@ -136,14 +136,14 @@
+ 	if ((pcap_off = pcap_dloff(pd)) < 0)
+ 		errx(1, "couldn't determine link layer offset");
+ 	
+-	if ((sock = libnet_open_raw_sock(IPPROTO_RAW)) == -1)
++	if ((l = libnet_init(LIBNET_RAW4, intf, libnet_ebuf)) == NULL)
+ 		errx(1, "couldn't initialize sending");
+ 	
+-	libnet_seed_prand();
++	libnet_seed_prand(l);
+ 	
+ 	warnx("listening on %s [%s]", intf, filter);
+ 	
+-	pcap_loop(pd, -1, tcp_kill_cb, (u_char *)&sock);
++	pcap_loop(pd, -1, tcp_kill_cb, (u_char *)l);
+   
+ 	/* NOTREACHED */
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/tcpnice.c dsniff-2.4/tcpnice.c
+--- dsniff-2.4.orig/tcpnice.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/tcpnice.c	2006-01-21 18:56:45.000000000 -0200
+@@ -41,107 +41,106 @@
+ }
+ 
+ static void
+-send_tcp_window_advertisement(int sock, struct libnet_ip_hdr *ip,
++send_tcp_window_advertisement(libnet_t *l, struct libnet_ipv4_hdr *ip,
+ 			     struct libnet_tcp_hdr *tcp)
+ {
+ 	int len;
+ 	
+ 	ip->ip_hl = 5;
+-	ip->ip_len = htons(IP_H + TCP_H);
+-	ip->ip_id = libnet_get_prand(PRu16);
+-	memcpy(buf, (u_char *)ip, IP_H);
++	ip->ip_len = htons(LIBNET_IPV4_H + LIBNET_TCP_H);
++	ip->ip_id = libnet_get_prand(LIBNET_PRu16);
++	memcpy(buf, (u_char *)ip, LIBNET_IPV4_H);
+ 	
+ 	tcp->th_off = 5;
+ 	tcp->th_win = htons(MIN_WIN);
+-	memcpy(buf + IP_H, (u_char *)tcp, TCP_H);
++	memcpy(buf + LIBNET_IPV4_H, (u_char *)tcp, LIBNET_TCP_H);
+ 	
+-	libnet_do_checksum(buf, IPPROTO_TCP, TCP_H);
++	libnet_do_checksum(l, buf, IPPROTO_TCP, LIBNET_TCP_H);
+ 	
+-	len = IP_H + TCP_H;
++	len = LIBNET_IPV4_H + LIBNET_TCP_H;
+ 	
+-	if (libnet_write_ip(sock, buf, len) != len)
++	if (libnet_write_raw_ipv4(l, buf, len) != len)
+ 		warn("write");
+ 	
+ 	fprintf(stderr, "%s:%d > %s:%d: . ack %lu win %d\n",
+-		libnet_host_lookup(ip->ip_src.s_addr, 0), ntohs(tcp->th_sport),
+-		libnet_host_lookup(ip->ip_dst.s_addr, 0), ntohs(tcp->th_dport),
++		libnet_addr2name4(ip->ip_src.s_addr, 0), ntohs(tcp->th_sport),
++		libnet_addr2name4(ip->ip_dst.s_addr, 0), ntohs(tcp->th_dport),
+ 		ntohl(tcp->th_ack), 1);
+ }
+ 
+ static void
+-send_icmp_source_quench(int sock, struct libnet_ip_hdr *ip)
++send_icmp_source_quench(libnet_t *l, struct libnet_ipv4_hdr *ip)
+ {
+-	struct libnet_icmp_hdr *icmp;
++	struct libnet_icmpv4_hdr *icmp;
+ 	int len;
+ 	
+ 	len = (ip->ip_hl * 4) + 8;
+ 
+-	libnet_build_ip(ICMP_ECHO_H + len, 0, libnet_get_prand(PRu16),
+-			0, 64, IPPROTO_ICMP, ip->ip_dst.s_addr,
+-			ip->ip_src.s_addr, NULL, 0, buf);
+-	
+-	icmp = (struct libnet_icmp_hdr *)(buf + IP_H);
++	icmp = (struct libnet_icmpv4_hdr *)(buf + LIBNET_IPV4_H);
+ 	icmp->icmp_type = ICMP_SOURCEQUENCH;
+ 	icmp->icmp_code = 0;
+-	memcpy((u_char *)icmp + ICMP_ECHO_H, (u_char *)ip, len);
++	memcpy((u_char *)icmp + LIBNET_ICMPV4_ECHO_H, (u_char *)ip, len);
+ 	
+-	libnet_do_checksum(buf, IPPROTO_ICMP, ICMP_ECHO_H + len);
++	len += LIBNET_ICMPV4_ECHO_H;
+ 	
+-	len += (IP_H + ICMP_ECHO_H);
++	libnet_build_ipv4(LIBNET_IPV4_H + len, 0,
++			  libnet_get_prand(LIBNET_PRu16), 0, 64, IPPROTO_ICMP,
++			  0, ip->ip_dst.s_addr, ip->ip_src.s_addr,
++			  (u_int8_t *) icmp, len, l, 0);
+ 	
+-	if (libnet_write_ip(sock, buf, len) != len)
++	if (libnet_write(l) != len)
+ 		warn("write");
+ 	
+ 	fprintf(stderr, "%s > %s: icmp: source quench\n",
+-		libnet_host_lookup(ip->ip_dst.s_addr, 0),
+-		libnet_host_lookup(ip->ip_src.s_addr, 0));
++		libnet_addr2name4(ip->ip_dst.s_addr, 0),
++		libnet_addr2name4(ip->ip_src.s_addr, 0));
+ }
+ 
+ static void
+-send_icmp_frag_needed(int sock, struct libnet_ip_hdr *ip)
++send_icmp_frag_needed(libnet_t *l, struct libnet_ipv4_hdr *ip)
+ {
+-	struct libnet_icmp_hdr *icmp;
++	struct libnet_icmpv4_hdr *icmp;
+ 	int len;
+ 
+ 	len = (ip->ip_hl * 4) + 8;
+ 	
+-	libnet_build_ip(ICMP_MASK_H + len, 4, libnet_get_prand(PRu16),
+-			0, 64, IPPROTO_ICMP, ip->ip_dst.s_addr,
+-			ip->ip_src.s_addr, NULL, 0, buf);
+-
+-	icmp = (struct libnet_icmp_hdr *)(buf + IP_H);
++	icmp = (struct libnet_icmpv4_hdr *)(buf + LIBNET_IPV4_H);
+ 	icmp->icmp_type = ICMP_UNREACH;
+ 	icmp->icmp_code = ICMP_UNREACH_NEEDFRAG;
+ 	icmp->hun.frag.pad = 0;
+ 	icmp->hun.frag.mtu = htons(MIN_MTU);
+-	memcpy((u_char *)icmp + ICMP_MASK_H, (u_char *)ip, len);
++	memcpy((u_char *)icmp + LIBNET_ICMPV4_MASK_H, (u_char *)ip, len);
+ 
+-	libnet_do_checksum(buf, IPPROTO_ICMP, ICMP_MASK_H + len);
+-	
+-	len += (IP_H + ICMP_MASK_H);
++	len += LIBNET_ICMPV4_MASK_H;
++
++	libnet_build_ipv4(LIBNET_IPV4_H + len, 4,
++			  libnet_get_prand(LIBNET_PRu16), 0, 64, IPPROTO_ICMP,
++			  0, ip->ip_dst.s_addr, ip->ip_src.s_addr,
++			  (u_int8_t *) icmp, len, l, 0);
+ 	
+-	if (libnet_write_ip(sock, buf, len) != len)
++	if (libnet_write(l) != len)
+ 		warn("write");
+ 	
+ 	fprintf(stderr, "%s > %s: icmp: ",
+-		libnet_host_lookup(ip->ip_dst.s_addr, 0),
+-		libnet_host_lookup(ip->ip_src.s_addr, 0));
++		libnet_addr2name4(ip->ip_dst.s_addr, 0),
++		libnet_addr2name4(ip->ip_src.s_addr, 0));
+ 	fprintf(stderr, "%s unreachable - need to frag (mtu %d)\n",
+-		libnet_host_lookup(ip->ip_src.s_addr, 0), MIN_MTU);
++		libnet_addr2name4(ip->ip_src.s_addr, 0), MIN_MTU);
+ }
+ 
+ static void
+ tcp_nice_cb(u_char *user, const struct pcap_pkthdr *pcap, const u_char *pkt)
+ {
+-	struct libnet_ip_hdr *ip;
++	struct libnet_ipv4_hdr *ip;
+ 	struct libnet_tcp_hdr *tcp;
+-	int *sock, len;
++	int len;
++	libnet_t *l;
+ 
+-	sock = (int *)user;
++	l = (libnet_t *)user;
+ 	pkt += pcap_off;
+ 	len = pcap->caplen - pcap_off;
+ 
+-	ip = (struct libnet_ip_hdr *)pkt;
++	ip = (struct libnet_ipv4_hdr *)pkt;
+ 	if (ip->ip_p != IPPROTO_TCP)
+ 		return;
+ 	
+@@ -151,11 +150,11 @@
+ 	
+ 	if (ntohs(ip->ip_len) > (ip->ip_hl << 2) + (tcp->th_off << 2)) {
+ 		if (Opt_icmp)
+-			send_icmp_source_quench(*sock, ip);
++			send_icmp_source_quench(l, ip);
+ 		if (Opt_win)
+-			send_tcp_window_advertisement(*sock, ip, tcp);
++			send_tcp_window_advertisement(l, ip, tcp);
+ 		if (Opt_pmtu)
+-			send_icmp_frag_needed(*sock, ip);
++			send_icmp_frag_needed(l, ip);
+ 	}
+ }
+ 
+@@ -164,8 +163,10 @@
+ {
+ 	extern char *optarg;
+ 	extern int optind;
+-	int c, sock;
++	int c;
+ 	char *intf, *filter, ebuf[PCAP_ERRBUF_SIZE];
++	char libnet_ebuf[LIBNET_ERRBUF_SIZE];
++	libnet_t *l;
+ 	pcap_t *pd;
+ 	
+ 	intf = NULL;
+@@ -209,14 +210,14 @@
+ 	if ((pcap_off = pcap_dloff(pd)) < 0)
+ 		errx(1, "couldn't determine link layer offset");
+ 	
+-	if ((sock = libnet_open_raw_sock(IPPROTO_RAW)) == -1)
++	if ((l = libnet_init(LIBNET_RAW4, intf, libnet_ebuf)) == NULL)
+ 		errx(1, "couldn't initialize sending");
+ 	
+-	libnet_seed_prand();
++	libnet_seed_prand(l);
+ 	
+ 	warnx("listening on %s [%s]", intf, filter);
+ 	
+-	pcap_loop(pd, -1, tcp_nice_cb, (u_char *)&sock);
++	pcap_loop(pd, -1, tcp_nice_cb, (u_char *)l);
+ 	
+ 	/* NOTREACHED */
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/tcp_raw.c dsniff-2.4/tcp_raw.c
+--- dsniff-2.4.orig/tcp_raw.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/tcp_raw.c	2006-01-21 18:56:45.000000000 -0200
+@@ -119,7 +119,7 @@
+ }
+ 
+ struct iovec *
+-tcp_raw_input(struct libnet_ip_hdr *ip, struct libnet_tcp_hdr *tcp, int len)
++tcp_raw_input(struct libnet_ipv4_hdr *ip, struct libnet_tcp_hdr *tcp, int len)
+ {
+ 	struct tha tha;
+ 	struct tcp_conn *conn;
+@@ -131,7 +131,7 @@
+ 
+ 	/* Verify TCP checksum. */
+ 	cksum = tcp->th_sum;
+-	libnet_do_checksum((u_char *) ip, IPPROTO_TCP, len);
++	libnet_do_checksum(NULL, (u_char *) ip, IPPROTO_TCP, len);
+ 
+ 	if (cksum != tcp->th_sum)
+ 		return (NULL);
+diff --exclude='*~' -Naur dsniff-2.4.orig/tcp_raw.h dsniff-2.4/tcp_raw.h
+--- dsniff-2.4.orig/tcp_raw.h	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/tcp_raw.h	2006-01-21 18:56:45.000000000 -0200
+@@ -15,7 +15,7 @@
+ 				   u_short sport, u_short dport,
+ 				   u_char *buf, int len);
+ 
+-struct iovec   *tcp_raw_input(struct libnet_ip_hdr *ip,
++struct iovec   *tcp_raw_input(struct libnet_ipv4_hdr *ip,
+ 			      struct libnet_tcp_hdr *tcp, int len);
+ 
+ void		tcp_raw_timeout(int timeout, tcp_raw_callback_t callback);
+diff --exclude='*~' -Naur dsniff-2.4.orig/trigger.c dsniff-2.4/trigger.c
+--- dsniff-2.4.orig/trigger.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/trigger.c	2006-01-21 18:56:45.000000000 -0200
+@@ -276,7 +276,7 @@
+ }
+ 	
+ void
+-trigger_ip(struct libnet_ip_hdr *ip)
++trigger_ip(struct libnet_ipv4_hdr *ip)
+ {
+ 	struct trigger *t, tr;
+ 	u_char *buf;
+@@ -305,7 +305,7 @@
+ 
+ /* libnids needs a nids_register_udp()... */
+ void
+-trigger_udp(struct libnet_ip_hdr *ip)
++trigger_udp(struct libnet_ipv4_hdr *ip)
+ {
+ 	struct trigger *t, tr;
+ 	struct libnet_udp_hdr *udp;
+@@ -437,7 +437,7 @@
+ }
+ 
+ void
+-trigger_tcp_raw(struct libnet_ip_hdr *ip)
++trigger_tcp_raw(struct libnet_ipv4_hdr *ip)
+ {
+ 	struct trigger *t, tr;
+ 	struct libnet_tcp_hdr *tcp;
+diff --exclude='*~' -Naur dsniff-2.4.orig/trigger.h dsniff-2.4/trigger.h
+--- dsniff-2.4.orig/trigger.h	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/trigger.h	2006-01-21 18:56:45.000000000 -0200
+@@ -24,10 +24,10 @@
+ int	trigger_set_tcp(int port, char *name);
+ int	trigger_set_rpc(int program, char *name);
+ 
+-void	trigger_ip(struct libnet_ip_hdr *ip);
+-void	trigger_udp(struct libnet_ip_hdr *ip);
++void	trigger_ip(struct libnet_ipv4_hdr *ip);
++void	trigger_udp(struct libnet_ipv4_hdr *ip);
+ void	trigger_tcp(struct tcp_stream *ts, void **conn_save);
+-void	trigger_tcp_raw(struct libnet_ip_hdr *ip);
++void	trigger_tcp_raw(struct libnet_ipv4_hdr *ip);
+ void	trigger_tcp_raw_timeout(int signal);
+ void	trigger_rpc(int program, int proto, int port);
+ 
+diff --exclude='*~' -Naur dsniff-2.4.orig/urlsnarf.8 dsniff-2.4/urlsnarf.8
+--- dsniff-2.4.orig/urlsnarf.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/urlsnarf.8	2006-01-21 18:56:40.000000000 -0200
+@@ -9,7 +9,7 @@
+ .na
+ .nf
+ .fi
+-\fBurlsnarf\fR [\fB-n\fR] [\fB-i \fIinterface\fR]  [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
++\fBurlsnarf\fR [\fB-n\fR] [\fB-i \fIinterface\fR | \fB-p \fIpcapfile\fR]  [[\fB-v\fR] \fIpattern [\fIexpression\fR]]
+ .SH DESCRIPTION
+ .ad
+ .fi
+@@ -21,6 +21,9 @@
+ .IP \fB-n\fR
+ Do not resolve IP addresses to hostnames.
+ .IP "\fB-i \fIinterface\fR"
++Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Process packets from the specified PCAP capture file instead of the network.
+ .IP \fB-v\fR
+ "Versus" mode. Invert the sense of matching, to select non-matching
+ URLs.
+diff --exclude='*~' -Naur dsniff-2.4.orig/urlsnarf.c dsniff-2.4/urlsnarf.c
+--- dsniff-2.4.orig/urlsnarf.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/urlsnarf.c	2006-01-21 18:56:45.000000000 -0200
+@@ -41,7 +41,7 @@
+ usage(void)
+ {
+ 	fprintf(stderr, "Version: " VERSION "\n"
+-		"Usage: urlsnarf [-n] [-i interface] [[-v] pattern [expression]]\n");
++		"Usage: urlsnarf [-n] [-i interface | -p pcapfile] [[-v] pattern [expression]]\n");
+ 	exit(1);
+ }
+ 
+@@ -68,7 +68,7 @@
+ 		 t->tm_hour - gmt.tm_hour);
+ 	tz = hours * 60 + t->tm_min - gmt.tm_min;
+ 	
+-	len = strftime(tstr, sizeof(tstr), "%e/%b/%Y:%X", t);
++	len = strftime(tstr, sizeof(tstr), "%d/%b/%Y:%X", t);
+ 	if (len < 0 || len > sizeof(tstr) - 5)
+ 		return (NULL);
+ 	
+@@ -145,14 +145,14 @@
+ 		if (user == NULL)
+ 			user = "-";
+ 		if (vhost == NULL)
+-			vhost = libnet_host_lookup(addr->daddr, Opt_dns);
++			vhost = libnet_addr2name4(addr->daddr, Opt_dns);
+ 		if (referer == NULL)
+ 			referer = "-";
+ 		if (agent == NULL)
+ 			agent = "-";
+ 		
+ 		printf("%s - %s [%s] \"%s http://%s%s\" - - \"%s\" \"%s\"\n",
+-		       libnet_host_lookup(addr->saddr, Opt_dns),
++		       libnet_addr2name4(addr->saddr, Opt_dns),
+ 		       user, timestamp(), req, vhost, uri, referer, agent);
+ 	}
+ 	fflush(stdout);
+@@ -201,11 +201,14 @@
+ 	extern int optind;
+ 	int c;
+ 	
+-	while ((c = getopt(argc, argv, "i:nvh?V")) != -1) {
++	while ((c = getopt(argc, argv, "i:p:nvh?V")) != -1) {
+ 		switch (c) {
+ 		case 'i':
+ 			nids_params.device = optarg;
+ 			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
+ 		case 'n':
+ 			Opt_dns = 0;
+ 			break;
+@@ -238,8 +241,24 @@
+ 	
+ 	nids_register_tcp(sniff_http_client);
+ 
+-	warnx("listening on %s [%s]", nids_params.device,
+-	      nids_params.pcap_filter);
++        if (nids_params.pcap_filter != NULL) {
++                if (nids_params.filename == NULL) {
++                        warnx("listening on %s [%s]", nids_params.device,
++                              nids_params.pcap_filter);
++                }
++                else {
++                        warnx("using %s [%s]", nids_params.filename,
++                              nids_params.pcap_filter);
++                }
++        }
++        else {
++                if (nids_params.filename == NULL) {
++                    warnx("listening on %s", nids_params.device);
++                }
++                else {
++                    warnx("using %s", nids_params.filename);
++                }
++        }
+ 
+ 	nids_run();
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/webmitm.c dsniff-2.4/webmitm.c
+--- dsniff-2.4.orig/webmitm.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/webmitm.c	2006-01-21 18:56:45.000000000 -0200
+@@ -242,7 +242,7 @@
+ 			word = buf_tok(&msg, "/", 1);
+ 			vhost = buf_strdup(word);
+ 		}
+-		ssin.sin_addr.s_addr = libnet_name_resolve(vhost, 1);
++		ssin.sin_addr.s_addr = libnet_name2addr4(NULL, vhost, 1);
+ 		free(vhost);
+ 		
+ 		if (ssin.sin_addr.s_addr == ntohl(INADDR_LOOPBACK) ||
+@@ -510,7 +510,7 @@
+ 	argv += optind;
+ 
+ 	if (argc == 1) {
+-		if ((static_host = libnet_name_resolve(argv[0], 1)) == -1)
++		if ((static_host = libnet_name2addr4(NULL, argv[0], 1)) == -1)
+ 			usage();
+ 	}
+ 	else if (argc != 0) usage();
+diff --exclude='*~' -Naur dsniff-2.4.orig/webspy.8 dsniff-2.4/webspy.8
+--- dsniff-2.4.orig/webspy.8	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/webspy.8	2006-01-21 18:56:40.000000000 -0200
+@@ -9,7 +9,7 @@
+ .na
+ .nf
+ .fi
+-\fBwebspy\fR [\fB-i \fIinterface\fR] \fIhost\fR
++\fBwebspy\fR [\fB-i \fIinterface\fR | \fB-p \fIpcapfile\fR] \fIhost\fR
+ .SH DESCRIPTION
+ .ad
+ .fi
+@@ -20,6 +20,8 @@
+ .SH OPTIONS
+ .IP "\fB-i \fIinterface\fR"
+ Specify the interface to listen on.
++.IP "\fB-p \fIpcapfile\fR"
++Process packets from the specified PCAP capture file instead of the network.
+ .IP \fIhost\fR
+ Specify the web client to spy on.
+ .SH "SEE ALSO"
+diff --exclude='*~' -Naur dsniff-2.4.orig/webspy.c dsniff-2.4/webspy.c
+--- dsniff-2.4.orig/webspy.c	2006-01-21 18:56:04.000000000 -0200
++++ dsniff-2.4/webspy.c	2006-01-21 18:56:45.000000000 -0200
+@@ -42,7 +42,7 @@
+ usage(void)
+ {
+ 	fprintf(stderr, "Version: " VERSION "\n"
+-		"Usage: %s [-i interface] host\n", progname);
++		"Usage: %s [-i interface | -p pcapfile] host\n", progname);
+ 	exit(1);
+ }
+ 
+@@ -126,7 +126,7 @@
+ 		if (auth == NULL)
+ 			auth = "";
+ 		if (vhost == NULL)
+-			vhost = libnet_host_lookup(addr->daddr, 0);
++			vhost = libnet_addr2name4(addr->daddr, 0);
+ 		
+ 		snprintf(cmd, sizeof(cmd), "openURL(http://%s%s%s%s)",
+ 			 auth, *auth ? "@" : "", vhost, uri);
+@@ -184,11 +184,14 @@
+ 	extern int optind;
+ 	int c;
+ 	
+-	while ((c = getopt(argc, argv, "i:h?V")) != -1) {
++	while ((c = getopt(argc, argv, "i:p:h?V")) != -1) {
+ 		switch (c) {
+ 		case 'i':
+ 			nids_params.device = optarg;
+ 			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
+ 		default:
+ 			usage();
+ 		}
+@@ -202,7 +205,7 @@
+ 	cmdtab[0] = cmd;
+ 	cmdtab[1] = NULL;
+ 	
+-	if ((host = libnet_name_resolve(argv[0], 1)) == -1)
++	if ((host = libnet_name2addr4(NULL, argv[0], 1)) == -1)
+ 		errx(1, "unknown host");
+ 	
+ 	if ((dpy = XOpenDisplay(NULL)) == NULL)
+@@ -216,7 +219,13 @@
+ 	
+ 	nids_register_tcp(sniff_http_client);
+ 
+-	warnx("listening on %s", nids_params.device);
++        if (nids_params.filename == NULL) {
++                warnx("listening on %s", nids_params.device);
++        }
++        else {
++                warnx("using %s", nids_params.filename);
++        }
++
+ 
+ 	nids_run();
+ 	
+diff --exclude='*~' -Naur dsniff-2.4.orig/webspy.c.orig dsniff-2.4/webspy.c.orig
+--- dsniff-2.4.orig/webspy.c.orig	1969-12-31 21:00:00.000000000 -0300
++++ dsniff-2.4/webspy.c.orig	2006-01-21 18:56:40.000000000 -0200
+@@ -0,0 +1,235 @@
++/*
++ * webspy.c
++ *
++ * Sniff a user's web session, follow it real-time in our browser.
++ *
++ * Copyright (c) 1999 Dug Song <dugsong@monkey.org>
++ *
++ * $Id: webspy.c,v 1.28 2001/03/15 08:33:05 dugsong Exp $
++ */
++
++#include "config.h"
++
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
++#include <netdb.h>
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
++#include <err.h>
++#include <X11/Xlib.h>
++#include <libnet.h>
++#include <nids.h>
++
++#include "base64.h"
++#include "buf.h"
++#include "version.h"
++
++/* for jwz's remote.c. */
++extern int mozilla_remote_commands (Display *, Window, char **);
++char	*expected_mozilla_version = "4.7";
++char	*progname = "webspy";
++
++Display		*dpy;
++char		 cmd[2048], *cmdtab[2];
++in_addr_t	 host;
++
++static void
++usage(void)
++{
++	fprintf(stderr, "Version: " VERSION "\n"
++		"Usage: %s [-i interface | -p pcapfile] host\n", progname);
++	exit(1);
++}
++
++static int
++is_display_uri(char *uri)
++{
++	static char *good_prefixes[] = { NULL };
++	static char *good_suffixes[] = { ".html", ".htm", "/", ".shtml",
++					 ".cgi", ".asp", ".php3", ".txt",
++					 ".xml", ".asc", NULL };
++	int len, slen;
++	char **pp, *p;
++	
++	/* Get URI length, without QUERY_INFO */
++	if ((p = strchr(uri, '?')) != NULL) {
++		len = p - uri;
++	}
++	else len = strlen(uri);
++	
++	for (pp = good_suffixes; *pp != NULL; pp++) {
++		if (len < (slen = strlen(*pp))) continue;
++		if (strncasecmp(&uri[len - slen], *pp, slen) == 0)
++			return (1);
++	}
++	for (pp = good_prefixes; *pp != NULL; pp++) {
++		if (len < (slen = strlen(*pp))) continue;
++		if (strncasecmp(uri, *pp, slen) == 0)
++			return (1);
++	}
++	return (0);
++}
++
++/*
++  XXX - we should really be sniffing (and HTML-parsing) the returned
++  pages, not just the request URLs. this is why we don't handle
++  frames, some CGIs, banner ads, etc. correctly.
++*/
++static int
++process_http_request(struct tuple4 *addr, u_char *data, int len)
++{
++	struct buf *msg, buf;
++	char *p, *req, *uri, *vhost, *auth;
++	int i;
++
++	buf_init(&buf, data, len);
++	
++	while ((i = buf_index(&buf, "\r\n\r\n", 4)) >= 0) {
++		msg = buf_tok(&buf, NULL, i);
++		msg->base[msg->end] = '\0';
++		buf_skip(&buf, 4);
++
++		req = strtok(buf_ptr(msg), "\r\n");
++
++		if (strncmp(req, "GET ", 4) != 0 &&
++		    strncmp(req, "POST ", 5) != 0 &&
++		    strncmp(req, "CONNECT ", 8) != 0)
++			continue;
++		
++		vhost = auth = NULL;
++		uri = strchr(req, ' '); *uri++ = '\0'; strtok(uri, " ");
++		
++		if (strncmp(uri, "http://", 7) == 0) {
++			vhost = uri + 7;
++			uri = strchr(vhost, '/');
++			memmove(uri + 1, uri, strlen(uri));
++		}
++		if (!is_display_uri(uri))
++			continue;
++		
++		while ((p = strtok(NULL, "\r\n")) != NULL) {
++			if (strncasecmp(p, "Authorization: Basic ", 21) == 0) {
++				p += 21;
++				i = base64_pton(p, p, strlen(p));
++				p[i] = '\0';
++				auth = p;
++			}
++			else if (strncasecmp(p, "Host: ", 6) == 0) {
++				vhost = p + 6;
++			}
++		}
++		if (auth == NULL)
++			auth = "";
++		if (vhost == NULL)
++			vhost = libnet_host_lookup(addr->daddr, 0);
++		
++		snprintf(cmd, sizeof(cmd), "openURL(http://%s%s%s%s)",
++			 auth, *auth ? "@" : "", vhost, uri);
++		fprintf(stderr, "%s\n", cmd);
++		
++		mozilla_remote_commands(dpy, 0, cmdtab);
++	}
++	return (len - buf_len(&buf));
++}
++
++static void
++sniff_http_client(struct tcp_stream *ts, void **yoda)
++{
++	int i;
++	
++	/* Only handle HTTP client traffic. */
++	if (ts->addr.saddr != host ||
++	    (ts->addr.dest != 80 && ts->addr.dest != 3128 &&
++	     ts->addr.dest != 8080))
++		return;
++	
++	switch (ts->nids_state) {
++	case NIDS_JUST_EST:
++		/* Collect data. */
++		ts->server.collect = 1;
++		
++	case NIDS_DATA:
++		if (ts->server.count_new != 0) {
++			i = process_http_request(&ts->addr, ts->server.data,
++						 ts->server.count -
++						 ts->server.offset);
++			nids_discard(ts, i);
++		}
++		break;
++		
++	default:
++		if (ts->server.count != 0) {
++			process_http_request(&ts->addr, ts->server.data,
++					     ts->server.count -
++					     ts->server.offset);
++		}
++		break;
++	}
++}
++
++static void
++null_syslog(int type, int errnum, struct ip *iph, void *data)
++{
++}
++
++int
++main(int argc, char *argv[])
++{
++	extern char *optarg;
++	extern int optind;
++	int c;
++	
++	while ((c = getopt(argc, argv, "i:p:h?V")) != -1) {
++		switch (c) {
++		case 'i':
++			nids_params.device = optarg;
++			break;
++		case 'p':
++			nids_params.filename = optarg;
++			break;
++		default:
++			usage();
++		}
++	}
++	argc -= optind;
++	argv += optind;
++	
++	if (argc != 1)
++		usage();
++	
++	cmdtab[0] = cmd;
++	cmdtab[1] = NULL;
++	
++	if ((host = libnet_name_resolve(argv[0], 1)) == -1)
++		errx(1, "unknown host");
++	
++	if ((dpy = XOpenDisplay(NULL)) == NULL)
++		errx(1, "connection to local X server failed!");
++	
++	nids_params.scan_num_hosts = 0;
++	nids_params.syslog = null_syslog;
++	
++	if (!nids_init())
++		errx(1, "%s", nids_errbuf);
++	
++	nids_register_tcp(sniff_http_client);
++
++        if (nids_params.filename == NULL) {
++                warnx("listening on %s", nids_params.device);
++        }
++        else {
++                warnx("using %s", nids_params.filename);
++        }
++
++
++	nids_run();
++	
++	/* NOTREACHED */
++	
++	exit(0);
++}

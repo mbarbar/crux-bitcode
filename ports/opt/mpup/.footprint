@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	etc/
+-rw-r--r--	root/root	etc/mpup.lst
+drwxr-xr-x	root/root	etc/ports/
+drwxr-xr-x	root/root	etc/ports/drivers/
+-rwxr-xr-x	root/root	etc/ports/drivers/mpup
+-rw-r--r--	root/root	etc/ports/meta.mpup.inactive
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/mpup.8.gz

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3082o+1KZUsyyaFnX23ckLxa3uRpYUk7qxsDfZNJ3dYfxAWH3xKiD3TGsRDtZ3Qn1C02VOEXaR6MUljP7OqWdAk=
+SHA256 (Pkgfile) = 6b980c93f9a3c661e80e58d39b9907da46711e7291a27ebdba968fbb33d56d2d
+SHA256 (.footprint) = 4a269aea4ab2afe7739ed67e58e55c47b579d2dbf20eb02e11aef179f043dfde
+SHA256 (snowballstemmer-2.0.0.tar.gz) = df3bac3df4c2c01363f3dd2cfa78cce2840a79b9f1c2d2de9ce8d31683992f52

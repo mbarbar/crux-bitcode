@@ -1,0 +1,26 @@
+# Description: The full-featured free digital painting studio
+# URL:         https://krita.org/
+# Maintainer:  Stamatin Cristina, dear dot volgk at gmail dot com
+# Depends on:  boost eigen3 exiv2 fftw gsl karchive kcompletion kcoreaddons kguiaddons ki18n kitemmodels kitemviews kwindowsystem libbsd openexr quazip5
+
+name=krita
+version=4.4.1
+release=1
+source=(https://download.kde.org/stable/$name/${version:0:5}/$name-$version.tar.gz)
+
+build() {
+	rm -r $name-$version/po/*
+
+	cmake -S$name-$version -Bbuild      \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DBUILD_TESTING=OFF         \
+		-DBUILD_KRITA_QT_DESIGNER_PLUGINS=ON
+
+	cmake --build build -v
+
+	DESTDIR=$PKG cmake --install build
+
+	rm $PKG/usr/share/color/icc/krita/README
+	rm $PKG/usr/share/krita/bundles/README
+	find $PKG -depth -type d -empty -delete
+}

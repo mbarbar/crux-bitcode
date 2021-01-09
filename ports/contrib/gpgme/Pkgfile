@@ -1,0 +1,25 @@
+# Description: A C, CXX, and lisp API for GnuPG.
+# URL: https://www.gnupg.org/related_software/gpgme/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gnupg
+
+name=gpgme
+version=1.15.0
+release=1
+source=(https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--enable-languages='cl cpp'
+
+	make
+	make DESTDIR=$PKG install
+
+	install -d $PKG/usr/etc/gpgme
+	echo 'c cl cpp' > $PKG/usr/etc/gpgme/base
+
+	rm -r $PKG/usr/share/info
+}

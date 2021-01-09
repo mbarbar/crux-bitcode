@@ -1,0 +1,17 @@
+# Description: An interactive process viewer
+# URL:         https://github.com/htop-dev/htop
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  ncurses
+
+name=htop
+version=3.0.2
+release=1
+source=(https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./autogen.sh
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

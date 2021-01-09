@@ -1,0 +1,19 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/libmcrypt-config
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/mcrypt.h
+drwxr-xr-x	root/root	usr/include/mutils/
+-rw-r--r--	root/root	usr/include/mutils/mcrypt.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libmcrypt.la
+lrwxrwxrwx	root/root	usr/lib/libmcrypt.so -> libmcrypt.so.4.4.8
+lrwxrwxrwx	root/root	usr/lib/libmcrypt.so.4 -> libmcrypt.so.4.4.8
+-rwxr-xr-x	root/root	usr/lib/libmcrypt.so.4.4.8
+drwxr-xr-x	root/root	usr/lib/libmcrypt/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/aclocal/
+-rw-r--r--	root/root	usr/share/aclocal/libmcrypt.m4
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/mcrypt.3.gz

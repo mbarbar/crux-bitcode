@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30/GfI5ukXMWqCbI43yjnKXcF5X0pGPfe4WdJE8Zd4DfHKjJjTwKKmB0wkr6RVfNdqf0GqFsmivbM4c4uX0EbAs=
+SHA256 (Pkgfile) = d043aa062aa03fae87ff8f1bb7c817030ef635025bb7c8dae2a940c2fd09b76c
+SHA256 (.footprint) = 2ffe5455b8c7a2dcd5b68fee8fd7a63a18fab85ef335868e99274fa063accfdc
+SHA256 (videotrans-1.6.1.tar.bz2) = a6509efdf6cd22353217207b7004ec2b8d8c32feb248e06ff93f55e01af00c99

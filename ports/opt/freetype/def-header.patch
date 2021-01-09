@@ -1,0 +1,50 @@
+diff -ru old/builds/unix/unix-cc.in new/builds/unix/unix-cc.in
+--- old/builds/unix/unix-cc.in	2020-08-26 05:09:50.000000000 +0000
++++ new/builds/unix/unix-cc.in	2020-12-25 23:33:45.984000000 +0000
+@@ -79,10 +79,7 @@
+ #   We use our own FreeType configuration files overriding defaults.
+ #
+ CPPFLAGS := @CPPFLAGS@
+-CFLAGS   := -c @XX_CFLAGS@ @CFLAGS@ \
+-            $DFT_CONFIG_CONFIG_H="<ftconfig.h>" \
+-            $DFT_CONFIG_MODULES_H="<ftmodule.h>" \
+-            $DFT_CONFIG_OPTIONS_H="<ftoption.h>"
++CFLAGS   := -c @XX_CFLAGS@ @CFLAGS@
+ 
+ # ANSIFLAGS: Put there the flags used to make your compiler ANSI-compliant.
+ #
+Only in new/builds/unix: unix-cc.in~
+Only in new/builds/unix: unix-cc.mk
+Only in new/builds/unix: unix-def.mk
+Only in new: config.mk
+Only in new/include/freetype/config: .ftheader.h.un~
+diff -ru old/include/freetype/config/ftheader.h new/include/freetype/config/ftheader.h
+--- old/include/freetype/config/ftheader.h	2020-08-27 06:17:20.000000000 +0000
++++ new/include/freetype/config/ftheader.h	2020-12-25 23:17:49.812000000 +0000
+@@ -114,7 +114,7 @@
+    *
+    */
+ #ifndef FT_CONFIG_CONFIG_H
+-#define FT_CONFIG_CONFIG_H  <freetype/config/ftconfig.h>
++#define FT_CONFIG_CONFIG_H  <ftconfig.h>
+ #endif
+ 
+ 
+@@ -144,7 +144,7 @@
+    *
+    */
+ #ifndef FT_CONFIG_OPTIONS_H
+-#define FT_CONFIG_OPTIONS_H  <freetype/config/ftoption.h>
++#define FT_CONFIG_OPTIONS_H  <ftoption.h>
+ #endif
+ 
+ 
+@@ -160,7 +160,7 @@
+    *
+    */
+ #ifndef FT_CONFIG_MODULES_H
+-#define FT_CONFIG_MODULES_H  <freetype/config/ftmodule.h>
++#define FT_CONFIG_MODULES_H  <ftmodule.h>
+ #endif
+ 
+   /* */

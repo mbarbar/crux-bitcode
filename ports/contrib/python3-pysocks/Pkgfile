@@ -1,0 +1,15 @@
+# Description: SOCKS4, SOCKS5 or HTTP proxy (Anorov fork PySocks replaces socksipy).
+# URL: https://github.com/Anorov/PySocks
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-setuptools
+
+name=python3-pysocks
+version=1.7.1
+release=1
+source=(https://files.pythonhosted.org/packages/source/P/PySocks/PySocks-$version.tar.gz)
+
+build() {
+	cd PySocks-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --root=$PKG --optimize=1
+}

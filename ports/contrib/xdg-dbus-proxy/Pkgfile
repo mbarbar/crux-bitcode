@@ -1,0 +1,17 @@
+# Description: D-Bus proxy
+# URL: https://github.com/flatpak/xdg-dbus-proxy
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glib docbook-xsl
+
+name=xdg-dbus-proxy
+version=0.1.2
+release=1
+source=(https://github.com/flatpak/xdg-dbus-proxy/releases/download/$version/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

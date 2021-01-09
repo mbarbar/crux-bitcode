@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31AzEqDWhXPc/GtIOCQjmEwAA2CUWJaAaP2PdAwG/b0123Gg/ir/ygKC5zOCt0/vUOBi0hCkfV4f8NZ1yhMmdg0=
+SHA256 (Pkgfile) = 65d5c1da0054c64144190bedc56c08ecc3f9c8c0d3db8f6cbb018e9b3bf1e8e5
+SHA256 (.footprint) = 9d73fe2e6c80194a3b82afcc9fb42e9c99350e50a299d2df5e68fe4683b1d881
+SHA256 (arpspoof-83594671338218dd80d6328485179cf62f943c9d.zip) = 591e9447394db3d24ce77ef4d6cb40b7f4dc3dcd6e212815b93f20f3b10a8503
+SHA256 (0001-arpspoof.py-show-help-without-root-privileges.patch) = c1cf0f365e88bd41ff9e8632fde68f74dafd15c812dff81cceb7e6c53e518252
+SHA256 (arpspoof.sh) = b0a083bae3740aa9920b5386f144b0110e3d94fa0dbc1cd0dac974f1e822cd17

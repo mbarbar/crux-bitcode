@@ -1,0 +1,19 @@
+# Description: Minimalistic tiling window manager
+# URL:         https://github.com/conformal/spectrwm
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  xorg-libxcursor xorg-libxft xorg-xcb-util-keysyms xorg-xcb-util-wm xorg-libxrandr
+
+name=spectrwm
+version=3.4.1
+release=1
+source=(https://github.com/conformal/spectrwm/archive/SPECTRWM_${version//./_}.tar.gz
+        $name-remove_libswmhack.patch)
+
+build () {
+    cd $name-SPECTRWM_${version//./_}/linux
+    patch -p1 -d.. -i $SRC/$name-remove_libswmhack.patch
+    make PREFIX=/usr
+    install -d $PKG/usr/{bin,share/man/man1}
+    install spectrwm $PKG/usr/bin
+    install ../spectrwm.1 $PKG/usr/share/man/man1
+}

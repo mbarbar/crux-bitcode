@@ -1,0 +1,29 @@
+# Description: Change your NIC's MAC address
+# URL:         https://www.gnu.org/software/macchanger
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=macchanger
+version=1.7.0
+release=1
+source=(https://github.com/alobbs/$name/archive/$version/$name-$version.tar.gz
+	$name.rc)
+
+build() {
+	cd $name-$version
+
+	#https://bugs.archlinux.org/task/59021
+	sed -i 's|/dev/hwrng|/dev/random|' src/main.c
+
+	./autogen.sh
+
+	# Don't build unnecessary docs with unnecessary dependencies
+	sed -i 's/SUBDIRS = src data doc/SUBDIRS = src data/' Makefile.in
+
+	./configure --prefix=/usr --mandir=/usr/share/man
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	# service
+	install -m 0750 -D $SRC/$name.rc $PKG/etc/rc.d/$name
+}

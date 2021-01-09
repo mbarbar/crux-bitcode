@@ -1,0 +1,138 @@
+From: Sophie Brun <sophie@freexian.com>
+Date: Wed, 28 Aug 2019 11:47:34 +0200
+Subject: Fix spelling error
+
+Last-Update: 2019-08-28
+
+Last-Update: 2019-08-28
+---
+ docs/ncrack.1         | 16 ++++++++--------
+ docs/ncrack.usage.txt |  2 +-
+ ncrack.cc             |  4 ++--
+ ncrack_input.cc       |  2 +-
+ 4 files changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/docs/ncrack.1 b/docs/ncrack.1
+index 2f12990..a8907b8 100644
+--- a/docs/ncrack.1
++++ b/docs/ncrack.1
+@@ -116,7 +116,7 @@ SERVICE SPECIFICATION:
+     domain <name>: used in modules like WinRM to specify the domain
+ TIMING AND PERFORMANCE:
+   Options which take <time> are in seconds, unless you append \'ms\'
+-  (miliseconds), \'m\' (minutes), or \'h\' (hours) to the value (e\&.g\&. 30m)\&.
++  (milliseconds), \'m\' (minutes), or \'h\' (hours) to the value (e\&.g\&. 30m)\&.
+   Service\-specific options:
+     cl (min connection limit): minimum number of concurrent parallel connections
+     CL (max connection limit): maximum number of concurrent parallel connections
+@@ -237,7 +237,7 @@ rather than on the command line\&.
+ .SH "SERVICE SPECIFICATION"
+ .\" service specification
+ .PP
+-No cracking session can be carried out without targetting a certain service to attack\&. Service specification is one of the most flexible subsystems of Ncrack and collaborates with target\-specification in a way that allows different option combinations to be applied\&. For Ncrack to start running, you will have to specify at least one target host and one associated service to attack\&. Ncrack provides ways to specify a service by its default port number, by its name (as extracted from the
++No cracking session can be carried out without targeting a certain service to attack\&. Service specification is one of the most flexible subsystems of Ncrack and collaborates with target\-specification in a way that allows different option combinations to be applied\&. For Ncrack to start running, you will have to specify at least one target host and one associated service to attack\&. Ncrack provides ways to specify a service by its default port number, by its name (as extracted from the
+ ncrack\-services
+ file) or both\&. Normally, you need to define both name and port number only in the special case where you know that a particular service is listening on a non\-default port\&.
+ .PP
+@@ -317,7 +317,7 @@ option (see below for explanation)\&.
+ .SH "SERVICE OPTIONS"
+ .\" service options
+ .PP
+-Apart from general service specification, Ncrack allows you to provide a multitude of options that apply to each or a subset of your targets\&. Options include timing and performance optimizations (which are thoroughly analyzed in a seperate section), SSL enabling/disabling and other module\-specific parameters like the relative URL path for the HTTP module\&. Options can be defined in a variety of ways which include: per\-host options, per\-module options and global options\&. Since a combination of these options may be used, there is a strict hierarchy of precedence which will be discussed later\&.
++Apart from general service specification, Ncrack allows you to provide a multitude of options that apply to each or a subset of your targets\&. Options include timing and performance optimizations (which are thoroughly analyzed in a separate section), SSL enabling/disabling and other module\-specific parameters like the relative URL path for the HTTP module\&. Options can be defined in a variety of ways which include: per\-host options, per\-module options and global options\&. Since a combination of these options may be used, there is a strict hierarchy of precedence which will be discussed later\&.
+ .PP
+ \fBPer\-host Options\fR
+ .PP
+@@ -555,7 +555,7 @@ all do the same thing\&.
+ 
+ \fBConnection Limit\fR
+ .sp
+-These options control the total number of connections that may be outstanding for any service at the same time\&. Normally, Ncrack tries to dynamically adjust the number of connections for each individual target by counting how many drops or connection failures happen\&. If a strange network condition occurs, that signifies that something may be going wrong, like the host dropping any new connection attempts, then Ncrack will immediately lower the total number of connections hitting the service\&. However, the caps number of the minimum or maximum connections that will take place can be overriden using these two options\&. By properly adjusting them, you can essentially optimize performance, if you can handle the tricky part of knowing or discovering your target\'s own limits\&. The convention here is that
++These options control the total number of connections that may be outstanding for any service at the same time\&. Normally, Ncrack tries to dynamically adjust the number of connections for each individual target by counting how many drops or connection failures happen\&. If a strange network condition occurs, that signifies that something may be going wrong, like the host dropping any new connection attempts, then Ncrack will immediately lower the total number of connections hitting the service\&. However, the caps number of the minimum or maximum connections that will take place can be overridden using these two options\&. By properly adjusting them, you can essentially optimize performance, if you can handle the tricky part of knowing or discovering your target\'s own limits\&. The convention here is that
+ \fBcl\fR
+ with lowercase letters is referring to the minimum connection limit, while
+ \fBCL \fR
+@@ -699,7 +699,7 @@ iteration, very common passwords might not even be tried out for certain usernam
+ .PP
+ \fB\-\-pairwise\fR (Choose usernames and passwords in pairs)
+ .RS 4
+-Enabling this option will make Ncrack iterate the username and password list by choosing them in pairs\&. For example, given the username list of "root, guest, admin" and the password list of "test, 12345, q1w2e3r4" Ncrack will go over them like this: "root:test", "guest:12345", "admin:q1w2e3r4"\&. This is particulary useful when inside knowledge of the infrastructure tested is available and special username and password lists have been made\&.
++Enabling this option will make Ncrack iterate the username and password list by choosing them in pairs\&. For example, given the username list of "root, guest, admin" and the password list of "test, 12345, q1w2e3r4" Ncrack will go over them like this: "root:test", "guest:12345", "admin:q1w2e3r4"\&. This is particularly useful when inside knowledge of the infrastructure tested is available and special username and password lists have been made\&.
+ .RE
+ .SH "OUTPUT"
+ .\" output formats
+@@ -969,7 +969,7 @@ FTP authentication is quite fast, since there is very little protocol negotiatio
+ \fBTelnet Module\fR
+ .PP
+ .RS 4
+-Telnet daemons have been largely substituded by their safer \'counterpart\' of SSH\&. However, there are many boxes, mainly routers or printers, that still rely on Telnet for remote access\&. Usually these are also easier to crack, since default passwords for them are publicly known\&. The drawback is that telnet is a rather slow protocol, so you shouldn\'t be expecting really high rates against it\&.
++Telnet daemons have been largely substituted by their safer \'counterpart\' of SSH\&. However, there are many boxes, mainly routers or printers, that still rely on Telnet for remote access\&. Usually these are also easier to crack, since default passwords for them are publicly known\&. The drawback is that telnet is a rather slow protocol, so you shouldn\'t be expecting really high rates against it\&.
+ .RE
+ .PP
+ \fBSSH Module\fR
+@@ -998,7 +998,7 @@ The SMB module currently works over raw TCP\&. NetBIOS isn\'t supported yet\&. T
+ \fBRDP Module \fR
+ .PP
+ .RS 4
+-RDP (Remote Desktop Protocol) is a proprietary protocol developed by Microsoft for the purpose of providing remote terminal services by transfering graphics display information from the remote computer to the user and transporting input commands from the user to the remote computer\&. Fortunately, Microsoft recently decided to open the protocol\'s internal workings to the public and has provided official documentation, which can be found at
++RDP (Remote Desktop Protocol) is a proprietary protocol developed by Microsoft for the purpose of providing remote terminal services by transferring graphics display information from the remote computer to the user and transporting input commands from the user to the remote computer\&. Fortunately, Microsoft recently decided to open the protocol\'s internal workings to the public and has provided official documentation, which can be found at
+ \m[blue]\fB\%http://msdn.microsoft.com/en-us/library/cc240445%28v=PROT.10%29.aspx\fR\m[]
+ .sp
+ RDP is one of the most complex protocols, requiring the exchange of many packets, even for just the authentication phase\&. For this reason, cracking it takes a lot of time and this is probably the slowest module\&. The connection phase is briefly described at
+@@ -1103,7 +1103,7 @@ Retrieve Images: This step allows a client to retrieve DICOM images\&. The most
+ \fBMQTT Module\fR
+ .PP
+ .RS 4
+-The Message Queueing Telemetry Transport (MQTT) protocol is a publish / subscribe machine to machine protocol that allows IoT clients to publish to a broker\&. Each client device subscribes to a particular topic of interest and receives messages from publishers\&. Usually MQTT authentication is optional and when enabled can be brute\-forced very easily as it only requires a single MQTT CONNECT packet to be sent for each attemped credential pair\&.
++The Message Queueing Telemetry Transport (MQTT) protocol is a publish / subscribe machine to machine protocol that allows IoT clients to publish to a broker\&. Each client device subscribes to a particular topic of interest and receives messages from publishers\&. Usually MQTT authentication is optional and when enabled can be brute\-forced very easily as it only requires a single MQTT CONNECT packet to be sent for each attempted credential pair\&.
+ .RE
+ .PP
+ \fBWordpress Module\fR
+diff --git a/docs/ncrack.usage.txt b/docs/ncrack.usage.txt
+index 9cfe591..7c12e6a 100644
+--- a/docs/ncrack.usage.txt
++++ b/docs/ncrack.usage.txt
+@@ -24,7 +24,7 @@ SERVICE SPECIFICATION:
+     domain <name>: used in modules like WinRM to specify the domain
+ TIMING AND PERFORMANCE:
+   Options which take <time> are in seconds, unless you append 'ms'
+-  (miliseconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).
++  (milliseconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).
+   Service-specific options:
+     cl (min connection limit): minimum number of concurrent parallel connections
+     CL (max connection limit): maximum number of concurrent parallel connections
+diff --git a/ncrack.cc b/ncrack.cc
+index e8a4c19..ffc9702 100644
+--- a/ncrack.cc
++++ b/ncrack.cc
+@@ -254,7 +254,7 @@ print_usage(void)
+       "    domain <name>: used in modules like WinRM to specify the domain\n"
+       "TIMING AND PERFORMANCE:\n"
+       "  Options which take <time> are in seconds, unless you append 'ms'\n"
+-      "  (miliseconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m)."
++      "  (milliseconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m)."
+       "\n"
+       "  Service-specific options:\n"
+       "    cl (min connection limit): minimum number of concurrent parallel "
+@@ -2298,7 +2298,7 @@ ncrack_connect_handler(nsock_pool nsp, nsock_event nse, void *mydata)
+     if (serv->failed_connections > serv->connection_retries) {
+       SG->pushServiceToList(serv, &SG->services_finished);
+       if (o.verbose)
+-        log_write(LOG_STDOUT, "%s finished. Too many failed attemps. \n", hostinfo);
++        log_write(LOG_STDOUT, "%s finished. Too many failed attempts. \n", hostinfo);
+     }
+     /* Failure of connecting on first attempt means we should probably drop
+      * the service for good. */
+diff --git a/ncrack_input.cc b/ncrack_input.cc
+index 5de1838..9d3f324 100644
+--- a/ncrack_input.cc
++++ b/ncrack_input.cc
+@@ -204,7 +204,7 @@ xml_input(FILE *inputfd, char *host_spec)
+         if (!fgets(buf, 7, inputfd))
+           fatal("-iX <address> section searching fgets failure!\n");
+ 
+-        if (!strncmp(buf, "addres", 6)) {
++        if (!strncmp(buf, "address", 6)) {
+           /* Now get the rest of the line which is in the following format:
+            * <address addr="10.0.0.100" addrtype="ipv4" /> */
+           unsigned int i = 0;

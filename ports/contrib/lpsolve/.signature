@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35MEmgCfurocwv5qyh9Zctmq0zMuuNp1GvwOoL7m838QsNXYiHz4j/oqaBalK5icIAlx/jgW9ofNjpBKo4yQ1AM=
+SHA256 (Pkgfile) = c1c5263917c1b69505175b61754f1d39f1d941f0f6c687edcdef597cc6763849
+SHA256 (.footprint) = b8cd5cff2918f0486c1bca11e7de996153b71a9452c465d604eed5c40281c1ae
+SHA256 (lp_solve_5.5.2.5_source.tar.gz) = 201a7c62b8b3360c884ee2a73ed7667e5716fc1e809755053b398c2f5b0cf28a
+SHA256 (cflags.patch) = f9edf2f2cd43304045dc6969cf81937aeb6fc877229f4fc03a7463cccfa4ce91
+SHA256 (lpsolve-5.5.2.0.defines.patch) = 196e25f92d4b4fae67a1c86351aca1863caf44f30d6a7d838a3b953b20008055

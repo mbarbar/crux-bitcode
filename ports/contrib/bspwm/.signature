@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3z7QywzJX97Q6c45s+3TzLtl2hCQlvAyMw5clI2ruOhUObBPLDkFfaQ5+AH135KZWelNmuVlbFRsnlBCSlTeNgA=
+SHA256 (Pkgfile) = aa2f8a6c0753747751ff5bd957699f9baf00abf5244931a7310991c104eae8ba
+SHA256 (.footprint) = 862f3117a1f75434c8582cf3d30c02751afa2a49c71cdd4e1128711a9ef36c27
+SHA256 (bspwm-0.9.10.tar.gz) = 0d0f5e465b9c27a5c2143c86189392fa297fad55253b9ed8f6854473d3928f8f

@@ -1,0 +1,19 @@
+# Description: Utility for maintaining your dynamic DNS entries.
+# URL: https://github.com/ddclient/ddclient
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: p5-io-socket-ssl p5-io-socket-inet6 p5-digest-sha1 p5-data-validate-ip
+
+name=ddclient
+version=3.9.1
+release=1
+source=(https://github.com/ddclient/ddclient/archive/v$version/$name-v$version.tar.gz
+	ddclient.rc)
+
+build() {
+	cd $name-$version
+	sed -i -e 's|/etc/ddclient/|/etc/|' ddclient
+	install -d $PKG/var/cache/ddclient
+	install -D -m 0755 ddclient $PKG/usr/sbin/ddclient
+	install -D -m 0755 $SRC/ddclient.rc $PKG/etc/rc.d/ddclient
+	install -D -m 0600 sample-etc_ddclient.conf $PKG/etc/ddclient.conf
+}

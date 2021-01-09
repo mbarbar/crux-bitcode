@@ -1,0 +1,16 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/pub2raw
+-rwxr-xr-x	root/root	usr/bin/pub2xhtml
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libmspub-0.1/
+drwxr-xr-x	root/root	usr/include/libmspub-0.1/libmspub/
+-rw-r--r--	root/root	usr/include/libmspub-0.1/libmspub/MSPUBDocument.h
+-rw-r--r--	root/root	usr/include/libmspub-0.1/libmspub/libmspub.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libmspub-0.1.la
+lrwxrwxrwx	root/root	usr/lib/libmspub-0.1.so -> libmspub-0.1.so.1.0.4
+lrwxrwxrwx	root/root	usr/lib/libmspub-0.1.so.1 -> libmspub-0.1.so.1.0.4
+-rwxr-xr-x	root/root	usr/lib/libmspub-0.1.so.1.0.4
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libmspub-0.1.pc

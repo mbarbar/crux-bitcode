@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wveiBI13374no4HtL+gSsbSRdf2wRZ4JiavecxkXpfSju6Btevztu+IyxRqqjYG/HcUfSUh7H38IWjj8VBa2Ak=
+SHA256 (Pkgfile) = 91e63cba138f37ee4909d2d105932e2e2461c08c51b907e6e0e5c1c5ebb2d543
+SHA256 (.footprint) = 2df451cca5eedf3ef3d9f19221cc1344f605a6a5937987fb2e21485465ba963a
+SHA256 (libgeoip-v1.6.12.tar.gz) = 99b119f8e21e94f1dfd6d49fbeed29a70df1544896e76cd456f25e397b07d476

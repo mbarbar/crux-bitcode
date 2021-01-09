@@ -1,0 +1,18 @@
+# Description:  Secure Realtime transport protocol library
+# URL: https://github.com/cisco/libsrtp
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libsrtp
+version=2.3.0
+release=1
+source=(https://github.com/cisco/libsrtp/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure \
+    --prefix=/usr \
+    --disable-debug
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38OxzezEauYaxde9xOCd1KDeNjJq19xk+xC1ZRwW1z49cQ98WfD44Y0K4oh7VUWOKRtFirFzGTjRiMKYumHkBgU=
+SHA256 (Pkgfile) = 1005cb8aec95aed3423f8a6e5bd409f8d28ee8a8447996d3748014e9fba7f482
+SHA256 (.footprint) = c0cab23017768c1085e6f6f4ac25a04018b45b1d7ddff82307893fc064d69345
+SHA256 (xvidcore-1.3.7.tar.bz2) = aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7

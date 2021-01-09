@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wf9Nt+uduJ7IGrrvD7uKWxNqnM7JdlsRZkCJISPpRhrx07AnpUyhRn6pxBHgyk2hT5Tn7UyRj+yvlRdt4iUPQE=
+SHA256 (Pkgfile) = 69f7c6876b5fa9c1c183e6444b344191f7e461ebc2ee9c46ad29ecdcf1258e17
+SHA256 (.footprint) = adfcc47470b14395e43a31d4d47625f61396b4f69abaa4f0f4a0b0aff4337667
+SHA256 (gitui-0.10.1.tar.gz) = 2d6fa87d88002716cf0fedef9d4332b7212ee05fbfa4b8c536ae4270bef99bce

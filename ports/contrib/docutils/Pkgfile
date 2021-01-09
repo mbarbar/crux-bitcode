@@ -1,0 +1,16 @@
+# Description: Text processing system.
+# URL:         http://docutils.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  python3-setuptools
+
+name=docutils
+version=0.16
+release=1
+source=(https://files.pythonhosted.org/packages/source/d/docutils/docutils-$version.tar.gz)
+
+build() {
+   cd $name-$version
+   /usr/bin/python3 setup.py install --root=$PKG --optimize=1
+   rm $PKG/usr/lib/python*/site-packages/docutils/parsers/rst/include/README.txt
+   rm $PKG/usr/lib/python*/site-packages/docutils/writers/s5_html/themes/README.txt
+}

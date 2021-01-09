@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33nYtNsKv6i4ClAlFkLTkPRSe97N94Cm3CybAORj9ML4Fx8SpFefQSId9ctkK3y/u6PHu1MAAZ6/SMa/UHooOgw=
+SHA256 (Pkgfile) = 99c345406221db04e87f5d718e075d0e1b8465250c9b95ef0ede5f41b862e239
+SHA256 (.footprint) = 848848de568d36cd7959f8331b56a75d7cdd71baae21f51e6a15f29ffd79eb87
+SHA256 (volatility-2.6.1.tar.gz) = a8dfdbdb2aaa0885387b709b821bb8250e698086fb32015bc2896ea55f359058

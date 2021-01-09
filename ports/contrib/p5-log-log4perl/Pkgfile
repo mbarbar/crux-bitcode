@@ -1,0 +1,17 @@
+# Description: Log4j implementation for Perl
+# URL: https://metacpan.org/release/Log-Log4perl
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-log-log4perl
+version=1.53
+release=1
+source=(https://cpan.metacpan.org/authors/id/E/ET/ETJ/Log-Log4perl-$version.tar.gz)
+
+build() {
+  cd Log-Log4perl-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -iname '.packlist' -o -iname '*.pod' \) -delete
+ }

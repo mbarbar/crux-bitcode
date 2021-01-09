@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xgCN6hbZWPcrtP+hbKdcDCrPoWr2IgxhseVn/LwFJ2KeBVxOnQZSm7dMnukmybcONfHXKNegbgBgkLHIRdRZwY=
+SHA256 (Pkgfile) = ec3c2ce216e83e10743e8d7986c1455a7c838e7d8e603b5f66901547d6674b29
+SHA256 (.footprint) = 74e33249f77a93297c042f5bff439f5f8afcb896df3e3777db19ae171515a5f9
+SHA256 (ExtUtils-LibBuilder-0.08.tar.gz) = c51171e06de53039f0bca1d97a6471ec37941ff59e8a3d1cb170ebdd2573b5d2

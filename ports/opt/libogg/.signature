@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XQkYogp00y9q4ezeSJpy3TDWtF0/hmqNN7yqov7hLIwucVmGyYPcvkVzqJnqCJqL7AydNFba40lZ9CVZ+cIZQs=
+SHA256 (Pkgfile) = 6e4237cfe28adb67be874b0d2f800329290edc0c6faa5567c87abfa2b647f2c1
+SHA256 (.footprint) = bf9d93689f947e22758857288813d795318ca91ff33cddf4774bd184bd2fc35e
+SHA256 (libogg-1.3.4.tar.xz) = c163bc12bc300c401b6aa35907ac682671ea376f13ae0969a220f7ddf71893fe

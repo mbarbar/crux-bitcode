@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38SGq5zNZJxnXe24VmF54nPhH0wKSLr2svIiEiwmmu6wdl4GAx1FTiS5t8UhW8LrectlBsWNop0vIN7zQHBE7wY=
+SHA256 (Pkgfile) = 18c19dac4883af651b0e6fd61ff421e308bae233f8ac88eadf1191e5fd5f4797
+SHA256 (.footprint) = 63ed3f91dd2d0008f503cf01b9fc1a234b89cb0c829c08d1cd10504fbccd046b
+SHA256 (colordiff-1.0.19.tar.gz) = 46e8c14d87f6c4b77a273cdd97020fda88d5b2be42cf015d5d84aca3dfff3b19

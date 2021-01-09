@@ -1,0 +1,42 @@
+# Description: Free peer-reviewed portable C++ source libraries.
+# URL: https://www.boost.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python python3
+# Optional: icu
+
+name=boost
+version=1.74.0
+release=1
+source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2)
+
+build() {
+	cd ${name}_${version//./_}
+
+       local config="
+variant=release \
+threading=multi \
+runtime-link=shared \
+link=shared,static \
+debug-symbols=off \
+toolset=gcc \
+-j ${JOBS-1}"
+
+	local ICU="$([ -e /usr/bin/icu-config ] && echo --with-icu)"
+	./bootstrap.sh --prefix=$PKG/usr --with-toolset=gcc $ICU --with-python=/usr/bin/python2
+	local pyver2="$(/usr/bin/python2 -c 'import sys; print("%s.%s" % sys.version_info[:2])')"
+
+	./b2 stage $config python="$pyver2"
+	./b2 install threading=multi link=shared
+
+	##
+	./bootstrap.sh --prefix=$PKG/usr --with-toolset=gcc $ICU --with-python=/usr/bin/python3 --with-libraries=python
+	local pyver3=$(/usr/bin/python3 -c 'import sys; print("%s.%s" % sys.version_info[:2])')
+
+	./b2 clean
+	./b2 stage $config python="$pyver3"
+	./b2 install threading=multi link=shared
+
+	# https://github.com/boostorg/python/issues/203#issuecomment-391477685
+	local pyver="$(/usr/bin/python3 -c 'import sys; print("%s%s" % sys.version_info[:2])')"
+	ln -s libboost_python$pyver.so $PKG/usr/lib/libboost_python3.so
+}

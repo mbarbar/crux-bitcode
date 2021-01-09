@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+HwJLH0ZNO1YA3xYJMXWxg6gnIe6s9X0hX07bWNNdAhxCSFWnpK3hzQPwex07s5s8GMfO0Nai79+5Sm1XTxvwk=
+SHA256 (Pkgfile) = d59ce4c9054a3dc90acaa6e33d82130f0c7de491cedf9afc54f97b27a673d020
+SHA256 (.footprint) = f07ecb8a2201ad6987c56b1d19313c54531c69e846719f5698c7dec6beb8246a
+SHA256 (pyrsistent-0.16.0.tar.gz) = 28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3

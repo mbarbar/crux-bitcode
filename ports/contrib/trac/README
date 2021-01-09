@@ -1,0 +1,43 @@
+# $Id:
+
+REQUIREMENTS:
+
+PRECAUTION:
+
+If you are upgrading a previous installation see
+http://ftp.edgewall.org/wiki/TracUpgrade
+
+PRE-INSTALL:
+
+POST-INSTALL
+
+Read the instructions on
+  http://projects.edgewall.com/trac/wiki/TracInstall
+
+to set up a repository
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+For now the only documentation available is located on 
+http://trac.edgewall.org/
+
+My apache config looks like this:
+
+    Alias /trac/ "/usr/share/trac/htdocs/"
+    <Location "/cgi-bin/trac.cgi">
+        SetEnv TRAC_DB "/var/lib/trac/trac.db"
+    </Location>
+
+    # You need something like this to authenticate users
+    <Location "/cgi-bin/trac.cgi/login">
+        AuthType Basic
+        AuthName "svnjw"
+        AuthUserFile /somewhere/trac.htpasswd
+        Require valid-user
+    </Location>
+
+Adjust AuthUserFile to your needs

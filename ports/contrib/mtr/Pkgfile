@@ -1,0 +1,25 @@
+# Description: Matt's traceroute - network diagnostic tool.
+# URL: http://www.bitwizard.nl/mtr/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: ncurses
+
+name=mtr
+version=0.94
+release=2
+source=(https://github.com/traviscross/mtr/archive/v$version/$name-v$version.tar.gz
+	mtr-setcap.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/mtr-setcap.patch
+
+	./bootstrap.sh
+	./configure \
+		--prefix=/usr \
+		--sbindir=/usr/bin \
+		--without-gtk
+
+	make
+	make DESTDIR=$PKG install
+}

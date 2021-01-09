@@ -1,0 +1,26 @@
+README for unbound 1.*
+
+REQUIREMENTS
+
+PRE/POST-INSTALL
+
+1. Create a user/group unbound with a unused id < 99 or run the
+   provided pre-install script:
+
+   'groupadd -r unbound'
+   'useradd -r -g unbound -d /etc/unbound -s /bin/false unbound'
+   'passwd -l unbound'
+
+PRECAUTION
+
+To enable DNSSEC validation all you have to do is to enable the 
+"auto-trust-anchor-file" option in /etc/unbound/unbound.conf.
+Unbound runs as default within a chroot located at /etc/unbound, 
+therefor the anchor-file has to reside somewhere below the chroot 
+directory. The default is /etc/unbound/anchor/root.key.
+
+The effective user unbound is running as (default: unbound) needs
+write access to /etc/unbound/anchor to update the trust anchor for 
+DNSSEC validation. Adjust the owner of that directory if you run 
+unbound as a different user.
+

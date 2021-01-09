@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31RwVlBTovTPBItU7yIHWjCdM8OPBugl+bVsjHmkSLtkbWBo92c5WhV+NgA5Lgsph/f5QgWiCJcBLP7zBz874gg=
+SHA256 (Pkgfile) = 50fc443d62e266b06b254fa7a562805e4f0854e3267da039b783ba4916d0791f
+SHA256 (.footprint) = 0d604f45f1547a155728f7911638e8a8b5198caa09ad811e90470b65e2806ab6
+SHA256 (rofi-1.6.1.tar.gz) = 8d1df739117fb79e519b40f9a7824586f88a5fe8643bd30d9b9325b7b0a4f411

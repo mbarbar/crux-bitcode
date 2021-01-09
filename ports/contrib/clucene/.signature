@@ -1,0 +1,15 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32YShWD6rWLj/EOArdtePQoAypE47TECPxdq+GTO39iMPBs7s7D6JaGNwBAYMsmZN5AK9qB2DqBbF4HmhCr4Tgg=
+SHA256 (Pkgfile) = 007d2dbe76fbd40631572660ba32e394c0d0b6efbe9e7c4acfe21487509d8fb9
+SHA256 (.footprint) = a90f1fa99e0d767eabd4549e23d941298085272b3cb5e0a93f0f2b267befd22f
+SHA256 (clucene-core-2.3.3.4.tar.gz) = ddfdc433dd8ad31b5c5819cc4404a8d2127472a3b720d3e744e8c51d79732eab
+SHA256 (fix_zlib_detections.diff) = e1a6a58dc344d8d5e3218137a5e7a689900eb6ea4cce1dc426e861706ab78889
+SHA256 (clucene-core-2.3.3.4-install_contribs_lib.patch) = 3d3f73685f75b4ceacf1941e50b6108941bded3ca558ac1343c35b1b7d0e78dc
+SHA256 (clucene-narrowing-conversions.patch) = cfc88dae46efb2a17ffdc088fd78ca28655e653c9d183b83bdae18c0192a8ddd
+SHA256 (clucene-warnings.patch) = a66922411eca00c1cd171dd15ac462eec7a832cf067dbb0231773553554242ef
+SHA256 (clucene-debug.patch) = c944b9de6b18e49bb065d10c5d045446eeb15f680d6af4b5ac7e4f5fbda8f2a0
+SHA256 (clucene-gcc-atomics.patch) = b11dca0d6b889f6ddfa4fd2566373717f54fed9590bf0daee054dea5e39a9f46
+SHA256 (clucene-multimap-put.patch) = 917c8bfc1dd3313a716ecacf398dbcaf0aa02ce61b41ca2d3d7eb84fa160fce3
+SHA256 (clucene-2.3.3.4-contribs_lib-1.patch) = a0751acfa848ec96ee5755d970fe0812651650c99e3fd0c8e7a85bc1e9e9677f
+SHA256 (cmake.patch) = 5477082c112f41bef7bbe2205aaa86eb5e2f2b92d3eb2c4b46733b1f1a5a7335
+SHA256 (contribs-lib-makefile.patch) = f92063b9a1e85754548f8116569128c3ef259544ed371c74cd3692b4bac2ed30

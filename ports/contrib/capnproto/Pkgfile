@@ -1,0 +1,18 @@
+# Description: data interchange format and capability-based RPC system
+# URL:         https://capnproto.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=capnproto
+version=0.8.0
+release=1
+source=(https://capnproto.org/capnproto-c++-${version}.tar.gz)
+
+build() {
+  cd $name-c++-$version
+
+  ./configure --prefix=/usr
+
+  make
+  make DESTDIR=$PKG install
+}

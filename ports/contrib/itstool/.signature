@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wmcNoaXzaA54OT4fluVN0/kZxKwb7uy+zR8f7mszgU98aUO3P8vgDGz3IVlj6GlBioqEzPDZ1v3QRXF9gkJWAc=
+SHA256 (Pkgfile) = 0e79ad7775b2d8f81344f5921545e5130a6d7aba93e5e222efd467a508896f4f
+SHA256 (.footprint) = c4575ed0855fe330812c99fc5a1cad8647601e5ef70601a67151289b91d16ee6
+SHA256 (itstool-2.0.6.tar.bz2) = 6233cc22726a9a5a83664bf67d1af79549a298c23185d926c3677afa917b92a9

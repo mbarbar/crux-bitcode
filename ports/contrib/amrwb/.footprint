@@ -1,0 +1,32 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/amrwb-decoder
+-rwxr-xr-x	root/root	usr/bin/amrwb-decoder-if2
+-rwxr-xr-x	root/root	usr/bin/amrwb-encoder
+-rwxr-xr-x	root/root	usr/bin/amrwb-encoder-if2
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/amrwb/
+-rw-r--r--	root/root	usr/include/amrwb/dec.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_acelp.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_dtx.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_gain.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_if.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_lpc.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_main.h
+-rw-r--r--	root/root	usr/include/amrwb/dec_util.h
+-rw-r--r--	root/root	usr/include/amrwb/enc.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_acelp.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_dtx.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_gain.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_if.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_lpc.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_main.h
+-rw-r--r--	root/root	usr/include/amrwb/enc_util.h
+-rw-r--r--	root/root	usr/include/amrwb/if_rom.h
+-rw-r--r--	root/root	usr/include/amrwb/typedef.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libamrwb.a
+-rwxr-xr-x	root/root	usr/lib/libamrwb.la
+lrwxrwxrwx	root/root	usr/lib/libamrwb.so -> libamrwb.so.3.0.0
+lrwxrwxrwx	root/root	usr/lib/libamrwb.so.3 -> libamrwb.so.3.0.0
+-rwxr-xr-x	root/root	usr/lib/libamrwb.so.3.0.0

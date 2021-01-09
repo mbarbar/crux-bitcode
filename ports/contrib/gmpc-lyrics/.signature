@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37NJpXZMnEtNo3XmoFSu05/GH3TiZAEqo40k5w95PrQvvMx3eXCZMIHNNayUfsh/eYyos6JS+5no3BlzKKsIZwI=
+SHA256 (Pkgfile) = ff715260cd9a6d3958c47b4903083f6496b6662dadac01f010e28b2dba934b2f
+SHA256 (.footprint) = 3f83aa25f2516acb5a7b2f18719f3e61bb22b73619d9c42c5f6077865266c74b
+SHA256 (gmpc-lyrics-11.8.16.tar.gz) = 5dee816c422364b1a7eaf2c34dbacf56ee416eacad15acbe65920a2ba2ee33be

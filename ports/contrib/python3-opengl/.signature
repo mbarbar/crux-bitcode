@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+T0Wf2uUgkJELvkOGZDf5ho0CnF9Pf2AKFckS9G6ZtkrT6dlXKnZblLMrp3AxqiiuEjFJZfgIYnw8Vdf5z5cwM=
+SHA256 (Pkgfile) = d333c36ae9ba45fd9fb338c57e5229f4a6e3f3a4555f97246df9f87fd66a2b8a
+SHA256 (.footprint) = 7983c3729887a8d7a77a6abef9ebab9f7938a464fcb45ab843f554d565d64070
+SHA256 (PyOpenGL-3.1.5.tar.gz) = 4107ba0d0390da5766a08c242cf0cf3404c377ed293c5f6d701e457c57ba3424

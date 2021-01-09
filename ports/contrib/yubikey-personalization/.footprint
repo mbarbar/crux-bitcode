@@ -1,0 +1,35 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/udev/
+drwxr-xr-x	root/root	etc/udev/rules.d/
+-rw-r--r--	root/root	etc/udev/rules.d/10-security-key.rules
+drwxr-xr-x	root/root	lib/
+drwxr-xr-x	root/root	lib/udev/
+drwxr-xr-x	root/root	lib/udev/rules.d/
+-rw-r--r--	root/root	lib/udev/rules.d/69-yubikey.rules
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ykchalresp
+-rwxr-xr-x	root/root	usr/bin/ykinfo
+-rwxr-xr-x	root/root	usr/bin/ykpersonalize
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/ykpers-1/
+-rw-r--r--	root/root	usr/include/ykpers-1/ykcore.h
+-rw-r--r--	root/root	usr/include/ykpers-1/ykdef.h
+-rw-r--r--	root/root	usr/include/ykpers-1/ykpbkdf2.h
+-rw-r--r--	root/root	usr/include/ykpers-1/ykpers-version.h
+-rw-r--r--	root/root	usr/include/ykpers-1/ykpers.h
+-rw-r--r--	root/root	usr/include/ykpers-1/ykstatus.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libykpers-1.a
+-rwxr-xr-x	root/root	usr/lib/libykpers-1.la
+lrwxrwxrwx	root/root	usr/lib/libykpers-1.so -> libykpers-1.so.1.20.0
+lrwxrwxrwx	root/root	usr/lib/libykpers-1.so.1 -> libykpers-1.so.1.20.0
+-rwxr-xr-x	root/root	usr/lib/libykpers-1.so.1.20.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/ykpers-1.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/ykchalresp.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ykinfo.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ykpersonalize.1.gz

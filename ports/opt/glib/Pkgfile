@@ -1,0 +1,22 @@
+# Description: Low-level data structure handling, portability wrappers, and interfaces for runtime functionality
+# URL:         https://www.gtk.org/
+# Maintainer:  Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on: libpcre meson ninja
+
+name=glib
+version=2.66.3
+release=1
+source=(https://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz \
+	gschemas.compiled)
+
+build () {
+	cd $name-$version
+
+	meson build --prefix=/usr
+
+	DESTDIR=$PKG ninja -C build install
+
+	install -m 0644 $SRC/gschemas.compiled $PKG/usr/share/glib-2.0/schemas/gschemas.compiled
+	rm -rf $PKG/usr/share/{gtk-doc,locale} $PKG/usr/libexec
+	rm -r $PKG/usr/share/bash-completion
+}

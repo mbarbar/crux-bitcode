@@ -1,0 +1,17 @@
+# Description: (re)name a sub
+# URL: https://metacpan.org/pod/Sub::Name
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-sub-name
+version=0.26
+release=1
+source=(https://cpan.metacpan.org/authors/id/E/ET/ETHER/Sub-Name-$version.tar.gz)
+
+build() {
+  cd Sub-Name-$version
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

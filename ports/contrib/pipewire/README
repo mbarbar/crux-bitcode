@@ -1,0 +1,2 @@
+pipewire needs pulseaudio to be built with xorg-libxtst around to have the
+pulseaudio portal available

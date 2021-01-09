@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3z7EQr+hWQ+k8lw/K51nCrV8/y4xIYFmyOEJh7agV7e67pF7zMOwpNhvIqmMkAjN60yEwa+3bm0mDpSCpRfyGww=
+SHA256 (Pkgfile) = 0b9ca9cacf69c371cd648c9129bc66a9c8b6057c2adcd8b2741c741481a02b70
+SHA256 (.footprint) = aadec6312dcc00592b3a5d59e29eabfd8e89feee745aec8ba93fc3ced75e79c7
+SHA256 (thttpd-2.29.tar.gz) = 99c09f47da326b1e7b5295c45549d2b65534dce27c44812cf7eef1441681a397
+SHA256 (thttpd.rc) = e8001e63e6d2400a12f81bc240d0bae4116772e571c712d121141ee2c990afbe
+SHA256 (thttpd.conf) = 540b98cdc0af4ec60d690a0101c29e67403a4ce5d4e5970a6c1d929ccb295a6b
+SHA256 (config.h.patch) = 1b94aa7e52569bb2fe79ab53189f951d88c78235d837f3e9d4d5cdd414b628f2

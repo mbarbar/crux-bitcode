@@ -1,0 +1,15 @@
+# Description: POP3 mail retriever with reliable Maildir and command delivery
+# URL:         https://getmail6.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  python3
+
+name=getmail
+version=6.9
+release=1
+source=(https://github.com/getmail6/getmail6/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd ${name}6-$version
+  /usr/bin/python3 setup.py install --prefix=/usr --root=$PKG
+  rm -fr $PKG/usr/share/doc
+}

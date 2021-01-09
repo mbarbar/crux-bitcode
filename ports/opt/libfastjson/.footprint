@@ -1,0 +1,18 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libfastjson/
+-rw-r--r--	root/root	usr/include/libfastjson/atomic.h
+-rw-r--r--	root/root	usr/include/libfastjson/json.h
+-rw-r--r--	root/root	usr/include/libfastjson/json_object.h
+-rw-r--r--	root/root	usr/include/libfastjson/json_object_iterator.h
+-rw-r--r--	root/root	usr/include/libfastjson/json_object_private.h
+-rw-r--r--	root/root	usr/include/libfastjson/json_tokener.h
+-rw-r--r--	root/root	usr/include/libfastjson/json_util.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libfastjson.a
+-rwxr-xr-x	root/root	usr/lib/libfastjson.la
+lrwxrwxrwx	root/root	usr/lib/libfastjson.so -> libfastjson.so.4.2.0
+lrwxrwxrwx	root/root	usr/lib/libfastjson.so.4 -> libfastjson.so.4.2.0
+-rwxr-xr-x	root/root	usr/lib/libfastjson.so.4.2.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libfastjson.pc

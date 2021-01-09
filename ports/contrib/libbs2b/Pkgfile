@@ -1,0 +1,19 @@
+# Description: Bauer stereophonic-to-binaural DSP effect library
+# URL: http://bs2b.sourceforge.net
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libsndfile
+
+name=libbs2b
+version=3.1.0
+release=1
+source=(https://downloads.sourceforge.net/sourceforge/bs2b/$name-$version.tar.lzma)
+
+build() {
+  cd $name-$version
+  sed -i 's/dist-lzma/dist-xz/g' configure.ac
+  autoreconf -fvi
+  ./configure --prefix=/usr
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+  make DESTDIR=$PKG install
+}

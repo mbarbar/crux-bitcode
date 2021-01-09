@@ -1,0 +1,28 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libg7221codec-x86_64-unknown-linux-gnu.a
+lrwxrwxrwx	root/root	usr/lib/libg7221codec.so -> libg7221codec.so.2
+-rwxr-xr-x	root/root	usr/lib/libg7221codec.so.2
+-rw-r--r--	root/root	usr/lib/libilbccodec-x86_64-unknown-linux-gnu.a
+lrwxrwxrwx	root/root	usr/lib/libilbccodec.so -> libilbccodec.so.2
+-rwxr-xr-x	root/root	usr/lib/libilbccodec.so.2
+-rw-r--r--	root/root	usr/lib/libpj-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjlib-util-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjmedia-audiodev-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjmedia-codec-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjmedia-videodev-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjmedia-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjnath-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjsip-simple-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjsip-ua-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjsip-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjsua-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libpjsua2-x86_64-unknown-linux-gnu.a
+-rw-r--r--	root/root	usr/lib/libwebrtc-x86_64-unknown-linux-gnu.a
+lrwxrwxrwx	root/root	usr/lib/libwebrtc.so -> libwebrtc.so.2
+-rwxr-xr-x	root/root	usr/lib/libwebrtc.so.2
+-rw-r--r--	root/root	usr/lib/libyuv-x86_64-unknown-linux-gnu.a
+lrwxrwxrwx	root/root	usr/lib/libyuv.so -> libyuv.so.2
+-rwxr-xr-x	root/root	usr/lib/libyuv.so.2
+drwxr-xr-x	root/root	usr/lib/pkgconfig/

@@ -1,0 +1,30 @@
+From c7b2e59aea9264113dcd4823bfebc33e1cb33fe3 Mon Sep 17 00:00:00 2001
+From: Alexandr Savca <alexandrsavca89@gmail.com>
+Date: Wed, 23 Sep 2020 14:43:59 +0300
+Subject: [PATCH] arpspoof.py: show help without root privileges
+
+---
+ arpspoof/arpspoof.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arpspoof/arpspoof.py b/arpspoof/arpspoof.py
+index 61c1d42..024648a 100644
+--- a/arpspoof/arpspoof.py
++++ b/arpspoof/arpspoof.py
+@@ -59,11 +59,12 @@ def init_args():
+ 
+ 
+ def main():
++    options, args = init_args()
++
+     if os.geteuid() != 0:
+         print("[-] Run me as root")
+         sys.exit(1)
+ 
+-    options, args = init_args()
+     host = args[0]
+     mac = get_if_hwaddr(options.interface)
+ 
+-- 
+2.28.0
+

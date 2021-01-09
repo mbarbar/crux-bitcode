@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/redis
+-rw-r--r--	redis/root	etc/redis.conf
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/redis-benchmark
+-rwxr-xr-x	root/root	usr/bin/redis-check-aof
+-rwxr-xr-x	root/root	usr/bin/redis-check-rdb
+-rwxr-xr-x	root/root	usr/bin/redis-cli
+lrwxrwxrwx	root/root	usr/bin/redis-sentinel -> redis-server
+-rwxr-xr-x	root/root	usr/bin/redis-server
+drwxr-xr-x	root/root	var/
+drwxr-xr-x	root/root	var/lib/
+drwxr-xr-x	redis/root	var/lib/redis/
+drwxr-xr-x	root/root	var/log/
+-rw-r-----	redis/redis	var/log/redis.log (EMPTY)

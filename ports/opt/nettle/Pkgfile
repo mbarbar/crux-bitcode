@@ -1,0 +1,16 @@
+# Description: Low-level cryptographic library
+# URL:         http://www.lysator.liu.se/~nisse/nettle/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  libgmp
+
+name=nettle
+version=3.6
+release=1
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr --disable-documentation
+  make
+  make DESTDIR=$PKG install
+}

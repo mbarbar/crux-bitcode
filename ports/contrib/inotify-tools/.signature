@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30q27/w0TPT9eED2mqNMZ8H80c75BM81UTpCGfMG5oOIjAzm/daPat576ft8lteFhgIdnL6eRGuyuzdIWMnqPw4=
+SHA256 (Pkgfile) = ec236b99336fd7d432a3006151295d5cd783a85265f530d9393fe77c10e1ce40
+SHA256 (.footprint) = f4ea0f62ba432a8a3bb90cdc55cd070a94ba1b59257fc0e4150cb23c93170948
+SHA256 (inotify-tools-3.20.11.0.tar.gz) = 58a3cde89e4a5111a87ac16b56b06a8f885460fca0aea51b69c856ce30a37a14

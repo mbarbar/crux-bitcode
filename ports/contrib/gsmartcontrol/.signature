@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wRBN1H7UXr+YLCZhQPh1J6HL4WNXRvrDToTplwHzZz8GVievuwmdAWF/8ryeqspQ1xiBLtZJ3+0lOV+rVDcPA4=
+SHA256 (Pkgfile) = e998b73c22b09c5ce97852a18ee587b4ccae49d1791f4fb6b565929b1f89c73d
+SHA256 (.footprint) = e84393a0c3841bf864a17bfc7367b7c64e07615e443df2e8d8c1e052e54b9115
+SHA256 (gsmartcontrol-1.1.3.tar.bz2) = b64f62cffa4430a90b6d06cd52ebadd5bcf39d548df581e67dfb275a673b12a9

@@ -1,0 +1,20 @@
+# Description: Execute code after a scope finished compilation
+# URL: https://metacpan.org/pod/B::Hooks::EndOfScope
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-module-implementation p5-module-runtime p5-sub-exporter p5-sub-exporter-progressive p5-try-tiny p5-variable-magic
+
+name=p5-b-hooks-endofscope
+version=0.24
+release=1
+source=(https://cpan.metacpan.org/authors/id/E/ET/ETHER/B-Hooks-EndOfScope-$version.tar.gz)
+
+build() {
+  cd B-Hooks-EndOfScope-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

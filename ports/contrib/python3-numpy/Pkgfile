@@ -1,0 +1,28 @@
+# Description: Array processing for numbers, strings, records, and objects with Python.
+# URL: https://numpy.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: lapack openblas python3-cython
+
+name=python3-numpy
+version=1.19.4
+release=1
+source=(https://github.com/${name#*-}/${name#*-}/releases/download/v$version/${name#*-}-$version.tar.gz)
+
+build() {
+  export CFLAGS+=' -fno-strict-aliasing'
+  export ATLAS=None
+  export LDFLAGS="$LDFLAGS -shared"
+
+  cd ${name#*-}-$version
+  /usr/bin/python3 setup.py config_fc --fcompiler=gnu95 build
+  /usr/bin/python3 setup.py config_fc --fcompiler=gnu95 install \
+    --prefix=/usr --root="$PKG" --optimize=1
+
+  local pyv="$(python3 -c "import sys; print (sys.version_info[0], sys.version_info[1])" | sed -e 's/\ /./g')"
+  rm $PKG/usr/lib/python$pyv/site-packages/numpy/LICENSE.txt
+  find $PKG \( \
+    -iname "LICENSE.txt" -o \
+    -iname "*README*" \
+    \) -delete
+  chmod -R g-w $PKG
+}

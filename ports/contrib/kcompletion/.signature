@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38XjAkEIpLdNvyQXA98cGuYo1kKnEgMu+rUVTcfxUJsap7vitaQ3STJPyOEudpQo22jMCMTUyUL/yYrvwiX+bQQ=
+SHA256 (Pkgfile) = 4e8aee6ada82b185cea6f82223a7db591e3c75c19820e72d592cebca79dcc6a5
+SHA256 (.footprint) = 6d654a644b96852627ccde0ee6dc12df02e4867c09f344610aa675b666309512
+SHA256 (kcompletion-5.76.0.tar.xz) = 014c56172040bf3aa27f81a6bb433914a5c22d2dfb1f8566be4cce678d09193a

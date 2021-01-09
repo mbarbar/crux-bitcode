@@ -1,0 +1,18 @@
+# Description: The password hash Argon2
+# URL: https://github.com/P-H-C/phc-winner-argon2
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=argon2
+version=20190702
+release=1
+source=(https://github.com/P-H-C/phc-winner-argon2/archive/$version/phc-winner-argon2-$version.tar.gz)
+
+build() {
+  cd phc-winner-$name-$version
+  # install to /usr/lib directly instead of /usr/lib/x86_64-linux-gnu
+  sed -e 's/LIBRARY_REL ?= lib\/x86_64-linux-gnu/LIBRARY_REL ?= lib/g' -i Makefile
+  make
+  make DESTDIR=$PKG install
+  sed -e 's/NULL/$version/g' -i $PKG/usr/lib/pkgconfig/libargon2.pc
+}

@@ -1,0 +1,22 @@
+# Description: File system driver that allows you to mount a WebDAV folder
+# URL: http://savannah.nongnu.org/projects/davfs2
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: expat keyutils krb5 neon
+
+name=davfs2
+version=1.6.0
+release=1
+source=(http://mirror.easyname.at/nongnu/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  dav_user=nobody \
+  dav_group=network
+  # allow neon version 31
+  sed -i 's/29 30/29 30 31/g' configure
+  ./configure --prefix=/usr \
+      --disable-debug
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/{doc,locale}
+}

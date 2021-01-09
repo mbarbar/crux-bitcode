@@ -1,0 +1,19 @@
+# Description: ALSA Plugins contains plugins for various audio libraries and sound servers. 
+# URL: http://www.alsa-project.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: alsa-lib
+# Optional: ffmpeg speex jack libsamplerate
+
+name=alsa-plugins
+version=1.2.2
+release=1
+source=(ftp://ftp.alsa-project.org/pub/plugins/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --sysconfdir=/etc
+
+	make
+	make DESTDIR=$PKG install
+}

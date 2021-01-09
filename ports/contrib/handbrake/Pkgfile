@@ -1,0 +1,27 @@
+# Description: open source video transcoder
+# URL: https://handbrake.fr/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake faad2 jansson lame libass libdvdcss libsamplerate libtheora libva libvpx libxml2 numactl opus speex x264
+
+name=handbrake
+version=1.3.3
+release=1
+source=(https://github.com/HandBrake/HandBrake/releases/download/$version/$name-$version-source.tar.bz2)
+
+build() {
+  [[ -e /usr/lib/pkgconfig/gdk-x11-3.0.pc ]] || PKGMK_HANDBRAKE+='--disable-gtk --disable-gtk-update-checks'
+
+  ./HandBrake-$version/configure $PKGMK_HANDBRAKE \
+    --prefix=/usr \
+    --launch \
+    --launch-jobs=$(nproc) \
+    --build=build \
+    --enable-fdk
+
+  mkdir -p $SRC/build/build_tmp
+
+  make -C build TMPDIR=$SRC/build/build_tmp
+  make -C build DESTDIR=$PKG install
+
+  rm -rf $PKG/usr/share/locale/
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34DmIPS52bdiBkT051cGLgOPcJ0CQzLDs6wudj/griITQIiIXhUsWmtwntldnUWTIT6tt0G+c5HHl6E0niSDUQY=
+SHA256 (Pkgfile) = e262704ecc6819ade2162bbae279113d12babdb32bbb058cc7153479a81ae43a
+SHA256 (.footprint) = 6cb2896c37fa05b62dc17ab51a40c75471ac204f44a316a6bf1167ff680e5254
+SHA256 (libcmis-0.5.2.tar.gz) = ed6f681a48abbf3c2324564b17a180d21fa9503230e8708825e1ad80daee4f81

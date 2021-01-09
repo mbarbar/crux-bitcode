@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ZLDRGRcHYTJ6qkV7iyD2vjmrAAerYaxLf4yN8hsNDB/d488BIxLpZqcaFbC0SHEChmHCDcJSfW/4DiDAn2+igI=
+SHA256 (Pkgfile) = d07d70a08d4a8a86d47b7d6e06b5edc1e2bba37b7b74d6f5dd443b93185ab1f1
+SHA256 (.footprint) = e8c8c4e353f4c9362d89a9cf83126409af016d87c19ba0bbc568aeb0c0124038
+SHA256 (bubblewrap-0.4.1.tar.xz) = b9c69b9b1c61a608f34325c8e1a495229bacf6e4a07cbb0c80cf7a814d7ccc03
+SHA256 (bwrap.1) = a9724fcf70fee82f975934d8f1201f6eab24fce5193613b0f196fbf92f25b8a1

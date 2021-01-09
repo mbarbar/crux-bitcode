@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF375pM6zynb7jIgLcMolYfyi6eDCczNuRahMi0ChlJubkZHO5RmCcFWWWMR3duhYLSKwv4UhN7pdOkrgbKythcQs=
+SHA256 (Pkgfile) = 61e9c40b731c0968ebb2be5a0baf711e47a249bd898804da9e0a77f535e5be46
+SHA256 (.footprint) = 029867bcb166dbe9d3fd8792d454330c496e45d734ae5d0627cf278604ad3f29
+SHA256 (coin-or-clp-1.17.6.tar.gz) = afff465b1620cfcbb7b7c17b5d331d412039650ff471c4160c7eb24ae01284c9

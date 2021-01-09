@@ -1,0 +1,16 @@
+# Description: A program to display informations about ACPI devices.
+# URL: https://sourceforge.net/projects/acpiclient/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=acpi
+version=1.7
+release=1
+source=(https://downloads.sourceforge.net/project/acpiclient/acpiclient/$version/$name-$version.tar.gz)
+
+build(){
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

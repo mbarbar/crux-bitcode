@@ -1,0 +1,29 @@
+# Description: Linux application sandboxing and distribution framework (formerly xdg-app)
+# URL: https://flatpak.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: appstream-glib bubblewrap json-glib libseccomp ostree polkit python3-pyparsing
+# Optional: xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-kde
+
+name=flatpak
+version=1.8.3
+release=1
+source=(https://github.com/flatpak/flatpak/releases/download/$version/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --disable-static \
+    --with-system-bubblewrap \
+    --with-priv-mode=setuid \
+    --with-profile-dir=/etc/profile.d \
+    --with-dbus-config-dir=/usr/share/dbus-1/system.d \
+    --with-system-helper-user=flatpak \
+    --disable-nls
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/lib/{systemd,sysusers.d}
+  rm -fr $PKG/usr/share/{gtk-doc,doc,selinux,fish}
+}

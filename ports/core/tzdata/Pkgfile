@@ -1,0 +1,22 @@
+# Description: Sources for Time Zone and Daylight Saving Time Data
+# URL:         ftp://ftp.iana.org/tz/code/tz-link.htm
+# Maintainer:  CRUX System Team, core-ports at crux dot nu 
+
+name=tzdata
+version=2020d
+release=1
+source=(https://data.iana.org/time-zones/releases/tzdb-$version.tar.lz)
+
+build() {
+    cd tzdb-$version
+
+    make CFLAGS="$CFLAGS"
+    make DESTDIR=$PKG install
+
+    # provided by man-pages
+    rm -r $PKG/usr/share/man/man{5,8}
+
+    # conflict with glibc
+    rm $PKG/etc/localtime
+    rmdir $PKG/etc
+}

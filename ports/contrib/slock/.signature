@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y0WJ42T81ODMI1IlqLjMaudNUY5hphJHQcAwZg624mYj5HQzzpgGZUo5ZFcf+EQSwFnadhIaT6g2xo9ejrLPwM=
+SHA256 (Pkgfile) = 240e2ac4d54bc93140340de65b67f3f787fec4163d28edace49c2239cb282459
+SHA256 (.footprint) = 5f7d8bfedcbf7f060a1997b9b8798c28e8fc6cc2ed9457566989e12a15d831ad
+SHA256 (slock-1.4.tar.gz) = b53849dbc60109a987d7a49b8da197305c29307fd74c12dc18af0d3044392e6a

@@ -1,0 +1,22 @@
+# Description: RSS/Atom feed reader for text terminals
+# URL:         http://www.newsboat.org/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  curl libxml2 sqlite3 stfl json-c rust
+
+name=newsboat
+version=2.21
+release=1
+source=(https://newsboat.org/releases/$version/$name-$version.tar.xz
+        newsboat.1.gz podboat.1.gz)
+
+build () {
+    cd $name-$version
+
+    export prefix=/usr
+    ./config.sh
+    make newsboat podboat
+
+    install -d $PKG/usr/{bin,share/man/man1}
+    install -m 0755 newsboat podboat $PKG/usr/bin
+    install -m 0644 $SRC/*.1.gz $PKG/usr/share/man/man1
+}

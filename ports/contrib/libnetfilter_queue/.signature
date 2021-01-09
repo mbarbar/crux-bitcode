@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35gtgJhEMIxIHarRm8WVpf1Ep3EWSqphqE4WTw1bNDC6/fGOayppeK6YDg44ZOeaO6lVbaecIn64SeQD1/yLgQY=
+SHA256 (Pkgfile) = 050cac052b1c24f57179740172c89e22b4f8004eeca6bbb73164831b8cb68f60
+SHA256 (.footprint) = a81b6a9a7f37dbe1a47b79ecd94825b8d4327fefa0f63195a50ce00a2c1061d0
+SHA256 (libnetfilter_queue-1.0.5.tar.bz2) = f9ff3c11305d6e03d81405957bdc11aea18e0d315c3e3f48da53a24ba251b9f5

@@ -1,0 +1,18 @@
+# Description: Python bindings for GLib/GObject/GIO/GTK+/GStreamer
+# URL: https://wiki.gnome.org/Projects/PyGObject
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gobject-introspection python3-cairo
+
+name=python3-gobject
+version=3.38.0
+release=1
+source=(https://ftp.gnome.org/pub/GNOME/sources/pygobject/${version::4}/pygobject-$version.tar.xz)
+
+build() {
+	meson pygobject-$version build --prefix /usr -D python=/usr/bin/python3
+	ninja -C build -j ${JOBS-1}
+	DESTDIR=$PKG meson install -C build
+
+	/usr/bin/python3 -m compileall -d /usr/lib $PKG/usr/lib
+	/usr/bin/python3 -O -m compileall -d /usr/lib $PKG/usr/lib
+}

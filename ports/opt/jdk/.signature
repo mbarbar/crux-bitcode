@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/aZgeH0ei6aP4H74KA2NWQ2KQwn4EGYCYnEc9GXkAP2BNGS89PcZFhIPfQi4vu4NcCYmTs6B1krwutpFaPbM2gU=
+SHA256 (Pkgfile) = 5e7ddbf56b4199457e80ff497aab9699a3d5cf112e0a08c3a2f39369f265e546
+SHA256 (.footprint) = 3ec8500becdb7af8fa4c6a3cdfb740fe2bc4dfdedfbf7b5178ef0d2948d647a8
+SHA256 (amazon-corretto-8.275.01.1-linux-x64.tar.gz) = 25415701c864ec301975097f207e909d065eb7c452a501c0e4b4487e77fbdc7a

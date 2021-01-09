@@ -1,0 +1,15 @@
+# Description: Python library to access freedesktop.org standards.
+# URL: http://freedesktop.org/wiki/Software/pyxdg
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-setuptools
+
+name=python3-pyxdg
+version=0.27
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:8:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+}

@@ -1,0 +1,19 @@
+# Description:	lzip data compressor
+# URL:		http://lzip.nongnu.org/lzip.html
+# Maintainer:	Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on:
+
+name=lzip
+version=1.21
+release=1
+source=(http://download.savannah.gnu.org/releases/lzip/lzip-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/info
+}

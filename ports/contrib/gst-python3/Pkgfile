@@ -1,0 +1,25 @@
+# Description: Python bindings for gstreamer.
+# URL: https://gstreamer.freedesktop.org/modules/gst-python.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gst-plugins-base python3-gobject
+
+name=gst-python3
+version=1.18.1
+release=1
+source=(https://gstreamer.freedesktop.org/src/gst-python/gst-python-$version.tar.xz)
+
+build() {
+	cd gst-python-$version
+
+	meson build \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		-D buildtype=release \
+		-D python=/usr/bin/python3
+
+	ninja -C build -j ${JOBS:-1}
+	DESTDIR=$PKG ninja -C build install
+
+	/usr/bin/python3 -m compileall -d /usr/lib $PKG/usr/lib
+	/usr/bin/python3 -O -m compileall -d /usr/lib $PKG/usr/lib
+}

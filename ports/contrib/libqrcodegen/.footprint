@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/qrcodegen/
+-rw-r--r--	root/root	usr/include/qrcodegen/QrCode.hpp
+-rw-r--r--	root/root	usr/include/qrcodegen/qrcodegen.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libqrcodegen.so -> libqrcodegen.so.1
+lrwxrwxrwx	root/root	usr/lib/libqrcodegen.so.1 -> libqrcodegen.so.1.5.0
+-rwxr-xr-x	root/root	usr/lib/libqrcodegen.so.1.5.0
+lrwxrwxrwx	root/root	usr/lib/libqrcodegencpp.so -> libqrcodegencpp.so.1
+lrwxrwxrwx	root/root	usr/lib/libqrcodegencpp.so.1 -> libqrcodegencpp.so.1.5.0
+-rwxr-xr-x	root/root	usr/lib/libqrcodegencpp.so.1.5.0

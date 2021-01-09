@@ -1,0 +1,20 @@
+# Description: Recursive descent parser generator
+# URL: https://metacpan.org/release/Parse-RecDescent
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-module-build
+
+name=p5-parse-recdescent
+version=1.967015
+release=1
+source=(https://search.cpan.org/CPAN/authors/id/J/JT/JTBRAUN/Parse-RecDescent-$version.tar.gz)
+
+build() {
+  cd Parse-RecDescent-$version
+  perl Build.PL installdirs=vendor destdir=$PKG
+  perl Build
+  perl Build install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

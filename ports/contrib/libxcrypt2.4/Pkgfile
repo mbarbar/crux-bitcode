@@ -1,0 +1,27 @@
+# Description: Modern library for one-way hashing of passwords
+# URL:         https://github.com/besser82/libxcrypt
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=libxcrypt2.4
+version=2.4
+release=1
+source=(libxcrypt_$version.orig.tar.gz
+	libxcrypt-$version-glibc-2.16.patch)
+
+build() {
+	cd libxcrypt-$version
+
+	patch -p1 -i $SRC/libxcrypt-2.4-glibc-2.16.patch
+
+	./configure                            \
+		--prefix=/usr                  \
+		--disable-static               \
+		--enable-hashes=strong,glibc   \
+		--enable-obsolete-api=no       \
+		--disable-failure-tokens       \
+		--libdir=/usr/lib/libxcrypt2.4 \
+		--includedir=/usr/lib/libxcrypt2.4/include
+
+	make VERBOSE=1
+	make DESTDIR=$PKG install
+}

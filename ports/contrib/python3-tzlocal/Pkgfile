@@ -1,0 +1,19 @@
+# Description: Tzinfo object for the local timezone
+# URL: https://github.com/regebro/tzlocal
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-pytz python3-setuptools
+
+name=python3-tzlocal
+version=2.1
+release=1
+source=(https://files.pythonhosted.org/packages/source/t/tzlocal/tzlocal-$version.tar.gz)
+
+build() {
+  cd tzlocal-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --prefix=/usr \
+    --optimize=1 \
+    --skip-build \
+    --root=$PKG
+}

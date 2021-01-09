@@ -1,0 +1,20 @@
+# Description: Library to handle zip files
+# URL:         https://libzip.org
+# Maintainer:  Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:  cmake xz zlib bzip2 openssl 
+
+name=libzip
+version=1.7.3
+release=1
+source=(https://libzip.org/download/$name-$version.tar.xz)
+
+build() {
+	cmake -S $name-$version -B build \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=/usr/lib \
+		-D ENABLE_GNUTLS=OFF
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

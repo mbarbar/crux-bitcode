@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30tRv2vp28neXa5SHPHc1EpmUqSqfOotw2rRPuiUFZem/q3xyT4ePfVKwxYJp2wdzYW0FuJY2JokVqCdnaBiuQE=
+SHA256 (Pkgfile) = 4f1089685d0cef0fc25bc7f2ee48e245dbabf50f9d7891be5722dc12bcca048c
+SHA256 (.footprint) = 562c0503d0737e17d4878355a3faa9e46bd14d11c0d04fb0abaeaa5f69bb2d35
+SHA256 (libmodplug-0.8.9.0.tar.gz) = 457ca5a6c179656d66c01505c0d95fafaead4329b9dbaa0f997d00a3508ad9de

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xgsHIjBs1MGa9nLriklhHchyr3Ao5QP8GpsHZsKBEFnxkpIeyMxf+ILolWmLxpqv0eCXEVW9keEq2B8OeLaHww=
+SHA256 (Pkgfile) = 8773196309e6b47935cd75db5713e372cdeb76d019b7082dc630f78fd73a1dbf
+SHA256 (.footprint) = 7ed11f444c8b2940681f86daa6ac9333f285eff0f7335df4f42a4e330e041b5f
+SHA256 (clink-1.1.1) = c25762dbd7e95bcc61d4c4ac5d0ae6e903838f7b2b2419b0569eaeed871e60c5

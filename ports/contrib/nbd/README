@@ -1,0 +1,57 @@
+(Partially taken from the nbd-source)
+
+You have to have support for CONFIG_BLK_DEV_NBD in your kernel.
+
+Since there's a problem with nbd and the cfq I/O scheduler,
+you may want to set it to deadline:
+
+echo 'deadline' > /sys/block/nbd0/queue/scheduler
+
+(repeat the above for nbd1, nbd2, etc, if you need more than one device)
+
+Next, start the server. You can use a file or a block device for that, e.g.
+
+nbd-server 1234 /home/wouter/nbd-export
+
+Note that the filename must be an absolute path; i.e., something like
+/path/to/file, not ../file. See the nbd-server manpage for details on
+any available options.
+
+Finally, you'll be able to start the client, e.g.
+
+nbd-client 10.0.0.1 1234 /dev/nb0
+
+nbd-client must be ran as root; the same is not true for nbd-server (but
+do make sure that /var/run is writeable by the server that nbd-server
+runs as; otherwise, you won't get a PID file, though the server will
+keep running).
+
+nbd-server can be configured by modifying
+/etc/nbd-server/config, and should look something like this:
+
+# This is a comment
+[generic]
+  # The [generic] section is required, even if nothing is specified
+  # there.
+  # When either of these options are specified, nbd-server drops
+  # privileges to the given user and group after opening ports, but
+  # _before_ opening files.
+  user = nbd
+  group = nbd
+[export1]
+  exportname = /export/nbd/export1-file
+  port = 12345
+  authfile = /export/nbd/export1-authfile
+  timeout = 30
+  filesize = 10000000
+  readonly = false
+  multifile = false
+  copyonwrite = false
+  prerun = dd if=/dev/zero of=%s bs=1k count=500
+  postrun = rm -f %s
+[otherexport]
+  exportname = /export/nbd/experiment
+  port = 12346
+  # The other options are all optional.
+
+extended documentation can be found in nbd-server(5)

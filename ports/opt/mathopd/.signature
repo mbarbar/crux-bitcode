@@ -1,0 +1,11 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/b2yQSFGY/gr5hly2aLcxKn8u6M6kF+iM6ietcG3CgRZJ6wPWJT9E0BENmpMnhEUPH6LAtwyIlV8ID4USh7dbws=
+SHA256 (Pkgfile) = a2e8ddcea356bcadd12c616ef2df07fa18e98130be375638ecb810c24b045c44
+SHA256 (.footprint) = 75a6d429d38d64129d8f790a5b62601d9ed4204ca25c230e4dfb7faf0d62be6d
+SHA256 (mathopd-1.6b15.tar.gz) = 90df506353c05bd8e4686549d076e88e0e330c1676f6f08879a57f34f1f3cd6b
+SHA256 (dir_cgi-1.1.tar.gz) = cb6f68432b44c0dee3d21d98ee8887f61d4014997cb2d5098c271df11208893d
+SHA256 (mathopd.8.gz) = f81eb387e9ea4abfd76dbf0c1a89405e67e35b163eea2a5c23ebc1cb8800d75c
+SHA256 (mathopd.conf.5.gz) = 682bdede005de269fcecd8c140cf10c4624e97cad7f330c94c1fefbe835ce570
+SHA256 (mathopd-config.patch) = cb798dac51892f161d7571c202c7a6b9396fd2f0aa8eb81f26d42541a15d5ff4
+SHA256 (mathopd.conf) = 9a382ed8e85451c0b12227b5317d2bc94908cdc0c44fa62a0684215e0c665dc8
+SHA256 (mathopd) = bf4d10c5bd6c022fc57039e2ed877c765cb9e76f017eea56bdfa8a7728eb2629

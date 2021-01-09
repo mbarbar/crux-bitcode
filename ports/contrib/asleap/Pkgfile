@@ -1,0 +1,32 @@
+# Description: Actively recover LEAP/PPTP passwords
+# URL:         https://www.willhackforsushi.com/?page_id=41
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  openssl libpcap libxcrypt2.4
+
+name=asleap
+version=2.2
+release=1
+source=(http://www.willhackforsushi.com/code/$name/$version/$name-$version.tgz
+	0001-fix-build-for-CRUX.patch
+	001_add_simple_password_bruteforcing_option.patch
+	002_added_the_possibility_to_verify_MSCHAP-V2_authentication.patch
+	003_fix_and_improve_bruteforce_option.patch
+	004_add_user_opt_and_pptp_chal_resp_cmdline_parsing.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/0001-fix-build-for-CRUX.patch
+	patch -p1 -i $SRC/001_add_simple_password_bruteforcing_option.patch
+	patch -p1 -i $SRC/002_added_the_possibility_to_verify_MSCHAP-V2_authentication.patch
+	patch -p1 -i $SRC/003_fix_and_improve_bruteforce_option.patch
+	patch -p1 -i $SRC/004_add_user_opt_and_pptp_chal_resp_cmdline_parsing.patch
+
+	sed -i  -e "s/#define VER \"\(.*\)\"/#define VER \"${version}.${release}\"/" \
+		version.h
+
+	make
+
+	install -D asleap  $PKG/usr/bin/asleap
+	install -D genkeys $PKG/usr/bin/genkeys
+}

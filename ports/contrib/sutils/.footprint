@@ -1,0 +1,10 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/battery
+-rwxr-xr-x	root/root	usr/bin/clock
+-rwxr-xr-x	root/root	usr/bin/essid
+-rwxr-xr-x	root/root	usr/bin/exist
+-rwxr-xr-x	root/root	usr/bin/narg
+-rwxr-xr-x	root/root	usr/bin/temp
+-rwxr-xr-x	root/root	usr/bin/uq
+-rwxr-xr-x	root/root	usr/bin/volume

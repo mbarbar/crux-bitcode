@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Z+t4FzvrMwUGLlje75LAsHofGMYAmrC0ws7rL0ze3b49qkJ1/8WMKOfN91NlQt12hd2LQjIHAWqCAcbNVRqtgA=
+SHA256 (Pkgfile) = 22ee8eea60f1715451de929d243ced8d5a1a93dce7835aecb21af298b242a5e1
+SHA256 (.footprint) = b92352bc7d10f728be54eeedfc60c69780df3eaffaf3a01d1eee7a19d1fc8a12
+SHA256 (librsync-v2.3.1.tar.gz) = dbd7eb643665691bdf4009174461463737b19b4814b789baad62914cabfe4569

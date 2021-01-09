@@ -1,0 +1,12 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34kNNTHwPco7aTMsD9Jjg1LI/g9vU+DXvFAZAJr1nc1gEPCJASbLuJHj+Dvya2g3cutf9lqYKP9L8Pa2lSzx/Qs=
+SHA256 (Pkgfile) = 6dda984ca5667ff1060729633aec8299ee676491855789867d44ad1cba79bf43
+SHA256 (.footprint) = 9fe6acac2fae505a8d46a745ee9b6c7ce5bd51e92d747392e86443553695d19c
+SHA256 (lxc-4.0.5.tar.gz) = af2cd616d5ab689e5d2305361c6571b5e632afd7eaab1754cca1670446a2e6a4
+SHA256 (man-pages.tar.xz) = 28e6602414149ca4cc1afbabb203afe12b2e694436b23d7a2501a2b6a868e473
+SHA256 (default.conf) = 6739fe54ffe7924a63fd47d8ff4b453e08b78bbd1b08e4426504b8f740e8b55f
+SHA256 (lxc-usernet) = 83c30e9489fffd7bf815e312860e2c9b3022a0f422570d35a19eb021b433fe0f
+SHA256 (lxc-users-setup) = 995f72d2284334ab84790951cfbf91d9b7016f4a93a3c51d774dea0e04e8000b
+SHA256 (lxc-users) = 7b58fae4b1551c63d7839560875e4f8461aade852f33611a8a8319957f23b0eb
+SHA256 (lxc-cgroups) = 6cdc6b76c438dfbcacf7ccd20ae9190ca5d12bad9fba60c5d77052c0e3f9258b
+SHA256 (lxc-net) = 4e597a3ebb896ff852d54d4add562945bcf91e1005f3963ee7cbfc82606fcf2c

@@ -1,0 +1,23 @@
+# Description: Generic archive extracting mechanism
+# URL: https://metacpan.org/release/Archive-Extract
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-archive-extract
+_realname=Archive-Extract
+_author=BINGOS
+version=0.86
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+	unset PERL5LIB PERL_MM_OPT
+	perl Makefile.PL
+	make
+	make install DESTDIR="$PKG" INSTALLDIRS=vendor
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

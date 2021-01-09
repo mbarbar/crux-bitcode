@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wjdD1a0RYQx0BspKCfCGjTEhfUPpgwJSszkMpsco13chlfbQSu4DA5DHl4u97Q+GI8XxZcwEz6EBYjZM78tjgI=
+SHA256 (Pkgfile) = 77ce8c717b70d36a4e0cd3f8351504eb498eea92554daa5b6bfdc84a329fce84
+SHA256 (.footprint) = b120eedbfb83112e81f89ca90ce8b5daa2e8e8afcead6bf8934e55e235e0e236
+SHA256 (SFML-2.5.1-sources.zip) = bf1e0643acb92369b24572b703473af60bac82caf5af61e77c063b779471bb7f

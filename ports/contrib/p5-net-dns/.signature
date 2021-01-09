@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31cKjoZTfLHCOgUz6Vk4aFHM/7B64Kq2KUPzAGnqkkY/bGljnv+yNK19/BpNNnu6/jQEP8JoOPixBT1kZWwkFAk=
+SHA256 (Pkgfile) = e0de3facc76d8441eaee4bd9aad1ca2f89fcef8a261ec8573692d02ee9eacc86
+SHA256 (.footprint) = 67080fe5da05b7637e5860d5c5299c8549b4dd36e9beec6570b09d16c87e3735
+SHA256 (Net-DNS-1.29.tar.gz) = 852d6ee87e8f0d014223026581cbb56924ba8cddd3ceb29c6191dbb6122d43c5

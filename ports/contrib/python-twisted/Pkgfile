@@ -1,0 +1,15 @@
+# Description: Python event-driven networking framework.
+# URL: https://www.twistedmatrix.com/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python-Automat python-constantly python-hyperlink python-incremental python-zope-interface
+
+name=python-twisted
+version=19.10.0
+release=1
+source=(https://github.com/twisted/twisted/archive/twisted-$version.tar.gz)
+
+build() {
+	cd twisted-twisted-$version
+	/usr/bin/python setup.py build
+	/usr/bin/python setup.py install --root=$PKG --optimize=1
+}

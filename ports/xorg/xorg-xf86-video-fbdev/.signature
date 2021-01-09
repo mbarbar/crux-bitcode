@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndKCffxxZZAltYR1NXNbELzJn+KBr1dP6HAEuqsZxHf++HWCKlXH97Ly0/hxu1HTSkjD2tl53P1/IKKCF3XnlHgA=
+SHA256 (Pkgfile) = c666622e45d16e903adfe82bf1fef13bf4c83ffff450f36ed9d8abe923275155
+SHA256 (.footprint) = 5a0087d9690b1db6108912f9087a5fed8bcbdaba91cbaaf7bf28258dbd9b728a
+SHA256 (xf86-video-fbdev-0.5.0.tar.bz2) = dcc3d85f378022180e437a9ec00a59b6cb7680ff79c40394d695060af2374699

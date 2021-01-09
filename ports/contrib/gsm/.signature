@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39bAICeBjIX4RTeAaeB/HyaE/z92FzsS6XJexhNPdw3/QXL4Vwv9bOjExyxR4njGgL1Rm70JpRc6fmAodxzMuAA=
+SHA256 (Pkgfile) = ef801e42901b7065e9904ad334506a7f23c7fd0fb9fa6c9e489256b0024c635d
+SHA256 (.footprint) = b95048537cbb366bb1c68c4c85d738faaf1018ccbf51b2baacc97aca07e783e6
+SHA256 (gsm-1.0.19.tar.gz) = 4903652f68a8c04d0041f0d19b1eb713ddcd2aa011c5e595b3b8bca2755270f6
+SHA256 (gsm.patch) = 1b9fabd7da83a688fc0e5ec712d53c428ff5575b1d5feac8437283ade1448c2b

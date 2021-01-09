@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33bH+H7jwyKZu8tWrG1NV+pWQ9eoFuGLiOgsSvFdtbO7eERKaK8NJHCkdbkArgKkmvqUIrOO63DqZozytY1d6A0=
+SHA256 (Pkgfile) = 9f1713bae1e0303f349f7a8dddf869aa1a4d6e6e350bf9f8661e7a6511f4e150
+SHA256 (.footprint) = ed6c7aa935728477a03d15cbaacda42bdd22d7d2b05df8af997d6ffb9d9e545d
+SHA256 (libass-0.15.0.tar.gz) = 9cbddee5e8c87e43a5fe627a19cd2aa4c36552156eb4edcf6c5a30bd4934fe58

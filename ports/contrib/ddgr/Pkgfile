@@ -1,0 +1,21 @@
+# Description: DuckDuckGo from the terminal
+# URL: https://github.com/jarun/ddgr
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3
+# Optional: xclip
+
+name=ddgr
+version=1.9
+release=1
+source=(https://github.com/jarun/ddgr/archive/v"$version"/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  make DESTDIR=$PKG PREFIX=/usr install
+  install -Dm644 auto-completion/bash/ddgr-completion.bash $PKG/etc/bash_completion.d/ddgr
+  if [ -n "$(pkginfo -i | grep '^zsh ')" ]; then
+    install -Dm644 auto-completion/zsh/_ddgr $PKG/usr/share/zsh/site-functions/_ddgr
+  fi
+  rm -rf $PKG/usr/share/doc
+}
+

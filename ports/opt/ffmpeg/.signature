@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YdUAFpHSBoDcEb0L/+ky42GFLKR0jPF+/rry6MvGj4apEyLBZ4xRVNh4STJt6Q66N3bTfkN2gOXfpZXDXuanw4=
+SHA256 (Pkgfile) = 100d61960b661fd603e2402749480f3a2ecfa5f6c91daeaa0caec9e9a47aa221
+SHA256 (.footprint) = 1a5b306065c022b6ca275f55e491138d73998ac2fb0d9d795198ed76e5516e7d
+SHA256 (ffmpeg-4.3.1.tar.bz2) = f4a4ac63946b6eee3bbdde523e298fca6019d048d6e1db0d1439a62cea65f0d9
+SHA256 (ffmpeg-x264-10bit.sh) = dde9627c41800235fbcfe0f74d2181be96239a82cd2d0d277715dddb57eb9cb3
+SHA256 (CVE-2018-6621.patch) = e3b9aff1fe9aef2d7153d7517f9c349beef27c2859bf1fb01076eeab263a445e

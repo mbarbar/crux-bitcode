@@ -1,0 +1,48 @@
+# Description: Berkeley Internet Name Domain Service.
+# URL:         https://www.isc.org/bind
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libuv python3-ply
+
+name=bind
+version=9.16.9
+release=1
+source=(ftp://ftp.isc.org/isc/bind9/$version/$name-$version.tar.xz
+  named.root db.0.0.127 db.localhost db.ip6.arpa named named.conf)
+
+build() {
+  cd $name-$version
+
+  ./configure \
+    --prefix=/usr \
+    --enable-ipv6 \
+    --enable-threads \
+    --with-openssl=yes \
+    --sysconfdir=/etc
+
+  make && make DESTDIR=$PKG install
+
+  install -d $PKG/var/{named,run/named}
+
+  install -D -m755 $SRC/named $PKG/etc/rc.d/named
+  install -D -m640 -gnamed $SRC/named.conf $PKG/etc/named.conf
+  install -m640 -gnamed $SRC/named.root $SRC/db.* $PKG/var/named/
+
+  chown root:named $PKG/var/named
+  chmod 1770 $PKG/var/named
+
+  touch $PKG/etc/rndc.{conf,key}
+  chown root:named $PKG/var/run/named $PKG/etc/rndc.{conf,key}
+  chmod 770 $PKG/var/run/named
+  chmod 640 $PKG/etc/rndc.{conf,key}
+  touch $PKG/var/run/named/named.pid
+
+  rm -f $PKG/usr/bin/{dig,host}
+
+  # fix FS#1153
+  rm -f $PKG/usr/sbin/dnssec-{checkds,coverage}
+  rm -rf $PKG/usr/share/man/man8/dnssec-{checkds,coverage}.8
+
+  rm -rf $PKG/usr/share/man/man1
+
+  chown named:named $PKG/var/run/named/named.pid
+}

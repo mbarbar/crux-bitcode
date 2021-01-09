@@ -1,0 +1,9 @@
+compatable ffmpeg version 3
+
+add:
+
+PKG_CONFIG_PATH+="/usr/lib/ffmpeg3/pkgconfig" \
+    ./configure ...
+
+
+To any affected ports.

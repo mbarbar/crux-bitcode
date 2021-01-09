@@ -1,0 +1,18 @@
+# Description: RFC 5451/7001/7601 Authentication-Results Headers generation and parsing for Python3
+# URL: https://launchpad.net/authentication-results-python
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-authres
+version=1.2.0
+release=1
+source=(https://launchpad.net/authentication-results-python/${version::3}/$version/+download/authres-$version.tar.gz)
+
+build() {
+  cd authres-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --root=$PKG \
+    --optimize=1 \
+    --skip-build
+}

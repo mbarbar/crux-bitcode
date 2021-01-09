@@ -1,0 +1,57 @@
+# Description: Java project management and project comprehension tool
+# URL: https://maven.apache.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: openjdk8
+
+name=maven
+version=3.6.3
+release=1
+source=(https://www-eu.apache.org/dist/maven/maven-3/$version/source/apache-$name-$version-src.tar.gz)
+bin_source=(https://archive.apache.org/dist/maven/maven-3/$version/binaries/apache-$name-$version-bin.tar.gz)
+_bootstrapsum=26ad91d751b3a9a53087aefa743f4e16a17741d3915b219cf74112bf87a438c5
+
+bootstrap_mvn() {
+  # check if the binary is already available
+  if [ ! -f "$PKGMK_SOURCE_DIR/apache-$name-$version-bin.tar.gz" ];
+  then
+    wget $bin_source \
+    --output-document="$PKGMK_SOURCE_DIR/apache-$name-$version-bin.tar.gz"
+  fi
+
+  # check checksum of the binary package
+  if [ $_bootstrapsum != $(sha256sum \
+    "$PKGMK_SOURCE_DIR/apache-$name-$version-bin.tar.gz" | cut -d' ' \
+    -f1) ];
+    then
+      echo "Error Bootstrap file $PKGMK_SOURCE_DIR/apache-$name-$version-bin.tar.gz failed sha256sum"
+      exit $E_GENERAL
+  fi
+
+  mkdir binary
+  cd binary
+  bsdtar -xf "$PKGMK_SOURCE_DIR/apache-$name-$version-bin.tar.gz"
+
+  # append binary to our PATH
+  export PATH="$SRC/binary/apache-$name-$version/bin:${PATH}"
+  cd $SRC
+}
+
+build() {
+  # if we don't have maven on our system already, bootstrap it
+  if [ ! -e "/usr/bin/mvn" ]; then
+    bootstrap_mvn
+  fi
+
+  cd apache-$name-$version
+  export PATH="/usr/lib/java/openjdk8/bin:${PATH}"
+  mvn -DdistributionTargetDir=$PKG/usr \
+    -Dproject.build.sourceEncoding=UTF-8 -e \
+    -Dmaven.repo.local=$PKGMK_SOURCE_DIR/maven-repo \
+    -DskipTests -Dmaven.test.skip=true \
+    install
+  find $PKG \( \
+    -iname "*readme*" -o \
+    -iname "*notice*" -o \
+    -iname "*license*" -o \
+    -iname "*licence*" \) -exec rm -fr '{}' \+
+}

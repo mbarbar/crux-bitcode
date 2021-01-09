@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/ccat -> ccrypt
+lrwxrwxrwx	root/root	usr/bin/ccdecrypt -> ccrypt
+lrwxrwxrwx	root/root	usr/bin/ccencrypt -> ccrypt
+-rwxr-xr-x	root/root	usr/bin/ccguess
+-rwxr-xr-x	root/root	usr/bin/ccrypt
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+lrwxrwxrwx	root/root	usr/share/man/man1/ccat.1.gz -> ccrypt.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/ccdecrypt.1.gz -> ccrypt.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/ccencrypt.1.gz -> ccrypt.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ccguess.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ccrypt.1.gz

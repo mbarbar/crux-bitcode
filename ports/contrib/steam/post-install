@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -e /etc/ssl/certs/ca-certificates.crt ] || ln -s ../cert.pem /etc/ssl/certs/ca-certificates.crt
+

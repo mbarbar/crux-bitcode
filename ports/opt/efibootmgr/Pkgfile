@@ -1,0 +1,16 @@
+# Description: manipulate efi boot managers
+# URL: http://linux.dell.com/efibootmgr/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: efivar
+
+name=efibootmgr
+version=16
+release=1
+source=(https://github.com/rhinstaller/$name/releases/download/$version/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  EFIDIR=/boot/efi make
+  install -D src/efibootmgr $PKG/usr/sbin/efibootmgr
+  install -D src/efibootmgr.8 $PKG/usr/share/man/man8/efibootmgr.8
+}

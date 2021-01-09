@@ -1,0 +1,16 @@
+# Description: a better cd encoder
+# URL:         https://abcde.einval.com/wiki/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  cd-discid cdparanoia vorbis-tools
+# Optional:    cdrkit faac fdk-aac ffmpeg flac id3lib imagemagick lame speex vorbisgain wavpack
+
+name=abcde
+version=2.9.3
+release=1
+source=(https://$name.einval.com/download/$name-$version.tar.gz)
+
+build () {
+	cd "$name-$version"
+	make DESTDIR=$PKG prefix=/usr install
+	rm -rf $PKG/usr/share/doc
+}

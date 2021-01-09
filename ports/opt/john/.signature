@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/TdKSlYqLNf1c2ZeoXO3wP+GnIrIGSCsP8RXQf7baLPbGtSJ+63VOJ1bQ25h3LJOc8Vkui1jH+KqAxUuOBXDbQk=
+SHA256 (Pkgfile) = 6b403df28c970b34624a1cb808f8a651e6507f61084e990ae291f04d891c080a
+SHA256 (.footprint) = 5fbd03f161d89edd1ed09b04c4de628bbc9390fbff39653842d9b8c182ef369b
+SHA256 (john-1.9.0-jumbo-1.tar.xz) = f5d123f82983c53d8cc598e174394b074be7a77756f5fb5ed8515918c81e7f3b

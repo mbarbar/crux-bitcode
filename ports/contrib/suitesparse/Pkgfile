@@ -1,0 +1,31 @@
+# Description: A collection of sparse matrix libraries
+# URL: http://faculty.cse.tamu.edu/davis/suitesparse.html
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: chrpath intel-tbb lapack metis
+
+name=suitesparse
+version=5.8.1
+release=1
+source=(https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v$version/$name-$version.tar.gz
+  suitesparse-no-demo.patch)
+
+build() {
+  cd SuiteSparse-$version
+  patch -p0 -i ../suitesparse-no-demo.patch
+  local PKGMK_SUITESPARSE+="
+  _BLAS=-lblas
+  LAPACK=-llapack
+  TBB=-ltbb
+  SPQR_CONFIG=-DHAVE_TBB
+  MY_METIS_LIB=/usr/lib/libmetis.so"
+
+  make $PKGMK_SUITESPARSE
+
+  install -dm755 $PKG/usr/{include,lib}
+
+  INSTALL_LIB=$PKG/usr/lib \
+  INSTALL_INCLUDE=$PKG/usr/include \
+  make $PKGMK_SUITESPARSE install
+
+  chrpath -d $PKG/usr/lib/*
+}

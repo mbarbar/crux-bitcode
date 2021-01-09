@@ -1,0 +1,23 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dubdv
+-rwxr-xr-x	root/root	usr/bin/dvconnect
+-rwxr-xr-x	root/root	usr/bin/encodedv
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libdv/
+-rw-r--r--	root/root	usr/include/libdv/dv.h
+-rw-r--r--	root/root	usr/include/libdv/dv_types.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libdv.a
+-rwxr-xr-x	root/root	usr/lib/libdv.la
+lrwxrwxrwx	root/root	usr/lib/libdv.so -> libdv.so.4.0.3
+lrwxrwxrwx	root/root	usr/lib/libdv.so.4 -> libdv.so.4.0.3
+-rwxr-xr-x	root/root	usr/lib/libdv.so.4.0.3
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libdv.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dubdv.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/dvconnect.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/encodedv.1.gz

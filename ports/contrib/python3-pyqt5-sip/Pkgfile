@@ -1,0 +1,17 @@
+# Description: sip module for pyqt5
+# URL: https://www.riverbankcomputing.com/software/sip/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-pyqt5-sip
+version=12.8.1
+release=1
+source=(https://pypi.python.org/packages/source/P/PyQt5-sip/PyQt5_sip-$version.tar.gz)
+
+build() {
+  cd PyQt5_sip-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --skip-build \
+    --root=$PKG
+}

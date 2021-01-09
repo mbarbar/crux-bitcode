@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/sbin/groupadd ntp
+/usr/sbin/useradd -g ntp -d /var/empty -s /bin/false ntp
+/usr/bin/passwd -l ntp

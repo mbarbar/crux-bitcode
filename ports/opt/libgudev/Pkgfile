@@ -1,0 +1,21 @@
+# Description: GObject bindings for libudev
+# URL: https://wiki.gnome.org/Projects/libgudev
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gobject-introspection
+
+name=libgudev
+version=234
+release=1
+source=(https://ftp.gnome.org/pub/gnome/sources/$name/$version/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-umockdev
+
+	sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' -i libtool
+	make
+	make install DESTDIR=$PKG
+}

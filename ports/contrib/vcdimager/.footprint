@@ -1,0 +1,37 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cdxa2mpeg
+-rwxr-xr-x	root/root	usr/bin/vcd-info
+-rwxr-xr-x	root/root	usr/bin/vcdimager
+-rwxr-xr-x	root/root	usr/bin/vcdxbuild
+-rwxr-xr-x	root/root	usr/bin/vcdxgen
+-rwxr-xr-x	root/root	usr/bin/vcdxminfo
+-rwxr-xr-x	root/root	usr/bin/vcdxrip
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libvcd/
+-rw-r--r--	root/root	usr/include/libvcd/files.h
+-rw-r--r--	root/root	usr/include/libvcd/files_private.h
+-rw-r--r--	root/root	usr/include/libvcd/inf.h
+-rw-r--r--	root/root	usr/include/libvcd/info.h
+-rw-r--r--	root/root	usr/include/libvcd/logging.h
+-rw-r--r--	root/root	usr/include/libvcd/sector.h
+-rw-r--r--	root/root	usr/include/libvcd/types.h
+-rw-r--r--	root/root	usr/include/libvcd/version.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libvcdinfo.a
+-rwxr-xr-x	root/root	usr/lib/libvcdinfo.la
+lrwxrwxrwx	root/root	usr/lib/libvcdinfo.so -> libvcdinfo.so.0.2.0
+lrwxrwxrwx	root/root	usr/lib/libvcdinfo.so.0 -> libvcdinfo.so.0.2.0
+-rwxr-xr-x	root/root	usr/lib/libvcdinfo.so.0.2.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libvcdinfo.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/cdxa2mpeg.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/vcd-info.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/vcdimager.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/vcdxbuild.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/vcdxgen.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/vcdxminfo.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/vcdxrip.1.gz

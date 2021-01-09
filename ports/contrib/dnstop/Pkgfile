@@ -1,0 +1,19 @@
+# Description: dns diagnostic tool
+# URL:         http://dns.measurement-factory.com/tools/dnstop/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libpcap
+
+name=dnstop
+version=20140915
+release=1
+source=(http://dns.measurement-factory.com/tools/dnstop/src/$name-$version.tar.gz)
+build() {
+    cd  $name-${version}
+
+    ./configure --prefix=/usr
+
+    make
+
+    install -D dnstop $PKG/usr/bin/dnstop
+    install -D dnstop.8 $PKG/usr/share/man/man8/dnstop.8
+}

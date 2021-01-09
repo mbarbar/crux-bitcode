@@ -1,0 +1,57 @@
+From 5de8a7c03ca115c5f976cad8fba7428fadae7d78 Mon Sep 17 00:00:00 2001
+From: Alexandr Savca <alexandrsavca89@gmail.com>
+Date: Sun, 4 Oct 2020 19:03:31 +0300
+Subject: [PATCH 2/2] padBuster.pl: improve help message
+
+---
+ padBuster.pl | 20 +++++++++++++++++---
+ 1 file changed, 17 insertions(+), 3 deletions(-)
+
+diff --git a/padBuster.pl b/padBuster.pl
+index 6ab6f25..33aa5da 100755
+--- a/padBuster.pl
++++ b/padBuster.pl
+@@ -20,7 +20,7 @@ use URI::Escape;
+ use Getopt::Long;
+ use Time::HiRes qw( gettimeofday );
+ use Compress::Zlib;
+-use File::Basename qw(dirname);
++use File::Basename qw(basename dirname);
+ use File::Path qw(make_path);
+ 
+ # Set defaults with $variable = value
+@@ -92,7 +92,7 @@ print "+-------------------------------------------+\n";
+ 
+ if ($#ARGV < 2) { 
+  die "    
+-    Use: padBuster.pl URL EncryptedSample BlockSize [options]
++    Use: @{[basename $0]} URL EncryptedSample BlockSize [options]
+ 
+   Where: URL = The target URL (and query string if applicable)
+          EncryptedSample = The encrypted value you want to test. Must
+@@ -130,7 +130,21 @@ Options:
+ 	 -runafter [cmd]: Command to run after finished encryption (replaces #ENC, #DIR)
+          -verbose: Be Verbose
+          -veryverbose: Be Very Verbose (Debug Only)
+-         
++
++Environment variables:
++
++	PERL_LWP_SSL_VERIFY_HOSTNAME
++	 When 1 padBuster.pl will for secure protocol schemes ensure it connects to
++	 servers that have a valid certificate matching the expected hostname.
++	 If 0 no checks are made and you can't be sure that you communicate with the
++	 expected peer. By default - 1.
++
++	PERL_LWP_SSL_CA_FILE, HTTPS_CA_FILE
++	 The path to a file containing Certificate Authority certificates.
++
++	PERL_LWP_SSL_CA_PATH, HTTPS_CA_DIR
++	 The path to a directory containing files containing Certificate Authority
++	 certificates.
+ ";}
+ 
+ # Ok, if we've made it this far we are ready to begin..
+-- 
+2.28.0
+

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3w4W7k2HqrQTccgkEogrnE0KHqmTLL1fUlMf1AX3pkIrdTjQ0JNXGtWat4jJKDJvl6LMqaOajRPkpWiatP7MogY=
+SHA256 (Pkgfile) = 59498fd0dc214857c9983f4f77f9e7cecf88597a5a5fa18a6b83da3cfe73f7ce
+SHA256 (.footprint) = a1e366cbc3b971d5021f079404738ad129a603819ba9d5811ea2f86ed662a97b
+SHA256 (soundtouch-2.1.2.tar.bz2) = 992bba58ecda8c0a3a94cc9648ccebbb84fb6f4f8c1a90fbb4ec3817354ad40d

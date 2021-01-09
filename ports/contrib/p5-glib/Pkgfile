@@ -1,0 +1,22 @@
+# Description: Perl bindings for glib
+# URL:         https://metacpan.org/pod/Glib
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  glib p5-extutils-depends p5-extutils-pkgconfig
+
+name=p5-glib
+version=1.3293
+release=1
+source=(https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-$version.tar.gz)
+
+build() {
+	cd Glib-$version
+	perl Makefile.PL
+
+	make OPTIMIZE="$CFLAGS"
+	make install DESTDIR=$PKG
+
+	find $PKG -name perllocal.pod -o -name "*.bs" -o -name .packlist | xargs rm
+	find $PKG -empty | xargs rmdir -p ||:
+
+	find $PKG -type f -a -perm -u-w | xargs chmod u+w
+}

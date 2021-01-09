@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ZWeYqymYYqDA/FMPJpMZtGUhwKMpeXpndqbd7oiZ44f0mr2Jr2iflRhcP9sjf1Y77HMt0q/zBcQyA3+IFIotgg=
+SHA256 (Pkgfile) = 74d27f2e8d9429a1f255c82d93fa424d937b1d545a77e4fb3fbf072bc8383c7d
+SHA256 (.footprint) = 3a4833ee0ba2e0ae9c640e09391a08cae1c5f7f89e327142eaec381aae20ffa9
+SHA256 (gstreamer-1.18.1.tar.xz) = 79df8de21f284a105a5c1568527f8c559c583c85c0f2bd7bdb5b0372b8beecba

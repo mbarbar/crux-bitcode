@@ -1,0 +1,22 @@
+# Description: Simplifies the drawing of beautiful curves.
+# URL: https://github.com/fontforge/libspiro
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libspiro
+version=20200505
+release=1
+source=(https://github.com/fontforge/libspiro/releases/download/$version/libspiro-dist-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	autoreconf -i
+	automake --foreign -Wall
+
+	./configure --prefix=/usr
+
+	make
+	make install DESTDIR=$PKG
+
+	install -m 0644 -D libspiro.pc $PKG/usr/lib/pkgconfig/libspiro.pc
+}

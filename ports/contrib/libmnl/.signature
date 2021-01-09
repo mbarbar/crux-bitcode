@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/qICFSHldttjW6vL0GsdQDL2RCdng1CZQUoAygca13yMTKSFeXaRB4qK8nZdjVNWOS9hqCwa9rdze8nqo+thQI=
+SHA256 (Pkgfile) = 922277987775b63f529dd7631dacd45fe8b5166554646300ebcda54057241c2f
+SHA256 (.footprint) = 2908aa2bffc5ebae14a7d4805b1630c645450e42a8ec91beda9342efed2a95ed
+SHA256 (libmnl-1.0.4.tar.bz2) = 171f89699f286a5854b72b91d06e8f8e3683064c5901fb09d954a9ab6f551f81

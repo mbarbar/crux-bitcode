@@ -1,0 +1,18 @@
+# Description: Library for manipulating the IPTC metadata
+# URL: https://github.com/ianw/libiptcdata
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libiptcdata
+version=1.0.5
+release=1
+source=(https://github.com/ianw/libiptcdata/releases/download/release_${version//./_}/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --disable-nls
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/{gtk-doc,locale}
+}

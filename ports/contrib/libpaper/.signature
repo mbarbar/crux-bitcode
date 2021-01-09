@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37spFbjxlLzI6JHBvFmTpCXWrnJ7C27gUgqTjYj0XHhRe/iuhttYaVm35BizcvD5hXNJ3CcIJRwazJGrHQy11AQ=
+SHA256 (Pkgfile) = 68db3b58a6ff953d0e994f2e4f17aec03a30b29f55c2deccdcc988853bd4c9ec
+SHA256 (.footprint) = 097f1345b54d25dc709ff550f47b41835803e07c3e3bbf59984107a9255f3740
+SHA256 (libpaper_1.1.28.tar.gz) = c8bb946ec93d3c2c72bbb1d7257e90172a22a44a07a07fb6b802a5bb2c95fddc

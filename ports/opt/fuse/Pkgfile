@@ -1,0 +1,16 @@
+# Description: Interface for userspace filesystems
+# URL:         https://github.com/libfuse/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=fuse
+version=2.9.9
+release=1
+source=(https://github.com/libfuse/libfuse/releases/download/$name-$version/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/{dev,etc}
+}

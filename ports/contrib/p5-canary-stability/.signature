@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/FdJ18oOptPlB0TRBBuxu7dal8GDmdsGhNJS7y/Kw897et2P7fzCV0tNgZ+smHi4pr9WHMVEc74MqaB1maDBgs=
+SHA256 (Pkgfile) = 8b69715c58e274d9bdb094240b23dc2a31cef192500ded73f2b2f9b40fe627e7
+SHA256 (.footprint) = f3fd82eb4b2787185286bec4726bbf47869a5590f2670da74521eb0fd84a6f46
+SHA256 (Canary-Stability-2013.tar.gz) = a5c91c62cf95fcb868f60eab5c832908f6905221013fea2bce3ff57046d7b6ea

@@ -1,0 +1,17 @@
+# Description:	xorg driver xf86-video-vboxvideo
+# URL:		http://xorg.freedesktop.org
+# Maintainer:	CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-server
+
+name=xorg-xf86-video-vboxvideo
+version=1.0.0
+release=1
+source=(https://xorg.freedesktop.org/archive/individual/driver/xf86-video-vboxvideo-$version.tar.bz2)
+
+build() {
+	cd xf86-video-vboxvideo-$version
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

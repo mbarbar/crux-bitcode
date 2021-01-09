@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/lightdm/
+-rw-r--r--	root/root	etc/lightdm/lightdm-mini-greeter.conf
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/lightdm-mini-greeter
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/xgreeters/
+-rw-r--r--	root/root	usr/share/xgreeters/lightdm-mini-greeter.desktop

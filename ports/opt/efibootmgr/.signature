@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/cqN3LoAsWiKheVkx+XNKNsH91+l2x7hu5XqzIBrVlkVx9ttMDhp5bELJrr9naJd1A/u1dve6oZF1BGya988pwA=
+SHA256 (Pkgfile) = ccfb310df10fed0bc752d89c5a3460cf2672f62295cb9c99acf970f9447f3280
+SHA256 (.footprint) = e34f18fd1083f800387ab49d04767d3d41735415249dcd80b13acf5c78108282
+SHA256 (efibootmgr-16.tar.bz2) = 950795fb4b58a09fb69e93c120d624000253f1241134469495c7a9def731f65f

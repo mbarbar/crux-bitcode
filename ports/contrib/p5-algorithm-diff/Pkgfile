@@ -1,0 +1,17 @@
+# Description: Perl Module Algorithm::Diff : Diff also Longest Common Subsequence
+# URL: https://metacpan.org/pod/Algorithm::Diff
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-algorithm-diff
+version=1.200
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Algorithm-Diff-$version.tar.gz)
+
+build() {
+  cd Algorithm-Diff-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make pure_install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

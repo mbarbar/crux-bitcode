@@ -1,0 +1,26 @@
+# Description: Cross platform, open source .NET framework
+# URL: https://www.mono-project.com
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake python3
+
+name=mono
+version=6.12.0.90
+release=1
+source=(https://download.mono-project.com/sources/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  [[ -e /usr/lib/ccache ]] && PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
+  ./configure --prefix=/usr \
+    --mandir=/usr/share/man \
+    --with-mcs-docs=no \
+    --disable-crash-reporting \
+    --disable-nls
+  sed -e 's/python/python3/g' -i mono/mini/Makefile*
+  PYTHON=/usr/bin/python3 make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/locale
+  find $PKG \( -iname "*README*" \
+    -o -iname "*la" \)\
+    -delete
+}

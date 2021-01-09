@@ -1,0 +1,75 @@
+# Description: An OpenType text shaping engine ICU library
+# URL: https://www.freedesktop.org/wiki/Software/HarfBuzz
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: harfbuzz icu
+# Optional: graphite2
+
+name=harfbuzz-icu
+version=2.7.2
+release=1
+source=(https://github.com/harfbuzz/harfbuzz/archive/$version/harfbuzz-$version.tar.gz)
+
+build() {
+	cd harfbuzz-$version
+
+	echo "EXTRA_DIST = " > gtk-doc.make
+	autoreconf --force --install
+	./configure \
+		--prefix=/usr \
+		--with-icu=yes \
+		--with-graphite2=auto
+
+	make
+	make DESTDIR=$PKG install
+
+	rm \
+		$PKG/usr/bin/hb-ot-shape-closure \
+		$PKG/usr/bin/hb-shape \
+		$PKG/usr/bin/hb-subset \
+		$PKG/usr/bin/hb-view \
+		$PKG/usr/include/harfbuzz/hb-aat-layout.h \
+		$PKG/usr/include/harfbuzz/hb-aat.h \
+		$PKG/usr/include/harfbuzz/hb-blob.h \
+		$PKG/usr/include/harfbuzz/hb-buffer.h \
+		$PKG/usr/include/harfbuzz/hb-common.h \
+		$PKG/usr/include/harfbuzz/hb-deprecated.h \
+		$PKG/usr/include/harfbuzz/hb-draw.h \
+		$PKG/usr/include/harfbuzz/hb-face.h \
+		$PKG/usr/include/harfbuzz/hb-font.h \
+		$PKG/usr/include/harfbuzz/hb-ft.h \
+		$PKG/usr/include/harfbuzz/hb-glib.h \
+		$PKG/usr/include/harfbuzz/hb-map.h \
+		$PKG/usr/include/harfbuzz/hb-ot-color.h \
+		$PKG/usr/include/harfbuzz/hb-ot-deprecated.h \
+		$PKG/usr/include/harfbuzz/hb-ot-font.h \
+		$PKG/usr/include/harfbuzz/hb-ot-layout.h \
+		$PKG/usr/include/harfbuzz/hb-ot-math.h \
+		$PKG/usr/include/harfbuzz/hb-ot-meta.h \
+		$PKG/usr/include/harfbuzz/hb-ot-metrics.h \
+		$PKG/usr/include/harfbuzz/hb-ot-name.h \
+		$PKG/usr/include/harfbuzz/hb-ot-shape.h \
+		$PKG/usr/include/harfbuzz/hb-ot-var.h \
+		$PKG/usr/include/harfbuzz/hb-ot.h \
+		$PKG/usr/include/harfbuzz/hb-set.h \
+		$PKG/usr/include/harfbuzz/hb-shape-plan.h \
+		$PKG/usr/include/harfbuzz/hb-shape.h \
+		$PKG/usr/include/harfbuzz/hb-style.h \
+		$PKG/usr/include/harfbuzz/hb-subset.h \
+		$PKG/usr/include/harfbuzz/hb-unicode.h \
+		$PKG/usr/include/harfbuzz/hb-version.h \
+		$PKG/usr/include/harfbuzz/hb.h \
+		$PKG/usr/lib/cmake/harfbuzz/harfbuzz-config.cmake \
+		$PKG/usr/lib/libharfbuzz.la \
+		$PKG/usr/lib/libharfbuzz.so \
+		$PKG/usr/lib/libharfbuzz.so.0 \
+		$PKG/usr/lib/libharfbuzz.so.0.*.? \
+		$PKG/usr/lib/libharfbuzz-subset.la \
+		$PKG/usr/lib/libharfbuzz-subset.so \
+		$PKG/usr/lib/libharfbuzz-subset.so.0 \
+		$PKG/usr/lib/libharfbuzz-subset.so.0.*.? \
+		$PKG/usr/lib/pkgconfig/harfbuzz.pc \
+		$PKG/usr/lib/pkgconfig/harfbuzz-subset.pc
+
+	# if graphite2 is installed
+	rm -f $PKG/usr/include/harfbuzz/hb-graphite2.h
+}

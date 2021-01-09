@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30ePlWsB0FUsCjfljDV60pMyeN1mSugzqMjBaO2V69cdNNVWuzsWn4aKB+MfQEOknIc4zQmIpyAaqhTCr3Ixtws=
+SHA256 (Pkgfile) = bb19c1385b6a665c21e7096dd0cfe2dd20f2e29d209bd3a40518fd7c5f61ed60
+SHA256 (.footprint) = 1ac87f077d71d3c402e6575195b8b1aebaaf2ab83686dff78cef91ddca1509de
+SHA256 (1.5.0.tar.gz) = 194ad8905d355bb1afb4b3ff9761ee9a9434cde76fcb69643bc5a92ded97c782

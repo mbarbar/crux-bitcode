@@ -1,0 +1,17 @@
+# Description: Automated accessor generation
+# URL: https://metacpan.org/pod/Class::Accessor
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-class-accessor
+version=0.51
+release=1
+source=(https://www.cpan.org/authors/id/K/KA/KASEI/Class-Accessor-$version.tar.gz)
+
+build() {
+  cd Class-Accessor-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

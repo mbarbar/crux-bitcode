@@ -1,0 +1,26 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/cblas.h
+-rw-r--r--	root/root	usr/include/f77blas.h
+-rw-r--r--	root/root	usr/include/openblas_config.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/openblas/
+-rw-r--r--	root/root	usr/lib/cmake/openblas/OpenBLASConfig.cmake
+-rw-r--r--	root/root	usr/lib/cmake/openblas/OpenBLASConfigVersion.cmake
+lrwxrwxrwx	root/root	usr/lib/libblas.so -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libblas.so.3 -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libblas.so.3.10.0 -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libcblas.so -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libcblas.so.3 -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libcblas.so.3.10.0 -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libopenblas.a -> libopenblasp-r0.3.12.a
+lrwxrwxrwx	root/root	usr/lib/libopenblas.so -> libopenblasp-r0.3.12.so
+lrwxrwxrwx	root/root	usr/lib/libopenblas.so.0 -> libopenblasp-r0.3.12.so
+-rw-r--r--	root/root	usr/lib/libopenblasp-r0.3.12.a
+-rwxr-xr-x	root/root	usr/lib/libopenblasp-r0.3.12.so
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+lrwxrwxrwx	root/root	usr/lib/pkgconfig/blas.pc -> openblas.pc
+lrwxrwxrwx	root/root	usr/lib/pkgconfig/cblas.pc -> openblas.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/openblas.pc

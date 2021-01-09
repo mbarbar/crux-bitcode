@@ -1,0 +1,11 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/glpsol
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/glpk.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libglpk.a
+-rwxr-xr-x	root/root	usr/lib/libglpk.la
+lrwxrwxrwx	root/root	usr/lib/libglpk.so -> libglpk.so.40.3.0
+lrwxrwxrwx	root/root	usr/lib/libglpk.so.40 -> libglpk.so.40.3.0
+-rwxr-xr-x	root/root	usr/lib/libglpk.so.40.3.0

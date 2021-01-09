@@ -1,0 +1,18 @@
+# Description: A tool for installing and managing Python packages.
+# URL: https://pypi.python.org/pypi/pip/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python-setuptools
+
+name=python-pip
+version=20.2.4
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:7:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+
+	/usr/bin/python setup.py build
+
+	/usr/bin/python setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+}

@@ -1,0 +1,28 @@
+CAUTION:
+
+I would like to point that relates to an unfinished image. 
+
+In any event, anything less than a 100% recovery will leave portions on 
+the target image/drive that have not been written to by ddrescue. 
+
+If copying to a brand new hard drive, those areas are (hopefully) likely 
+to be zeros. But in any other case, those areas will contain whatever data 
+was there previously. For someone that uses their system for data recovery 
+on a regular basis, and is using image files or reusing hard drives, those 
+areas could contain data from a previous recovery! This could be a privacy 
+issue in some cases, but also could cause an issue with running any other 
+sort of repair/file recovery tools on the recovered image/drive. 
+
+The unrecovered parts could contain "garbage" data that could affect
+accurate recovery. In these cases I would recommend using the fill mode 
+of ddrescue to fill any unfinished/untried areas with zeros. 
+
+Example command:
+
+ddrescue --fill-mode=?/*- /dev/zero recovered_image logfile
+
+This would write zeros to any portion of the recovery that was not
+successfully read from the source.
+
+Reference:
+https://lists.gnu.org/archive/html/bug-ddrescue/2013-11/msg00011.html

@@ -1,0 +1,24 @@
+# Description: Binary space partitioning window manager
+# URL:         https://github.com/baskerville/bspwm
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-xcb-util xorg-xcb-util-keysyms xorg-xcb-util-wm
+
+name=bspwm
+version=0.9.10
+release=1
+source=(https://github.com/baskerville/$name/archive/$version/$name-$version.tar.gz)
+
+build () {
+	cd $name-${version}
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+
+	mv $PKG/usr/share/doc/$name $PKG/usr/share
+	rm -rf $PKG/usr/share/doc
+	rm -f $PKG/usr/share/$name/{CONTRIBUTING.md,INSTALL.md,MISC.md,TODO.md,CHANGELOG.md}
+	find $PKG/usr/share/$name -name 'README.md' -delete
+
+	# fix permissions
+	chmod -R g-w $PKG/*
+}

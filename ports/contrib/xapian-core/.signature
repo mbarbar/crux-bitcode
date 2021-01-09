@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34AXT+rwYAzjw6mIJpIiDa+KZrAVG/9o5a0Yo6pROCF6AAOXqbMh1jaxFnTaB4Zuz3qnedpt/s55cw0XZRa+Agw=
+SHA256 (Pkgfile) = 1f8bc5391911a22f1499906e558af5696cc872b90544766b4afde2467068db4c
+SHA256 (.footprint) = 5d234b69210e088f554afcb358f73db061fdde967df402facefe645d5374bc0d
+SHA256 (xapian-core-1.4.17.tar.xz) = b5eb8556dea1b0cad4167a66223522e66d670ec1eba16c7fdc844ed6b652572e

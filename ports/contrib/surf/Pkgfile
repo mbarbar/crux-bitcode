@@ -1,0 +1,24 @@
+# Description: simple web-browser
+# URL:         http://surf.suckless.org/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  dmenu st webkitgtk xdg-utils xorg-xprop
+
+name=surf
+version=2.0
+release=3
+source=(http://dl.suckless.org/surf/$name-$version.tar.gz)
+
+build () {
+	cd "$name-$version"
+
+	if [ -f $PKGMK_ROOT/config.h ]; then
+		cp $PKGMK_ROOT/config.h .
+	fi
+
+	sed -i 's/CPPFLAGS =/CPPFLAGS +=/g' config.mk
+	sed -i 's/CFLAGS =/CFLAGS +=/g' config.mk
+	sed -i 's/LDFLAGS =/LDFLAGS +=/g' config.mk
+
+	make CC=gcc
+	make DESTDIR=$PKG PREFIX=/usr install
+}

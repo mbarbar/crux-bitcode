@@ -1,0 +1,23 @@
+# Description: Utility for network exploration or security auditing
+# URL: https://nmap.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager: sten, nick dot steeves at shaw dot ca
+# Depends on: libpcap
+
+name=nmap
+version=7.91
+release=1
+source=(https://nmap.org/dist/$name-$version.tar.bz2)
+
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr --libexecdir=/usr/lib \
+    --with-libpcre=included --with-liblua=included \
+    --without-zenmap --without-ndiff --disable-nls \
+    --without-nmap-update
+
+    make
+    make DESTDIR=$PKG install
+    find $PKG -iname '*readme*' -exec rm -fr '{}' \+
+}

@@ -1,0 +1,24 @@
+# Description: X display manager
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: linux-pam xorg-server xorg-xrdb
+
+name=xorg-xdm
+version=1.1.12
+release=1
+source=(https://www.x.org/releases/individual/app/xdm-$version.tar.bz2 \
+        xdm xdm.pam)
+
+build() {
+	cd xdm-$version
+
+	./configure --prefix=/usr \
+	            --with-xdmconfigdir=/etc/X11/xdm \
+	            --enable-xdmshell
+
+	make
+	make DESTDIR=$PKG install
+
+	install -D -m 755 $SRC/xdm $PKG/etc/rc.d/xdm
+	install -D -m 755 $SRC/xdm.pam $PKG/etc/pam.d/xdm
+}

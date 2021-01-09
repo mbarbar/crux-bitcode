@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF304KOSX2o9tvD4+v0xLj0AkTczkDRWFneDW6TLVW78eyoqTeKPQSRghjPtxS29/Gofy2AGMolEPgzyaF51Pbmwo=
+SHA256 (Pkgfile) = e2cef42db5f04ecf5302f3d6646b9fc77e8ba58258d3fa6781db662654790857
+SHA256 (.footprint) = 861027c0ca4488e8343d62e049ab17bb73c2a60b9ce4e146e222bfb6635e235f
+SHA256 (ffmpegfs-2.0.tar.gz) = cdafa88b0cb4cda0265703ed43378d0b0c3dacb25bb634f46d23428fe5c21eb8

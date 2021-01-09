@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32i4eGrGadOA171G0fKjYOYkojyKctxKjRjmLPW4hufYpIwCAvLy0Rbxzc2A2eBn+oM+cTeSo8ynNR6IczBY/wc=
+SHA256 (Pkgfile) = 46fb16c35153087b018489154d1021c7a9c10bd8de3ecea8165fed70a65e5ce4
+SHA256 (.footprint) = 9e08e0076af6c98e27353c88de914fbb4a9aea6dab1a365a9670e0e270aa3d25
+SHA256 (ncpamixer-1.3.3.1.tar.gz) = b2c797a90c92aa931052c5ac89a79fbc30f76d5e2a5b773ef68edf057c34b060
+SHA256 (ncpamixer.1) = b616e0707c75c6fd6162bd011baa37f7754946e5857f3ca814e5dab719bf358a

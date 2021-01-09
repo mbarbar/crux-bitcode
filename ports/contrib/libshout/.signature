@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37Id7cheADuOp9gEdtj4W7GVpZmlp77p5MIv8iFso44aFZ/m0BD/iPGGwooPErryFfhPta4Jqbc5xdzhLyrsYQw=
+SHA256 (Pkgfile) = a0635d27d285e9d09dd93bbcfab67f174c19f2032a1607b89b09ce2814dab270
+SHA256 (.footprint) = 8a13af6b11d139f8392db54d91744aedd55dfe4d8e3d8dcc73c0837ca861a137
+SHA256 (libshout-2.4.4.tar.gz) = 8ce90c5d05e7ad1da4c12f185837e8a867c22df2d557b0125afaba4b1438e6c3

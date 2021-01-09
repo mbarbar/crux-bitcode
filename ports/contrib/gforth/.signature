@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF376u88/24Dcvq8W/4jl/wxpnCV/D7iFithYUrXymWhS8Yo85WB0FS+u43JDK6FwNxL0GXDuG8YZQfnC0FBGqOwE=
+SHA256 (Pkgfile) = 207963bc818632798d4863f3c430a5a77f2329c89b3055b0167dbbf1ac157d8f
+SHA256 (.footprint) = f1aa637f41a60fb4736520de168a6fcee8b11fd5aaf1701315d18f51eacd0ef1
+SHA256 (gforth-0.7.3.tar.gz) = 2f62f2233bf022c23d01c920b1556aa13eab168e3236b13352ac5e9f18542bb0

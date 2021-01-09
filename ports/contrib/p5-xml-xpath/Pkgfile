@@ -1,0 +1,16 @@
+# Description: A set of modules for parsing and evaluating XPath statements
+# URL: https://metacpan.org/release/XML-XPath
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-xml-parser
+
+name=p5-xml-xpath
+version=1.44
+release=1
+source=(https://cpan.metacpan.org/authors/id/M/MA/MANWAR/XML-XPath-$version.tar.gz)
+
+build() {
+  cd XML-XPath-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+}

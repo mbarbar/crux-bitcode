@@ -1,0 +1,47 @@
+# Description: Tiny/Turbo/Throttling HTTP Server.
+# URL:         http://www.acme.com/software/thttpd/thttpd.html
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=thttpd
+version=2.29
+release=2
+source=(https://www.acme.com/software/$name/$name-$version.tar.gz \
+   thttpd.rc thttpd.conf config.h.patch)
+
+build() {
+   cd $name-$version
+   ./configure --prefix=/usr
+   patch -i $SRC/config.h.patch
+   sed -i '1i#define _POSIX_C_SOURCE 1' extras/htpasswd.c
+   make
+
+   install -d $PKG/{var/log,var/www/{cgi-bin,users}}
+
+   install -D -m755 thttpd $PKG/usr/sbin/thttpd
+   install -D -m644 thttpd.8 $PKG/usr/share/man/man8/thttpd.8
+   install -D -m755 ../thttpd.rc $PKG/etc/rc.d/thttpd
+   install -D -m644 ../thttpd.conf $PKG/etc/thttpd.conf
+
+   # Install 'extras'
+   install -D -m755 extras/htpasswd $PKG/usr/bin/htpasswd
+   install -D -m755 extras/htpasswd.1 $PKG/usr/share/man/man1/htpasswd.1
+
+   install -D -m755 extras/syslogtocern $PKG/usr/sbin/syslogtocern
+   install -D -m755 extras/syslogtocern.8 $PKG/usr/share/man/man8/syslogtocern.8
+
+   # Install CGI
+   install -D -m755 cgi-src/phf $PKG/var/www/cgi-bin/phf
+   install -D -m755 cgi-bin/printenv $PKG/var/www/cgi-bin/printenv
+
+   install -D -m755 cgi-src/redirect $PKG/var/www/cgi-bin/redirect
+   install -D -m755 cgi-src/redirect.8 $PKG/usr/share/man/man8/redirect.8
+
+   install -D -m755 cgi-src/ssi $PKG/var/www/cgi-bin/ssi
+   install -D -m755 cgi-src/ssi.8 $PKG/usr/share/man/man8/ssi.8
+
+   chmod 755 $PKG/var/www
+   chmod 1777 $PKG/var/www/users
+   touch $PKG/var/log/thttpd.log
+}
+

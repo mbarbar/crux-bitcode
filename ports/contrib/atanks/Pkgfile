@@ -1,0 +1,26 @@
+# Description: Annihilate the other tanks to earn money, then spend it on bigger and better shields and weapons to wipe out the opposition.
+# URL: https://atanks.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: allegro4
+
+name=atanks
+version=6.5
+release=2
+source=(https://downloads.sourceforge.net/project/$name/$name/$name-$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	sed -i -e 's|share/games/atanks|share/atanks|' Makefile
+
+	make
+	make DESTDIR=$PKG INSTALL="install -c" install
+
+	sed -i 's/^Name=atanks/Name=Atomic Tanks/' atanks.desktop
+	sed -i 's/^Categories=Game;/Categories=Game;StrategyGame;/' atanks.desktop
+
+	install -Dm644 atanks.desktop $PKG/usr/share/applications/atanks.desktop
+	install -Dm644 atanks.png $PKG/usr/share/pixmaps/atanks.png
+
+	rm $PKG/usr/share/atanks/{COPYING,Changelog,README,README_ru.txt,TODO}
+}

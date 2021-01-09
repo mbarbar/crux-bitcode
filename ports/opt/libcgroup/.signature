@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QTC7l45DY1Ne/9AYwkTqFNM4ww5w8+pRHyDKom7gIE3gZ9IAsfgOSsLTlwJls8u8pctbsf7nVbTSljPrFmWQwo=
+SHA256 (Pkgfile) = ced62bd1be138ddf740c91d025009697398a6278630a7c2e0217a8747b0db655
+SHA256 (.footprint) = d55d4ff96dedc3356a4d34800b40f90ef82a0947791cc1501b9a51062bbd558a
+SHA256 (libcgroup-0.42.2.tar.bz2) = 18939381324d418e11be4f5fdca37b01652c18917bfaf1f6b0c505f157e18d07

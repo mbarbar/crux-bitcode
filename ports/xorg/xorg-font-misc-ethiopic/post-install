@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkfontdir /usr/share/fonts/X11/{O,T}TF
+mkfontscale /usr/share/fonts/X11/{O,T}TF
+fc-cache

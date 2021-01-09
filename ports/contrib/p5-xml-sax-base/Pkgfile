@@ -1,0 +1,17 @@
+# Description: Base class SAX Drivers and Filters
+# URL: https://metacpan.org/pod/XML::SAX::Base
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-xml-sax-base
+version=1.09
+release=1
+source=(https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-Base-$version.tar.gz)
+
+build() {
+  cd XML-SAX-Base-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

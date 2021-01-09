@@ -1,0 +1,20 @@
+# Description: Library for constructing and injecting network packets
+# URL:         http://libnet-dev.sf.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Optional:    help2man doxygen
+
+name=libnet
+version=1.2
+release=1
+source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+
+  rm -r $PKG/usr/share/doc
+  find $PKG -name '*.la' -delete
+}

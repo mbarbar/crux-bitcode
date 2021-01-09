@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/cv5e+0LMNB6kUoT7CQ95kjJM2cWdyAeZkE8km0fBe9S4ZVdp4iJ3zWCGO+YSk9oFUk9KNz2fsmc3vaFa2FLIAI=
+SHA256 (Pkgfile) = 3eacc359700d6412ead019c681012548df2148825bac662d153e0b8ab79e13f1
+SHA256 (.footprint) = ee1ba1610189e95775bcbf97f11a4185d5df714ed6fe428d2bd4e85a20517baf
+SHA256 (cppunit-1.15.1.tar.gz) = 89c5c6665337f56fd2db36bc3805a5619709d51fb136e51937072f63fcc717a7

@@ -1,0 +1,19 @@
+# Description: Python bindings for YAML, using fast libYAML library
+# URL: https://pyyaml.org/wiki/PyYAML
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libyaml python3-cython
+
+name=python3-yaml
+version=5.3.1
+release=1
+source=(https://pyyaml.org/download/pyyaml/PyYAML-$version.tar.gz)
+
+build() {
+  cd PyYAML-$version
+  /usr/bin/python3 setup.py --with-libyaml build
+  /usr/bin/python3 setup.py  --with-libyaml install \
+    --prefix=/usr \
+    --root=$PKG \
+    -O1 \
+    --skip-build
+}

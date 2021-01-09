@@ -1,0 +1,36 @@
+# Description: Secure SHell server and client tools
+# URL:         http://www.openssh.org/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  linux-pam openssl zlib
+
+name=openssh
+version=8.4p1
+release=1
+source=(http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz
+        sshd.rc sshd.pam)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --libexecdir=/usr/lib/ssh \
+                --sysconfdir=/etc/ssh \
+                --with-mantype=man \
+                --mandir=/usr/share/man \
+                --with-md5-passwords \
+                --with-pam \
+                --with-privsep-user=nobody \
+                --with-privsep-path=/var/empty \
+                --with-xauth=/usr/bin/xauth
+    make
+    make DESTDIR=$PKG install
+    install -D -m 755 $SRC/sshd.rc $PKG/etc/rc.d/sshd
+    install -D -m 644 $SRC/sshd.pam $PKG/etc/pam.d/sshd
+    rm -r $PKG/var
+
+    # enable PAM
+    sed '/^#UsePAM/aUsePAM yes' -i $PKG/etc/ssh/sshd_config
+
+    install -D -m 755 contrib/ssh-copy-id $PKG/usr/bin/ssh-copy-id
+    install -D -m 644 contrib/ssh-copy-id.1 $PKG/usr/share/man/man1/ssh-copy-id.1
+}

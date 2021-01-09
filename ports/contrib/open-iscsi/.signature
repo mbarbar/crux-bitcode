@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38hSY9eLcb9qlQpsd805A9C/hBhurVNb5hYogmJ71yzK+GTyrBV4h/S5UNZCOhRkxeDsiOwKqiK/wzG04gnS/QI=
+SHA256 (Pkgfile) = b87807483574cf02ef7b7a6e524359988d30da73019a52e6942a80dae732aca1
+SHA256 (.footprint) = 7f30cb3db7a3652bf2f9665165fc0ed396c031b555b1c4d4cb2b9000e93bea28
+SHA256 (open-iscsi-2.1.2.tar.gz) = ba5125b5803aeac7de36b2cd777abc1b63d194983ede8b34fa82de8a5a1aa19c

@@ -1,0 +1,39 @@
+# Description: A script intended to be run by Linux system administrators to help thwart ssh server attacks. (fork of denyhosts)
+# URL: http://denyhost.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Danny Rawlins, crux at romster dot me
+# Depends on: python
+
+name=denyhost
+version=2.9
+release=1
+source=(http://downloads.sourceforge.net/project/$name/$name-$version/denyhosts-$version.tar.gz)
+
+build() {
+	cd DenyHosts-$version
+
+	/usr/bin/python setup.py install --root=$PKG
+
+	install -d $PKG/etc/{denyhosts,rc.d} $PKG/usr/sbin
+
+	mv $PKG/etc/denyhosts.conf \
+		$PKG/etc/denyhosts/denyhosts.conf
+
+	mv $PKG/usr/bin/daemon-control-dist \
+		$PKG/etc/rc.d/denyhosts
+
+	mv $PKG/usr/bin/denyhosts.py $PKG/usr/sbin/denyhosts
+
+	rmdir $PKG/usr/bin
+
+	sed -i \
+		-e 's|^DENYHOSTS_LOCK  = .*|DENYHOSTS_LOCK  = "/var/run/denyhosts.pid"|' \
+		-e 's|^DENYHOSTS_CFG   = .*|DENYHOSTS_CFG   = "/etc/denyhosts/denyhosts.conf"|' \
+		$PKG/etc/rc.d/denyhosts
+
+	sed -i \
+		-e 's|^SECURE_LOG = /var/log/auth.log|SECURE_LOG = /var/log/auth|' \
+		-e 's|^IPTABLES = /sbin/iptables|IPTABLES = /usr/sbin/iptables|' \
+		-e 's|^# BLOCKPORT = 22|BLOCKPORT = 22|' \
+		$PKG/etc/denyhosts/denyhosts.conf
+}

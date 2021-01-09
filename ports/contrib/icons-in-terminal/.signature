@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39GV5ytcjXOIFXZgkEqJWPJR2KAU1GAo+D/wWICHpKrCVMNrldaQESngeJBW3Gso0b5P3JhWHsjv+RRykJPVyA8=
+SHA256 (Pkgfile) = 2f5f1277c373e7e71739dbc1a52757ea6267dc02468476c8481d2871c44b312e
+SHA256 (.footprint) = b6de9c3413b99daca98666d745bf2a6364eaeb0cfea42f38855461e72c0ac1de
+SHA256 (icons-in-terminal-20170727.tar.gz) = 23179a6f8eb1de106488217ad3f55b008be763487a4ba88bbb5edc843dfc0d4a

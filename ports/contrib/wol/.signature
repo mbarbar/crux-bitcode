@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3889WsB9GDpFXUqzQv+qohCtxbd+4qMzvCX+bTO2SOaY9RuRZChyP21redsU/OsK9KJh9CVsmXUSa+kl0zGTOgE=
+SHA256 (Pkgfile) = e707fb5c990c26c3786da2d493ffa4692650bdc784092322e290e2acc91d0d28
+SHA256 (.footprint) = 9829988c32902d26e5fada6c87d2c7dcd2e8d2d0b9fb74cf9afeab96676a9ffb
+SHA256 (wol-0.7.1.tar.gz) = e0086c9b9811df2bdf763ec9016dfb1bcb7dba9fa6d7858725b0929069a12622

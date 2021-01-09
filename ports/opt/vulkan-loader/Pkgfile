@@ -1,0 +1,25 @@
+# Description: Vulkan ICD desktop loader
+# URL: https://www.khronos.org/vulkan/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: vulkan-headers xorg-libxrandr
+
+name=vulkan-loader
+version=1.2.154.0
+release=1
+source=(https://github.com/KhronosGroup/Vulkan-Loader/archive/sdk-$version/Vulkan-Loader-sdk-$version.tar.gz)
+
+build() {
+	cmake -SVulkan-Loader-sdk-$version -Bbuild -GNinja \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_SKIP_RPATH=True \
+		-DBUILD_TESTS=False \
+		-DBUILD_LOADER=True \
+		-DBUILD_WSI_XCB_SUPPORT=True \
+		-DBUILD_WSI_XLIB_SUPPORT=True \
+		-DBUILD_WSI_WAYLAND_SUPPORT="$(prt-get isinst wayland &> /dev/null && echo ON || echo OFF)"
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

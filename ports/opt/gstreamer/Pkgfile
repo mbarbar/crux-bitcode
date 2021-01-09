@@ -1,0 +1,23 @@
+# Description: Gstreamer is a library that allows the construction of graphs of media-handling components.
+# URL: https://gstreamer.freedesktop.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gobject-introspection libcap
+
+name=gstreamer
+version=1.18.1
+release=2
+source=(https://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
+
+build() {
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		-D buildtype=plain \
+		-D gtk_doc=disabled \
+		-D nls=disabled \
+		-D package-name="GStreamer (CRUX Linux)" \
+		-D package-origin="https://crux.nu/"
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

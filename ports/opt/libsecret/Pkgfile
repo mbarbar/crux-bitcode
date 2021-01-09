@@ -1,0 +1,26 @@
+# Description: Library for storing and retrieving passwords and other secrets.
+# URL: https://wiki.gnome.org/Projects/Libsecret
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gobject-introspection intltool libgcrypt
+# Optional: vala docbook-xsl
+
+name=libsecret
+version=0.20.3
+release=1
+source=(https://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+prt-get isinst docbook-xsl && local MAN='' || local MAN='-disable-manpages'
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--disable-dependency-tracking $MAN
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/gtk-doc
+}

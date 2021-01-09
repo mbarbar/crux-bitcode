@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xNuw6mu65eXpvXsaeT5v0Vp7blvQJCJSWg8k6lQuOhCbmUXndN5c393htDB0s/3735iV2ielqv2jb11bVtCrw4=
+SHA256 (Pkgfile) = 6fa20806768e4bca7debf2c509ff9a3b91beaf81cd9e220e6797c4f019434dee
+SHA256 (.footprint) = 8647dd1ca304e3d54d9d30c9c04fbbe74caa29af0546a8809a9b3da3a2c311ff
+SHA256 (liblzf-3.6.tar.gz) = 9c5de01f7b9ccae40c3f619d26a7abec9986c06c36d260c179cedd04b89fb46a
+SHA256 (liblzf-3.6-autoconf-20140314.patch) = 37bfd3ba20cedb2ee840e8ddec8ea0a67257b51fa1cfa4d70a3df54db0605b33

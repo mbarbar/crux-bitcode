@@ -1,0 +1,29 @@
+# Description: COIN-OR branch-and-cut mixed integer programming solver
+# URL: https://projects.coin-or.org/Cbc
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: coin-or-cgl
+
+name=coin-or-cbc
+version=2.10.5
+release=1
+source=(https://www.coin-or.org/download/source/Cbc/Cbc-${version}.tgz)
+
+build() {
+  cd Cbc-$version
+  COIN_SKIP_PROJECTS="Sample" \
+  ./configure --prefix=/usr \
+    --with-osi-lib="$(pkg-config --libs osi)" \
+    --with-osi-incdir="/usr/include/coin/" \
+    --with-clp-lib="$(pkg-config --libs clp)" \
+    --with-clp-incdir="/usr/include/coin/" \
+    --with-cgl-lib="$(pkg-config --libs cgl)" \
+    --with-cgl-incdir="/usr/include/coin/" \
+    --with-coinutils-lib="$(pkg-config --libs coinutils)" \
+    --with-coinutils-incdir="/usr/include/coin/" \
+    --enable-dependency-linking \
+    --enable-cbc-parallel
+  make
+  PKG_CONFIG_LIBDIR="$PKG"/usr/lib/pkgconfig/ \
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/share/coin/doc
+}

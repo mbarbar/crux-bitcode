@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+D8bAxzHe/8sUynxzc5NpgoIzZpXGBba1j5/AN2sV6uCy55kLCnKWWCdNtjgM9MIKorAZgfsKMgZ4Er6tL10wc=
+SHA256 (Pkgfile) = bdbb491ff6ad12a287445039c14e38ea4b24c9cf617cd1cd1fbe16c237c51654
+SHA256 (.footprint) = 12cc29e316c4de94bddb513b664044d24538df24d0bd13615b3f22c13d9e76ab
+SHA256 (camlp-4.10+1.tar.gz) = 9d9b18810e834ee11e62736a680313cf90c1551e22c084ca2b70c68338eef29e

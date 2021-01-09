@@ -1,0 +1,19 @@
+# Description: The CELT ultra-low delay audio codec
+# URL:         https://gitlab.xiph.org/xiph/celt
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libogg
+
+name=celt51
+version=0.5.1.3
+release=1
+source=(https://gitlab.xiph.org/xiph/celt/-/archive/compat-v0.5.1.3/celt-compat-v0.5.1.3.tar.bz2)
+
+build() {
+  cd celt-compat-v$version
+
+  ./autogen.sh
+  ./configure --prefix=/usr
+
+  make
+  make DESTDIR=$PKG install
+}

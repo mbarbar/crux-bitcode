@@ -1,0 +1,14 @@
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Description: Data files for the ri documentation system of Ruby 
+# URL:         http://www.ruby-lang.org
+# Depends on:  ruby
+
+name=ruby-doc
+version=2.7.2
+release=1
+source=(https://cache.ruby-lang.org/pub/ruby/${version%.*}/ruby-$version.tar.xz)
+
+build () {
+    cd ruby-$version
+    rdoc --encoding=UTF-8 --all --ri --op $PKG/usr/share/ri/${version%.*}/system .
+}

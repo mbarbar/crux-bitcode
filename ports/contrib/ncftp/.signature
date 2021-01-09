@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/7hda0siU0Pcs94rD/EsfE5uiM5WvJHfhWlBytfKdQjxyzciaZmeF8KE6+IWYWfpuUOiECqvUAfb6bFEmS2vw8=
+SHA256 (Pkgfile) = 17cb889aecd6a7014548da865bb9d06cfe063dbfdc490a2610d5b4c63c317d08
+SHA256 (.footprint) = 6cf394922ffe09fd923b42ed4fc08fff4cc2aa76702f8ee304e32cfe79a0ece2
+SHA256 (ncftp-3.2.6-src.tar.xz) = 5f200687c05d0807690d9fb770327b226f02dd86155b49e750853fce4e31098d

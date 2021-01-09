@@ -1,0 +1,18 @@
+# Description: A tool to build C libraries
+# URL: https://metacpan.org/release/ExtUtils-LibBuilder
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-module-build
+
+name=p5-extutils-libbuilder
+version=0.08
+release=1
+source=(https://cpan.metacpan.org/authors/id/A/AM/AMBS/ExtUtils-LibBuilder-$version.tar.gz)
+
+build() {
+  cd ExtUtils-LibBuilder-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  perl Build.PL
+  ./Build
+  ./Build install installdirs=vendor destdir=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

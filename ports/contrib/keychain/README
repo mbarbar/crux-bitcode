@@ -1,0 +1,26 @@
+# $Id:
+
+REQUIREMENTS:
+
+PRECAUTION:
+
+PRE-INSTALL:
+
+POST-INSTALL:
+
+Add '--nolock' to your keychain options, if you haven't got procmail installed.
+
+PRE-REMOVE:
+
+POST-REMOVE:
+
+NOTES:
+
+example useage
+-------------
+
+In ~/.profile add:
+
+  keychain --nolock ${HOME}/.ssh/id_dsa
+  . "${HOME}/.keychain/${HOSTNAME}-sh" > /dev/null
+

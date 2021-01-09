@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37rDFU37GaY3csce/Gw3bDDVoLOx6W3UUxkV3pMiYte0M6YT59/RGxB+lI3bsr8iqmTZf+tuRcLqyaIoUJzdQg4=
+SHA256 (Pkgfile) = ae0919fae6d3ed197266b22260fb665f8fd96fa031c18f03fb0d76d33b0b56e5
+SHA256 (.footprint) = 4bb8793710d63c580ba4d5f55a4d3137ef2fe98f80af4739176dfdf0483874c2
+SHA256 (libplacebo-v2.72.2.tar.gz) = 5d3c51bb98d9727a255234a522f631f00d62a9e87115fb14251d991fc5076979

@@ -1,0 +1,17 @@
+# Description: Check that a library is available for FFI
+# URL: https://metacpan.org/release/FFI-CheckLib
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-ffi-checklib
+version=0.27
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/FFI-CheckLib-$version.tar.gz)
+
+build() {
+  cd FFI-CheckLib-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3ysRuA9ybjfxHnzEzstngRQFdr2WEtvpAbTyDVVZD8Er+Q4BEWla3duFnY3j7I2aya2s9IItcc0jTT9+wz67qAI=
+SHA256 (Pkgfile) = 4e84f8238667e827e8ab5ddce7afa5d8515a9e4423652c934c09cf5d8f140d2f
+SHA256 (.footprint) = 48ef6504c01463750eed603c63c5c8dd654bbf8dc8bd0cdb246e1c3a4511b691
+SHA256 (denyhosts-2.9.tar.gz) = a1e6d14525e519ff92ea2f71bc7ae4586ee1dc76827b935e323a133fda73ed5b

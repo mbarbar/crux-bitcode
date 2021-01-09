@@ -1,0 +1,22 @@
+# Description: DVD Navigation library.
+# URL: https://www.videolan.org/developers/libdvdnav.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libdvdread
+
+name=libdvdnav
+version=6.1.0
+release=1
+source=(https://download.videolan.org/pub/videolan/$name/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	autoreconf -f -i
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+}

@@ -1,0 +1,19 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/modhex
+-rwxr-xr-x	root/root	usr/bin/ykgenerate
+-rwxr-xr-x	root/root	usr/bin/ykparse
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/yubikey.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libyubikey.a
+-rwxr-xr-x	root/root	usr/lib/libyubikey.la
+lrwxrwxrwx	root/root	usr/lib/libyubikey.so -> libyubikey.so.0.1.7
+lrwxrwxrwx	root/root	usr/lib/libyubikey.so.0 -> libyubikey.so.0.1.7
+-rwxr-xr-x	root/root	usr/lib/libyubikey.so.0.1.7
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/modhex.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ykgenerate.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ykparse.1.gz

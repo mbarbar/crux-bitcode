@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30Fp1X+qWjjsDc8GPIqbTZXhvGSFOesjUcuQwh7bqk2JO5DZZcGFj/P8xc0FJgDh7ENb0VLEcOYpdyuNFvmwDgU=
+SHA256 (Pkgfile) = 8dcd6ea01b1adfaf0eb5ecc4a4453ae47360b5f2ac5322e83ba932cf34ef4a89
+SHA256 (.footprint) = aa8ee19b71233a73a128054c70c616b4fc2fb7fe2d16d90d5c1c4c645b2b14e1
+SHA256 (avahi-0.8.tar.gz) = 060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda
+SHA256 (avahi-daemon.rc) = 032e83dd665f95436234309226c11d31231ab4fd7689c9d6cf64efbf8d3db8a3
+SHA256 (reverse-move-to-run.patch) = a333bcf15dd3e72ac99b2e883202e7170d2ff27bf61820413235bc9f3c9c2605

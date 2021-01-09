@@ -1,0 +1,18 @@
+# Description: Unlock GnuPG keys on login
+# URL: https://github.com/cruegge/pam-gnupg
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gnupg
+
+name=pam-gnupg
+version=0.2
+release=1
+source=(https://github.com/cruegge/pam-gnupg/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./autogen.sh
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/lib
+  make
+  make DESTDIR=$PKG install
+}

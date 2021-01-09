@@ -1,0 +1,14 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dpl4hydra.sh
+-rwxr-xr-x	root/root	usr/bin/hydra
+-rwxr-xr-x	root/root	usr/bin/hydra-wizard.sh
+-rwxr-xr-x	root/root	usr/bin/pw-inspector
+drwxr-xr-x	root/root	usr/etc/
+-rw-r--r--	root/root	usr/etc/dpl4hydra_full.csv
+-rw-r--r--	root/root	usr/etc/dpl4hydra_local.csv
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+-rw-r--r--	root/root	usr/share/man/hydra.1
+-rw-r--r--	root/root	usr/share/man/pw-inspector.1
+-rw-r--r--	root/root	usr/share/man/xhydra.1

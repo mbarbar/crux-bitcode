@@ -1,0 +1,2 @@
+If you have harfbuzz and harfbuzz-icu installed (`prt-get isinst harfbuzz harfbuzz-icu`) already, you need to rebuild it with graphite2 support
+    * prt-get depinst graphite2 ; prt-get update -fr harfbuzz harfbuzz-icu

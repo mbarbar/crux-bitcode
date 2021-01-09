@@ -1,0 +1,17 @@
+# Description: An event-driven initramfs infrastructure
+# URL: https://dracut.wiki.kernel.org/index.php/Main_Page
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+
+name=dracut
+version=050
+release=1
+source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+		--sysconfdir=/etc
+	make
+	make DESTDIR=$PKG install
+	rm $PKG/usr/lib/$name/modules.d/*/README*
+}

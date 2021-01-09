@@ -1,0 +1,58 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/partclone.btrfs
+-rwxr-xr-x	root/root	usr/sbin/partclone.chkimg
+-rwxr-xr-x	root/root	usr/sbin/partclone.dd
+-rwxr-xr-x	root/root	usr/sbin/partclone.exfat
+lrwxrwxrwx	root/root	usr/sbin/partclone.ext2 -> partclone.extfs
+lrwxrwxrwx	root/root	usr/sbin/partclone.ext3 -> partclone.extfs
+lrwxrwxrwx	root/root	usr/sbin/partclone.ext4 -> partclone.extfs
+lrwxrwxrwx	root/root	usr/sbin/partclone.ext4dev -> partclone.extfs
+-rwxr-xr-x	root/root	usr/sbin/partclone.extfs
+-rwxr-xr-x	root/root	usr/sbin/partclone.f2fs
+-rwxr-xr-x	root/root	usr/sbin/partclone.fat
+lrwxrwxrwx	root/root	usr/sbin/partclone.fat12 -> partclone.fat
+lrwxrwxrwx	root/root	usr/sbin/partclone.fat16 -> partclone.fat
+lrwxrwxrwx	root/root	usr/sbin/partclone.fat32 -> partclone.fat
+lrwxrwxrwx	root/root	usr/sbin/partclone.hfs+ -> partclone.hfsp
+-rwxr-xr-x	root/root	usr/sbin/partclone.hfsp
+lrwxrwxrwx	root/root	usr/sbin/partclone.hfsplus -> partclone.hfsp
+-rwxr-xr-x	root/root	usr/sbin/partclone.imager
+-rwxr-xr-x	root/root	usr/sbin/partclone.info
+-rwxr-xr-x	root/root	usr/sbin/partclone.minix
+-rwxr-xr-x	root/root	usr/sbin/partclone.ntfs
+-rwxr-xr-x	root/root	usr/sbin/partclone.ntfsfixboot
+lrwxrwxrwx	root/root	usr/sbin/partclone.ntfsreloc -> partclone.ntfsfixboot
+-rwxr-xr-x	root/root	usr/sbin/partclone.restore
+lrwxrwxrwx	root/root	usr/sbin/partclone.vfat -> partclone.fat
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/partclone.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.btrfs.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.chkimg.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.dd.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.exfat.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ext2.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ext3.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ext4.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ext4dev.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.extfs.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.f2fs.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.fat.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.fat12.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.fat16.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.fat32.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.hfs+.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.hfsp.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.hfsplus.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.imager.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.info.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.minix.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ntfs.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ntfsfixboot.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.ntfsreloc.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.restore.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/partclone.vfat.8.gz
+drwxr-xr-x	root/root	usr/share/partclone/
+-rw-r--r--	root/root	usr/share/partclone/fail-mbr.bin

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37AfT4IcI+gpDXyGhMT6kphshJXOCYpRC15S/GeEOKrrbOXN96XtOLrqYq4BdQLaXfmqCzpEeDbU+3sar5juHA8=
+SHA256 (Pkgfile) = 2729d797a20803a908eab10dabfca7d59b07378267578def753245de028c2ae3
+SHA256 (.footprint) = 59a8925f3346dd00a837fab463b320badb6bee075ff99aa65c70f3a02fd33665
+SHA256 (Sub-Install-0.928.tar.gz) = 61e567a7679588887b7b86d427bc476ea6d77fffe7e0d17d640f89007d98ef0f

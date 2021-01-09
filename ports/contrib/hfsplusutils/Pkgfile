@@ -1,0 +1,46 @@
+# Description: HFS+ Filesystem Access Utilities (a PPC filesystem)
+# URL: https://sourceforge.net/projects/hfsplusutils/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=hfsplusutils
+version=1.0.4
+release=1
+source=(https://crux.ster.zone/downloads/$name/hfsplus_$version.src.tar.bz2
+	hfsplusutils-1.0.4-cflags.patch
+	hfsplusutils-1.0.4-errno.patch
+	hfsplusutils-1.0.4-gcc4.patch
+	hfsplusutils-1.0.4-glob.patch
+	hfsplusutils-1.0.4-stdlib.patch
+	hfsplusutils-1.0.4-string.patch)
+
+build() {
+	cd hfsplus-$version
+
+	patch -p1 -i $SRC/hfsplusutils-1.0.4-glob.patch
+	patch -p1 -i $SRC/hfsplusutils-1.0.4-errno.patch
+	patch -p1 -i $SRC/hfsplusutils-1.0.4-gcc4.patch
+	patch -p1 -i $SRC/hfsplusutils-1.0.4-string.patch
+	patch -p1 -i $SRC/hfsplusutils-1.0.4-stdlib.patch
+	patch -p1 -i $SRC/hfsplusutils-1.0.4-cflags.patch
+
+	sed -i -e 's/^CFLAGS\s/AM_CFLAGS /' {libhfsp/src,src}/Makefile.am
+
+	mv configure.{in,ac}
+	autoreconf -i
+
+	CFLAGS+=' -fgnu89-inline'
+	./configure \
+		--prefix=/usr \
+		--disable-shared \
+		--disable-dependency-tracking \
+		CFLAGS="$CFLAGS"
+
+	make
+	make DESTDIR=$PKG SUBDIRS=src install
+
+	ln -sf hpfsck $PKG/usr/bin/fsck.hfsplus
+	install -D -m 0664 doc/man/hfsp.man $PKG/usr/share/man/man1/hfsp.1
+	for a in hpcd hpcopy hpfsck hpls hpmkdir hpmount hppwd hprm hpumount fsck.hfsplus ; do
+		ln -sf hfsp.1 $PKG/usr/share/man/man1/$a.1
+	done
+}

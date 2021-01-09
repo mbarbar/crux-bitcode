@@ -1,0 +1,24 @@
+# Description: Library to provide abstract access to various archives.
+# URL: http://icculus.org/physfs/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cmake readline
+
+name=physfs
+version=3.0.2
+release=1
+source=(https://icculus.org/$name/downloads/$name-$version.tar.bz2)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_PHYSFS+=' -G Ninja'
+
+	cmake -S $name-$version -B build $PKGMK_PHYSFS \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D PHYSFS_BUILD_TEST=OFF \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

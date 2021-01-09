@@ -1,0 +1,17 @@
+# Description: list information about SCSI devices
+# URL:         http://sg.danny.cz/scsi/lsscsi.html
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=lsscsi
+version=0.31
+release=1
+source=(http://sg.danny.cz/scsi/lsscsi-$version.tgz)
+
+build() {
+  cd $name-*
+
+  ./configure --prefix=/usr
+
+  make
+  make install DESTDIR=$PKG
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xAfJIX/o2T2LkXulSpb/OsvB5HSDb4rdm+3+H6xjeebtMHvuCkdesV+XtJrc+Xn36Y6V/IE0X9JCl4meZpRwAw=
+SHA256 (Pkgfile) = b89f3bb6ae8eecd0eb4948485b2dea8515f624287135af5a6eb7ebf04ec26787
+SHA256 (.footprint) = 514aaf0020c5d2e890f78625d9222479bc64ff8d919866dd51e4d9e7a19b7d85
+SHA256 (psycopg2-2.8.6.tar.gz) = fb23f6c71107c37fd667cb4ea363ddeb936b348bbd6449278eb92c189699f543

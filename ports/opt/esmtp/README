@@ -1,0 +1,11 @@
+README for esmtp 0.5.0
+
+REQUIREMENTS
+
+PRE-INSTALL
+1. Remove any other MTA that's currently installed. They can't coexist.
+      
+POST-INSTALL
+  
+PRECAUTION
+

@@ -1,0 +1,12 @@
+--- config.h.orig	2005-03-21 00:40:42.000000000 +1000
++++ config.h	2005-03-21 00:56:07.000000000 +1000
+@@ -123,8 +123,8 @@
+ ** You can also leave both options undefined, and thttpd will not do
+ ** anything special about tildes.  Enabling both options is an error.
+ */
+-#ifdef notdef
+ #define TILDE_MAP_1 "users"
++#ifdef notdef
+ #define TILDE_MAP_2 "public_html"
+ #endif
+ 

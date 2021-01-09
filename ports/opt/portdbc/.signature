@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/a8fpil8Wq221jMWNnBRax6LPsEm9qIlgytpHwpfUIx3Rk/XW0aoLt421DgwuHcsrH1S/g56tcE7PVgYIPbAVgY=
+SHA256 (Pkgfile) = 463c3c837518f95515f596125c354d2bcf1ffe5e783431379965a46cf09bc9e3
+SHA256 (.footprint) = 579fe0bf42746aa53ee020277ac7ecc861e0ff4c19afd8d35fb90e4469ab878f
+SHA256 (portdbc-1.1.tar.bz2) = a141b35e7f7c4cf24cb9f4629c13f1accf901331ed23871f2a4ef1b3d991abc2
+SHA256 (fixups.patch) = f29f701321a8fc75d7a769002ca0e6e9d4c55afdd939d98a7d63f6c1f83d129e

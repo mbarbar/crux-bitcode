@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30rZuRQmk+yVNMb90yQI+qcVG5kiH1wnHX4sC7deHoXO7fPWgJ5pe9Pa95y/gcKLbddO0tqVDATI2OOJVNjGjws=
+SHA256 (Pkgfile) = 5d76695f07e18f1459b953c7003c6b9523e6702fef1aa237c3f76d75296bb48e
+SHA256 (.footprint) = 0d17fe7cf87933811344bc14d5c6d63c483aea256307b0f2a9687ebe6a3b1f8d
+SHA256 (dia-0.97.3.tar.xz) = 22914e48ef48f894bb5143c5efc3d01ab96e0a0cde80de11058d3b4301377d34
+SHA256 (dia-0.97.2-underlinking.patch) = e7681b719c8ddf8c099c58ab16d521a570c36b24a8fcbe24309f398af965f1f4
+SHA256 (dia-0.97.3-freetype_pkgconfig.patch) = d140a0e17d46b4b944fcd2a5685797c2dd3b4188a7d341c79b058656477d367a
+SHA256 (dia-0.97.0-gnome-doc.patch) = 5a0161a8da6991c65eb85cda4fbb00e65d897a13ab17ca2d1924167d316fa7a6

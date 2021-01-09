@@ -1,0 +1,21 @@
+# Description: Python event-driven networking framework.
+# URL: https://www.twistedmatrix.com/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-Automat python3-constantly python3-hyperlink python3-incremental python3-zope-interface
+
+name=python3-twisted
+version=20.3.0
+release=1
+source=(https://github.com/twisted/twisted/archive/twisted-$version.tar.gz)
+
+build() {
+	cd twisted-twisted-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --root=$PKG --optimize=1
+
+	# clean up bins
+	cd $PKG/usr/bin
+	for f in *; do
+		mv "$f" "${f%}3"
+	done
+}

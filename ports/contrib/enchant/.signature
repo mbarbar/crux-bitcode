@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+MbBqlBmwk0WQ5WWrI3ftD7mHr5kY09TLN+Wb5+nCupe+vUL2nWdCJdr0KFUThAh1ytwCjdHQqu1OfB4tK+cAM=
+SHA256 (Pkgfile) = 471eeadcd4cab47dfc9ecd7fb0e593e891b7414e2f92268276d4b39753cb654d
+SHA256 (.footprint) = 0c9e69af93e9ec7a54a9e0331cd7428022b990f918e9233879f5894e203d8929
+SHA256 (enchant-2.2.13.tar.gz) = eab9f90d79039133660029616e2a684644bd524be5dc43340d4cfc3fb3c68a20

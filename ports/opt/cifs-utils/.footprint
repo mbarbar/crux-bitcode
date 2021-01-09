@@ -1,0 +1,36 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/cifs
+drwxr-xr-x	root/root	sbin/
+-rwxr-xr-x	root/root	sbin/mount.cifs
+lrwxrwxrwx	root/root	sbin/mount.smb3 -> mount.cifs
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cifscreds
+-rwxr-xr-x	root/root	usr/bin/getcifsacl
+-rwxr-xr-x	root/root	usr/bin/setcifsacl
+-rwxr-xr-x	root/root	usr/bin/smb2-quota
+-rwxr-xr-x	root/root	usr/bin/smbinfo
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/cifsidmap.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/cifs-utils/
+-rwxr-xr-x	root/root	usr/lib/cifs-utils/idmapwb.so
+drwxr-xr-x	root/root	usr/lib/security/
+-rwxr-xr-x	root/root	usr/lib/security/pam_cifscreds.so
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/cifs.idmap
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/cifscreds.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/getcifsacl.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/setcifsacl.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/smb2-quota.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/smbinfo.1.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/cifs.idmap.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/idmapwb.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/mount.cifs.8.gz
+lrwxrwxrwx	root/root	usr/share/man/man8/mount.smb3.8.gz -> mount.cifs.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/pam_cifscreds.8.gz

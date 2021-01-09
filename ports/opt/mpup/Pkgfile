@@ -1,0 +1,16 @@
+# Description:	Meta driver script for ports(8)
+# URL:		https://crux.nu
+# Maintainer:	CRUX System Team, core-ports at crux dot nu
+# Depends on:	bash ports findutils coreutils
+
+name=mpup
+version=2.0.1
+release=1
+source=(https://crux.nu/files/$name-$version.tar.lz)
+
+build() {
+
+	cd $name-$version
+
+	make DESTDIR=$PKG install
+}

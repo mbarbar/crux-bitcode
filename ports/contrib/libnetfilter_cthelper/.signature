@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y4w0Gjp4oxg1tJA3ViwJxX6YO60fog5tBFxkcONRqO/27qXEfcn+EMOHUpjcBStv9z5iDPYCeQuBKpTsBERtQQ=
+SHA256 (Pkgfile) = 365a2b63ee227656e9c319e5de10aad9415e7643994408ce2559901194ea9ad8
+SHA256 (.footprint) = 03bde37894147217cb57974c26b64ebbbb286e27c350b6368c7b8d3146a0f52b
+SHA256 (libnetfilter_cthelper-1.0.0.tar.bz2) = 07618e71c4d9a6b6b3dc1986540486ee310a9838ba754926c7d14a17d8fccf3d

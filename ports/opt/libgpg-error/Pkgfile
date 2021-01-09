@@ -1,0 +1,21 @@
+# Description: A small library defining error values for GnuPG components
+# URL:         https://www.gnupg.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=libgpg-error
+version=1.39
+release=1
+source=(https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+              --disable-nls \
+              --enable-static
+  make
+  make DESTDIR=$PKG install
+
+  rm -r $PKG/usr/share/info/
+
+}

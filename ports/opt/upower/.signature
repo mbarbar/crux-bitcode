@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/f5fKUA6MhluxlVm5YTmRunVIu3HjjG2GlKtGX7P5tJEU+6fcb5d5n8MnLEbnp4ixF5sj+3MSHBPQD119bvssgk=
+SHA256 (Pkgfile) = 5c636356bf16aa4efb0b1c6c8c68430efbcebbb029b941a39462cc7402c10285
+SHA256 (.footprint) = f0e2f2153f4348add384180806a7425aa512ff4404508fa952457f1f48d1dfde
+SHA256 (upower-0.99.11.tar.xz) = 64b5ffbfccd5bdb15d925777979a4dbee1a957f9eaeb158dc76175267eddbdef
+SHA256 (upower.1) = c4e05bc89b31c9ddc206a33d97c15c2babbce5330f79e0849c84fb878e896c6b
+SHA256 (UPower.7) = 50b3e3b2cec513492c88e270fcf3dee2f98d11f52130827740f804a1492b6dd8
+SHA256 (upowerd.8) = d31cd082985a171a92d63126304964453d5dc3c1431960885f2fe2259784786f

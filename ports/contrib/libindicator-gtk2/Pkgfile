@@ -1,0 +1,28 @@
+# Description: Set of symbols and convenience functions for Ayatana indicators (GTK+ 2 library)
+# URL: https://launchpad.net/libindicator
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: graphite2 gtk xorg-libxdamage gnome-common
+
+name=libindicator-gtk2
+version=16.10
+release=1
+source=(http://unrealize.co.uk/source/libindicator-$version.tar.gz)
+
+build() {
+  cd libindicator-$version
+  sed -e 's/-Werror -Wno-error=deprecated-declarations//g' -i libindicator/Makefile.am
+  sed -e 's/--enable-gtk-doc//g' -i autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
+  CFLAGS="-Wno-deprecated -Wno-deprecated-declarations -fPIC" \
+  CXXFLAGS="-Wno-deprecated -Wno-deprecated-declarations -fPIC" \
+  ./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib/libindicator \
+    --sysconfdir=/etc \
+    --disable-static \
+    --with-gtk=2
+  make -j1
+  make -j1 DESTDIR=$PKG install
+  #rm -fr $PKG/usr/lib/libdummy*
+  rm -fr $PKG/usr/share/libindicator
+}

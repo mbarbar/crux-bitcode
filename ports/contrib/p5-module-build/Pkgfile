@@ -1,0 +1,23 @@
+# Description: Build and install Perl modules
+# URL:         https://metacpan.org/release/Module-Build
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  perl
+
+name=p5-module-build
+version=0.4231
+release=1
+source=(https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-$version.tar.gz)
+
+build() {
+  cd Module-Build-$version
+  yes n|perl Makefile.PL
+  make OPTIMIZE="$CFLAGS"
+  make install DESTDIR=$PKG
+  # Remove perlcrap
+  find $PKG \
+    -name .packlist -or \
+    -name '*.bs' -or \
+    -name perllocal.pod | xargs rm
+  # Remove empty directories
+  find $PKG -depth -empty -exec rm -rf {} \;
+}

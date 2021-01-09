@@ -1,0 +1,28 @@
+diff -pruN ccache-4.0.orig/doc/CMakeLists.txt ccache-4.0/doc/CMakeLists.txt
+--- ccache-4.0.orig/doc/CMakeLists.txt	2020-10-28 22:26:27.770955558 +1100
++++ ccache-4.0/doc/CMakeLists.txt	2020-10-28 22:29:16.092274569 +1100
+@@ -58,7 +58,11 @@ else()
+       COMMAND a2x --doctype manpage --format manpage MANUAL.xml
+       MAIN_DEPENDENCY MANUAL.xml
+     )
+-    add_custom_target(doc-man-page DEPENDS ccache.1)
++    add_custom_target(doc-man-page ALL DEPENDS ccache.1)
++    install(
++	    FILES "${CMAKE_CURRENT_BINARY_DIR}/ccache.1"
++	    DESTINATION ${CMAKE_INSTALL_MANDIR}/man1
++	    )
+     set(doc_files "${doc_files}" ccache.1)
+   endif()
+ 
+diff -pruN ccache-4.0.orig/doc/MANUAL.adoc ccache-4.0/doc/MANUAL.adoc
+--- ccache-4.0.orig/doc/MANUAL.adoc	2020-10-28 22:26:27.770955558 +1100
++++ ccache-4.0/doc/MANUAL.adoc	2020-10-28 22:30:10.304959158 +1100
+@@ -8,7 +8,7 @@ CCACHE(1)
+ Name
+ ----
+ 
+-Ccache - a fast C/C++ compiler cache
++ccache - a fast C/C++ compiler cache
+ 
+ 
+ Synopsis

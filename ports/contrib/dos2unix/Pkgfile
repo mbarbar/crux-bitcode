@@ -1,0 +1,15 @@
+# Description: Dos2unix converts DOS or MAC text files to UNIX format
+# URL:         http://dos2unix.sourceforge.net
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=dos2unix
+version=7.4.2
+release=1
+source=(http://www.xs4all.nl/~waterlan/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make ENABLE_NLS= CFLAGS="$CFLAGS"
+	make ENABLE_NLS= DESTDIR=$PKG install-bin install-man
+}
+

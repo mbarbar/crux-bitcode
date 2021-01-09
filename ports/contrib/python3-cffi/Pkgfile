@@ -1,0 +1,15 @@
+# Description: Foreign Function Interface for Python calling C code.
+# URL: http://cffi.readthedocs.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-pycparser
+
+name=python3-cffi
+version=1.14.3
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:8:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+}

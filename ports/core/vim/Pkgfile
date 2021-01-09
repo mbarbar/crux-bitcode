@@ -1,0 +1,53 @@
+# Description: Highly configurable text editor
+# URL:         http://www.vim.org/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  ncurses acl
+
+name=vim
+version=8.2.2072
+release=1
+source=(https://github.com/vim/vim/archive/v${version}/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version/src
+
+    sed -i '/^CFLAGS/d' Makefile
+
+    ./configure --prefix=/usr \
+                --with-vim-name=vim \
+                --without-x \
+                --disable-gui \
+                --enable-multibyte \
+                --enable-cscope \
+                --disable-gpm \
+                --disable-nls
+
+    make VIMRTDIR= 
+    make -j1 VIMRTDIR= DESTDIR=$PKG install
+
+    mv $PKG/usr/share/vim/vimrc_example.vim $PKG/usr/share/vim/vimrc
+    rm -r $PKG/usr/{share/man/man?/vimtutor*,share/vim/{tutor,macros},bin/vimtutor}
+    rm $PKG/usr/share/vim/*/README.txt
+    rm -rf $PKG/usr/share/{applications,icons}
+    ln -sf vim $PKG/usr/bin/evim
+    ln -sf /bin/vi $PKG/usr/bin/vi
+    ln -sf vim.1.gz $PKG/usr/share/man/man1/ex.1.gz
+    ln -sf vim.1.gz $PKG/usr/share/man/man1/vi.1.gz
+    ln -sf vim.1.gz $PKG/usr/share/man/man1/rvim.1.gz
+    ln -sf vim.1.gz $PKG/usr/share/man/man1/view.1.gz
+    ln -sf vim.1.gz $PKG/usr/share/man/man1/rview.1.gz
+    ln -sf vim.1.gz $PKG/usr/share/man/man1/gvim.1.gz
+
+    ./configure --prefix=/ \
+                --datarootdir=/usr/share \
+                --with-vim-name=vi \
+                --without-x \
+                --disable-gui \
+                --enable-multibyte \
+                --disable-gpm \
+                --disable-nls \
+                --with-features=tiny
+
+    make VIMRTDIR=
+    make -j1 VIMRTDIR= DESTDIR=$PKG installvimbin
+}

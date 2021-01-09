@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zlEuD4WEbBOkf1joop5Rsu+faGfUsZmLjNNTRlt2UVpICmJdRnHWRSezP3Z2Qj6p762By3z3khbpsIAGum9YQ4=
+SHA256 (Pkgfile) = 26352db4231522703f8d954f35b8d037fb6564151939d7460a175ba5a01c0821
+SHA256 (.footprint) = 787b5e0a781da5774e16ebacdd3dd792ecba97bba3b8dded577eda498d7ef511
+SHA256 (powertop-2.13.tar.gz) = a65f992ca4a419bc73b623651060eb9fc00c5a86fa03556358cd9db011ef3178

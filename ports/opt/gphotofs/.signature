@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/eUPh9MfeUSzCQ3BgxqowiyVeNr4kV19hVLoFHDK+HuKWXzRBRYtZjObPJnsaYxMafzOtnbS4BevaaRP+jIMPgg=
+SHA256 (Pkgfile) = e7e1f1df7c7b6c41b1b83b879671036041cb85cad25b417155f4057283d229e2
+SHA256 (.footprint) = ffb6cc89ecf5cee83e13b76f98773999919d95332b9ad8041fd3408d4a6629b4
+SHA256 (gphotofs-0.5.tar.bz2) = 676ec4de69a81c193ffc31bdc7b587ac2a2cc3780b14f0e7c9c4c0a517b343cc

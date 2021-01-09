@@ -1,0 +1,27 @@
+# Description: Set of symbols and convenience functions for Ayatana indicators (GTK+ 3 library)
+# URL: https://launchpad.net/libindicator
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libido3 gnome-common
+
+name=libindicator-gtk3
+version=16.10
+release=1
+source=(http://unrealize.co.uk/source/libindicator-$version.tar.gz)
+
+build() {
+  cd libindicator-$version
+  sed -e 's/-Werror -Wno-error=deprecated-declarations//g' -i libindicator/Makefile.am
+  sed -e 's/--enable-gtk-doc//g' -i autogen.sh
+  NOCONFIGURE=1 ./autogen.sh
+  CFLAGS="-Wno-deprecated -Wno-deprecated-declarations -fPIC" \
+  CXXFLAGS="-Wno-deprecated -Wno-deprecated-declarations -fPIC" \
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib/libindicator \
+    --disable-static \
+    --with-gtk=3
+  make -j1
+  make -j1 DESTDIR=$PKG install
+  rm -fr $PKG/usr/lib/libdummy*
+}

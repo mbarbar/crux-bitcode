@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+HTuD/d99lAQseDJvDKulsKu+UGQcS5VtDf4tQuHTZ7zVU8QFkxk1gOHKCMMGAi5bnzetRE/p7sHGWpxysS7Qk=
+SHA256 (Pkgfile) = d39c21c62858a052b6c028bc0f0e01f07c5714d8bfa01f82d36f5c4f2d3a32b6
+SHA256 (.footprint) = e6424d4c371660a45c53aa774c57ec69093b0d7e3bb049700e818910b950fd04
+SHA256 (redland-1.0.17.tar.gz) = de1847f7b59021c16bdc72abb4d8e2d9187cd6124d69156f3326dd34ee043681
+SHA256 (rpath.diff) = 9ddf9f7581f5194d73ad908f3b26354c70d3079a7a87c8add8a0d0e4c6974fec

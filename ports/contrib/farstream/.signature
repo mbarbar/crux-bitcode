@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+klVm7s8bEDWf3RvgLjN0xNbkEQ04jIbG1XE0O7peJxOic0a22Zqxa+UIBNgr/rOZ+C8eivnewGLdlDojdroAw=
+SHA256 (Pkgfile) = d8bba339845b55151f6d11ea6e142760c4b25445f79d0d5e2b6e82040968e9ae
+SHA256 (.footprint) = d7641957005955e83650f778061f666793865ad675f05eb9aa60067a02e1ba97
+SHA256 (farstream-0.2.9.tar.gz) = cb7d112433cf7c2e37a8ec918fb24f0ea5cb293cfa1002488e431de26482f47b
+SHA256 (farstream-make-4.3.patch) = 39485c842498c57a0b88ced4897e4ac216426cdd8a8416231513af1513208f5c

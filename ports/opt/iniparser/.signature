@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/ahhrDdQgjdMWminjDTbtJfr98rauuKRxsAOZkdNHC+9Tcy3y4Gapy8mGS7eb+T8RHP+gCm0u1oAbthi1e4m1Ac=
+SHA256 (Pkgfile) = 74614a1602eded50e782d7e967578ea6b7abb616d29af2aae7c6d45556a67780
+SHA256 (.footprint) = 74981fac368b92765668ad44000822f57d6c8f6f0815193cd494da3a60198524
+SHA256 (iniparser-4.1.tar.gz) = 960daa800dd31d70ba1bacf3ea2d22e8ddfc2906534bf328319495966443f3ae

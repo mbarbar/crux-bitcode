@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Zc5YqZFi4IjepiNBNzcwlE+lQqL00VGWyqtGY5ONk6xUfXZkTz98yzYm74cV5rWFPAcZxKdmaGcGpxuqhYXsgw=
+SHA256 (Pkgfile) = 664a339efea5d98168827895acc4fe3913a23440e968d8a89936c32db6bc2ce0
+SHA256 (.footprint) = f742ad42873da9ed913476410643c3842f761c23c422592e19e07a84595f61f9
+SHA256 (giflib-5.2.1.tar.gz) = 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QTegiIqzYQE6LjdJqPyo7JDdtBvQxKTr7tUgvjdj0CpJkrncPSFtpkBVEFKtDFIhe3qViImN/EhdksE1PVGdQY=
+SHA256 (Pkgfile) = 3314089bc9f70461ff26094b24d27670eba4a3d724435677fcc3c980470475a3
+SHA256 (.footprint) = 5d2b5316414c769bb0ebc19ccb675f0309a51e859acd1cd13ae091f270106ab4
+SHA256 (alsa-lib-1.2.4.tar.bz2) = f7554be1a56cdff468b58fc1c29b95b64864c590038dd309c7a978c7116908f7

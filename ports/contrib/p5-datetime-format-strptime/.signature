@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35SsngT7YQqkKzhDLGO35BQ8LN5yhBqQOSE1wryhltS7lqjqIBpdyyaIKKjSzKmO871vh6U2wVRvetMNm5jdNQ0=
+SHA256 (Pkgfile) = 359e8d65a64b5e4e67ec627f577e6e8803d5367677bbf31a366878d7cb71298d
+SHA256 (.footprint) = c8ab93623ec08b06f0296f9b8151013817c3fa696b278a1dbfd9afef8e6e108e
+SHA256 (DateTime-Format-Strptime-1.77.tar.gz) = 2fa43c838ecf5356f221a91a41c81dba22e7860c5474b4a61723259898173e4a

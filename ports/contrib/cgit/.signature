@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/KN2KTR7yDJzlu9NzwUekk9hlAG0tyWnPET9kBHQFULF/JsxDLkzOVir/V44DtjFL00SNp6N/ssnma6q4enJgc=
+SHA256 (Pkgfile) = 90479dd41b0d35de63bcfe4b2ca2f9099f109b0cd73e9dfb92707099e4257a4a
+SHA256 (.footprint) = 7298fdc3feaa73e32d0976e64850823ea876c795e128ca35a7e968821b8fdd1c
+SHA256 (cgit-1.2.3.tar.xz) = 5a5f12d2f66bd3629c8bc103ec8ec2301b292e97155d30a9a61884ea414a6da4
+SHA256 (cgit.conf) = 89927d462c0504863c163eb8a210e5d65db30ee6e4300ff6a2f92460e4f20a62

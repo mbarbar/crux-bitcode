@@ -1,0 +1,5 @@
+Please install a backend driver for libva to function on your graphics card.
+
+libva-vdpau-driver: vdpau back-end for nvidia
+libva-intel-driver: back-end for intel cards (currently called libva-intel)
+

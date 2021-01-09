@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33kYUS7Eho0BGTFSvvGQy4BUuVhxpXsUfde60nrf0VBXuRFL+h0KYHY08rgCCDMDBuQ3RkFnxKlcxV3pryxa0go=
+SHA256 (Pkgfile) = 0a5d5eaab97cacd05170c7561c57283143ce9975961221eebe8fe0569a9035d5
+SHA256 (.footprint) = 9e14b01def9b7edf3593937ef9ab8c93d822a8303e1bb1d08e1c528650095f9d
+SHA256 (inxi-3.1.09-1.tar.gz) = 2212ad21238b60238b00c8826e2659f4283198c154ebcf24f0d5174fffcd6949

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF331zjNPCl6meSim6VteOBW44FAw8/AGoCr0WahlR2vej+7qBt1yyofqPxfIvv/SuMkMp/jzHaJzLHD8onrzuvAI=
+SHA256 (Pkgfile) = 0d1b763476a4a100892509695ecf6e29e3c8399fc6c88f926da45c7380d01909
+SHA256 (.footprint) = 99a173f102e12b2cc037039472d91f735661854e66ee5c515dd567bf40114450
+SHA256 (mercurial-5.6.tar.gz) = dfa7b3b5082783763710504f242ec487a5d801dc4bcd701cdad4b6ffc1f062c2

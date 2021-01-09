@@ -1,0 +1,35 @@
+# Description: glib wrapper for poppler
+# URL:         https://poppler.freedesktop.org/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  gobject-introspection poppler 
+
+name=poppler-glib
+version=20.12.1
+release=1
+source=(https://poppler.freedesktop.org/poppler-$version.tar.xz)
+
+build() {
+    cmake -S poppler-$version -B build\
+        -D CMAKE_BUILD_TYPE=Release \
+        -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+        -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D CMAKE_INSTALL_LIBDIR=/usr/lib \
+        -D ENABLE_UNSTABLE_API_ABI_HEADERS=OFF \
+        -D ENABLE_UTILS=OFF \
+        -D ENABLE_SPLASH=ON \
+        -D ENABLE_CPP=OFF \
+        -D ENABLE_GLIB=ON \
+        -D ENABLE_QT5=OFF \
+        -D ENABLE_ZLIB=ON \
+        -D ENABLE_CMS=lcms2 \
+        -D ENABLE_LIBOPENJPEG=none \
+        -D WITH_NSS3=OFF \
+        -D RUN_GPERF_IF_PRESENT=OFF
+
+    cmake --build build
+    DESTDIR=$PKG cmake --install build
+
+    rm $PKG/usr/lib/libpoppler.so*
+    rm $PKG/usr/lib/pkgconfig/poppler.pc
+}

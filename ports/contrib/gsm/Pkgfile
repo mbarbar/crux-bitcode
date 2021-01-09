@@ -1,0 +1,25 @@
+# Description:	GSM library
+# URL:		http://www.quut.com/gsm/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+
+name=gsm
+version=1.0.19
+release=1
+source=(http://www.quut.com/$name/$name-$version.tar.gz
+  gsm.patch)
+
+build() {
+	cd $name-${version%.*}-pl${version##*.}
+
+	# Patch to build shared library instead of static
+	patch -p0 -i $SRC/gsm.patch
+
+	install -d -m 755  $PKG/usr/{bin,include/gsm,share/man/man{1,3},lib}
+
+	make CCFLAGS="-c $CFLAGS -fPIC"
+	make -j1 INSTALL_ROOT=$PKG/usr \
+		GSM_INSTALL_INC="$PKG"/usr/include/gsm \
+		GSM_INSTALL_MAN="$PKG"/usr/share/man/man3 \
+		TOAST_INSTALL_MAN="$PKG"/usr/share/man/man1 \
+		install
+}

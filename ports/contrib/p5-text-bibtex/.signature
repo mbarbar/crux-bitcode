@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xIsT1INMxtKGEXUJGxA6pbXKipOd0YKrZtKgc0UQLBIPlOr+GAds3OnYgTAZgL8s+gqq0Zx7TPMJ91wDKQT8Ao=
+SHA256 (Pkgfile) = 4074506ce7de8bca40cca35ab89931a58f8dc2fac584873d565e10070a14c993
+SHA256 (.footprint) = 683f7bf1c7254e9e3653689cdfd8d36dde8cc9c41def06a754885a0bc3860fa3
+SHA256 (Text-BibTeX-0.88.tar.gz) = b014586e68bdbcafb0a2cfa0401eb0a04ea5de8c4d5bc36dd0f7faeab6acf42c

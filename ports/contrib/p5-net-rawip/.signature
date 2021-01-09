@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xt1fnFBju4TMyxVpvl88VGOmVLsJjABUUig5cdI2ugJY/kQ50LxRq7T6c9pEHrZ7TYg6dUzlQiD1GdyXRnfAAc=
+SHA256 (Pkgfile) = 2b556de223509ba766fb37a5d2af5dbe6a2aba39e86d5d2727ca6c8176a2311f
+SHA256 (.footprint) = d0d253e4af6eb14bab05716833f0bc9f79e06b33db78c5d1add40cf9a9f83c84
+SHA256 (Net-RawIP-0.25.tar.gz) = 6d104b2f0e453eff7a1b479c528798670b15729ed6ecf41430405ff6d7e1ee58

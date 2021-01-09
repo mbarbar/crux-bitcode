@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/YlEkXuKAMCmQMxJ+j36dsa3lVly0TIIYzXmfnu5HFrmUPcjmpBEOL+c2RY1O9cYqR5AWWv5ws1LfL/XRQQZXwE=
+SHA256 (Pkgfile) = 6b8e945eb098cbad3ee960f56e378f4d0a58a359f85570e58e59ea5389541d1d
+SHA256 (.footprint) = c870b36e950084d7495f80b197b12870b84e6aac594a5f942503cad992b2e7cf
+SHA256 (gutenprint-5.3.3.tar.xz) = 7279ecbc8e67d1858c53cb24e423ea1be98e214872006b79e6e03650dd54a072

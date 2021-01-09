@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# /etc/rc.d/redis: start/stop redis server
+#
+# make sure to have set daemonize to no in redis.conf so that PID file
+# creation and tracking by start-stop-daemon work properly
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/bin/redis-server
+PID=/var/run/redis.pid
+USR=redis
+RDBDIR=/var/lib/redis
+
+case $1 in
+start)
+        $SSD --start -c $USR -b -m --pidfile $PID --exec $PROG -- /etc/redis.conf
+        ;;
+stop)
+        $SSD --stop --retry 10 --pidfile $PID --remove-pidfile
+        ;;
+restart)
+        $0 stop
+        $0 start
+        ;;
+status)
+        $SSD --status --pidfile $PID
+        case $? in
+        0) echo "$PROG is running with pid $(cat $PID)" ;;
+        1) echo "$PROG is not running but the pid file $PID exists" ;;
+        3) echo "$PROG is not running" ;;
+        4) echo "Unable to determine the program status" ;;
+        esac
+        ;;
+*)
+        echo "usage: $0 [start|stop|restart|status]"
+        ;;
+esac
+
+# End of file
+

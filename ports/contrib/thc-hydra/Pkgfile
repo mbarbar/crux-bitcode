@@ -1,0 +1,23 @@
+# Description: fast network logon cracker
+# URL:         https://github.com/vanhauser-thc/thc-hydra
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+# Nice to have: mysql, libssh, libidn, libssh, gtk
+
+name=thc-hydra
+version=9.1
+release=1
+source=(https://github.com/vanhauser-thc/thc-hydra/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  sed -i 's/dummy_ssh/dummy_sshkey/' hydra-sshkey.c
+  sed -i 's!MANDIR = /man/man1/!/MANDIR = /share/man/man1!' Makefile*
+
+  ./configure \
+    --prefix=$PKG/usr
+
+  make
+  MANDIR="/share/man" make install
+}

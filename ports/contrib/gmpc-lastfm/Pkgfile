@@ -1,0 +1,19 @@
+# Description: Album/Artist/Cover art pluign for gmpc
+# URL:         https://gmpc.fandom.com/wiki/Gnome_Music_Player_Client
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+#
+# Depends on:  gmpc
+
+name=gmpc-lastfm
+version=0.20.0
+release=1
+source=(http://download.sarine.nl/Programs/gmpc/$version/gmpc-last-fm-$version.tar.gz)
+
+build() {
+  cd gmpc-last-fm-$version
+  ./configure --prefix=/usr --disable-nls
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share
+}

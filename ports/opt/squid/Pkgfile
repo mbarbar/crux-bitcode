@@ -1,0 +1,44 @@
+# Description: A full-featured web proxy cache
+# URL:         http://www.squid-cache.org
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  db libcap libtool expat libxml2
+
+name=squid
+version=4.13
+release=1
+source=(http://www.squid-cache.org/Versions/v4/$name-$version.tar.xz
+        squid)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc/squid \
+                --libexecdir=/usr/lib/squid \
+                --localstatedir=/var \
+                --datadir=/usr/share/squid \
+                --with-logdir=/var/log/squid \
+                --with-pidfile=/var/run/squid.pid \
+                --with-swapdir=/var/squid \
+                --with-default-user=squid \
+                --enable-linux-netfilter \
+                --enable-storeio=ufs,aufs,diskd,rock \
+                --enable-removal-policies=lru,heap \
+                --with-large-files \
+                --with-pthreads \
+                --with-aufs-threads=16 \
+                --disable-auto-locale \
+                --disable-arch-native \
+                --without-{mit,heimdal}-krb5 \
+                --without-{nettle,gnutls}
+
+    make all
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/var/run
+    find $PKG/usr/share/squid/errors/* -prune ! -name templates | xargs rm -r
+
+    install -d -m 0700 -o squid -g squid $PKG/var/{log/squid,squid}
+    install -d -m 0700 -o squid -g squid $PKG/var/run/squid
+    install -D -m 755 $SRC/squid $PKG/etc/rc.d/squid
+}

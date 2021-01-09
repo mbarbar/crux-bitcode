@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	etc/
+-rw-r--r--	root/root	etc/abcde.conf
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/abcde
+-rwxr-xr-x	root/root	usr/bin/abcde-musicbrainz-tool
+-rwxr-xr-x	root/root	usr/bin/cddb-tool
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/abcde.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cddb-tool.1.gz

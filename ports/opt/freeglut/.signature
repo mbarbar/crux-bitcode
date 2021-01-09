@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/Z7tNl58Vtx8gTGYcj0/BNPS6O5DoZEDdeQuBQauujrMqKEcv8pw7K+liM0ekVHC/6vGhltH00VBprzTMjqZiQU=
+SHA256 (Pkgfile) = 9acfdef672f13ec4b1d64f62145a766be2d78d617ba8751b1bc18fef8c55d147
+SHA256 (.footprint) = e1456ea754b868b14d770c08b877d10d842f5ea84e5170911f187ecdf7d7eedc
+SHA256 (freeglut-3.2.1.tar.gz) = d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
+SHA256 (gcc10.patch) = ce2d11ffbffda1872dde5d50198fa5de961c22716e29fb1715648b7b818222c5

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39l/WEFj4lhdRI8ca+kiPqhNSgS6wwTaxFX/5kiE4sv0vbHpVJSONHbHtAZY2T0LC9H09bzRj+UIOQWPtHA6Sgw=
+SHA256 (Pkgfile) = 9d2e79c5d2249dcc98d25b0de6459c462dc36f35682480d4d5bff063557fa043
+SHA256 (.footprint) = f9d93ab4c64384a80e0ab3b3860ca02e78dea8e0b32ddce2e8b4b90f0de78043
+SHA256 (pytz-2020.1.tar.gz) = c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048

@@ -1,0 +1,14 @@
+The configuration of st is done by creating a custom config.h
+and (re)compiling the source code. To create a custom config.h,
+unpack the tarball, copy the file st-$version/config.def.h to
+st's port directory, and edit to suit your preferences. Then,
+when you call pkgmk in the st port directory, the custom
+config.h will be detected and copied into the source before
+compilation. I recommend that you save a copy your custom config.h
+some where other than the st port directory, so that your changes
+won't get nuked when updating ports or performing a prtsweep or
+prtwash (see opt/prt-utils for more information about those two).
+
+Another solution for customizing st is to create a custom and
+(preferably) private port that contains your custom config and also
+might include patches, such as from https://suckless.org/patches/.

@@ -1,0 +1,18 @@
+# Description: Makeself generates self-extractable tar.gz archives
+# URL:         https://makeself.io
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:
+
+name=makeself
+version=2.4.2
+release=1
+source=(https://github.com/megastep/$name/releases/download/release-$version/$name-$version.run)
+
+build() {
+	sh $name-$version.run
+
+	install -d -m 0755 $PKG/usr/{bin,share/man/man1}
+	install -D -m 0755 $name-$version/$name.sh $PKG/usr/bin/$name
+	install -D -m 0755 $name-$version/$name-header.sh $PKG/usr/bin/$name-header
+	install -D -m 0644 $name-$version/$name.1 $PKG/usr/share/man/man1/$name.1
+}

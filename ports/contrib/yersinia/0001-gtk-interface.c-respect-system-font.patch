@@ -1,0 +1,27 @@
+From d317fff06cda63a9f3713f7dee2b3d0788909e2b Mon Sep 17 00:00:00 2001
+From: Alexandr Savca <alexandr.savca89@gmail.com>
+Date: Tue, 17 Nov 2020 11:47:33 +0200
+Subject: [PATCH] gtk-interface.c: respect system font
+
+---
+ src/gtk-interface.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/gtk-interface.c b/src/gtk-interface.c
+index eee367e..486b915 100644
+--- a/src/gtk-interface.c
++++ b/src/gtk-interface.c
+@@ -1707,8 +1707,8 @@ create_protocol_mwindow(GtkWidget *Main, struct gtk_s_helper *helper, u_int8_t p
+          gtk_entry_set_editable(GTK_ENTRY(entry[i]), FALSE);
+ 
+          /* Set up a monospaced font */
+-         font_desc = pango_font_description_from_string ("Monospace 10");
+-         gtk_widget_modify_font(entry[i], font_desc);
++         /*font_desc = pango_font_description_from_string ("Monospace 10");*/
++         /*gtk_widget_modify_font(entry[i], font_desc);*/
+          gtk_widget_show(entry[i]);
+ 
+          /* Initialize the values */
+-- 
+2.29.2
+

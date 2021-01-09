@@ -1,0 +1,6 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/publicsuffix/
+lrwxrwxrwx	root/root	usr/share/publicsuffix/effective_tld_names.dat -> public_suffix_list.dat
+-rw-r--r--	root/root	usr/share/publicsuffix/public_suffix_list.dat
+-rw-r--r--	root/root	usr/share/publicsuffix/test_psl.txt

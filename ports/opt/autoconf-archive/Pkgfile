@@ -1,0 +1,20 @@
+# Description: A collection of freely re-usable Autoconf macros.
+# URL: https://www.gnu.org/software/autoconf-archive/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=autoconf-archive
+version=2019.01.06
+release=1
+source=(https://ftpmirror.gnu.org/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr		
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/{doc,info}
+	rm $PKG/usr/share/aclocal/ax_check_enable_debug.m4
+	rm $PKG/usr/share/aclocal/ax_code_coverage.m4
+}

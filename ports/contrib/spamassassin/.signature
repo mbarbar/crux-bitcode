@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF387KZBZZWJE4SUD3PYZEXxEWXoulxYWOcB+woEFOkqBjKeCSX69JRYqsjM99ffnbkt6148dkJgDsplhUgI4UZQk=
+SHA256 (Pkgfile) = ca6c4f510f529a9a46f2ced65edf49253888faba0f1f067edbe2b4bf92cd199b
+SHA256 (.footprint) = f40fd926b1b369ff259c3251047907053514f56c3c299c3deddf437c75f8e26e
+SHA256 (Mail-SpamAssassin-3.4.4.tar.bz2) = 4e2bc79e24cdbb3d8262e6ec4f5bb3dde670de9caaa739d50c698b6d45ac453d
+SHA256 (spamassassin.rc) = b1695b44353543bbe88063c9b6c05038be65b848ea45ec4bdf9a21f7d8abf517

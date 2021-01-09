@@ -1,0 +1,15 @@
+# Description: Identify the different types of hashes used to encrypt data
+# URL:         https://github.com/psypanda/hashID
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+
+name=hashid
+version=3.1.4.7e8473a
+_commit=7e8473a823060e56d4b6090a98591e252bd9505e
+release=1
+source=(https://github.com/psypanda/hashID/archive/$_commit/hashID-$_commit.zip)
+
+build() {
+	cd hashID-$_commit
+
+	install -Dm755 $name.py $PKG/usr/bin/hash-identifier
+}

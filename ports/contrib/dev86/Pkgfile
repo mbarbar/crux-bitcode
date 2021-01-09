@@ -1,0 +1,22 @@
+# Description: cross development C compiler environment for the production of 8086 executables.
+# URL:         https://github.com/lkundrak/dev86/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=dev86
+version=0.16.21
+release=3
+source=(https://github.com/lkundrak/dev86/archive/v$version/Dev86src-$version.tar.gz
+	bin86-x86_64.patch)
+
+build() {
+	cd $name-$version
+	patch -p1 -i $SRC/bin86-x86_64.patch
+	sed -i -e 's,/man/,/share/man/,' dis88/Makefile
+
+	echo quit | make -j1 PREFIX=/usr GCCFLAG="$CFLAGS -D_POSIX_SOURCE"
+	make -j1 install-all PREFIX=/usr MANDIR=/usr/share/man DIST=$PKG
+
+	rm -f $PKG/usr/bin/{as,ld,nm,objdump,size}86
+	rm -f $PKG/usr/share/man/man1/{as,ld}86.1
+}
+

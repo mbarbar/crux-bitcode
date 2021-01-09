@@ -1,0 +1,6 @@
+#!/bin/sh
+
+getent group fcron || /usr/sbin/groupadd -g 45 fcron
+getent passwd fcron || /usr/sbin/useradd -g fcron -u 45 -d /var/spool/fcron -s /bin/false fcron
+/usr/bin/passwd -l fcron
+

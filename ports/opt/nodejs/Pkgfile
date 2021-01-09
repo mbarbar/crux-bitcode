@@ -1,0 +1,43 @@
+# Description: Evented I/O for V8 javascript.
+# URL: https://nodejs.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3 libuv 
+# Optional: icu brotli ninja
+
+# c-ares  wait until a newer release than 1.16.1
+
+name=nodejs
+version=15.3.0
+release=1
+source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz)
+
+build() {
+	cd node-v$version
+
+	[ -e '/usr/lib/pkgconfig/icu-i18n.pc' ] && PKGMK_NODEJS+=' --with-intl=system-icu'
+	[ -e '/usr/lib/pkgconfig/libbrotlicommon.pc' ] && PKGMK_NODEJS+=' --shared-brotli'
+	[ -e '/usr/bin/ninja' ] && PKGMK_NODEJS+=' --ninja'
+
+	./configure ${PKGMK_NODEJS} \
+		--prefix=/usr \
+		--without-npm \
+		--shared-libuv \
+		--shared-zlib \
+		--shared-openssl
+		# -shared-cares
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+
+	# clean up
+	find $PKG -type f \( \
+		-name 'README.md' -o \
+		-name 'AUTHORS.md' -o \
+		-name 'INSTALL.md' -o \
+		-name 'TODO.org' -o \
+		-name 'ChangeLog' -o \
+		-name 'NEWS' \) -delete
+
+}

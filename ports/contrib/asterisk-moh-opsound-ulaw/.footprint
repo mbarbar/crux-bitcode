@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	var/
+drwxr-xr-x	root/root	var/lib/
+drwxr-xr-x	root/root	var/lib/asterisk/
+drwxr-xr-x	root/root	var/lib/asterisk/moh/
+-rw-r--r--	root/root	var/lib/asterisk/moh/macroform-cold_day.ulaw
+-rw-r--r--	root/root	var/lib/asterisk/moh/macroform-robot_dity.ulaw
+-rw-r--r--	root/root	var/lib/asterisk/moh/macroform-the_simplicity.ulaw
+-rw-r--r--	root/root	var/lib/asterisk/moh/manolo_camp-morning_coffee.ulaw
+-rw-r--r--	root/root	var/lib/asterisk/moh/reno_project-system.ulaw

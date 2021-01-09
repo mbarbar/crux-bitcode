@@ -1,0 +1,17 @@
+# Description: Sort::Versions - a perl 5 module for sorting of revision-like numbers
+# URL: https://metacpan.org/pod/Sort::Versions
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-sort-versions
+version=1.62
+release=1
+source=(https://cpan.metacpan.org/authors/id/N/NE/NEILB/Sort-Versions-$version.tar.gz)
+
+build() {
+  cd Sort-Versions-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

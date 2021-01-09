@@ -1,0 +1,17 @@
+# Description: Deprecated Xlib integration for GdkPixbuf
+# URL: https://gitlab.gnome.org/Archive/gdk-pixbuf-xlib
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gdk-pixbuf xorg-libx11
+
+name=gdk-pixbuf-xlib
+version=2.40.2
+release=1
+source=(https://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
+
+build() {
+	meson setup build $name-$version --prefix=/usr \
+		--buildtype=plain
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

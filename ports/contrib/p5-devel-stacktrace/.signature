@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3yfLqTpYhOERfTuD0spchcDieYi63n4FEVwtLZqaSiqRu0GXxKq974ql+a25zQlUwfM+hRC+Lse1uOxkNOHzpAE=
+SHA256 (Pkgfile) = 23b199f399e5dc4d62f96e221ba51838098280727abee05128e98ba11083da1d
+SHA256 (.footprint) = 93ec310e9078a94f1e1ba99e54d7c9c2d30cb5ab35e7f1724503429f8cec07df
+SHA256 (Devel-StackTrace-2.04.tar.gz) = cd3c03ed547d3d42c61fa5814c98296139392e7971c092e09a431f2c9f5d6855

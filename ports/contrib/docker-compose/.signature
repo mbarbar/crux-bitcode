@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32WHaVWM5tBEPj5ctJUqg0dP+SDhIMGqDL5rOlLkOAivI5nB11Y81maSNWQSddjrIRmc5fFb4rJPZf8Y9m2ZKwA=
+SHA256 (Pkgfile) = 9984712bba36dbe6cdbadaa7d46ac57f9e03a6402fc22e4511a51202dc31eb72
+SHA256 (.footprint) = 1ce36d062482cc0d2896280e9a3cdb92a1d540689c7a26195d5a95a27fce6c4a
+SHA256 (docker-compose-1.26.2.tar.gz) = a4999bcb838ca9e88ff992fedd7a32ab71f97ae081696f8bf26fa1da54aaffe6

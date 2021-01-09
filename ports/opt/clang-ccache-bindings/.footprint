@@ -1,0 +1,7 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/ccache/
+lrwxrwxrwx	root/root	usr/lib/ccache/clang -> ../../bin/ccache
+lrwxrwxrwx	root/root	usr/lib/ccache/clang++ -> ../../bin/ccache
+lrwxrwxrwx	root/root	usr/lib/ccache/clang-10 -> ../../bin/ccache
+lrwxrwxrwx	root/root	usr/lib/ccache/clang-10.0 -> ../../bin/ccache

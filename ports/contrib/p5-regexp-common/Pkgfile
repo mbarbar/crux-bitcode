@@ -1,0 +1,17 @@
+# Description: Commonly requested regular expressions
+# URL: https://metacpan.org/release/Regexp-Common
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-regexp-common
+version=2017060201
+release=1
+source=(https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-$version.tar.gz)
+
+build() {
+  cd Regexp-Common-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

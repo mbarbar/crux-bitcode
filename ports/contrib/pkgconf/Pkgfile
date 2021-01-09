@@ -1,0 +1,21 @@
+# Description: A system for managing library compile/link flags
+# URL:         http://pkgconf.org
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=pkgconf
+version=1.7.3
+release=1
+source=(http://distfiles.dereferenced.org/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--with-system-libdir=/lib:/usr/lib
+
+	make
+	make install MANDIR=/usr/share/man/man1 DESTDIR=$PKG
+
+	rm -fr $PKG/usr/share/doc
+}

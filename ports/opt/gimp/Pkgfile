@@ -1,0 +1,28 @@
+# Description: The GIMP
+# URL:         http://www.gimp.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  gegl glib-networking gtk libart_lgpl mypaint-brushes poppler-data xorg-libxmu xorg-libxpm
+# Optional:    gimp-print libsdl ghostscript libmng
+
+name=gimp
+version=2.10.22
+release=1
+source=(https://download.gimp.org/pub/gimp/v${version%.*}/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+
+  sed -i -e '/$(helpbrowser)/d' plug-ins/Makefile.in
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/bin \
+    --disable-static \
+    --disable-python \
+    --disable-nls \
+    --without-webkit
+
+  make
+  make DESTDIR=$PKG install
+
+  mv $PKG/usr/share/man/man1/gimp-console{-${version%.*}.1,.1}
+  rm -r $PKG/usr/share/{gtk-doc,locale}
+}

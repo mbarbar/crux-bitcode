@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UeToMgjJFBQDeYGY1K3eb+bA03/BUYJR6yNNxy5jixeUXxu8OY2CRXQK19ARXHNcPOLs4+nWFriyuFU5ITOFg4=
+SHA256 (Pkgfile) = bb635a71930c583ad51dfb8d70f337574f0d0df979975ebe10b0117d12c3233f
+SHA256 (.footprint) = 7677ca29935b7a0838348fb7a1d04b78e542b998a93760ca2ee5b52c7735b5cf
+SHA256 (apr-1.7.0.tar.bz2) = e2e148f0b2e99b8e5c6caa09f6d4fb4dd3e83f744aa72a952f94f5a14436f7ea
+SHA256 (apr-util-1.6.1.tar.bz2) = d3e12f7b6ad12687572a3a39475545a072608f4ba03a6ce8a3778f607dd0035b

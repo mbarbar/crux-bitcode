@@ -1,0 +1,39 @@
+# Description: PHP DSO module for apache 
+# URL:         https://www.php.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  apache libpcre2
+
+name=mod_php
+version=7.4.13
+release=1
+source=(https://php.net/distributions/php-$version.tar.xz)
+
+build () {
+    cd php-$version
+
+    # to be compatible with our other php ports, don't build 
+    # for a threaded MPM (ZTS). Use only the prefork MPM!
+    sed -i '/APACHE_THREADED_MPM=/d' configure
+
+    local APXS
+    APXS=$(which apxs) || APXS='/usr/bin/apxs'
+
+    local PHP_CONFIG="
+    --prefix=/usr \
+    --with-config-file-path=/etc/php \
+    --with-config-file-scan-dir=/etc/php/conf.d \
+    --with-zlib \
+    --with-external-pcre \
+    --disable-static --disable-debug \
+    --without-sqlite3 --without-pdo-sqlite \
+    --without-pear"
+
+    EXTENSION_DIR=/usr/lib/php/extensions \
+    ./configure \
+        $PHP_CONFIG \
+        --with-apxs2=$APXS \
+        --disable-cli
+
+    make
+    install -D -m 755 libs/libphp7.so $PKG/usr/lib/apache/libphp7.so
+}

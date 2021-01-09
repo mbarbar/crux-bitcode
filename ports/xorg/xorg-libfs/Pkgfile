@@ -1,0 +1,21 @@
+# Description: X Font Service client library
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-xorgproto xorg-xtrans
+
+name=xorg-libfs
+version=1.0.8
+release=1
+source=(https://www.x.org/releases/individual/lib/libFS-$version.tar.bz2)
+
+build() {
+	cd libFS-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/share/doc/libFS/FSlib.txt
+	find $PKG/usr/share -type d -delete
+}

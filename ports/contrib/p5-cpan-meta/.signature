@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wxskgh6RTqRBI9w5HDQNrYvnjn4jhuxsDnBypMKm9tngZ2ydkpzeqm2QwK1qgEA7WXMYh7U9vlcyWgWcXfSDgQ=
+SHA256 (Pkgfile) = 7f498bed36c2636cbc976b54793a55a2b083c8a0f34243e1997e57f5c08c1817
+SHA256 (.footprint) = 8e02db13f90e5a18c2a0c04a792ba3ba061b72859c992cc6b8f7c01504b23e72
+SHA256 (CPAN-Meta-2.150010.tar.gz) = e4f80f2ec73e0741455f957bbfc992b167ecbfa1c9e23ba358df3b37b86ba3d6

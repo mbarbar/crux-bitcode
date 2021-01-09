@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/gsasl-compat.h
+-rw-r--r--	root/root	usr/include/gsasl-mech.h
+-rw-r--r--	root/root	usr/include/gsasl.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libgsasl.a
+-rwxr-xr-x	root/root	usr/lib/libgsasl.la
+lrwxrwxrwx	root/root	usr/lib/libgsasl.so -> libgsasl.so.7.9.7
+lrwxrwxrwx	root/root	usr/lib/libgsasl.so.7 -> libgsasl.so.7.9.7
+-rwxr-xr-x	root/root	usr/lib/libgsasl.so.7.9.7
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libgsasl.pc

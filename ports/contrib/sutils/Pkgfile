@@ -1,0 +1,16 @@
+# Description: Small command-line utilities
+# URL:         https://github.com/baskerville/sutils
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  alsa-lib
+
+name=sutils
+version=0.2
+release=1
+source=(https://github.com/baskerville/sutils/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make
+	make SHELL=/bin/bash PREFIX=/usr DESTDIR=$PKG install
+}

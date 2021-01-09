@@ -1,0 +1,23 @@
+About the optional dependencies (list borrowed from arch):
+calf - limiter, compressor, exciter, bass enhancer, and others
+lsp-plugins - equalizer
+mda.lv2 - loudness
+rubberband - pitch shifting
+
+You will need to rebuild gst-plugins-bad after installing any of the optional
+dependencies, pulseeffects will then pick them up and make them available,
+otherwise, all the plugins are shown but none of them are useable.
+
+If you run into issues, please try removing GStreamer's cache `rm -rf ~/.cache/gstreamer-1.0`
+and have a look at the debug output with `G_MESSAGES_DEBUG=pulseeffects pulseeffects`
+
+You can check what plugins your current gstreamer build offers with
+`gst-inspect-1.0 | grep -i calf | grep -i limiter`
+
+Additional info from the official FAQ over at https://github.com/wwmm/pulseeffects/wiki/FAQ
+
+Question 13 - After turning on effects for an application my master volume is set to 100 %.
+
+Answer: Take a look at the output of the command pulseaudio --dump-conf and
+see if you have the option flat-volumes set to yes instead of no. For more
+information take a look at #346: https://github.com/wwmm/pulseeffects/issues/346

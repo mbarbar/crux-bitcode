@@ -1,0 +1,34 @@
+# Description: Network UPS Tools. Monitor of UPS hardware.
+# URL: http://www.networkupstools.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Victor Martinez, pitillo at ono dot com
+# Depends on: libusb openssl tcp_wrappers
+
+name=nut
+version=2.7.4
+release=1
+source=(http://www.networkupstools.org/source/${version%.*}/$name-$version.tar.gz
+	upsd)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--with-user=nut \
+		--with-group=nut \
+		--sysconfdir=/etc/$name \
+		--datadir=/usr/share/$name \
+		--localstatedir=/var/$name
+
+	make
+	make DESTDIR=$PKG install
+
+	#if you dont want config templates uncomment the next line
+	#rm $PKG/etc/nut/*
+
+	find $PKG/etc/nut -type f -print0 | xargs -0 chown root:nut
+	install -d $PKG/etc/udev/rules.d
+	install -d -m 0770 -o root -g nut $PKG/var/state/ups
+	install -D -m 0754 $SRC/upsd $PKG/etc/rc.d/upsd
+}

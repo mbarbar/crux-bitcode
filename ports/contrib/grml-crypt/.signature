@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37oKffVAS1ssJAsgFCmwqEiYKMtxKm5pu/lZLA6UGENZXBbVi6gZ9zArcM96oHtF3i7IRJRgazpYhSsLtVLPCAc=
+SHA256 (Pkgfile) = 1703014cf6533ef843f38e8f21b27787d608680dd1a0031853050178a1ceb4c8
+SHA256 (.footprint) = 9ccbc81fe32583ac2276278ce4dc567378d61ac4b3ebd11bf3a76da0159d78e9
+SHA256 (grml-crypt_0.27.tar.gz) = 260bfe54f68628221fdad406b8e76aee296052ffd291872070fb5bed4f0e433a
+SHA256 (path_fstype.patch) = 4098953b003ec9158ffa7bff8d5b2ac11f4af3110d674a0ea82383b7b544840e

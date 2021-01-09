@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zN6BiEyz2obmcyYQfa55cufTai4L6y41lUxz45NgGYml+RQ0iJWGL9GX4tmyr7u8z8m05+Rg5w5dKWLQ0GiwAM=
+SHA256 (Pkgfile) = 4313f8785552bda10dca7b4c9fbc752177b88517d8941ba86bf57fe209d31e5e
+SHA256 (.footprint) = bfdffd4dc5e7478600d928d831587205571dee12b90f220958c7b40b9c3afac9
+SHA256 (bumblebee-3.2.1.tar.gz) = 1018703b07e2f607a4641249d69478ce076ae5a1e9dd6cff5694d394fa7ee30e
+SHA256 (libglvnd.patch) = b260d64a53617807afe21560db0592d114d7775b182e13fb59349f0157c8dba4
+SHA256 (blacklist.conf) = b3dcf27582eb7abe8eb0d991685357386776011cff02cfc8d5f571e2e61b4b8d
+SHA256 (bumblebeed.rc) = 344ea5d17ec84dd3bfca95b28e0a607ab9e0b74dbbdd07fce5e89c48a368a6d3

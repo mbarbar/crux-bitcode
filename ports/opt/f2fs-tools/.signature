@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QyNTf7qLBZAfk/Gl7pE33kqD+uxjE/TeLPMQUfJpLr2epYpwDN+76UZySdSbBr4gPPQ2aUQSjkukiWIFIK/yAc=
+SHA256 (Pkgfile) = 124ea73b8f7863da8e7d691b03a91b3ef993d8790324b034b13621145a5953bd
+SHA256 (.footprint) = 45a2fdfcd63d502d602c15b318408622ed6a4d63eea0c99583776f7ac00ad717
+SHA256 (f2fs-tools-1.14.0.tar.gz) = 619263d4e2022152a1472c1d912eaae104f20bd227ce0bb9d41d1d6608094bd1

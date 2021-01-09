@@ -1,0 +1,36 @@
+# Description: Library for passing menus over DBus - gtk3 Files
+# URL: https://launchpad.net/libdbusmenu
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gtk3 libdbusmenu-glib gtk json-glib
+
+name=libdbusmenu-gtk3
+version=18.10
+release=3
+source=(http://cdn-fastly.deb.debian.org/debian/pool/main/libd/libdbusmenu/libdbusmenu_18.10.20180917~bzr490+repack1.orig.tar.xz
+0001_no-deprecated-gnome-common-macros.patch)
+
+build() {
+  cd libdbusmenu-18.10.20180917~bzr490
+  patch -Np1 -i $SRC/0001_no-deprecated-gnome-common-macros.patch
+  sed -e 's/gtkdocize || exit 1//g' -i autogen.sh
+  sed -e 's/--enable-gtk-doc//g' -i autogen.sh
+  sed -e 's/AM_MAINTAINER_MODE//g' -i configure.ac
+  export CFLAGS+=" -O2 -Wno-error"
+  export HAVE_VALGRIND_TRUE='#'
+  export HAVE_VALGRIND_FALSE=''
+  ./autogen.sh --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib/$name \
+    --localstatedir=/var \
+    --with-gtk=3 \
+    --disable-{dumper,static,tests,valgrind}
+  make -j1
+  make -j1 DESTDIR=$PKG -C libdbusmenu-glib install
+  make -j1 DESTDIR=$PKG -C libdbusmenu-gtk install
+  make -j1 DESTDIR=$PKG -C libdbusmenu-glib uninstall
+
+  #rm -r $PKG/usr/share/doc
+
+  find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+}

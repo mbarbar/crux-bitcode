@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33CGdfnT5/lbF9C20BCLmxCZieeIMr8iiGWgIFvdAKuuEkOk+S7KX2aGaIDXdDma0wMsVgoTuaoIxK6+RH2NFgM=
+SHA256 (Pkgfile) = 97618383a51f35bf0578ce86b02022e7bbd3e2bdaf00233946d79ea6dca3e28c
+SHA256 (.footprint) = e716f635ebcf3a203acd5adcef2f30691bd9245e95f0f4c22950ab2656bdd4b9
+SHA256 (soupsieve-2.0.1.tar.gz) = a59dc181727e95d25f781f0eb4fd1825ff45590ec8ff49eadfd7f1a537cc0232

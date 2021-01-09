@@ -1,0 +1,20 @@
+# Description: Igbinary is a drop in replacement for the standard php serializer
+# URL: https://github.com/igbinary/igbinary
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: php
+
+name=php-igbinary
+version=3.1.6
+release=1
+source=(https://github.com/igbinary/igbinary/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd igbinary-$version
+  sed 's/extension/;extension/g' -i igbinary.php.ini
+  phpize
+  ./configure --prefix=/usr \
+    --enable-igbinary
+  make
+  make INSTALL_ROOT=$PKG install
+  install -vDm 644 igbinary.php.ini $PKG/etc/php/conf.d/igbinary.ini
+}

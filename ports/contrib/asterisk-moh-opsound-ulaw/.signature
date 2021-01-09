@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32rT5gHyHCFLbQhwk9qYxihltdc3u6riZ727VaJRHd6OCOUYKjVzHALwwJ5/oXdg5TjXklREItBJrC9h8L7xvwA=
+SHA256 (Pkgfile) = db37500accee2cd9f47d9905706c2d90d701cb95623359f0e9b64c45b9de09fc
+SHA256 (.footprint) = dc6b525872d639ec65ada5bfb284f98e50857830d36ac7d8fb55ea2b0318a457
+SHA256 (asterisk-moh-opsound-ulaw-2.03.tar.gz) = 95b163d7f931d58864aba2cfe32156accca7af782c850fb867a85ce88c02573c

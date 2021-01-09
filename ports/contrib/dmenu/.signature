@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33I+uqKtCgmteCGuV9Ybg2y1Vs7K5q+VKTJQSgY0XjHXa/NmrB59eJzgRvzGIc4Uwz/ecBtWLkpBRsTZJmhT4Ao=
+SHA256 (Pkgfile) = e961f374b3ff9a47fa1b5da8359228945ada80455d75e280a9c3888dc4b65a25
+SHA256 (.footprint) = 3bdd45e059e6c106af608917f9e0d3f153b22d74e0ed3aea4c7661e914200e77
+SHA256 (dmenu-5.0.tar.gz) = fe18e142c4dbcf71ba5757dbbdea93b1c67d58fc206fc116664f4336deef6ed3

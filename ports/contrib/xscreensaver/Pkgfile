@@ -1,0 +1,47 @@
+# Description: A screen saver and locker daemon for xorg.
+# URL: https://www.jwz.org/xscreensaver/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: bc fortune gdk-pixbuf-xlib giflib glu libglade linux-pam xorg-libxmu
+
+name=xscreensaver
+version=5.44
+release=1
+source=(https://www.jwz.org/$name/$name-$version.tar.gz
+	$name.pam)
+
+build() {
+	cd $name-$version
+
+	sed -e's|-std=c89||' -i configure.in
+	autoreconf -fiv
+
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--with-x-app-defaults='/etc/X11/app-defaults' \
+		--enable-locking \
+		--enable-root-passwd \
+		--with-dpms-ext \
+		--with-xinerama-ext \
+		--with-xshm-ext \
+		--with-proc-interrupts \
+		--with-shadow \
+		--with-pixbuf \
+		--with-jpeg \
+		--without-motif \
+		--without-gle \
+		--without-setuid-hacks
+
+	make
+	make install_prefix=$PKG install
+	chmod 755 $PKG/usr/bin/xscreensaver
+	install -d $PKG/usr/share/wallpapers
+
+	echo "NotShowIn=KDE;GNOME;" >> $PKG/usr/share/applications/xscreensaver-properties.desktop
+
+	# PAM service file
+	install -D -m 0644 $SRC/$name.pam \
+		$PKG/etc/pam.d/$name
+
+	rm -r $PKG/usr/share/{locale,xscreensaver/config/README}
+}

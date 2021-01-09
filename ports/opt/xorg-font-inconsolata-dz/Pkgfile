@@ -1,0 +1,13 @@
+# Description: A beautiful sans-serif monotype font designed for code listings.
+# URL: https://www.levien.com/type/myfonts/inconsolata.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: xorg-mkfontscale fontconfig
+
+name=xorg-font-inconsolata-dz
+version=20201205
+release=1
+source=(https://nodnod.net/posts/inconsolata-dz/files/Inconsolata-dz.otf)
+
+build() {
+	install -m 0644 -D $SRC/Inconsolata-dz.otf $PKG/usr/share/fonts/X11/OTF/Inconsolata-dz.otf
+}

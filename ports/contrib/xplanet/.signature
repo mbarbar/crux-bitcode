@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33EBqQawngU+BisYqp5TBGR2NIMx5y9psa9vK5RPrSOGhAbGWRBjtAU+hkf2CxzhPvNtRLHxKkjvlcVWlkC+cgo=
+SHA256 (Pkgfile) = 0a521a6de2820799c562c1f23a57bd5a7a495b67cd55c3104531d0eb2ff925c0
+SHA256 (.footprint) = 9bf2944747899fa8014a9b57dfffbb39175e76a40989a68cc154b235c000cfcc
+SHA256 (xplanet-1.3.1.tar.gz) = 4380d570a8bf27b81fb629c97a636c1673407f4ac4989ce931720078a90aece7
+SHA256 (giflib6.patch) = b42e3438e969713bcba6188669507bb23fde004598c070c4196a554ed5787be4
+SHA256 (xplanet-c++11.patch) = e651c7081c43ea48090186580b5a2a5d5039ab3ffbf34f7dd970037a16081454

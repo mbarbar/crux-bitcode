@@ -1,0 +1,22 @@
+# Description: COIN-OR collection of utility classes
+# URL: https://projects.coin-or.org/CoinUtils
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: glpk lapack openblas
+
+name=coin-or-coinutils
+version=2.11.4
+release=1
+source=(https://www.coin-or.org/download/source/CoinUtils/CoinUtils-$version.tgz)
+
+build() {
+  cd CoinUtils-$version
+  ./configure --prefix=/usr \
+    --with-blas-lib='-lblas' \
+    --with-lapack-lib='-llapack' \
+    --with-glpk-lib='-lglpk' \
+    --enable-dependency-linking
+  make
+  PKG_CONFIG_LIBDIR="$PKG"/usr/lib/pkgconfig/ \
+  make DESTDIR="$PKG" install
+  rm -fr $PKG/usr/share/coin/doc
+}

@@ -1,0 +1,46 @@
+# Description: Optimized BLAS library
+# URL: https://www.openblas.net/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: gcc-fortran
+
+name=openblas
+version=0.3.12
+release=1
+source=(https://github.com/xianyi/OpenBLAS/archive/v$version/OpenBLAS-$version.tar.gz)
+
+build () {
+  cd OpenBLAS-$version
+  make NO_LAPACK=1 NO_LAPACKE=1 NO_STATIC=1 NO_AFFINITY=1 \
+    USE_OPENMP=1 DYNAMIC_ARCH=1 NUM_THREADS=64 MAJOR_VERSION=3 \
+    CFLAGS="$CFLAGS $CPPFLAGS" libs netlib shared
+  make PREFIX=$PKG/usr install
+
+  # Symlink to provide blas, cblas
+  cd $PKG/usr/lib/
+  local _lapackver='3.10.0'
+  # BLAS
+  ln -sf libopenblasp-r$version.so libblas.so
+  ln -sf libopenblasp-r$version.so libblas.so.${_lapackver:0:1}
+  ln -sf libopenblasp-r$version.so libblas.so.${_lapackver}
+  # CBLAS
+  ln -sf libopenblasp-r$version.so libcblas.so
+  ln -sf libopenblasp-r$version.so libcblas.so.${_lapackver:0:1}
+  ln -sf libopenblasp-r$version.so libcblas.so.${_lapackver}
+  # LAPACK
+  # provided by lapack
+  # LAPACKE
+  # provided by lapack
+  rm -r $PKG/usr/include/lapack*
+
+  # fix paths
+  sed -i 's|'$PKG'||g' $PKG/usr/lib/cmake/$name/*.cmake
+  sed -i 's|'$PKG'||g' $PKG/usr/lib/pkgconfig/openblas.pc
+
+  # remove host CPU info if built with DYNAMIC_ARCH=1
+  sed -i '/#define OPENBLAS_NEEDBUNDERSCORE/,/#define OPENBLAS_VERSION/{//!d}' \
+    $PKG/usr/include/openblas_config.h
+
+  # provide pkgconfig files for blas and cblas
+  ln -s openblas.pc $PKG/usr/lib/pkgconfig/blas.pc
+  ln -s openblas.pc $PKG/usr/lib/pkgconfig/cblas.pc
+}

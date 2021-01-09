@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39w8titc38zWdGHpeF/i9C6NwuliuT5rjRuscEcpS8kmNQkHab4raS/ZW7mdzAuX9/MSwOSdQrpqY4TDz99dLww=
+SHA256 (Pkgfile) = afbf105a03598931e3b0c2a023b044032ab7dee249ded10ddd679339c7b7b13a
+SHA256 (.footprint) = bc1dacfab0424a4006e7fbac9485795c85d7f4cfc76baacb35333e131ec4abcf
+SHA256 (imapfilter-2.7.5.tar.gz) = ab19f840712e6951e51c29e44c43b3b2fa42e93693f98f8969cc763a4fad56bf

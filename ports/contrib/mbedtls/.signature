@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31tjAKmtdQU6X4ewfWa/nfQm3N4dRQ8jUoqSuA+BeVt0GJZbkTZ3ZeL61Bovg/sfQUtCAgOmswa2bpYUipWExwc=
+SHA256 (Pkgfile) = 3f98f71f7d97c966132facba83e4dee25c5c8a706852bf48928def076532046f
+SHA256 (.footprint) = f5f005ba6e9154f68bb4f11c57e65fc0bad2e8b45509bddb1555f75543b07534
+SHA256 (mbedtls-2.24.0.tar.gz) = b5a779b5f36d5fc4cba55faa410685f89128702423ad07b36c5665441a06a5f3

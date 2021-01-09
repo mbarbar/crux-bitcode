@@ -1,0 +1,18 @@
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+PRECAUTION
+
+    Note, that updating major versions of llvm (in x.y.z changing x or y)
+    requires rebuilding ports like xorg-server, mesa32, glu and the
+    mesa3d-gallium driver as they depend on this port.
+
+    Have revdep(1) point out potential candidates for rebuilds after the llvm
+    update.
+
+MISC
+

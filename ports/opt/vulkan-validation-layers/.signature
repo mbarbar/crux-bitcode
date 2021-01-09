@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/XLGF0AxyYxcIhn8pE/oidODQHy1G4V2hl9za4bdmd9+7K4765csaVDwLFhOXl4KWrHJ0V14TI5+c3WQd8Fp0g4=
+SHA256 (Pkgfile) = 4ab298630f0f3a91a060145039c8b6f85cbc88c471bc59792f71282fc3c54a18
+SHA256 (.footprint) = f4a25e1503aed06fc0fb6d40e813696ede69afecbcd3e20de97d66629a99b265
+SHA256 (Vulkan-ValidationLayers-sdk-1.2.154.0.tar.gz) = 8898ab05d0d8dec04fbba03d0ed2e79a1eb5c0382e5c89d4c737b45a6648f7f9
+SHA256 (validation-layers-soversion.patch) = 55fa92f03aa5d126db2ab75fb06ea9102019eb68437d9720a8c075a87f3baba8

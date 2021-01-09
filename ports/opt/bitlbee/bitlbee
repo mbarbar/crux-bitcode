@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/bitlbee: start/stop bitlbee
+#
+
+case $1 in
+start)
+	/usr/sbin/bitlbee -u bitlbee
+	;;
+stop)
+  test -f /var/run/bitlbee.pid && kill $(< /var/run/bitlbee.pid)
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	;;
+esac
+
+# End of file

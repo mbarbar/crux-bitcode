@@ -1,0 +1,56 @@
+# Description: A tool to distribute compilations.
+# URL: http://distcc.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Optional: python3 gtk avahi
+
+name=distcc
+version=3.3.3
+release=2
+source=(https://github.com/distcc/distcc/releases/download/v$version/$name-$version.tar.gz
+	distccd
+	distcc-3.3.3-py38.patch
+	distcc-3.3.3-gcc-10-fix.patch)
+
+build() {
+	cd $name-$version
+
+[ -e '/usr/lib/pkgconfig/python-3.7.pc' ] || PKGMK_DISTCC+=' --disable-pump-mode'
+[ -e '/usr/lib/pkgconfig/gtk+-2.0.pc' ] || PKGMK_DISTCC+=' --without-gtk'
+[ -e '/usr/lib/pkgconfig/popt.pc' ] || PKGMK_DISTCC+=' --with-included-popt'
+
+	patch -p1 -i $SRC/distcc-3.3.3-py38.patch
+	patch -p1 -i $SRC/distcc-3.3.3-gcc-10-fix.patch
+
+	./autogen.sh
+
+	./configure ${PKGMK_DISTCC} \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--enable-rfc2553 \
+		--disable-Werror
+
+	make
+	make DESTDIR=$PKG install
+
+	# distccd should be in sbin
+	mv $PKG/usr/bin/distccd $PKG/usr/sbin/distccd
+
+	# install service
+	install -m 0755 -D $SRC/distccd $PKG/etc/rc.d/distccd
+
+	# create the masquerade directory
+	install -d $PKG/usr/lib/distcc
+	cd $PKG/usr/lib/distcc
+	for c in cc c++ gcc g++ cpp; do
+		ln -s ../../bin/distcc $c
+	done
+	cd -
+
+	# cleanup
+	rm -r $PKG/usr/share/doc $PKG/etc/distcc $PKG/etc/default
+	rm $PKG//usr/sbin/update-distcc-symlinks
+
+	# python is required for pump mode
+[ -e '/usr/lib/pkgconfig/python-3.7.pc' ] || \
+	rm $PKG/usr/share/man/man1/{pump,include_server}.1.gz
+}

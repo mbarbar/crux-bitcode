@@ -1,0 +1,12 @@
+diff -Nru sitecopy-0.16.6.orig/configure.in sitecopy-0.16.6/configure.in
+--- sitecopy-0.16.6.orig/configure.in	2010-07-23 21:56:43.027136877 +0200
++++ sitecopy-0.16.6/configure.in	2010-07-23 21:57:19.377136926 +0200
+@@ -113,7 +113,7 @@
+ fi
+ 
+ # Support neon 0.24 through 0.28
+-NE_REQUIRE_VERSIONS([0], [24 25 26 27 28])
++NE_REQUIRE_VERSIONS([0], [24 25 26 27 28 29 30 31])
+ 
+ dnl But we don't use zlib or ACL support
+ NEON_WITHOUT_ZLIB

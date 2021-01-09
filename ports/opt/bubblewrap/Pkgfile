@@ -1,0 +1,29 @@
+# Description: Unprivileged sandboxing tool
+# URL: https://github.com/projectatomic/bubblewrap/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libcap
+# Optional: docbook-xsl
+
+name=bubblewrap
+version=0.4.1
+release=1
+source=(https://github.com/projectatomic/bubblewrap/releases/download/v$version/$name-$version.tar.xz
+	bwrap.1)
+
+build() {
+	cd $name-$version
+
+	if [ ! -e '/usr/share/xml/docbook/xsl-stylesheets' ]; then
+		# build will fail if libxslt is installed witout docbook-xsl
+		PKGMK_BUBBLEWRAP+=' --disable-man'
+
+		install -Dm644 $SRC/bwrap.1 $PKG/usr/share/man/man1/bwrap.1
+	fi
+
+	./configure ${PKGMK_BUBBLEWRAP} \
+		--prefix=/usr \
+		--with-priv-mode=setuid
+
+	make
+	make DESTDIR=$PKG install
+}

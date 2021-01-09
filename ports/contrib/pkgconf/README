@@ -1,0 +1,7 @@
+This port, pkgconf, can be used as a replacement for pkg-config.
+To accomplish that, you will need a symlink:
+
+# ln -s pkgconf /usr/bin/pkg-config
+
+You should be aware that is conflicts with the core/pkg-config
+package, so the link is not automatically created.

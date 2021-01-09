@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/SuEu6Fsjn9tvdeLM+NNxKt2qV2HeoDxyW/ET8Js6fIAd87sW95h8R2sKQ2bXyjAALiNLxdRn9+GpS3XMTqvwk=
+SHA256 (Pkgfile) = cb42bb93ba7fb20671ed01609c71fe4feed6907c1834b866714e32acbe525df0
+SHA256 (.footprint) = 71827a6713f7a7fca9d69c6c0429a830b801e5b9feaf2d7598f2171fd6e305ef
+SHA256 (Tie-Cycle-1.225.tar.gz) = f330d821694af9b269b6083570d5c10ea22e6eb3b21841048ce28252b1c03d45

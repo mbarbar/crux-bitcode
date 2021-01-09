@@ -1,0 +1,6 @@
+#!/bin/sh
+
+getent group chrony || /usr/sbin/groupadd -g 55 chrony
+getent passwd chrony || /usr/sbin/useradd -g chrony -u 55 -d /var/lib/chrony -s /bin/false chrony
+/usr/bin/passwd -l chrony
+

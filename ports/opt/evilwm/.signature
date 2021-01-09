@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/eG4bOZ72reNhBbla01Vu1jIT/hVjsXH1UCWUYM4F38wiZPwLU08R4I5Z38PAutW3DNBkyvnTxcFcYIsVcY1KAw=
+SHA256 (Pkgfile) = 324d5f6e648dbcf564502d0d457d75054ffb4b6fb5309c047b7ff362d12b2f83
+SHA256 (.footprint) = bff62d7952f34e12cc944cb6a62b6ef238682ec8bbc73d2c51a88149f99d23a5
+SHA256 (evilwm-1.1.1.tar.gz) = 79589c296a5915ee0bae1d231e8912601fc794d9f0a9cacb6b648ff9a5f2602a
+SHA256 (evilwm-config.patch) = 3896bdd83f63e12de2ecd498be6e783ce82c62a4a8a3b9920bdd6c86b372fe56

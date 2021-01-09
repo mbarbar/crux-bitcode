@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "`getent group nogroup`" ]; then
+	/usr/sbin/groupadd --system nogroup
+fi
+
+if [ -z "`getent passwd nobody`" ]; then
+	/usr/sbin/useradd -r -g nobody -M -s /bin/false nobody
+	/usr/bin/passwd -l nobody
+fi

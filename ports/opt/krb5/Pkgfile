@@ -1,0 +1,50 @@
+# Description: Network Authentication Protocol
+# URL:         https://web.mit.edu/kerberos
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  e2fsprogs openssl
+
+name=krb5
+version=1.18.3
+release=1
+source=(https://kerberos.org/dist/$name/${version::4}/$name-$version.tar.gz
+        krb5)
+
+build() {
+	cd $name-$version/src
+
+	./configure \
+		--prefix=/usr \
+		--localstatedir=/var \
+		--runstatedir=/var/run \
+		--enable-shared \
+		--disable-rpath \
+		--disable-nls \
+		--without-tcl \
+		--with-system-et \
+		--with-system-ss \
+		--without-system-verto \
+		--enable-dns-for-realm
+
+	make
+	make DESTDIR=$PKG install
+
+
+	# move essential libs and the ksu binary to /lib resp. /bin
+	install -d $PKG/{bin,lib}
+
+	mv $PKG/usr/bin/ksu $PKG/bin
+
+	mv $PKG/usr/lib/libkrb5.so.3* $PKG/lib
+	mv $PKG/usr/lib/libk5crypto.so.3* $PKG/lib
+	mv $PKG/usr/lib/libkrb5support.so.0* $PKG/lib
+
+	ln -sf ../../lib/$(readlink $PKG/usr/lib/libkrb5.so) $PKG/usr/lib/libkrb5.so
+	ln -sf ../../lib/$(readlink $PKG/usr/lib/libk5crypto.so) $PKG/usr/lib/libk5crypto.so
+	ln -sf ../../lib/$(readlink $PKG/usr/lib/libkrb5support.so) $PKG/usr/lib/libkrb5support.so
+
+	# cleanup
+	rm -r $PKG/usr/share/{examples,man/cat*}
+
+	# start script
+	install -D -m 0755 $SRC/krb5 $PKG/etc/rc.d/krb5
+}

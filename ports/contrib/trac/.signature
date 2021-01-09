@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+KxDnK/ypwXRj45Om05P5yIITxQoGLs5VdcWoyE093AyRVRZoT0B6smsMdI1TfZvfYZXXOfjgGnM/2hwJdeFgU=
+SHA256 (Pkgfile) = b37cd528fb605041601fd328d25b2fd90713825268554ffc9c7dfb1f044da1e4
+SHA256 (.footprint) = f83b2ecfbe199a6ff11afe9cf43ebab2e19539d029e7cb5f79d25e4f445847a4
+SHA256 (Trac-1.5.1.tar.gz) = 30f8a3cfc387916bdcd272053074ff5121ca7df269cf1cdb3352e0a164597d00

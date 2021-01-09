@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/core.pub
+RWRJc1FUaeVeqva8Cbmbv1lzP2SlEmKVj/1gKwCpm3YGNLXhL+Y6AHvtXKoLBUHe8uCii2sZVHAoP2xGfvR6EFvBaahrBl4QsQg=
+SHA256 (Pkgfile) = 23606a548b9ebf05f57a41616622fd31195d6bdd4c8ad21ec0091642bbf4847a
+SHA256 (.footprint) = bf468272af3c29c8b4b4d150730c23071cf0093dc06172548b7dbddaeee6c3c3
+SHA256 (rsync-3.2.3.tar.gz) = becc3c504ceea499f4167a260040ccf4d9f2ef9499ad5683c179a697146ce50e
+SHA256 (rsyncd.conf) = 095447801d8ba0101809c18acfb5a492c65323bed9ef5dd3739b3af5e9f7c56d
+SHA256 (rsyncd) = e8dc013ff31ee7b1f249fcfbde579ec76fe3103f61d26d098d45290727060c85
+SHA256 (rsync.driver) = 5e0f94a972cf7e47f153ccd0ac454ec2bd3056a834b69e82d3f3984d44308ef7

@@ -1,0 +1,22 @@
+# Description: Low-level HTTP connection (client)
+# URL: https://metacpan.org/pod/Net::HTTP
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-net-http
+version=6.19
+release=1
+source=(https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-$version.tar.gz)
+
+build() {
+  cd Net-HTTP-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB="" \
+    PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT="INSTALLDIRS=vendor" \
+    PERL_MB_OPT="--installdirs vendor" \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

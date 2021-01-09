@@ -1,0 +1,17 @@
+# Description: Yubico YubiKey C library
+# URL: https://github.com/Yubico/yubico-c
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: asciidoc
+
+name=yubico-c
+version=1.13
+release=1
+source=(https://github.com/Yubico/yubico-c/archive/libyubikey-$version.tar.gz)
+
+build() {
+  cd $name-libyubikey-$version
+  autoreconf --install
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

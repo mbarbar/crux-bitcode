@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF337mfx68o96usSiz0CYAHkZU1j/Vo+NZJ6sGCEefkuajANTUWIXH9tgOT5JDc56nlCE7EQfICPnMszeIvs9jtQE=
+SHA256 (Pkgfile) = 6116429017d218e66cda675af1f49336262a160c2b47874b6c4bd42bc3b699fe
+SHA256 (.footprint) = 0e88e67180016a37294122c520245f8f6808a62dfc9ae5a4408bb8e9f2502e6b
+SHA256 (nbd-server) = 1333ace24f4a52a649f9edcc0dab752bb214013f3be14a09dc75fd7e097abc18
+SHA256 (allow) = 4a1342ede63a9f3f22fb5af4e79aac5ea29876f6f7252ec5ffe17dea9c06c5e4
+SHA256 (nbd-3.20.tar.xz) = e0e1b3538ab7ae5accf56180afd1a9887d415b98d21223b8ad42592b4af7d6cd

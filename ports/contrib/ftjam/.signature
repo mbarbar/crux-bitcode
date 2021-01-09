@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wfeRQfH5vIW8rghpEJcduCwoXw5V+iEqZSD2pHnBduGjZYA/cdQSlh7ATAFtXIJ8ThcaGsimDTieJhvNlkvHgk=
+SHA256 (Pkgfile) = 2a11c88ca2c544578076b4b2ade6abec217972a0efdaa7d4e33035b7b16ac563
+SHA256 (.footprint) = 188cfd749c019d69c85be448962910e196a37c1badf683323a4a153ebdbb9bfd
+SHA256 (ftjam-2.5.3rc2.tar.bz2) = a9f8a274049893a4d1f1ad82f7b04f3ebc2554635dd606185e20ba97cb4d64ec

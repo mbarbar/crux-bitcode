@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38+vYF6SqmB46wbDrdS3VBVmNxXn0W7czSGeG1zXYjKBNhqX96ZEso/HrUTCpIIuvq2Qv5eD2AtsuFM+uyaWtwA=
+SHA256 (Pkgfile) = e49b67bfe3683164e37aa155fdd679f8039c206fbdd1d15d0a997123e55f5919
+SHA256 (.footprint) = c4e70cad4b0c44b028f8ed9d0e32c27f78f9f4fa34bafc11e96a4a43e937d795
+SHA256 (libiptcdata-1.0.5.tar.gz) = c094d0df4595520f194f6f47b13c7652b7ecd67284ac27ab5f219bc3985ea29e

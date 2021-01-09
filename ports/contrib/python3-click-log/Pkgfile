@@ -1,0 +1,19 @@
+# Description: Simple and beautiful logging for click applications
+# URL: https://pypi.python.org/pypi/click-log
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-click python3-setuptools
+
+name=python3-click-log
+version=0.3.2
+release=1
+source=(https://github.com/click-contrib/click-log/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd click-log-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --prefix=/usr \
+    --optimize=1 \
+    --skip-build \
+    --root=$PKG
+}

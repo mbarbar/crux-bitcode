@@ -1,0 +1,17 @@
+# Description: Library for loading and wrapping LV2 plugin UIs.
+# URL: https://drobilla.net/software/suil/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: sratom python
+
+name=suil
+version=0.10.8
+release=1
+source=(https://download.drobilla.net/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./waf configure --prefix=/usr
+	./waf build $MAKEFLAGS
+	./waf install --destdir=$PKG
+}

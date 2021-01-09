@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/S24udfo5Scdd5WJoOmRT8q84vzT8gduu7m+iZzQczLjW3E0DhNfz84PoRGC0YEWDkZXA0A2p6iua+7wdPRQWwc=
+SHA256 (Pkgfile) = b13c11b901f317943ee43060ce51888d9adf34bbc24068bf09714296cc6a1e46
+SHA256 (.footprint) = be89837ef2aa61e06fe7d03d4cf9f8fba32b55547bceeb279f8832c1b0050d54
+SHA256 (scons-4.0.1.tar.gz) = eca75e5b6d0b3df23370da095a8851d781e2522e9e9d2764ae2878f3e34c58da

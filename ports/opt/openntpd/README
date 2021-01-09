@@ -1,0 +1,19 @@
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+    Create the necessary user 'ntp' and its group 'ntp'.
+
+	groupadd ntp
+	useradd -g ntp -d /var/empty -s /bin/false ntp
+	passwd -l ntp
+
+MISCELLANEOUS
+
+    Have a look at the start/stop script if you don't like ntpd setting
+    the time immediately at startup. That allows for a large time
+    correction. Disable that feature by removing the '-s' option.
+

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3waKCU/YFvb8Jagv+uUMFa4Pf3lmkp9b7+8kDCfOrQ/GrLHcRi4VT17A0v7B8w8gWaQE0jTDseo9uCllZukDGQQ=
+SHA256 (Pkgfile) = 52c4241becdaf02f4bbd36e87614d7712bccf4a318a09a7fe97086aa4a71ee7e
+SHA256 (.footprint) = 5f3ae8ce3a40b661d822b4dac8d3b0e60ea6312687b17de521ce963f2d53135d
+SHA256 (bmon-v4.0.tar.gz) = d5e503ff6b116c681ebf4d10e238604dde836dceb9c0008eb92416a96c87ca40

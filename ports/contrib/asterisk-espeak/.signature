@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y1hvZeIGtCD2giP3ErWi5HZprd1+sP3T6CrjomI9RwsH16tqJnEyXaAXQzOeGJiN8EjPJA7jrtEbVb98gdrXww=
+SHA256 (Pkgfile) = 5b5dfa52fbeaef809cd9763052b959d70c631059f3d1b9cea72390776fc94863
+SHA256 (.footprint) = 04562e609034c986a7320bba0566ddb4fb3f67e86223d819dadec02dab3c9695
+SHA256 (asterisk-espeak-0.4.tar.gz) = a224a1265402c213306c7383504d8c6f5ea80e4f52d4e9f104c9e300746f6b18
+SHA256 (build.patch) = 946cfe5b2943c1946291377a04e1f6195c2ae7bd2c7a0cf0fbb6b74ceb426c6e

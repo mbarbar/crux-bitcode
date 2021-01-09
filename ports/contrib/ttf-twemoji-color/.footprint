@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/fonts/
+drwxr-xr-x	root/root	etc/fonts/conf.avail/
+-rw-r--r--	root/root	etc/fonts/conf.avail/56-twemoji-color.conf
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/fonts/
+drwxr-xr-x	root/root	usr/share/fonts/Twitter Color Emoji/
+-rw-r--r--	root/root	usr/share/fonts/Twitter Color Emoji/TwitterColorEmoji-SVGinOT.ttf

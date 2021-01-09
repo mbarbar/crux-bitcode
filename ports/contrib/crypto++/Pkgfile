@@ -1,0 +1,31 @@
+# Description: C++ class library of cryptographic schemes.
+# URL: https://www.cryptopp.com/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=crypto++
+version=8.2.0
+release=1
+source=(https://github.com/weidai11/cryptopp/archive/CRYPTOPP_${version//./_}/$name-$version.tar.gz
+	libcrypto++.pc.in)
+
+build() {
+	cd ${name//++/pp}-CRYPTOPP_${version//./_}
+	sed -i -e 's/^CXXFLAGS/#CXXFLAGS/' GNUmakefile
+	export CXXFLAGS="$CXXFLAGS -DNDEBUG -fPIC"
+
+	# http://www.openwall.com/lists/oss-security/2016/09/19/6
+	echo "#define CRYPTOPP_UNUSED(x) ((void)(x))" >> config.h
+	sed -i -e 's|assert[[:space:]]*(|CRYPTOPP_UNUSED(|g' *.h *.cpp
+
+	make -f GNUmakefile
+	make libcryptopp.so
+
+	install -d $PKG/usr/{lib/pkgconfig,include/cryptopp}
+	install -m 0644 *.h $PKG/usr/include/cryptopp/
+	install -m 0644 libcryptopp.so $PKG/usr/lib/libcryptopp.so
+
+	sed -e "s/@VERSION@/$version/g" \
+		$SRC/libcrypto++.pc.in > libcrypto++.pc
+
+	install -m 0644 libcrypto++.pc $PKG/usr/lib/pkgconfig/libcrypto++.pc
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UjtHNjqBYWmTSXN44tZqDvapE0vN1DXq1fLJZbsnfoLS4dcrXIPI/4cpgzzwHJC5dFq9DSkqu1CCTBhz9SlvAw=
+SHA256 (Pkgfile) = c7ac7d5b4db41913a46efb6cf411473543d45de5043e6380f4799f5a6003108e
+SHA256 (.footprint) = ec7867006bea6516523e9dbf9b735a086308dee573b3d2dcf1509cd25ed68ca4
+SHA256 (libwpe-1.6.0.tar.xz) = 3587c6b8a807f4bb76b268ba74ca82c6b395b90235db41ad8252224456193c90

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF398TmY0qFIoFyj0Aq+nQ/tK2kzllrZ7c3adcYbdkKeFG11gRLiDtbfDGj52k3DKCFNHlGuMFKUwyXC+sH+pv4Ak=
+SHA256 (Pkgfile) = bc74be033697b1de914257870d17034abe83f40fed7e5def9bb31168233af7de
+SHA256 (.footprint) = dabbae78d4158006cefd2586bcad3ea64ceb0e5128fb65b9b936b63828396705
+SHA256 (Glib-Object-Introspection-0.049.tar.gz) = 464628cb9dd028b10438c23892de6f8a30202355a4e4eb01bfd13b8cfe35af57

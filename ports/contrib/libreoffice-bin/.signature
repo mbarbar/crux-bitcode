@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39wk9jeawcF9BSQl2A5gNsJTliHXRynjTXu1C/WB46dCC6GqRyPF6ApwG++wejElL5i3LKw9xHhpHuX1cyNY+AE=
+SHA256 (Pkgfile) = cb414bd39efa6824019894097086f79cc6fde2046db33440a66e20f04ada661c
+SHA256 (.footprint) = da376c1c1f110bbea5e7e6d64da0c9fbaf0032c34e590eb5bef77e93d72acc21
+SHA256 (LibreOffice_6.4.6_Linux_x86-64_rpm.tar.gz) = 9d77477097fd35372377b7da383c156d9f046998f79b7ecb46c07d297810c593

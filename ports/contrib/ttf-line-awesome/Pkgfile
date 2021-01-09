@@ -1,0 +1,15 @@
+# Description: Replace Font Awesome with modern line icons
+# URL: https://github.com/icons8/line-awesome
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=ttf-line-awesome
+version=1.2.1
+release=1
+source=(https://github.com/icons8/line-awesome/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd ${name/ttf-}-$version
+  install -d $PKG/usr/share/fonts/TTF
+  install -m644 dist/line-awesome/fonts/*.ttf $PKG/usr/share/fonts/TTF
+}

@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34gwSBt5onhEEp2p5yts0T0EV3cNPxffi//fcNx+AglAUU7uNTj8roWnEFunCnZ0QJ+1z5lEKDz+smKzuYWogwY=
+SHA256 (Pkgfile) = ec53693aa00caa8d93e4521769c35d7a51704f7c3281e8b3187f09dc43baefcc
+SHA256 (.footprint) = ef7674856b57a1be15260d9a5f7f9023b9499616dad0b93e00f6a380e2a8f57d
+SHA256 (muttprint-0.73.tar.gz) = 7cabe6a0aa59849f84914a2da33320611a2fcf5896b94ff957cfade8a325deb6
+SHA256 (muttprint_0.73-4.diff) = f88d333722893bd932e15030c680bff6e35f6db4e65e0ca2f39b03902db761c3
+SHA256 (regex.patch) = caec7cd37488c862e0db894826d87f92917e3fa3bb487e87845678c879671da2
+SHA256 (two_edge.patch) = af56789584deb59a73295deb30c5de6d5d0829938920c63a6db2f54550ad5ce9

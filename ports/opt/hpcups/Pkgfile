@@ -1,0 +1,28 @@
+# Description: Ghostscript add-on for HP inkjet/laserjet printers
+# URL:         https://sourceforge.net/projects/hplip/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  cups libjpeg-turbo
+
+name=hpcups
+version=3.20.11
+release=1
+source=(http://downloads.sourceforge.net/project/hplip/hplip/$version/hplip-$version.tar.gz)
+
+build () {
+    cd hplip-$version
+
+    ./configure --prefix=/usr \
+                --enable-hpcups-only-build \
+                --enable-hpcups-install \
+                --with-hpppddir=/usr/share/cups/model/HP \
+                --disable-{doc,network}-build
+
+    make
+    make DESTDIR=$PKG install
+
+    # https://bugs.archlinux.org/task/59548
+    install prnt/hpcups/libImageProcessor-x86_64.so $PKG/usr/lib
+    ln -s libImageProcessor-x86_64.so $PKG/usr/lib/libImageProcessor.so
+
+    rm -r $PKG/usr/share/doc
+}

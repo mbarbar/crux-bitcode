@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/WlLmY4l7VNEz3vq8LEZF0c2p+I4yHJwTHUcxRxYzEZn7Q40yWshAF7uoDtvqQ89cKTf6iiPUWTpvrOvzFbQaAA=
+SHA256 (Pkgfile) = becaf6de4454bc14f06dc708c6bbd529178a01d937a3b039a0faf1611c8d3a1f
+SHA256 (.footprint) = 1c8b6cdb38b60484abeb01b70051fe76e477cbb603b18464c15fed5349552307
+SHA256 (esmtp-1.2.tar.bz2) = a0d26931bf731f97514da266d079d8bc7d73c65b3499ed080576ab606b21c0ce

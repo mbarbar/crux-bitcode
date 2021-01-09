@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32A6Conr+i0qdEcEi3TTllU9NS+sdmS39tqli4c3axtaSvY7r/GBUMm5iHPpv6rUbPrXKRgpE+ljea9x1EfWBgk=
+SHA256 (Pkgfile) = 92014a74b7f0436d515f73f7402f3e3ea41302069b4b7e546478dcd8c4e913c7
+SHA256 (.footprint) = 360c65052ce4a47b4f81bab41fe6ff31ec833b44999d99fe9caeddb3f2be249d
+SHA256 (pyxdg-0.27.tar.gz) = 80bd93aae5ed82435f20462ea0208fb198d8eec262e831ee06ce9ddb6b91c5a5

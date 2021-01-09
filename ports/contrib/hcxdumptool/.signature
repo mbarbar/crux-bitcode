@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37OIsNGraEZeDfYdGB7HX+ToBjS7FwZlGNMOIbLh4+ecuJxNRtXtNrRDAEhLruxobaatzJF5vQLybEvvbYvbrQc=
+SHA256 (Pkgfile) = 10287d5e6ea524aef7f2c551b115fb7ab8603f1591787b06850a7bd92d07a4c4
+SHA256 (.footprint) = 2c32e707c912ffff85cb551e618476adb705ac4a872e677c642768987d988dde
+SHA256 (hcxdumptool-6.1.4.tar.gz) = cab8a6490dbf5492eff53e435b59e1b12c01f5e3cc64ba177048625a24acb093

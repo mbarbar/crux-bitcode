@@ -1,0 +1,17 @@
+README for git
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+1. The git-gui and gitk programs require tcl/tk to be installed.
+   Otherwise they will just abort with an error saying:
+     exec: wish: not found
+
+2. If you want to run gitd for serving git repos, make sure to create a
+   dedicated user like, first.
+
+PRECAUTION
+

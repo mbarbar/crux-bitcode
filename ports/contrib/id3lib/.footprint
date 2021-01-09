@@ -1,0 +1,27 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/id3convert
+-rwxr-xr-x	root/root	usr/bin/id3cp
+-rwxr-xr-x	root/root	usr/bin/id3info
+-rwxr-xr-x	root/root	usr/bin/id3tag
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/id3.h
+drwxr-xr-x	root/root	usr/include/id3/
+-rw-r--r--	root/root	usr/include/id3/field.h
+-rw-r--r--	root/root	usr/include/id3/globals.h
+-rw-r--r--	root/root	usr/include/id3/id3lib_frame.h
+-rw-r--r--	root/root	usr/include/id3/id3lib_streams.h
+-rw-r--r--	root/root	usr/include/id3/id3lib_strings.h
+-rw-r--r--	root/root	usr/include/id3/misc_support.h
+-rw-r--r--	root/root	usr/include/id3/reader.h
+-rw-r--r--	root/root	usr/include/id3/readers.h
+-rw-r--r--	root/root	usr/include/id3/sized_types.h
+-rw-r--r--	root/root	usr/include/id3/tag.h
+-rw-r--r--	root/root	usr/include/id3/utils.h
+-rw-r--r--	root/root	usr/include/id3/writer.h
+-rw-r--r--	root/root	usr/include/id3/writers.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libid3-3.8.so.3 -> libid3-3.8.so.3.0.0
+-rwxr-xr-x	root/root	usr/lib/libid3-3.8.so.3.0.0
+-rwxr-xr-x	root/root	usr/lib/libid3.la
+lrwxrwxrwx	root/root	usr/lib/libid3.so -> libid3-3.8.so.3.0.0

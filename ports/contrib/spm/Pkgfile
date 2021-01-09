@@ -1,0 +1,15 @@
+# Description: Simple password manager
+# URL:         https://notabug.org/kl3/spm
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  gnupg tree less sed
+# Optional:    pwgen
+
+name=spm
+version=1.5.0
+release=1
+source=(https://notabug.org/kl3/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name
+	make install PREFIX=/usr DESTDIR=$PKG
+}

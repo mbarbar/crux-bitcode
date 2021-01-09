@@ -1,0 +1,18 @@
+# Description: LInux boot LOader
+# URL:         https://www.joonet.de/lilo/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  libdevmapper bin86
+
+name=lilo
+version=24.2
+release=1
+source=(https://www.joonet.de/lilo/ftp/sources/$name-$version.tar.gz \
+        $name-config.patch lilo.conf)
+
+build() {
+    cd $name-$version
+    patch -p1 -i $SRC/$name-config.patch
+    make all
+    make DESTDIR=$PKG install
+    install -m 644 $SRC/lilo.conf $PKG/etc
+}

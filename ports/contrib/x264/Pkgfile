@@ -1,0 +1,45 @@
+# Description: Library for encoding H264/AVC video streams (snapshot).
+# URL: http://www.videolan.org/developers/x264.html
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Rouven Schuerch, rs at tegonal dot com
+# Depends on: yasm
+
+name=x264
+version=148.20160808
+release=2
+source=(http://crux.ster.zone/downloads/$name/$name-$version-a5e06b9.tar.xz)
+
+build() {
+	cp -al $name $name-10
+
+	cd $name-10
+
+	./configure \
+		--prefix=/usr \
+		--libdir=/usr/lib/libx264-10bit \
+		--includedir=/usr/lib/libx264-10bit/include \
+		--enable-pic \
+		--enable-shared \
+		--bit-depth='10' \
+		--disable-cli \
+		--disable-interlaced \
+		--extra-cflags="$CFLAGS"
+
+	make
+	make DESTDIR=$PKG install-lib-shared
+
+	cd $SRC/$name
+
+	./configure \
+		--prefix=/usr \
+		--enable-pic \
+		--enable-shared \
+		--bit-depth='8' \
+		--disable-cli \
+		--extra-cflags="$CFLAGS"
+
+	make
+	make DESTDIR=$PKG install
+
+	chmod a-x $PKG/usr/lib/*.so $PKG/usr/lib/libx264-10bit/*.so
+}

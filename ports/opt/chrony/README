@@ -1,0 +1,15 @@
+README for chrony 2.4.x 
+
+REQUIREMENTS
+
+PRE-INSTALL
+   Run the included pre-install script to create a new
+   user/group chrony.
+
+PRECAUTION
+   As of version 2.4.1-2 chrony no longer runs as root 
+   but as a dedicated user/group chrony. 
+   Chown all files and directories created by chrony
+   to chrony:chrony or run the supplied post-install
+   script.
+

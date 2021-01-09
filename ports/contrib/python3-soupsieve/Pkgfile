@@ -1,0 +1,15 @@
+# Description: A CSS4 selector implementation for Beautiful Soup
+# URL: http://pypi.python.org/pypi/soupsieve
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-setuptools
+
+name=python3-soupsieve
+version=2.0.1
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:8:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --root=$PKG --optimize=1
+}

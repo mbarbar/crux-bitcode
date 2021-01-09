@@ -1,0 +1,14 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/fortune
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/games/
+drwxr-xr-x	root/root	usr/share/games/fortunes/
+-rw-r--r--	root/root	usr/share/games/fortunes/chalkboard
+-rw-r--r--	root/root	usr/share/games/fortunes/discworld
+-rw-r--r--	root/root	usr/share/games/fortunes/fortune
+-rw-r--r--	root/root	usr/share/games/fortunes/kernelcookies
+-rw-r--r--	root/root	usr/share/games/fortunes/prog-style
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man6/
+-rw-r--r--	root/root	usr/share/man/man6/fortune.6.gz

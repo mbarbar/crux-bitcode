@@ -1,0 +1,18 @@
+# Description: Video Acceleration API to enable hardware accelerated video decode/encode.
+# URL: https://01.org/linuxmedia/vaapi
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: libdrm libglvnd meson ninja xorg-libxfixes
+
+name=libva
+version=2.9.1
+release=1
+source=(https://github.com/intel/libva/archive/$version/$name-$version.tar.gz)
+
+build() {
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--buildtype=plain
+
+	meson compile -C build -j ${JOBS:-1}
+	DESTDIR=$PKG meson install -C build
+}

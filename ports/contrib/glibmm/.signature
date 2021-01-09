@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31wLkm3Ly6RCSzChZ+68m69Wc+4v6SkXKahp4qftD2wylxjDLQzhyKnUN1V4UdbcUtoDgf/tKS8tqzXvE6FK1wA=
+SHA256 (Pkgfile) = 606548c661032e48a661c8edda9b22fca5cdd14ac0eccf6299edf880ef387e25
+SHA256 (.footprint) = ba1cfb86a405f0fb422e2aa75672eaf355004648f22c853fde6f695873961c3f
+SHA256 (glibmm-2.64.4.tar.xz) = 405040ab257cef0c8f1b14fdf9f3f92d6e6403715b64f1b75e4b6f04dfb56284

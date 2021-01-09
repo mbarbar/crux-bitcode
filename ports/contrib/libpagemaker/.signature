@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xY84/uR3zVEj27ilvGAE8J0VUtunh8YaR2s1R9ELxs6JoQj+7SDPZuJ0XXzT8lW1vmEsdKZbmhSNXgQ65zQSwE=
+SHA256 (Pkgfile) = 5793c663fa47e8a85543c2153940bebc3fad21558f11fe89088c45375cc1228e
+SHA256 (.footprint) = 6ec2157f87c26b9048c6b1fcebcb0aba54dba1fc207773bff02936abc82b376d
+SHA256 (libpagemaker-0.0.4.tar.xz) = 66adacd705a7d19895e08eac46d1e851332adf2e736c566bef1164e7a442519d

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38g1bAWFXXUaIWfAoU6QT3QOrb/wDyP0ltR4l1luBaYiqmHys/uEvc/dtpZJLf2m1La5omBOaZm+ME2MvOIpIws=
+SHA256 (Pkgfile) = b8b635ced2481d92ab53fe33e7df7d48b5f649e169129f1b8c8140b9a66a415b
+SHA256 (.footprint) = f181f104338754eab73c44388e38839390b832e106fb08b80f45266eaef3ca07
+SHA256 (zenith-0.11.0.tar.gz) = be216df5d4e9bc0271971a17e8e090d3abe513f501c69e69174899a30c857254

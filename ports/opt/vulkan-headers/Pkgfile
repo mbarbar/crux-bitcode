@@ -1,0 +1,19 @@
+# Description: Vulkan Header files and API registry
+# URL: https://www.khronos.org/vulkan/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cmake ninja
+
+name=vulkan-headers
+version=1.2.154.0
+release=1
+source=(https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-$version/Vulkan-Headers-sdk-$version.tar.gz)
+
+build() {
+	cmake -SVulkan-Headers-sdk-$version -Bbuild -GNinja \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DCMAKE_BUILD_TYPE=Release
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

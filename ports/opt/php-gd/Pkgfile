@@ -1,0 +1,24 @@
+# Description: GD module for PHP
+# URL:         https://www.php.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  libgd
+
+name=php-gd
+version=7.4.13
+release=1
+source=(https://www.php.net/distributions/php-$version.tar.xz)
+
+build() {
+    cd php-$version
+
+    ./configure --disable-all \
+                --enable-gd=shared \
+                --with-external-gd
+    
+    make build-modules
+
+    install -d $PKG/{etc/php/conf.d,usr/lib/php/extensions}
+    install -m 755 modules/gd.so $PKG/usr/lib/php/extensions/
+
+    printf 'extension=%s\n' gd.so > $PKG/etc/php/conf.d/gd.ini
+}

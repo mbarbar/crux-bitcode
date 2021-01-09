@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QszIiORps6hMYEr7jMHkYojXcZ9O6kaJIFI4sqdrwcBd8dOf5Gytpwn3DlonrEYiP9hl+eYUnnE0wr2DVSFHwY=
+SHA256 (Pkgfile) = b85b54f8fb7b983a5a5b4aed92834ca052f4a9e633ab1ea92356501d24f298bf
+SHA256 (.footprint) = 0e0ef7a30c20c4c326c566e64c1071072fa8de128d666d8c3cd4ea7e4a8f505a
+SHA256 (MarkupSafe-1.1.1.tar.gz) = 29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b

@@ -1,0 +1,7 @@
+#
+# /etc/pam.d/xscreensaver - xscreensaver service module configuration
+#
+
+auth    include common-auth
+
+account include common-account

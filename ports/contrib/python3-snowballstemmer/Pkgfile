@@ -1,0 +1,16 @@
+# Description: Snowball stemming library collection for Python.
+# URL:         https://github.com/shibukawa/snowball_py/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  python3-setuptools
+
+name=python3-snowballstemmer
+version=2.0.0
+release=1
+source=(https://pypi.org/packages/source/S/Snowballstemmer/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+
+	/usr/bin/python3 setup.py build
+	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+}

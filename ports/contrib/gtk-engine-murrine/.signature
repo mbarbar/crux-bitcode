@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zGhU8Eq6Hs/kocS6YweBoyfkRWC3eeYym1K0o7v4hfl+Yr0lE09KfP6yssUuQefB4NFKkgiUasWTBabQm9BQQA=
+SHA256 (Pkgfile) = 68e97b9d3c7c2b6afc439ffdbafa78d9a01b276773de339c8dc0bba127507236
+SHA256 (.footprint) = 32a28e3b7648a97cfb59345df213def76974f98f1ea36cc5a73fb0b21aeaacbe
+SHA256 (murrine-0.98.2.tar.xz) = e9c68ae001b9130d0f9d1b311e8121a94e5c134b82553ba03971088e57d12c89

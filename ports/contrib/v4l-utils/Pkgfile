@@ -1,0 +1,20 @@
+# Description: Userspace tools and conversion library for Video 4 Linux
+# URL: https://linuxtv.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libjpeg-turbo
+
+name=v4l-utils
+version=1.20.0
+release=1
+source=(https://linuxtv.org/downloads/v4l-utils/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  [[ -e /usr/bin/clang ]] && PKGMK_V4L+=" --enable-bpf" || PKGMK_V4L+=" --disable-bpf"
+  ./configure $PKGMK_V4L \
+    --prefix=/usr \
+    --disable-nls
+  make
+  MAKEFLAGS="-j1" make install DESTDIR=$PKG
+  rm $PKG/usr/bin/ivtv-ctl
+}

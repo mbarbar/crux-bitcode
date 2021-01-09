@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF334l5bZHEkRFzlzkVelksqRo98/OJQn1N+Mq/okzsNSSSsm7VJcg5uIjPo/9dz+um83MDj43ka6IsScn/DiTCws=
+SHA256 (Pkgfile) = 40793e0d8a6e490f5bfe177587736f577282efb99453a89eb3434bd53e398439
+SHA256 (.footprint) = 659383f9555ba6ecce269cdc4cd7e25d7cee56f341f2d65b15ed9d94e86fc535
+SHA256 (php-redis-5.3.2.tar.gz) = e30ef918fd29ef3a4aa762376cf8dad3d1ff7fe429e24944ea0c5affca233806

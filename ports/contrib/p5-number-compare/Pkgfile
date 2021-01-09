@@ -1,0 +1,19 @@
+# Description: numeric comparisons for human file sizes
+# URL: https://search.mcpan.org/dist/Number-Compare
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-number-compare
+version=0.03
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Number-Compare-$version.tar.gz)
+
+build() {
+  cd Number-Compare-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

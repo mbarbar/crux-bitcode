@@ -1,0 +1,11 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/PV+xFcu/dFAnVrERhkDNX4e4uXnUPQe9TxsCC+BKYqDoTNoLtLL/OXbuAbfarz7Do65wUzz779ErBU6ICdQAc=
+SHA256 (Pkgfile) = 1da6860f1e7ad8580361fac0b17249e530e98f5bff1dc175e652e3e4f20b411f
+SHA256 (.footprint) = 74efba3e043d0fe7c3bfd010a393d41a17661c4232396d6926f82f8c004af3cb
+SHA256 (fortune-0.2.tar.gz) = 17b1ae743873502ed318b8e2f690f33615e48e16cf186c8b390c9c521557ba20
+SHA256 (fortune-0.2.patch) = 421504218b1562e4ab354a6a540f614c7f1eedb6a8d2156ca37bfc369f3406c6
+SHA256 (fortune_big.zip) = 08923149ea937304f146aa0db4a5b3bea73ebee13ef0715400ed879f0f8ae0e3
+SHA256 (kernelcookies-8.tar.gz) = 8c5022ec90858242fe6e33165b9b64d62e8a30430e4fb1452a58cb92193ce737
+SHA256 (fortune-simpsons-chalkboard.tgz) = 8cfa7ecec784314b90b46531943d507c8f556c96008c8dc44089f016e5504b35
+SHA256 (fortune-discworld.tgz) = 1dbb4e081e9181dc092376b25e48d19eb69f7824e12b47dec3f55791ca32dd52
+SHA256 (fortune-mod-prog-style.tar.gz) = d66a641deb134e5a7d00c7b113ed0c9b81171647083940e24abf1f763538e32f

@@ -1,0 +1,22 @@
+# Description: Core utilities for Python packages.
+# URL: https://pypi.python.org/pypi/packaging/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python
+
+name=python-packaging
+version=20.4
+release=1
+source=(https://files.pythonhosted.org/packages/source/${name:7:1}/${name#*-}/${name#*-}-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+
+	/usr/bin/python setup.py build
+
+	/usr/bin/python setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+
+	# remove sdist metadata, as wheel metadata will be used with python-pip
+	find $PKG/usr/lib/python*/site-packages/ -maxdepth 1 -type f \
+		-name "${name#*-}-$version-py*.egg-info" -delete
+}

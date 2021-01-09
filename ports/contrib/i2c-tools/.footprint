@@ -1,0 +1,33 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ddcmon
+-rwxr-xr-x	root/root	usr/bin/decode-dimms
+-rwxr-xr-x	root/root	usr/bin/decode-edid
+-rwxr-xr-x	root/root	usr/bin/decode-vaio
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/i2c/
+-rw-r--r--	root/root	usr/include/i2c/smbus.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libi2c.a
+lrwxrwxrwx	root/root	usr/lib/libi2c.so -> libi2c.so.0
+lrwxrwxrwx	root/root	usr/lib/libi2c.so.0 -> libi2c.so.0.1.1
+-rwxr-xr-x	root/root	usr/lib/libi2c.so.0.1.1
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/i2c-stub-from-dump
+-rwxr-xr-x	root/root	usr/sbin/i2cdetect
+-rwxr-xr-x	root/root	usr/sbin/i2cdump
+-rwxr-xr-x	root/root	usr/sbin/i2cget
+-rwxr-xr-x	root/root	usr/sbin/i2cset
+-rwxr-xr-x	root/root	usr/sbin/i2ctransfer
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/decode-dimms.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/decode-vaio.1.gz
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/i2c-stub-from-dump.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/i2cdetect.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/i2cdump.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/i2cget.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/i2cset.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/i2ctransfer.8.gz

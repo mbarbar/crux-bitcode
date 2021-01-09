@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34J/qab0mv+IBcgibdpKuh5TbxLy6MX5DrXeXLkPUSLW/0U+Jx+fWoo6+pctTCuRi3tEqhHd2w2OUb4bMT+yGAk=
+SHA256 (Pkgfile) = 8bf875fbb155241118dc16db0a304b6e66d2f82acbe67467775c220445d5c44b
+SHA256 (.footprint) = 3518370ae52ecb1b0452d1aaa3b291be9b017eb1a4c8ac77c322ac88aa7fbdf1
+SHA256 (keepassxc-2.6.2-src.tar.xz) = 101bfade0a760d6ec6b8c4f3556e7f1201f1edd29ceabc73ad5846f9a57d7e38

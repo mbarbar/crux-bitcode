@@ -1,0 +1,17 @@
+# Description: A portable subtitle renderer for the ASS/SSA (Advanced Substation Alpha/Substation Alpha) subtitle format.
+# URL: https://github.com/libass/libass
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Packager: Danny Rawlins, crux at romster dot me
+# Depends on: fribidi harfbuzz libpng
+
+name=libass
+version=0.15.0
+release=1
+source=(https://github.com/$name/$name/releases/download/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,19 @@
+# Description: Perl package that combines List::Util and List::MoreUtils in one bite-sized package
+# URL: https://metacpan.org/pod/List::AllUtils
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-list-moreutils p5-list-someutils p5-list-utilsby p5-scalar-list-utils
+
+name=p5-list-allutils
+version=0.18
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-AllUtils-$version.tar.gz)
+
+build() {
+  cd List-AllUtils-$version
+  unset PERL5LIB PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  /usr/bin/perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

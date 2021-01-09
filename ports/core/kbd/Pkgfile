@@ -1,0 +1,28 @@
+# Description: Keytable files and keyboard utilities
+# URL:         https://kbd-project.org/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=kbd
+version=2.3.0
+release=1
+source=(https://www.kernel.org/pub/linux/utils/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --datadir=/usr/share/kbd \
+                --disable-vlock \
+                --disable-nls \
+                --disable-tests
+    make
+    make DESTDIR=$PKG install
+
+    ln -sf default8x16.psfu.gz $PKG/usr/share/kbd/consolefonts/default.gz
+
+    rm -r $PKG/usr/share/kbd/keymaps/{ppc,mac,atari,amiga,sun}
+    rm $PKG/usr/bin/{loadunimap,mapscrn,resizecons,psf*table}
+    rm $PKG/usr/share/man/man8/{loadunimap,mapscrn,resizecons}.8
+    rm $PKG/usr/share/man/man1/psf*table.1
+    find $PKG/usr/share/kbd/ -type f -name "README*" -delete
+}

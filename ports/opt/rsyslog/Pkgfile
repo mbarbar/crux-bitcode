@@ -1,0 +1,23 @@
+# Description: The rocket-fast system for log processing
+# URL: https://www.rsyslog.com/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: libestr json-c libgcrypt liblogging libfastjson
+
+name=rsyslog
+version=8.2012.0
+release=1
+source=(http://www.rsyslog.com/files/download/$name/$name-$version.tar.gz \
+    $name.conf rsyslogd.rc)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/var/lib/$name $PKG/etc/$name.d
+    install -D -m 0644 $SRC/$name.conf \
+        $PKG/etc/$name.conf
+    install -D -m 0755 $SRC/rsyslogd.rc \
+        $PKG/etc/rc.d/rsyslogd
+}

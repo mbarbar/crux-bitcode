@@ -1,0 +1,16 @@
+# Description:	atk to at-spi2 bridge library
+# URL:		https://wiki.gnome.org/Accessibility
+# Maintainer:	Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on:	atk, at-spi2-core, libxml2
+
+name=at-spi2-atk
+version=2.38.0
+release=1
+source=(https://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/${version:0:4}/at-spi2-atk-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson build --prefix=/usr
+	DESTDIR=$PKG ninja -C build install
+}

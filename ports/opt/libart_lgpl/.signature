@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/R+0N3I08gcU5kR+Rw63jvMYRSML4XnrszLPPz9BXB2+87Y1OvUMrFkCLs580/DZYIfgZHwBQkmzBrtl1/jG/wI=
+SHA256 (Pkgfile) = af6c045ac60d3d1a29ccea063acbfe5309487c958652be9be7ade7f930f4c9d6
+SHA256 (.footprint) = cabf31be48dbc3972345dcd55a419e3265f64342464c8b9fd6e2b998bc371d35
+SHA256 (libart_lgpl-2.3.21.tar.bz2) = fdc11e74c10fc9ffe4188537e2b370c0abacca7d89021d4d303afdf7fd7476fa

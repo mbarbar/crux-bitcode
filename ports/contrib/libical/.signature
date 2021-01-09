@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30U5QfrCKMwHagqfrzTR/JsDNJSk4KzuZ4a3db4RwPUOf/z6XPdvqTSo7zwIEk90zBVOnfu0rqAhdEnPYzAMXw0=
+SHA256 (Pkgfile) = 73b5fabaa25ad641142acaace1539925a60dabad3372bb200e208566eebdc4a0
+SHA256 (.footprint) = d1a385335cc807f8b066454c2c7e35faf99ecbe880937899e2b44985bcf091c3
+SHA256 (libical-3.0.8.tar.gz) = 09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f
+SHA256 (icu-68.1.patch) = 35baa04a18b66441ecc5a67e674e11c020e596e124f57cbf94a69595c4ca581c

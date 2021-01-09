@@ -1,0 +1,27 @@
+# Description:	LDAP PAM module
+# URL:		https://github.com/PADL/pam_ldap
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	linux-pam openldap cyrus-sasl
+
+name=pam_ldap
+version=186
+release=3
+source=(
+	#http://www.padl.com/download/$name-$version.tar.gz
+	https://deb.debian.org/debian/pool/main/libp/libpam-ldap/libpam-ldap_$version.orig.tar.gz
+)
+
+build() {
+        cd $name-$version
+	./configure \
+		--prefix=/usr \
+		--libdir=/lib \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--with-ldap-lib=openldap \
+		--with-ldap-conf-file=/etc/pam_ldap.conf
+	PERL5LIB="$PWD" PATH="$PATH:$SRC/$name-$version" make
+	make DESTDIR=$PKG install
+
+	mv $PKG/etc/ldap.conf $PKG/etc/pam_ldap.conf
+}

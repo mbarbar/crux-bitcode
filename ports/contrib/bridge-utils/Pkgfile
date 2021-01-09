@@ -1,0 +1,27 @@
+# Description: Linux IEEE 802.1d ethernet bridging utilities
+# URL:         https://www.linuxfoundation.org/collaborate/workgroups/networking/bridge
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=bridge-utils
+version=1.7
+release=1
+source=(https://git.kernel.org/pub/scm/linux/kernel/git/shemminger/bridge-utils.git/snapshot/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  # make compilation fail instead of producing footprint mismatches
+  sed -i 's/ ; done/ || exit 1 &/g' Makefile.in
+  autoconf
+
+  ./configure --prefix=/usr
+
+  # fix includes...
+  sed -i 's|\(#include <sys/socket.h>\)|\1\n#include <netinet/in.h>|1' \
+  libbridge/libbridge.h
+  sed -i -e 's|linux/if.h|net/if.h|1' -e '/if_bridge.h/d' libbridge/libbridge.h
+  sed -i '/KERNEL_HEADERS=/d' libbridge/Makefile
+
+  make
+  make DESTDIR=$PKG install
+}

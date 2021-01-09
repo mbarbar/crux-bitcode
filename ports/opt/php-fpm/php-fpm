@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# /etc/rc.d/php-fpm: start/stop FastCGI Process Manager
+#
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/sbin/php-fpm
+PID=/var/run/php-fpm.pid
+
+case $1 in
+start)
+	$SSD --start --pidfile $PID --exec $PROG
+	;;
+stop)
+	$SSD --stop --retry 10 --pidfile $PID
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+reload)
+	$SSD --stop --signal USR2 --pidfile $PID
+	;;
+status)
+	$SSD --status --pidfile $PID
+	case $? in
+	0) echo "$PROG is running with pid $(cat $PID)" ;;
+	1) echo "$PROG is not running but the pid file $PID exists" ;;
+	3) echo "$PROG is not running" ;;
+	4) echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|reload|status]"
+	;;
+esac
+
+# End of file

@@ -1,0 +1,20 @@
+# Description: A set of python bindings for cairo.
+# URL: https://pypi.org/project/pycairo/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cairo python
+
+name=python-cairo
+version=1.18.2
+release=1
+source=(https://github.com/pygobject/pycairo/releases/download/v$version/pycairo-$version.tar.gz)
+
+build() {
+	cd pycairo-$version
+
+	/usr/bin/python setup.py build
+	/usr/bin/python setup.py install --skip-build --root=$PKG --optimize=1
+
+	local pyv="$(/usr/bin/python -c "import sys; print \"%s.%s\" % (sys.version_info[0], sys.version_info[1]);")"
+	find $PKG/usr/lib/python$pyv/site-packages/ -maxdepth 1 -type f \
+		-name "pycairo-$version-py$pyv.egg-info" -delete
+}

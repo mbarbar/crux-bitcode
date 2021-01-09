@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/zKY2Z+hcLphGwetphVz89BTwilXcXfZF7BjGaXYMsNE9fgG47cM0swWhIhvXK7Pq70GPUjkdBUTGL9E+CMtgE=
+SHA256 (Pkgfile) = ac58494abcbd08ab9e64e66a902c15842bdc163ef5667dfc722baf81e88baf03
+SHA256 (.footprint) = 835e569523c2a8f197c940be1624c95621022de9b905336d4800df4feeb792d2
+SHA256 (gradm-3.1-202009270723.tar.gz) = c5c4100c9710e79375af08e91cb09660b461e94308d959dc3b8389f058252652

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34+zLNdyvHLLt8r6pSj7Xv7Hh+fUuGQtzR+XK6zg7BzgbxRKftvaE+sFVduXfWP4XSCjpGGEEBsV+EAYVTRX5QI=
+SHA256 (Pkgfile) = 6f84e9da8668aeb35199758b0cd43748da1181952cc634c118f3b2a3a7e85934
+SHA256 (.footprint) = 8803f119cd6d6737d2592a5b664984d978158a027f3c16f893593ff6c9087914
+SHA256 (Compress-Bzip2-2.28.tar.gz) = 859f835c3f5c998810d8b2a6f9e282ff99d6cb66ccfa55cae7e66dafb035116e

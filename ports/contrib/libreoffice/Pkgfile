@@ -1,0 +1,107 @@
+# Description: LibreOffice is a powerful office suite
+# URL: https://www.libreoffice.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: clucene coin-or-mp fakeroot fontforge gpgme graphite2 gst-plugins-base gtk3 harfbuzz-icu hyphen libabw libcdr libcmis libe-book libepubgen libetonyek libexttextcat libfreehand libmspub libmwaw libmythes libnumbertext libodfgen liborcus libpagemaker libqxp libstaroffice libtommath libvisio libwpg libwps libzmf lpsolve libqrcodegen mysql neon libpaper python3-lxml redland sane unzip xmlsec zip
+# Optional: cups kio qt5 valgrind vlc
+
+name=libreoffice
+version=7.0.4.1
+release=1
+pdfiumversion=4306
+source=(https://downloadarchive.documentfoundation.org/libreoffice/old/$version/src/$name-$version.tar.xz
+  https://downloadarchive.documentfoundation.org/libreoffice/old/$version/src/$name-dictionaries-$version.tar.xz
+  https://dev-www.libreoffice.org/extern/185d60944ea767075d27247c3162b3bc-unowinreg.dll
+  https://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
+  https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
+  https://dev-www.libreoffice.org/src/skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz
+  https://dev-www.libreoffice.org/src/pdfium-$pdfiumversion.tar.bz2 makefile.in.patch)
+
+unpack_source() {
+  for file in ${source[@]}; do
+    case ${file##*/} in
+      libreoffice-*.tar.xz)
+        bsdtar -p -o -C $SRC -xf $(get_filename $file) ;;
+      185d60944ea767075d27247c3162b3bc-unowinreg.dll)
+        mkdir $SRC/tarballs || true
+        cp $(get_filename $file) $SRC/tarballs ;;
+      0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz)
+        mkdir $SRC/tarballs || true
+        cp $(get_filename $file) $SRC/tarballs ;;
+      pdfium-$pdfiumversion.tar.bz2)
+        mkdir $SRC/tarballs || true
+        cp $(get_filename $file) $SRC/tarballs ;;
+      dtoa-20180411.tgz)
+        mkdir $SRC/tarballs || true
+        cp $(get_filename $file) $SRC/tarballs ;;
+      skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz)
+        mkdir $SRC/tarballs || true
+        cp $(get_filename $file) $SRC/tarballs ;;
+      *)
+        cp $(get_filename $file) $SRC ;;
+    esac
+  done
+}
+
+build() {
+  cd $name-$version
+
+  patch -Np1 -i $SRC/makefile.in.patch
+
+  find -L . \
+     \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+     -o -perm 511 \) -exec chmod 755 {} \; -o \
+     \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+     -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+  # determine configure options based on installed packages on the system
+  [[ -e /usr/lib/ccache ]] && PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
+  [[ -e /usr/lib/ccache ]] && PKGMK_LIBREOFFICE+=" --enable-ccache" || PKGMK_LIBREOFFICE+=" --disable-ccache"
+  [[ -e /usr/lib/cups ]] && PKGMK_LIBREOFFICE+=" --enable-cups" || PKGMK_LIBREOFFICE+=" --disable-cups"
+  [[ -e /usr/lib/pkgconfig/Qt5Core.pc ]] && PKGMK_LIBREOFFICE+=" --enable-qt5" || PKGMK_LIBREOFFICE+=" --disable-qt5"
+  [[ -e /usr/include/KF5/KIOCore ]] && PKGMK_LIBREOFFICE+=" --enable-kde5 --enable-gtk3-kde5"
+  [[ -e /usr/share/vlc ]] && PKGMK_LIBREOFFICE+=" --enable-vlc" || PKGMK_LIBREOFFICE+=" --disable-vlc" # experimental vlc av backend
+  [[ -e /usr/lib/pkgconfig/valgrind.pc ]] && PKGMK_LIBREOFFICE+=" --with-valgrind"
+
+  local build_date=$(date +%Y%m%d)
+  ./autogen.sh $PKGMK_LIBREOFFICE \
+    --with-parallelism=${JOBS-1} \
+    --prefix=/usr \
+    --with-external-tar="$SRC/tarballs" \
+    --enable-{build-opensymbol,dbus,firebird-sdbc=no,gtk3,introspection=yes,release-build,odk,openssl,pdfium,python=system} \
+    --with-{lang="",package-format=archive,myspell-dicts,parallelism} \
+    --with-extra-buildid="$(crux | awk '{ print $1 " " $3 }') ${build_date}" \
+    --with-package-version="$version" \
+    --with-system-{headers,libs} \
+    --with-external-dict-dir=/usr/share/hunspell \
+    --with-external-hyph-dir=/usr/share/hypen \
+    --with-external-thes-dir=/usr/share/mythes \
+    --without-{doxygen,fonts,gssapi,help,helppack-integration,java,system-firebird} \
+    --disable-{avahi,build-unowinreg,dconf,dependency-tracking,extension-update,fetch-external} \
+    --disable-{firebird-sdbc,poppler,postgresql-sdbc,report-builder,sdremote-bluetooth,werror}
+
+  touch {sources.ver,src.downloaded}
+  echo "lo_sources_ver=${version}" > sources.ver
+  make build-nocheck
+
+  pushd workdir/installation/LibreOffice/archive/install/en-US
+  tar xf *.tar.gz
+  popd
+
+  make DESTDIR=$PKG distro-pack-install
+
+  install -dm755 $PKG/usr/etc/libreoffice
+  install -m644 $PKG/usr/lib/libreoffice/program/{bootstraprc,sofficerc} \
+    $PKG/usr/etc/libreoffice/
+  install -m644 $PKG/usr/lib/libreoffice/share/psprint/psprint.conf \
+    $PKG/usr/etc/libreoffice/
+
+  # install dummy links to make them found by lo
+  cd $PKG/usr/lib/libreoffice/program/
+  ln -vsrf $PKG/usr/etc/libreoffice/{bootstraprc,sofficerc} .
+
+  # cleanup
+  rm -r $PKG/usr/share/libreoffice/sdk
+  rm -r $PKG/usr/lib/libreoffice/sdk
+  rm -r $PKG/usr/share/doc
+  find $PKG -iname "*readme*" -exec rm -fr '{}' \+
+}

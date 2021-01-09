@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30fI6LAYHez/lLRR678bDfKI4Y+8cFtVfTgV0JCmyVf27B873+2obOPXYUk1/JvTWUNUzD7rCEdF2wD9uKEkgg0=
+SHA256 (Pkgfile) = 50c7aecc0280e35bf0479d79ab20dee92d989f828fe21b76cb85fff0c4fa871e
+SHA256 (.footprint) = e877911511b8b92324b64f99512792044dbbfb7042ddad0fa6aaae399f843740
+SHA256 (numpy-1.19.4.tar.gz) = fe836a685d6838dbb3f603caef01183ea98e88febf4ce956a2ea484a75378413

@@ -1,0 +1,17 @@
+# Description: Library to create ISO-9660 filesystem with extensions like Rock Ridge or Joliet
+# URL:         https://dev.lovelyhq.com/libburnia/web/wikis/Libisofs
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=libisofs
+version=1.5.2
+release=1
+source=(http://files.libburnia-project.org/releases/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

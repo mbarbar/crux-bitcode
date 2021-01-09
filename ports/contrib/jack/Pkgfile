@@ -1,0 +1,20 @@
+# Description: A real-time, low latency audio daemon.
+# URL: https://jackaudio.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libsamplerate python3
+
+name=jack
+version=1.9.16
+release=1
+source=(https://github.com/jackaudio/jack2/archive/v$version.tar.gz)
+
+build() {
+	cd ${name}2-$version
+
+	./waf configure \
+		--prefix=/usr \
+		--alsa
+
+	./waf build -j ${JOBS-1}
+	./waf install --destdir=$PKG
+}

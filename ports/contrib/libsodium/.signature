@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF368zmE68qbMvtb01v9PvHOW3hwFYQqLxqxKl+Kifdjo2ovpF8TI0yf79odVINuJkzTXcyDTD/jIBQxLSq80omw0=
+SHA256 (Pkgfile) = 02fe53461a8af3d82d57dc7b994906080c993184f5eb1998c662fa6ef937f1af
+SHA256 (.footprint) = a112c5fd179ae08ba0e8b341ad8037eec36a569d39028e21fe8de255e0b6e82e
+SHA256 (libsodium-1.0.18.tar.gz) = b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10

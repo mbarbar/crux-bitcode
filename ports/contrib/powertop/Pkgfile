@@ -1,0 +1,21 @@
+# Description:	Finds the software component(s) that make your laptop use more power than necessary
+# URL:		https://01.org/powertop/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Packager:	Mikhail Kolesnik, mike at openbunker dot org
+# Depends on:	libnl ncurses
+
+name=powertop
+version=2.13
+release=1
+source=(https://01.org/sites/default/files/downloads/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls
+	make
+	make DESTDIR=$PKG install
+	[ ! -e /usr/lib/pkgconfig/bash-completion.pc ] && rm -r $PKG/usr/share/bash-completion
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3whvmgNdWqt907YH4GKApqPTa8dOztG+5ggzLakTaSftrSiflQijz0HEvTFHS0VWfj6cPzUyIl5iK4eV8BuqXwQ=
+SHA256 (Pkgfile) = 549dd14d70e7904bf7ab258e81aa9cc71d1a1516b30eaf9e307878141a15f45e
+SHA256 (.footprint) = ad1cc4a64cd7cb08911ff9dd9db91c8a67d4e134318246408bd8f92f754ee4bf
+SHA256 (AnyEvent-I3-0.17.tar.gz) = 5382c984c9f138395f29f0c00af81aa0c8f4b765582055c73ede4b13f04a6d63

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF378nIDAKsD3ds456HG2Pi3RahDM0JDCZwuukL48s3C/HEPRZuMo29iNG8rcGwWMg4ICc9w2CUBsAATr7F0rzWQ8=
+SHA256 (Pkgfile) = d6920f6b362319d55ab259682f1042ea397d98bfeb0a372bc0b5ce043d5339ed
+SHA256 (.footprint) = 3902266000380eaf1ff7ef2da1149830387ae4f22224e3b9ee6a579b08689ab3
+SHA256 (pangomm-2.42.1.tar.xz) = 14bf04939930870d5cfa96860ed953ad2ce07c3fd8713add4a1bfe585589f40f

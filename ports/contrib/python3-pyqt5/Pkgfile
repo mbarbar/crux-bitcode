@@ -1,0 +1,26 @@
+# Description: Python bindings for the QT5 toolkit
+# URL: https://riverbankcomputing.com/software/pyqt/intro
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: dbus-python3 python3-opengl python3-packaging python3-pip python3-pyqt-builder python3-pyqt5-sip qt5 sip sip5
+
+name=python3-pyqt5
+version=5.15.2
+release=1
+source=(https://pypi.python.org/packages/source/P/PyQt5/PyQt5-$version.tar.gz)
+
+build() {
+  cd PyQt5-$version
+  export PATH="/usr/lib/qt5/bin/:${PATH}"
+  sip-build \
+    --confirm-license \
+    --no-make \
+    --api-dir /usr/share/qt/qsci/api/python
+  cd build
+  make
+  make INSTALL_ROOT=$PKG install -j1
+  /usr/bin/python3 -m compileall -d / $PKG/usr/lib
+  /usr/bin/python3 -O -m compileall -d / $PKG/usr/lib
+  find $PKG \
+    -iname "*INSTALLER*" \
+    -delete
+}

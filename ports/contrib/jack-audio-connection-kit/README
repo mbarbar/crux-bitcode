@@ -1,0 +1,21 @@
+Jack - Audio Connection Kit
+
+NOTES
+
+Jack is a versatile, high-performance sound server.  It is geared
+towards music professionals, and offers excellent low-latency 
+operation when properly configured.
+
+Jack works best with, but does not require, a low-latency patched 
+kernel.  To obtain a patch for your kernel, see:
+
+  http://members.optusnet.com.au/ckolivas/kernel
+
+If you are using a patched kernel and wish to run jackd as a
+non-priviliged user, consider launching the jack daemon with:
+
+  schedtool -I -e jackd [options]
+
+This will allow jackd to run in near real-time, to provide 
+minimum latency, without starving other processes.
+

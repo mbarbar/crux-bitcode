@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/ascii-xfr
+-rwxr-xr-x	root/root	usr/bin/minicom
+-rwxr-xr-x	root/root	usr/bin/runscript
+-rwxr-xr-x	root/root	usr/bin/xminicom
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/ascii-xfr.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/minicom.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/runscript.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/xminicom.1.gz

@@ -1,0 +1,19 @@
+# Description: A simple, sane and efficient module to slurp a file
+# URL: https://metacpan.org/release/File-Slurper
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-file-slurper
+version=0.012
+release=1
+source=(https://cpan.metacpan.org/authors/id/L/LE/LEONT/File-Slurper-$version.tar.gz)
+
+build() {
+  cd File-Slurper-$version
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

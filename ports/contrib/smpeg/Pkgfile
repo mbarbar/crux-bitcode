@@ -1,0 +1,21 @@
+# Description: A SDL MPEG player library.
+# URL: http://icculus.org/smpeg/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: glu libsdl
+
+name=smpeg
+version=0.4.5
+release=2
+source=(http://crux.ster.zone/downloads/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	CFLAGS+=' -Wno-error=narrowing'
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man
+
+	make
+	make install DESTDIR=$PKG
+}

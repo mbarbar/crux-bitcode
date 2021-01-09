@@ -1,0 +1,30 @@
+# Description: Curses based spreadsheet with vi key-bindings 
+# URL:         http://www.ibiblio.org/pub/Linux/apps/financial/spreadsheet/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  ncurses
+
+name=sc
+version=7.16
+release=6
+source=(http://ftp.de.debian.org/debian/pool/main/s/sc/sc_7.16.orig.tar.gz \
+        http://ftp.de.debian.org/debian/pool/main/s/sc/sc_7.16-4.debian.tar.xz)
+
+build () {
+    cd $name-$version
+
+    local p
+    for p in $(< $SRC/debian/patches/series); do
+        patch -p1 -i $SRC/debian/patches/$p
+    done
+
+    sed -e "/^CFLAGS=/s/-O2 -pipe/$CFLAGS/" \
+        -e "/^LIBDIR=/s|doc/||" \
+        -e "/^LIB=/s/ncurses/ncursesw/" -i Makefile
+
+    install -d $PKG/usr/{bin,share/man/man1,share/sc}
+
+    make
+    make prefix=$PKG/usr MANDIR=$PKG/usr/share/man/man1 install
+    
+    sed -i "s|$PKG||g" $PKG/usr/share/man/man1/sc.1
+}

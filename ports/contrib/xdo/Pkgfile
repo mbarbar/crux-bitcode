@@ -1,0 +1,19 @@
+# Description: small X utility for applying actions to windows
+# URL:         https://github.com/baskerville/xdo
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  xorg-libxcb xorg-xcb-util xorg-xcb-util-wm
+
+name=xdo
+version=0.5.7
+release=1
+source=(https://github.com/baskerville/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+
+	# fix permissions
+	chmod -R g-w $PKG/*
+}

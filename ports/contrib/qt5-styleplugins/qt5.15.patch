@@ -1,0 +1,25 @@
+diff -pruN qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3/src/plugins/styles/gtk2/qgtkstyle.cpp qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3.new/src/plugins/styles/gtk2/qgtkstyle.cpp
+--- qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3/src/plugins/styles/gtk2/qgtkstyle.cpp	2017-03-11 11:23:02.000000000 +0200
++++ qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3.new/src/plugins/styles/gtk2/qgtkstyle.cpp	2020-07-13 11:29:16.119019641 +0300
+@@ -440,7 +440,7 @@ void QGtkStyle::polish(QApplication *app
+     // not supported as these should be entirely determined by
+     // current Gtk settings
+     if (app->desktopSettingsAware() && d->isThemeAvailable()) {
+-        QApplicationPrivate::setSystemPalette(standardPalette());
++        QApplication::setPalette(standardPalette());
+         QApplicationPrivate::setSystemFont(d->getThemeFont());
+         d->applyCustomPaletteHash();
+         if (!d->isKDE4Session())
+Binary files qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3/src/plugins/styles/gtk2/.qgtkstyle.cpp.un~ and qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3.new/src/plugins/styles/gtk2/.qgtkstyle.cpp.un~ differ
+diff -pruN qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3/src/plugins/styles/gtk2/qgtkstyle_p.cpp qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3.new/src/plugins/styles/gtk2/qgtkstyle_p.cpp
+--- qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3/src/plugins/styles/gtk2/qgtkstyle_p.cpp	2017-03-11 11:23:02.000000000 +0200
++++ qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3.new/src/plugins/styles/gtk2/qgtkstyle_p.cpp	2020-07-13 11:28:03.225683567 +0300
+@@ -508,7 +508,6 @@ void QGtkStyleUpdateScheduler::updateThe
+       if (oldTheme != QGtkStylePrivate::getThemeName()) {
+           oldTheme = QGtkStylePrivate::getThemeName();
+           QPalette newPalette = qApp->style()->standardPalette();
+-          QApplicationPrivate::setSystemPalette(newPalette);
+           QApplication::setPalette(newPalette);
+           if (!QGtkStylePrivate::instances.isEmpty()) {
+               QGtkStylePrivate::instances.last()->initGtkWidgets();
+Binary files qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3/src/plugins/styles/gtk2/.qgtkstyle_p.cpp.un~ and qtstyleplugins-335dbece103e2cbf6c7cf819ab6672c2956b17b3.new/src/plugins/styles/gtk2/.qgtkstyle_p.cpp.un~ differ

@@ -1,0 +1,30 @@
+# Description: Nextcloud desktop client
+# URL: https://nextcloud.com/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libevent pciutils qtkeychain qtwebengine
+# Optional: doxygen kde5
+
+name=nextcloud-client
+version=3.0.3
+release=1
+source=(https://github.com/nextcloud/desktop/archive/v$version/$name-$version-$release.tar.gz)
+
+build() {
+  cmake -S desktop-$version -B build -G Ninja \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_INSTALL_SYSCONFDIR=/usr/etc/nextcloud \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+    -D NO_SHIBBOLETH=1 \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+
+  rm -r $PKG/usr/share/nextcloud
+  # there are no ports for nautilus nor nemo in CRUX atm
+  rm -r $PKG/usr/share/{nautilus-python,nemo-python}
+  # there is caja for mate though, only make it available if it's installed
+  [[ ! -e /usr/lib/pkgconfig/libcaja-extension.pc ]] && rm -r $PKG/usr/share/caja-python || true
+}

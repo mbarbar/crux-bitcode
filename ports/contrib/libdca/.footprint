@@ -1,0 +1,24 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dcadec
+-rwxr-xr-x	root/root	usr/bin/dtsdec
+-rwxr-xr-x	root/root	usr/bin/extract_dca
+-rwxr-xr-x	root/root	usr/bin/extract_dts
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/dca.h
+-rw-r--r--	root/root	usr/include/dts.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libdca.la
+lrwxrwxrwx	root/root	usr/lib/libdca.so -> libdca.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libdca.so.0 -> libdca.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libdca.so.0.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libdca.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libdts.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dcadec.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/dtsdec.1.gz -> dcadec.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/extract_dca.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/extract_dts.1.gz -> extract_dca.1.gz

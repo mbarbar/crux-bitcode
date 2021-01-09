@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF38jaOgDrZFrHH1M5GPiHzjY/70WCHcCnPcrIhQ9deXEHqxP0dhh4HQICauOz/kRC4RS67Tr5sXsbDwArQu3GMAo=
+SHA256 (Pkgfile) = 1f5ccf9698886142efdf4cfee75cc01cef1a7400c609a512562586011c8fea7e
+SHA256 (.footprint) = fb5a29a98eebec4aaa36db38ccdc13d8ead7d023efe2d16310ad249940e4403e
+SHA256 (Jinja2-2.11.2.tar.gz) = 89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0

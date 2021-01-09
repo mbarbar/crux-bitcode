@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36+DwOVFFyzIUAM2vhbRi1mdKblppXQsBLJ3Z5s9P/ZYAvheeAsZtrdYl6b4cj/gKnXevVaMJzDobvYAxqZD1Aw=
+SHA256 (Pkgfile) = 671e1b02f65a6bf29fe3c5581fd926b6d78d48105be386920a2a91ce1ad9fa67
+SHA256 (.footprint) = f14555b474f5c94353678e03ba77450f3c745c12b1786ae3740039d17fa35bcd
+SHA256 (mpv-v0.33.0.tar.gz) = f1b9baf5dc2eeaf376597c28a6281facf6ed98ff3d567e3955c95bf2459520b4
+SHA256 (waf-2.0.9) = 2a8e0816f023995e557f79ea8940d322bec18f286917c8f9a6fa2dc3875dfa48
+SHA256 (mpv.1) = e2c8c722447909b9ab08725a0dc479330caaab51f5058912bebbef9688ef241d

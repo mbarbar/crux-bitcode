@@ -1,0 +1,31 @@
+# Description: Tool to detect other OSes.
+# URL: http://joey.kitenet.net/code/os-prober
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=os-prober
+version=1.77
+release=1
+source=(http://ftp.de.debian.org/debian/pool/main/o/$name/${name}_$version.tar.xz
+Fix-CRUX-grub-menu-entry-detection.patch)
+
+build() {
+  cd $name-$version
+  patch -Np1 -i $SRC/Fix-CRUX-grub-menu-entry-detection.patch
+  # Adjust lib dir to allow detection of 64-bit distros
+  sed -i -e "s:/lib/ld\*\.so\*:/lib*/ld*.so*:g" os-probes/mounted/common/90linux-distro
+  rm -f Makefile
+  make newns
+
+  install -Dm755 linux-boot-prober $PKG/usr/bin/linux-boot-prober
+  install -Dm755 $name $PKG/usr/bin/$name
+  install -Dm755 newns $PKG/usr/lib/$name/newns
+  install -Dm755 common.sh $PKG/usr/share/$name/common.sh
+  for i in os-probes os-probes/mounted os-probes/init linux-boot-probes linux-boot-probes/mounted; do
+    install -dm755 $PKG/usr/lib/$i
+    install -m755 -t $PKG/usr/lib/$i $i/common/*
+    [[ -d $i/x86 ]] && cp -r $i/x86/* $PKG/usr/lib/$i
+  done
+  install -Dm755 os-probes/mounted/powerpc/20macosx $PKG/usr/lib/os-probes/mounted/20macosx
+  install -dm755 $PKG/var/lib/$name
+}

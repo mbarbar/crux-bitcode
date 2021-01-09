@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37SAUyBMzjRSe+JX47REsnfE2yPs2fTaTxqB7nyJv2lzvWE5K43A+/zg2VUF0bLPvnAyqywqiOGimRjLe6CLLwk=
+SHA256 (Pkgfile) = e98f485673f37d33bc33311d8bb7e7a3f09c34ded93feb19eb044bbf09880d2a
+SHA256 (.footprint) = 0bf299c2a8d26af9c90a73491138d17f601788870647e86d295faa31d39a4aa5
+SHA256 (PySocks-1.7.1.tar.gz) = 3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0

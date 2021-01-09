@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/eGtwXOAALE63Fw2Rbxisu4RpErvtW6Lnk0SAxjHRDfGBjaTw64FxyvK1jbqEaFT0AGGedEILafDkS/O8hTT9g4=
+SHA256 (Pkgfile) = 4b7920c1a8d46317b58e0bf793113c6f1cfbc7a0d1c407a0b4aa5b6325fe468d
+SHA256 (.footprint) = 116ff910dccdf5c6dd1445a06b38f9bc197881ba680ca49d126c92d29b2e3248
+SHA256 (neon-0.31.2.tar.gz) = cf1ee3ac27a215814a9c80803fcee4f0ede8466ebead40267a9bd115e16a8678

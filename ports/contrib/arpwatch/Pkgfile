@@ -1,0 +1,30 @@
+# Description: Monitors MAC Adresses on your network.
+# URL:         https://ee.lbl.gov/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+# Depends on:  libpcap
+
+name=arpwatch
+version=3.1
+release=1
+source=(https://ee.lbl.gov/downloads/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  # https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/arpwatch
+  sed -i 's|ARPDIR = $(prefix)/arpwatch|ARPDIR = /var/lib/arpwatch|' Makefile.in
+  sed -i 's/-\(o\|g\) bin/-\1 root/g' Makefile.in
+
+  ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
+    --mandir=/usr/share/man
+
+  install -d $PKG/usr/{bin,share/man/man8,sbin,etc/rc.d}
+
+  # prepend DESTDIR to some paths
+  #sed -i '123,126{s/\$(/$(DESTDIR)$(/2}' Makefile
+  make SENDMAIL=/usr/bin/sendmail
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/etc
+}

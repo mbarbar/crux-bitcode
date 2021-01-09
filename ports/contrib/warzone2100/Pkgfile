@@ -1,0 +1,31 @@
+# Description:	A real-time strategy game.
+# URL: https://wz2100.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Mark Rosenstand, mark at borkware dot net
+# Depends on: fribidi glew libmad libsdl2 openal physfs popt qt5 quesoglc sdl_net smpeg unzip x11-fonts-dejavu zip
+
+name=warzone2100
+version=3.2.1
+release=1
+source=(http://downloads.sourceforge.net/project/$name/releases/$version/$name-$version.tar.xz
+	warzone2100.appdata.xml)
+
+build() {
+	cd $name-$version
+
+	# Add missing file from the tarball
+	cp $SRC/warzone2100.appdata.xml icons/
+
+	./configure \
+		--prefix=/usr \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+
+#	rmdir \
+#		$PKG/usr/man/man6 \
+#		$PKG/usr/man
+}

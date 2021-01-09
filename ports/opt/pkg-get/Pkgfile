@@ -1,0 +1,13 @@
+# Description: Package management tool for CRUX
+# URL:         http://www.varlock.com
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=pkg-get
+version=0.4.7
+release=1
+source=(http://crux.nu/files/distfiles/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make DESTDIR=$PKG install
+}

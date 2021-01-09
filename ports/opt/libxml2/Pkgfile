@@ -1,0 +1,17 @@
+# Description: XML library version 2
+# URL:         http://xmlsoft.org/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  zlib xz
+
+name=libxml2
+version=2.9.10
+release=1
+source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr --without-python
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share/{doc,gtk-doc}
+}

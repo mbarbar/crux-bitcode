@@ -1,0 +1,37 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/vulkan/
+-rw-r--r--	root/root	usr/include/vulkan/cast_utils.h
+-rw-r--r--	root/root	usr/include/vulkan/hash_util.h
+-rw-r--r--	root/root	usr/include/vulkan/hash_vk_types.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_dispatch_table_helper.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_enum_string_helper.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_extension_helper.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_format_utils.cpp
+-rw-r--r--	root/root	usr/include/vulkan/vk_format_utils.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_config.cpp
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_config.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_data.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_dispatch_table.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_extension_utils.cpp
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_extension_utils.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_logging.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_utils.cpp
+-rw-r--r--	root/root	usr/include/vulkan/vk_layer_utils.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_loader_platform.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_object_types.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_safe_struct.cpp
+-rw-r--r--	root/root	usr/include/vulkan/vk_safe_struct.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_typemap_helper.h
+-rw-r--r--	root/root	usr/include/vulkan/vk_validation_error_messages.h
+-rw-r--r--	root/root	usr/include/vulkan/xxhash.c
+-rw-r--r--	root/root	usr/include/vulkan/xxhash.h
+drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libVkLayer_khronos_validation.so -> libVkLayer_khronos_validation.so.1
+lrwxrwxrwx	root/root	usr/lib/libVkLayer_khronos_validation.so.1 -> libVkLayer_khronos_validation.so.1.2.154.0
+-rwxr-xr-x	root/root	usr/lib/libVkLayer_khronos_validation.so.1.2.154.0
+-rw-r--r--	root/root	usr/lib/libVkLayer_utils.a
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/vulkan/
+drwxr-xr-x	root/root	usr/share/vulkan/explicit_layer.d/
+-rw-r--r--	root/root	usr/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31RUuwCwLaZ1V4q07taZqOM6//fdl0BpCCr4FWfQHOjN2VKCwReXIAnyVNwzcmBeZOrI9wmfwZK0kRUJc7H8hww=
+SHA256 (Pkgfile) = f0c4009c2bdbc93e2120c77bbb811f22990c006a8014ca2a3c8595d6a53db9db
+SHA256 (.footprint) = 0a4edef23b572b8f09d74ec7888ad225e0fd9b696ea42d97831b3f2b80a56eb0
+SHA256 (libyubikey-1.13.tar.gz) = dd046c83e67560206b0b3301ee8053922b516e3975b895804582eb8d7bdd1d79

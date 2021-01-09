@@ -1,0 +1,14 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32SJFje9r2BukqHLUpWLAYoNPg8IEJjWWaAcY1EEVFdy9AmTAVps1LNMb+LIzv33evs/yVwI4ccvmOzMQfKPMww=
+SHA256 (Pkgfile) = 457d4d6c47658f107e6f3a8874dde6a0d541a376f8a89bbc5cb11cae3f6a7b4d
+SHA256 (.footprint) = cbff9c3cbe559abe9d2a5d1ef95a6f21a9fc6f2b8bbbb994b1d9a3838679e328
+SHA256 (icedtea-3.16.0.tar.xz) = b84bb7678baf09008670ce230a787b7bce7186cb5500d5a0664b8a369ad52500
+SHA256 (corba-8u252-b09.tar.xz) = 45fbaefea10211f1efc17df5d1f2197583a119d2e8d1773ecd0f4fbc786813d3
+SHA256 (hotspot-8u252-b09.tar.xz) = a6b3e5379b95d6263d8d397cf181d6c07946400f1d5a424a8bc06c1cce9ef1e3
+SHA256 (jaxp-8u252-b09.tar.xz) = 030ee059bcb815934b4ea4fb1e6b8d4ee4d15fdad6f4ea8ce20f99ded80631b6
+SHA256 (jaxws-8u252-b09.tar.xz) = b529f8d44af3ed7588e51f8326da2ba47fb3ea79c23933b5a7e8ec1e5e4e0f1b
+SHA256 (jdk-8u252-b09.tar.xz) = da14787acc99062ffb8b087eb27619eded0c84649b4a4e0f8d50d5c067533e8b
+SHA256 (langtools-8u252-b09.tar.xz) = dd6978cce62c30bdeb2afeec865449d99e2a65a8555fdbecf9f7173c10022fcd
+SHA256 (nashorn-8u252-b09.tar.xz) = 30086e392a365242c7c61eee18534bfc1583ced855fbb301f187fcd16403845c
+SHA256 (openjdk-8u252-b09.tar.xz) = f08a768697cefd1bc2b358b075803d366d7023c7e84a78fc47fef66134bbc7e9
+SHA256 (openjdk8-boot-20200504-bin.tar.xz) = d5633e613b33728fb7bb4305144d3654f238c9759edda112422533b7e2495195

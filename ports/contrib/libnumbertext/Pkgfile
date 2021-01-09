@@ -1,0 +1,18 @@
+# Description: Number to number name and money text conversion library
+# URL: https://github.com/Numbertext/libnumbertext
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libnumbertext
+version=1.0.6
+release=1
+source=(https://github.com/Numbertext/libnumbertext/archive/$version/$name-$version.tar.gz libnumbertext-updateautotools.patch)
+
+build() {
+  cd $name-$version
+  patch -Np1 -i $SRC/libnumbertext-updateautotools.patch
+  autoreconf -vfi
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

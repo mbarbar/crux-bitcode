@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34EMA9+7d91T7QojLf4F9Hv7FGiREnqocVzfk+AjCdW7j01m1kjeKIJy2xtKAtgmK8GFEtKiK3YO8BnFupGZEwg=
+SHA256 (Pkgfile) = 9cf15ebc1c20555eac6bda66d5c6127baea51f24d28ca8de7441d282142d98f8
+SHA256 (.footprint) = a75612facab1b1d79d19dbee12bcfde3085a4f4222e464d8f1f919c4b336e684
+SHA256 (lemonbar-1.3.tar.gz) = eae784c5e375b2d0b12138be1a9902beb4b5eeb807f3512f30f14ba23ddaa37d

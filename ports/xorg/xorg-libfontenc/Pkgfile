@@ -1,0 +1,18 @@
+# Description: xorg lib libfontenc
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-xorgproto zlib
+
+name=xorg-libfontenc
+version=1.1.4
+release=1
+source=(https://www.x.org/releases/individual/lib/libfontenc-$version.tar.bz2)
+
+build() {
+	cd libfontenc-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,55 @@
+# Description: Minecraft launcher with ability to manage multiple instances.
+# URL: https://multimc.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: openjdk8 qt5
+
+name=multimc
+version=0.6.11
+release=1
+source=(
+	https://github.com/MultiMC/MultiMC5/archive/$version/MultiMC5-$version.tar.gz
+	https://github.com/MultiMC/quazip/archive/multimc-3.tar.gz
+	https://github.com/MultiMC/libnbtplusplus/archive/multimc-0.6.1.tar.gz
+	quazip-fix-build-with-qt-511.patch
+)
+ 
+build() {
+	cd MultiMC5-$version
+
+	rmdir libraries/libnbtplusplus
+	rmdir libraries/quazip
+	cp --recursive $SRC/libnbtplusplus-multimc-0.6.1/ \
+		libraries/libnbtplusplus
+	cp --recursive $SRC/quazip-multimc-3/ \
+		libraries/quazip
+
+	# https://github.com/MultiMC/quazip/pull/1
+	patch -d libraries/quazip -p1 -i $SRC/quazip-fix-build-with-qt-511.patch
+
+	export JAVA_HOME="/usr/lib/java/openjdk8/"
+
+	mkdir -p build
+	cd build
+
+	cmake .. \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DMultiMC_UPDATER=OFF \
+		-DCMAKE_INSTALL_PREFIX="/usr" \
+		-DMultiMC_LAYOUT=lin-system \
+		-DMultiMC_NOTIFICATION_URL:STRING=http://files.multimc.org/notifications.json
+
+	make
+	make DESTDIR=$PKG install
+
+	install -D $SRC/MultiMC5-$version/application/resources/multimc/scalable/multimc.svg \
+		$PKG/usr/share/pixmaps/multimc.svg
+
+	install -D $SRC/MultiMC5-$version/application/package/linux/multimc.desktop \
+		 $PKG/usr/share/applications/multimc.desktop
+
+	install -D $SRC/MultiMC5-$version/build/libMultiMC_quazip.so \
+		$PKG/usr/lib/libMultiMC_quazip.so
+
+	install -D $SRC/MultiMC5-$version/build/libMultiMC_nbt++.so \
+		$PKG/usr/lib/libMultiMC_nbt++.so
+}

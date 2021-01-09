@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3055r0Y4Yz+NPmGr0BiSp7AeIqDFhkotfjFGgikArULijCHSJHokV/3eBqqTFIpBLfq2W8fulLg8ugoeOvpUNA0=
+SHA256 (Pkgfile) = 14c23bfcdb4dfb0eb432fea68aaa2ca6177cad851aed38ca9c79538a249ffbc5
+SHA256 (.footprint) = 585d03bdc485a21542c98d881b65944631b7a8c157de8bc0b6d05bac960eec4d
+SHA256 (help2man-1.47.16.tar.xz) = 3ef8580c5b86e32ca092ce8de43df204f5e6f714b0cd32bc6237e6cd0f34a8f4

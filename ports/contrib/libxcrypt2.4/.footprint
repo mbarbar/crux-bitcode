@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/libxcrypt2.4/
+drwxr-xr-x	root/root	usr/lib/libxcrypt2.4/include/
+-rw-r--r--	root/root	usr/lib/libxcrypt2.4/include/xcrypt.h
+-rwxr-xr-x	root/root	usr/lib/libxcrypt2.4/libxcrypt.la
+lrwxrwxrwx	root/root	usr/lib/libxcrypt2.4/libxcrypt.so -> libxcrypt.so.1.2.4
+lrwxrwxrwx	root/root	usr/lib/libxcrypt2.4/libxcrypt.so.1 -> libxcrypt.so.1.2.4
+-rwxr-xr-x	root/root	usr/lib/libxcrypt2.4/libxcrypt.so.1.2.4

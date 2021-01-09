@@ -1,0 +1,31 @@
+# Description:  Perl interface to libnotify
+# URL:          https://metacpan.org/pod/Gtk2::Notify
+# Maintainer:   John Vogel, jvogel4 at stny dot rr dot com
+# Packager:     Alexandr Savca, alexandr dot savca89 at gmail dot com
+# Depends on:   libnotify p5-gtk2 p5-net-dbus
+
+name=p5-gtk2-notify
+version=0.05
+release=1
+source=(https://cpan.metacpan.org/authors/id/F/FL/FLORA/Gtk2-Notify-$version.tar.gz
+        libnotify.patch.gz makefile.patch.gz)
+
+build() {
+        cd Gtk2-Notify-$version
+
+        gunzip -c $SRC/libnotify.patch.gz | patch -p0
+        gunzip -c $SRC/makefile.patch.gz  | patch -p1
+
+        perl Makefile.PL
+        make OPTIMIZE="$CFLAGS"
+        make DESTDIR=$PKG install
+
+        find $PKG -name perllocal.pod   \
+                -o -name "*.bs"         \
+                -o -name .packlist      \
+                -o -name autosplit.ix   \
+        | xargs rm -f
+
+        find $PKG -depth -type d -empty -delete
+        find $PKG -type f -a -perm -u-w | xargs chmod u+w
+}

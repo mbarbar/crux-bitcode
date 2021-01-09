@@ -1,0 +1,19 @@
+# Description: Emulates the detach feature of screen.
+# URL:         http://dtach.sourceforge.net/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+
+name=dtach
+version=0.9
+release=1
+source=(https://sourceforge.net/projects/$name/files/$name/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure
+
+	make
+
+	install -Dm755 $name   $PKG/usr/bin/$name
+	install -Dm644 ${name}.1 $PKG/usr/share/man/man1/${name}.1
+}

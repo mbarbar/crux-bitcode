@@ -1,0 +1,22 @@
+# Description:	Xmodem, Ymodem and Zmodem file transfer programs
+# Maintainer: Alan Mizrahi, alan at mizrahi dot com dot ve
+# URL: https://www.ohse.de/uwe/software/lrzsz.html
+
+name=lrzsz
+version=0.12.20
+release=3
+source=(http://www.ohse.de/uwe/releases/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --disable-nls
+	make
+	for d in r s; do
+		install -D src/l${d}z $PKG/usr/bin/${d}z
+		install -D man/l${d}z.1 $PKG/usr/share/man/man1/${d}z.1
+		for p in b x; do
+			ln -s ${d}z $PKG/usr/bin/${d}${p}
+			ln -s ${d}z.1.gz $PKG/usr/share/man/man1/${d}${p}.1.gz
+		done
+	done
+}

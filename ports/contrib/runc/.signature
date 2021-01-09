@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33n1ZFnRNSw56/cn91SVLWcFuPgqvzax99ciEvrL2sLXIoxyQty+kG0Cd3PEXlzdfnXSKkKI8LeRXALHHpoXOwo=
+SHA256 (Pkgfile) = 9b2bad06476683420c038a0948c684089f9e441ddc174182a17bd6b7e6b088e8
+SHA256 (.footprint) = f033b7c8e0449cbdaee2cceaebd87cad55400663407bf395f8ed5c22db96c300
+SHA256 (runc-1.0.0-rc10.tar.xz) = b43dc865d5321df034b2e518ff56f03045957e9615c439c7bd105d3ea887c7aa
+SHA256 (runc-man-pages-1.0.0-rc10.tar.xz) = 45cfd6d0f006b6a1aa3d949fd62d28e42f083527d71913072fb3034c2f0e19fc

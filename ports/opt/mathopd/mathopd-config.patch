@@ -1,0 +1,45 @@
+diff -Nru mathopd-1.6b15.orig/src/Makefile mathopd-1.6b15/src/Makefile
+--- mathopd-1.6b15.orig/src/Makefile	2013-07-14 11:24:58.467932282 +0200
++++ mathopd-1.6b15/src/Makefile	2013-07-14 11:25:16.330733913 +0200
+@@ -1,6 +1,6 @@
+ BIN = mathopd
+ CC = gcc
+-CFLAGS = -O -Wall
++CFLAGS += -Wall
+ CPPFLAGS = 
+ LDFLAGS = 
+ LIBS = -lcrypt
+@@ -12,12 +12,12 @@
+ # LIBS = -lsocket -lnsl
+ 
+ # On Linux, uncomment the following
+-# CPPFLAGS = -DHAVE_CRYPT_H
++CPPFLAGS = -DHAVE_CRYPT_H
+ 
+ # For Linux or Solaris:
+ # To add support for large files (>2GB), uncomment the following.
+ # You do not need this for 64-bit executables.
+-# CPPFLAGS += -D_FILE_OFFSET_BITS=64
++CPPFLAGS += -D_FILE_OFFSET_BITS=64
+ 
+ OBJS = base64.o cgi.o config.o core.o dump.o imap.o log.o main.o \
+ 	redirect.o request.o util.o stub.o addr.o $(EXTRA_OBJS)
+@@ -31,15 +31,15 @@
+ # CPPFLAGS += -DNEED_SOCKLEN_T
+ 
+ # Unomment the following if your system has a working vfork() function
+-# CPPFLAGS += -DHAVE_VFORK
++CPPFLAGS += -DHAVE_VFORK
+ 
+ # Currently, sendfile support is available in two flavours: Linux and FreeBSD
+ # Uncomment one of the following two to enable sendfile() support
+-# CPPFLAGS += -DLINUX_SENDFILE
++CPPFLAGS += -DLINUX_SENDFILE
+ # CPPFLAGS += -DFREEBSD_SENDFILE
+ # If you define any of the SENDFILE conditionals, make sure to uncomment
+ # the next line as well.
+-# EXTRA_OBJS += sendfile.o
++EXTRA_OBJS += sendfile.o
+ 
+ all: $(BIN)
+ install: $(BIN)

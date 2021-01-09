@@ -1,0 +1,39 @@
+# Description: multi-protocol instant messaging client.
+# URL: https://pidgin.im/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: cyrus-sasl dbus-glib farstream gtkspell libidn nss xorg-libxscrnsaver
+
+name=pidgin
+version=2.14.1
+release=1
+source=(https://downloads.sourceforge.net/project/$name/Pidgin/$version/$name-$version.tar.bz2
+	$name.desktop)
+
+build() {
+	cd $name-$version
+
+	CONFIG_SHELL=/bin/bash \
+	./configure \
+		--prefix=/usr \
+		--disable-avahi \
+		--disable-dependency-tracking \
+		--disable-doxygen \
+		--disable-gnutls \
+		--disable-meanwhile \
+		--disable-nls \
+		--disable-nm \
+		--disable-schemas-install \
+		--disable-tcl \
+		--enable-cyrus-sasl \
+		--with-system-ssl-certs=/etc/ssl/certs
+
+	make
+	make DESTDIR=$PKG install
+
+	install -D -m 0644 $SRC/$name.desktop $PKG/usr/share/applications/$name.desktop
+
+	find $PKG/usr/lib/ -name '*.la' -delete
+	rm -rf $PKG/usr/etc/gconf
+
+	rm $PKG/usr/lib/perl5/linux-thread-multi/perllocal.pod
+}

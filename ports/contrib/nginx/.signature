@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34OP0YiPJV7Wm7R0SQXJoy7bA5YoYfLP+5PLVI3zPdExScVADy7LiMDmtlEp8WO3a/N+sRat7HzN5dXDcKBNGwc=
+SHA256 (Pkgfile) = 733bce955bc0f455f846388ecd6c79ad551f7693f5afcd0775b45c7ac096abbe
+SHA256 (.footprint) = 9263dad4ce3a2766b5f9bec00a3a58ac86445f370ba1bb3d5716e6b9dc74ddae
+SHA256 (nginx-1.19.5.tar.gz) = 5c0a46afd6c452d4443f6ec0767f4d5c3e7c499e55a60cd6542b35a61eda799c
+SHA256 (nginx.conf) = 0f9b54e790951f1a09580bbf29ede26c4cc277e535d4df937fc659979a2fb35b
+SHA256 (nginx.rc) = bac096145be15bc5d87817e2d3440d930288aea06dfd6736e43289b4a352595b

@@ -1,0 +1,11 @@
+diff -urN inkscape-1.0_2020-05-01_4035a4fb49.orig/src/preferences.h inkscape-1.0_2020-05-01_4035a4fb49/src/preferences.h
+--- inkscape-1.0_2020-05-01_4035a4fb49.orig/src/preferences.h	2020-05-01 13:18:52.000000000 +0000
++++ inkscape-1.0_2020-05-01_4035a4fb49/src/preferences.h	2020-08-20 23:20:11.501230191 +0000
+@@ -14,6 +14,7 @@
+ #ifndef INKSCAPE_PREFSTORE_H
+ #define INKSCAPE_PREFSTORE_H
+ 
++#include <atomic>
+ #include <climits>
+ #include <cfloat>
+ #include <glibmm/ustring.h>

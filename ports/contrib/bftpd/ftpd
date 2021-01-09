@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/ftpd: start/stop ftp daemon
+#
+
+case $1 in
+start)
+	/usr/sbin/bftpd -d
+	;;
+stop)
+	killall -q bftpd
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	;;
+esac
+
+# End of file

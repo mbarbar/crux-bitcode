@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31BZVR86xcEL0+960hZ9vjvaKUjexDPS9EdPjk5z+n4O2AN97VDvfTdHiK0Y/KFhgjnM+3W1wvPkszLF4ftjvAg=
+SHA256 (Pkgfile) = 7019fe4061162e5d3dd319831959ad9538ee6690f5b58d3775e8caf3c046dc1e
+SHA256 (.footprint) = 5fdfae5f92cd0aa03ef58b99a21ae9e3db6eaeca8d4145e41954fb8505fbd187
+SHA256 (libdshconfig-0.20.13.tar.gz) = 6f372686c5d8d721820995d2b60d2fda33fdb17cdddee9fce34795e7e98c5384

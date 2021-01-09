@@ -1,0 +1,20 @@
+# Description: QR code generator
+# URL: https://github.com/nayuki/QR-Code-generator
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=libqrcodegen
+version=1.6.0
+release=1
+source=(https://github.com/nayuki/QR-Code-generator/archive/v$version/$name-$version.tar.gz
+  qr-code-generator-build-fixes.patch)
+
+build() {
+  # https://raw.githubusercontent.com/OpenMandrivaAssociation/qr-code-generator/master/qr-code-generator-build-fixes.patch
+  patch -Np1 -d QR-Code-generator-$version -i $SRC/qr-code-generator-build-fixes.patch
+  cp -R QR-Code-generator-$version{,-cpp}
+  cd QR-Code-generator-$version
+  make DESTDIR=$PKG -C c install
+  cd $SRC/QR-Code-generator-$version-cpp
+  make DESTDIR=$PKG -C cpp install
+}

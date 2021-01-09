@@ -1,0 +1,34 @@
+# Description: Kernel and system logging daemons
+# URL:         https://github.com/troglobit/sysklogd
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=sysklogd
+version=2.1.2
+release=1
+source=(https://github.com/troglobit/sysklogd/releases/download/v$version/$name-$version.tar.gz \
+        rotatelog syslog syslog.conf sysklogd)
+
+build() {
+    cd $name-$version
+
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --without-logger \
+
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/etc/{cron/weekly,rc.d,syslog.d}
+    install -m 755 $SRC/rotatelog $PKG/usr/sbin
+    install -m 755 $SRC/syslog $PKG/etc/cron/weekly
+    install -m 644 $SRC/syslog.conf $PKG/etc
+    install -m 755 $SRC/sysklogd $PKG/etc/rc.d
+
+    install -d $PKG/var/log
+    touch $PKG/var/log/{messages,auth,mail,cron,kernel,debug}
+    chmod 640 $PKG/var/log/{messages,auth,mail,cron,kernel,debug}
+
+    rm -r $PKG/usr/share/doc
+}

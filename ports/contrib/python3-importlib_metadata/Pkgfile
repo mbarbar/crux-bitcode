@@ -1,0 +1,20 @@
+# Description: Read metadata from Python packages
+# URL: https://pypi.org/project/importlib-metadata/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-zipp
+
+name=python3-importlib_metadata
+version=3.1.0
+release=1
+source=(https://files.pythonhosted.org/packages/7d/d4/dbc58eed92be61bae65a7d80a7604d35bf6ded3e3c53c14f2d45b4a28831/importlib_metadata-$version.tar.gz)
+
+build() {
+	cd importlib_metadata-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+	find $PKG \(\
+		-iname '*changelog*' -o \
+		-iname '*index*' -o \
+		-iname '*example*' -o \
+		-iname '*using*' \) -exec rm -fr '{}' \+
+}

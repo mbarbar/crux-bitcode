@@ -1,0 +1,21 @@
+# Description: Command line MPD client
+# URL: https://www.musicpd.org/clients/mpc/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager: Mark Rosenstand, mark at borkware dot net
+# Depends on: libmpdclient meson ninja
+# Optional: python3-docutils python3-sphinx
+
+name=mpc
+version=0.33
+release=1
+source=(http://www.musicpd.org/download/mpc/0/mpc-$version.tar.xz)
+
+build() {
+  # manpages need a new port: python3-docutils
+  #[[ -e /usr/bin/sphinx-build && -e /usr/bin/rst2man3 ]] && PKGMK_MPC+=" -Ddocumentation=enabled" || PKGMK_MPC+=" -Ddocumentation=disabled"
+  meson $name-$version build $PKGMK_MPC \
+    --prefix=/usr
+  ninja -C build
+  DESTDIR=$PKG ninja -C build install
+  rm -rf $PKG/usr/share/doc
+}

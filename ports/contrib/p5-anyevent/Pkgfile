@@ -1,0 +1,18 @@
+# Description: The DBI of event loop programming
+# URL: https://metacpan.org/release/AnyEvent
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-anyevent
+version=7.17
+release=1
+source=(https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/AnyEvent-$version.tar.gz)
+
+build() {
+  cd AnyEvent-$version
+  PERL_CANARY_STABILITY_NOPROMPT=1 \
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR="$PKG" install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

@@ -1,0 +1,17 @@
+# Description: A sample multi-channel audio mixer library.
+# URL: http://www.libsdl.org/projects/SDL_mixer/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libvorbis smpeg libmikmod flac
+
+name=sdl_mixer
+version=1.2.12
+release=1
+source=(https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-$version.tar.gz)
+
+build() {
+	cd SDL_mixer-$version
+	sed -i -e 's|/usr/local/lib/timidity|/usr/share/timidity|g' timidity/config.h
+	CONFIG_SHELL=/bin/bash ./configure --prefix=/usr
+	make 
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,31 @@
+# Description: QtWebKit for qt5.
+# URL: https://www.qt.io/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: hyphen icu qt5 ruby
+
+name=qtwebkit
+version=5.212
+release=1
+source=(https://download.qt.io/snapshots/ci/qtwebkit/$version/latest/src/submodules/$name-opensource-src-$version.tar.xz
+	qtwebkit-5.212.0_pre20200309-icu-68.patch)
+
+build() {
+	[ $(pkginfo -i | awk '/^icu / {split($2,a,"."); print a[1]}') -ge 68 ] && \
+		patch -d $name-opensource-src-$version -p1 -i $SRC/qtwebkit-5.212.0_pre20200309-icu-68.patch
+
+	cmake -S $name-opensource-src-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS="$CXXFLAGS -DNDEBUG" \
+		-D PORT=Qt \
+		-D ENABLE_TOOLS=OFF
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+
+	# Fix pkgconfig files
+	sed -e 's|qt/Qt5WebKit|qt/QtWebKit|' -i $PKG/usr/lib/pkgconfig/Qt5WebKit.pc
+	sed -e 's|qt/Qt5WebKitWidgets|qt/QtWebKitWidgets|' -i $PKG/usr/lib/pkgconfig/Qt5WebKitWidgets.pc
+	sed -e '/Name/a Description: Qt WebKit module' -i $PKG/usr/lib/pkgconfig/Qt5WebKit.pc
+	sed -e '/Name/a Description: Qt WebKitWidgets module' -i $PKG/usr/lib/pkgconfig/Qt5WebKitWidgets.pc
+}

@@ -1,0 +1,20 @@
+# Description: XML::Parser
+# URL: https://metacpan.org/pod/XML::Parser
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: expat perl
+
+name=p5-xml-parser
+version=2.46
+release=1
+source=(http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-$version.tar.gz)
+
+build() {
+	cd XML-Parser-$version
+	perl Makefile.PL
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+	find $PKG -name .packlist -o \
+		-name perllocal.pod -o \
+		-name README -o \
+		-name '*.bs' | xargs rm
+}

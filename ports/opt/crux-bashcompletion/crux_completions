@@ -1,0 +1,181 @@
+#   Bash programmable completion for crux (http://www.crux.nu) utilities
+# 
+#   Copyright (C) Håvard Moen <vanilje@netcom.no>
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2, or (at your option)
+#   any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software Foundation,
+#   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+#   RELEASE: 20020711
+
+#pkginfo completion
+_pkginfo ()
+{
+  local cur prev
+  COMPREPLY=()
+  cur=${COMP_WORDS[COMP_CWORD]}
+  prev=${COMP_WORDS[COMP_CWORD-1]}
+
+
+  case "$prev" in
+    --list|-l)
+      	COMPREPLY=( $( compgen -W " $( pkginfo -i | awk ' { printf "%s ", $1 } ' ) " -- $cur ) )
+	return 0
+      ;;
+    --installed|-i)
+      	return 0
+      ;;
+    --help|-h)
+      	return 0
+      ;;
+    --version|-v)
+      	return 0
+      ;;
+    --owner|-o|--root|-r)
+    	if [ -z $BASH_COMPLETION ]; then
+    		_filedir
+	else
+    		COMPREPLY=( $( compgen -f $cur ) )
+	fi
+      	return 0
+      ;;
+  esac
+  
+  COMPREPLY=( $( compgen -W "$( pkginfo --help | awk '/--/ { printf "%2s ", $2 }' )" -- $cur ) ) 
+
+}
+complete -F _pkginfo -o filenames pkginfo
+
+#pkgrm completion
+_pkgrm ()
+{
+  local cur prev
+  COMPREPLY=()
+  cur=${COMP_WORDS[COMP_CWORD]}
+  prev=${COMP_WORDS[COMP_CWORD-1]}
+
+
+  case "$prev" in
+    --help|-h)
+      	return 0
+      ;;
+    --version|-v)
+      	return 0
+      ;;
+    --root|-r)
+    	if [ -z $BASH_COMPLETION ]; then
+    		_filedir
+	else
+    		COMPREPLY=( $( compgen -f $cur ) )
+	fi
+      	return 0
+      ;;
+  esac
+  
+  if [[ $cur == -* ]]; then
+	  COMPREPLY=( $( compgen -W "$( pkgrm --help | awk '/--/ { printf "%2s ", $2 }' )" -- $cur ) ) 
+  else
+  	COMPREPLY=( $( compgen -W " $( pkginfo -i | awk ' { printf "%s ", $1 } ' ) " -- $cur ) )
+  fi
+}
+complete -F _pkgrm -o filenames pkgrm
+
+#pkgmk completion
+_pkgmk ()
+{
+  local cur prev
+  COMPREPLY=()
+  cur=${COMP_WORDS[COMP_CWORD]}
+  prev=${COMP_WORDS[COMP_CWORD-1]}
+
+
+  case "$prev" in
+    --help|-h)
+      	return 0
+      ;;
+    -do|--download-only)
+    	return 0
+	;;
+    -utd|--up-to-date)
+    	return 0
+	;;
+    --config-file|-cf)
+    	if [ -z $BASH_COMPLETION ]; then
+    		_filedir
+	else
+    		COMPREPLY=( $( compgen -f $cur ) )
+	fi
+      	return 0
+      ;;
+  esac
+  
+  COMPREPLY=( $( compgen -W "$( pkgmk --help | awk '/--/ { printf "%2s ", $2 }' )" -- $cur ) ) 
+}
+complete -F _pkgmk -o filenames pkgmk
+
+#pkgadd completion
+_pkgadd ()
+{
+  local cur prev
+  COMPREPLY=()
+  cur=${COMP_WORDS[COMP_CWORD]}
+  prev=${COMP_WORDS[COMP_CWORD-1]}
+
+  case "$prev" in
+    --help|-h)
+      	return 0
+      ;;
+    --version|-v)
+    	return 0
+  esac
+
+  if [[ $cur == -* ]]; then
+	  COMPREPLY=( $( compgen -W "$( pkgmk --help | awk '/--/ { printf "%2s ", $2 }' )" -- $cur ) ) 
+  else
+	COMPREPLY=( $( compgen -f -X '!*.pkg.tar.gz' -- $cur ) $( compgen -d -- $cur ) )
+  fi
+  
+  
+}
+complete -F _pkgadd -o filenames pkgadd
+
+#ports completion
+_ports ()
+{
+  local cur prev
+  COMPREPLY=()
+  cur=${COMP_WORDS[COMP_CWORD]}
+  prev=${COMP_WORDS[COMP_CWORD-1]}
+
+
+  case "$prev" in
+    --help|-h)
+      	return 0
+      ;;
+    --version|-v)
+    	return 0
+	;;
+    --diff|-d)
+    	return 0
+	;;
+    --list|-l)
+    	return 0
+	;;
+    --update|-u)
+    	return 0
+	;;
+  esac
+  
+  COMPREPLY=( $( compgen -W "$( ports --help | awk '/--/ { printf "%2s ", $2 }' )" -- $cur ) ) 
+}
+complete -F _ports ports

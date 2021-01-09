@@ -1,0 +1,21 @@
+# Description: Run commands simply, with detailed diagnostics
+# URL: https://metacpan.org/release/IPC-System-Simple
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=p5-ipc-system-simple
+_realname=IPC-System-Simple
+_author=JKEENAN
+version=1.30
+release=1
+source=(https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/$_realname-$version.tar.gz)
+
+build() {
+	cd $_realname-$version
+
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+	make DESTDIR="$PKG" install
+
+	find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+	find $PKG -depth -empty -delete
+}

@@ -1,0 +1,25 @@
+README for gmusicbrowser
+
+REQUIREMENTS
+
+    The following additional features may be enabled by installing the listed
+    optional dependencies:
+
+        * Tray icon
+            p5-gtk2-trayicon
+
+        * Desktop notifications
+            p5-gtk2-notify
+
+        * Gstreamer1 playback output
+            p5-glib-object-introspection
+            p5-gstreamer1
+
+        * mplayer or mpv playback output
+            mplayer || mpv
+
+        * mpg123, ogg123, ... playback output
+            mpg123
+            ogg123
+            ...
+

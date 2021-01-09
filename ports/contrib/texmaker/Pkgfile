@@ -1,0 +1,25 @@
+# Description: Free cross-platform LaTeX editor
+# URL: http://www.xm1math.net/texmaker/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: qt5, texlive
+
+name=texmaker
+version=5.0.4
+release=1
+source=(http://www.xm1math.net/$name/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+
+  /usr/lib/qt5/bin/qmake PREFIX=$PKG/usr \
+    DESKTOPDIR=$PKG/usr/share/applications \
+    ICONDIR=$PKG/usr/share/pixmaps \
+    METAINFODIR=$PKG/usr/share/metainfo \
+    texmaker.pro
+  make
+  make install
+
+  find $PKG/usr/share/texmaker \
+    -regex '.*/\(COPYING\|.*qm\|.*aff\|.*dic\|.*txt\|.*html\|.*tmx\|README\|AUTHORS\|INSTALL\|ChangeLog\|NEWS\|TODO\).*' \
+    -exec rm '{}' \+
+}

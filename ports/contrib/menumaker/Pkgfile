@@ -1,0 +1,19 @@
+# Description: Tool for generate menu for many window manager.
+# URL:         http://menumaker.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Coviello Giuseppe giuseppecoviello at tin dot it
+# Depends on:  python3
+
+name=menumaker
+version=0.99.12
+release=1
+source=(https://sourceforge.net/projects/menumaker/files/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+   ./configure --prefix=/usr --infodir=/usr/share/info
+   make
+   install -d $PKG/usr $PKG/usr/bin
+   make DESTDIR=$PKG install
+   rm -r $PKG/usr/share/info
+}

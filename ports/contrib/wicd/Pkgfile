@@ -1,0 +1,41 @@
+# Description: A wired and wireless network manager.
+# URL: https://launchpad.net/wicd
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: dbus-python mii-tool pygtk wireless-tools wpa_supplicant
+
+name=wicd
+version=1.7.4
+release=1
+source=(https://launchpad.net/wicd/${version%.*}/$version/+download/$name-$version.tar.gz
+	wicd.rc
+	wicd-1.7.3-bitrate-property.patch
+	wicd-1.7.3-undefined-LANG.patch
+	wicd-1.7.3-urwid-1.3.0.patch)
+
+build() {
+	cd $name-$version
+
+	patch -p1 -i $SRC/wicd-1.7.3-bitrate-property.patch
+	patch -p1 -i $SRC/wicd-1.7.3-undefined-LANG.patch
+	patch -p1 -i $SRC/wicd-1.7.3-urwid-1.3.0.patch
+
+	# really don't use NLS
+	rm po/*.po
+
+	/usr/bin/python setup.py configure \
+		--etc=/etc/wicd \
+		--dbus=/usr/etc/dbus-1/system.d \
+		--no-install-kde \
+		--no-install-acpi \
+		--no-install-pmutils \
+		--no-install-init \
+		--no-install-i18n-man \
+		--no-install-docs \
+		--no-install-gnome-shell-extensions
+
+	/usr/bin/python setup.py build
+	/usr/bin/python setup.py install --root=$PKG
+	/usr/bin/python -mcompileall $PKG
+
+	install -m 0744 -D $SRC/wicd.rc $PKG/etc/rc.d/wicd
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36SkzJRtkGCUMZUHHEoqGjsCERMP5YtdW5UhvnAJNzcmAFuwygev4OnNH/qhNLVG1VDGxtvcNIGs8ubkOzrCtgU=
+SHA256 (Pkgfile) = e4fb341e85d67bf52e336fa2ac25be22d966a11ae3b1dc9955e4205a9080b9ed
+SHA256 (.footprint) = 2af08f06c60a83dd2b092438e5a040651f9cdc42051710b1a7388e081d951042
+SHA256 (vdf-3.3.tar.gz) = 9193901ce20ee08391c1d5044234b5da021d939b00ce879f5aae0a1a759577bc

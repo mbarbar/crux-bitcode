@@ -1,0 +1,22 @@
+# Description: CLI calendar application build around CalDAV
+# URL: https://lostpackets.de/khal/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-atomicwrites python3-click-log python3-configobj python3-icalendar python3-pyxdg python3-tzlocal python3-urwid
+
+name=khal
+version=0.10.2
+release=1
+source=(https://files.pythonhosted.org/packages/source/k/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install \
+    --prefix=/usr \
+    --optimize=1 \
+    --skip-build \
+    --root=$PKG
+  if [ -e /lib/zsh || -e /usr/lib/zsh ]; then
+    install -Dm644 misc/__khal $PKG/usr/share/zsh/site-functions/_khal
+  fi
+}

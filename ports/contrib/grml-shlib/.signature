@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36PKiaCh0UlHg/Ala/UwSgQVk+iJZQpqSXQIGrH+b65EqUjoJmcGSXp71oMI7z553cwj0pXl0QQlAha/pb2dUws=
+SHA256 (Pkgfile) = 302b61036f83a1e5e4bed6158e9db220c01ac26d433f7878c4da591b0cbed7a0
+SHA256 (.footprint) = e895faf54fad09dd875edd94b30665bcb2c5b6d0008e1b2ff3b62fcc200a18a8
+SHA256 (grml-shlib_1.04.1.tar.gz) = 63864ad596516b8e1ee0597c939a2a180c1cebf94947e6990edf16b0f0ef6706
+SHA256 (grml-shlib.3) = 83cc154d5005fc20c32b16d9a6f6eaff018e470d1fdd505e61a820b7243eeffb

@@ -1,0 +1,11 @@
+--- urlview-0.9/Makefile.in	2000-07-04 12:16:37.000000000 +0200
++++ urlview-0.9-new/Makefile.in	2006-04-18 15:11:29.000000000 +0200
+@@ -318,7 +318,7 @@
+ 
+ 
+ install-data-local:
+-	$(INSTALL_DATA) urlview.man $(mandir)/man1/urlview.1
++	$(INSTALL_DATA) urlview.man $(DESTDIR)$(mandir)/man1/urlview.1
+ 
+ # how to create a target for uninstall-data-local???
+ 

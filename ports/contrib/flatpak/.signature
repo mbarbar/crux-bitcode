@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/smcgVSSXwIQIAPRvd++UvyrknYpQUPoaPBg+aNn44+qzp+n5top5FITS5AWEAr25oEKS3dcqrdcom0JKspTgo=
+SHA256 (Pkgfile) = d1fc4ba684afeee1d9b1bf09c8683dedeac306264a26239fd87bb0d3bb28122a
+SHA256 (.footprint) = c21147dc175ec6a2f40f865e408ac44a0e7c95a7d3884e5b824749350b73180b
+SHA256 (flatpak-1.8.3.tar.xz) = 33667fdd5cf65914209488bf3e7e574ddb57667bb7939863b4fcb40ca8b66edd

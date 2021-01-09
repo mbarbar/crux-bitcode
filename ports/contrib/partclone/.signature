@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y38dpE7AyPOo9zPeCRl3ysovFaMSx/5657r6Wh8IHE/NlS5q8Mzov63LNqmwnwebV8VWReELqbpAYcuXNnOWgY=
+SHA256 (Pkgfile) = 5ed061ea68c6d200af120dc6b4107a076f3df5f541207c3b88c7735ce9d3fe61
+SHA256 (.footprint) = 90014b77cc3f3128997fc9457fa1c5a8dcde621b363ccc4d6204fb04c586f617
+SHA256 (partclone-0.3.17.tar.gz) = 8f59653634d85e8633824a2f36147fa4f1ecad3e3f03415fd5bda7f269c2390c

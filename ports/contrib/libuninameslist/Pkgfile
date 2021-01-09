@@ -1,0 +1,19 @@
+# Description: Large, sparse array mapping each unicode code point to the annotation data for it.
+# URL: https://github.com/fontforge/libuninameslist
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libuninameslist
+version=20200413
+release=1
+source=(https://github.com/fontforge/$name/releases/download/$version/$name-dist-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	autoreconf -i
+	automake --foreign -Wall
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

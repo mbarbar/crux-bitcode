@@ -1,0 +1,30 @@
+# Description: The GNU Debugger (GDB)
+# URL:         https://www.gnu.org/software/gdb
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  libmpfr readline xz zlib expat
+
+name=gdb
+version=10.1
+release=1
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	sed '/^SUBDIRS/s/doc//' -i gdb/Makefile.in
+
+	mkdir build && cd build
+
+	../configure \
+		--prefix=/usr \
+		--with-system-{readline,zlib}
+	make
+	make DESTDIR=$PKG install
+
+	install -d $PKG/usr/share/man/man{1,5}
+	install -m 0644 ../gdb/doc/*.1 $PKG/usr/share/man/man1
+	install -m 0644 ../gdb/doc/*.5 $PKG/usr/share/man/man5
+
+	rm -r $PKG/usr/{include,lib/{*.a,*.la}}
+	rm -r $PKG/usr/share/{info,locale}
+}

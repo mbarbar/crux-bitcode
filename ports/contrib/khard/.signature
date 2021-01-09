@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34jO8d5KUCkJspu9gBXXfuFjJOzK5YElx4ljrwTKupsSWQ+3Duq3JmJnv3OmOS3+hBqOiyul+RcVisIlgRf57wo=
+SHA256 (Pkgfile) = 04c6416dc5717159392b7dec350ec74295b81d657fa4771b2c276948f81c8a9b
+SHA256 (.footprint) = 2973f9936647ed7f4e89eb282433987be4ee639da72453e034a730f081a21968
+SHA256 (khard-0.17.0.tar.gz) = 164e1aee9264735ec0473a74a38842e6272bbb814d949a66084c6a373bd95618

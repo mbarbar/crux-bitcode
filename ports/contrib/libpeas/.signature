@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xPk+V2oHeNfpoA3PLwPLyH6FZkXJFP+y0XUWQtuMUWrhbqXWPQJ2o1tiKiVys7Vs7NdrFlIBQefH6WiHaIC7A0=
+SHA256 (Pkgfile) = 383e495be6bb4f966a8e2918578cf642a95ca4f1ed7f78ca7460a0348901e68f
+SHA256 (.footprint) = b1bc522958286571edfc33aa2bf81867c098f4436a9d539d57e165cab9a731f8
+SHA256 (libpeas-1.28.0.tar.xz) = 42d91993b46ed50f16add6d9577ecc22beb8e2dffa7101e2232c2b63733b8b15

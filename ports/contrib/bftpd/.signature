@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30PSlXr0NuwKFEK4AdM9ke/skk+ZrRNFm8skW6aM3L4KPtX/CZetBT0qIFz3vpn7eTs6OfBWOldz6ZvWtErokQc=
+SHA256 (Pkgfile) = f5fe0fae5c3bc524d153f8e86ce90fffeb65435644e181497d17a3b4476bec6d
+SHA256 (.footprint) = a9a364d7e2bbef7720924f85e357275eb86e59cc4aa440b7097f63b3ccaf135b
+SHA256 (bftpd-5.6.tar.gz) = 1094f25afc23c24a1b63db7ebe9f9b72bba4bc3b9245d13d8054ad724ea37aa2
+SHA256 (ftpd) = ce0c5b457c3511881ae226be6011326e59d80424ebe7ece3503982c4249b11ec

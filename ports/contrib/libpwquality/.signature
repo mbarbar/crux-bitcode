@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35pqEjSpdl3cCaIddzqjI2twqgEFPbAOnuxJWrMba/2TsWpc/W4OdPRse9II1C4hKuTu1qLYdl6nsXTCDhTkvw8=
+SHA256 (Pkgfile) = f8388fb8269384c4f165d6d9477881576a99dda41d39626c27981d1dd5f155cf
+SHA256 (.footprint) = e6dee234421625af85777b40ca221f187876faf0769f3bca87f82be8d8018ccf
+SHA256 (libpwquality-1.4.4.tar.bz2) = d43baf23dc6887fe8f8e9b75cabaabc5f4bbbaa0f9eff44278d276141752a545

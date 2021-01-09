@@ -1,0 +1,18 @@
+# Description: X Trap extension client library
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libxext xorg-libxt
+
+name=xorg-libxtrap
+version=1.0.1
+release=1
+source=(https://www.x.org/releases/individual/lib/libXTrap-$version.tar.bz2)
+
+build() {
+	cd libXTrap-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

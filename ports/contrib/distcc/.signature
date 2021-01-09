@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/cYlTfvzB/tCQgpYGlFCNO2jvXFfwQ+zoMVCpIb5+G81TPoizlcucHDMyWfYpfweDbsdwp2F9sh9b4YUsBn1gk=
+SHA256 (Pkgfile) = 0e7a08a1d22c5cbfaa00cadecc73fd2f9076c86a0debcc1af3751039c06eb99e
+SHA256 (.footprint) = 96261a14be1f68dc197a6eeab9ce9ffa685b7921e7802d2e62313e11e68575d4
+SHA256 (distcc-3.3.3.tar.gz) = b7f37d314704fbaf006d747514ff6e4d0d722102ef7d2aea132f97cf170f5169
+SHA256 (distccd) = d440c68490aab6c4552848d9253d033a0169cae56a0b94d75f68fa81642bb847
+SHA256 (distcc-3.3.3-py38.patch) = bc6d940980a24df9d5023a85d2b6869e8014967b561e14ab12cff7b3ff159497
+SHA256 (distcc-3.3.3-gcc-10-fix.patch) = bdb625de75400a79f873f323691fb980bbbe5373b24300e055edd475c6c23144

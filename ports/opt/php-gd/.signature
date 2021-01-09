@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UFiFROP4Y+VhtZwp4xC+igTMVZ1C21i5dVZlqtO+39W16/5yVjpFYWtHuJ3JoVDtLXRmLQFWIySF7hnYVGG2w8=
+SHA256 (Pkgfile) = 423b70d827bbf2214c5f12ffe70465a4c20cbcf5c916551a489d52a3d36e4990
+SHA256 (.footprint) = 09e41333252c613bbc54155a95e91919aedf35e3fe90607f941528ac9f1a39bb
+SHA256 (php-7.4.13.tar.xz) = aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4

@@ -1,0 +1,26 @@
+Authenticating with HMAC-SHA1 Challenge-Response through linux-pam
+
+You need a pam aware userland (e.g. shadow for login, sudo, sshd, ..) and
+yubikey-personalization to succeed.
+We will write our key to the second slot, as the first slot comes with a
+higher secure level key which shouldn't be overwritten.
+
+Then proceed as follows:
+
+CHANGE {$USER} to your username!
+
+$ ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible
+$ sudo mkdir /var/yubico
+$ sudo chown root:root /var/yubico
+$ sudo chmod 700 /var/yubico
+$ ykpamcfg -2 -v
+$ sudo mv ~/.yubico/challenge-123456 /var/yubico/{$USER}-123456
+$ sudo chown root:root /var/yubico/*
+$ sudo chmod 600 /var/yubico/*
+
+then, edit your relative pam files to contain this as the first auth paragraph:
+auth        sufficient    pam_yubico.so mode=challenge-response
+chalresp_path=/var/yubico
+
+This way ('sufficient'), you can still authenticate with your normal password, in case you
+brake your yubikey or you foobar'd.

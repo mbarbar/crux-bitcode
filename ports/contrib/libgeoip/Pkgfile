@@ -1,0 +1,18 @@
+# Description: GeoIP Legacy C Library
+# URL:         https://github.com/maxmind/geoip-api-c
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=libgeoip
+version=1.6.12
+release=1
+source=(https://github.com/maxmind/geoip-api-c/archive/v$version/$name-v$version.tar.gz)
+
+build() {
+	cd geoip-api-c-$version
+
+  autoreconf -i
+  ./configure --prefix=/usr
+
+  make
+  make DESTDIR=$PKG install 
+}

@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# /etc/rc.d/chronyd: start/stop the chrony time server
+#
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/sbin/chronyd
+OPTS="-r"
+
+case $1 in
+start)
+	$SSD --start --exec $PROG -- $OPTS
+	;;
+stop)
+	$SSD --stop --retry 10 --exec $PROG
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+online)
+	/usr/bin/chronyc online
+	;;
+offline)
+	/usr/bin/chronyc << EOF > /dev/null
+	offline
+	dump
+	writertc
+EOF
+	;;
+status)
+	$SSD --status --exec $PROG
+	case $? in
+	0)   echo "$PROG is running with pid $(pidof $PROG)" ;;
+	1|3) echo "$PROG is not running" ;;
+	4)   echo "Unable to determine the program status" ;;
+	esac
+	;;
+*)
+	echo "usage: $0 [start|stop|restart|online|offline|status]"
+	;;
+esac
+
+# End of file

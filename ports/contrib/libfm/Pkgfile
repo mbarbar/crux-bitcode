@@ -1,0 +1,40 @@
+# Description: Library for file management.
+# URL: https://wiki.lxde.org/en/PCManFM
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gtk menu-cache xorg-libxdamage
+
+name=libfm
+version=1.3.1
+release=2
+source=(https://downloads.sourceforge.net/pcmanfm/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	# https://github.com/lxde/libfm/issues/35
+	sed -i 's/create=xarchiver --add-to %F/create=xarchiver --compress %F/' data/archivers.list
+
+	autoreconf -fi
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--with-gnu-ld \
+		--disable-nls \
+		--disable-gtk-doc-html
+
+	# https://bugzilla.gnome.org/show_bug.cgi?id=656231
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/locale
+
+	if [[ -h $PKG/usr/include/libfm/libfm-1.0 ]]; then
+		rm -r $PKG/usr/include/libfm
+		cd $PKG/usr/include/
+		ln -s libfm-1.0 libfm
+	fi
+}
+

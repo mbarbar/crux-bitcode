@@ -1,0 +1,15 @@
+diff -pruN preload-0.6.3.orig/configure.ac preload-0.6.3/configure.ac
+--- preload-0.6.3.orig/configure.ac	2008-07-29 23:58:51.018143308 +1000
++++ preload-0.6.3/configure.ac	2008-07-30 00:29:37.524144736 +1000
+@@ -24,6 +24,11 @@ AC_SUBST(MAILING_LIST)
+ AC_PROG_CC
+ AC_PROG_INSTALL
+ 
++AC_CHECK_PROG([have_help2man],[help2man],[yes],[no],[/usr/bin])
++if test $have_help2man = no; then
++	AC_MSG_ERROR([Missing help2man.])
++fi
++
+ # Checks for header files.
+ AC_HEADER_STDC
+ AC_HEADER_TIME

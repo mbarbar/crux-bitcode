@@ -1,0 +1,17 @@
+# Description: Perl Module Test::Differences
+# URL: https://metacpan.org/pod/Test::Differences
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-text-diff
+
+name=p5-test-differences
+version=0.67
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL/Test-Differences-$version.tar.gz)
+
+build() {
+  cd Test-Differences-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

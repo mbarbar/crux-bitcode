@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cpuid
+-rwxr-xr-x	root/root	usr/bin/cpuinfo2cpuid
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-r--r--r--	root/root	usr/share/man/man1/cpuid.1.gz
+-r--r--r--	root/root	usr/share/man/man1/cpuinfo2cpuid.1.gz

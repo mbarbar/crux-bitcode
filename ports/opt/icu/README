@@ -1,0 +1,16 @@
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+PRECAUTION
+
+    Note, that updating major versions of icu (in y.z changing y)
+    requires rebuilding ports like: texlive, harfbuzz-icu, qtwebkit, 
+    and boost, as they depend on this port.
+
+    Have revdep(1) point out potential candidates for rebuilds after the icu
+    update.
+
+MISC

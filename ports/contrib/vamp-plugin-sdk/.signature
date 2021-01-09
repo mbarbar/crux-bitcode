@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF387C1ac7V0/9iShTTm+MyhD7ZesMQn3xJzd9lhUU7jZ4gGnEimC6OK/UoCdv9+3RcLmDVGW90utm/gU4pWcoUwQ=
+SHA256 (Pkgfile) = 69e9716f6d553cddd545296830edf8fa33423602fe9773b9f5346932b1e19d80
+SHA256 (.footprint) = ae7179d14889b97145fa2d75ec58529276445c6cddd3ae522b0a20895220d38e
+SHA256 (vamp-plugin-sdk-2.10.0.tar.gz) = aeaf3762a44b148cebb10cde82f577317ffc9df2720e5445c3df85f3739ff75f

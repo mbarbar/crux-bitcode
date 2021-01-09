@@ -1,0 +1,115 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/biof
+-rwxr-xr-x	root/root	usr/bin/busyspheres
+-rwxr-xr-x	root/root	usr/bin/colorfire
+-rwxr-xr-x	root/root	usr/bin/cyclone
+-rwxr-xr-x	root/root	usr/bin/drempels
+-rwxr-xr-x	root/root	usr/bin/euphoria
+-rwxr-xr-x	root/root	usr/bin/feedback
+-rwxr-xr-x	root/root	usr/bin/fieldlines
+-rwxr-xr-x	root/root	usr/bin/flocks
+-rwxr-xr-x	root/root	usr/bin/flux
+-rwxr-xr-x	root/root	usr/bin/helios
+-rwxr-xr-x	root/root	usr/bin/hufo_smoke
+-rwxr-xr-x	root/root	usr/bin/hufo_tunnel
+-rwxr-xr-x	root/root	usr/bin/hyperspace
+-rwxr-xr-x	root/root	usr/bin/lattice
+-rwxr-xr-x	root/root	usr/bin/lorenz
+-rwxr-xr-x	root/root	usr/bin/matrixview
+-rwxr-xr-x	root/root	usr/bin/pixelcity
+-rwxr-xr-x	root/root	usr/bin/plasma
+-rwxr-xr-x	root/root	usr/bin/skyrocket
+-rwxr-xr-x	root/root	usr/bin/solarwinds
+-rwxr-xr-x	root/root	usr/bin/spirographx
+-rwxr-xr-x	root/root	usr/bin/sundancer2
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libImplicit.la
+lrwxrwxrwx	root/root	usr/lib/libImplicit.so -> libImplicit.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libImplicit.so.0 -> libImplicit.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libImplicit.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libPixelCity.la
+lrwxrwxrwx	root/root	usr/lib/libPixelCity.so -> libPixelCity.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libPixelCity.so.0 -> libPixelCity.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libPixelCity.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/librsMath.la
+lrwxrwxrwx	root/root	usr/lib/librsMath.so -> librsMath.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/librsMath.so.0 -> librsMath.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/librsMath.so.0.0.0
+drwxr-xr-x	root/root	usr/lib/xscreensaver/
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/biof -> /usr/bin/biof
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/busyspheres -> /usr/bin/busyspheres
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/colorfire -> /usr/bin/colorfire
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/cyclone -> /usr/bin/cyclone
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/drempels -> /usr/bin/drempels
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/euphoria -> /usr/bin/euphoria
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/feedback -> /usr/bin/feedback
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/fieldlines -> /usr/bin/fieldlines
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/flocks -> /usr/bin/flocks
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/flux -> /usr/bin/flux
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/helios -> /usr/bin/helios
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/hufo_smoke -> /usr/bin/hufo_smoke
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/hufo_tunnel -> /usr/bin/hufo_tunnel
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/hyperspace -> /usr/bin/hyperspace
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/lattice -> /usr/bin/lattice
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/lorenz -> /usr/bin/lorenz
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/matrixview -> /usr/bin/matrixview
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/pixelcity -> /usr/bin/pixelcity
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/plasma -> /usr/bin/plasma
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/skyrocket -> /usr/bin/skyrocket
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/solarwinds -> /usr/bin/solarwinds
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/spirographx -> /usr/bin/spirographx
+lrwxrwxrwx	root/root	usr/lib/xscreensaver/sundancer2 -> /usr/bin/sundancer2
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/rss-glx_install
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/biof.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/busyspheres.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/colorfire.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/cyclone.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/drempels.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/euphoria.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/feedback.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/fieldlines.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/flocks.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/flux.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/helios.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/hufo_smoke.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/hufo_tunnel.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/hyperspace.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/lattice.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/lorenz.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/matrixview.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/pixelcity.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/plasma.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/skyrocket.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/solarwinds.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/spirographx.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/sundancer2.1.gz
+drwxr-xr-x	root/root	usr/share/xscreensaver/
+drwxr-xr-x	root/root	usr/share/xscreensaver/config/
+-rw-r--r--	root/root	usr/share/xscreensaver/config/biof.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/busyspheres.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/colorfire.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/cyclone.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/drempels.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/euphoria.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/feedback.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/fieldlines.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/flocks.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/flux.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/helios.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/hufo_smoke.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/hufo_tunnel.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/hyperspace.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/lattice.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/lorenz.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/matrixview.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/pixelcity.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/plasma.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/skyrocket.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/solarwinds.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/spirographx.xml
+-rw-r--r--	root/root	usr/share/xscreensaver/config/sundancer2.xml

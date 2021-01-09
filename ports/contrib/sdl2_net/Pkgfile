@@ -1,0 +1,16 @@
+# Description: A cross-platform networking library for SDL2.
+# URL: https://www.libsdl.org/projects/SDL_net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libsdl2
+
+name=sdl2_net
+version=2.0.1
+release=1
+source=(https://www.libsdl.org/projects/SDL_net/release/SDL2_net-$version.tar.gz)
+
+build() {
+	cd SDL2_net-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

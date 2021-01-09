@@ -1,0 +1,19 @@
+# Description: A library providing high-level API for X Keyboard Extension known as XKB
+# URL: http://freedesktop.org/Software/LibXklavier
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: xorg-libx11 iso-codes gobject-introspection libxml2
+
+name=libxklavier
+version=5.4
+release=1
+source=(https://people.freedesktop.org/~svu/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+  sed -i -e '/^SUBDIRS/s/ doc//' Makefile.in
+  ./configure --prefix=/usr \
+    --disable-static \
+    --disable-nls
+  make
+  make DESTDIR=$PKG install
+}

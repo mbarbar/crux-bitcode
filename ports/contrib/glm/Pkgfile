@@ -1,0 +1,25 @@
+# Description: C++ mathematics library for 3D software based on the OpenGL Shading Language (GLSL) specification
+# URL: http://glm.g-truc.net
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=glm
+version=0.9.9.8
+release=1
+source=(https://github.com/g-truc/glm/archive/$version/$name-$version.tar.gz
+  glm.pc.in glmConfig.cmake.in glmConfigVersion.cmake.in
+  glmTargets.cmake)
+
+build() {
+    cd $name-$version
+    mkdir -p $PKG/usr/include/
+    cp -r glm $PKG/usr/include/
+
+    mkdir -p $PKG/usr/lib/pkgconfig/
+    sed "s/@VERSION@/$version/" $SRC/glm.pc.in > $PKG/usr/lib/pkgconfig/glm.pc
+
+    mkdir -p $PKG/usr/lib/cmake/glm/
+    sed "s/@VERSION@/$version/" $SRC/glmConfigVersion.cmake.in > $PKG/usr/lib/cmake/glm/glmConfigVersion.cmake
+    sed "s/@VERSION@/$version/" $SRC/glmConfig.cmake.in > $PKG/usr/lib/cmake/glm/glmConfig.cmake
+    install -Dm644 $SRC/glmTargets.cmake $PKG/usr/lib/cmake/glm/glmTargets.cmake
+}

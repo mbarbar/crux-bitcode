@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33FSJomPeZZSRnjZsqnPlnxGPuXKoqU+ncULUTnMQ5MjMgwISAX/naKTLcj3GOEfQW6aVBkGpSjNMCnmxy9YSAM=
+SHA256 (Pkgfile) = fa29c3a39c1fb6fe3e385b9264e1ab2ee855e96162fbe1977eae85afd2601781
+SHA256 (.footprint) = 6a352cc0141c7532428d647e8de28798f5b3114b363b1f90acf71336e1b056e7
+SHA256 (click-7.1.2.tar.gz) = da626c7e5fa918a8c9bf9b5c0c0255b55469ca6b0c3cb2318ea0dc7eb05a56c3

@@ -1,0 +1,31 @@
+# Description: A library for configuring and customizing font access
+# URL:         https://www.freedesktop.org/wiki/Software/fontconfig/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  freetype expat
+
+name=fontconfig
+version=2.13.1
+release=1
+source=(https://fontconfig.org/release/$name-$version.tar.bz2)
+
+build() {
+    cd $name-$version
+
+     ./configure --prefix=/usr \
+                 --sysconfdir=/etc \
+                 --localstatedir=/var \
+                 --with-xmldir=/etc/fonts \
+                 --with-templatedir=/etc/fonts/conf.avail
+
+    make
+    make DESTDIR=$PKG install
+
+    # Enabling autohinting by default
+    pushd $PKG/etc/fonts/conf.d
+    ln -sf /etc/fonts/conf.avail/10-autohint.conf
+    popd
+
+    rm -f $PKG/etc/fonts/conf.d/README
+    rm -r $PKG/usr/share/doc
+    rm -r $PKG/usr/share/locale
+}

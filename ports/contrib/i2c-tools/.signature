@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3ztFnA4o0ajVkmKJ/nPUihbuQqz6k3K0F6shdchBuO8eHe8uxTU+uSB8CxAKTMJVEI17djwJjjOOi+EudCihOAo=
+SHA256 (Pkgfile) = f1d16e5092ad031f2d5117d589b507d7c9d21d96f892791aabc4d41f9553a706
+SHA256 (.footprint) = 5adf5c009ecee8a711ac49b0d5a4f1e7c5efeb3d2f14dca8c6f4518137afe45a
+SHA256 (i2c-tools-4.2.tar.xz) = 37f2dabc7082d185903ff21d1f584b5dcb4dd2eb2c879bbd8d7c50ae900dacd6

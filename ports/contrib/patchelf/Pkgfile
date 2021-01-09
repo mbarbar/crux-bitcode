@@ -1,0 +1,18 @@
+# Description: A small utility to modify the dynamic linker and RPATH of ELF executables.
+# URL: https://github.com/Nixos/patchelf
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=patchelf
+version=0.12
+release=1
+source=(https://github.com/Nixos/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./bootstrap.sh
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/doc
+}

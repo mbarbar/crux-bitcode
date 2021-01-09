@@ -1,0 +1,28 @@
+# Description: Server and user space API to deal with multimedia pipelines
+# URL: https://pipewire.org
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: alsa-lib dbus fdk-aac ffmpeg glib gnutls lame libva libvpx libwebp x264 x265
+
+name=pipewire
+version=0.3.17
+release=1
+source=(https://github.com/PipeWire/pipewire/archive/$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/lib/pkgconfig/jack.pc ]] || PKGMK_PW+=' -Dpipewire-jack=false -Djack=false'
+  [[ -e /usr/lib/pkgconfig/vulkan.pc ]] || PKGMK_PW+=' -Dpipewire-vulkan=false -Dvulkan=false'
+  [[ -e /usr/lib/pkgconfig/bluez.pc ]] || PKGMK_PW+=' -Dbluez5=false'
+  [[ -e /usr/lib/pkgconfig/libv4l2.pc ]] || PKGMK_PW+=' -Dv4l2=false'
+  [[ -e /usr/include/pulse/glib-mainloop.h ]] || PKGMK_PW+=' -Dpipewire-pulseaudio=false'
+  [[ -e /usr/lib/pkgconfig/gstreamer-1.0.pc ]] || PKGMK_PW+=' -Dgstreamer=false'
+
+  meson setup $name-$version build $PKGMK_PW \
+    -D prefix=/usr \
+    --buildtype=plain \
+    -D b_ndebug=true \
+    -D docs=false \
+    -D examples=false \
+    -D tests=false
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+}

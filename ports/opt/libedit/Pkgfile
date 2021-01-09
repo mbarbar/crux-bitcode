@@ -1,0 +1,20 @@
+# Description: Command line editor library providing generic line editing, history, and tokenization functions
+# URL: https://thrysoee.dk/editline/
+# Maintainer: Danny Rawlins, crux at romster dot me
+
+name=libedit
+version=20191231_3.1
+release=1
+source=(https://thrysoee.dk/editline/$name-${version/_/-}.tar.gz)
+
+build() {
+	cd $name-${version/_/-}
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm $PKG/usr/share/man/man3/history.3 # conflicts with readline
+	ln -s editline.3 $PKG/usr/share/man/man3/el.3
+}

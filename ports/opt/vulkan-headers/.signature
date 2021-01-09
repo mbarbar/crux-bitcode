@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/bfjhpgpSG+vpELZZBRlbZCkaPTiOxDZo3WsSY3utORqHvRg5OwV9ZejySxvygOAa/Vu4Ir7HiizBwAkXqzVBQY=
+SHA256 (Pkgfile) = 35ca98da3e1b6802a1119fdb6b118de5c554facb2db99f0939007148b7107a6a
+SHA256 (.footprint) = effd18e132c150c8a69399e92fd4eeed22b5271d37121dd6248212ff0043d3d5
+SHA256 (Vulkan-Headers-sdk-1.2.154.0.tar.gz) = a0528ade4dd3bd826b960ba4ccabc62e92ecedc3c70331b291e0a7671b3520f9

@@ -1,0 +1,23 @@
+# Description: VPN Client
+# URL:         http://www.openvpn.net
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  lzo
+
+name=openvpn
+version=2.5.0
+release=1
+source=(http://swupdate.openvpn.net/community/releases/$name-$version.tar.xz \
+        openvpn)
+
+build() {
+  install -D -m 755 openvpn $PKG/etc/rc.d/openvpn
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              --enable-iproute2 \
+              --disable-plugin-auth-pam
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share
+}

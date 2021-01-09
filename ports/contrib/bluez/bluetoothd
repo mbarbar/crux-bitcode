@@ -1,0 +1,35 @@
+#!/bin/sh
+#@ bluez startup script
+
+SSD=/sbin/start-stop-daemon
+PROG=/usr/lib/bluetooth/bluetoothd
+# OPTS="-d"
+PID=/var/run/bluetoothd.pid
+
+case $1 in
+start)
+        $SSD --start --background --make-pidfile --pidfile $PID --exec $PROG \
+                -- $OPTS
+        ;;
+stop)
+        $SSD --stop --remove-pidfile --retry 10 --pidfile $PID --exec $PROG
+        ;;
+restart)
+        $0 stop
+        $0 start
+        ;;
+status)
+        $SSD --status --pidfile $PID --exec $PROG
+        e=$?
+        case $e in
+        0) echo "$PROG is running with pid $(cat $PID)" ;;
+        1) echo "$PROG is not running but the pid file $PID exists" ;;
+        3) echo "$PROG is not running" ;;
+        4) echo "Unable to determine the program status" ;;
+        esac
+        exit $e
+        ;;
+*)
+        echo "usage: $0 [start|stop|restart|status]"
+        ;;
+esac

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32oA+7uxATNqkTASqWJZqyvSu0c0aNt655ib4ruG1zwTUAGXU3y/2xMg+srSCQziQA1YTFn94scDjsvgLIvcRA8=
+SHA256 (Pkgfile) = 374a385498dad72692d485c310678a3749fb4d3957f395e289b04c463865eb65
+SHA256 (.footprint) = ea28c2747234ca90c45ff0e6d8a48fe072d57a4832d71826a5167b94c0468612
+SHA256 (libuninameslist-dist-20200413.tar.gz) = 5c0283b2e18d101e58b70a026119d66c9d3e749e4537def7799bba0bc8998f62

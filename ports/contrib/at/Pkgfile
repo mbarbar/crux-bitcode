@@ -1,0 +1,24 @@
+# Description: at, batch - queue, examine or delete jobs for later execution
+# URL:         http://blog.calhariz.com/index.php/tag/at
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  exim
+
+name=at
+version=3.2.1
+release=1
+source=(http://software.calhariz.com/at/${name}_$version.orig.tar.gz
+        atd)
+
+build() {
+	cd $name-$version
+
+	SENDMAIL=/usr/sbin/sendmail \
+	CONFIG_SHELL=/bin/bash \
+	./configure --prefix=/usr
+
+	make -j1
+	make IROOT=$PKG install
+
+	rm -r $PKG/usr/doc
+	install -D -m 0755 $SRC/atd $PKG/etc/rc.d/atd
+}

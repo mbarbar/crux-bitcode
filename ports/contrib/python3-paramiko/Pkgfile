@@ -1,0 +1,15 @@
+# Description: SSH2 protocol library
+# URL: https://pypi.org/project/paramiko/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: python3-cryptography python3-bcrypt python3-pynacl
+
+name=python3-paramiko
+version=2.7.1
+release=1
+source=(https://files.pythonhosted.org/packages/ac/15/4351003352e11300b9f44a13576bff52dcdc6e4a911129c07447bda0a358/paramiko-$version.tar.gz)
+
+build() {
+	cd paramiko-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG
+}

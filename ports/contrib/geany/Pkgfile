@@ -1,0 +1,23 @@
+# Description: gtk3 text editor with syntax highlighting
+# URL: https://www.geany.org/
+# Maintainer: Jan-Michael Franz, jmf at mesecons dot net
+# Packager: Hannes Mayer, kontakt at ecarux dot de
+# Depends on: gtk3
+# Nice to have: vte
+
+name=geany
+version=1.37.1
+release=1
+source=(http://download.geany.org/$name-$version.tar.bz2)
+
+build () {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+              --enable-gtk3 \
+              --enable-plugins
+
+  make
+  make DESTDIR=$PKG install
+  rm -r $PKG/usr/share/{doc,locale}
+}

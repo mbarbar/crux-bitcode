@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zzT3MnkJOdBa6jAmTAy2JJalzSfCXbHm0mlqRcYdRYiP+9IPAXEskQdghdfuQXITjARogUVAwi2bu6mXlwKvQ8=
+SHA256 (Pkgfile) = d42310ef791cdec9e86518d587f44ffdb0c7d11d0552a0de9b8df1e9646999dd
+SHA256 (.footprint) = aaf16c63d3f2cc631a928a8df67c3f47169281f1a3f3eb910ee0a0ce10c3c94f
+SHA256 (gnome-icon-theme-3.12.0.tar.xz) = 359e720b9202d3aba8d477752c4cd11eced368182281d51ffd64c8572b4e503a

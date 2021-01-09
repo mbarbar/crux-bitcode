@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35GYp7yKcM9nWpiYTRetduwcrbcqn4l3w1loiTiJ5I7tbzVUD3i11DiTTMU7E8R2Uf7tCeHp7M9rs99eq2aR2gM=
+SHA256 (Pkgfile) = 615e97c4edb4a8a0e7d0a0d6a657fcda788f0cf9144e5640ad4a557ae54c7e46
+SHA256 (.footprint) = 2663af88aeb3fd06c40efc05558af405f50dbda6d410a36f3b02f005e0f0abf0
+SHA256 (jasper-2.0.22.tar.gz) = afc4166bff29b8a0dc46ed5e8d6a208d7976fccfd0b1146e3400c8b2948794a2
+SHA256 (jasper-1.900.1-fix-filename-buffer-overflow.patch) = f51377e9b3e4faaa6b17b2d5fcf6f6d94fe2916a65dc9c78b5a99b891f5726dc

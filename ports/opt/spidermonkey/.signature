@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/WetGwlYRYNoFkFB0p29kLgmO3zGFkaPVw2MCtSmXUvv/T5nGPGA/xN7LXDeKBQzPeJ6YOo6HjfuD5BTD79AMw8=
+SHA256 (Pkgfile) = fbaef15e8c2027d95f74edecf71a5fa02e22e7bfedf6c3c9ca3237125de1e989
+SHA256 (.footprint) = 8297463ccb4a3c908f13d2260cb920bf08e46e4d71161ed5a25e8acaf5485310
+SHA256 (firefox-68.12.0esr.source.tar.xz) = ae692bf2a15908cacbb9d4c7ccf78525a87410ff3f13befedc1926f849bc27cc

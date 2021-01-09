@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31GfzqDeiLYaudKXrKu6OX+L8X+xpCThJRAh60m/j5af/JPLbpLVfqe86U1c8tLKvS4j1JRVS4xUNKtwreuJUgk=
+SHA256 (Pkgfile) = 247f1bacb628cb3dafcfbdf5980989fd10eb42bbe1b6572aacfb8ec96424c3bf
+SHA256 (.footprint) = 64ee2b25b47f73bf5a2ea9b68702b2cb777d6673109f696fe80efdefa461cba0
+SHA256 (khal-0.10.2.tar.gz) = 494f215c3d1cb7a1f8d756b440809d255bd20e2937f98bd0b5d44e42d4cb1087

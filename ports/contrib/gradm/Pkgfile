@@ -1,0 +1,20 @@
+# Description: grsecurity RBAC administration utility
+# URL:         https://grsecurity.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:
+
+name=gradm
+version=3.1-202009270723
+release=1
+source=(https://grsecurity.net/stable/gradm-$version.tar.gz)
+
+build() {
+  cd $name
+
+  install -d $PKG/etc/udev/rules.d
+
+  make
+  make DESTDIR=$PKG MANDIR=/usr/share/man install
+
+  rm -r $PKG/dev
+}

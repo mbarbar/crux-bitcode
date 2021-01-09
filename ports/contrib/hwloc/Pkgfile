@@ -1,0 +1,24 @@
+# Description: Portable Hardware Locality
+# URL:         http://www.multiprecision.org/
+# Maintainer:  Alexandr Savca, alexandrsavca89 at gmail dot com
+# Depends on:  cairo libxml2 xorg-libpciaccess xorg-libsm
+
+name=hwloc
+version=2.4.0
+release=1
+source=(https://download.open-mpi.org/release/$name/v${version%.*}/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --sysconfdir=/etc --enable-netloc
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/doc
+	rm -rf $PKG/usr/share/hwloc/hwloc-ps.www
+
+	# remove unused systemd service file
+	rm -f  $PKG/usr/share/hwloc/hwloc-dump-hwdata.service
+}

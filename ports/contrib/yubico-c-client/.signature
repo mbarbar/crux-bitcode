@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31gy/+m8nh/EqUrE4vITxTjtAl51Q82how6w2ZRestvMKuZHede5FzhrtCMOHIPhSuL4SmDo4y8Q4lWdbeNUYgk=
+SHA256 (Pkgfile) = 349f802d4c51d0a07ca29bb3bc0081b6310bd629678dccd1e1075ce7a495707f
+SHA256 (.footprint) = 526eeebac065065041c8d375be3a9739ecbea16688ecf9f3b5c6fe30c66bd008
+SHA256 (ykclient-2.15.tar.gz) = 3863f4fc2f3320c59fcbf57862bba48bcb716fddb886840bb0dd8db14d5ab7f0

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/fiLIH+Mex+q+e4Qt9DfW5vYJkyauVh8uHamwBWDxOEzlvGe+fcv2eJegPrCM+BP6fejvBcsmdCz9lfcO7oWWww=
+SHA256 (Pkgfile) = 55114ec2f6c683b8c2a6b885bb94dd2eef43e25974848680d5e2524029f7a44b
+SHA256 (.footprint) = 839d04c7250b0262d6f81ad2c5ec4182e696bdb0a7c70c298afe2b0614269bc1
+SHA256 (qtwebkit-opensource-src-5.212.tar.xz) = 10cbdaba60aac79d27016aa05bae9ab3ec7b0aed4df163debfbf8fddd66adc14
+SHA256 (qtwebkit-5.212.0_pre20200309-icu-68.patch) = 146829ab233c73e8c5e080babca12f9bfb193621fd3452da57721a0af447214a

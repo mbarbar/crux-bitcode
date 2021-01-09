@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30B7Tnw0NrgzUvZlx88vgDjsXOOfJkM0JHVYgIYJMzIzgUdb+ZCQC1BzOc3L6zeUxV+8re57Pp/T5SQWLkh91AU=
+SHA256 (Pkgfile) = 32402f254e726a3772bc1be76bff52d81d5bfcb6384267664c0296e87d075e73
+SHA256 (.footprint) = 9b824efd118028aa2aa56b8a21fac690f567de47add470153e2884c01b28b592
+SHA256 (SDL_gfx-2.0.26.tar.gz) = 7ceb4ffb6fc63ffba5f1290572db43d74386cd0781c123bc912da50d34945446

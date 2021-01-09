@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3wOxRU+ies42jnaJyzuqEU4ORBqCDj/R8Xw+YZ2D40nKN0OP1P6z/HRo0dyy/49LhoucTUwtFjLPa4T7xckQtAk=
+SHA256 (Pkgfile) = 36633443f9d986d633617f94c2b168b2733f37c2a420bc64a29f9212ca2c6624
+SHA256 (.footprint) = 6b3abe8c8e8c450b3a5ae1ceda4c4f15a6faf0567db1d4a840fe38d8060702bd
+SHA256 (handlr-0.4.5.tar.gz) = 0929c3f332646c07c8c6755415a3a7662401d6753d584f8d16582021fc4fdc78

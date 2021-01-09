@@ -1,0 +1,20 @@
+# Description: Localization support for DateTime.pm
+# URL: https://metacpan.org/pod/DateTime::Locale
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-file-sharedir p5-file-sharedir-install p5-list-moreutils p5-params-validate
+
+name=p5-datetime-locale
+version=1.28
+release=1
+source=(https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-$version.tar.gz)
+
+build() {
+  cd DateTime-Locale-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

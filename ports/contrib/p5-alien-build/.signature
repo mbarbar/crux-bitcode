@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33sUyrpSjcOhi30V2T/Xx+mHZ0CNDpWYds/ZU0/S0OGC77bHK94PDk/jWKMmiKK7lByVqq/wO3Cogf/zAyXRuw4=
+SHA256 (Pkgfile) = a84871a0e5ddc371e7020ec3bea5e4e8092a5eafc3f2c92f091baea95b7f1db3
+SHA256 (.footprint) = 27f4d8f4cb29a27077ca1a73ddb5d421b0cd27a02f914892e88612cad47ff4de
+SHA256 (Alien-Build-2.37.tar.gz) = 3000bcbe98482643f76bbcffce42fd48f24c63a6457f8aa2c1695f481ac9ed51

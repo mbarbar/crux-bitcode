@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31E5g5DJn59zxHrxhQDqnfj7ioZJ3JrS44l7JtXvM0ytROL6XohEyPuBkmHQFHGaF2qRuZS23eREMNJrjAWQfQw=
+SHA256 (Pkgfile) = d462bd7a3f0e5a529b968867b2e033d96b9305e63a2bcd9bfd621df3a89033f3
+SHA256 (.footprint) = 3e306242753cb4da2b2280f215f6b8c4f761d3da27dd8da52ca21ea6ee72440b
+SHA256 (proxychains-ng-4.14.tar.gz) = ab31626af7177cc2669433bb244b99a8f98c08031498233bb3df3bcc9711a9cc
+SHA256 (proxychains-ng-4.14-cflags.patch) = 3050f81e9c56e44333c996bc1618e2c461cbce85f3cc01d11ccc844eac40f8b3

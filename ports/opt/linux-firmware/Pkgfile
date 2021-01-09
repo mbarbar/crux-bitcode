@@ -1,0 +1,14 @@
+# Description: Firmware blobs for use with the Linux kernel.
+# URL:         https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+
+name=linux-firmware
+version=20201118
+release=1
+source=(https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    make DESTDIR=$PKG FIRMWAREDIR=/lib/firmware install
+    find $PKG \( -name 'ChangeLog' -or -name 'README' \) -delete
+}

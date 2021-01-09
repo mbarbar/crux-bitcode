@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3xbGEhS7R23p7VJoxHWSiWyPiLo/WPaD3bfYm+8aPNcJGTVE2e+Malj1zSlbE7CQmZjD6eSwnKIFt3ewgS7rnw4=
+SHA256 (Pkgfile) = 8eb546828c8336921ba88d2cc262143f4712768debaf30e4f8fa0f66c7829011
+SHA256 (.footprint) = 1b3cfd4f2ade9a2a3c14c63fc665b696f4d4adab1140be1d1bb40ece02f1ee70
+SHA256 (kcoreaddons-5.76.0.tar.xz) = fbab3e3e18f42922ecdc50138ed31f62007cafa902b959d89b1233b5557282d6

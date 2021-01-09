@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndHdmgeKK2Eh8uACi2WzB4vAPHMdfpNAjpzEU05tBXfUmjjuQg/hDFh+SVHP9Uik+DyrqF4WyhV7NajHPSmjoww0=
+SHA256 (Pkgfile) = 769195ed33f7601b9133a85faa68dddd6e8f8098b62acd7dfb65355a0ef7927f
+SHA256 (.footprint) = 3cc4bb54058a3f7c26d4b39ec256f8b3c9eecde0465f08dad4b16e9ee4cc957b
+SHA256 (gccmakedep-1.0.3.tar.bz2) = b275dcf1f7323ed89e8b36f8fbd5da665d8700005f1779fa5b90a1688bbf2ee4

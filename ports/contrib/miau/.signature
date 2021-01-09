@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF336QmaTwIK3NaiJi5rRNiUxrQVISz2jL5C4QsHJlmHLScziOHZRGFOShIAo5sD45AALmywPuMACEQ4nhK9imnws=
+SHA256 (Pkgfile) = b03dbe6ef905195ef9b70d89be49440e7a198d71600c5dc2da46ba0440e4b9cc
+SHA256 (.footprint) = b99534ff32ffbfba0033f5c96095a18f269609796cedfb4736874e12d9175ee0
+SHA256 (miau-0.6.6.tar.bz2) = 5409fd19748fe0eb98b9975270233878d02718538e9c3b438fe0b74d61465804

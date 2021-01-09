@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/UnaUzRkKBsU6tCQBZYsJNoIU/I3FbojVR8ZT4KOuh8IqleCCR+uss1VjK6Y9O9exOyiEHCzKdj9lXaQep+dmQk=
+SHA256 (Pkgfile) = a571ccc71a90c72bdb403299cf2e312aff133e6db6e985efc37a4f90381c0142
+SHA256 (.footprint) = 4d6db6768d2772f9d00edc5315214f95c8a62091b891b56a383fa87d5a6b4900
+SHA256 (hunspell-v1.7.0.tar.gz) = bb27b86eb910a8285407cf3ca33b62643a02798cf2eef468c0a74f6c3ee6bc8a

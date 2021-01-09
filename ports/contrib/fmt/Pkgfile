@@ -1,0 +1,22 @@
+# Description: An open-source formatting library
+# URL: https://fmtlib.net/latest/index.html
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: cmake
+
+name=fmt
+version=7.1.3
+release=1
+source=(https://github.com/fmtlib/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+  [[ -e /usr/bin/ninja ]] && PKGMK_FMT+=' -G Ninja'
+  cmake -S $name-$version -B build $PKGMK_FMT \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+    -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+    -Wno-dev
+  cmake --build build
+  DESTDIR=$PKG cmake --install build
+}

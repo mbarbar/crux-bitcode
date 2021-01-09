@@ -1,0 +1,20 @@
+# Description: KDE Framework - kcompletion
+# URL:         https://api.kde.org/frameworks/kcompletion/html/index.html
+# Maintainer:  Stamatin Cristina, dear dot volgk at gmail dot com
+# Depends on:  kwidgetsaddons kconfig
+
+name=kcompletion
+version=5.76.0
+release=1
+source=(https://download.kde.org/stable/frameworks/${version:0:4}/$name-$version.tar.xz)
+
+build() {
+	rm -r $name-$version/po/*
+
+	cmake -S$name-$version -Bbuild \
+		-DCMAKE_INSTALL_PREFIX=/usr
+
+	cmake --build build -v
+
+	DESTDIR=$PKG cmake --install build
+}

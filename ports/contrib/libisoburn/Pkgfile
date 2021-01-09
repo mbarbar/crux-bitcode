@@ -1,0 +1,20 @@
+# Description: Frontend for libburn and libisofs
+# URL:         https://dev.lovelyhq.com/libburnia/web/wikis/Libisoburn
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  libburn libisofs tk
+
+name=libisoburn
+version=1.5.2
+release=1
+source=(http://files.libburnia-project.org/releases/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/info
+}

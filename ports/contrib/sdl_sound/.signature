@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF30qrOgkfcDcsERV5LjOI1uMM/Z/ooha3CrkGPGt2HTGT5JkHXUdihF/++en5agwsTRWQvNOM4M6rHS4DXVVGig0=
+SHA256 (Pkgfile) = 9dafe6ac6d387cf620d09e2e541156fc156531f8aeed82afdc7886ee2eb4730d
+SHA256 (.footprint) = 22e9000e02a3db704ddeca3759859a16b8a04c65b0abe73e8cfe44b888790d16
+SHA256 (SDL_sound-1.0.3.tar.gz) = 3999fd0bbb485289a52be14b2f68b571cb84e380cc43387eadf778f64c79e6df
+SHA256 (sdl-sound-1.0.3-physfs-3.0.1.patch) = d26095da9e1c0b519d5c51361a6ef172eaa1e3cb9e48c6b4f8138095dbfb07dd
+SHA256 (sdl-sound-1.0.3-automake-1.13.patch) = 32b2fe3eb83e93a2f33557b35bb6b9e173ff342b8b1f7dd3778c123befcde7d8
+SHA256 (sdl-sound-1.0.3-underlinking.patch) = 6e995658b975bc49a57c802ad33d5e85033a448955f2fcb922f10ce9a5ab5684

@@ -1,0 +1,20 @@
+# Description: text mode web browser
+# URL:         http://links.twibright.com/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  bzip2 xz zlib openssl libevent
+
+name=links
+version=2.21
+release=1
+source=(http://links.twibright.com/download/links-$version.tar.bz2)
+
+build () {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man
+
+	make
+	make DESTDIR=$PKG install
+}

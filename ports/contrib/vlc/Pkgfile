@@ -1,0 +1,38 @@
+# Description: The cross-platform media player and streaming server
+# URL: https://www.videolan.org/vlc/
+# Maintainer: Thomas Penteker, tek at serverop dot de
+# Depends on: ffmpeg liba52 libdvdnav libgcrypt libmad qt5
+# Nice to have: opus libvorbis x264 libogg libmtp libtheora flac libvdpau
+
+name=vlc
+version=3.0.11.1
+release=1
+source=(https://download.videolan.org/pub/videolan/$name/$version/$name-$version.tar.xz
+  qt-5.15.patch)
+
+build() {
+  cd $name-$version
+
+  [ -z "$(pkg-config --libs --static libavutil | grep -- '-lvdpau')" ] && PKGMK_VLC+=' --disable-vdpau'
+
+  patch -Np1 -i $SRC/qt-5.15.patch
+  autoreconf -fi
+
+  export RCC=/usr/bin/rcc-qt5
+  sed -e 's|-Werror-implicit-function-declaration||g' -i configure
+  BUILDCC="gcc -std=gnu11" \
+  ./configure ${PKGMK_VLC} --prefix=/usr \
+    --disable-nls \
+    --disable-fribidi \
+    --disable-dbus \
+    --disable-lua \
+    --disable-update-check \
+    --enable-alsa
+
+  V=1 ./compile
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/{doc,kde4}
+
+  # fix desktop file
+  sed -i 's/--started-from-file//g' $PKG/usr/share/applications/vlc.desktop
+}

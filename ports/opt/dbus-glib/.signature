@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/fLRohCll5G5QgwCMJvRzs8D+vbKaoJRgQfMiuHvjtv5Fk9DylSwkW0950GLTQ06E62BHz0z3iDDbikLVKCPpQY=
+SHA256 (Pkgfile) = d90b30b6747442b2a1fc56e53a2e8cad620949a1c9407e70daec8d40e15c9827
+SHA256 (.footprint) = 4d6a6d27f377c89a7b3fa675aa68a26503b4717befd2b0b78d42ff2ce892540c
+SHA256 (dbus-glib-0.110.tar.gz) = 7ce4760cf66c69148f6bd6c92feaabb8812dee30846b24cd0f7395c436d7e825

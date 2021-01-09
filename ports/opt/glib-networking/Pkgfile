@@ -1,0 +1,20 @@
+# Description: Network-related giomodules for glib.
+# URL: https://git.gnome.org/browse/glib-networking/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: gnutls gsettings-desktop-schemas
+
+name=glib-networking
+version=2.66.0
+release=1
+source=(https://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
+
+build() {
+	meson build $name-$version \
+		--prefix /usr \
+		-Dlibproxy=disabled
+
+        ninja -C build -j ${JOBS:-1}
+        DESTDIR=$PKG meson install -C build
+
+	rm -r $PKG/usr/share/locale
+}

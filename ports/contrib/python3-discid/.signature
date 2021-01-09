@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34hTStzkh00UXP/Cdxaz3fHOb7VyVHdCHL5g6JXemsSnSBOG4qf1EDk5qaYzKEo9BSQP8Qaqzcy8DYhPGLb1sgw=
+SHA256 (Pkgfile) = 393c0d657dd72d035973c660e059f64d8506f1e14108afb045dd725518b1b59a
+SHA256 (.footprint) = bf89942e6a0d80788902d806ab382ee802ea907a49ebc929d9ebd5cf0cd5626d
+SHA256 (python3-discid-1.2.0.tar.gz) = 4eec56f054d960b66c4e42c711c317e987dd50c9e7267a29f7adadd9ceee664f

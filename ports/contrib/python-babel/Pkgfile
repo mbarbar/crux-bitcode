@@ -1,0 +1,36 @@
+# Description: A collection of tools for internationalizing Python applications
+# URL: https://babel.pocoo.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python-pytz python-setuptools
+
+name=python-babel
+version=2.9.0
+release=1
+cldrver=37.0 # $SRC/babel-$version/scripts/download_import_cldr.py
+
+source=(https://pypi.io/packages/source/B/Babel/Babel-${version}.tar.gz
+  https://unicode.org/Public/cldr/${cldrver::2}/cldr-common-$cldrver.zip)
+
+unpack_source() {
+  for file in ${source[@]}; do
+    case ${file##*/} in
+      Babel-$version.tar.gz)
+        bsdtar -p -o -C $SRC -xf $(get_filename $file) ;;
+      cldr-common-$cldrver.zip)
+        mkdir $SRC/Babel-$version/cldr
+        cp $(get_filename $file) $SRC/Babel-$version/cldr/cldr-core-${cldrver::2}.zip ;;
+      *)
+        cp $(get_filename $file) $SRC ;;
+    esac
+  done
+}
+
+build() {
+  cd Babel-$version
+
+  /usr/bin/python setup.py import_cldr
+  /usr/bin/python setup.py build
+  /usr/bin/python setup.py install --root=$PKG \
+    --optimize=1 \
+    --skip-build
+}

@@ -1,0 +1,62 @@
+# Description: Postfix Mail Transport Agent (MTA)
+# URL: http://www.postfix.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on: cyrus-sasl
+
+name=postfix
+version=3.4.18
+release=1
+source=(ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz \
+        aliases postfix.rc postfix.patch)
+
+build() {
+    cd $name-$version
+
+    patch -p1 < $SRC/postfix.patch
+
+    # enable building on recent kernels
+    sed -i 's:\(Linux\.\[34\):\15:1' makedefs
+    sed -i 's:\(|| defined(LINUX4)\):\1 || defined(LINUX5):g' src/util/sys_defs.h
+    
+    _CCARGS="$CCARGS -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl -DUSE_TLS -I/usr/include/openssl"
+    _AUXLIBS="-L/usr/lib -lsasl2 -lssl -lcrypto"
+
+    make tidy
+    make makefiles DEBUG="" OPT="$CFLAGS" CCARGS="$_CCARGS" AUXLIBS="$_AUXLIBS"
+    make           DEBUG="" OPT="$CFLAGS" CCARGS="$_CCARGS" AUXLIBS="$_AUXLIBS"
+    
+    make non-interactive-package install_root=$PKG \
+    mail_owner=mail \
+    setgid_group=postdrop \
+    config_directory=/etc/postfix \
+    manpage_directory=/usr/share/man \
+    daemon_directory=/usr/lib/postfix \
+    data_directory=/var/lib/postfix \
+    command_directory=/usr/sbin \
+    queue_directory=/var/spool/postfix \
+    sendmail_path=/usr/sbin/sendmail \
+    newaliases_path=/usr/bin/newaliases \
+    mailq_path=/usr/bin/mailq
+
+    #
+    # Set proper permissions
+    #
+    ( cd $PKG/var/spool/postfix
+      chown mail *
+      chgrp postdrop public maildrop )
+
+    ( cd $PKG/usr/sbin
+      chgrp postdrop postqueue postdrop
+      chmod g+s postqueue postdrop )
+
+    ( cd $PKG/var/lib
+      chown mail postfix )
+
+    rm -f $PKG/etc/postfix/*LICENSE
+
+    install -D -m 00644 ../aliases    $PKG/etc/postfix/aliases
+    install -D -m 00755 ../postfix.rc $PKG/etc/rc.d/postfix
+
+    touch $PKG/etc/postfix/{aliases,access,canonical,relocated,transport,virtual}.db
+    touch $PKG/etc/postfix/{relay_domains,body_checks,mime_header_checks}
+}

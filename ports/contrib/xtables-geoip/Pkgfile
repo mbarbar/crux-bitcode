@@ -1,0 +1,20 @@
+# Description: GeoIP database files for xt_geoip in xtables-addons.
+# URL: http://www.maxmind.com/app/geoip_country
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Danny Rawlins, crux at romster dot me
+# Depends on: p5-text-csv-xs xtables-addons
+
+name=xtables-geoip
+version=20130607
+release=1
+source=(http://crux.ster.zone/downloads/$name/GeoIPCountryCSV-20130604.zip
+	http://crux.ster.zone/downloads/$name/GeoIPv6-$version.csv.gz)
+
+build() {
+	gunzip $SRC/GeoIPv6-*.csv.gz
+
+	install -d $PKG/usr/share/xt_geoip
+
+	/usr/lib/xtables-addons/xt_geoip_build \
+		-D $PKG/usr/share/xt_geoip/ $SRC/*.csv
+}

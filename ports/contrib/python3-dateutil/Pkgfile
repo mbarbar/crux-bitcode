@@ -1,0 +1,17 @@
+# Description: Provides powerful extensions to the standard datetime module
+# URL: https://github.com/dateutil/dateutil
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools-scm python3-six
+
+name=python3-dateutil
+version=2.8.1
+release=1
+source=(https://files.pythonhosted.org/packages/source/p/python-dateutil/python-dateutil-$version.tar.gz)
+
+build() {
+  cd python-dateutil-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --root=$PKG \
+    --optimize=1 \
+    --skip-build
+}

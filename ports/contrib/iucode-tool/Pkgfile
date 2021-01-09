@@ -1,0 +1,19 @@
+# Description: Tool to manipulate Intel microcode update bundles
+# URL: https://gitlab.com/iucode-tool/iucode-tool/wikis/home
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Packager: Pedja, predivan at mts dot rs
+# Depends on:
+
+name=iucode-tool
+version=2.3.1
+release=1
+source=(https://gitlab.com/$name/releases/raw/latest/$name"_"$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./autogen.sh
+  ./configure --prefix=/usr \
+    --mandir=/usr/share/man
+  make
+  make DESTDIR=$PKG install
+}

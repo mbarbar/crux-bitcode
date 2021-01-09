@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/normalize
+-rwxr-xr-x	root/root	usr/bin/normalize-mp3
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/normalize-mp3.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/normalize.1.gz

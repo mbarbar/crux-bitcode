@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32AlGwmOPu1s/m/JrKJisJztGCUSA6yKrX4sugEBmZSscIPG8KEl+yshZPyI8gN/Y/u1f0z6hjVFuDP25MXauww=
+SHA256 (Pkgfile) = eea3eeffd46eab4cc7b80cd7f18c5920d4a0e56711b0e54d161663832d8b93f4
+SHA256 (.footprint) = f87864df7c4a3e28b46e91920aaafe7ee8e19a25177ab02e89571305a6983535
+SHA256 (asterisk-perl-1.08.tar.gz) = 2823250c7538fdb4c34a7d099cd53dcbc1ac7ddc16f2528d9c7a84b9fc28f38f

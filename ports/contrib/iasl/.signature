@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32Ct2cl+Hf5jWon4ATQFOCsvqu5+YtwtpT/5Fvo2nXWLdrCL+xkhV3vc1QOml7Wt9C+SAWzj5zm318VnlXOP+w0=
+SHA256 (Pkgfile) = 095d5876eab939f5657773dc8d10fef9163f0dc1603f331c57be3f05dfd3ae01
+SHA256 (.footprint) = 8d2c017d70670b63ceb84acc621f4f45389d584dcffefaf4ec15ebe0b1a993c6
+SHA256 (acpica-unix2-20200925.tar.gz) = 5cb40ff01aaf27caf639e9928bab02706c3d7bff649f16e32d48bee99208c6a2

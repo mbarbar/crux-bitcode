@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF37V0wokAugKBjtIOKGbiR5q7xCrvSwXPfJCq7ecs0yHEIpWqbVpvQBDEslAej1v8hSJE6EwGf5NWPwZ/8ZiiJgU=
+SHA256 (Pkgfile) = c576c97fa55f25065b3fdf7b8b35f7dc5bf26911bb8c9887a45911e8c113b9d9
+SHA256 (.footprint) = 56229cf637603c3fd7153b031e9fcf8dd2dab658570d514f82254185eb5c1bbb
+SHA256 (Mozilla-CA-20200520.tar.gz) = b3ca0002310bf24a16c0d5920bdea97a2f46e77e7be3e7377e850d033387c726

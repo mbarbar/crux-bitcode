@@ -1,0 +1,24 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/appindicator-sharp-0.1/
+-rw-r--r--	root/root	usr/lib/appindicator-sharp-0.1/appindicator-sharp.dll
+-rw-r--r--	root/root	usr/lib/appindicator-sharp-0.1/appindicator-sharp.dll.config
+-rw-r--r--	root/root	usr/lib/appindicator-sharp-0.1/policy.0.0.appindicator-sharp.config
+-rw-r--r--	root/root	usr/lib/appindicator-sharp-0.1/policy.0.0.appindicator-sharp.dll
+-rw-r--r--	root/root	usr/lib/appindicator-sharp-0.1/policy.0.1.appindicator-sharp.config
+-rw-r--r--	root/root	usr/lib/appindicator-sharp-0.1/policy.0.1.appindicator-sharp.dll
+drwxr-xr-x	root/root	usr/lib/mono/
+drwxr-xr-x	root/root	usr/lib/mono/appindicator-sharp/
+lrwxrwxrwx	root/root	usr/lib/mono/appindicator-sharp/appindicator-sharp.dll -> ../gac/appindicator-sharp/0.2.0.0__bcae265d1c7ab4c2/appindicator-sharp.dll
+lrwxrwxrwx	root/root	usr/lib/mono/appindicator-sharp/policy.0.0.appindicator-sharp.dll -> ../gac/policy.0.0.appindicator-sharp/0.0.0.0__bcae265d1c7ab4c2/policy.0.0.appindicator-sharp.dll
+drwxr-xr-x	root/root	usr/lib/mono/gac/
+drwxr-xr-x	root/root	usr/lib/mono/gac/appindicator-sharp/
+drwxr-xr-x	root/root	usr/lib/mono/gac/appindicator-sharp/0.2.0.0__bcae265d1c7ab4c2/
+-rwxr-xr-x	root/root	usr/lib/mono/gac/appindicator-sharp/0.2.0.0__bcae265d1c7ab4c2/appindicator-sharp.dll
+-rw-r--r--	root/root	usr/lib/mono/gac/appindicator-sharp/0.2.0.0__bcae265d1c7ab4c2/appindicator-sharp.dll.config
+drwxr-xr-x	root/root	usr/lib/mono/gac/policy.0.0.appindicator-sharp/
+drwxr-xr-x	root/root	usr/lib/mono/gac/policy.0.0.appindicator-sharp/0.0.0.0__bcae265d1c7ab4c2/
+-rw-r--r--	root/root	usr/lib/mono/gac/policy.0.0.appindicator-sharp/0.0.0.0__bcae265d1c7ab4c2/policy.0.0.appindicator-sharp.config
+-rwxr-xr-x	root/root	usr/lib/mono/gac/policy.0.0.appindicator-sharp/0.0.0.0__bcae265d1c7ab4c2/policy.0.0.appindicator-sharp.dll
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/appindicator-sharp-0.1.pc

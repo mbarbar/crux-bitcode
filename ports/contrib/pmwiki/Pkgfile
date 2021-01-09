@@ -1,0 +1,18 @@
+# Description: Really cool WikiWiki clone written in PHP
+# URL:         http://www.pmwiki.org/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  php-fpm
+
+name=pmwiki
+version=2.2.133
+release=1
+source=(http://www.pmwiki.org/pub/$name/$name-$version.tgz)
+
+build () {
+    install -d $PKG/var/www/$name
+    install -d -o www -m 700 $PKG/var/www/$name/{wiki.d,uploads}
+    cp -R $name-$version/* $PKG/var/www/$name
+    mv $PKG/var/www/$name/{docs/sample-config.php,local/config.php.sample}
+    rm -r $PKG/var/www/$name/docs
+    find $PKG -name 'README*' -delete
+}

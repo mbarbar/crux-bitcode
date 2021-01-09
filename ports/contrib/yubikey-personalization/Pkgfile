@@ -1,0 +1,24 @@
+# Description: Yubico YubiKey Personalization library and tool
+# URL: https://github.com/Yubico/yubikey-personalization
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: yubico-c-client libusb
+
+name=yubikey-personalization
+version=1.20.0
+release=2
+source=(https://github.com/Yubico/yubikey-personalization/archive/v$version/$name-v$version.tar.gz 10-security-key.rules)
+
+build() {
+  cd $name-$version
+
+  # Fix build with json-c 0.14
+  sed -e 's/TRUE/1/' -e 's/FALSE/0/' -i ykpers-json.c
+
+  autoreconf --install
+  ./configure --prefix=/usr \
+    --with-udevrulesdir=/lib/udev/rules.d/
+  make
+  make DESTDIR=$PKG install
+  install -D -m0644 $SRC/10-security-key.rules \
+    $PKG/etc/udev/rules.d/10-security-key.rules
+}

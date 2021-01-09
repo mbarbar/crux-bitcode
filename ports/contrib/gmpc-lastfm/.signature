@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33pUl50B4ZMZ7M/fpsfnQTDXUl04IWBkqeMjoCbsAM0ofilQDYxQKSJBNRE7uPgfn2AGzoLwJMunN+ZvFtj/Lw4=
+SHA256 (Pkgfile) = 88b68d540749edc086746ffb7ff1ce37f98ba2357fa4051ba56cf74fa1bb9e2c
+SHA256 (.footprint) = ac5af8f22339cc983cce2111e7bf536e66b088b9433d29acfefa949b24e521c8
+SHA256 (gmpc-last-fm-0.20.0.tar.gz) = 626a49a5c0f26955901038019cb81d62915c9b37a8b5f4be17438d7fd0c67960

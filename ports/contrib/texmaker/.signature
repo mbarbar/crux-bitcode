@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF33Dl9u1FxMeYgkfnEDZbgyFQpxRbNAZrszVqz4E4Zjhsb/YgH02tsTETmd2oIey9oU6TQ6jn+8NHUUTn69f9nQM=
+SHA256 (Pkgfile) = 771de88a9ba1b86f565ec35b2289e12065a32c4599bf90432089767ddd108a9b
+SHA256 (.footprint) = c1c8b0f32e43b20e289e5809eba6782df4712b78124fcc3aead6f63eb3a91fae
+SHA256 (texmaker-5.0.4.tar.bz2) = 1de3ab3f6d6bee37a7d0b528ca1cbb7ce8e7aef5ec6a4405aff2caf9d12bd0e2

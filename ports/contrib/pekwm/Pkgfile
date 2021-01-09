@@ -1,0 +1,20 @@
+# Description: The Pek Window Manager.
+# URL: https://github.com/pekdon/pekwm
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: imlib2 xorg-libxft xorg-libxpm xorg-libxrandr
+
+name=pekwm
+version=0.1.18
+release=1
+source=(https://github.com/pekdon/pekwm/archive/release-$version.tar.gz)
+
+build() {
+	cmake -S $name-release-$version -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

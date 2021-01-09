@@ -1,0 +1,4 @@
+For html5, h.264, and WebM support you will need to install the additional ports:
+
+gst-plugins-good
+gst-libav

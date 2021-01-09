@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32FIrAKgrGGTHmhFyKx0Ka1sVrjm8TGHyBKIB7quVYvKFPfx/+C5Gyuzj5p4T2IwqNs7bYp7hwAs8URxcjGYaQ0=
+SHA256 (Pkgfile) = 0a3c473130cb9e2ec56040461787017ac1a2201332331258d1379b47f3b87baa
+SHA256 (.footprint) = 6d1f5fcca5b121e981420ecfdc57a14bad8f39b42506fb1f711c74b70101bc1c
+SHA256 (mdk4-4.1.tar.gz) = 38e9a28dbb4bfeaa1e6fef7117a324305472990f0d47582c103699fa505e1ecf

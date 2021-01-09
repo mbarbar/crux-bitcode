@@ -1,0 +1,52 @@
+From 63927cbb24c80b0cad5829338a6f76da6a873beb Mon Sep 17 00:00:00 2001
+From: Sandy Carter <bwrsandman@gmail.com>
+Date: Sat, 16 Nov 2019 09:43:29 +0100
+Subject: [PATCH 1/2] glslang: Rename and move cmake export
+
+CMake when searching for a package in config mode will by default look for
+a file called <name>Config.cmake or <lower-case-name>-config.cmake.
+The previous naming would force the user to specify the name to
+glslangTargets. The name is therefore changed to glslangConfig.cmake.
+
+On Unix, cmake will look for the config files in the following directories:
+<prefix>/(lib/<arch>|lib|share)/cmake/<name>*/          (U)
+<prefix>/(lib/<arch>|lib|share)/<name>*/                (U)
+<prefix>/(lib/<arch>|lib|share)/<name>*/(cmake|CMake)/  (U)
+Previously the destination directory was <prefix>/lib/cmake which would not
+be found.
+The destination directory now includes the package name.
+
+A namespace is added to be able to specify components.
+---
+ glslang/CMakeLists.txt | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
+index 1c7d22a2..7408d81c 100644
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -200,17 +200,18 @@ endif(WIN32)
+ if(ENABLE_GLSLANG_INSTALL)
+     if(BUILD_SHARED_LIBS)
+         install(TARGETS glslang
+-                EXPORT  glslangTargets
++                EXPORT  glslangConfig
+                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+     else()
+         install(TARGETS glslang MachineIndependent GenericCodeGen
+-                EXPORT  glslangTargets
++                EXPORT  glslangConfig
+                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     endif()
+ 
+-    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(EXPORT glslangConfig NAMESPACE glslang::
++            DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
+ 
+     set(ALL_HEADERS
+         ${GLSLANG_HEADERS}
+-- 
+2.28.0
+

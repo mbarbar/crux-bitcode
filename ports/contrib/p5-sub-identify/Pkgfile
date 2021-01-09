@@ -1,0 +1,17 @@
+# Description: Retrieve names of code references
+# URL: https://search.mcpan.org/dist/Sub-Identify
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-sub-identify
+version=0.14
+release=1
+source=(https://cpan.metacpan.org/authors/id/R/RG/RGARCIA/Sub-Identify-$version.tar.gz)
+
+build() {
+  cd Sub-Identify-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

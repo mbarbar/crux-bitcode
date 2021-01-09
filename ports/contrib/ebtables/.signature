@@ -1,0 +1,8 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/zV1AJuck58ORuUegkXDuXew7XxbsAmxQDig95bDV/03Btn4b0+er3OSdLhXxjZ951HIbrvgr6lA3zHjb75Iwk=
+SHA256 (Pkgfile) = 1f2623c74d82e3677bc1a55917a109212fc2228043562c5f81d8ec21682e9a79
+SHA256 (.footprint) = c8de5015026a5419b9db034053323e98d0a388307ceff669989b82d44f3f9235
+SHA256 (ebtables-2.0.11.tar.gz) = b71f654784a726329f88b412ef7b96b4e5d786ed2bd28193ed7b4c0d677dfd2a
+SHA256 (ebtables-2.0.11-ebt-save.patch) = 27294013cd08ccda647cdf2bb3b54a87fb44f2b2bd7bc11cdece4a37e376f58e
+SHA256 (ebtables-2.0.11-makefile.patch) = c6ec7f21c421b8df28decb6e43a5e6cdb7202a7d628917aacaaa392e98995383
+SHA256 (ebtables-2.0.11-remove-stray-atsign.patch) = c9f03364d94d5191400381868ff5f6cb2112d3e3fbdd79d805de0bb8e7c820a9

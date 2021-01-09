@@ -1,0 +1,40 @@
+#!/bin/sh
+
+case $1 in
+  start)
+    ovsdb-server --remote=punix:/var/run/openvswitch/db.sock \
+      --remote=db:Open_vSwitch,Open_vSwitch,manager_options \
+      --private-key=db:Open_vSwitch,SSL,private_key \
+      --certificate=db:Open_vSwitch,SSL,certificate \
+      --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert \
+      --pidfile --detach \
+      --log-file
+    ovs-vswitchd --pidfile --detach --log-file
+    ;;
+  stop)
+    PIDFILE=/var/run/openvswitch/ovsdb-server.pid
+    if [ -f "$PIDFILE" ]; then
+      kill $(< $PIDFILE)
+      rm -f "$PIDFILE"
+    else
+      killall -q /usr/sbin/ovsdb-server
+    fi
+    PIDFILE=/var/run/openvswitch/ovs-vswitchd.pid
+    if [ -f "$PIDFILE" ]; then
+      kill $(< $PIDFILE)
+      rm -f "$PIDFILE"
+    else
+      killall -q /usr/sbin/ovs-vswitchd
+    fi
+;;
+  restart)
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+    echo "usage: $0 [start|stop|restart]"
+    ;;
+esac
+
+# End of file

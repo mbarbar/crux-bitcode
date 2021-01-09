@@ -1,0 +1,17 @@
+# Description: Library providing ability to interpret and import visio diagrams
+# URL: https://wiki.documentfoundation.org/DLP/Libraries/libvisio
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: icu librevenge libxml2
+
+name=libvisio
+version=0.1.7
+release=1
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --without-docs
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,20 @@
+# Description: Provide utility methods for factory classes
+# URL: https://metacpan.org/pod/Class::Factory::Util
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-module-build
+
+name=p5-class-factory-util
+version=1.7
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Class-Factory-Util-$version.tar.gz)
+
+build() {
+  cd Class-Factory-Util-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

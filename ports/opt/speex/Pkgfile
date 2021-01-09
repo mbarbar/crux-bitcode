@@ -1,0 +1,22 @@
+# Description: A free codec library for speech.
+# URL: https://www.speex.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: libogg
+
+name=speex
+version=1.2.0
+release=1
+source=(http://downloads.us.xiph.org/releases/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--enable-epic-48k \
+		--enable-binaries
+
+	sed -i -e "/^SUBDIRS = /s/doc //" Makefile
+	make
+	make DESTDIR=$PKG install
+}

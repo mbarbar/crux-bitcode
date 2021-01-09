@@ -1,0 +1,17 @@
+# Description: apparently run a function in a higher stack frame
+# URL: https://metacpan.org/pod/Sub::Uplevel
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-sub-uplevel
+version=0.2800
+release=1
+source=(https://www.cpan.org/authors/id/D/DA/DAGOLDEN/Sub-Uplevel-$version.tar.gz)
+
+build() {
+  cd Sub-Uplevel-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

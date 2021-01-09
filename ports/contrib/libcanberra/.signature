@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3/VqHQplprAKA/wfKbClr7bi9HMDOQ5m2H+nL+nlz+dVdg0Q+erY7aQe357PZrAlP1D0QWB3oFn6su18IGwSRQg=
+SHA256 (Pkgfile) = 0894ae4b01ed678366c1aa099dcbdb3dd100e367f994baeb5923c05f41fba378
+SHA256 (.footprint) = a6bfc89d600feeb9fbcdfff0f8989e15b2d235f2017b16eae370a9c0ea798672
+SHA256 (libcanberra-0.30.tar.xz) = c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
+SHA256 (libcanberra-broadway-fix.patch) = 5c07bf6a7199d992e6f797de157bf4368391e597ab7a332da401269a8d8dd12b
+SHA256 (libcanberra-multi-backend.patch) = de146cae3e40a16b38c8edb4f1a3a423c64eb9c5000e36c316b677e9909c9b06

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF36Moau1VZp5AnxYkEqpebdF8kmHdsTGMKIJ3rcb/sL4EGZgihYzVdrJZZrHzaCBDarisQZ8hY5TqkafN2fF9WgU=
+SHA256 (Pkgfile) = 1c448a10f13342a50b8b126bb055cf5e572ab3d7f44fd1645bcf7aaeda1cf93f
+SHA256 (.footprint) = b21b8f2f6ddf85a7bea1f5adbb0b3799c59fd7160f242682806df9b0b4cb0cd8
+SHA256 (libodfgen-0.1.7.tar.xz) = 323e491f956c8ca2abb12c998e350670930a32317bf9662b0615dd4b3922b831

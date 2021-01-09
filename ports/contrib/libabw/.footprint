@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/abw2html
+-rwxr-xr-x	root/root	usr/bin/abw2raw
+-rwxr-xr-x	root/root	usr/bin/abw2text
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/libabw-0.1/
+drwxr-xr-x	root/root	usr/include/libabw-0.1/libabw/
+-rw-r--r--	root/root	usr/include/libabw-0.1/libabw/AbiDocument.h
+-rw-r--r--	root/root	usr/include/libabw-0.1/libabw/libabw.h
+drwxr-xr-x	root/root	usr/lib/
+-rwxr-xr-x	root/root	usr/lib/libabw-0.1.la
+lrwxrwxrwx	root/root	usr/lib/libabw-0.1.so -> libabw-0.1.so.1.0.3
+lrwxrwxrwx	root/root	usr/lib/libabw-0.1.so.1 -> libabw-0.1.so.1.0.3
+-rwxr-xr-x	root/root	usr/lib/libabw-0.1.so.1.0.3
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libabw-0.1.pc

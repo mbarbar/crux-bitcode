@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3+7meQh4fpLft51Xyzm65TIrkQ2y2H05hnK37qiSqP7Yz7xhGvcI8ibJ1dNj0d2ZjwFxDn4PHzaqTqlqinmLLgk=
+SHA256 (Pkgfile) = 1445fbc019d6a80f9aa96c261c171dec90bab73d960608fa80a48146bda7d67d
+SHA256 (.footprint) = 8b32ce4a91bbe42b86f69d9e8b01d3beb98f77a173707519fc35ab892683a9c9
+SHA256 (dkimpy-1.0.5.tar.gz) = 9a2420bf09af686736773153fca32a02ae11ecbe24b540c26104628959f91121

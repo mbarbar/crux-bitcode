@@ -1,0 +1,17 @@
+# Description: Interface to the libxml library
+# URL: https://metacpan.org/pod/distribution/XML-LibXML/LibXML.pod
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-alien-libxml2 p5-xml-namespacesupport p5-xml-sax
+
+name=p5-xml-libxml
+version=2.0206
+release=1
+source=(https://www.cpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-$version.tar.gz)
+
+build() {
+  cd XML-LibXML-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make pure_install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

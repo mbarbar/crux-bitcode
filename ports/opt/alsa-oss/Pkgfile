@@ -1,0 +1,16 @@
+# Description: ALSA OSS Emulation
+# URL: http://www.alsa-project.org/
+# Maintainer: Matt Housh, jaeger at crux dot ninja
+# Depends on: alsa-lib
+
+name=alsa-oss
+version=1.1.8
+release=1
+source=(ftp://ftp.alsa-project.org/pub/oss-lib/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

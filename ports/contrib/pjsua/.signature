@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF39kt3SrpUI/D5yNTyrSVO3WuSj+la+qlyXp+ewBbUE+rCjVSu0o45OjhUIQXlzGP3JFCa1QfymPAyzefAdlGggs=
+SHA256 (Pkgfile) = f77de81bee0a0c72920aa428f0c53cd61f6a0f0d587274b1b76e63c01e0e68b6
+SHA256 (.footprint) = 355ab182d0044fcfd7b0ff8b008f885f6d85118efcb473efde1a5b1fc21327a3
+SHA256 (pjproject-2.10.tar.gz) = 936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de
+SHA256 (config_site.h) = 61fa2a76d069aa5c95b6e2c539f7b20e2ccf0b126fc60c18117762541d0a7472
+SHA256 (0001-Don-t-build-Java-bindings.patch) = c6673d97185c2383140b6d915aeaa7e525c9cfb5f51c097472cf4773b4f87ab4

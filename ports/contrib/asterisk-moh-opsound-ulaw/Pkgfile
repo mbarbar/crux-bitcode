@@ -1,0 +1,14 @@
+# Description:	Opensource music on hold samples for asterisk
+# URL:		http://www.asterisk.org
+# Maintainer:   Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	asterisk
+
+name=asterisk-moh-opsound-ulaw
+version=2.03
+release=1
+source=(http://downloads.asterisk.org/pub/telephony/sounds/releases/$name-$version.tar.gz)
+
+build () {
+	mkdir -p $PKG/var/lib/asterisk/moh
+	mv $SRC/*.${name##*-} $PKG/var/lib/asterisk/moh
+}

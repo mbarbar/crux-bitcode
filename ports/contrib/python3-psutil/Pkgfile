@@ -1,0 +1,16 @@
+# Description: A cross-platform process and system utilities module for Python
+# URL: https://github.com/giampaolo/psutil
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-setuptools
+
+name=python3-psutil
+version=5.7.3
+release=1
+source=(https://github.com/giampaolo/psutil/archive/release-$version/$name-release-$version.tar.gz)
+
+build() {
+  cd psutil-release-$version
+  /usr/bin/python3 setup.py build --build-lib=build/python
+  /usr/bin/python3 setup.py build --build-lib=build/python \
+    install --root=$PKG --optimize=1 --skip-build
+}

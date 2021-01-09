@@ -1,0 +1,18 @@
+# Description: X Fixes extension client library
+# URL: http://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: xorg-libx11
+
+name=xorg-libxfixes
+version=5.0.3
+release=1
+source=(https://www.x.org/releases/individual/lib/libXfixes-$version.tar.bz2)
+
+build() {
+	cd libXfixes-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

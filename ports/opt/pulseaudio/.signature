@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/U1GgehS2TMZT+9W2QCgMlRY7VQ0YhrLE9BkA2bnWDc7hw2r1Jel1rFu4eL1ns/+zW1Q0p+/CecP4bXd3mFxwwY=
+SHA256 (Pkgfile) = a9a2795c076fdacfeb9e427884662e8fb22f7badc45c80c0f57f895a7764405d
+SHA256 (.footprint) = 7b73faf1a115d1292ce78876e729c1941f09d79e6d9372389e2f434db8fb8d82
+SHA256 (pulseaudio-14.0.tar.xz) = a834775d9382b055504e5ee7625dc50768daac29329531deb6597bf05e06c261

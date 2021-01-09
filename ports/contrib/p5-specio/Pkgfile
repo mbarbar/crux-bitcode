@@ -1,0 +1,17 @@
+# Description: Type constraints and coercions for Perl
+# URL: https://metacpan.org/pod/Specio
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: p5-devel-stacktrace p5-mro-compat p5-role-tiny
+
+name=p5-specio
+version=0.46
+release=1
+source=(https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-$version.tar.gz)
+
+build() {
+  cd Specio-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make install DESTDIR=$PKG
+  find $PKG \( -name '.packlist' -o -name '*.pod' \) -delete
+}

@@ -1,0 +1,17 @@
+# Description: Yubico YubiKey client C library
+# URL: https://github.com/Yubico/yubico-c-client
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: yubico-c help2man
+
+name=yubico-c-client
+version=2.15
+release=1
+source=(https://github.com/Yubico/yubico-c-client/archive/ykclient-$version.tar.gz)
+
+build() {
+  cd $name-ykclient-$version
+  autoreconf --install
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

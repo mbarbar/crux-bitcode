@@ -1,0 +1,27 @@
+# Description: A music player and library organizer.
+# URL: https://www.clementine-player.org/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: boost crypto++ glew gst-plugins-bad gst-plugins-good gst-plugins-ugly protobuf qt5
+
+name=clementine
+version=1.4.0rc1-269
+release=1
+source=(https://github.com/clementine-player/Clementine/archive/$version-g68d375c43/$name-$version.tar.gz
+	clementine-gcc6.patch)
+
+build() {
+	# make sure we do not have ccache masquerade directory in PATH
+	# as cmake calls ccache directly, this avoids recursvely
+	# calling ccache and CCACHE_PREFIX
+	PATH=$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')
+
+	cmake -S Clementine-68d375c43c108d1888c64b14d736597dbb83f0b7 -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_CXX_FLAGS="$CXXFLAGS -Wno-catch-value" \
+		-Wno-dev
+
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
+}

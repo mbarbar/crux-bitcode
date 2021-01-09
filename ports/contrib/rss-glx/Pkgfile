@@ -1,0 +1,34 @@
+# Description: Linux GLX port of the Really Slick Screensavers.
+# URL: http://rss-glx.sourceforge.net/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: imagemagick-compat xscreensaver
+
+name=rss-glx
+version=0.9.1
+release=4
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/${name}_$version.tar.bz2)
+
+build() {
+	cd ${name}_$version
+
+	PKG_CONFIG_PATH="/usr/lib/imagemagick-compat/pkgconfig" \
+	CONFIG_SHELL=/bin/bash \
+	./configure \
+		--prefix=/usr \
+		--with-configdir=/usr/share/xscreensaver/config \
+		--disable-sound \
+		--disable-static \
+		--enable-shared
+
+	CFLAGS="$CFLAGS -I/usr/include/ImageMagick-6" make
+	make DESTDIR=$PKG install
+	install -d $PKG/usr/lib/xscreensaver $PKG/usr/sbin
+	mv $PKG/usr/bin/rss-glx_install.pl $PKG/usr/sbin/rss-glx_install
+
+	(
+		cd $PKG/usr/lib/xscreensaver
+		for i in $PKG/usr/bin/*; do
+			ln -s /usr/bin/$(basename $i)
+		done
+	)
+}

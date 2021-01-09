@@ -1,0 +1,19 @@
+# Description: Packet capture library
+# URL:         https://www.tcpdump.org/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  libusb
+
+name=libpcap
+version=1.9.1
+release=1
+source=(https://www.tcpdump.org/release/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+                --disable-dbus \
+                --without-libnl
+    make
+    make DESTDIR=$PKG install install-shared
+}

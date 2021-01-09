@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3zJY7VvqCEBkhkBLCKyniuWqBDnxA+/YHD9DougMEFWixNiZ9x0Wx7ummoE5aC5qt4I3RfCqvgVXJ50ADmo4RAE=
+SHA256 (Pkgfile) = fa8d6d858d0b4e1f4f79dcd9f64154751696510801ee594c5859dbebcfec7562
+SHA256 (.footprint) = 34a8454214edf058caa654bfcd0879aabd9d3cff33c6dc93b6591d51cb2a4266
+SHA256 (zziplib-0.13.71.tar.gz) = 2ee1e0fbbb78ec7cc46bde5b62857bc51f8d665dd265577cf93584344b8b9de2

@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/pwhash3
+-rwxr-xr-x	root/root	usr/bin/whoismac3
+-rwxr-xr-x	root/root	usr/bin/wlancap2hcx3
+-rwxr-xr-x	root/root	usr/bin/wlancapinfo3
+-rwxr-xr-x	root/root	usr/bin/wlandump-sts3
+-rwxr-xr-x	root/root	usr/bin/wlandump3
+-rwxr-xr-x	root/root	usr/bin/wlanhc2hcx3
+-rwxr-xr-x	root/root	usr/bin/wlanhcx2cap3
+-rwxr-xr-x	root/root	usr/bin/wlanhcx2essid3
+-rwxr-xr-x	root/root	usr/bin/wlanhcx2john3
+-rwxr-xr-x	root/root	usr/bin/wlanhcx2ssid3
+-rwxr-xr-x	root/root	usr/bin/wlanhcxinfo3
+-rwxr-xr-x	root/root	usr/bin/wlanhcxmnc3
+-rwxr-xr-x	root/root	usr/bin/wlanscan-sts3
+-rwxr-xr-x	root/root	usr/bin/wlanscan3

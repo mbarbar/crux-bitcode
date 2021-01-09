@@ -1,0 +1,11 @@
+--- asterisk-13.13.1/menuselect-tree.orig	2017-01-30 11:04:27.059563497 +0900
++++ asterisk-13.13.1/menuselect-tree	2017-01-30 11:08:43.845228750 +0900
+@@ -2282,7 +2282,7 @@
+ 	</category>
+ 	<category name="MENUSELECT_MOH" displayname="Music On Hold File Packages" positive_output="yes">
+ 		<member name="MOH-OPSOUND-WAV" displayname="opsound.org Music On Hold Files, WAV format" >
+-			<defaultenabled>yes</defaultenabled>
++			<defaultenabled>no</defaultenabled>
+ 			<support_level>core</support_level>
+ 		</member>
+ 		<member name="MOH-OPSOUND-ULAW" displayname="opsound.org Music On Hold Files, mu-Law format" >

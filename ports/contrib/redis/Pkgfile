@@ -1,0 +1,24 @@
+# Description: An open source, advanced key-value store
+# URL:         https://redis.io
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    James Mills, prologic at shortcircuit dot net dot au
+
+name=redis
+version=6.0.9
+release=1
+source=(http://download.redis.io/releases/$name-$version.tar.gz redis.conf \
+redis.rc)
+
+build() {
+    cd $name-$version/src
+
+    make
+    make PREFIX=$PKG/usr/ install
+
+    install -D -m 755 $SRC/redis.rc $PKG/etc/rc.d/redis
+    install -D -m 644 -o redis $SRC/redis.conf $PKG/etc/redis.conf
+    install -d -m 755 -o redis $PKG/var/lib/redis
+
+    install -d -m 755 $PKG/var/log
+    install -m 640 -o redis -g redis /dev/null $PKG/var/log/redis.log
+}

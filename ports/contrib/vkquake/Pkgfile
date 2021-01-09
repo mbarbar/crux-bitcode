@@ -1,0 +1,25 @@
+# Description: Vulkan Quake port based on QuakeSpasm
+# URL: https://github.com/Novum/vkQuake
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libmad libsdl2 libvorbis vulkan-loader xorg-libx11
+
+name=vkquake
+version=1.05.1
+release=1
+source=(https://github.com/Novum/vkQuake/archive/$version/vkQuake-$version.tar.gz
+  vkquake.desktop
+  vkquake.png)
+
+build() {
+  cd vkQuake-$version
+  make -C Quake clean
+  make -C Quake \
+      DO_USERDIRS=1
+  make -C Misc/vq_pak
+
+  install -Dm755 Quake/vkquake $PKG/usr/bin/vkquake
+  install -Dm644 Misc/vq_pak/vkquake.pak $PKG/usr/share/games/vkquake/vkquake.pak
+
+  install -Dm644 $SRC/$name.desktop $PKG/usr/share/applications/vkquake.desktop
+  install -Dm644 $SRC/$name.png $PKG/usr/share/pixmaps/vkquake.png
+}

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32WBdGR+0I85HI/od3GZKGSOvpfzmQ2dDI9UKuG4OVHc8kZKHC0miUK6W0v1H8cS/8OK9w3cjHvsF05b97rCdQY=
+SHA256 (Pkgfile) = 462f14ed08cbb1d8dbc221c20097669785262f8c8d60624d1d9007eb4450c0ff
+SHA256 (.footprint) = aaab6d3c05955ea348a50894bf2c0ed1f45f521eae896a2ea154a0283d46513e
+SHA256 (Log-Log4perl-1.53.tar.gz) = 8fbfb48d016eec7344a539f3ad70870b4ac4638e49666bfa70d10f6ffd4ac38e

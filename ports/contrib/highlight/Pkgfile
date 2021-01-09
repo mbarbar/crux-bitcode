@@ -1,0 +1,17 @@
+# Description: Source code to formatted text converter
+# URL: http://www.andre-simon.de/doku/highlight/en/highlight.php
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: lua boost
+
+name=highlight
+version=3.59
+release=1
+source=(http://www.andre-simon.de/zip/$name-$version.zip)
+
+build() {
+  cd $name-$version
+  make
+  make cli
+  make DESTDIR=${PKG} install
+  rm -rf ${PKG}/usr/share/doc
+}

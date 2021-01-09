@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF35S3OJ4hBUwYJhPwMIT5Gdy/a+7K4Ww6GSvRHuPJLCQJVC5FlSohmFp0Yom3k7B54fsrOSkjfTDcx9Hk4WKBcgg=
+SHA256 (Pkgfile) = e8411b8b751d55b4a3682ff49824a6722d8f7c21ab504859d60972e4b06c1bcd
+SHA256 (.footprint) = c7762e0f49822a8ec326a0233728a76a1b8a01d94fce471ed1700a18fbf82b08
+SHA256 (pycryptodome-3.9.9.tar.gz) = 910e202a557e1131b1c1b3f17a63914d57aac55cf9fb9b51644962841c3995c4

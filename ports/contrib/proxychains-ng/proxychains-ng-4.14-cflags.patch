@@ -1,0 +1,25 @@
+--- Makefile.orig	2020-11-01 10:22:00.128000000 +0200
++++ Makefile	2020-11-01 10:23:11.800000000 +0200
+@@ -22,7 +22,7 @@ LOBJS = src/nameinfo.o src/version.o \
+ 
+ GENH = src/version.h
+ 
+-CFLAGS  += -Wall -O0 -g -std=c99 -D_GNU_SOURCE -pipe
++CFLAGS  += -Wall -std=c99 -D_GNU_SOURCE
+ NO_AS_NEEDED = -Wl,--no-as-needed
+ LIBDL   = -ldl
+ LDFLAGS = -fPIC $(NO_AS_NEEDED) $(LIBDL) -lpthread
+@@ -82,11 +82,11 @@ src/version.o: src/version.h
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) $(CFLAGS_MAIN) $(INC) $(PIC) -c -o $@ $<
+ 
+ $(LDSO_PATHNAME): $(LOBJS)
+-	$(CC) $(LDFLAGS) $(LD_SET_SONAME)$(LDSO_PATHNAME) $(USER_LDFLAGS) \
++	$(CC) $(CFLAGS) $(LDFLAGS) $(LD_SET_SONAME)$(LDSO_PATHNAME) $(USER_LDFLAGS) \
+ 		-shared -o $@ $(LOBJS) $(SOCKET_LIBS)
+ 
+ $(ALL_TOOLS): $(OBJS)
+-	$(CC) src/main.o src/common.o $(USER_LDFLAGS) -o $(PXCHAINS)
++	$(CC) $(CFLAGS) src/main.o src/common.o $(USER_LDFLAGS) -o $(PXCHAINS)
+ 
+ 
+ .PHONY: all clean install install-config install-libs install-tools

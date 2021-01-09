@@ -1,0 +1,18 @@
+# Description: Python HTML/XML Parser.
+# URL: https://www.crummy.com/software/BeautifulSoup/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: python3-chardet python3-soupsieve
+
+name=python3-beautifulsoup4
+version=4.9.3
+release=1
+source=(https://files.pythonhosted.org/packages/source/b/beautifulsoup4/beautifulsoup4-$version.tar.gz)
+
+build() {
+	cd ${name#*-}-$version
+
+	/usr/bin/python3 setup.py build
+
+	/usr/bin/python3 setup.py install \
+		--prefix=/usr --root=$PKG --optimize=1
+}

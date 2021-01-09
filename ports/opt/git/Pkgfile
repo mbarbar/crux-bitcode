@@ -1,0 +1,39 @@
+# Description: Directory content manager
+# URL:         https://git-scm.com/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  expat curl
+# Optional:    tk
+
+name=git
+version=2.29.2
+release=1
+source=(https://www.kernel.org/pub/software/scm/git/git-{,manpages-}$version.tar.xz
+        git gitd.rc)
+
+build() {
+  cd $name-$version
+
+  make CFLAGS="$CFLAGS" \
+       prefix=/usr \
+       gitexecdir=/usr/lib/git-core \
+       INSTALLSITEMAN3DIR=/usr/share/man/man3 \
+       perllibdir=$(perl -e 'use Config; print $Config::Config{'installsitelib'}') \
+       DESTDIR=$PKG install
+
+  cd $SRC
+
+  for i in man*; do
+    install -d $PKG/usr/share/man/$i
+    install -m 644 $i/* $PKG/usr/share/man/$i;
+  done
+
+  find $PKG \( -name perllocal.pod -o -name .packlist \) -delete
+  rm -rf $PKG/usr/share/{locale,gitk}
+
+  # install the git ports driver
+  install -d $PKG/etc/ports/drivers
+  install $SRC/git $PKG/etc/ports/drivers/git
+
+  install -D $SRC/gitd.rc $PKG/etc/rc.d/gitd
+
+}

@@ -1,0 +1,33 @@
+# Description: High performance C-based HTTP client library built upon the Apache Portable Runtime (APR) library.
+# URL:         https://serf.apache.org/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Packager:    Jose V Beneyto, sepen at crux dot nu
+# Depends on:  apr scons
+
+name=serf
+version=1.3.9
+release=2
+source=(https://archive.apache.org/dist/$name/$name-$version.tar.bz2
+        scons-py3.patch)
+
+build() {
+    cd $name-$version
+
+    # Adjust to scons built with python3
+	# (should go away if/when python3 becomes default python)
+    patch -Np1 -i $SRC/scons-py3.patch
+    ln -s /usr/bin/python3 python
+    export PATH=$SRC/$name-$version:$PATH
+
+    # removes runtime path from shared library
+    sed -i -e '/Append/ s/RPATH=libdir,//' SConstruct
+    # disable building and installing of the static library
+    sed -i -e '/Default/ s/lib_static,//' SConstruct
+    sed -i -e '/Alias/ s/install_static,//' SConstruct
+
+    scons PREFIX=/usr LIBDIR=/usr/lib
+    scons install --install-sandbox=$PKG
+
+    # serf-1.3.9 does not install world writable files
+    chmod -cR go-w $PKG/usr/include/serf-1
+}

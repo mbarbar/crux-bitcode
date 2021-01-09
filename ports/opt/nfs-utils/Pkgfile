@@ -1,0 +1,40 @@
+# Description: NFS utilities 
+# URL:         http://nfs.sourceforge.net/
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  libdevmapper util-linux libcap rpcbind libevent keyutils sqlite3 python3
+
+name=nfs-utils
+version=2.5.2
+release=1
+source=(https://www.kernel.org/pub/linux/utils/$name/$version/$name-$version.tar.xz
+        exports idmapd.conf
+        nfs nfsclient nfsserver rpc.idmapd rpc.statd rpc.mountd rpc.nfsd nfsdcld)
+
+build () {
+    cd $name-$version
+
+    CONFIG_SHELL=/bin/bash \
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --with-statedir=/var/lib/nfs \
+                --without-tcp-wrappers \
+                --disable-gss \
+                --enable-libmount-mount
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/etc/rc.d
+
+    install -m 755 $SRC/nfs{,client,server,dcld} $PKG/etc/rc.d/
+    install -m 755 $SRC/rpc.* $PKG/etc/rc.d/
+    install -m 644 $SRC/{exports,idmapd.conf} $PKG/etc/
+
+    install -m 644 utils/mount/nfsmount.conf $PKG/etc/
+    install -m 644 nfs.conf $PKG/etc/
+
+    install -d $PKG/var/lib/nfs/{rpc_pipefs,v4recovery,nfsdcltrack,nfsdcld}
+    install -d $PKG/etc/exports.d
+
+    # force rpc.statd to run as user nobody
+    chown nobody $PKG/var/lib/nfs
+}

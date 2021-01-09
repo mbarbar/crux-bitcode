@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF368NtyKH3hFLF+hHmT56abiPqIz9Tbt3H56JOwICWE6y0yYLUDq+LX50UfJSe9kVpjUg/XR5kL2bk4xgopcQVgk=
+SHA256 (Pkgfile) = 2a6575d76a8cc5fff07e2f0cef83de0bfc41b9c36145ffebceaf27d6b6cdde47
+SHA256 (.footprint) = 9c4eab1197ecc61cd2b121c1da909ec4b7e7f8629471b41ee4f8b9d1736e95e9
+SHA256 (Heimdall-v1.4.2.tar.bz2) = 2de553496fff1441a3e917b3da9e862192bd7bb05d9cab376fefcc12f82d2f05

@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/SlTmKYBXgpnSiF9FUxosDLjbcQYlrrBcsXrprjw9RoFttOPeITnJDDSDovyC/W2CObVx1Ex4NGl4q9hujmAYgQ=
+SHA256 (Pkgfile) = 55daa9a72ad6fb8e0c8c8abe6e3cf28fae8c2767ea3babc261312fe0ca860dd8
+SHA256 (.footprint) = 9655ab362190dc086f05c29d5b1695fca93a66f0e22782a68ffd8c199f47ff14
+SHA256 (libid3tag-0.15.1b.tar.gz) = 63da4f6e7997278f8a3fef4c6a372d342f705051d1eeb6a46a86b03610e26151
+SHA256 (id3tag.pc) = 1c04ccd074290031a6fab00b3cc7aef9afc06fbce6959b2a2098dc3f77df707e

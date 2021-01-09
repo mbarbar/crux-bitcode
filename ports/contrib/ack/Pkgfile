@@ -1,0 +1,19 @@
+# Description: tool like grep, aimed at programmers with large trees of heterogeneous source code
+# URL:         https://beyondgrep.com/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Bartlomiej Palmowski, rotwang at crux dot org dot pl
+
+name=ack
+version=3.4.0
+release=1
+source=(https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/$name-v$version.tar.gz)
+
+build() {
+  cd $name-v$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG \(\
+    -iname '*perllocal.pod*' -o \
+    -iname '*.packlist*' \) -delete
+}

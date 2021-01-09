@@ -1,0 +1,14 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/purple-2/
+-rwxr-xr-x	root/root	usr/lib/purple-2/libhangouts.so
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/pixmaps/
+drwxr-xr-x	root/root	usr/share/pixmaps/pidgin/
+drwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/
+drwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/16/
+-rwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/16/hangouts.png
+drwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/22/
+-rwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/22/hangouts.png
+drwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/48/
+-rwxr-xr-x	root/root	usr/share/pixmaps/pidgin/protocols/48/hangouts.png

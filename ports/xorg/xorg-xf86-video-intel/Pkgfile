@@ -1,0 +1,21 @@
+# Description: Intel graphics video driver
+# URL:         https://www.x.org/wiki/
+# Maintainer:  CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on:  xorg-libxscrnsaver xorg-server
+
+name=xorg-xf86-video-intel
+version=2.99.917-909
+release=1
+source=(https://crux.nu/files/distfiles/xf86-video-intel-$version.tar.xz)
+
+build() {
+	cd xf86-video-intel-$version
+
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/xf86-video-intel \
+		--enable-tools
+
+	make
+	make DESTDIR=$PKG install
+}

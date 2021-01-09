@@ -1,0 +1,24 @@
+POST-INSTALL:
+
+To use distcc, just:
+a) Set DISTCC_ALLOW=IPADDR[/MASK] to /etc/rc.conf.
+b) Export DISTCC_HOSTS to include the compilation hosts.
+c) Prepend /usr/lib/distcc to your $PATH environment variable.
+   (e.g. in pkgmk.conf)
+d) Export MAKEFLAGS=-j<n> where n is a number representing the number of
+  	parallel jobs you want.
+e) Optionally set DISTCC_LOG_LEVEL=LEVEL in /etc/rc.conf to be more or
+	less verbose to syslogd.
+
+
+DISTCCD SERVICE
+
+There's a service to simplify running distccd. By default, it wont run without DISTCC_ALLOW=IPADDR[/MASK] to accept connections and runs as user 'nobody'. Both values can be overridden in /etc/rc.conf, like this:
+
+----
+DISTCC_ALLOW='192.168.1.0/24'
+DISTCC_USER='pkgmk'
+----
+
+There is more information on the public wiki http://crux.nu/Public/HomePage
+and in the man pages 'man distccd' and 'man distcc'.

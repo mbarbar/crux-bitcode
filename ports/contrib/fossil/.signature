@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32enYcFgvVK/XelMI+WXBmA33Hk6BABWxZ/AGohZG9nErZM8ua1FfwYMoFD3d6UWcew7MqND4Ow+ganbrFiajgU=
+SHA256 (Pkgfile) = e7574b599f8cffe1357a578ddaca2fba3b85c599c714cded2b94510f9f025e7a
+SHA256 (.footprint) = 7a2f53c9c11a5a3480015007aeed229c1cc6577748f4f165c23ce9dc70cebfc7
+SHA256 (fossil-src-2.12.1.tar.gz) = 822326ffcfed3748edaf4cfd5ab45b23225dea840304f765d1d55d2e6c7d6603

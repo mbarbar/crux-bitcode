@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/aqACShCJ1R9Ih5fj/SXCLkyrQI+yYaLI4XCXzreZKNCJbE/mIwomCupQbdtisD5pzrny4nMMUSCYMfC3WOuFgQ=
+SHA256 (Pkgfile) = 971759b4bc86d4496eaf72c52df6d458e08763badad3abd15cb7f49f4e251206
+SHA256 (.footprint) = 417a6031c49fdb998f877bbb309cbd66e7751e6a49c9012e734ba8665935d95a
+SHA256 (autoconf-archive-2019.01.06.tar.xz) = 17195c833098da79de5778ee90948f4c5d90ed1a0cf8391b4ab348e2ec511e3f

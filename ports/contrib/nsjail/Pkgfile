@@ -1,0 +1,31 @@
+# Description: Linux process isolation tool utilizing namespaces, resource limits, seccomp-bpf
+# URL:         https://nsjail.com
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  libnl protobuf
+
+name=nsjail
+version=3.0
+kafel_version=8e69b8e
+release=1
+source=(https://github.com/google/$name/archive/$version/$name-$version.tar.gz
+	https://github.com/google/kafel/archive/$kafel_version/kafel-$kafel_version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	# Fix build fail on deprecated-declarartions warning (config.proto/config.pb.cc)
+	#CXXFLAGS="$CXXFLAGS -Wno-deprecated-declarations"
+
+	# workaround to avoid using `git submodule update --init`
+	rm -rf kafel
+	mv $SRC/kafel-$kafel_version* kafel
+
+	make
+
+	install -D -m 755 nsjail $PKG/usr/bin/nsjail
+	install -d -m 755 $PKG/usr/share/nsjail/configs
+	install -D -m 644 configs/* $PKG/usr/share/nsjail/configs
+	install -D -m 644 config.proto $PKG/usr/share/nsjail/config.proto
+	install -D -m 644 Dockerfile $PKG/usr/share/nsjail/Dockerfile
+	install -D -m 644 nsjail.1 $PKG/usr/share/man/man1/nsjail.1
+}

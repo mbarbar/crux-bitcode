@@ -1,0 +1,17 @@
+# Description: a program for identifying or deleting duplicate files residing within specified directories
+# URL: https://github.com/adrianlopezroche/fdupes
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libpcre2
+
+name=fdupes
+version=2.1.2
+release=1
+source=(https://github.com/adrianlopezroche/fdupes/releases/download/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  autoreconf -vfi
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

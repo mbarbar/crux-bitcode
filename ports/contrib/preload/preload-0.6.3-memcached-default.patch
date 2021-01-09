@@ -1,0 +1,12 @@
+diff -pruN preload-0.6.3.orig/src/confkeys.h preload-0.6.3/src/confkeys.h
+--- preload-0.6.3.orig/src/confkeys.h	2008-07-29 22:49:04.815140125 +1000
++++ preload-0.6.3/src/confkeys.h	2008-07-29 23:01:21.253142394 +1000
+@@ -3,7 +3,7 @@ confkey(model,	boolean,	usecorrelation,	
+ confkey(model,	integer,	minsize,	2000000,	bytes)
+ confkey(model,	integer,	memtotal,	    -10,	signed_integer_percent)
+ confkey(model,	integer,	memfree,	     50,	signed_integer_percent)
+-confkey(model,	integer,	memcached,	      0,	signed_integer_percent)
++confkey(model,	integer,	memcached,	      30,	signed_integer_percent)
+ confkey(system,	boolean,	doscan,		   true,	-)
+ confkey(system,	boolean,	dopredict,	   true,	-)
+ confkey(system,	integer,	autosave,	   3600,	seconds)

@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF3y57VEQ0fc8vvif5PuK3QlZgdQfyT16YjVOGIkKcY7bPY1swYpsFEmO7g+GjZazmlvbU35N74tbgaklSzysncAw=
+SHA256 (Pkgfile) = 216a809d838c6cacc7266de1dd8957595d35fc57ba443b5f0e9cec34610157ff
+SHA256 (.footprint) = f731fcb734be1775d0a4083821d6c9483a410f2fd734e245b9ae7fd37680c7c3
+SHA256 (Gtk2-1.24993.tar.gz) = 49c443743b2eefe11a768002724f7f6a4c48efc94ff3cd3a559fb7e7b693c967

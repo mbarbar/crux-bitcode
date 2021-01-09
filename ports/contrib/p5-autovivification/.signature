@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32sKoRhD69djJ6pElYi2UHJDNg6kTlJSKhArv/z9/Z4hA0rTEXfbVPp8feZC7K5G12a8zfXADNy1rjbSyzKk3AM=
+SHA256 (Pkgfile) = aec4663021918db5e3497db3890b1edd05775bd717385a855aa9d4ee26dd2c8e
+SHA256 (.footprint) = 0fd452253376d4970125d8818875a6989994454ee94d983ffa403bbac9339903
+SHA256 (autovivification-0.18.tar.gz) = 2d99975685242980d0a9904f639144c059d6ece15899efde4acb742d3253f105

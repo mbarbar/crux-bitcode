@@ -1,0 +1,20 @@
+# Description: Only use Sub::Exporter if you need it
+# URL: https://metacpan.org/pod/Sub::Exporter::Progressive
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=p5-sub-exporter-progressive
+version=0.001013
+release=1
+source=(https://cpan.metacpan.org/authors/id/F/FR/FREW/Sub-Exporter-Progressive-$version.tar.gz)
+
+build() {
+  cd Sub-Exporter-Progressive-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -o \
+    -name perllocal.pod -o \
+    -name README -o \
+    -name '*.bs' | xargs rm
+}

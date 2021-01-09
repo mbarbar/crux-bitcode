@@ -1,0 +1,11 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31/xiZ6UaVCU1fAZ9z9g9MByP7FKZA1Dz4t19DpQSdhbM1sNagSSRUQZUdj2qNAIkZYLzOe/IDU4gCYFr2Ic0A0=
+SHA256 (Pkgfile) = d538601dcca7d3b30e21ecc6e42af943844d3c43e30158728e13d2c06116db16
+SHA256 (.footprint) = 88ec1f95a5745559087c81243bec1451ff26328f24234e1b50dad9e9c59c5d74
+SHA256 (hfsplus_1.0.4.src.tar.bz2) = 032b1c663b1400f3ea1c2ec1a03adebd6e57e51fd38e997befdd223448a10c6d
+SHA256 (hfsplusutils-1.0.4-cflags.patch) = 9433ca3555cd4a64058feffbd09834c560eac9fa873397ac32194059f7f6324c
+SHA256 (hfsplusutils-1.0.4-errno.patch) = 2be73a0bc6234998497571c30985f804c084191578de416da59ee652d3728f46
+SHA256 (hfsplusutils-1.0.4-gcc4.patch) = f7ddb18849d6856204e7db6f7bfe010ec8683fd63f1e08db2ae0f52f42c5f108
+SHA256 (hfsplusutils-1.0.4-glob.patch) = bb845d54979a7eccf46f00d88b0e426b350bcaa39af0c46e945d2b1e632a36ab
+SHA256 (hfsplusutils-1.0.4-stdlib.patch) = 8ed4d468541735011dbff28b20f0783c00156544317126d178574244a3ca1191
+SHA256 (hfsplusutils-1.0.4-string.patch) = cf2649c3c29c6610feb42b2c12fd5aac71f4877d5af37d329f45eba685679bfe

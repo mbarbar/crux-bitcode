@@ -1,0 +1,6 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF338Xw1hdTCRlJyTCqOnB1Gw3bQw7rCe0VTPU7l7nEGgWGP/Gp85M3KSoaozb15bC+eYuSP8/PRP61M3HJtILbAU=
+SHA256 (Pkgfile) = dbdf48ea0d6786bf54ea49d8be91969ceb3ffd2fd0be885146095705daff0c1b
+SHA256 (.footprint) = 3bfb73d36a30e2f37c10812ea6b713190e9187368f14336e5fe9e69c0fccef3b
+SHA256 (openvpn-2.5.0.tar.xz) = 029a426e44d656cb4e1189319c95fe6fc9864247724f5599d99df9c4c3478fbd
+SHA256 (openvpn) = 8f0b3932f074600cab2db334b33a7528ddcb4d1380e546f7d8103708413e89b0

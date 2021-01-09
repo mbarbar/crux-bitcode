@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF34gQpWzNiCQpI3pVyXohyCf2cHLnNK8hpZurqr7lgop9KI1GhKTyopgaGFRFeq72Mtyn+/hk3H6rKbPx9l5YCgQ=
+SHA256 (Pkgfile) = c7b4cb4794e91e74d042dc4d432ca67bbe19d6dcc08a89488ad5c2d2229cdfae
+SHA256 (.footprint) = 11575d6954422807c72d88d0c5613855fb0026a693cc5d945d2f5ba42b9ca0df
+SHA256 (streamlink-1.7.0.tar.gz) = f87a62a47212d94769929bd040d9c186b461643bdbda06f839b99ec9efefb87a

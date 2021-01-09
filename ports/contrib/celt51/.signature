@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF32co+d6ZQzG6RAsuwPXqCPex89/IVZZAjma+qsf+Ypi5K7Om0E4mQBKPRMOR003n47rddn36E5HcdY3R7VlRJQ8=
+SHA256 (Pkgfile) = ee605efcd16ccf28750837bade1e7b584a901732a2679f6282d93bdf9c86c554
+SHA256 (.footprint) = 8bfd134df84520ceac298702dd86d7de5fc444a86ee135dbe6cf4bf430b6edb4
+SHA256 (celt-compat-v0.5.1.3.tar.bz2) = 601b589aec395a947432e8c35a9a1670f4445b279c02983e05486f705d476e0c

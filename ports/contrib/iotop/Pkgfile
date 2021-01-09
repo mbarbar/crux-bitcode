@@ -1,0 +1,20 @@
+# Description: top like program to display I/O load.
+# URL: http://guichaz.free.fr/iotop/
+# Maintainer: Fredrik Rinnestam, fredrik at crux dot nu
+# Depends on: python3
+
+name=iotop
+version=0.6
+release=2
+source=(http://guichaz.free.fr/$name/files/$name-$version.tar.bz2 \
+	0001-Make-setp.py-compatible-with-python3.patch)
+
+build() {
+	cd $name-$version
+
+	chmod ag+r iotop.8
+	patch -p1 -i $SRC/0001-Make-setp.py-compatible-with-python3.patch
+
+	/usr/bin/python3 setup.py install --root=$PKG --prefix=/usr
+	rm -r $PKG/usr/lib/python*/site-packages/iotop-*.egg-info
+}

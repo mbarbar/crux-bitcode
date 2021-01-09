@@ -1,0 +1,17 @@
+# Description: A top-like interface to your netfilter connection-tracking table.
+# URL: https://www.phildev.net/iptstate/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Depends on: ncurses libnetfilter_conntrack
+
+name=iptstate
+version=2.2.6
+release=1
+source=(https://github.com/jaymzh/iptstate/releases/download/v$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	make
+	install -D -m755 $name "$PKG/usr/sbin/$name"
+	install -D -m644 $name.8 "$PKG/usr/share/man/man8/$name.8"
+}
+

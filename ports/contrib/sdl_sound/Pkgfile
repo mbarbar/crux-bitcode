@@ -1,0 +1,26 @@
+# Description: A library for decoding various sound formats.
+# URL: http://icculus.org/SDL_sound/
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Packager: Aaron Marks, nymacro at gmail dot com
+# Depends on: flac libmikmod libmodplug libvorbis physfs smpeg speex
+
+name=sdl_sound
+version=1.0.3
+release=2
+source=(http://icculus.org/SDL_sound/downloads/SDL_sound-$version.tar.gz
+	sdl-sound-1.0.3-physfs-3.0.1.patch sdl-sound-1.0.3-automake-1.13.patch
+	sdl-sound-1.0.3-underlinking.patch)
+
+build() {
+	cd SDL_sound-$version
+	patch -Np1 -i $SRC/sdl-sound-1.0.3-physfs-3.0.1.patch
+	patch -Np1 -i $SRC/sdl-sound-1.0.3-automake-1.13.patch
+	patch -Np1 -i $SRC/sdl-sound-1.0.3-underlinking.patch
+
+	CFLAGS+=" -I/usr/include/smpeg -Wno-error=deprecated-declarations"
+	CXXFLAGS+=" -I/usr/include/smpeg -Wno-error=deprecated-declarations"
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

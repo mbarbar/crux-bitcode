@@ -1,0 +1,6 @@
+#!/bin/sh
+
+getent group squid || /usr/sbin/groupadd -g 40 squid
+getent passwd squid || /usr/sbin/useradd -g squid -u 40 -d /var/squid -s /bin/false squid
+/usr/bin/passwd -l squid
+

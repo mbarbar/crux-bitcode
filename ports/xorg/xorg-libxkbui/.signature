@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/xorg.pub
+RWTSGWF5Q7TndGhtuDP+ltAo52sovVeEjki1wBfLcY8JSA0mR56smZJT6kCuYwxeQhg/hCEEB4ZkAFrp0Xl+Zf5ccXMBwJAKtwk=
+SHA256 (Pkgfile) = d4c20841ea700c3ca3a00e407e0046793ff4b0a28971f068ed17c45b06e47bd6
+SHA256 (.footprint) = dc06d3ce9ff564554d22a91422b58d491511dfe41666ae691a3e752058488c80
+SHA256 (libxkbui-1.0.2.tar.bz2) = 20c23101d63234ee5f6d696dfa069b29c6c58e39eff433bcd7705b50b3ffa214

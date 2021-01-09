@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/opt.pub
+RWSE3ohX2g5d/QsKcUgHrOUoEQRxG1s6GR9kpl566a3yoV8A/xl5JAvUoCuAlo2/7DQ4UXRnE19dIBk7gSmDLGYJaG/IKq0Jvwk=
+SHA256 (Pkgfile) = 966511641607d25d97f10da7437d385ec83a51908f636781a68a3903a7eadaa6
+SHA256 (.footprint) = 7dc9b1f53387cdee4c9da64f2da929d161ddc94f40576a6c07fd536ed0d04564
+SHA256 (unison-2.51.3-20200614.tar.xz) = 729a727be4f27ae33e27c1517ee1ad93d35b7b7b9aabd2472485ef5398227437

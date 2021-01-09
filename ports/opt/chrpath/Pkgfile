@@ -1,0 +1,17 @@
+# Description: Change or delete the rpath or runpath in ELF files
+# URL: https://directory.fsf.org/project/chrpath/
+# Maintainer: Juergen Daubert, jue at crux dot nu
+
+name=chrpath
+version=0.16
+release=1
+source=(http://http.debian.net/debian/pool/main/c/chrpath/chrpath_$version.orig.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+    --mandir=/usr/share/man
+  make
+  make DESTDIR=$PKG install
+  rm -fr $PKG/usr/doc
+}

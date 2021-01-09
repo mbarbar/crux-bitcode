@@ -1,0 +1,22 @@
+# Description: Console carddav client
+# URL: https://github.com/scheibler/khard/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3-atomicwrites python3-configobj python3-ruamel-yaml python3-unidecode python3-vobject
+
+name=khard
+version=0.17.0
+release=1
+source=(https://files.pythonhosted.org/packages/source/k/khard/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  /usr/bin/python3 setup.py build
+  /usr/bin/python3 setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  if [ -e /lib/zsh || /usr/lib/zsh ]; then
+    install -vDm 644 misc/zsh/_* \
+      -t $PKG/usr/share/zsh/site-functions/
+  fi
+}

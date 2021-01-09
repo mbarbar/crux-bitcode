@@ -1,0 +1,17 @@
+# Description: mortal combat clone
+# URL:         http://openmortal.sourceforge.net/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  freetype sdl_image sdl_mixer sdl_net
+
+name=openmortal
+version=0.7
+release=1
+source=(http://prdownloads.sourceforge.net/openmortal/$name-$version.tar.bz2 fixcmenu.diff)
+
+build() {
+  cd $name-$version
+  patch -p1 -i ../fixcmenu.diff
+  ./configure --prefix=/usr
+  make
+  make install DESTDIR=$PKG
+}

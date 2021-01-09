@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/contrib.pub
+RWSagIOpLGJF31h5Bqogrw5RueTp52F2vXW1AnaJ5QtDREuwkBIptudgv4xPdm2cl9MYJLrv5D6GCY/pGkc6t2aOsbu+AbUlCgo=
+SHA256 (Pkgfile) = 1d08cb7f96591202154995297cd6b3c03200db2e5005ec341178c5a2ac03b19d
+SHA256 (.footprint) = 858f7a99b4396034e1c456bb7d45f4e1b3ec55656c17b726601c7577a9994ed0
+SHA256 (hacksaw-1.0.4.tar.gz) = 3467d1a0603892f375f55770d90a0e4a8521f656cbc998b586980a0f6870e892
