@@ -6,10 +6,13 @@
 name=freetype
 version=2.10.4
 release=1
-source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz)
+source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
+	def-header.patch)
 
 build() {
     cd freetype-$version
+
+    patch -p1 -i $SRC/def-header.patch
 
     ./configure --prefix=/usr \
                 --with-zlib \
