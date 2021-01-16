@@ -12,7 +12,7 @@ source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz
 build() {
     cd freetype-$version
 
-    patch -p1 -i $SRC/def-header.patch
+    # patch -p1 -i $SRC/def-header.patch
 
     # Respects CFLAGS, so we don't need the wrapper.
     # Wrapper seems to cause problems with libtool and passing arguments.
