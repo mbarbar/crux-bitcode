@@ -14,6 +14,9 @@ build() {
 
     patch -p1 -i $SRC/def-header.patch
 
+    # Respects CFLAGS, so we don't need the wrapper.
+    # Wrapper seems to cause problems with libtool and passing arguments.
+    CC=/bin/gclang
     ./configure --prefix=/usr \
                 --with-zlib \
 		--with-harfbuzz=no \
