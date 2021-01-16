@@ -11,6 +11,8 @@ source=(https://ftp.mozilla.org/pub/security/nss/releases/NSS_${version//./_}_RT
         nss-config.in nss.pc.in nss-softokn.pc.in nss-util.pc.in)
 
 build() {
+	# TODO: make these instructions respect CFLAGS
+	CC=/bin/gclang
 	cd $name-$version/
 
 	patch -Np1 -i ../nss-3.54-standalone-2.patch

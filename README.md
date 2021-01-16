@@ -27,6 +27,15 @@ Some ports may not respect `CFLAGS`/`CXXFLAGS` nor `CC`/`CXX`.
 The image attempts to resolve this by intercepting calls to the compiler (see `image/cc.sh`, `image/cxx.sh`).
 Some ports may need to have their `Pkgfile` modified, or a patch added, if problems arise.
 
+### Packages that cannot be built
+These packages have some known problem building bitcode or building bitcode according to user parameters.
+They can still be used as dependencies though.
+
+* `nss`: can produce bitcode, but not with user-defined `CFLAGS`.
+
+Generally, any package that defines symbols on the command line (`-D`) with special shell characters (backslash, space, etc.) seems to fail because of the `gclang` wrapper.
+If the package respects `CFLAGS` the `gclang` wrapper can be stripped off like in `freetype`.
+
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
 * Command line options for `build-bitcode.sh` and `build-bitcode.py`.
