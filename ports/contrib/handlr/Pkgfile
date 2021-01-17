@@ -1,7 +1,7 @@
 # Description: xdg-utils replacement written in rust
 # URL: https://github.com/chmln/handlr
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=handlr
 version=0.4.5

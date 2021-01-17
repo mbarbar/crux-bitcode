@@ -1,7 +1,7 @@
 # Description: Minimal X screenshot utility
 # URL: https://github.com/neXromancers/shotgun
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust xorg-libx11 xorg-libxrandr
+# Depends on: rust-bin xorg-libx11 xorg-libxrandr
 # Optional: hacksaw
 
 name=shotgun

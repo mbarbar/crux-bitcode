@@ -1,7 +1,7 @@
 # Description: s[earch] & d[isplace]
 # URL: https://github.com/chmln/sd
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=sd
 version=0.7.6

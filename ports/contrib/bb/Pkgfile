@@ -1,7 +1,7 @@
 # Description: simple process viewer in rust
 # URL: https://github.com/epilys/bb
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=bb
 version=0.4.3

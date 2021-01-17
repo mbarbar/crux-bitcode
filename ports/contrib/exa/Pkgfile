@@ -1,7 +1,7 @@
 # Description: exa is a modern replacement for ls written in rust
 # URL: https://the.exa.website/
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=exa
 version=0.9.0

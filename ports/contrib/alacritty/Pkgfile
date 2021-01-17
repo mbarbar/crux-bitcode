@@ -1,7 +1,7 @@
 # Description: A cross-platform, GPU-accelerated terminal emulator
 # URL: https://github.com/alacritty/alacritty
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: fontconfig rust util-linux xorg-libxcb
+# Depends on: fontconfig rust-bin util-linux xorg-libxcb
 
 name=alacritty
 version=0.6.0

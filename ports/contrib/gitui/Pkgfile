@@ -1,7 +1,7 @@
 # Description: blazing fast terminal-ui for git written in rust
 # URL: https://github.com/extrawurst/gitui
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust xorg-libxcb
+# Depends on: rust-bin xorg-libxcb
 
 name=gitui
 version=0.10.1

@@ -1,7 +1,7 @@
 # Description: RSS/Atom feed reader for text terminals
 # URL:         http://www.newsboat.org/
 # Maintainer:  Juergen Daubert, jue at crux dot nu
-# Depends on:  curl libxml2 sqlite3 stfl json-c rust
+# Depends on:  curl libxml2 sqlite3 stfl json-c rust-bin
 
 name=newsboat
 version=2.21

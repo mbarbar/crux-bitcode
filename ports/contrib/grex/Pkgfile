@@ -1,7 +1,7 @@
 # Description: command-line tool and library for generating regular expressions from user-provided test cases
 # URL: https://github.com/pemistahl/grex
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=grex
 version=1.1.0

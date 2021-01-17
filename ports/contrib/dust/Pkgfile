@@ -1,7 +1,7 @@
 # Description: du + rust = dust
 # URL: https://github.com/bootandy/dust
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=dust
 version=0.5.3

@@ -1,7 +1,7 @@
 # Description: Simple, fast and user-friendly alternative to find
 # URL: https://github.com/sharkdp/fd
 # Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: rust
+# Depends on: rust-bin
 
 name=fd
 version=8.1.1

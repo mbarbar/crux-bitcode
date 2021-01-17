@@ -1,7 +1,7 @@
 # Description: Generate C bindings from rust code
 # URL: https://github.com/eqrion/cbindgen
 # Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: rust
+# Depends on: rust-bin
 # Optional: sccache
 
 name=cbindgen

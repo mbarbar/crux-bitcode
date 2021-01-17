@@ -1,7 +1,7 @@
 # Description: Sccache is a ccache-like tool
 # URL: https://github.com/mozilla/sccache
 # Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: rust
+# Depends on: rust-bin
 
 name=sccache
 version=0.2.13

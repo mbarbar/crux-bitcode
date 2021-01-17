@@ -1,7 +1,7 @@
 # Description: Terminal system monitor with histograms
 # URL: https://github.com/bvaisvil/zenith
 # Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: rust
+# Depends on: rust-bin
 # Optional: nvidia
 
 name=zenith

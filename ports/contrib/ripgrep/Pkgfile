@@ -1,7 +1,7 @@
 # Description: ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern
 # URL: https://github.com/burntsushi/ripgrep
 # Maintainer: Tim Biermann, tbier at posteo dot de
-# Depends on: rust
+# Depends on: rust-bin
 
 name=ripgrep
 version=12.1.1
