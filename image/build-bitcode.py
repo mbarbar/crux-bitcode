@@ -106,7 +106,7 @@ for pkg in pkgs:
     if subprocess.run([PRT, "isinst", pkg]).returncode != 0:
         command = "depinst"
 
-    if subprocess.run([PRT, "-im", "-is", "-kw", "-fr", "--install-scripts", command, pkg]).returncode != 0:
+    if subprocess.run([PRT, "-if", "-im", "-is", "-kw", "-fr", "--install-scripts", command, pkg]).returncode != 0:
         print("Failed to build {}!".format(pkg))
         sys.exit(4)
 
