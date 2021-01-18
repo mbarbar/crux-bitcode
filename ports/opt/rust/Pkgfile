@@ -36,6 +36,8 @@ unpack_source() {
 }
 
 build() {
+	ln -s /usr/bin/ar /usr/bin/gar
+
 	cd "${name}c-$version-src"
 
 	local ERROR
