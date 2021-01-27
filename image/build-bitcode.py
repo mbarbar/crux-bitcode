@@ -143,7 +143,7 @@ for pkg in pkgs:
 
                 # Grab .ll (for loc).
                 if subprocess.run([DIS, bc_basename_path + ".bc"]).returncode != 0:
-                    print("Failed to get disassemble {}".format(bc_basename_path + ".bc"))
+                    print("Failed to get disassembled {}".format(bc_basename_path + ".bc"))
                     sys.exit(6)
 
                 # Run the loc script and delete the .ll.
@@ -155,7 +155,8 @@ for pkg in pkgs:
 try:
     bc_info = open(BC_INFO, "a")
 except Exception as e:
-    print("Could not open bitcode info file file: {}".format(e))
+    print("Could not open bitcode info file: {}".format(e))
+    sys.exit(8)
 
 if cflags == "":
     cflags = "No user-defined CFLAGS"
