@@ -5,7 +5,7 @@
 # Optional: sccache
 
 name=rust-bin
-version=1.48.0
+version=1.47.0
 release=1
 source=(https://crux.ster.zone/downloads/rust/rust-$version-$release-crux-3.5-bin.tar.xz)
 
