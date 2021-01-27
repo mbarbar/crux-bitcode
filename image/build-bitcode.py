@@ -11,6 +11,7 @@ GETBC = "get-bc"
 DIS = "llvm-dis"
 PKGINFO = "pkginfo"
 LOC = "loc"
+OPT = "opt"
 
 BC_DIR = ""
 try:
@@ -145,6 +146,16 @@ for pkg in pkgs:
                 if subprocess.run([DIS, bc_basename_path + ".bc"]).returncode != 0:
                     print("Failed to get disassembled {}".format(bc_basename_path + ".bc"))
                     sys.exit(6)
+
+                # We grabbed the ll with debug info, so we'll strip it.
+                # Result is a file of the same name.
+                os.rename(bc_basename_path + ".bc", bc_basename_path + ".dbg.bc")
+                if subprocess.run([OPT, "-strip-debug",
+                                   bc_basename_path + ".dbg.bc",
+                                   "-o",
+                                   bc_basename_path + ".bc"]).returncode != 0:
+                    print("Failed to strip debug info for {}".format(bc_basename_path + ".bc"))
+                    sys.exit(7)
 
                 # Run the loc script and delete the .ll.
                 loc = subprocess.run([LOC, bc_basename_path + ".ll"], capture_output=True)
