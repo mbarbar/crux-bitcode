@@ -157,6 +157,9 @@ for pkg in pkgs:
                     print("Failed to strip debug info for {}".format(bc_basename_path + ".bc"))
                     sys.exit(7)
 
+                # Delete debug BC.
+                os.remove(bc_basename_path + ".dbg.bc")
+
                 # Run the loc script and delete the .ll.
                 loc = subprocess.run([LOC, bc_basename_path + ".ll"], capture_output=True)
                 os.remove(bc_basename_path + ".ll")
