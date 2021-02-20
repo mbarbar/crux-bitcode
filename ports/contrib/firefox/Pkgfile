@@ -12,6 +12,7 @@ source=(https://ftp.mozilla.org/pub/firefox/releases/$version/source/firefox-$ve
 	0001-Use-remoting-name-for-GDK-application-names.patch)
 build() {
 	cd firefox-$version
+	export SHELL=/bin/bash
 
 	# https://bugzilla.mozilla.org/show_bug.cgi?id=1530052
 	patch -p1 -i $SRC/0001-Use-remoting-name-for-GDK-application-names.patch
