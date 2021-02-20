@@ -1,8 +1,0 @@
-#!/bin/sh
-
-/usr/bin/gtk-update-icon-cache -f -t /usr/share/icons/Papirus-Dark
-/usr/bin/gtk-update-icon-cache -f -t /usr/share/icons/Papirus-Light
-/usr/bin/gtk-update-icon-cache -f -t /usr/share/icons/ePapirus
-/usr/bin/gtk-update-icon-cache -f -t /usr/share/icons/Papirus
-
-# EOF

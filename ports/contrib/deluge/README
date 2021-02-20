@@ -1,8 +1,0 @@
-The following changes can be made to depends on line or --ignore= 
-option in prt-get.
-
-Remove for no GUI: gtk pygame pygobject pygtk librsvg
-
-Remove for no webserver: mako
-
-Add for D-BUS: libnotify

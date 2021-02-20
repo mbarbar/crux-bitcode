@@ -1,5 +1,0 @@
-untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3wngf61CRBvccIx3zRiemOj6BJoXYzgn4DUgEa+tgFUXZ6OB5XCkQoz8fi4QhsxZE6n9WQ34GwCnD+TByVxahgM=
-SHA256 (Pkgfile) = 7970fa347758ee041193ac0d8f97dab504163f673a42d0dca56ea721bea04127
-SHA256 (.footprint) = d778bccc138bcfb39051e16e6c48f33ab08b381cfc972fb2b3a439a9cddfb720
-SHA256 (Perl-Tidy-20201207.tar.gz) = 2e4504e493a623674fff9d5e5c0865467f198cf20444d5503dd9ddcd95003d11
