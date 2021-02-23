@@ -1,9 +1,0 @@
-
-README for prt-get
-
-
-POST-INSTALL
-
-To get package name completion execute this command:
-
-  # prt-get cache

@@ -1,5 +1,0 @@
-untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3xB3z4FEZ07G4y1hVk11ilqHHXPvyGKnelS6uGtvfmMiLKd9uriPaLEsKtuJYOYVhyaIimP5/e3IskvU92vZCw8=
-SHA256 (Pkgfile) = 5a04fdeaf5dc4a2a3d424749b496cbe35980a33aa647b89b3656508f323b3455
-SHA256 (.footprint) = 7324f2316e983ad2bb23db7cb96b67c84c95c50eead7a9d296721bd545623676
-SHA256 (sqlmap-1.4.12.tar.gz) = d149722cb33202678fb64642ea315d0dea3fcb2d54403efb78b9819464dbd3e5
