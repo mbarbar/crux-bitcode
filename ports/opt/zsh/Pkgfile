@@ -23,7 +23,8 @@ build() {
       --enable-function-subdirs \
       --enable-pcre \
       --enable-restricted-r \
-      --enable-cap
+      --enable-cap \
+      --with-tcsetpgrp
 
     # fix paths for kbd and usbutils
     sed -i 's|/usr/share/keymaps|/usr/share/kbd/keymaps|g' Completion/Unix/Command/_loadkeys
