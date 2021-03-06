@@ -1,5 +1,0 @@
-untrusted comment: verify with /etc/ports/opt.pub
-RWSE3ohX2g5d/bXFf2jzWYrpnZIg11RH3zNfQWm8Ul0MDDg2Bu+6SpjjFPbeqmVCvnOOF1ozPYJIWFHA2ry4N/3s3BQUHLqsTgM=
-SHA256 (Pkgfile) = f20721f6f3b2cddb5a97cf31c940dba384792a6574f774defe06b221f3ce20cb
-SHA256 (.footprint) = f50aad5a6eaeb6cbfaef551b4daa37caf225691127251975c83d6150d80c218e
-SHA256 (gitolite-3.6.12.tar.gz) = 8c55976ed561b8eabf39097b7fcb9c6e8741c2ceea85ef4529a06b1adff850b6

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-getent group git >/dev/null || /usr/sbin/groupadd -r git
-
-# default ssh settings requrie an unlocked account with a valid loginshell
-getent passwd git > /dev/null || (/usr/sbin/useradd -g git -r -s /bin/sh git; /usr/sbin/usermod -p x git)
-

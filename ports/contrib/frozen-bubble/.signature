@@ -1,7 +1,0 @@
-untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF3xfaFxrcpculeQRp8GYaz5EFm8WUtE+8HosUeELjzU2Z4ESdfJM9GxDK5flmyfxv4p3mOXFtKmRvdH5Hoi5TxQs=
-SHA256 (Pkgfile) = 0bf14a13a25a1d924facf4c664750931a6d0f99e521eb80876d5a3a4b40d616b
-SHA256 (.footprint) = 13db8805746292fba55f2200e63b752669b8edabd21cf45c0c64308c7fe0e549
-SHA256 (frozen-bubble-2.2.1.tar.gz) = 942db0903c8139ec08b65c604b4023e5a1b8351013596f5ad31659dc543a6220
-SHA256 (fix-buffer-size-when-formatting-current-date.patch) = 4156b783bbfbaffe44cb9f523ed9619aab333cdbe31455a050be9a2e727cb4bb
-SHA256 (frozen-bubble.desktop) = fe30912e3f87fa3cc6196e989e685ebe20a26a51d542495c133db79a2d47b28d

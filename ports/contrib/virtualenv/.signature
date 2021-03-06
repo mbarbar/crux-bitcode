@@ -1,5 +1,0 @@
-untrusted comment: verify with /etc/ports/contrib.pub
-RWSagIOpLGJF34SLI2xP3xLV3QFRE+EijHliYnNT+2AgF2Jn6zacKUN9vBFFDHVZ6xXu9HUE0+1ZMg8E5Ql1q+KUChnf/GEsPA8=
-SHA256 (Pkgfile) = 1c395f7f893ae2e9e541dbdb1c464ab3fb2f730bd2c46222f5ad959b6bef9563
-SHA256 (.footprint) = 1c6b72a21f4d303940f291d78021d99c26acbab7f16c232b9daab462ec9475b1
-SHA256 (virtualenv-20.2.1.tar.gz) = e0aac7525e880a429764cefd3aaaff54afb5d9f25c82627563603f5d7de5a6e5
