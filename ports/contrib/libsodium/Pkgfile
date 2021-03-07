@@ -10,7 +10,7 @@ source=(https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE/$name-$vers
 
 build() {
   cd $name-$version-RELEASE
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --disable-pie
   make
   make DESTDIR=$PKG install
 }
