@@ -35,6 +35,7 @@ They can still be used as dependencies though.
 * `firefox`: appears to fail at the last step; needs investigation.
 * `qt5`: does not produce bitcode for some/all binaries; needs investigation
   * Can be used as a dependency
+* `qownnotes`: same problem as `qt5`
 
 Generally, any package that defines symbols on the command line (`-D`) with special shell characters (backslash, space, etc.) seems to fail because of the `gclang` wrapper.
 If the package respects `CFLAGS` the `gclang` wrapper can be stripped off like in `freetype`.
