@@ -58,7 +58,7 @@ build() {
 		-system-sqlite \
 		-system-harfbuzz \
 		-skip qtwebengine \
-		-silent
+                -platform linux-clang
 
 	make
 	make -j1 INSTALL_ROOT=$PKG install
