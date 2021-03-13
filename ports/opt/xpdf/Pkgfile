@@ -5,7 +5,7 @@
 # Optional:    cups paper
 
 name=xpdf
-version=4.02
+version=4.03
 release=2
 source=(https://dl.xpdfreader.com/$name-$version.tar.gz
     xpdf-automagic.patch
