@@ -5,8 +5,9 @@ ENV HOME="/root"
 # Copy our ports snapshot over.
 COPY ports /usr/ports
 
-# Tell prt-get about contrib.
+# Tell prt-get about contrib and bc.
 RUN echo prtdir /usr/ports/contrib/ >> /etc/prt-get.conf
+RUN echo prtdir /usr/ports/bc/ >> /etc/prt-get.conf
 
 # Modify default pkgmk.conf
 RUN sed -i 's/# export JOBS/export JOBS/' /etc/pkgmk.conf
