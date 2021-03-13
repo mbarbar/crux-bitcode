@@ -9,7 +9,7 @@ release=1
 source=(https://github.com/asciidoc/$name-py3/archive/$version/$name-py3-$version.tar.gz)
 
 build() {
-	cd $name-py3-$version
+	cd $name-py-$version
 	PYTHON='/usr/bin/python3'
 	autoconf
 	./configure \
