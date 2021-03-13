@@ -4,7 +4,7 @@
 # Depends on:  ncurses make
 
 name=kakoune
-version=2020.09.01
+version=2020.08.04
 release=1
 source=(https://github.com/mawww/kakoune/releases/download/v$version/$name-$version.tar.bz2)
 
