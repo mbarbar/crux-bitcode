@@ -12,11 +12,15 @@ source=(https://invisible-mirror.net/archives/lynx/tarballs/${name}${_relver}.ta
 build() {
 	cd ${name}${_relver}
 
+	# TODO: enable-debug may not be desirable if -g is not in pkgmk.conf.
+	#       The configure script appears to strip -g if in $CFLAGS when
+	#       --enable-debug is false.
 	./configure \
 		--prefix=/usr \
 		--disable-nls \
 		--enable-color-style \
 		--enable-ipv6 \
+		--enable-debug \
 		--with-ssl=/usr/lib \
 		--with-zlib
 
