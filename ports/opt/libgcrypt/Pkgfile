@@ -11,6 +11,13 @@ source=(ftp://ftp.gnupg.org/gcrypt/libgcrypt/$name-$version.tar.bz2)
 build() {
   cd $name-$version
 
+  # GCC extensions are used to turn off optimisations; use clang's.
+  sed -i -e 's/GCC optimize.*O0.*/clang optimize off/' random/jitterentropy-base.c
+  # Get rid of the error.
+  sed -i -e 's/#error "The CPU Jitter.*//' random/jitterentropy-base.c
+  # Not strictly necessary, but it's fine.
+  echo '#pragma clang optimize on' >> random/jitterentropy-base.c
+
   ./configure \
       --prefix=/usr \
       --disable-padlock-support \
