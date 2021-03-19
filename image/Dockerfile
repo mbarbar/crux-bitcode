@@ -30,6 +30,9 @@ RUN prt-get depinst -is --install-scripts go
 RUN go get github.com/SRI-CSL/gllvm/cmd/...
 ENV PATH="${HOME}/go/bin/:${PATH}"
 
+# Install qt5 since it is a large common dependency.
+RUN prt-get depinst -is -if --install-scripts qt5
+
 # Install SCC.
 RUN go get -u github.com/boyter/scc/
 
