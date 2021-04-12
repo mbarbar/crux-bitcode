@@ -6,7 +6,7 @@
 name=wireshark
 version=3.4.0
 release=1
-source=(https://www.wireshark.org/download/src/$name-$version.tar.xz)
+source=(https://1.as.dl.wireshark.org/src/all-versions/$name-$version.tar.xz)
 
 build() {
   cmake -S$name-$version -Bbuild -GNinja \
