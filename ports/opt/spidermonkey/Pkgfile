@@ -11,6 +11,8 @@ source=(https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/fi
 build() {
 	cd firefox-$version
 
+        export SHELL=/bin/bash
+
 	# http://www.linuxfromscratch.org/blfs/view/svn/general/js68.html
 	sed '21,+4d' -i js/moz.configure 
 
