@@ -14,7 +14,6 @@ build() {
 
 	./configure \
 		--prefix=/usr \
-		--disable-internal-sqlite \
 		--json \
 		--with-th1-docs \
 		--with-th1-hooks
