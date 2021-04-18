@@ -43,20 +43,25 @@ RUN prt-get -is --install-scripts depinst zip
 ENV CC=gclang
 ENV CXX=gclang++
 
+# TODO: move up.
+RUN prt-get depinst -is -if --install-scripts lua53
+
 # Move gclang to a lower precedence in PATH and overwrite all C compilers,
 # including gclang, with cc.sh which will solve some of our CFLAGS woes
 # and hardcoded gcc.
 # TODO: does hardcoded clang appear?
+COPY shell.lua /usr/share/lua/5.3/shell.lua
+
 RUN mv "$HOME/go/bin/gclang" /bin/gclang
-COPY cc.sh /usr/bin/gclang
-COPY cc.sh /usr/bin/gcc
-COPY cc.sh /usr/bin/cc
+COPY cc.lua /usr/bin/gclang
+COPY cc.lua /usr/bin/gcc
+COPY cc.lua /usr/bin/cc
 
 # Repeat for C++ compilers.
 RUN mv "$HOME/go/bin/gclang++" /bin/gclang++
-COPY cxx.sh /usr/bin/gclang++
-COPY cxx.sh /usr/bin/g++
-COPY cxx.sh /usr/bin/cxx
+COPY cxx.lua /usr/bin/gclang++
+COPY cxx.lua /usr/bin/g++
+COPY cxx.lua /usr/bin/cxx
 
 ENV PKGS_FILE "/etc/pkgs.txt"
 ENV BC_DIR "$HOME/bitcode"
