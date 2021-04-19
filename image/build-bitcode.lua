@@ -112,16 +112,12 @@ for _, pkg in pairs(pkgs) do
     path_f:close()
     for line in io.lines(fp_path) do
         -- Get rid of links.
-        print(line)
         line = string.gsub(line, "%s%->%s.*$", "")
-        print(line)
         -- Get rid of owner, size, etc..
         local installed_file = string.gsub(line, ".*%s.*%s", "")
-        print(installed_file)
         -- Make the file relative to root.
         installed_file = "/" .. installed_file
         print(installed_file)
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~")
 
         -- Don't need directories, obviously.
         if not isdir(installed_file) then
