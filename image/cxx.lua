@@ -1,7 +1,9 @@
 #!/usr/bin/env lua5.3
 -- See comment in cc.lua.
 
-cxx = "/bin/gclangxx"
+shell = require("shell")
+
+cxx = "/bin/gclang++"
 
 cxxflags = os.getenv("CXXFLAGS")
 if not cxxflags then
