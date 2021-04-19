@@ -1,6 +1,6 @@
-# Description: Python interpreter, version 3.
+# Description: Python interpreter, version 3; barely modified opt/python3.
 # URL: https://www.python.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
+# Maintainer: crux-bitcode
 # Depends on: bzip2 expat gdbm libffi libtirpc mpdecimal sqlite3 xz
 
 name=python3

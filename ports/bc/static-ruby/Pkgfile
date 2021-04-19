@@ -1,5 +1,5 @@
-# Maintainer:  Juergen Daubert, jue at crux dot nu
-# Description: Ruby interpreter
+# Maintainer:  crux-bitcode
+# Description: Ruby interpreter; barely modified opt/ruby.
 # URL:         http://www.ruby-lang.org
 # Depends on:  gdbm libgmp openssl zlib libffi libyaml
 

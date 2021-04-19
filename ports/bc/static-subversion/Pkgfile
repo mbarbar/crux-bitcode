@@ -1,6 +1,6 @@
-# Description: A version control system (CVS replacement)
+# Description: A version control system (CVS replacement); barely modified contrib/subversion.
 # URL:         http://subversion.apache.org
-# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Maintainer:  crux-bitcode
 # Depends on:  boost cyrus-sasl gnupg lz4 serf utf8proc
 
 name=subversion
