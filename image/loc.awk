@@ -5,8 +5,7 @@
 # the SRC_DIR environment variable. LOC counted with SCC.
 BEGIN {
     loc = 0
-    # Space-separated list of our source files.
-    srcs = ""
+    nsrcs = 0
 }
 
 # !... = DIFile(filename: "...", directory: "...") lines.
@@ -29,21 +28,24 @@ BEGIN {
     src = dir ? dir "/" fn : fn
 
     # To differentiate from system headers.
-    if (src ~ "^/usr/ports" && system("test -f " src) == 0) srcs = srcs " " src
+    if (src ~ "^/usr/ports" && system("test -f " src) == 0) srcs[nsrcs++] = src
 }
 
 END {
     # TODO: handle getline errors
-    while ("scc " srcs | getline line) {
-        # Only interested in C/C++.
-        if (line !~ "(C|C++)( Header)?") continue
+    for (i = 0; i < nsrcs; ++i) {
+        # TODO: extremely unperformant.
+        while ("scc " srcs[i] | getline line) {
+            # Only interested in C/C++.
+            if (line !~ "(C|C++)( Header)?") continue
 
-        ncols = split(line, cols, " ")
-        # We want the second last column which contains the LOC.
-        loc += cols[ncols - 1]
+            ncols = split(line, cols, " ")
+            # We want the second last column which contains the LOC.
+            loc += cols[ncols - 1]
+        }
+
+        close("scc " src)
     }
-
-    close("scc " srcs)
 
     print loc
 }
