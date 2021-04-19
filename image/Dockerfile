@@ -67,7 +67,7 @@ ENV PKGS_FILE "/etc/pkgs.txt"
 ENV BC_DIR "$HOME/bitcode"
 
 # Our script which builds bitcode.
-COPY build-bitcode.py "/usr/bin/build-bitcode"
+COPY build-bitcode.lua "/usr/bin/build-bitcode"
 # Our script which counts LOC for built bitcode.
 COPY loc.awk "/usr/bin/loc"
 
