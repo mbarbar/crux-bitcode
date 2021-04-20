@@ -25,7 +25,8 @@ local commands = {
     opt     = "opt",
     mkdir   = "mkdir",
     md5     = "md5sum",
-    mv      = "mv"
+    mv      = "mv",
+    rm      = "rm"
 }
 
 local files = {
@@ -102,7 +103,7 @@ for _, pkg in pairs(pkgs) do
     if flags.cxx ~= "" then export = export .. " export CXXFLAGS=" .. flags.cxx end
     if not os.execute(export
                       .. commands.prt
-                      .. " -if -im -is -kw -fr --install-scripts "
+                      .. " -f -if -im -is -kw -fr --install-scripts "
                       .. subcommand .. " " .. pkg) then
        fail("Failed to build " .. pkg .. "!")
     end
@@ -162,6 +163,10 @@ for _, pkg in pairs(pkgs) do
                                   .. " -o " .. bc_path) then
                    fail("Failed to strip debug info for '" .. bc "'!")
                 end
+
+                -- Get rid of the .ll and .dbg
+                os.execute(commands.rm .. " " .. bc_path .. ".dbg")
+                os.execute(commands.rm .. " " .. bc_path .. ".ll")
             end
         end
     end
