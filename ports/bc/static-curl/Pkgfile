@@ -16,6 +16,7 @@ build() {
                 --without-cyassl \
                 --enable-threaded-resolver \
 		--disable-shared \
+		--enable-debug \
                 --with-ca-bundle=/etc/ssl/cert.pem
     make curl_LDFLAGS=-all-static
     make DESTDIR=$PKG install

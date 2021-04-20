@@ -17,9 +17,6 @@ drwxr-xr-x	root/root	usr/include/curl/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libcurl.a
 -rwxr-xr-x	root/root	usr/lib/libcurl.la
-lrwxrwxrwx	root/root	usr/lib/libcurl.so -> libcurl.so.4.7.0
-lrwxrwxrwx	root/root	usr/lib/libcurl.so.4 -> libcurl.so.4.7.0
--rwxr-xr-x	root/root	usr/lib/libcurl.so.4.7.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libcurl.pc
 drwxr-xr-x	root/root	usr/share/
