@@ -3,13 +3,13 @@
 # Maintainer:  crux-bitcode
 # Depends on:  boost cyrus-sasl gnupg lz4 serf utf8proc
 
-name=subversion
+name=static-subversion
 version=1.14.0
 release=1
-source=(https://archive.apache.org/dist/$name/$name-$version.tar.bz2)
+source=(https://archive.apache.org/dist/subversion/subversion-$version.tar.bz2)
 
 build() {
-	cd $name-$version
+	cd subversion-$version
 
 	./configure \
 		--prefix=/usr \

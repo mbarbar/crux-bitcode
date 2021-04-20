@@ -3,13 +3,13 @@
 # URL:         http://www.ruby-lang.org
 # Depends on:  gdbm libgmp openssl zlib libffi libyaml
 
-name=ruby
+name=static-ruby
 version=2.7.2
 release=1
-source=(http://cache.ruby-lang.org/pub/$name/${version%.*}/$name-$version.tar.xz)
+source=(http://cache.ruby-lang.org/pub/ruby/${version%.*}/ruby-$version.tar.xz)
 
 build () {
-    cd $name-$version
+    cd ruby-$version
 
     ./configure --prefix=/usr \
                 --enable-shared=false \
