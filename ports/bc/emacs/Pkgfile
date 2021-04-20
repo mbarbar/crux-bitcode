@@ -1,7 +1,7 @@
 # Description: Text editor
 # URL:         https://gnu.org/software/emacs
 # Maintainer:  crux-bitcode
-# Depends on:
+# Depends on:  gnutls giflib xorg-libxpm
 
 name=emacs
 version=27.2
@@ -11,7 +11,7 @@ source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 build() {
     cd $name-$version
 
-    ./configure
+    ./configure --with-x-toolkit=no
     make
     mkdir -p $PKG/usr/bin
     cp src/emacs $PKG/usr/bin/emacs
