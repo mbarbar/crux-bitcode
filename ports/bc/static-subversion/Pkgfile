@@ -1,7 +1,7 @@
 # Description: A version control system (CVS replacement); barely modified contrib/subversion.
 # URL:         http://subversion.apache.org
 # Maintainer:  crux-bitcode
-# Depends on:  boost cyrus-sasl gnupg lz4 serf utf8proc
+# Depends on:  gnupg lz4
 
 name=static-subversion
 version=1.14.0
@@ -17,6 +17,10 @@ build() {
 		--enable-all-static \
 		--disable-mod-activation \
 		--without-apxs \
+		--with-boost=no \
+		--with-sasl=no \
+		--with-utf8proc=internal \
+		--with-serf=no \
 		--without-swig
 
 	make
