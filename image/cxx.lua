@@ -13,5 +13,5 @@ end
 arg[0] = nil
 arg[-1] = nil
 
-cxx_ret = os.execute(cxx .. " " .. shell.escape(arg) .. " " .. cxxflags)
+_, _, cxx_ret = os.execute(cxx .. " " .. shell.escape(arg) .. " " .. cxxflags)
 os.exit(cxx_ret)
