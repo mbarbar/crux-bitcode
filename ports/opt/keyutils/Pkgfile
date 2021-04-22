@@ -11,6 +11,7 @@ build () {
     cd $name-$version
 
     sed -i "/^CFLAGS/s/-g/$CFLAGS/" Makefile
+    sed -i "s/Werror/Wno-error/g" Makefile
 
     make
     make install DESTDIR=$PKG USRLIBDIR=/usr/lib LIBDIR=/lib
