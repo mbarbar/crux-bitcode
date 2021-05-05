@@ -806,14 +806,6 @@ drwxr-xr-x	root/root	usr/share/wireshark/dtds/
 -rw-r--r--	root/root	usr/share/wireshark/manuf
 -rw-r--r--	root/root	usr/share/wireshark/mergecap.html
 -rw-r--r--	root/root	usr/share/wireshark/pdml2html.xsl
-drwxr-xr-x	root/root	usr/share/wireshark/profiles/
-drwxr-xr-x	root/root	usr/share/wireshark/profiles/Bluetooth/
--rw-r--r--	root/root	usr/share/wireshark/profiles/Bluetooth/colorfilters
--rw-r--r--	root/root	usr/share/wireshark/profiles/Bluetooth/preferences
-drwxr-xr-x	root/root	usr/share/wireshark/profiles/Classic/
--rw-r--r--	root/root	usr/share/wireshark/profiles/Classic/colorfilters
-drwxr-xr-x	root/root	usr/share/wireshark/profiles/No Reassembly/
--rw-r--r--	root/root	usr/share/wireshark/profiles/No Reassembly/preferences
 drwxr-xr-x	root/root	usr/share/wireshark/radius/
 -rw-r--r--	root/root	usr/share/wireshark/radius/README.radius_dictionary
 -rw-r--r--	root/root	usr/share/wireshark/radius/custom.includes
