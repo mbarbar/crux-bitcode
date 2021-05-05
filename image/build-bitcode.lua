@@ -137,44 +137,43 @@ for _, pkg in pairs(pkgs) do
 
                 if aliases[md5] ~= nil then
                     aliases[md5][#aliases[md5]+1] = bc
+                    -- No need to process, we already have.
                 else
                     aliases[md5] = { [1] = bc }
+                    if not os.execute(commands.getbc .. " -o "
+                                      .. bc_path .. " " .. installed_file) then
+                        fail("Failed to get BC for '" .. installed_file .. "'!")
+                    end
+
+                    -- Grab .ll, for loc.
+                    if not os.execute(commands.dis .. " " .. bc_path
+                                      .. " -o " .. bc_path .. ".ll") then
+                        fail("Failed to disassemble '" .. bc "'!")
+                    end
+
+                    -- Get LOC from .ll.
+                    loc_f = io.popen(commands.loc .. " " .. bc_path .. ".ll")
+                    local loc = string.gsub(loc_f:read("a"), "%s", "")
+                    loc_f:close()
+
+                    locs[md5] = loc
+
+                    -- If BC was built with debug info, strip it.
+                    os.execute(commands.mv .. " " .. bc_path .. " " .. bc_path .. ".dbg")
+                    if not os.execute(commands.opt .. " -strip-debug " .. bc_path .. ".dbg"
+                                      .. " -o " .. bc_path) then
+                       fail("Failed to strip debug info for '" .. bc "'!")
+                    end
+
+                    -- Get rid of the .ll and .dbg
+                    os.execute(commands.rm .. " " .. bc_path .. ".dbg")
+                    os.execute(commands.rm .. " " .. bc_path .. ".ll")
                 end
-
-                if not os.execute(commands.getbc .. " -o "
-                                  .. bc_path .. " " .. installed_file) then
-                    fail("Failed to get BC for '" .. installed_file .. "'!")
-                end
-
-                -- Grab .ll, for loc.
-                if not os.execute(commands.dis .. " " .. bc_path
-                                  .. " -o " .. bc_path .. ".ll") then
-                    fail("Failed to disassemble '" .. bc "'!")
-                end
-
-                -- Get LOC from .ll.
-                loc_f = io.popen(commands.loc .. " " .. bc_path .. ".ll")
-                local loc = string.gsub(loc_f:read("a"), "%s", "")
-                loc_f:close()
-
-                locs[md5] = loc
-
-                -- If BC was built with debug info, strip it.
-                os.execute(commands.mv .. " " .. bc_path .. " " .. bc_path .. ".dbg")
-                if not os.execute(commands.opt .. " -strip-debug " .. bc_path .. ".dbg"
-                                  .. " -o " .. bc_path) then
-                   fail("Failed to strip debug info for '" .. bc "'!")
-                end
-
-                -- Get rid of the .ll and .dbg
-                os.execute(commands.rm .. " " .. bc_path .. ".dbg")
-                os.execute(commands.rm .. " " .. bc_path .. ".ll")
             end
         end
     end
 end
 
--- Write everything to the info file.
 local info_f = io.open(files.bc_info, "w")
 if not info_f then
     fail("Could not open info file!")
