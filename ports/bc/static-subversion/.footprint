@@ -71,7 +71,6 @@ drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libsvn_fs_x-1.la
 -rwxr-xr-x	root/root	usr/lib/libsvn_ra-1.la
 -rwxr-xr-x	root/root	usr/lib/libsvn_ra_local-1.la
--rwxr-xr-x	root/root	usr/lib/libsvn_ra_serf-1.la
 -rwxr-xr-x	root/root	usr/lib/libsvn_ra_svn-1.la
 -rwxr-xr-x	root/root	usr/lib/libsvn_repos-1.la
 -rwxr-xr-x	root/root	usr/lib/libsvn_subr-1.la
@@ -102,7 +101,6 @@ drwxr-xr-x	root/root	usr/share/pkgconfig/
 -rw-r--r--	root/root	usr/share/pkgconfig/libsvn_fs_x.pc
 -rw-r--r--	root/root	usr/share/pkgconfig/libsvn_ra.pc
 -rw-r--r--	root/root	usr/share/pkgconfig/libsvn_ra_local.pc
--rw-r--r--	root/root	usr/share/pkgconfig/libsvn_ra_serf.pc
 -rw-r--r--	root/root	usr/share/pkgconfig/libsvn_ra_svn.pc
 -rw-r--r--	root/root	usr/share/pkgconfig/libsvn_repos.pc
 -rw-r--r--	root/root	usr/share/pkgconfig/libsvn_subr.pc
