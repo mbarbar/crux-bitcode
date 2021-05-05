@@ -112,6 +112,8 @@ for _, pkg in pairs(pkgs) do
     local fp_path = string.gsub(path_f:read("a"), "%s", "") .. "/.footprint"
     path_f:close()
     for line in io.lines(fp_path) do
+        -- Get rid of "(EMPTY)".
+        line = string.gsub(line, "%s*%(EMPTY%)", "")
         -- Get rid of links.
         line = string.gsub(line, "%s%->%s.*$", "")
         -- Get rid of owner, size, etc..
