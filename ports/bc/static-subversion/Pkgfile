@@ -1,7 +1,7 @@
 # Description: A version control system (CVS replacement); barely modified contrib/subversion.
 # URL:         http://subversion.apache.org
 # Maintainer:  crux-bitcode
-# Depends on:  gnupg lz4
+# Depends on:  gnupg lz4 apr
 
 name=static-subversion
 version=1.14.0
