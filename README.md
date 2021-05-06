@@ -37,9 +37,6 @@ They can still be used as dependencies though.
   * Can be used as a dependency
 * `qownnotes`: same problem as `qt5`
 
-Generally, any package that defines symbols on the command line (`-D`) with special shell characters (backslash, space, etc.) seems to fail because of the `gclang` wrapper.
-If the package respects `CFLAGS` the `gclang` wrapper can be stripped off like in `freetype`.
-
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
 * Command line options for `build-bitcode.sh` and `build-bitcode.py`.
