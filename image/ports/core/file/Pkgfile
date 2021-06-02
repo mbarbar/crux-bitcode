@@ -6,7 +6,7 @@
 name=file
 version=5.39
 release=1
-source=(ftp://ftp.astron.com/pub/file/$name-$version.tar.gz)
+source=(http://astron.com/pub/file/$name-$version.tar.gz)
 
 build() {
     cd $name-$version
