@@ -6,7 +6,7 @@
 name=exim
 version=4.94
 release=1
-source=(https://ftp.exim.org/pub/exim/exim4/$name-$version.tar.xz \
+source=(https://ftp.exim.org/pub/old/exim/exim4/$name-$version.tar.xz \
         $name $name-config.patch)
 
 build() {
