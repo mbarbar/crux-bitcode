@@ -1,5 +1,30 @@
 #!/bin/sh
 
+usage() {
+  echo "usage: $0 [-s]"
+  echo "  -s  extract source code"
+}
+
+sources=0
+while getopts ':sh' opt; do
+  case $opt in
+    s)
+      echo source
+      sources=1
+      ;;
+    h)
+      echo help
+      usage
+      exit 0
+      ;;
+    \?)
+      echo badarg
+      usage
+      exit 1
+      ;;
+  esac
+done
+
 # Spin up a container.
 id=`docker run --rm --detach -it mbarbar/crux-bitcode:10.0.1.11 bash`
 # Short ID, for more wieldy filenames.
@@ -15,9 +40,12 @@ if docker exec "$id" build-bitcode; then
   docker exec "$id" zip -r "bitcode-$sid.zip" "bitcode-$sid"
   docker cp "$id:/root/bitcode-$sid.zip" "bitcode-$sid.zip"
 
-  docker exec "$id" mv "source" "source-$sid"
-  docker exec "$id" zip -r "source-$sid.zip" "source-$sid"
-  docker cp "$id:/root/source-$sid.zip" "source-$sid.zip"
+  # TODO: actually prevent copying from going on in the image.
+  if [ $sources = 1 ]; then
+    docker exec "$id" mv "source" "source-$sid"
+    docker exec "$id" zip -r "source-$sid.zip" "source-$sid"
+    docker cp "$id:/root/source-$sid.zip" "source-$sid.zip"
+  fi
 
   echo "BITCODE: bitcode-$sid.zip"
   echo "SOURCE: source-$sid.zip"
