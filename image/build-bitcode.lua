@@ -21,12 +21,15 @@ local commands = {
     getbc   = "get-bc",
     dis     = "llvm-dis",
     pkginfo = "pkginfo",
+    pkgmk   = "pkgmk",
     loc     = "loc",
     opt     = "opt",
     mkdir   = "mkdir",
     md5     = "md5sum",
     mv      = "mv",
-    rm      = "rm"
+    rm      = "rm",
+    cp      = "cp",
+    cd      = "cd"
 }
 
 local files = {
@@ -101,6 +104,42 @@ for pkg in io.lines(files.pkgs) do
 end
 
 for _, pkg in pairs(pkgs) do
+    -- Copy the source to src_dir.
+    pinfo_f = io.popen(commands.prt .. " " .. "info" .. " " .. pkg)
+    -- Where is the package's port directory?
+    port_path = nil
+    port_version = nil
+    for line in pinfo_f:lines() do
+        -- Inefficient but there are so few lines...
+        if not port_path then
+            port_path = string.match(line, "^Path: *(.*)")
+        end
+
+        if not port_version then
+            port_version = string.match(line, "^Version: *(.*)")
+        end
+    end
+
+    pinfo_f:close()
+    if not port_path then
+        fail("Could not determine path for " .. pkg)
+    end
+
+    port_path = port_path .. "/" .. pkg 
+
+    if not port_version then
+        fail("Could not determine version for " .. pkg)
+    end
+
+    -- Download and extract source.
+    -- TODO: error checking.
+    os.execute(commands.cd .. " " .. port_path .. " && " .. commands.pkgmk .. " -do")
+    os.execute(commands.cd .. " " .. port_path .. " && " .. commands.pkgmk .. " -eo")
+
+    -- Full path we are interested in.
+    src_path = port_path .. "/work/src/" .. pkg .. "-" .. port_version
+    os.execute(commands.cp .. " -r " .. src_path .. " " .. files.src_dir .. "/" .. pkg)
+
     -- If it's already installed, we "update", otherwise, depinst.
     local subcommand = "update"
     if not os.execute(commands.prt .. " isinst " .. pkg) then
@@ -181,36 +220,6 @@ for _, pkg in pairs(pkgs) do
             end
         end
     end
-
-    -- Copy the source to src_dir.
-    pinfo_f = io.popen(commands.prt .. " " .. "info" .. " " .. pkg)
-    -- Where is the package's port directory.
-    pkg_path = nil
-    pkg_version = nil
-    for line in pinfo_f:lines() do
-        -- Inefficient but there are so few lines...
-        if not pkg_path then
-            pkg_path = string.match(line, "^Path: *(.*)")
-        end
-
-        if not pkg_version then
-            pkg_version = string.match(line, "^Version: *(.*)")
-        end
-    end
-
-    pinfo_f:close()
-    if not pkg_path then
-        fail("Could not determine path for " .. pkg)
-    end
-
-    if not pkg_version then
-        fail("Could not determine version for " .. pkg)
-    end
-
-    -- Full path we are interested in.
-    src_path = pkg_path .. "/" .. pkg .. "/work/src/" .. pkg .. "-" .. pkg_version
-    -- mv is faster, no problem that it is "destructive" as work is no longer needed.
-    os.execute(commands.mv .. " " .. src_path .. " " .. files.src_dir .. "/" .. pkg)
 end
 
 local info_f = io.open(files.bc_info, "w")
