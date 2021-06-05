@@ -65,6 +65,7 @@ COPY cxx.lua /usr/bin/cxx
 
 ENV PKGS_FILE "/etc/pkgs.txt"
 ENV BC_DIR "$HOME/bitcode"
+ENV SRC_DIR "$HOME/source"
 
 # Our script which builds bitcode.
 COPY build-bitcode.lua "/usr/bin/build-bitcode"

@@ -33,6 +33,7 @@ local files = {
     pkgmk_conf = "/etc/pkgmk.conf",
     bc_dir     = os.getenv("BC_DIR"),
     bc_info    = nil,
+    src_dir    = os.getenv("SRC_DIR"),
     pkgs       = os.getenv("PKGS_FILE")
 }
 
@@ -50,8 +51,16 @@ else
     files.bc_info = files.bc_dir .. "/info.txt"
 end
 
+if not files.src_dir then
+    fail("SRC_DIR environment variable not set!")
+end
+
 if not os.execute(commands.mkdir .. " " .. files.bc_dir) then
     fail("Could not make BC_DIR = '" .. files.bc_dir .. "' directory!")
+end
+
+if not os.execute(commands.mkdir .. " " .. files.src_dir) then
+    fail("Could not make SRC_DIR = '" .. files.src_dir .. "' directory!")
 end
 
 if not files.pkgs then
@@ -172,6 +181,36 @@ for _, pkg in pairs(pkgs) do
             end
         end
     end
+
+    -- Copy the source to src_dir.
+    pinfo_f = io.popen(commands.prt .. " " .. "info" .. " " .. pkg)
+    -- Where is the package's port directory.
+    pkg_path = nil
+    pkg_version = nil
+    for line in pinfo_f:lines() do
+        -- Inefficient but there are so few lines...
+        if not pkg_path then
+            pkg_path = string.match(line, "^Path: *(.*)")
+        end
+
+        if not pkg_version then
+            pkg_version = string.match(line, "^Version: *(.*)")
+        end
+    end
+
+    pinfo_f:close()
+    if not pkg_path then
+        fail("Could not determine path for " .. pkg)
+    end
+
+    if not pkg_version then
+        fail("Could not determine version for " .. pkg)
+    end
+
+    -- Full path we are interested in.
+    src_path = pkg_path .. "/" .. pkg .. "/work/src/" .. pkg .. "-" .. pkg_version
+    -- mv is faster, no problem that it is "destructive" as work is no longer needed.
+    os.execute(commands.mv .. " " .. src_path .. " " .. files.src_dir .. "/" .. pkg)
 end
 
 local info_f = io.open(files.bc_info, "w")
