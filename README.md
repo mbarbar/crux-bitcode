@@ -44,3 +44,4 @@ They can still be used as dependencies though.
 * Test more ports.
 * Remove non-C/C++ ports.
 * Nicer error handling.
+* Would be nice if sources are archived to "freeze" the port tree.
