@@ -1,0 +1,77 @@
+From 1ef1e91142ac48ecb826f33e1e7072c7402d9fe7 Mon Sep 17 00:00:00 2001
+From: serge-sans-paille <sguelton@redhat.com>
+Date: Wed, 3 Mar 2021 09:58:31 +0100
+Subject: [PATCH 6/6] [PATCH][clang] Allow __ieee128 as an alias to __float128
+ on ppc
+
+This matches gcc behavior.
+
+Differential Revision: https://reviews.llvm.org/D97846
+
+(cherry picked from commit 4aa510be78a75a4da82657fe433016f00dad0784)
+---
+ clang/include/clang/Basic/LangOptions.def | 1 +
+ clang/lib/Basic/IdentifierTable.cpp       | 3 +++
+ clang/lib/Basic/Targets/PPC.cpp           | 1 +
+ clang/test/Sema/128bitfloat.cpp           | 7 +++++++
+ 4 files changed, 12 insertions(+)
+
+diff --git a/clang/include/clang/Basic/LangOptions.def b/clang/include/clang/Basic/LangOptions.def
+index c01f0cc..3c22393e 100644
+--- a/clang/include/clang/Basic/LangOptions.def
++++ b/clang/include/clang/Basic/LangOptions.def
+@@ -107,6 +107,7 @@ LANGOPT(Bool              , 1, 0, "bool, true, and false keywords")
+ LANGOPT(Half              , 1, 0, "half keyword")
+ LANGOPT(WChar             , 1, CPlusPlus, "wchar_t keyword")
+ LANGOPT(Char8             , 1, 0, "char8_t keyword")
++LANGOPT(IEEE128           , 1, 0, "__ieee128 keyword")
+ LANGOPT(DeclSpecKeyword   , 1, 0, "__declspec keyword")
+ BENIGN_LANGOPT(DollarIdents   , 1, 1, "'$' in identifiers")
+ BENIGN_LANGOPT(AsmPreprocessor, 1, 0, "preprocessor in asm mode")
+diff --git a/clang/lib/Basic/IdentifierTable.cpp b/clang/lib/Basic/IdentifierTable.cpp
+index 51c6e02..cedc94a 100644
+--- a/clang/lib/Basic/IdentifierTable.cpp
++++ b/clang/lib/Basic/IdentifierTable.cpp
+@@ -227,6 +227,9 @@ void IdentifierTable::AddKeywords(const LangOptions &LangOpts) {
+   if (LangOpts.DeclSpecKeyword)
+     AddKeyword("__declspec", tok::kw___declspec, KEYALL, LangOpts, *this);
+ 
++  if (LangOpts.IEEE128)
++    AddKeyword("__ieee128", tok::kw___float128, KEYALL, LangOpts, *this);
++
+   // Add the 'import' contextual keyword.
+   get("import").setModulesImport(true);
+ }
+diff --git a/clang/lib/Basic/Targets/PPC.cpp b/clang/lib/Basic/Targets/PPC.cpp
+index ff09c0f..38f286c 100644
+--- a/clang/lib/Basic/Targets/PPC.cpp
++++ b/clang/lib/Basic/Targets/PPC.cpp
+@@ -551,6 +551,7 @@ void PPCTargetInfo::adjust(LangOptions &Opts) {
+     LongDoubleFormat = Opts.PPCIEEELongDouble
+                            ? &llvm::APFloat::IEEEquad()
+                            : &llvm::APFloat::PPCDoubleDouble();
++  Opts.IEEE128 = 1;
+ }
+ 
+ ArrayRef<Builtin::Info> PPCTargetInfo::getTargetBuiltins() const {
+diff --git a/clang/test/Sema/128bitfloat.cpp b/clang/test/Sema/128bitfloat.cpp
+index 4a826b4..6a9ae74 100644
+--- a/clang/test/Sema/128bitfloat.cpp
++++ b/clang/test/Sema/128bitfloat.cpp
+@@ -6,6 +6,13 @@
+ // RUN: %clang_cc1 -triple x86_64-windows-msvc -verify -std=c++11 %s
+ 
+ #if defined(__FLOAT128__) || defined(__SIZEOF_FLOAT128__)
++
++#if defined(__ppc__)
++template <typename> struct __is_float128 { static constexpr bool value = false; };
++template <> struct __is_float128<__float128> { static constexpr bool value = true; };
++static_assert(__is_float128<__ieee128>::value, "__ieee128 aliases to __float128");
++#endif
++
+ __float128 f;
+ template<typename> struct __is_floating_point_helper {};
+ template<> struct __is_floating_point_helper<__float128> {};
+-- 
+1.8.3.1
+
