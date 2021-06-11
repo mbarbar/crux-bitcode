@@ -3,7 +3,7 @@ FROM mbarbar/crux:3.5
 ENV HOME="/root"
 
 # Copy our ports snapshot over.
-COPY ports /usr/ports
+COPY ports/core /usr/ports/core
 
 # Tell prt-get about contrib and bc.
 RUN echo prtdir /usr/ports/contrib/ >> /etc/prt-get.conf
@@ -19,6 +19,10 @@ RUN pre-sysup.sh
 
 # Update core.
 RUN prt-get -is -if sysup
+
+COPY ports/opt /usr/ports/opt
+COPY ports/contrib /usr/ports/contrib
+COPY ports/xorg /usr/ports/xorg
 
 # Build LLVM that we'll use to build other software with GLLVM.
 RUN prt-get -is --install-scripts depinst llvm
