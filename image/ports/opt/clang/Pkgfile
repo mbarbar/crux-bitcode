@@ -1,39 +1,37 @@
-# Description: LLVM + clang compiler
-# URL:         http://llvm.org/
-# Maintainer:  Thomas Penteker, tek at serverop dot de
-# Depends on:  llvm
+# Description: clang compiler
+# URL:         https://clang.llvm.org/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# Depends on:  compiler-rt llvm
 
 name=clang
-version=10.0.1
-release=1
-source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/{llvm,clang}-$version.src.tar.xz)
+version=12.0.0
+release=2
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/$name-$version.src.tar.xz
+	https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/$name-tools-extra-$version.src.tar.xz
+	0001-PATCH-clang-tools-extra-Make-clangd-CompletionModel-.patch
+	0005-PATCH-clang-Partially-Revert-scan-view-Remove-Report.patch
+	0006-PATCH-clang-Allow-__ieee128-as-an-alias-to-__float12.patch)
 
 build() {
-  mv clang-$version.src llvm-$version.src/tools/clang
+	patch -d $name-tools-extra-$version.src -p2 -i $SRC/0001-PATCH-clang-tools-extra-Make-clangd-CompletionModel-.patch
+	patch -d $name-$version.src -p2 -i $SRC/0005-PATCH-clang-Partially-Revert-scan-view-Remove-Report.patch
+	patch -d $name-$version.src -p2 -i $SRC/0006-PATCH-clang-Allow-__ieee128-as-an-alias-to-__float12.patch
 
-  cmake -S llvm-$version.src -B build -G Ninja \
-    -DLLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}" \
-    -DLLVM_INCLUDE_EXAMPLES=0 \
-    -DLLVM_INCLUDE_TESTS=0 \
-    -DLLVM_ENABLE_FFI=1 \
-    -DLLVM_ENABLE_RTTI=1 \
-    -DLLVM_TARGETS_TO_BUILD='X86;AMDGPU;BPF' \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DLLVM_APPEND_VC_REV=0 \
-    -Wno-dev
+	cmake -S $name-$version.src -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBEXECDIR=lib/clang \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D LLVM_EXTERNAL_CLANG_TOOLS_EXTRA_SOURCE_DIR="$name-tools-extra-$version.src" \
+		-D LLVM_TARGETS_TO_BUILD='X86;AMDGPU;BPF;NVPTX' \
+		-D LLVM_PARALLEL_COMPILE_JOBS="${JOBS:-1}" \
+		-Wno-dev
+	cmake --build build
+	DESTDIR=$PKG cmake --install build
 
-  ninja -C build
-  DESTDIR=$PKG ninja -C build install
-
-  # only clang may be left, remove llvm
-  rm -r $PKG/usr/include/llvm{,-c}
-  rm -r $PKG/usr/lib/cmake/llvm
-  rm -r $PKG/usr/share/opt-viewer
-  rm $PKG/usr/bin/{bugpoint,ll*,opt,obj2yaml,sancov,sanstats,verify-uselistorder,yaml2obj,dsymutil}
-  rm $PKG/usr/lib/{libLTO.*,libRemarks*,libLLVM*}
-
-  mv $PKG/usr/libexec/{c++-analyzer,ccc-analyzer} $PKG/usr/lib/clang
-  rmdir $PKG/usr/libexec
-  sed -i 's|libexec|lib/clang|' $PKG/usr/bin/scan-build
+	# -DCMAKE_INSTALL_LIBEXECDIR is still hardcoded..
+	mv $PKG/usr/libexec/{c++-analyzer,ccc-analyzer} $PKG/usr/lib/clang
+	rmdir $PKG/usr/libexec
+	sed -i 's|libexec|lib/clang|' $PKG/usr/bin/scan-build
 }
