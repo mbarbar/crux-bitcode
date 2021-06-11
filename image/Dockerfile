@@ -25,8 +25,8 @@ COPY ports/contrib /usr/ports/contrib
 COPY ports/xorg /usr/ports/xorg
 
 # Build LLVM that we'll use to build other software with GLLVM.
-RUN prt-get -is --install-scripts depinst llvm
-RUN prt-get -is --install-scripts depinst clang
+RUN prt-get -is -if --install-scripts depinst llvm
+RUN prt-get -is -if --install-scripts depinst clang
 
 # Install GLLVM. No need for a port; this is a throwaway container.
 RUN prt-get depinst -is --install-scripts git
