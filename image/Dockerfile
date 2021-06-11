@@ -28,6 +28,7 @@ RUN prt-get -is -if --install-scripts depinst compiler-rt
 RUN prt-get -is -if --install-scripts depinst clang
 
 # Install GLLVM. No need for a port; this is a throwaway container.
+COPY ports/contrib /usr/ports/contrib
 RUN prt-get depinst -is --install-scripts git
 RUN prt-get depinst -is --install-scripts go
 RUN go get github.com/SRI-CSL/gllvm/cmd/...
@@ -49,7 +50,6 @@ RUN prt-get depinst -is -if --install-scripts lua53
 ENV CC=gclang
 ENV CXX=gclang++
 
-COPY ports/contrib /usr/ports/contrib
 COPY ports/xorg /usr/ports/xorg
 
 # Move gclang to a lower precedence in PATH and overwrite all C compilers,
