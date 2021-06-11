@@ -21,8 +21,6 @@ RUN pre-sysup.sh
 RUN prt-get -is -if sysup
 
 COPY ports/opt /usr/ports/opt
-COPY ports/contrib /usr/ports/contrib
-COPY ports/xorg /usr/ports/xorg
 
 # Build LLVM that we'll use to build other software with GLLVM.
 RUN prt-get -is -if --install-scripts depinst llvm
@@ -43,12 +41,15 @@ RUN go get -u github.com/boyter/scc/
 # Install zip.
 RUN prt-get -is --install-scripts depinst zip
 
+# Install Lua.
+RUN prt-get depinst -is -if --install-scripts lua53
+
 # Actually use GLLVM.
 ENV CC=gclang
 ENV CXX=gclang++
 
-# TODO: move up.
-RUN prt-get depinst -is -if --install-scripts lua53
+COPY ports/contrib /usr/ports/contrib
+COPY ports/xorg /usr/ports/xorg
 
 # Move gclang to a lower precedence in PATH and overwrite all C compilers,
 # including gclang, with cc.sh which will solve some of our CFLAGS woes
