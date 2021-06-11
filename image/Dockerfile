@@ -24,6 +24,7 @@ COPY ports/opt /usr/ports/opt
 
 # Build LLVM that we'll use to build other software with GLLVM.
 RUN prt-get -is -if --install-scripts depinst llvm
+RUN prt-get -is -if --install-scripts depinst compiler-rt 
 RUN prt-get -is -if --install-scripts depinst clang
 
 # Install GLLVM. No need for a port; this is a throwaway container.
