@@ -3,6 +3,8 @@
 `crux-bitcode` is a CRUX Linux Docker image to make generating LLVM bitcode from (some) open-source software easy by using CRUX's ports system and GLLVM.
 `build-bitcode.sh` can build software in the official ports tree (with some caveats) into bitcode.
 
+LLVM/Clang version: 12.0.0.
+
 ## Requirements
 Docker.
 The first run may be slow as the (large) image is downloaded.
@@ -37,6 +39,15 @@ They can still be used as dependencies though.
   * Can be used as a dependency
 * `qownnotes`: same problem as `qt5`
 
+### LLVM/Clang version
+If LLVM or Clang (or their runtime dependencies) are included in `pkgs.txt`, then version 10 is used.
+The `ports` directory is "frozen" (modulo required fixes) whereas the `image/ports` directory is not.
+LLVM and Clang (and dependencies) in `image/ports` are updated as necessary.
+
+Thus there is a tension where LLVM/Clang ports, when building bitcode, are of different versions to the included LLVM/Clang.
+If LLVM (or Clang) is built, explicitly or as a dependency, the container will use the newly built LLVM (or Clang) and not the one included in the image.
+This can be an older version.
+
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
 * Command line options for `build-bitcode.sh` and `build-bitcode.py`.
@@ -45,3 +56,4 @@ They can still be used as dependencies though.
 * Remove non-C/C++ ports.
 * Nicer error handling.
 * Would be nice if sources are archived to "freeze" the port tree.
+* Always use included LLVM/Clang, never a version built by the user.
