@@ -35,6 +35,7 @@ RUN go get github.com/SRI-CSL/gllvm/cmd/...
 ENV PATH="${HOME}/go/bin/:${PATH}"
 
 # Install qt5 since it is a large common dependency.
+COPY ports/xorg /usr/ports/xorg
 RUN prt-get depinst -is -if --install-scripts qt5
 
 # Install SCC.
@@ -49,8 +50,6 @@ RUN prt-get depinst -is -if --install-scripts lua53
 # Actually use GLLVM.
 ENV CC=gclang
 ENV CXX=gclang++
-
-COPY ports/xorg /usr/ports/xorg
 
 # Move gclang to a lower precedence in PATH and overwrite all C compilers,
 # including gclang, with cc.sh which will solve some of our CFLAGS woes
