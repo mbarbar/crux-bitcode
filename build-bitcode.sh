@@ -23,7 +23,7 @@ while getopts ':sh' opt; do
 done
 
 # Spin up a container.
-id=`docker run --rm --detach -it mbarbar/crux-bitcode:10.0.1.12 bash`
+id=`docker run --rm --detach -it mbarbar/crux-bitcode:12.0.0.0 bash`
 # Short ID, for more wieldy filenames.
 sid=`echo $id | head -c 10`
 
