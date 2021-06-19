@@ -24,7 +24,7 @@ This is calculated by counting the lines of code in the files mentioned in the d
 
 ## Caveats
 Some ports may not respect `CFLAGS`/`CXXFLAGS` nor `CC`/`CXX`.
-The image attempts to resolve this by intercepting calls to the compiler (see `image/cc.sh`, `image/cxx.sh`).
+The image attempts to resolve this by intercepting calls to the compiler (see `image/cc.lua`, `image/cxx.lua`).
 Some ports may need to have their `Pkgfile` modified, or a patch added, if problems arise.
 
 ### Packages that cannot be built
@@ -36,12 +36,14 @@ They can still be used as dependencies though.
 * `qt5`: does not produce bitcode for some/all binaries; needs investigation
   * Can be used as a dependency
 * `qownnotes`: same problem as `qt5`
+* `bc`: will not build on Apple Silicon
+  * ARM build may be worthwhile
 
 ## TODO
 * Ability to run `build-bitcode.sh` from anywhere.
-* Command line options for `build-bitcode.sh` and `build-bitcode.py`.
+* Command line options for `build-bitcode.sh` and `build-bitcode.lua`.
 * Reduce image size.
 * Test more ports.
-* Remove non-C/C++ ports.
+* Remove more non-C/C++ ports.
 * Nicer error handling.
 * Would be nice if sources are archived to "freeze" the port tree.
