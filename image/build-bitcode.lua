@@ -80,7 +80,7 @@ aliases = { }
 locs = { }
 
 -- Grab CFLAGS and CXXFLAGS explicitly. Some ports don't respect pkgmk.conf's.
-for line in io.lines(files.pkgmk) do
+for line in io.lines(files.pkgmk_conf) do
     local s, _ = string.find(line, "%s*export CFLAGS%s*=%s*")
     if s then
         flags.c = string.sub(line, s)
@@ -146,11 +146,7 @@ for _, pkg in pairs(pkgs) do
         subcommand = "depinst"
     end
 
-    local export = ""
-    if flags.c ~= "" then export = "export CFLAGS=" .. flags.c end
-    if flags.cxx ~= "" then export = export .. " export CXXFLAGS=" .. flags.cxx end
-    if not os.execute(export
-                      .. commands.prt
+    if not os.execute(commands.prt
                       .. " -f -if -im -is -kw -fr --install-scripts "
                       .. subcommand .. " " .. pkg) then
        fail("Failed to build " .. pkg .. "!")
